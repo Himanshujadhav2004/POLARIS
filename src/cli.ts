@@ -4,7 +4,8 @@ import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
 import { PROMPT_VERSION } from "./agent/prompt.js";
 import { Verifier } from "./agent/verify.js";
-import { OPENAI_MODEL, SPACES, spaceBySlug } from "./config.js";
+import { OPENAI_MODEL, SPACES, spaceBySlug, SUBMISSIONS_PAUSED } from "./config.js";
+import { renderFramework } from "./framework/render.js";
 import { renderSummary, runEval } from "./eval/run.js";
 import { countClaims, fetchClaims, sampleClaimIds } from "./geo/claims.js";
 import { GeoClient } from "./geo/client.js";
@@ -23,6 +24,10 @@ import { readManifest, readVerdicts } from "./qa/verdicts.js";
 import { seededRng } from "./util/random.js";
 
 const HELP = `Usage: npm run cli -- <command> [options]
+
+Framework
+  framework [--out docs/FRAMEWORK.md]
+                               Write the scoring framework (criteria, rules, ideology cards) as Markdown
 
 Geo (read-only, no key needed)
   schema                       Save the live Geo GraphQL schema to schema/geo-schema.json
@@ -88,6 +93,12 @@ async function main(argv: string[]): Promise<void> {
       mkdirSync("schema", { recursive: true });
       writeFileSync("schema/geo-schema.json", JSON.stringify(await fetchSchema(geo), null, 1) + "\n");
       console.log("Saved schema/geo-schema.json");
+      return;
+    }
+    case "framework": {
+      const out = values.out ?? "docs/FRAMEWORK.md";
+      writeFileSync(out, renderFramework() + "\n");
+      console.log(`Wrote ${out}`);
       return;
     }
     case "taxonomy": {
@@ -267,6 +278,9 @@ async function main(argv: string[]): Promise<void> {
       if (!values.yes) {
         console.log("\nAll checks passed. Nothing was sent. Re-run with --yes to submit this proposal.");
         return;
+      }
+      if (SUBMISSIONS_PAUSED) {
+        throw new Error("Submissions to Geo are paused (SUBMISSIONS_PAUSED in src/config.ts). Nothing was sent.");
       }
       const result = await submit(plan);
       console.log(`\nSubmitted.\n  proposal ${result.proposalId}\n  tx       ${result.txHash}\n  edit     ${result.cid}`);

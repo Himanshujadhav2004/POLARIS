@@ -161,6 +161,30 @@ The team requires **100% accuracy for anything published**. Model output alone c
   - Edit `ipfs://QmRr3QUeMCZqPhXFehAHZAvTjrGVRJMpVmEKZA8DgJUFCh`.
 - **Next step:** the wallet's space is a member of US Politics, not an editor, so an editor must vote yes before the links appear.
 
+## Direction after Armando's feedback (2026-10-22)
+
+- **Geo submissions are paused.** Batch 02 was rejected.
+- **The focus is now a transparent scoring system**, tested with Armando through Notion. Every result gives:
+  - a leaning or ideology with a Clear or Potential qualifier;
+  - the reasoning, built from numbered criteria;
+  - quoted evidence;
+  - a confidence score.
+
+  The agent answers "Uncertain" when the evidence is thin or mixed, and "No political position" when a claim takes none.
+- **Framework v1** is in `src/framework/` and `docs/FRAMEWORK.md`:
+  - the four position checks;
+  - five topic areas with criteria from −3 to +3;
+  - the combining rules;
+  - 28 draft ideology cards;
+  - the confidence formula.
+- **The confidence formula uses OpenAI's Decisions API** (`gpt-6-luna`, `POST /v1/decisions`) as an independent signal. It gives probabilities for whether the claim takes a position, for each of the 7 leanings and for each ideology. gpt-5.5 still produces the criteria, evidence and reasoning.
+- **Phases:**
+  - 7: framework v1.
+  - 8: agent v3 implementing it.
+  - 9: a test set of about 100 claims, with Armando approving the expected answers in Notion.
+  - 10: a run with metrics in Notion.
+  - 11: review and tuning with Armando.
+
 ## Proposal format
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

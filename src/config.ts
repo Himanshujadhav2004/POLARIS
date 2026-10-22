@@ -10,6 +10,12 @@ export const GEO_WEB_URL = "https://www.geobrowser.io";
 export const OPENAI_MODEL = process.env.OPENAI_MODEL ?? "gpt-5.5";
 export const OPENAI_REASONING_EFFORT = process.env.OPENAI_REASONING_EFFORT || undefined;
 
+/**
+ * Armando paused all Geo submissions on 2026-10-22 while the scoring system is built and tested.
+ * Set to false only when he lifts the pause.
+ */
+export const SUBMISSIONS_PAUSED = true;
+
 export function requireEnv(name: string): string {
   const value = process.env[name]?.trim();
   if (!value) throw new Error(`${name} is not set. Add it to .env (see .env.example).`);

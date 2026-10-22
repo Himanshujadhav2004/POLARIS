@@ -15,6 +15,18 @@ npm test
 
 Requires Node 22.13 or later. Reading from Geo needs no key.
 
+## Scoring framework
+
+The written criteria every classification must cite live in `src/framework/` and are rendered to [docs/FRAMEWORK.md](docs/FRAMEWORK.md) (`npm run cli -- framework`):
+
+- a political-position check (G1–G4);
+- five topic areas scored from −3 to +3, each score a numbered criterion;
+- combining rules;
+- 28 ideology definition cards (drafts until Armando approves them);
+- the confidence formula.
+
+**Submissions to Geo are paused** (`SUBMISSIONS_PAUSED` in `src/config.ts`) while the scoring system is built and tested.
+
 ## Commands
 
 ```sh
@@ -85,4 +97,5 @@ docs/PLAN.md         Plan and decisions
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
 | 4 Review loop | In progress: AI pre-review shows labels 59% → 83% (v1 → v2) and blanks 100%; human review of `qa/v2-seed2/` pending |
 | 5 Full run | Not started |
-| 6 Proposals to Geo | Batch 02 (1 claim, 2 links) submitted 2026-10-22 as proposal `0xa1dab347…`, awaiting an editor's vote. Batch 01 (10 claims) ready; rebuild it without the batch-02 claim before sending |
+| 7 Scoring framework v1 | Done: criteria, rules, 28 draft ideology cards, docs/FRAMEWORK.md |
+| 6 Proposals to Geo (paused) | Batch 02 (1 claim, 2 links) submitted 2026-10-22 as proposal `0xa1dab347…`, awaiting an editor's vote. Batch 01 (10 claims) ready; rebuild it without the batch-02 claim before sending |
