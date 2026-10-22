@@ -1,0 +1,24 @@
+{
+  "space": "us-politics",
+  "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+  "generatedAt": "2026-10-22T10:28:50.554Z",
+  "opCount": 2,
+  "ops": [
+    {
+      "type": "createRelation",
+      "id": "883b78c104c840b7bb836c8569ef87c3",
+      "entity": "2ac3670e7a024f078a547c350a3291df",
+      "from": "fdaa25c151c6e67301f02e5f3a1e7100",
+      "to": "3628835899e04b4cbd2bdfc1027c53d3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "0daeb943cd9d44bf9988044a4d710c40",
+      "entity": "fff3438792034a908b245d74219469d8",
+      "from": "fdaa25c151c6e67301f02e5f3a1e7100",
+      "to": "196f3d425aee453eaf6625540dd1faec",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    }
+  ]
+}

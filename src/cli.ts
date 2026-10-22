@@ -16,6 +16,7 @@ import { RunState } from "./pipeline/state.js";
 import { buildBatch } from "./publish/batch.js";
 import { checkProposal } from "./publish/check.js";
 import { idsInProposals, nextBatchDir, writeDryRun } from "./publish/dry-run.js";
+import { planSubmission, submit } from "./publish/submit.js";
 import { exportQaSample } from "./qa/export.js";
 import { computeQaReport, renderQaReport } from "./qa/report.js";
 import { readManifest, readVerdicts } from "./qa/verdicts.js";
@@ -47,6 +48,11 @@ Proposals (local dry run only; nothing is sent to Geo)
                                (--only: after manual review, use exactly these claims)
   check-proposal --dir proposals/<space>/batch-NN
                                After you submit and it executes: confirm the Leanings now on Geo
+
+Submitting (needs GEO_PRIVATE_KEY; sends an on-chain proposal)
+  submit --dir proposals/<space>/batch-NN [--yes]
+                               Without --yes: read-only checks and a summary of what would be sent.
+                               With --yes: upload the edit and send the proposal transaction.
 `;
 
 async function main(argv: string[]): Promise<void> {
@@ -70,6 +76,7 @@ async function main(argv: string[]): Promise<void> {
       space: { type: "string" },
       exclude: { type: "string" },
       only: { type: "string" },
+      yes: { type: "boolean" },
       help: { type: "boolean", short: "h" },
     },
   });
@@ -238,6 +245,32 @@ async function main(argv: string[]): Promise<void> {
       for (const s of statuses) console.log(`${s.status.padEnd(9)} ${s.text}`);
       const done = statuses.filter((s) => s.status === "published").length;
       console.log(`\n${done}/${statuses.length} claims show exactly the proposed Leanings on Geo.`);
+      return;
+    }
+    case "submit": {
+      if (!values.dir) throw new Error("Give the batch folder, e.g. --dir proposals/us-politics/batch-02");
+      const plan = await planSubmission(geo, values.dir);
+      console.log(`Proposal:       ${plan.name}`);
+      console.log(`Space:          ${plan.manifest.space} (${plan.manifest.spaceId})`);
+      console.log(`Operations:     ${plan.ops.length} createRelation (Leanings)`);
+      for (const c of plan.manifest.claims) {
+        console.log(`  - ${c.text}  ->  ${[c.politicalLeaning, ...c.ideologies].filter(Boolean).join(", ")}`);
+      }
+      console.log(`Wallet:         ${plan.account.address}`);
+      console.log(`Personal space: ${plan.personalSpaceId ?? "none"}`);
+      console.log(`Role in space:  ${plan.role}`);
+      if (plan.problems.length) {
+        console.log(`\nCannot submit:\n${plan.problems.map((p) => `  - ${p}`).join("\n")}`);
+        process.exitCode = 1;
+        return;
+      }
+      if (!values.yes) {
+        console.log("\nAll checks passed. Nothing was sent. Re-run with --yes to submit this proposal.");
+        return;
+      }
+      const result = await submit(plan);
+      console.log(`\nSubmitted.\n  proposal ${result.proposalId}\n  tx       ${result.txHash}\n  edit     ${result.cid}`);
+      console.log(`Saved ${values.dir}/submission.json. After it is voted through: npm run cli -- check-proposal --dir ${values.dir}`);
       return;
     }
     default:
