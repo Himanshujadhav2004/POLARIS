@@ -6,6 +6,7 @@ import { Classifier } from "./agent/classify.js";
 import { PROMPT_VERSION } from "./agent/prompt.js";
 import { ScoringAgent } from "./agent/v3/agent.js";
 import { Verifier } from "./agent/verify.js";
+import { loadTestSet, runBench, writeBench } from "./eval/bench.js";
 import { runEval3 } from "./eval/run3.js";
 import { OPENAI_MODEL, SPACES, spaceBySlug, SUBMISSIONS_PAUSED } from "./config.js";
 import { renderFramework } from "./framework/render.js";
@@ -50,6 +51,8 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   score-text "<claim text>" [...] [--json]
                                The same for any sentence (e.g. test claims that are not on Geo)
   eval3 [--concurrency N]      Run agent v3 over evals/dev-set.json; writes evals/results/v3.<framework>.json
+  bench [--file evals/test-set-v1.json] [--concurrency N]
+                               Run agent v3 over the test set; writes evals/results/bench.<set>.<framework>.json
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
                                Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
   qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
@@ -218,6 +221,20 @@ async function main(argv: string[]): Promise<void> {
         const agent = new ScoringAgent(taxonomy, state, { model: values.model });
         const { summary } = await runEval3(geo, agent, Number(values.concurrency ?? 4));
         console.log(JSON.stringify(summary, null, 2));
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "bench": {
+      const set = loadTestSet(values.file ?? "evals/test-set-v1.json");
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const { rows, summary } = await runBench(geo, agent, set, Number(values.concurrency ?? 4));
+        console.log(JSON.stringify(summary, null, 2));
+        console.log(`Wrote ${writeBench(rows, summary)}`);
       } finally {
         state.close();
       }
