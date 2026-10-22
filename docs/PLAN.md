@@ -75,6 +75,29 @@ Share of random claims the agent labelled (gpt-5.5, prompt v1):
   - A pre-filter mistake means a missed label, not a wrong one.
   - The final label always comes from gpt-5.5.
 
+## QA review, round 1 (Claude AI pre-review of prompt v1)
+
+Full report: `qa/reviews/claude-review-report.md`. A human review of `qa/qa_sample.xlsx` is still pending.
+
+| Measure | Result | Bar |
+|---|---|---|
+| Agent labels marked Correct | 10/17 (59%); 13/17 (76%) counting partly correct | 90%: **fail** |
+| Agent blanks marked Correct | 53/53 (100%) | 85%: pass |
+
+The agent never missed a label and never picked the wrong side. Its mistakes were labels that went too far:
+- **Ideology-only labels** (no political leaning): 2/5 correct. Globalist, Nationalist and Classical liberal were attached to a narrow investment view, an official territorial position and a textbook legal principle.
+  - Labels that included a leaning: 8/12 correct, 11/12 counting partly correct.
+- **Inferred stances:** "unacceptable risk" was read as support for regulation.
+- **Overstated leaning:** "Right" on hedged, descriptive claims about gender roles, where Traditionalist alone fits.
+
+Planned prompt v2 changes:
+1. An ideology without a leaning only when the claim advances the tradition's core program, not when it shares one value (free speech, openness, territorial integrity, rule of law).
+2. Never infer a stance the claim does not state.
+3. Widely shared principles and official state positions in territorial disputes stay blank.
+4. Hedged or descriptive claims ("can", "may") get at most a Center left / Center right leaning.
+
+v2 will be measured on the dev set and a fresh QA sample (a new seed), not on these 70 rows.
+
 ## Proposal format (prepared locally, submitted by hand)
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

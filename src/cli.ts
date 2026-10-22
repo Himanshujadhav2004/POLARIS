@@ -1,4 +1,5 @@
 import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
 import { OPENAI_MODEL, SPACES, spaceBySlug } from "./config.js";
@@ -11,6 +12,8 @@ import { classifyWithCache } from "./pipeline/classify-claims.js";
 import { buildQaSample } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
 import { exportQaSample } from "./qa/export.js";
+import { computeQaReport, renderQaReport } from "./qa/report.js";
+import { readManifest, readVerdicts } from "./qa/verdicts.js";
 import { seededRng } from "./util/random.js";
 
 const HELP = `Usage: npm run cli -- <command> [options]
@@ -30,6 +33,8 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                Score models on evals/dev-set.json; writes evals/results/
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
                                Build the reviewer sample; writes qa/qa_sample.xlsx, .csv and .json
+  qa-report [--file qa/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
+                               Score reviewer verdicts against the agent's output
 `;
 
 async function main(argv: string[]): Promise<void> {
@@ -45,6 +50,10 @@ async function main(argv: string[]): Promise<void> {
       pool: { type: "string" },
       "per-space": { type: "string" },
       labelled: { type: "string" },
+      file: { type: "string" },
+      out: { type: "string" },
+      "label-bar": { type: "string" },
+      "blank-bar": { type: "string" },
       help: { type: "boolean", short: "h" },
     },
   });
@@ -143,6 +152,20 @@ async function main(argv: string[]): Promise<void> {
       } finally {
         state.close();
       }
+      return;
+    }
+    case "qa-report": {
+      const file = values.file ?? "qa/qa_sample.xlsx";
+      const report = computeQaReport(readManifest("qa/qa_sample.json"), await readVerdicts(file), {
+        labels: Number(values["label-bar"] ?? 0.9),
+        blanks: Number(values["blank-bar"] ?? 0.85),
+      });
+      const markdown = renderQaReport(report, file);
+      if (values.out) {
+        mkdirSync(dirname(values.out), { recursive: true });
+        writeFileSync(values.out, markdown);
+      }
+      console.log(markdown);
       return;
     }
     default:

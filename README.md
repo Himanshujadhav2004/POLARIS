@@ -27,7 +27,10 @@ npm run cli -- schema                   # refresh schema/geo-schema.json from th
 npm run cli -- classify <id>            # label claims (needs OPENAI_API_KEY)
 npm run cli -- eval --models gpt-5.5,gpt-5.4-mini
 npm run cli -- qa-sample --seed 1          # writes qa/qa_sample.xlsx, .csv, .json
+npm run cli -- qa-report --file qa/qa_sample.xlsx --out qa/reports/round1.md
 ```
+
+Reviewers fill in the yellow columns of `qa/qa_sample.xlsx` (QA verdict, plus Correct leaning / Correct ideologies when it is not Correct). `qa-report` matches rows by Claim ID and scores labels and blanks separately against the bar (90% / 85% by default).
 
 Classifications are cached in `data/state.sqlite` per claim, model, prompt version and taxonomy fingerprint, so re-running a command never pays for the same claim twice.
 
@@ -49,7 +52,10 @@ src/eval/            Dev-set scoring and model comparison
 evals/dev-set.json   41 hand-labelled edge cases
 evals/results/       Eval output per model and prompt version
 src/qa/export.ts     QA spreadsheet, CSV and JSON manifest
+src/qa/verdicts.ts   Reads reviewer verdicts from the spreadsheet
+src/qa/report.ts     Accuracy report (labels, blanks, per space, issues)
 qa/                  The current QA sample for reviewers
+qa/reviews/          Completed reviews and their reports
 schema/              Live Geo GraphQL schema
 test/                Unit tests (vitest)
 docs/PLAN.md         Plan and decisions
@@ -63,6 +69,6 @@ docs/PLAN.md         Plan and decisions
 | 1 Geo read layer + live taxonomy | Done |
 | 2 Classifier + dev-set eval | Done: gpt-5.5 chosen (41/41 vs 35/41 for gpt-5.4-mini) |
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
-| 4 Review loop | Not started |
+| 4 Review loop | In progress: AI pre-review of prompt v1 shows labels 59% / blanks 100%; prompt v2 next; human review pending |
 | 5 Full run | Not started |
 | 6 Local dry run for Geo | Not started |
