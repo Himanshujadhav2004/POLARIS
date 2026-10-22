@@ -1,0 +1,228 @@
+{
+  "space": "us-politics",
+  "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+  "leaningsPropertyId": "ff40a84705194415b30473badda2e534",
+  "generatedAt": "2026-10-22T09:41:27.213Z",
+  "model": "gpt-5.5-2026-04-23",
+  "promptVersion": "v2",
+  "verifierVersion": "verify-v1",
+  "taxonomyFingerprint": "29b6190c8354",
+  "seed": 1,
+  "checks": [
+    "claim is in the space",
+    "claim has no Leanings yet",
+    "agent confidence is high",
+    "independent verifier agrees",
+    "manual review"
+  ],
+  "claims": [
+    {
+      "claimId": "f359bc7a321a12624f2ead8fd1769edb",
+      "text": "Large-capacity magazine limits should remain enforceable during appeals",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/f359bc7a321a12624f2ead8fd1769edb",
+      "politicalLeaning": "Center left",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "fc7c5b2c13e340f9b3d1f28d20bd708d",
+          "entityId": "7d7d17e808074badae3202fc8c7e6900",
+          "claimId": "f359bc7a321a12624f2ead8fd1769edb",
+          "valueId": "23c5b0b90630432d94d2a9572b4c5f78",
+          "valueName": "Center left"
+        }
+      ],
+      "evidence": "Large-capacity magazine limits should remain enforceable during appeals",
+      "rationale": "Advocates maintaining enforcement of gun magazine restrictions, a gun-control position generally associated with the mainstream center-left in U.S. politics.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "87f8e8a2be3f53346643f9d9aca87a4b",
+      "text": "The federal deficit should be capped at 3% of GDP",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/87f8e8a2be3f53346643f9d9aca87a4b",
+      "politicalLeaning": "Center right",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "b064e3c6ec604741a6325b029abc4f83",
+          "entityId": "fdcd48a888254e64aa0956eb009cb622",
+          "claimId": "87f8e8a2be3f53346643f9d9aca87a4b",
+          "valueId": "607819029b3d42cfa6160acd370562b3",
+          "valueName": "Center right"
+        }
+      ],
+      "evidence": "federal deficit should be capped at 3% of GDP",
+      "rationale": "Advocates a binding fiscal restraint on federal deficits, a mainstream center-right position associated with limiting government borrowing and spending growth. The claim does not clearly advance a full ideology beyond that policy stance.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "491e37674824c99f29210fd432edf22c",
+      "text": "U.S. public universities should charge no tuition",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/491e37674824c99f29210fd432edf22c",
+      "politicalLeaning": "Left",
+      "ideologies": [
+        "Progressive"
+      ],
+      "relations": [
+        {
+          "relationId": "88e94104836c4937b68f2e841fcc628f",
+          "entityId": "21120b4876814f2db7ec36bea6a42da2",
+          "claimId": "491e37674824c99f29210fd432edf22c",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "d90bd3bdbcd64ccbb24362581d833501",
+          "entityId": "86ddc2a0c5804dbdba3e927de28d7d6b",
+          "claimId": "491e37674824c99f29210fd432edf22c",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        }
+      ],
+      "evidence": "public universities should charge no tuition",
+      "rationale": "Advocates tuition-free public higher education, an expanded public benefit associated with the U.S. left and progressive education policy.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "b246f97c5bd641e4a38f4779c7c9c0ca",
+      "text": "Democratic governors should opt in to the Federal Scholarship Tax Credit program",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/b246f97c5bd641e4a38f4779c7c9c0ca",
+      "politicalLeaning": "Center right",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "8858d995be7c4f7db82f29a4c74ba6ec",
+          "entityId": "784319c8576348dba9d806e4b37e2e05",
+          "claimId": "b246f97c5bd641e4a38f4779c7c9c0ca",
+          "valueId": "607819029b3d42cfa6160acd370562b3",
+          "valueName": "Center right"
+        }
+      ],
+      "evidence": "Democratic governors should opt in to the Federal Scholarship Tax Credit program",
+      "rationale": "Advocates joining a federal education tax-credit/scholarship program associated with school choice and private-school voucher policy, a mainstream center-right position in U.S. politics. The claim does not clearly advance a specific ideology beyond that policy stance.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "b82791e51a19ed2099e0420289b06364",
+      "text": "There should be a maximum legal income",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/b82791e51a19ed2099e0420289b06364",
+      "politicalLeaning": "Far left",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "7861583b3bdf40d98b26330a518204a7",
+          "entityId": "62d984d073fb410284829169580aa197",
+          "claimId": "b82791e51a19ed2099e0420289b06364",
+          "valueId": "ea634ae07c3943f6aaad8791e287831f",
+          "valueName": "Far left"
+        }
+      ],
+      "evidence": "There should be a maximum legal income",
+      "rationale": "Advocates a legal cap on individual income, a radical redistributive economic policy outside the political mainstream and associated with the far left.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "b031309c948b40af89beef0c90287d4b",
+      "text": "The Protect College Sports Act should explicitly ban student-athletes from being classified as employees",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/b031309c948b40af89beef0c90287d4b",
+      "politicalLeaning": "Center right",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "7ae8b7d122bb4ea6a225f94c8b169de6",
+          "entityId": "1b6dd362e996400b908ebf479ff40239",
+          "claimId": "b031309c948b40af89beef0c90287d4b",
+          "valueId": "607819029b3d42cfa6160acd370562b3",
+          "valueName": "Center right"
+        }
+      ],
+      "evidence": "should explicitly ban student-athletes from being classified as employees",
+      "rationale": "The claim advocates preventing student-athletes from receiving employee status, a stance against expanding labor rights and union-related protections that is conventionally associated with pro-business, center-right politics in the U.S.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "d2ebff0dbeb504f8299d5c9363b058c4",
+      "text": "U.S. public-school teachers should have tenure",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/d2ebff0dbeb504f8299d5c9363b058c4",
+      "politicalLeaning": "Center left",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "130abdcca8d644a48a22f801547e35ed",
+          "entityId": "8066ef8ae72141569fddab5524df116a",
+          "claimId": "d2ebff0dbeb504f8299d5c9363b058c4",
+          "valueId": "23c5b0b90630432d94d2a9572b4c5f78",
+          "valueName": "Center left"
+        }
+      ],
+      "evidence": "public-school teachers should have tenure",
+      "rationale": "Advocates employment protections for public-sector teachers, a position conventionally associated with Democrats, unions, and the center-left in U.S. education and labor policy.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "2079c9e0f933e177e0395122672a66e6",
+      "text": "ICE should reveal third-country destinations before migrants lose their chance to object",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/2079c9e0f933e177e0395122672a66e6",
+      "politicalLeaning": "Center left",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "0fa8392cec0040b388c55e79e2f6be03",
+          "entityId": "9a1e2d2a53594911927cc41e869e797d",
+          "claimId": "2079c9e0f933e177e0395122672a66e6",
+          "valueId": "23c5b0b90630432d94d2a9572b4c5f78",
+          "valueName": "Center left"
+        }
+      ],
+      "evidence": "ICE should reveal third-country destinations before migrants lose their chance to object",
+      "rationale": "The claim advocates procedural protections for migrants facing deportation, a position conventionally associated with the center-left in U.S. immigration politics. It does not clearly advance a specific ideology beyond that policy stance.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "b853a9f1adb34b868358f7e708c22161",
+      "text": "The Electoral College should be abolished",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/b853a9f1adb34b868358f7e708c22161",
+      "politicalLeaning": "Center left",
+      "ideologies": [],
+      "relations": [
+        {
+          "relationId": "2da8cc7e8c0e4d28a93e9966a203ff12",
+          "entityId": "1611556cbca840be98e43c618be223b3",
+          "claimId": "b853a9f1adb34b868358f7e708c22161",
+          "valueId": "23c5b0b90630432d94d2a9572b4c5f78",
+          "valueName": "Center left"
+        }
+      ],
+      "evidence": "Electoral College should be abolished",
+      "rationale": "Advocates abolishing the U.S. Electoral College, a contested electoral reform position conventionally associated with Democrats and the center-left in contemporary U.S. politics. The claim does not clearly advance a specific ideological tradition beyond that leaning.",
+      "verifier": "agree"
+    },
+    {
+      "claimId": "fdaa25c151c6e67301f02e5f3a1e7100",
+      "text": "Workers should be entitled to company board seats",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/fdaa25c151c6e67301f02e5f3a1e7100",
+      "politicalLeaning": "Left",
+      "ideologies": [
+        "Social democrat"
+      ],
+      "relations": [
+        {
+          "relationId": "4e068d87a08843b497c9d7db0614bf0b",
+          "entityId": "149d3e6491ed464e8fb6c0961169efbc",
+          "claimId": "fdaa25c151c6e67301f02e5f3a1e7100",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "255f1a84a43b4491b822a8579bfb22ea",
+          "entityId": "375559b2b0b64b0bb5e820e7de70e102",
+          "claimId": "fdaa25c151c6e67301f02e5f3a1e7100",
+          "valueId": "196f3d425aee453eaf6625540dd1faec",
+          "valueName": "Social democrat"
+        }
+      ],
+      "evidence": "Workers should be entitled to company board seats",
+      "rationale": "Advocates mandatory worker representation in corporate governance, a pro-labor policy associated with the left. The specific idea of worker board seats fits social democratic models of co-determination.",
+      "verifier": "agree"
+    }
+  ]
+}

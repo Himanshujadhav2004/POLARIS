@@ -126,6 +126,31 @@ Sample: `qa/v2-seed2/`, seed 2. It contains no dev-set or round-1 claims. Full r
 - **Noise:** with 18 labels, one more correct row would move the score to 89%. Four rows marked Correct were close calls (noted in the review file), so a human review could move the score either way.
 - **Labelled share of the random pool:** 19 of 832 claims (2.3%). Relationships was highest (7/115), AI lowest (0/120).
 
+## Publishing gate (Phase 6)
+
+The team requires **100% accuracy for anything published**. Model output alone cannot guarantee that, so a label reaches a proposal only after it passes every check below. Anything uncertain is left out.
+
+1. The claim is in the space and has no Leanings yet. Claims are re-fetched from Geo when the proposal is written.
+2. The agent's confidence is **high**. In QA, every error was medium confidence.
+3. An **independent verifier** agrees with every part of the label.
+   - It is a separate gpt-5.5 call at high reasoning effort.
+   - It sees the claim but not the agent's reasoning.
+4. **Manual review.** Any value that is doubtful drops the claim.
+   - This applies especially to ideologies inferred from the topic rather than stated by the claim.
+   - `--only` then pins the batch to exactly the approved claims.
+5. **Final sign-off** by the person submitting the proposal.
+
+### US Politics, batch 01
+
+- **Candidates:** 80 opinion claims ("... should ...").
+- **Automatic checks:** 19 passed. The verifier rejected 2 for ideology tags the claims did not support.
+- **Manual review:** 5 more dropped.
+  - Progressive for abolishing private schools.
+  - Christian conservative and Feminist on abortion claims, where the ideology came from the topic.
+  - Newborn investment accounts, which now have support on both sides ("baby bonds" from Democrats, "Trump Accounts" from Republicans).
+- **Result:** 10 claims and 12 Leanings links in `proposals/us-politics/batch-01/`.
+- **Balance:** 7 left-side and 3 right-side labels, because few right-leaning opinion claims passed. A later batch should draw more candidates to even this out.
+
 ## Proposal format (prepared locally, submitted by hand)
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

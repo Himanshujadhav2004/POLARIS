@@ -77,8 +77,8 @@ export async function fetchClaims(client: GeoClient, ids: string[], chunkSize = 
 }
 
 const PIVOT_QUERY = /* GraphQL */ `
-  query Pivot($spaceId: UUID!, $typeId: UUID!, $after: UUID!, $first: Int!) {
-    entities(spaceId: $spaceId, typeId: $typeId, orderBy: [ID_ASC], filter: { id: { greaterThan: $after } }, first: $first) {
+  query Pivot($spaceId: UUID!, $typeId: UUID!, $filter: EntityFilter!, $first: Int!) {
+    entities(spaceId: $spaceId, typeId: $typeId, orderBy: [ID_ASC], filter: $filter, first: $first) {
       id
     }
   }
@@ -87,6 +87,7 @@ const PIVOT_QUERY = /* GraphQL */ `
 /**
  * Picks claim IDs from a space at random. Each draw jumps to a random point in the ID range
  * and takes the next `perPivot` claims, which avoids the API's 1000-row offset cap.
+ * `nameIncludes` limits the draw to claims whose text contains it (case-sensitive).
  */
 export async function sampleClaimIds(
   client: GeoClient,
@@ -94,6 +95,7 @@ export async function sampleClaimIds(
   count: number,
   rng: Rng,
   perPivot = 2,
+  nameIncludes?: string,
 ): Promise<string[]> {
   const ids = new Set<string>();
   for (let attempt = 0; ids.size < count && attempt < count * 4; attempt++) {
@@ -103,7 +105,7 @@ export async function sampleClaimIds(
       const data = await client.query<{ entities: { id: string }[] }>(PIVOT_QUERY, {
         spaceId,
         typeId: IDS.claimType,
-        after: pivot,
+        filter: { id: { greaterThan: pivot }, ...(nameIncludes ? { name: { includes: nameIncludes } } : {}) },
         first: perPivot,
       });
       if (data.entities.length) {

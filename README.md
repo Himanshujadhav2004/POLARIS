@@ -30,6 +30,16 @@ npm run cli -- qa-sample --seed 2          # writes qa/<prompt>-seed2/qa_sample.
 npm run cli -- qa-report --dir qa/v2-seed2 --out qa/v2-seed2/report.md
 ```
 
+Proposals (a local dry run; nothing is sent to Geo):
+
+```sh
+npm run cli -- dry-run --space us-politics --count 10       # candidates through every check
+npm run cli -- dry-run --space us-politics --only <id,id>  # after manual review: exactly these claims
+npm run cli -- check-proposal --dir proposals/us-politics/batch-01   # after the proposal executes
+```
+
+Each batch folder holds `proposal.md` (review checklist, claims, reasons, how to submit), `proposal.json`, `proposal.csv` and `ops.json` (the exact `createRelation` operations, built with the Geo SDK).
+
 Each QA round gets its own folder under `qa/`, and a new sample skips claims from the dev set and earlier rounds. Reviewers fill in the yellow columns of the round's `qa_sample.xlsx` (QA verdict, plus Correct leaning / Correct ideologies when it is not Correct). `qa-report` matches rows by Claim ID and scores labels and blanks separately against the bar (90% / 85% by default).
 
 Classifications are cached in `data/state.sqlite` per claim, model, prompt version and taxonomy fingerprint, so re-running a command never pays for the same claim twice.
@@ -55,6 +65,9 @@ src/qa/export.ts     QA spreadsheet, CSV and JSON manifest
 src/qa/verdicts.ts   Reads reviewer verdicts from the spreadsheet
 src/qa/report.ts     Accuracy report (labels, blanks, per space, issues)
 qa/<prompt>-seed<N>/ One folder per QA round: sample, reviews, reports
+src/agent/verify.ts  Independent verifier used before publishing
+src/publish/         Publishing gate, dry-run proposal files, post-submit check
+proposals/           Dry-run proposals, one folder per batch
 schema/              Live Geo GraphQL schema
 test/                Unit tests (vitest)
 docs/PLAN.md         Plan and decisions
@@ -70,4 +83,4 @@ docs/PLAN.md         Plan and decisions
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
 | 4 Review loop | In progress: AI pre-review shows labels 59% → 83% (v1 → v2) and blanks 100%; human review of `qa/v2-seed2/` pending |
 | 5 Full run | Not started |
-| 6 Local dry run for Geo | Not started |
+| 6 Local dry run for Geo | US Politics batch 01 ready: 10 claims, 12 Leanings links, awaiting manual submission |

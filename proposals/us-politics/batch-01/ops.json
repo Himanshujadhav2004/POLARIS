@@ -1,0 +1,104 @@
+{
+  "space": "us-politics",
+  "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+  "generatedAt": "2026-10-22T09:41:27.213Z",
+  "opCount": 12,
+  "ops": [
+    {
+      "type": "createRelation",
+      "id": "fc7c5b2c13e340f9b3d1f28d20bd708d",
+      "entity": "7d7d17e808074badae3202fc8c7e6900",
+      "from": "f359bc7a321a12624f2ead8fd1769edb",
+      "to": "23c5b0b90630432d94d2a9572b4c5f78",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "b064e3c6ec604741a6325b029abc4f83",
+      "entity": "fdcd48a888254e64aa0956eb009cb622",
+      "from": "87f8e8a2be3f53346643f9d9aca87a4b",
+      "to": "607819029b3d42cfa6160acd370562b3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "88e94104836c4937b68f2e841fcc628f",
+      "entity": "21120b4876814f2db7ec36bea6a42da2",
+      "from": "491e37674824c99f29210fd432edf22c",
+      "to": "3628835899e04b4cbd2bdfc1027c53d3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "d90bd3bdbcd64ccbb24362581d833501",
+      "entity": "86ddc2a0c5804dbdba3e927de28d7d6b",
+      "from": "491e37674824c99f29210fd432edf22c",
+      "to": "8cf9e9560faf46ff8c127036168c3163",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "8858d995be7c4f7db82f29a4c74ba6ec",
+      "entity": "784319c8576348dba9d806e4b37e2e05",
+      "from": "b246f97c5bd641e4a38f4779c7c9c0ca",
+      "to": "607819029b3d42cfa6160acd370562b3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "7861583b3bdf40d98b26330a518204a7",
+      "entity": "62d984d073fb410284829169580aa197",
+      "from": "b82791e51a19ed2099e0420289b06364",
+      "to": "ea634ae07c3943f6aaad8791e287831f",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "7ae8b7d122bb4ea6a225f94c8b169de6",
+      "entity": "1b6dd362e996400b908ebf479ff40239",
+      "from": "b031309c948b40af89beef0c90287d4b",
+      "to": "607819029b3d42cfa6160acd370562b3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "130abdcca8d644a48a22f801547e35ed",
+      "entity": "8066ef8ae72141569fddab5524df116a",
+      "from": "d2ebff0dbeb504f8299d5c9363b058c4",
+      "to": "23c5b0b90630432d94d2a9572b4c5f78",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "0fa8392cec0040b388c55e79e2f6be03",
+      "entity": "9a1e2d2a53594911927cc41e869e797d",
+      "from": "2079c9e0f933e177e0395122672a66e6",
+      "to": "23c5b0b90630432d94d2a9572b4c5f78",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "2da8cc7e8c0e4d28a93e9966a203ff12",
+      "entity": "1611556cbca840be98e43c618be223b3",
+      "from": "b853a9f1adb34b868358f7e708c22161",
+      "to": "23c5b0b90630432d94d2a9572b4c5f78",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "4e068d87a08843b497c9d7db0614bf0b",
+      "entity": "149d3e6491ed464e8fb6c0961169efbc",
+      "from": "fdaa25c151c6e67301f02e5f3a1e7100",
+      "to": "3628835899e04b4cbd2bdfc1027c53d3",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    },
+    {
+      "type": "createRelation",
+      "id": "255f1a84a43b4491b822a8579bfb22ea",
+      "entity": "375559b2b0b64b0bb5e820e7de70e102",
+      "from": "fdaa25c151c6e67301f02e5f3a1e7100",
+      "to": "196f3d425aee453eaf6625540dd1faec",
+      "relationType": "ff40a84705194415b30473badda2e534"
+    }
+  ]
+}

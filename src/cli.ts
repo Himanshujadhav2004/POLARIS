@@ -3,6 +3,7 @@ import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
 import { PROMPT_VERSION } from "./agent/prompt.js";
+import { Verifier } from "./agent/verify.js";
 import { OPENAI_MODEL, SPACES, spaceBySlug } from "./config.js";
 import { renderSummary, runEval } from "./eval/run.js";
 import { countClaims, fetchClaims, sampleClaimIds } from "./geo/claims.js";
@@ -12,6 +13,9 @@ import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
 import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
+import { buildBatch } from "./publish/batch.js";
+import { checkProposal } from "./publish/check.js";
+import { idsInProposals, nextBatchDir, writeDryRun } from "./publish/dry-run.js";
 import { exportQaSample } from "./qa/export.js";
 import { computeQaReport, renderQaReport } from "./qa/report.js";
 import { readManifest, readVerdicts } from "./qa/verdicts.js";
@@ -36,6 +40,13 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
   qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
                                Score reviewer verdicts against the agent's output
+
+Proposals (local dry run only; nothing is sent to Geo)
+  dry-run --space <slug> [--count 10] [--pool 80] [--seed N] [--exclude id,id] [--only id,id]
+                               Pick claims that pass every check and write proposals/<space>/batch-NN/
+                               (--only: after manual review, use exactly these claims)
+  check-proposal --dir proposals/<space>/batch-NN
+                               After you submit and it executes: confirm the Leanings now on Geo
 `;
 
 async function main(argv: string[]): Promise<void> {
@@ -56,6 +67,9 @@ async function main(argv: string[]): Promise<void> {
       out: { type: "string" },
       "label-bar": { type: "string" },
       "blank-bar": { type: "string" },
+      space: { type: "string" },
+      exclude: { type: "string" },
+      only: { type: "string" },
       help: { type: "boolean", short: "h" },
     },
   });
@@ -175,6 +189,55 @@ async function main(argv: string[]): Promise<void> {
         writeFileSync(values.out, markdown);
       }
       console.log(markdown);
+      return;
+    }
+    case "dry-run": {
+      const space = spaceBySlug(values.space ?? "");
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const exclude = new Set([...previouslyUsedIds(), ...idsInProposals(), ...(values.exclude ?? "").split(",").map((s) => s.trim()).filter(Boolean)]);
+        const batch = await buildBatch({
+          geo,
+          classifier: new Classifier(taxonomy, { model: values.model }),
+          verifier: new Verifier(taxonomy, { model: values.model }),
+          state,
+          space,
+          count: Number(values.count ?? 10),
+          pool: Number(values.pool ?? 80),
+          seed: Number(values.seed ?? 1),
+          concurrency: Number(values.concurrency ?? 6),
+          exclude,
+          nameIncludes: " should ",
+          only: values.only ? new Set(values.only.split(",").map((s) => s.trim()).filter(Boolean)) : undefined,
+          log: (line) => console.log(line),
+        });
+        if (!batch.items.length) throw new Error("No claim passed every check. Try a larger --pool.");
+        const dir = nextBatchDir(space.slug);
+        const files = writeDryRun(batch, taxonomy, dir);
+        console.log(`\n${batch.items.length} claims selected (${batch.spare.length} more passed and are held back)`);
+        for (const { claim, classification: c } of batch.items) {
+          console.log(`  ${claim.id}  ${[c.label.political_leaning, ...c.label.ideologies].filter(Boolean).join(", ").padEnd(36)} ${claim.text}`);
+        }
+        const reasons = new Map<string, number>();
+        for (const r of batch.rejected) {
+          const key = r.reason.startsWith("verifier disagreed") ? "verifier disagreed" : r.reason;
+          reasons.set(key, (reasons.get(key) ?? 0) + 1);
+        }
+        console.log(`\nLeft out ${batch.rejected.length} of ${batch.candidates} candidates:`);
+        for (const [reason, n] of [...reasons].sort((a, b) => b[1] - a[1])) console.log(`  ${String(n).padStart(3)}  ${reason}`);
+        console.log(`\nWrote:\n${files.map((f) => `  ${f}`).join("\n")}`);
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "check-proposal": {
+      if (!values.dir) throw new Error("Give the batch folder, e.g. --dir proposals/us-politics/batch-01");
+      const statuses = await checkProposal(geo, values.dir);
+      for (const s of statuses) console.log(`${s.status.padEnd(9)} ${s.text}`);
+      const done = statuses.filter((s) => s.status === "published").length;
+      console.log(`\n${done}/${statuses.length} claims show exactly the proposed Leanings on Geo.`);
       return;
     }
     default:

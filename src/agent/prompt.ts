@@ -7,14 +7,9 @@ export const PROMPT_VERSION = "v2";
 const listValues = (values: TaxonomyValue[]) =>
   values.map((v) => (v.description ? `- ${v.name}: ${v.description}` : `- ${v.name}`)).join("\n");
 
-/**
- * The system prompt depends only on the taxonomy, so it stays byte-identical across claims
- * and the provider's prompt cache can reuse it.
- */
-export function buildSystemPrompt(taxonomy: Taxonomy): string {
-  return `You label claims from the Geo knowledge graph with the political position each claim takes. Your labels fill the claim's public "Leanings" property, so a wrong label does more harm than a missing one. Most claims take no political position, and leaving them blank is the right answer.
-
-## The two kinds of label
+/** Definitions and labelling rules, shared by the classifier and the verifier. */
+export function buildRulesSection(taxonomy: Taxonomy): string {
+  return `## The two kinds of label
 
 Political leaning: a position on the left-right political spectrum, from far left to far right through the center.
 ${listValues(taxonomy.politicalLeanings)}
@@ -44,7 +39,17 @@ Leave it blank when the claim:
 - confidence: "high" when the stance is explicit and its placement is widely agreed; "medium" when the stance is explicit but its placement is debatable; "low" otherwise. When confidence would be low, abstain instead.
 - evidence: the words from the claim that carry the stance, or "" when abstaining.
 - rationale: one or two sentences.
-- abstain_reason: null when you give any label, otherwise one of the reasons above.
+- abstain_reason: null when you give any label, otherwise one of the reasons above.`;
+}
+
+/**
+ * The system prompt depends only on the taxonomy, so it stays byte-identical across claims
+ * and the provider's prompt cache can reuse it.
+ */
+export function buildSystemPrompt(taxonomy: Taxonomy): string {
+  return `You label claims from the Geo knowledge graph with the political position each claim takes. Your labels fill the claim's public "Leanings" property, so a wrong label does more harm than a missing one. Most claims take no political position, and leaving them blank is the right answer.
+
+${buildRulesSection(taxonomy)}
 
 ## Examples
 
