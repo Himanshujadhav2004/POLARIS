@@ -151,6 +151,16 @@ The team requires **100% accuracy for anything published**. Model output alone c
 - **Result:** 10 claims and 12 Leanings links in `proposals/us-politics/batch-01/`.
 - **Balance:** 7 left-side and 3 right-side labels, because few right-leaning opinion claims passed. A later batch should draw more candidates to even this out.
 
-## Proposal format (prepared locally, submitted by hand)
+### US Politics, batch 02: first submitted proposal
+
+- **Claim:** "Workers should be entitled to company board seats".
+- **Leanings:** Left and Social democrat (2 links).
+- **Submitted:** 2026-10-22 with `submit --yes`, at the team's request.
+  - Proposal `0xa1dab3476831498b9fc2e1183436f5a0`.
+  - Transaction `0xa66d7197…783c107e`, succeeded in block 97962.
+  - Edit `ipfs://QmRr3QUeMCZqPhXFehAHZAvTjrGVRJMpVmEKZA8DgJUFCh`.
+- **Next step:** the wallet's space is a member of US Politics, not an editor, so an editor must vote yes before the links appear.
+
+## Proposal format
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

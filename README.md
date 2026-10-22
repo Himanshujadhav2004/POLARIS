@@ -36,6 +36,8 @@ Proposals (a local dry run; nothing is sent to Geo):
 npm run cli -- dry-run --space us-politics --count 10       # candidates through every check
 npm run cli -- dry-run --space us-politics --only <id,id>  # after manual review: exactly these claims
 npm run cli -- check-proposal --dir proposals/us-politics/batch-01   # after the proposal executes
+npm run cli -- submit --dir proposals/us-politics/batch-02          # read-only checks, sends nothing
+npm run cli -- submit --dir proposals/us-politics/batch-02 --yes    # send the proposal (needs GEO_PRIVATE_KEY)
 ```
 
 Each batch folder holds `proposal.md` (review checklist, claims, reasons, how to submit), `proposal.json`, `proposal.csv` and `ops.json` (the exact `createRelation` operations, built with the Geo SDK).
@@ -83,4 +85,4 @@ docs/PLAN.md         Plan and decisions
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
 | 4 Review loop | In progress: AI pre-review shows labels 59% → 83% (v1 → v2) and blanks 100%; human review of `qa/v2-seed2/` pending |
 | 5 Full run | Not started |
-| 6 Local dry run for Geo | US Politics batch 01 ready: 10 claims, 12 Leanings links, awaiting manual submission |
+| 6 Proposals to Geo | Batch 02 (1 claim, 2 links) submitted 2026-10-22 as proposal `0xa1dab347…`, awaiting an editor's vote. Batch 01 (10 claims) ready; rebuild it without the batch-02 claim before sending |
