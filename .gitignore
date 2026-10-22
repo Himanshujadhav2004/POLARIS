@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local run state and intermediate output (SQLite, dry-run files)
+data/
+
+# Outdated export of the Geo schema; the live schema is pulled into schema/
+GEO_API_SCHEMA.json
