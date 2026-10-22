@@ -19,6 +19,7 @@ export class RunState {
     this.db = new DatabaseSync(path);
     this.db.exec(`
       PRAGMA journal_mode = WAL;
+      PRAGMA busy_timeout = 15000;
       CREATE TABLE IF NOT EXISTS classifications (
         claim_id             TEXT NOT NULL,
         model                TEXT NOT NULL,

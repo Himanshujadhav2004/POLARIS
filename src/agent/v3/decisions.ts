@@ -4,6 +4,7 @@ import { IDEOLOGY_CARDS } from "../../framework/ideologies.js";
 import { LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
 import type { Claim } from "../../geo/claims.js";
 import type { Taxonomy } from "../../geo/taxonomy.js";
+import { spaceNames } from "./prompt.js";
 
 export const DECISIONS_MODEL = "gpt-6-luna";
 
@@ -92,6 +93,8 @@ export function parseDecision(answers: Decision["answers"]): DecisionSignals {
 }
 
 export async function getDecisionSignals(client: OpenAI, questions: Question[], claim: Claim): Promise<DecisionSignals> {
-  const decision = await client.decisions.create({ model: DECISIONS_MODEL, input: `Claim: "${claim.text}"`, questions });
+  const spaces = spaceNames(claim);
+  const input = `Claim: "${claim.text}"${spaces.length ? `\nGeo space: ${spaces.join(", ")}` : ""}`;
+  const decision = await client.decisions.create({ model: DECISIONS_MODEL, input, questions });
   return parseDecision(decision.answers);
 }

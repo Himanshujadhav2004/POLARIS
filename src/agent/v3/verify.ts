@@ -2,6 +2,7 @@ import type OpenAI from "openai";
 import { z } from "zod";
 import { renderFramework } from "../../framework/render.js";
 import type { Claim } from "../../geo/claims.js";
+import { spaceNames } from "./prompt.js";
 
 export interface ProposedResult {
   leaning: string | null;
@@ -85,7 +86,7 @@ If a part is wrong or merely doubtful, answer "disagree" for that part and say w
       reasoning_effort: "high",
       messages: [
         { role: "system", content: this.system },
-        { role: "user", content: JSON.stringify({ claim: claim.text, context: claim.context, proposed_result: proposed }) },
+        { role: "user", content: JSON.stringify({ claim: claim.text, geo_spaces: spaceNames(claim), context: claim.context, proposed_result: proposed }) },
       ],
       response_format: { type: "json_schema", json_schema: { name: "verdict", strict: true, schema: SCHEMA } },
     });

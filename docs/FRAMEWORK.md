@@ -1,4 +1,4 @@
-# Political leaning and ideology scoring framework (framework-v2.0)
+# Political leaning and ideology scoring framework (framework-v2.1)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 

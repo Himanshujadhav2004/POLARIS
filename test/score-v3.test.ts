@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { parseDecision } from "../src/agent/v3/decisions.js";
+import { buildScorerMessage } from "../src/agent/v3/prompt.js";
 import {
   allPass,
   checkIdeology,
@@ -229,6 +230,15 @@ describe("checkIdeology (I3, I6)", () => {
     const t = "Texas should raise taxes on corporations and billionaires to fund targeted tax credits";
     const { candidates } = resolveIdeologies([{ name: "Social democrat", tenet: "T2", evidence: "raise taxes on corporations and billionaires" }], t, { "Social democrat": 0.96 });
     expect(checkIdeology({ ...ok, candidate: candidates[0]!, leaning: "Center left" })).toEqual([expect.stringMatching(/belief T2 is shared/)]);
+  });
+});
+
+describe("buildScorerMessage", () => {
+  it("tells the models which Geo space a claim is in, so its country is clear (P3)", () => {
+    const msg = JSON.parse(
+      buildScorerMessage({ id: "c", text: "Mail-in voting should be abolished", spaceIds: ["4582fbbee28a16589154f7e36f1ee3c5", "unknown"], isFactual: null, context: {}, leaningIds: [] }),
+    );
+    expect(msg.geo_spaces).toEqual(["US Politics"]);
   });
 });
 
