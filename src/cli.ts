@@ -53,8 +53,9 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   eval3 [--concurrency N]      Run agent v3 over evals/dev-set.json; writes evals/results/v3.<framework>.json
   bench [--file evals/test-set-v1.json] [--concurrency N]
                                Run agent v3 over the test set; writes evals/results/bench.<set>.<framework>.json
-  fresh-set [--seed 3] [--pool 45] [--per-space 10] [--labelled 6] [--concurrency N]
-                               Score never-used claims from every space and pick the 10-per-space QA sample;
+  fresh-set [--seed 3] [--pool 10] [--per-space 10] [--labelled 6] [--concurrency N]
+                               Score never-used claims from every space (10 each by default: 70 claims)
+                               and pick the 10-per-space QA sample;
                                writes evals/fresh/fresh-seed<N>/fresh.json
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
                                Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
@@ -255,7 +256,7 @@ async function main(argv: string[]): Promise<void> {
           geo,
           agent,
           seed,
-          pool: Number(values.pool ?? 45),
+          pool: Number(values.pool ?? 10),
           perSpace: Number(values["per-space"] ?? 10),
           labelled: Number(values.labelled ?? 6),
           concurrency: Number(values.concurrency ?? 4),
