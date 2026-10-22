@@ -8,7 +8,9 @@ import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
+import { buildQaSample } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
+import { exportQaSample } from "./qa/export.js";
 import { seededRng } from "./util/random.js";
 
 const HELP = `Usage: npm run cli -- <command> [options]
@@ -26,6 +28,8 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                Label claims and print the result
   eval [--models a,b] [--concurrency N]
                                Score models on evals/dev-set.json; writes evals/results/
+  qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
+                               Build the reviewer sample; writes qa/qa_sample.xlsx, .csv and .json
 `;
 
 async function main(argv: string[]): Promise<void> {
@@ -38,6 +42,9 @@ async function main(argv: string[]): Promise<void> {
       model: { type: "string" },
       models: { type: "string" },
       concurrency: { type: "string" },
+      pool: { type: "string" },
+      "per-space": { type: "string" },
+      labelled: { type: "string" },
       help: { type: "boolean", short: "h" },
     },
   });
@@ -109,6 +116,30 @@ async function main(argv: string[]): Promise<void> {
       try {
         const summaries = await runEval({ geo, taxonomy, state, models, concurrency: Number(values.concurrency ?? 6) });
         console.log(renderSummary(summaries));
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "qa-sample": {
+      const taxonomy = await fetchTaxonomy(geo);
+      const classifier = new Classifier(taxonomy, { model: values.model });
+      const state = new RunState();
+      try {
+        const sample = await buildQaSample({
+          geo,
+          classifier,
+          state,
+          seed: Number(values.seed ?? 1),
+          pool: Number(values.pool ?? 60),
+          maxRounds: 2,
+          perSpace: Number(values["per-space"] ?? 10),
+          labelled: Number(values.labelled ?? 6),
+          concurrency: Number(values.concurrency ?? 6),
+          log: (line) => console.log(line),
+        });
+        const files = await exportQaSample(sample, taxonomy);
+        console.log(`\nWrote ${sample.rows.length} rows:\n${files.map((f) => `  ${f}`).join("\n")}`);
       } finally {
         state.close();
       }

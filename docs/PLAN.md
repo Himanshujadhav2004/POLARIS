@@ -55,6 +55,26 @@ Fill the **Leanings** property on Geo claims with a Political leaning and/or an 
 | 6 | Local dry run for Geo | Per-space operation files and a readable list, ready for manual proposals |
 | 7 | Ongoing | Scheduled labelling of new claims |
 
+## QA sample findings (Phase 3, seed 1)
+
+Share of random claims the agent labelled (gpt-5.5, prompt v1):
+
+| Space | Classified | Labelled |
+|---|---|---|
+| US Politics | 119 | 3 (2.5%) |
+| Health | 120 | 0 |
+| Crypto | 120 | 1 (0.8%) |
+| AI | 120 | 0 |
+| World affairs | 120 | 6 (5%) |
+| Podcasts | 120 | 1 (0.8%) |
+| Relationships | 60 | 7 (12%) |
+
+- **Most claims are reports, not positions.** Of about 820 pool claims, 632 were left blank as factual reports and 124 as apolitical.
+- **QA sample makeup:** the 70 rows are 17 labelled and 53 blank, so the review mostly tests whether blanks are right.
+- **Phase 5 cost:** most of the spend will go to confirming blanks. A cheap pre-filter that only removes obvious reports is worth measuring before the full run.
+  - A pre-filter mistake means a missed label, not a wrong one.
+  - The final label always comes from gpt-5.5.
+
 ## Proposal format (prepared locally, submitted by hand)
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

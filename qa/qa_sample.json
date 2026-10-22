@@ -1,0 +1,1191 @@
+{
+  "generatedAt": "2026-10-22T07:16:08.248Z",
+  "model": "gpt-5.5-2026-04-23",
+  "promptVersion": "v1",
+  "taxonomyFingerprint": "29b6190c8354",
+  "seed": 1,
+  "stats": [
+    {
+      "space": "us-politics",
+      "claimsInSpace": 28132,
+      "pool": 119,
+      "labelled": 3,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "health",
+      "claimsInSpace": 32872,
+      "pool": 120,
+      "labelled": 0,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "crypto",
+      "claimsInSpace": 39498,
+      "pool": 120,
+      "labelled": 1,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "ai",
+      "claimsInSpace": 29336,
+      "pool": 120,
+      "labelled": 0,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "world-affairs",
+      "claimsInSpace": 40414,
+      "pool": 120,
+      "labelled": 6,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "podcasts",
+      "claimsInSpace": 216887,
+      "pool": 120,
+      "labelled": 1,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "relationships",
+      "claimsInSpace": 2506,
+      "pool": 60,
+      "labelled": 7,
+      "errors": 0,
+      "rows": 10
+    }
+  ],
+  "rows": [
+    {
+      "space": "us-politics",
+      "claimId": "be8b29b591ce5c6fb42c56e53b940e37",
+      "text": "Universities remaining politically neutral and respecting both sides of an issue can uphold freedom of speech",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center",
+        "ideologies": [
+          "Classical liberal"
+        ],
+        "confidence": "medium",
+        "evidence": "remaining politically neutral and respecting both sides of an issue can uphold freedom of speech",
+        "rationale": "The claim endorses institutional neutrality and even-handed treatment of opposing views as a way to protect free speech. That is a broadly centrist/classical-liberal stance rather than a clearly left or right policy position.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7f7335d40e234a958906f2a572560476",
+        "c42000dc8f0643e4ae2b3e792c55ca39"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "cdc12bc686034d13ae93c252e86b2a20",
+      "text": "Removing conversations about new technologies like COVID vaccines from the public sphere is dangerous for freedom of speech and societal discourse",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Classical liberal"
+        ],
+        "confidence": "medium",
+        "evidence": "dangerous for freedom of speech and societal discourse",
+        "rationale": "The claim argues against removing public discussion of technologies like COVID vaccines on free-speech and open-discourse grounds. That is a civil-liberties position associated with classical liberalism, but it does not map cleanly to a single left-right leaning.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "c42000dc8f0643e4ae2b3e792c55ca39"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "6beb212c5bbf563fb8c9750010624620",
+      "text": "Social media companies have a responsibility to remove AI-generated disinformation to safeguard their users",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "have a responsibility to remove AI-generated disinformation to safeguard their users",
+        "rationale": "The claim endorses proactive content moderation against disinformation, a position commonly associated with mainstream liberal or center-left approaches to platform governance and user protection. Its exact placement is somewhat context-dependent because concern about disinformation can appear across the spectrum.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "2dcd3e2251484786b79e90cc0d3d8f21",
+      "text": "Prosecutors argued that Karmelo Anthony intentionally escalated the situation and threatened Austin Metcalf before killing him",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports prosecutors' argument in a criminal case without endorsing that view or taking a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "effaff57191f414c867b2bfed0abe695",
+      "text": "Dane County Circuit Judge Everett Mitchell ruled on August 4, 2026, that Wisconsin's paper absentee ballot system violates the Americans with Disabilities Act by denying voters with print disabilities the opportunity to vote privately and independently.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a court ruling about Wisconsin's absentee ballot system rather than itself advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "6dd186e8cd144a0a94dacaa38dbdb26d",
+      "text": "Republican Senators John Cornyn and Thom Tillis agreed to support Todd Blanche's nomination after receiving written confirmation that the anti-weaponization fund was terminated",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports that specific senators agreed to support a nomination after receiving confirmation about a fund. It does not itself endorse or oppose the nomination, the fund, or any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "a81f4f69e9f04bcd81662a33f50ae60b",
+      "text": "The Department of Justice has secured permanent injunctions against similar in-state tuition policies for undocumented students in Texas, Kentucky, Oklahoma, Nebraska, Illinois, and Kansas.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports legal actions taken by the Department of Justice against tuition policies without endorsing or opposing those policies.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "2dcd6495507140c4939857351701f912",
+      "text": "A spokesperson for John Cornyn's campaign responded to Ken Paxton's announcement by calling him a \"fraud.\"",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a campaign spokesperson's characterization of Ken Paxton without endorsing it as the claim's own position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "35cf48fdc5a14c0cb34b2f3a42e9aa34",
+      "text": "According to AdImpact data, total spending in the Texas Senate contest between James Talarico and Ken Paxton has exceeded $440 million, with Republicans spending $323 million and Democrats spending $116 million",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports campaign spending figures attributed to AdImpact data and does not endorse a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "a133cd82a4734011876d1e2ec7706dfb",
+      "text": "Israeli forces informed the volunteer group of roughly 80 people detained near Nahalin that they had entered a closed military zone before taking them to a police station in an Israeli settlement on two separate buses",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports actions by Israeli forces and the detention of a volunteer group without endorsing or advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "98613f4b96e0484d821898d082f33065",
+      "text": "Only 91% of Colorado kindergartners have gotten at least one dose of the MMR vaccine",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a vaccination statistic for Colorado kindergartners without advocating a policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "24181edd0c484759ac4c6143487d7a1d",
+      "text": "The epithelial barrier theory developed by Cezmi Akdis proposes that damage to protective cell layers in the skin, respiratory tract, and gastrointestinal system contributes to allergic and chronic inflammatory diseases.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports a scientific theory about disease mechanisms and does not advocate a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "8ce5ec485ca54dbe86d7534d8c356752",
+      "text": "The World Health Organization raised its risk level for the disease in DR Congo to \"very high\" on May 22, 2026",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "Reports a WHO risk-level assessment and date without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "cb77f8fb0e724fe19f282088f1dc8459",
+      "text": "A recall does not necessarily damage a brand's reputation if the company communicates it properly and does not deflect",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is business/public-relations advice about handling product recalls and brand reputation, with no political or ideological stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "cb79387bde504ccc9f5febb98e602cc9",
+      "text": "The human tissue transplanted into Stanford University's xenocortical mice spontaneously generated specialized cell types, including pyramidal projection neurons and von Economo neurons, which are typically absent in ordinary rodent brains",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports a scientific finding about transplanted human tissue in mice and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "173278d600f940eaab41a918d5b4d8be",
+      "text": "Polio eradication: Global public health effort to permanently stop transmission of wild poliovirus through vaccination, surveillance, and outbreak response, with the goal of eliminating the disease worldwide.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally defines a global public health effort and its methods/goals without advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "7289dd845c27474387c8afb00d0a6551",
+      "text": "Off-label drug use continues to be an active area of health policy and regulatory development.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally describes off-label drug use as an area of policy and regulatory activity without advocating any policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "cfbf1ac661ee466499f30e89a5995619",
+      "text": "Jefferies analyst Faisal Khurshid characterized the acquisition as a prudent deal with low risk and strong upside, noting the Fabry disease market is worth over $2 billion",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an analyst's characterization of a business acquisition and market size without endorsing a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "39f47e5be0fc4c088675337b5596870e",
+      "text": "The Guinea-Bissau hepatitis B trial will enroll 14,000 newborns, giving half the newborn dose at birth and withholding it from the other half for six weeks.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports the design and enrollment plan of a medical trial without advocating a political or policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "079cb69f258d47c986ee09e6b0857299",
+      "text": "The University of St Andrews researchers describe their findings on GLP-1 drugs and birth defects as reassuring for women who may have been exposed during pregnancy",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports how researchers characterize medical findings and does not advocate a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "17d1bac3decc4007a0fc3df90c456846",
+      "text": "Robinhood's 10x leveraged crypto perpetuals pose unacceptable financial risks to retail investors",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "pose unacceptable financial risks to retail investors",
+        "rationale": "The claim takes a consumer/investor-protection stance against a high-risk financial product, implying support for stricter limits or regulation of retail access. That is conventionally associated with center-left financial regulation, though the position can attract broader support.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "crypto",
+      "claimId": "8aae58f46f454c0eab17cc49df83d719",
+      "text": "Hyperliquid Strategies Inc. reported a net income of $305.5 million, which was primarily driven by $709.9 million in unrealized HYPE token gains",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a company's financial results and the source of its net income without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "8aadd3a0bf8c4f8dbc8a7a51f61fbdf1",
+      "text": "SpaceX committed to protecting and restoring coastal wetlands, working with conservation agencies, and keeping a portion of Pecan Island undeveloped",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports SpaceX's stated commitments and planned actions regarding wetlands and undeveloped land without itself advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "4396461c7b4340ffacf8327cdf240dbc",
+      "text": "The total value locked in the Sui decentralized finance ecosystem has declined to approximately $469 million to $470.38 million, representing an 82% drop from its peak of $2.58 billion",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports financial metrics about a decentralized finance ecosystem and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "2c2b7e35d9874e98bec17543880eea7a",
+      "text": "The Tron network was third for stablecoin volume in June 2026, processing $320 billion",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports a financial/technical metric about stablecoin transaction volume without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "a4694f59a73048d096652b5d1a0aa589",
+      "text": "Amy Oldenburg spoke at the Bitcoin Conference in Las Vegas in May 2026",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports that Amy Oldenburg spoke at a conference, without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "989e32b0a5f84ccfb584962cc12a2966",
+      "text": "Donald Jackson served as CTO of BVNK, establishing an engineering culture focused on deep systems understanding rather than merely operating APIs",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a business role and company engineering culture without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "25856ad09e854d0483576618a6d2f4d4",
+      "text": "Empire Market co-founder Raheim Hamilton of Suffolk, Virginia, pleaded guilty in January 2026 to a federal drug conspiracy charge for operating the dark web platform.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a legal event—Hamilton pleaded guilty to a federal drug conspiracy charge—without advocating a policy or political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "b9d2d9f9c44a493881cbee020b5f7288",
+      "text": "The simultaneous departures of Chaos Labs, BGD Labs, and ACI suggest systemic governance friction within Aave rather than isolated disagreements",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim analyzes internal governance dynamics within a crypto project and does not advocate a political, legal, economic, or social policy position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "ffe53e2114424206a53da1bd577c520e",
+      "text": "Central banks, major asset allocators and large sovereign wealth funds currently prefer gold over Bitcoin as a store of value",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports the current investment preferences of central banks and asset allocators without advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "1d0558ccc7bd4e269293157f5329729d",
+      "text": "On Tuesday, September 22, 2026, New Jersey fined data center operator DataOne $1.07 million for violating the state's Air Pollution Control Act",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a government enforcement action and fine without endorsing or opposing the law, the fine, or environmental regulation.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "edbd4ee2e34d41ada32d22c810ec5752",
+      "text": "Claude is an artificial intelligence-powered coding assistant",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally describes Claude as an AI-powered coding assistant and takes no political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "1c2920aca7994f45a5343284855fdb62",
+      "text": "On September 8, 2026, three U.S. cybersecurity and law enforcement agencies issued a joint statement accusing Chinese artificial intelligence companies of engaging in aggressive, industrial-scale distillation activities",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports that U.S. agencies issued an accusation against Chinese AI companies without endorsing the accusation or taking a policy position itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "a21435a91dcc409cae0c170109f0674d",
+      "text": "Reuters reported on October 15, 2026, that it could not immediately verify Bloomberg News' report of a potential chip supply arrangement between ByteDance Ltd. and MediaTek Inc.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports Reuters' inability to verify another outlet's report about a potential business arrangement, without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "7bab81ecbf084a858b90fc819abd846a",
+      "text": "Preferred Networks Inc. plans to deliver samples of its newest custom-designed chips to customers in the first half of 2027",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a company's planned delivery timeline for chip samples and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "dd844efc7d9c4cf09d46d71caab538a9",
+      "text": "In 2018, Google dealt with widespread employee protests over Project Maven, a military contract in which Google agreed to build AI products for the Pentagon's analysis of drone footage",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports Google employee protests and a military contract without endorsing or opposing a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "9166bc0e09814988b0379a1029e2f44d",
+      "text": "Aschenbrenner previously worked at the Future Fund, the philanthropic arm of the collapsed crypto firm FTX",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports Aschenbrenner's prior employment and describes the Future Fund's affiliation with FTX without advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "a4eff75c472e4d9395b2dbcefa30cbe8",
+      "text": "Justice C. Shannon Bacon criticized Stephen Aarons during an August 21, 2026 hearing, stating that the risks of AI hallucinations are widely known and that Aarons had violated multiple code of conduct provisions",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Justice C. Shannon Bacon said during a hearing and describes an alleged code-of-conduct violation, without itself advocating a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "7ee1f269d67b49b080de8a14ce7eeb5a",
+      "text": "China's domestic EUV lithography machine development remains at the prototype stage",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports the development status of a technology in China and does not advocate a political position or policy.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "5b42164e63f94dcf945fd67d2768e546",
+      "text": "Oak Ridge National Laboratory (ORNL) leads AI-enabled physical manufacturing and high-performance scientific modeling for the project",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an institutional role in a project and does not advocate a political or policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "204b06e5cef44c4fa69c4d52bf403184",
+      "text": "The U.S.-DRC partnership should remain open to investors from countries outside the United States",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Globalist"
+        ],
+        "confidence": "medium",
+        "evidence": "should remain open to investors from countries outside the United States",
+        "rationale": "The claim advocates keeping a U.S.-DRC partnership open to foreign investors, a pro-international investment stance associated with globalist economic openness. It does not map cleanly onto a left-right leaning because support for foreign investment can appear across the spectrum.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "bae9b302e5eb4ac3a67951f1131abd1e"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "fdfce452c2fc45d4a2b069550b0d6a59",
+      "text": "The mass demolition of entire Palestinian communities amounts to forcible transfer",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "mass demolition of entire Palestinian communities amounts to forcible transfer",
+        "rationale": "The claim adopts a condemnatory human-rights/legal framing of Israeli demolitions of Palestinian communities, a position commonly associated with left pro-Palestinian politics. It does not clearly express a named ideology beyond that stance.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "3628835899e04b4cbd2bdfc1027c53d3"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "0a0519b902624a1283fa5da620cf3220",
+      "text": "The California Coastal Commission's strict permitting process is justified despite emergency threats to infrastructure",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [
+          "Environmentalist"
+        ],
+        "confidence": "medium",
+        "evidence": "strict permitting process is justified despite emergency threats to infrastructure",
+        "rationale": "The claim endorses a strict coastal regulatory permitting process even under infrastructure pressure, a stance conventionally associated with environmental regulation and center-left politics. The environmentalist ideology is implied by support for the Coastal Commission’s protective permitting regime.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78",
+        "fc34ee62e0a843779741a251140c546b"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "76f6dd5eac9e4068b585393a9ead2e59",
+      "text": "Latvia should prioritise defence spending despite domestic cost-of-living pressures",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "should prioritise defence spending despite domestic cost-of-living pressures",
+        "rationale": "The claim advocates prioritizing military spending over domestic economic relief, a stance conventionally associated with center-right politics emphasizing national security and fiscal tradeoffs. In Latvia, defense policy can have broad cross-party support, so the placement is somewhat context-dependent.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "eff4319d8daa4ee3bd335220cef2fa58",
+      "text": "ICC member states should protect the Court from the effects of U.S. institutional sanctions",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Globalist"
+        ],
+        "confidence": "high",
+        "evidence": "ICC member states should protect the Court from the effects of U.S. institutional sanctions",
+        "rationale": "The claim advocates defending an international court through cooperation among member states, which clearly reflects support for international institutions. It does not map cleanly onto a single left-right leaning.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "bae9b302e5eb4ac3a67951f1131abd1e"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "1b825794e1af48f89506342e17abee8f",
+      "text": "Jammu and Kashmir is an integral and inalienable part of India",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Nationalist"
+        ],
+        "confidence": "high",
+        "evidence": "integral and inalienable part of India",
+        "rationale": "The claim asserts Indian sovereignty over a disputed territory in explicitly national terms. This is a nationalist territorial position, but it is not inherently left- or right-wing because it is held across much of India's political spectrum.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "949d526009a5476b809b0ab9795907aa"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "e1443d1b8aa74ecb9c9238e85ac7115e",
+      "text": "The Iran war has undermined OPEC+ members' ability to agree fairly on future output quotas",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim makes an analytical/factual assertion about how the Iran war affects OPEC+ quota negotiations, without advocating a political position or policy.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "9674df097d2247ef954bb4cfd21f9a81",
+      "text": "Gianni Infantino said organizing the World Cup in the U.S. would have been \"impossible\" without President Donald Trump's engagement",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Gianni Infantino said about Trump's engagement in organizing the World Cup; it does not itself endorse a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "4d19cb128b1c4b0e9c49bb1062d92770",
+      "text": "China is a credible mediator between Saudi Arabia, Iran and the Houthis",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim evaluates China's diplomatic credibility in a regional conflict but does not advocate a policy or express a recognizable left-right political position or ideology.",
+        "abstain_reason": "ambiguous"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "4d16b2ca8c9f4fdd93e0d87b1d28960a",
+      "text": "President Teodoro Obiang Nguema Mbasogo held a private meeting with Pope Leo XIV on Tuesday, April 21, 2026",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports that President Teodoro Obiang Nguema Mbasogo held a private meeting with Pope Leo XIV on a specific date. It does not advocate or endorse any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "fa04dd88a5774f7cbfb4db7143060f8c",
+      "text": "The principle that no one should be a judge in their own cause is a fundamental justification for the separation of powers.",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Classical liberal"
+        ],
+        "confidence": "medium",
+        "evidence": "no one should be a judge in their own cause is a fundamental justification for the separation of powers",
+        "rationale": "The claim endorses separation of powers and impartial rule-of-law principles, which are central to classical liberal constitutionalism. It does not map cleanly to a left-right leaning because support for separation of powers is broadly shared across mainstream politics.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "c42000dc8f0643e4ae2b3e792c55ca39"
+      ]
+    },
+    {
+      "space": "podcasts",
+      "claimId": "bf26c6d7b16c43b0b2229405956e911c",
+      "text": "The 'outer loop' in agent systems can include feedback signals, evaluations, and human input.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a technical statement about agent systems and contains no political stance or policy position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "2e897b0e5da14ec081ffb967f9479b7a",
+      "text": "GPT models have a vocabulary of approximately 50,000 tokens.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a technical factual statement about GPT model token vocabularies with no political stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "6a5d0a9e30a64ea9b852893199fdb9fb",
+      "text": "Donald Trump gave Iran an ultimatum to open the Strait of Hormuz by the evening of April 7, 2026.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an alleged action by Donald Trump without endorsing or opposing the ultimatum or any policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "38133b3723ef4c6bb4925a45a9312d3c",
+      "text": "Ether's price peaked around $4,900 in the last cycle.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a neutral factual statement about Ether's historical price and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "9f6ddcb3203a4d65b63246f40c81ee7a",
+      "text": "The Watchers taught humanity advanced knowledge and technology in exchange for their daughters.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim describes a religious or mythological narrative and takes no position on policy, law, rights, the economy, or political organization.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "d542cccbe89741c7bd67f5d1b2c2da05",
+      "text": "Chickens are carnivores and have been observed eating small animals like mice.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim is a neutral biological statement about chickens' diet and has no political content or policy stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "5f400bf34a184dccb51e6da8404ea2c5",
+      "text": "The benchmark 10-year Treasury yield finished the day at 5.23%",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a neutral report of a financial market figure and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "d624f1dd64964c029b900f461678ca7d",
+      "text": "The Federal Reserve voted to keep interest rates at their current levels.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim neutrally reports a Federal Reserve decision without endorsing any policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "55fe367fba3a4498be4901bdbbbbc1af",
+      "text": "Cave art appeared when human melanin degraded into dopamine, prompting artistic creation.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim makes a purported factual/scientific assertion about human biology and cave art, without advocating any political position or ideology.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "f2891f4caf7d1d3301e33d5b35e7df9a",
+      "text": "No-fault divorce should be abolished",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Right",
+        "ideologies": [
+          "Conservative",
+          "Traditionalist"
+        ],
+        "confidence": "high",
+        "evidence": "No-fault divorce should be abolished",
+        "rationale": "Advocates eliminating a liberalized divorce regime and making marital dissolution harder, a socially conservative position associated with traditional views of marriage.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7a74f432548c417eb4abf9c45f3a7100",
+        "4e93d425a84e40d1a2403263de57a847",
+        "350419395b25466eb84a26746a74873e"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "f0646be0dd3b449e92c020d3867ebd77",
+      "text": "Individuals are in a better position to benefit themselves and others within the institution of marriage",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [
+          "Traditionalist"
+        ],
+        "confidence": "medium",
+        "evidence": "better position to benefit themselves and others within the institution of marriage",
+        "rationale": "The claim endorses marriage as a socially beneficial institution, a position commonly associated with traditionalist and center-right family-values politics. Its wording is broad and not tied to a specific policy, so the placement is only moderately certain.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3",
+        "350419395b25466eb84a26746a74873e"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "061379d97ad258bb95134b5e5031a68c",
+      "text": "Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior, regardless of the intention",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Left",
+        "ideologies": [
+          "Feminist"
+        ],
+        "confidence": "high",
+        "evidence": "Traditional gender roles... communicate the idea that women are inferior",
+        "rationale": "The claim criticizes traditional gender roles as implying women's inferiority, a position conventionally associated with feminist and left-leaning views on gender equality.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "3628835899e04b4cbd2bdfc1027c53d3",
+        "5f90b6eaac214ef0911195d9c56983e9"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "20b6085c0d2c54fb8d5bc7e531b0e4c4",
+      "text": "Without pre-made scripts from gender roles, people may be unable to effectively negotiate their roles in new relationships, especially when young",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Right",
+        "ideologies": [
+          "Traditionalist",
+          "Conservative"
+        ],
+        "confidence": "medium",
+        "evidence": "pre-made scripts from gender roles",
+        "rationale": "The claim presents traditional gender-role scripts as socially useful or necessary for relationships, which aligns with conservative/traditionalist views about inherited social roles. It is not an extreme position and does not invoke a specific policy.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7a74f432548c417eb4abf9c45f3a7100",
+        "350419395b25466eb84a26746a74873e",
+        "4e93d425a84e40d1a2403263de57a847"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "543681a7651f57c49cc425161b9bc203",
+      "text": "Women possess the autonomy to explore their sexuality and engage in safe, consensual relationships as they choose",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Left",
+        "ideologies": [
+          "Feminist"
+        ],
+        "confidence": "high",
+        "evidence": "Women possess the autonomy to explore their sexuality and engage in safe, consensual relationships as they choose",
+        "rationale": "The claim endorses women’s sexual autonomy and consensual choice, a stance conventionally associated with feminist and socially liberal-left politics.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "3628835899e04b4cbd2bdfc1027c53d3",
+        "5f90b6eaac214ef0911195d9c56983e9"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "c0831b6ffc6159ddbac421ad922bf066",
+      "text": "Adopting traditional gender roles can eliminate the need for a couple to negotiate their respective roles from scratch",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Right",
+        "ideologies": [
+          "Traditionalist",
+          "Conservative"
+        ],
+        "confidence": "medium",
+        "evidence": "Adopting traditional gender roles can eliminate the need",
+        "rationale": "The claim presents traditional gender roles as beneficial for couples, aligning with a socially conservative and traditionalist view of family roles. It is not a policy claim, so the placement is somewhat less direct.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7a74f432548c417eb4abf9c45f3a7100",
+        "350419395b25466eb84a26746a74873e",
+        "4e93d425a84e40d1a2403263de57a847"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "98ffb89d208c533fa85e0b7ec31130ba",
+      "text": "Gender can influence a person's openness and connectedness, but it is not the sole determining factor",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim makes a descriptive statement about gender and personality traits without advocating any policy, rights claim, or political program.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "766c95e0f8b45e67a74e91760c33a3f1",
+      "text": "In previous generations, people would stay in problematic and harmful marriages because they felt obligated to do so",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim makes a descriptive assertion about past marriage norms and their effects, without directly advocating a policy or political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "93dc155696275eb7bfe58641108869c3",
+      "text": "AI companions can be too agreeable or reduce people's motivation to meet others in person",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim expresses a concern about social and relationship effects of AI companions, but it does not advocate a political position about policy, law, rights, the economy, or governance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "938d7790577453c5b5eba550461a9713",
+      "text": "The bill is not the only cost associated with dating",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim is about dating costs and does not advocate a political position or implicate left-right politics.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    }
+  ]
+}
