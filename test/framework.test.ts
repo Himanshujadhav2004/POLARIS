@@ -3,12 +3,12 @@ import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
 import { ALL_CRITERIA, CONFIDENCE, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT } from "../src/framework/rubric.js";
 
-/** Ideology values on Geo on 2026-10-22, minus the excluded duplicate "Libertarian". */
+/** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted), minus the excluded duplicate "Libertarian". */
 const GEO_IDEOLOGIES = [
   "Anarchist", "Christian conservative", "Classical liberal", "Communist", "Conservative", "Democratic socialist",
-  "Environmentalist", "Fascist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal",
+  "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal",
   "Libertarianism", "MAGA", "Marxist", "Nationalist", "Neoconservative", "Neoliberal", "Paleoconservative",
-  "Populist", "Progressive", "Secularist", "Social democrat", "Socialist", "Traditionalist", "Zionist",
+  "Populist", "Progressive", "Secularist", "Social democrat", "Socialist", "Traditionalist",
 ];
 
 describe("rubric", () => {

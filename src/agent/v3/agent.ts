@@ -1,7 +1,14 @@
 import OpenAI from "openai";
 import { OPENAI_MODEL, requireEnv } from "../../config.js";
 import { IDEOLOGY_CARDS, type IdeologyCard } from "../../framework/ideologies.js";
-import { FRAMEWORK_VERSION, IDEOLOGY_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
+import {
+  FRAMEWORK_VERSION,
+  IDEOLOGY_DEFINITION,
+  IDEOLOGY_RULES,
+  POLITICAL_LEANING_DEFINITION,
+  STANCE_GATE,
+  type LeaningName,
+} from "../../framework/rubric.js";
 import type { Claim } from "../../geo/claims.js";
 import type { Taxonomy } from "../../geo/taxonomy.js";
 import type { RunState } from "../../pipeline/state.js";
@@ -100,6 +107,14 @@ export class ScoringAgent {
         `Ideology cards are out of sync with Geo. Missing cards: ${geoNames.filter((n) => !cardNames.includes(n)).join(", ") || "none"}; ` +
           `cards not in Geo: ${cardNames.filter((n) => !geoNames.includes(n)).join(", ") || "none"}.`,
       );
+    }
+    const defs = taxonomy.definitions;
+    if (defs) {
+      const stale = [
+        defs.politicalLeaning !== null && defs.politicalLeaning !== POLITICAL_LEANING_DEFINITION ? `Political leaning (Geo now says: "${defs.politicalLeaning}")` : null,
+        defs.ideology !== null && defs.ideology !== IDEOLOGY_DEFINITION ? `Ideology (Geo now says: "${defs.ideology}")` : null,
+      ].filter(Boolean);
+      if (stale.length) throw new Error(`Framework definitions are out of sync with Geo: ${stale.join("; ")}. Update src/framework/rubric.ts.`);
     }
     this.model = options.model ?? OPENAI_MODEL;
     this.client = options.client ?? new OpenAI({ apiKey: requireEnv("OPENAI_API_KEY"), maxRetries: 5, timeout: 300_000 });

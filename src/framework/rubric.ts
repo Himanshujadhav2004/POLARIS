@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v1.1";
+export const FRAMEWORK_VERSION = "framework-v1.2";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -25,8 +25,9 @@ export type LeaningName = (typeof LEANING_BY_SCORE)[keyof typeof LEANING_BY_SCOR
  */
 export const LEANINGS_LEFT_TO_RIGHT: readonly LeaningName[] = ["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"];
 
+/** Geo's own type descriptions. The agent refuses to run if Geo's live text differs (see ScoringAgent). */
 export const POLITICAL_LEANING_DEFINITION =
-  "A position on the left-right political spectrum, from far left to far right through the center. Declared bias and Detected bias both use it, so one scale compares an entity's claim with others' ratings.";
+  "Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.";
 export const IDEOLOGY_DEFINITION =
   "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.";
 

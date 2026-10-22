@@ -1,0 +1,2490 @@
+{
+  "summary": {
+    "testSet": "test-set-v1",
+    "framework": "framework-v1.2",
+    "items": 106,
+    "verdicts": {
+      "Correct": 94,
+      "Safe miss": 7,
+      "Wrong label": 3,
+      "Wrong ideology": 2,
+      "Error": 0
+    },
+    "confidentErrors": 0,
+    "leaningPrecision": {
+      "correct": 40,
+      "given": 43
+    },
+    "leaningCoverage": {
+      "correct": 27,
+      "expected": 34
+    },
+    "ideologyPrecision": {
+      "correct": 17,
+      "given": 19
+    },
+    "byCategory": {
+      "Clear left/right": {
+        "Correct": 19,
+        "Safe miss": 6,
+        "Wrong label": 0,
+        "Wrong ideology": 0,
+        "Error": 0
+      },
+      "Center": {
+        "Correct": 5,
+        "Safe miss": 0,
+        "Wrong label": 0,
+        "Wrong ideology": 1,
+        "Error": 0
+      },
+      "Far left/right": {
+        "Correct": 6,
+        "Safe miss": 1,
+        "Wrong label": 0,
+        "Wrong ideology": 0,
+        "Error": 0
+      },
+      "Ideology": {
+        "Correct": 13,
+        "Safe miss": 0,
+        "Wrong label": 0,
+        "Wrong ideology": 0,
+        "Error": 0
+      },
+      "Ambiguous or hedged": {
+        "Correct": 25,
+        "Safe miss": 0,
+        "Wrong label": 1,
+        "Wrong ideology": 0,
+        "Error": 0
+      },
+      "Conflicting": {
+        "Correct": 5,
+        "Safe miss": 0,
+        "Wrong label": 0,
+        "Wrong ideology": 1,
+        "Error": 0
+      },
+      "No-position trap": {
+        "Correct": 21,
+        "Safe miss": 0,
+        "Wrong label": 2,
+        "Wrong ideology": 0,
+        "Error": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "86547f225f1a492d826445470152883f",
+      "category": "Clear left/right",
+      "text": "ICE should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Progressive",
+        "Democratic socialist"
+      ],
+      "verdict": "Correct",
+      "reason": "Left is acceptable",
+      "confidentError": false,
+      "display": "Left",
+      "ideologies": [],
+      "confidence": 93,
+      "criteria": [
+        "NAT-2L: \"ICE should be abolished\""
+      ],
+      "explanation": "NAT-2L matched (direct): \"ICE should be abolished\". Independent probability for Left: 0.76. Verifier agreed. Confidence 93/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "982d12a85b4de99c59c3befc6c4c51c3",
+      "category": "Clear left/right",
+      "text": "Property taxes on people's homes should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Libertarianism",
+        "Populist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 71,
+      "criteria": [
+        "ECO-1R: \"Property taxes on people's homes should be abolished\""
+      ],
+      "explanation": "ECO-1R matched (direct): \"Property taxes on people's homes should be abolished\". The independent check favours Right (0.97), one step away; Center right gets 0.03. Verifier agreed. Confidence 71/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "b60172f03a102f2973466f5cc5a69798",
+      "category": "Clear left/right",
+      "text": "Mail-in voting should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [
+        "MAGA"
+      ],
+      "verdict": "Correct",
+      "reason": "Right is acceptable",
+      "confidentError": false,
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 87,
+      "criteria": [
+        "LAW-2R: \"Mail-in voting should be abolished\""
+      ],
+      "explanation": "LAW-2R matched (close): \"Mail-in voting should be abolished\". Independent probability for Right: 0.89. Verifier agreed. Confidence 87/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "d08075dfc965cb3a83ace89310296eb2",
+      "category": "Clear left/right",
+      "text": "The Department of Education should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative",
+        "Libertarianism"
+      ],
+      "verdict": "Correct",
+      "reason": "Right is acceptable",
+      "confidentError": false,
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [
+        "ECO-2R: \"The Department of Education should be abolished\""
+      ],
+      "explanation": "ECO-2R matched (direct): \"The Department of Education should be abolished\". Independent probability for Right: 0.99. Verifier agreed. Confidence 100/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "category": "Clear left/right",
+      "text": "Cash bail should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Progressive"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 65,
+      "criteria": [
+        "LAW-1L: \"Cash bail should be abolished\""
+      ],
+      "explanation": "LAW-1L matched (close): \"Cash bail should be abolished\". The independent check favours Left (0.81), one step away; Center left gets 0.16. Verifier agreed. Confidence 65/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "f7bdffdd5f06e4b760247767b6989a32",
+      "category": "Clear left/right",
+      "text": "The death penalty should be abolished",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Progressive",
+        "Humanist"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Center left or Left",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 58,
+      "criteria": [
+        "LAW-1L: \"The death penalty should be abolished\""
+      ],
+      "explanation": "LAW-1L matched (partial): \"The death penalty should be abolished\". That points to Center left, but confidence is only 58/100, so the result is Uncertain.",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "16148774ed6c490b9f8f58514d74df5e",
+      "category": "Clear left/right",
+      "text": "All illegal aliens should be deported",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Far right"
+      ],
+      "acceptableIdeologies": [
+        "Nationalist",
+        "MAGA"
+      ],
+      "verdict": "Correct",
+      "reason": "Right is acceptable",
+      "confidentError": false,
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 93,
+      "criteria": [
+        "NAT-2R: \"All illegal aliens should be deported\""
+      ],
+      "explanation": "NAT-2R matched (direct): \"All illegal aliens should be deported\". Independent probability for Right: 0.77. Verifier agreed. Confidence 93/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "cbff1fa13c3ec8f74e36501fc1d61780",
+      "category": "Clear left/right",
+      "text": "Foreign students who join campus protests should be deported",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [
+        "Nationalist",
+        "MAGA"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Right or Center right",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 30,
+      "criteria": [
+        "NAT-1R: \"Foreign students who join campus protests should be deported\""
+      ],
+      "explanation": "NAT-1R matched (partial): \"Foreign students who join campus protests should be deported\". That points to Center right, but confidence is only 30/100 (verifier: The quoted claim advocates deporting foreign students for joining campus protests, not for committing crimes or as ordinary border/workplace enforcement under NAT-1R. Because lawful protest is not a crime by itself, the cited criterion does not clearly match the claim.), so the result is Uncertain.",
+      "flags": [
+        "independent check suggests Nationalist (p=0.95); second look found no matching belief: The claim calls for deporting foreign students who join protests, but it does not explicitly frame this as protecting national identity, prioritizing national sovereignty, or opposing international bodies/outsiders in the required nationalist sense.",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "121d357639a54bc9a7526462c2f697d5",
+      "category": "Clear left/right",
+      "text": "Gender-affirming care for minors should be banned",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative",
+        "Traditionalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 71,
+      "criteria": [
+        "SOC-1R: \"Gender-affirming care for minors should be banned\""
+      ],
+      "explanation": "SOC-1R matched (direct): \"Gender-affirming care for minors should be banned\". The independent check favours Right (0.98), one step away; Center right gets 0.02. Verifier agreed. Confidence 71/100 (Medium).",
+      "flags": [
+        "independent check suggests Conservative (p=0.87); second look found no matching belief: The claim calls for banning gender-affirming care for minors, but it does not explicitly invoke preserving tradition, established institutions, gradual change, limited government, free enterprise, or traditional social norms. Inferring conservatism from the gender-policy topic alone would violate the rules.",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "1b4c590a4e58590c26006707a5972460",
+      "category": "Clear left/right",
+      "text": "Drag shows for children should be banned",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative",
+        "Traditionalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 66,
+      "criteria": [
+        "SOC-1R: \"Drag shows for children should be banned\""
+      ],
+      "explanation": "SOC-1R matched (close): \"Drag shows for children should be banned\". The independent check favours Right (0.79), one step away; Center right gets 0.21. Verifier agreed. Confidence 66/100 (Medium).",
+      "flags": [
+        "Conservative added after a second look (I5, p=0.81)",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "20f8caa87deb4fe0b983d1236ca0b6cf",
+      "category": "Clear left/right",
+      "text": "Abortion should be legal up to fetal viability",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Feminist",
+        "Liberal"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Center left or Left",
+      "confidentError": false,
+      "display": "Uncertain (signals disagree)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "SOC-0: \"Abortion should be legal up to fetal viability\""
+      ],
+      "explanation": "SOC-0 matched (close): \"Abortion should be legal up to fetal viability\". That points to Center, but the independent check favours Left (0.77), 2 steps away, so the leaning is Uncertain (rule A5).",
+      "flags": []
+    },
+    {
+      "id": "6bcb7138969c483faa46a922c046207e",
+      "category": "Clear left/right",
+      "text": "Abortion should be illegal even in cases of rape",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Far right"
+      ],
+      "acceptableIdeologies": [
+        "Christian conservative",
+        "Traditionalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Right is acceptable",
+      "confidentError": false,
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 89,
+      "criteria": [
+        "SOC-2R: \"Abortion should be illegal even in cases of rape\""
+      ],
+      "explanation": "SOC-2R matched (close): \"Abortion should be illegal even in cases of rape\". Independent probability for Right: 0.98. Verifier agreed. Confidence 89/100 (High).",
+      "flags": [
+        "independent check suggests Conservative (p=0.86); second look found no matching belief: The claim states a restrictive abortion position, but it does not explicitly argue for preserving tradition, gradual change, limited government, free enterprise, or traditional social norms. Per the rules, ideology cannot be inferred from the abortion topic alone."
+      ]
+    },
+    {
+      "id": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "category": "Clear left/right",
+      "text": "Late-term abortion should be illegal",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 72,
+      "criteria": [
+        "SOC-1R: \"Late-term abortion should be illegal\""
+      ],
+      "explanation": "SOC-1R matched (direct): \"Late-term abortion should be illegal\". The independent check favours Right (0.93), one step away; Center right gets 0.07. Verifier agreed. Confidence 72/100 (Medium).",
+      "flags": [
+        "independent check suggests Conservative (p=0.81); second look found no matching belief: The claim states a position on late-term abortion legality, but it does not explicitly argue from conservative core beliefs such as preserving established institutions, preferring gradual change, limited government/free enterprise combined with traditional social norms, or tradition-based moral norms.",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "97fdfead23a240f483555ff48b8ece5b",
+      "category": "Clear left/right",
+      "text": "Ordering abortion pills should be illegal",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [
+        "Christian conservative",
+        "Conservative"
+      ],
+      "verdict": "Correct",
+      "reason": "Right is acceptable",
+      "confidentError": false,
+      "display": "Potentially right",
+      "ideologies": [],
+      "confidence": 78,
+      "criteria": [
+        "SOC-2R: \"Ordering abortion pills should be illegal\""
+      ],
+      "explanation": "SOC-2R matched (partial): \"Ordering abortion pills should be illegal\". Independent probability for Right: 0.94. Verifier agreed. Confidence 78/100 (Medium).",
+      "flags": [
+        "independent check suggests Conservative (p=0.89); second look found no matching belief: The claim advocates making ordering abortion pills illegal, but it does not explicitly argue from conservative core beliefs such as preserving established institutions/norms, preferring gradual change, or combining limited government/free enterprise with traditional social norms. Per the instructions, ideology should not be inferred from the abortion topic alone."
+      ]
+    },
+    {
+      "id": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "category": "Clear left/right",
+      "text": "Race-based affirmative action in college admissions should be illegal",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative",
+        "Classical liberal"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 63,
+      "criteria": [
+        "SOC-1R: \"Race-based affirmative action in college admissions should be illegal\""
+      ],
+      "explanation": "SOC-1R matched (close): \"Race-based affirmative action in college admissions should be illegal\". The independent check favours Right (0.89), one step away; Center right gets 0.11. Verifier agreed. Confidence 63/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "2891bbcc75ef40ea8209a5f9b474a320",
+      "category": "Clear left/right",
+      "text": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Social democrat",
+        "Liberal",
+        "Progressive"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Center left",
+      "ideologies": [],
+      "confidence": 81,
+      "criteria": [
+        "ECO-1L: \"raise taxes on high earners\""
+      ],
+      "explanation": "ECO-1L matched (direct): \"raise taxes on high earners\". The independent check favours Left (0.60), one step away; Center left gets 0.38. Verifier agreed. Confidence 81/100 (High).",
+      "flags": [
+        "Social democrat added after a second look (I5, p=0.97)",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "e210a6fc4e564336b9cf4dae18dadf93",
+      "category": "Clear left/right",
+      "text": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Social democrat",
+        "Progressive"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [
+        "Social democrat (Clear)"
+      ],
+      "confidence": 72,
+      "criteria": [
+        "ECO-1L: \"Texas should raise taxes on corporations and billionaires to fund targeted tax credits\""
+      ],
+      "explanation": "ECO-1L matched (direct): \"Texas should raise taxes on corporations and billionaires to fund targeted tax credits\". The independent check favours Left (0.90), one step away; Center left gets 0.06. Verifier agreed. Confidence 72/100 (Medium). Ideology: Social democrat (belief T1: \"raise taxes on corporations and billionaires to fund targeted tax credits\", probability 0.96).",
+      "flags": [
+        "Social democrat added after a second look (I5, p=0.96)",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "7fea6e932b774cc0976a6ba5160a5882",
+      "category": "Clear left/right",
+      "text": "Congress should raise tax revenue rather than cut spending to reduce the deficit",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Social democrat",
+        "Liberal"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Center left or Left",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 52,
+      "criteria": [
+        "ECO-1L: \"raise tax revenue rather than cut spending to reduce the deficit\""
+      ],
+      "explanation": "ECO-1L matched (partial): \"raise tax revenue rather than cut spending to reduce the deficit\". That points to Center left, but confidence is only 52/100, so the result is Uncertain.",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "a29794bbc69a4bd0b75b7c8590f867bd",
+      "category": "Clear left/right",
+      "text": "The Trump administration should cut the FEMA workforce by 50%",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "MAGA",
+        "Libertarianism"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 60,
+      "criteria": [
+        "ECO-1R: \"should cut the FEMA workforce by 50%\""
+      ],
+      "explanation": "ECO-1R matched (close): \"should cut the FEMA workforce by 50%\". The independent check favours Right (1.00), one step away; Center right gets 0.00. Verifier agreed. Confidence 60/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "db169bb9591085a36daff2bc7bd018ed",
+      "category": "Clear left/right",
+      "text": "Europe should cut welfare spending to pay for defense",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Conservative"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 71,
+      "criteria": [
+        "ECO-1R: \"cut welfare spending\""
+      ],
+      "explanation": "ECO-1R matched (direct): \"cut welfare spending\". The independent check favours Right (0.98), one step away; Center right gets 0.02. Verifier agreed. Confidence 71/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "0e36eafead0f4106b2c4bf750a8507f8",
+      "category": "Clear left/right",
+      "text": "Discarding unused embryos from IVF should be illegal",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [
+        "Christian conservative",
+        "Traditionalist"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Right or Center right",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 48,
+      "criteria": [
+        "SOC-1R: \"Discarding unused embryos from IVF should be illegal\""
+      ],
+      "explanation": "SOC-1R matched (partial): \"Discarding unused embryos from IVF should be illegal\". That points to Center right, but confidence is only 48/100 (verifier: The quoted claim does support a right-leaning social-conservative position, but SOC-1R does not directly describe banning disposal of unused IVF embryos. Making embryo disposal illegal is a stronger embryo-personhood-style restriction than the listed mainstream center-right examples, so the proposed Center right/SOC-1R match is doubtful.), so the result is Uncertain.",
+      "flags": [
+        "independent check suggests Conservative (p=0.80); second look found no matching belief: The claim takes a restrictive position on IVF embryo disposal, but it does not explicitly argue for preserving established institutions or gradual change, nor does it combine limited government/free enterprise with traditional social norms. The ideology cannot be inferred from the reproductive ethics topic alone."
+      ]
+    },
+    {
+      "id": "c1870eeda558909aab71f379ca9743cf",
+      "category": "Clear left/right",
+      "text": "The government should cut funding to universities that fail to stop antisemitism",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 34,
+      "criteria": [
+        "SOC-1L: \"stop antisemitism\""
+      ],
+      "explanation": "SOC-1L matched (partial): \"stop antisemitism\". That points to Center left, but confidence is only 34/100 (verifier: The quoted evidence “stop antisemitism” is a broadly shared anti-discrimination goal and does not by itself show a center-left position. The contested position is the funding-cut sanction against universities, which is not clearly covered by SOC-1L and could be cross-cutting rather than Center left.), so the result is Uncertain.",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "e98817406d494ba5a67f7886ba50502c",
+      "category": "Clear left/right",
+      "text": "The federal government should cut funding to the Smithsonian over its exhibition content",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "MAGA",
+        "Conservative"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Center right or Right",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 50,
+      "criteria": [
+        "ECO-1R: \"federal government should cut funding to the Smithsonian\""
+      ],
+      "explanation": "ECO-1R matched (partial): \"federal government should cut funding to the Smithsonian\". That points to Center right, but confidence is only 50/100, so the result is Uncertain.",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "5d2ae72c5ad8629d59171f2b87a195ae",
+      "category": "Clear left/right",
+      "text": "Governments should end lawful immigration enforcement policies that cause disproportionate harm",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Progressive",
+        "Humanist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 65,
+      "criteria": [
+        "NAT-1L: \"Governments should end lawful immigration enforcement policies that cause disproportionate harm\""
+      ],
+      "explanation": "NAT-1L matched (close): \"Governments should end lawful immigration enforcement policies that cause disproportionate harm\". The independent check favours Left (0.84), one step away; Center left gets 0.16. Verifier agreed. Confidence 65/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "0b1e06a9387041a8b68521ee6009dde7",
+      "category": "Clear left/right",
+      "text": "The EU should cut its next long-term budget by hundreds of billions of euros",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Neoliberal",
+        "Conservative"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 72,
+      "criteria": [
+        "ECO-1R: \"should cut its next long-term budget by hundreds of billions of euros\""
+      ],
+      "explanation": "ECO-1R matched (direct): \"should cut its next long-term budget by hundreds of billions of euros\". The independent check favours Right (0.93), one step away; Center right gets 0.06. Verifier agreed. Confidence 72/100 (Medium).",
+      "flags": [
+        "Neoliberal added after a second look (I5, p=0.83)",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-c1",
+      "category": "Center",
+      "text": "Congress should pass a bill that funds more border agents and also legalizes Dreamers",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center is acceptable",
+      "confidentError": false,
+      "display": "Center",
+      "ideologies": [],
+      "confidence": 81,
+      "criteria": [
+        "NAT-0: \"funds more border agents and also legalizes Dreamers\""
+      ],
+      "explanation": "NAT-0 matched (direct): \"funds more border agents and also legalizes Dreamers\". The independent check favours Center left (0.50), one step away; Center gets 0.38. Verifier agreed. Confidence 81/100 (High).",
+      "flags": [
+        "independent check favours Center left (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-c2",
+      "category": "Center",
+      "text": "Abortion should be legal in the first trimester and restricted afterwards, except to protect the mother's health",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center",
+        "Center left",
+        "Center right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center is acceptable",
+      "confidentError": false,
+      "display": "Center",
+      "ideologies": [],
+      "confidence": 81,
+      "criteria": [
+        "SOC-0: \"Abortion should be legal in the first trimester and restricted afterwards, except to protect the mother's health\""
+      ],
+      "explanation": "SOC-0 matched (direct): \"Abortion should be legal in the first trimester and restricted afterwards, except to protect the mother's health\". The independent check favours Center right (0.44), one step away; Center gets 0.37. Verifier agreed. Confidence 81/100 (High).",
+      "flags": [
+        "independent check favours Center right (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-c3",
+      "category": "Center",
+      "text": "Tax rates should stay where they are, because neither raising nor cutting them is justified right now",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center is acceptable",
+      "confidentError": false,
+      "display": "Center",
+      "ideologies": [],
+      "confidence": 80,
+      "criteria": [
+        "ECO-0: \"Tax rates should stay where they are, because neither raising nor cutting them is justified right now\""
+      ],
+      "explanation": "ECO-0 matched (direct): \"Tax rates should stay where they are, because neither raising nor cutting them is justified right now\". Independent probability for Center: 1.00. Verifier disagreed: ECO-0 requires an explicit balance or compromise between market and state; the claim only advocates keeping current tax rates unchanged because changes are not justified right now. Center does not clearly follow from the cited criterion, and the political placement could depend on the existing tax context.. Confidence 80/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-c4",
+      "category": "Center",
+      "text": "Police departments should get more funding together with mandatory body cameras for every officer",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center is acceptable",
+      "confidentError": false,
+      "display": "Potentially center",
+      "ideologies": [],
+      "confidence": 79,
+      "criteria": [
+        "LAW-0: \"Police departments should get more funding together with mandatory body cameras for every officer\""
+      ],
+      "explanation": "LAW-0 matched (direct): \"Police departments should get more funding together with mandatory body cameras for every officer\". The independent check favours Center left (0.35), one step away; Center gets 0.30. Verifier agreed. Confidence 79/100 (Medium).",
+      "flags": [
+        "independent check favours Center left (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-c5",
+      "category": "Center",
+      "text": "The US should expand both nuclear power and wind and solar to cut emissions",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center",
+        "Center left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Wrong ideology",
+      "reason": "gave Environmentalist; acceptable: none",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [
+        "Environmentalist (Potential)"
+      ],
+      "confidence": 77,
+      "criteria": [
+        "ENV-1L: \"should expand both nuclear power and wind and solar to cut emissions\""
+      ],
+      "explanation": "ENV-1L matched (close): \"should expand both nuclear power and wind and solar to cut emissions\". Independent probability for Center left: 0.58. Verifier agreed. Confidence 77/100 (Medium). Ideology: Potentially environmentalist (belief T2: \"to cut emissions\", probability 0.95; could also be Progressive).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-c6",
+      "category": "Center",
+      "text": "Washington should keep the Affordable Care Act but let insurers sell cheaper basic plans",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center",
+        "Center left",
+        "Center right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 51,
+      "criteria": [
+        "ECO-0: \"should keep the Affordable Care Act but let insurers sell cheaper basic plans\""
+      ],
+      "explanation": "ECO-0 matched (close): \"should keep the Affordable Care Act but let insurers sell cheaper basic plans\". That points to Center, but confidence is only 51/100 (verifier: The quoted words support a moderated health-policy position, but they do not explicitly argue for a general balance between market and state or reject both expansion and reduction as ECO-0 requires. The proposal also includes a market/deregulatory element (“let insurers sell cheaper basic plans”), so Center is not safely established by the cited criterion.), so the result is Uncertain.",
+      "flags": [
+        "independent check suggests Neoliberal (p=0.80); second look found no matching belief: The claim proposes a specific health-insurance policy change, but it does not explicitly argue for free markets, deregulation, privatization, open trade as engines of growth, or fiscal restraint.",
+        "independent check favours Center right (one step away)"
+      ]
+    },
+    {
+      "id": "1e09eaf24e7728ceadf509bac96213d4",
+      "category": "Far left/right",
+      "text": "Religious schools should be banned",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Secularist"
+      ],
+      "verdict": "Safe miss",
+      "reason": "no leaning given; expected Far left or Left",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 51,
+      "criteria": [
+        "SOC-3L: \"Religious schools should be banned\""
+      ],
+      "explanation": "SOC-3L matched (partial): \"Religious schools should be banned\". That points to Far left, but confidence is only 51/100, so the result is Uncertain.",
+      "flags": [
+        "independent check suggests Secularist (p=0.82); second look found no matching belief: The claim opposes religious schools, but it does not explicitly argue for separating religion from the state, law, or public institutions. It could also imply restricting religious education rather than secularist separation.",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-f1",
+      "category": "Far left/right",
+      "text": "All private ownership of land should be abolished and the land redistributed by the state",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far left"
+      ],
+      "acceptableIdeologies": [
+        "Communist",
+        "Socialist",
+        "Marxist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far left is acceptable",
+      "confidentError": false,
+      "display": "Far left",
+      "ideologies": [
+        "Socialist (Clear)"
+      ],
+      "confidence": 100,
+      "criteria": [
+        "ECO-3L: \"All private ownership of land should be abolished and the land redistributed by the state\""
+      ],
+      "explanation": "ECO-3L matched (direct): \"All private ownership of land should be abolished and the land redistributed by the state\". Independent probability for Far left: 1.00. Verifier agreed. Confidence 100/100 (High). Ideology: Socialist (belief T1: \"All private ownership of land should be abolished and the land redistributed by the state\", probability 0.99).",
+      "flags": [
+        "Communist added after a second look (I5, p=0.90)",
+        "independent check suggests Progressive (p=0.83); not checked, two ideologies already proposed"
+      ]
+    },
+    {
+      "id": "synthetic-f2",
+      "category": "Far left/right",
+      "text": "The working class must overthrow capitalism through revolution",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far left"
+      ],
+      "acceptableIdeologies": [
+        "Communist",
+        "Marxist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far left is acceptable",
+      "confidentError": false,
+      "display": "Far left",
+      "ideologies": [
+        "Communist (Clear)",
+        "Marxist (Clear)"
+      ],
+      "confidence": 100,
+      "criteria": [
+        "ECO-3L: \"overthrow capitalism through revolution\""
+      ],
+      "explanation": "ECO-3L matched (direct): \"overthrow capitalism through revolution\". Independent probability for Far left: 1.00. Verifier agreed. Confidence 100/100 (High). Ideology: Communist (belief T2: \"must overthrow capitalism through revolution\", probability 0.97); Marxist (belief T1: \"The working class must overthrow capitalism\", probability 1.00).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-f3",
+      "category": "Far left/right",
+      "text": "Police and prisons should be replaced entirely by self-organized community defense",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far left"
+      ],
+      "acceptableIdeologies": [
+        "Anarchist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far left is acceptable",
+      "confidentError": false,
+      "display": "Far left",
+      "ideologies": [
+        "Anarchist (Potential)"
+      ],
+      "confidence": 100,
+      "criteria": [
+        "LAW-3L: \"Police and prisons should be replaced entirely\""
+      ],
+      "explanation": "LAW-3L matched (direct): \"Police and prisons should be replaced entirely\". Independent probability for Far left: 1.00. Verifier agreed. Confidence 100/100 (High). Ideology: Potentially anarchist (belief T2: \"Police and prisons should be replaced entirely by self-organized community defense\", probability 1.00; could also be Communist, Marxist, Libertarianism).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-f4",
+      "category": "Far left/right",
+      "text": "Only people of European descent should be allowed to become citizens",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far right"
+      ],
+      "acceptableIdeologies": [
+        "Nationalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far right is acceptable",
+      "confidentError": false,
+      "display": "Far right",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [
+        "NAT-3R: \"Only people of European descent should be allowed to become citizens\""
+      ],
+      "explanation": "NAT-3R matched (direct): \"Only people of European descent should be allowed to become citizens\". Independent probability for Far right: 1.00. Verifier agreed. Confidence 100/100 (High).",
+      "flags": [
+        "independent check suggests Nationalist (p=0.99); second look found no matching belief: The claim advocates an ancestry-based citizenship restriction, but it does not explicitly put a nation's interests, identity, or sovereignty first over outsiders or international bodies, nor does it frame immigration restriction as protecting national identity."
+      ]
+    },
+    {
+      "id": "synthetic-f5",
+      "category": "Far left/right",
+      "text": "The president should be able to cancel elections whenever he decides the nation is in danger",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Far right is acceptable",
+      "confidentError": false,
+      "display": "Far right",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [
+        "LAW-3R: \"The president should be able to cancel elections whenever he decides the nation is in danger\""
+      ],
+      "explanation": "LAW-3R matched (direct): \"The president should be able to cancel elections whenever he decides the nation is in danger\". Independent probability for Far right: 0.98. Verifier agreed. Confidence 99/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-f6",
+      "category": "Far left/right",
+      "text": "Same-sex relationships should be punished with prison sentences",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far right"
+      ],
+      "acceptableIdeologies": [
+        "Traditionalist",
+        "Christian conservative"
+      ],
+      "verdict": "Correct",
+      "reason": "Far right is acceptable",
+      "confidentError": false,
+      "display": "Potentially far right",
+      "ideologies": [],
+      "confidence": 71,
+      "criteria": [
+        "SOC-3R: \"Same-sex relationships should be punished with prison sentences\""
+      ],
+      "explanation": "SOC-3R matched (direct): \"Same-sex relationships should be punished with prison sentences\". The independent check favours Right (0.95), one step away; Far right gets 0.03. Verifier agreed. Confidence 71/100 (Medium).",
+      "flags": [
+        "independent check suggests Conservative (p=0.86); second look found no matching belief: The claim advocates criminal punishment for same-sex relationships, but it does not explicitly argue for preserving established institutions, gradual change, limited government, free enterprise, or a conservative combination of those with traditional social norms.",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-i1",
+      "category": "Ideology",
+      "text": "The government should increase taxes on the wealthiest citizens to fund public healthcare",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Social democrat",
+        "Progressive",
+        "Democratic socialist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [
+        "Social democrat (Clear)"
+      ],
+      "confidence": 71,
+      "criteria": [
+        "ECO-1L: \"should increase taxes on the wealthiest citizens to fund public healthcare\""
+      ],
+      "explanation": "ECO-1L matched (direct): \"should increase taxes on the wealthiest citizens to fund public healthcare\". The independent check favours Left (0.98), one step away; Center left gets 0.02. Verifier agreed. Confidence 71/100 (Medium). Ideology: Social democrat (belief T1: \"increase taxes on the wealthiest citizens to fund public healthcare\", probability 0.99).",
+      "flags": [
+        "Social democrat added after a second look (I5, p=0.99)",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-i2",
+      "category": "Ideology",
+      "text": "Workers, not shareholders, should own and run the companies they work in",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Far left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Socialist",
+        "Democratic socialist",
+        "Marxist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far left is acceptable",
+      "confidentError": false,
+      "display": "Far left",
+      "ideologies": [
+        "Socialist (Clear)"
+      ],
+      "confidence": 87,
+      "criteria": [
+        "ECO-3L: \"Workers, not shareholders, should own and run the companies they work in\""
+      ],
+      "explanation": "ECO-3L matched (close): \"Workers, not shareholders, should own and run the companies they work in\". Independent probability for Far left: 0.89. Verifier agreed. Confidence 87/100 (High). Ideology: Socialist (belief T1: \"Workers, not shareholders, should own and run the companies they work in\", probability 0.93).",
+      "flags": [
+        "independent check suggests Anarchist (p=0.82); second look found no matching belief: The claim supports worker ownership and workplace democracy, but it does not explicitly call to abolish the state or replace it with voluntary self-organized communities, nor does it clearly reject coercive hierarchies such as police, prisons, or bosses in anarchist terms.",
+        "Democratic socialist added after a second look (I5, p=0.94)",
+        "independent check suggests Marxist (p=0.85); not checked, two ideologies already proposed",
+        "independent check suggests Progressive (p=0.85); not checked, two ideologies already proposed"
+      ]
+    },
+    {
+      "id": "synthetic-i3",
+      "category": "Ideology",
+      "text": "Laws should follow Christian teaching because America is a Christian nation",
+      "expect": "leaning",
+      "acceptableLeanings": [
+        "Right",
+        "Far right"
+      ],
+      "acceptableIdeologies": [
+        "Christian conservative",
+        "Nationalist",
+        "Traditionalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Far right is acceptable",
+      "confidentError": false,
+      "display": "Potentially far right",
+      "ideologies": [
+        "Christian conservative (Clear)"
+      ],
+      "confidence": 70,
+      "criteria": [
+        "SOC-3R: \"Laws should follow Christian teaching because America is a Christian nation\""
+      ],
+      "explanation": "SOC-3R matched (direct): \"Laws should follow Christian teaching because America is a Christian nation\". The independent check favours Right (0.92), one step away; Far right gets 0.00. Verifier agreed. Confidence 70/100 (Medium). Ideology: Christian conservative (belief T1: \"Laws should follow Christian teaching because America is a Christian nation\", probability 0.98).",
+      "flags": [
+        "Conservative added after a second look (I5, p=0.83)",
+        "independent check suggests Traditionalist (p=0.95); not checked, two ideologies already proposed",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-i4",
+      "category": "Ideology",
+      "text": "The government should get out of both the economy and people's bedrooms",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Libertarianism",
+        "Classical liberal"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [
+        "Libertarianism (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [
+        "ECO-2R: \"government should get out of both the economy\"",
+        "SOC-1L: \"government should get out of both the economy and people's bedrooms\""
+      ],
+      "explanation": "ECO-2R matched (close): \"government should get out of both the economy\". SOC-1L matched (partial): \"government should get out of both the economy and people's bedrooms\". These point in opposite directions, so the leaning is Uncertain (rule A1). Ideology: Libertarianism (belief T1: \"government should get out of both the economy and people's bedrooms\", probability 0.98).",
+      "flags": [
+        "Classical liberal added after a second look (I5, p=0.87)"
+      ]
+    },
+    {
+      "id": "synthetic-i5",
+      "category": "Ideology",
+      "text": "International courts should be able to overrule national governments that break their climate commitments",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Globalist",
+        "Environmentalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [
+        "Globalist (Clear)"
+      ],
+      "confidence": 60,
+      "criteria": [
+        "ENV-1L: \"break their climate commitments\""
+      ],
+      "explanation": "ENV-1L matched (close): \"break their climate commitments\". The independent check favours Left (0.99), one step away; Center left gets 0.01. Verifier agreed. Confidence 60/100 (Medium). Ideology: Globalist (belief T1: \"International courts should be able to overrule national governments\", probability 0.95).",
+      "flags": [
+        "Environmentalist added after a second look (I5, p=0.97)",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "synthetic-i6",
+      "category": "Ideology",
+      "text": "Ordinary Americans are being betrayed by a corrupt elite in Washington",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Populist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [
+        "Populist (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given. Ideology: Populist (belief T1: \"Ordinary Americans are being betrayed by a corrupt elite in Washington\", probability 1.00).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-i7",
+      "category": "Ideology",
+      "text": "America should put its own citizens first and withdraw from the United Nations",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [
+        "Nationalist",
+        "Isolationist",
+        "MAGA",
+        "Paleoconservative"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [
+        "Nationalist (Clear)",
+        "Isolationist (Potential)"
+      ],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3). Ideology: Nationalist (belief T1: \"America should put its own citizens first and withdraw from the United Nations\", probability 1.00); Potentially isolationist (belief T2: \"put its own citizens first and withdraw from the United Nations\", probability 0.82; could also be Paleoconservative, MAGA, Populist).",
+      "flags": [
+        "independent check suggests MAGA (p=0.90); not checked, two ideologies already proposed"
+      ]
+    },
+    {
+      "id": "synthetic-i8",
+      "category": "Ideology",
+      "text": "Religion should play no role in making laws",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Secularist",
+        "Humanist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Center left",
+      "ideologies": [
+        "Secularist (Clear)"
+      ],
+      "confidence": 91,
+      "criteria": [
+        "SOC-1L: \"Religion should play no role in making laws\""
+      ],
+      "explanation": "SOC-1L matched (direct): \"Religion should play no role in making laws\". Independent probability for Center left: 0.71. Verifier agreed. Confidence 91/100 (High). Ideology: Secularist (belief T1: \"Religion should play no role in making laws\", probability 0.99).",
+      "flags": [
+        "independent check suggests Humanist (p=0.90); second look found no matching belief: The claim rejects religious influence in lawmaking, but it does not explicitly ground ethics or policy in reason, human dignity, or shared welfare, so it is not clearly Humanist under T1."
+      ]
+    },
+    {
+      "id": "00c2b2dad6a74f3aa21d974c172a29eb",
+      "category": "Ideology",
+      "text": "Wealthier countries should provide grant-based climate-adaptation funding to vulnerable Himalayan states",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Environmentalist",
+        "Globalist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 71,
+      "criteria": [
+        "ENV-1L: \"should provide grant-based climate-adaptation funding\""
+      ],
+      "explanation": "ENV-1L matched (close): \"should provide grant-based climate-adaptation funding\". The independent check favours Left (0.56), one step away; Center left gets 0.38. Verifier agreed. Confidence 71/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "20ec120ccbb05b578e6a08a87e54db1f",
+      "category": "Ideology",
+      "text": "The late stages of capitalism can bring serious issues",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Marxist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": [
+        "hedged wording: scores capped at ±1 (H1)"
+      ]
+    },
+    {
+      "id": "2053745423c651e48fd0ba32a7783cbe",
+      "category": "Ideology",
+      "text": "Late-stage feminism advocates for the complete elimination of gender roles, which contributes to difficulty in dating",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Traditionalist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 0,
+      "criteria": [
+        "SOC-1R: \"complete elimination of gender roles, which contributes to difficulty in dating\""
+      ],
+      "explanation": "SOC-1R matched (partial): \"complete elimination of gender roles, which contributes to difficulty in dating\". That points to Center right, but confidence is only 0/100 (verifier: The quoted words do not state SOC-1R policy such as traditional marriage/family or parental rights; they describe/criticize what “late-stage feminism advocates” and a claimed effect on dating. The position is at most an attributed/descriptive claim about feminism and dating, not the claim itself advocating a center-right political policy.), so the result is Uncertain.",
+      "flags": [
+        "independent check suggests Conservative (p=0.88); second look found no matching belief: The claim criticizes the elimination of gender roles as harmful for dating, but it does not explicitly argue to preserve established institutions or norms, prefer gradual change, or combine limited government/free enterprise with traditional social norms.",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "32a9bb5f4bbe8189ea52851ec5900a1a",
+      "category": "Ideology",
+      "text": "The United States should end its economic embargo on Cuba",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "646ef2ed5d4734d45d60a80272f7849b",
+      "category": "Ideology",
+      "text": "NATO should expand its strategic role beyond Europe to counter China",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Neoconservative",
+        "Globalist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [
+        "Neoconservative (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3). Ideology: Neoconservative (belief T1: \"NATO should expand its strategic role beyond Europe to counter China\", probability 0.81).",
+      "flags": []
+    },
+    {
+      "id": "c8ce4455389f82f6817856bfa8d5ab10",
+      "category": "Ambiguous or hedged",
+      "text": "Blasphemy laws should be abolished",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [
+        "Secularist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [
+        "Secularist (Clear)"
+      ],
+      "confidence": 76,
+      "criteria": [
+        "SOC-1L: \"Blasphemy laws should be abolished\""
+      ],
+      "explanation": "SOC-1L matched (close): \"Blasphemy laws should be abolished\". Independent probability for Center left: 0.53. Verifier agreed. Confidence 76/100 (Medium). Ideology: Secularist (belief T1: \"Blasphemy laws should be abolished\", probability 0.95).",
+      "flags": []
+    },
+    {
+      "id": "a3587b68b72f6f5a934864f10aee92b9",
+      "category": "Ambiguous or hedged",
+      "text": "Michigan should cut regulations that block home construction",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Center left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 79,
+      "criteria": [
+        "ECO-1R: \"should cut regulations that block home construction\""
+      ],
+      "explanation": "ECO-1R matched (direct): \"should cut regulations that block home construction\". The independent check favours Right (0.55), one step away; Center right gets 0.30. Verifier agreed. Confidence 79/100 (Medium).",
+      "flags": [
+        "Neoliberal added after a second look (I5, p=0.81)",
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "8271598b04824a4088775686c1e4cea1",
+      "category": "Ambiguous or hedged",
+      "text": "The United States should reduce foreign aid spending",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Isolationist"
+      ],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 73,
+      "criteria": [
+        "ECO-1R: \"should reduce foreign aid spending\""
+      ],
+      "explanation": "ECO-1R matched (direct): \"should reduce foreign aid spending\". The independent check favours Right (0.91), one step away; Center right gets 0.09. Verifier agreed. Confidence 73/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "5047770b00d3679b3bad262f156b8a32",
+      "category": "Ambiguous or hedged",
+      "text": "The US should end the H-1B visa program",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center right is acceptable",
+      "confidentError": false,
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 65,
+      "criteria": [
+        "NAT-1R: \"The US should end the H-1B visa program\""
+      ],
+      "explanation": "NAT-1R matched (close): \"The US should end the H-1B visa program\". The independent check favours Right (0.81), one step away; Center right gets 0.16. Verifier agreed. Confidence 65/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "2f40f652e04b9a6a846509add4bd4e23",
+      "category": "Ambiguous or hedged",
+      "text": "Sharia councils should be banned in Western countries",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Secularist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": []
+    },
+    {
+      "id": "329492b464ba5a818f17807d3b3ae63e",
+      "category": "Ambiguous or hedged",
+      "text": "Propaganda and Nazi viewpoints should be banned from social media",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "329c1f2e939d5bcd8cf753e750a18d0a",
+      "category": "Ambiguous or hedged",
+      "text": "Hate speech should be illegal if it causes harm to a person",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "07a1ef43ec93adcd0a1b39f1e14e278d",
+      "category": "Ambiguous or hedged",
+      "text": "Selling newly made animal-fur clothing should be illegal",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": []
+    },
+    {
+      "id": "1b2516a3532243f8882133e4cf147b85",
+      "category": "Ambiguous or hedged",
+      "text": "The phenomenon of wokeness on both sides of the political spectrum is characterized by a shift toward identity-based politics that undermines liberal democratic values.",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Classical liberal"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": []
+    },
+    {
+      "id": "0ad100dede4d4869b5f10dfbdd7e0a8e",
+      "category": "Ambiguous or hedged",
+      "text": "Gulf states should expand legal migration pathways for people from the Horn of Africa",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "Center left is acceptable",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 62,
+      "criteria": [
+        "NAT-1L: \"should expand legal migration pathways for people from the Horn of Africa\""
+      ],
+      "explanation": "NAT-1L matched (partial): \"should expand legal migration pathways for people from the Horn of Africa\". The independent check favours Left (0.55), one step away; Center left gets 0.39. Verifier agreed. Confidence 62/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "5b3471739009e6cf770ecef856e3fb69",
+      "category": "Ambiguous or hedged",
+      "text": "Employers should raise pay before recruiting workers from abroad",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "ECO-1L: \"Employers should raise pay\"",
+        "NAT-1R: \"before recruiting workers from abroad\""
+      ],
+      "explanation": "ECO-1L matched (partial): \"Employers should raise pay\". NAT-1R matched (partial): \"before recruiting workers from abroad\". These point in opposite directions, so the leaning is Uncertain (rule A1).",
+      "flags": []
+    },
+    {
+      "id": "3d80328451913fd3a8a8f7c0fe5f4871",
+      "category": "Ambiguous or hedged",
+      "text": "Severe mental illness should reduce punishment, never eliminate criminal responsibility",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center",
+        "Center right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 43,
+      "criteria": [
+        "LAW-0: \"Severe mental illness should reduce punishment, never eliminate criminal responsibility\""
+      ],
+      "explanation": "LAW-0 matched (partial): \"Severe mental illness should reduce punishment, never eliminate criminal responsibility\". That points to Center, but confidence is only 43/100 (verifier: The quoted claim supports a sentencing/responsibility rule, but it does not explicitly balance public safety and civil liberties as LAW-0 requires. The proposed Center leaning therefore is not justified by the cited criterion.), so the result is Uncertain.",
+      "flags": []
+    },
+    {
+      "id": "2be6e12c7d98484a9ed656455167f247",
+      "category": "Ambiguous or hedged",
+      "text": "Gain-of-function research that could cause pandemics, such as modifying viruses to become more transmissible, should be banned.",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "1f2158a51442272cb987b44fee7fc998",
+      "category": "Ambiguous or hedged",
+      "text": "Under-15s should be banned from social media",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "09046cc50842019c0ef7c503a2a9f587",
+      "category": "Ambiguous or hedged",
+      "text": "Governments should be banned from using live facial recognition in public spaces",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Libertarianism"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "01f14badb63258a9acf2f81dda31d2a4",
+      "category": "Ambiguous or hedged",
+      "text": "Tech companies should not be allowed to set their own safety guidelines",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "9b677fbebf8c4472a6c8dbb5bc3bf120",
+      "category": "Ambiguous or hedged",
+      "text": "States should not be allowed to set vaccine schedules that diverge from federal CDC guidance",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "34d515d0812b52ce98abe6d0884293ff",
+      "category": "Ambiguous or hedged",
+      "text": "Genetically enhancing an embryo through genetic modification should not be allowed",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "3d8a48bccb59f4b2f7b7698d1b01c3ec",
+      "category": "Ambiguous or hedged",
+      "text": "The White House Accord on Super Intelligence should be legally binding",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "068f800f052ba2c809f94f701ab85275",
+      "category": "Ambiguous or hedged",
+      "text": "Lifetime alimony should be abolished",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": []
+    },
+    {
+      "id": "1e834f17cf7c4f1dbd014f9ce1db134f",
+      "category": "Ambiguous or hedged",
+      "text": "Cryptocurrency mixing services like CoinJoin should be legally banned",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "6c0581918dd346c4b842a1e1d0c82426",
+      "category": "Ambiguous or hedged",
+      "text": "The Czech government should reduce military support for Ukraine",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center right",
+        "Right"
+      ],
+      "acceptableIdeologies": [
+        "Isolationist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "2eb997ffe4154410973367306baea7de",
+      "category": "Ambiguous or hedged",
+      "text": "Congress should cut off funding for the US war against Iran",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Isolationist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "8f56f0c35e174f33be2a99fa4429a051",
+      "category": "Ambiguous or hedged",
+      "text": "The United States should reduce or cut military aid to Israel",
+      "expect": "either",
+      "acceptableLeanings": [
+        "Center left",
+        "Left"
+      ],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "94dd96e01e4a45d6bdd2b5877b812f73",
+      "category": "Ambiguous or hedged",
+      "text": "Congress should increase federal nonprofit security funding to $1 billion annually",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Wrong label",
+      "reason": "gave Center left; expected no leaning",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 65,
+      "criteria": [
+        "ECO-1L: \"increase federal nonprofit security funding to $1 billion annually\""
+      ],
+      "explanation": "ECO-1L matched (close): \"increase federal nonprofit security funding to $1 billion annually\". The independent check favours Center (0.57), one step away; Center left gets 0.15. Verifier agreed. Confidence 65/100 (Medium).",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "1cb8dd45c1815a3ee4f5ad49d01f6673",
+      "category": "Ambiguous or hedged",
+      "text": "Deepfakes of political candidates should be illegal",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-m1",
+      "category": "Conflicting",
+      "text": "The minimum wage should double and immigration should be cut to zero",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Populist",
+        "Nationalist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "ECO-1L: \"The minimum wage should double\"",
+        "NAT-2R: \"immigration should be cut to zero\""
+      ],
+      "explanation": "ECO-1L matched (direct): \"The minimum wage should double\". NAT-2R matched (close): \"immigration should be cut to zero\". These point in opposite directions, so the leaning is Uncertain (rule A1).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-m2",
+      "category": "Conflicting",
+      "text": "Same-sex marriage should be protected and the income tax should be abolished",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Libertarianism"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "SOC-1L: \"Same-sex marriage should be protected\"",
+        "ECO-2R: \"the income tax should be abolished\""
+      ],
+      "explanation": "SOC-1L matched (direct): \"Same-sex marriage should be protected\". ECO-2R matched (close): \"the income tax should be abolished\". These point in opposite directions, so the leaning is Uncertain (rule A1).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-m3",
+      "category": "Conflicting",
+      "text": "Unions should be strengthened and the borders closed to protect American workers",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Populist",
+        "Nationalist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [
+        "Nationalist (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [
+        "ECO-1L: \"Unions should be strengthened\"",
+        "NAT-2R: \"the borders closed to protect American workers\""
+      ],
+      "explanation": "ECO-1L matched (direct): \"Unions should be strengthened\". NAT-2R matched (close): \"the borders closed to protect American workers\". These point in opposite directions, so the leaning is Uncertain (rule A1). Ideology: Nationalist (belief T1: \"the borders closed to protect American workers\", probability 0.94).",
+      "flags": [
+        "Nationalist added after a second look (I5, p=0.94)",
+        "independent check suggests Paleoconservative (p=0.85); second look found no matching belief: The claim explicitly supports restricted immigration (“borders closed”) and pro-labor policy, but it does not combine this with tradition, national sovereignty, and opposition to foreign intervention or free-trade deals as required for Paleoconservative T1.",
+        "Social democrat added after a second look (I5, p=0.90)"
+      ]
+    },
+    {
+      "id": "synthetic-m4",
+      "category": "Conflicting",
+      "text": "Marijuana should be legal and most gun laws should be repealed",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Libertarianism"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "SOC-1L: \"Marijuana should be legal\"",
+        "LAW-2R: \"most gun laws should be repealed\""
+      ],
+      "explanation": "SOC-1L matched (direct): \"Marijuana should be legal\". LAW-2R matched (direct): \"most gun laws should be repealed\". These point in opposite directions, so the leaning is Uncertain (rule A1).",
+      "flags": []
+    },
+    {
+      "id": "synthetic-m5",
+      "category": "Conflicting",
+      "text": "The state should provide free healthcare to citizens only, never to immigrants",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [
+        "Nationalist"
+      ],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (signals disagree)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [
+        "ECO-2L: \"The state should provide free healthcare\""
+      ],
+      "explanation": "ECO-2L matched (close): \"The state should provide free healthcare\". That points to Left, but the independent check favours Right (0.86), 4 steps away on the other side of the center, so the leaning is Uncertain (rule A5).",
+      "flags": [
+        "Nationalist added after a second look (I5, p=0.94)"
+      ]
+    },
+    {
+      "id": "synthetic-m6",
+      "category": "Conflicting",
+      "text": "Carbon emissions should be taxed heavily and abortion should be banned after 15 weeks",
+      "expect": "uncertain",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Wrong ideology",
+      "reason": "gave Environmentalist; acceptable: none",
+      "confidentError": false,
+      "display": "Uncertain (mixed signals)",
+      "ideologies": [
+        "Environmentalist (Potential)"
+      ],
+      "confidence": null,
+      "criteria": [
+        "ENV-1L: \"Carbon emissions should be taxed heavily\"",
+        "SOC-1R: \"abortion should be banned after 15 weeks\""
+      ],
+      "explanation": "ENV-1L matched (direct): \"Carbon emissions should be taxed heavily\". SOC-1R matched (direct): \"abortion should be banned after 15 weeks\". These point in opposite directions, so the leaning is Uncertain (rule A1). Ideology: Potentially environmentalist (belief T2: \"Carbon emissions should be taxed heavily\", probability 0.93; could also be Progressive).",
+      "flags": []
+    },
+    {
+      "id": "c7096d8df6c04c9b917d27d3ba908448",
+      "category": "No-position trap",
+      "text": "Gia Tolentino stated that private schools should be illegal.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral report of an attributed statement rather than taking the position in its own voice: \"Gia Tolentino stated that\". Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "14e769f96e0140f789234e0d2d7c2529",
+      "category": "No-position trap",
+      "text": "Gia Tolentino stated that blowing up pipelines should be legal.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral attribution rather than taking the position in its own voice: \"Gia Tolentino stated that\". Also, making pipeline bombings legal is not a mainstream contested political-camp position. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "32ed4c69ec4a4e5097606973aa7a70fa",
+      "category": "No-position trap",
+      "text": "A Pew Research Center poll found that about one-third of US adults say all immigrants in the US illegally should be deported.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim reports a poll result rather than taking its own position, and the view is attributed to respondents/Pew rather than asserted by the claim itself. Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "b67349f974b3417ebdd265aa07a6f848",
+      "category": "No-position trap",
+      "text": "In 2008, Hillary Clinton said undocumented immigrants who committed crimes should be deported.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim neutrally reports an attributed position rather than taking it in its own voice: \"Hillary Clinton said\" undocumented immigrants who committed crimes \"should be deported.\" Independent probability that it takes a position: 0.02.",
+      "flags": []
+    },
+    {
+      "id": "00bcf1a81b0e4349842eaccdc9b45c17",
+      "category": "No-position trap",
+      "text": "John Fetterman described socialism as an \"anti-American way of life.\"",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral report of an attributed statement rather than taking the position in its own voice: \"John Fetterman described socialism as an \\\"anti-American way of life.\\\"\" Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "1db7cb8ce386410586c02a91c965c118",
+      "category": "No-position trap",
+      "text": "Modern right-wing populists typically promise national revival through unleashing capitalism.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 92,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a descriptive characterization, not an argument for or against a policy or social order; it says what “Modern right-wing populists typically promise,” so any position is attributed to that group rather than stated in the claim’s own voice. Independent probability that it takes a position: 0.08.",
+      "flags": []
+    },
+    {
+      "id": "0170bb0c87484cc290894585fa6a484b",
+      "category": "No-position trap",
+      "text": "Mark Whittington of the Washington Examiner argued that Senator Sanders' proposal aims to seize the means of information.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim reports an attributed argument rather than taking its own position: \"Mark Whittington of the Washington Examiner argued\". Because the position is not in the claim's own voice, it fails the political-position checks. Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "031a10d9d17843cd8046fd4aa5a06bd5",
+      "category": "No-position trap",
+      "text": "The Trump administration has argued that prediction markets should not have to comply with state gambling laws",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a descriptive, attributed report of a position rather than taking the position in its own voice: \"The Trump administration has argued\". Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "1063e8e8a8c644bea049c0a4e4d868b6",
+      "category": "No-position trap",
+      "text": "A Wall Street Journal/NORC poll revealed that fewer than half of Americans believe capitalism is working well.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 95,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim reports a poll result rather than taking its own political position; the view is attributed to Americans in a Wall Street Journal/NORC poll. Independent probability that it takes a position: 0.05.",
+      "flags": []
+    },
+    {
+      "id": "0136dbfe554b4c0e9964ac231f0d1cb2",
+      "category": "No-position trap",
+      "text": "An Open Society Foundations poll found 60% of young people globally believe authoritarianism is needed because democracy is failing.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 95,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral report of a poll and attributes the view to young people rather than taking the position in its own voice: \"poll found\" and \"young people globally believe\". Support for democracy in general is also not a mainstream contested political-camp position under G4. Independent probability that it takes a position: 0.05.",
+      "flags": []
+    },
+    {
+      "id": "01f1fcc2b8dd4f0da13e609ec1807bf3",
+      "category": "No-position trap",
+      "text": "Partisan divisions on AI are often rooted in the Democratic party's general preference for regulation and the Republican party's preference for deregulation.",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 92,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: G1 failed because the claim is a descriptive statement about partisan tendencies, not an argument that a policy should or should not be adopted. Independent probability that it takes a position: 0.08.",
+      "flags": []
+    },
+    {
+      "id": "1b4b7cb6589d49deb0d70327e0cfc855",
+      "category": "No-position trap",
+      "text": "Dolly Parton embodied feminist ideals such as financial independence and total control over her life",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 93,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim characterizes a celebrity as having “embodied feminist ideals” but does not argue for or against a public policy, law, rights regime, government action, or social organization. It is mainly a descriptive judgment about Dolly Parton rather than a contested political position taken by the claim itself. Independent probability that it takes a position: 0.07.",
+      "flags": []
+    },
+    {
+      "id": "1e69550313e5480d97e77e6906619cdb",
+      "category": "No-position trap",
+      "text": "A Cato Institute poll found that 38% of Americans under 30 have a favorable view of communism, compared to 45% who favor capitalism",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim reports an attributed poll statistic rather than arguing for or against a political position; the position, if any, is in the poll respondents' views, not the claim's own voice. Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "00e49c82ba4e4443a471180095d4a4a0",
+      "category": "No-position trap",
+      "text": "Christians should openly try to convert their friends",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 90,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim takes its own normative position, but it is religious/personal advice rather than a position on public policy, law, rights, government, the economy, or political organization. It also does not present a mainstream political-camp dispute. Independent probability that it takes a position: 0.10.",
+      "flags": []
+    },
+    {
+      "id": "ea9d47771612462fbae8d139a44babc4",
+      "category": "No-position trap",
+      "text": "Jamaat Nusrat al-Islam wal-Muslimin (JNIM) seeks to establish Islamic law as the governing system in Mali",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a descriptive statement about JNIM's goal, not an endorsement or argument by the claim itself; the position is attributed to JNIM in the words \"JNIM seeks to establish Islamic law\". Independent probability that it takes a position: 0.02.",
+      "flags": []
+    },
+    {
+      "id": "24123d4eb70c441fae428c6fe038599e",
+      "category": "No-position trap",
+      "text": "An example of explicit socialism is New York City's plan for five city-run grocery stores",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 93,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: G1 failed: the claim classifies New York City's plan as “explicit socialism” but does not argue that the plan should be adopted, rejected, justified, or wrong. Independent probability that it takes a position: 0.07.",
+      "flags": []
+    },
+    {
+      "id": "099b8d40d1f05a9eafbdcc2adfe3d26f",
+      "category": "No-position trap",
+      "text": "Most young people accept first and second-wave feminism",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 94,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: G1 fails because the claim is a descriptive statement about what a group accepts, not an argument that something should or should not happen. G4 also fails because it does not take a contested policy position. Independent probability that it takes a position: 0.06.",
+      "flags": []
+    },
+    {
+      "id": "4386882aa325648d065d223f3342cf6f",
+      "category": "No-position trap",
+      "text": "Parents should raise children on a vegetarian diet",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 84,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim uses 'should' and is in its own voice, but it is personal parenting/diet advice rather than a position on public policy, law, rights, government, the economy, or political social organization. It is also not a mainstream political-camp dispute under the framework. Independent probability that it takes a position: 0.16.",
+      "flags": []
+    },
+    {
+      "id": "607e0abd977bcc4c56c124da9066f87e",
+      "category": "No-position trap",
+      "text": "Couples therapy prolongs relationships that should end",
+      "expect": "no_position",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 97,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim makes a normative judgment in its own voice, but it concerns personal relationship advice and therapy rather than public policy, law, rights, government, the economy, or social organization; it is not a mainstream political-camp dispute. Independent probability that it takes a position: 0.03.",
+      "flags": []
+    },
+    {
+      "id": "02bcb956966144b6bb362ade5a21da07",
+      "category": "No-position trap",
+      "text": "The Federal Reserve should raise interest rates at its September 2026 meeting",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (no criterion matched)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "No criterion matches the claim's position, so no leaning is given.",
+      "flags": []
+    },
+    {
+      "id": "2792d3c733e140a4873081cadbd57cb6",
+      "category": "No-position trap",
+      "text": "BPC-157 should be banned until it passes proper clinical trials",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Wrong label",
+      "reason": "gave Center left; expected no leaning",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 60,
+      "criteria": [
+        "ECO-1L: \"BPC-157 should be banned until it passes proper clinical trials\""
+      ],
+      "explanation": "ECO-1L matched (close): \"BPC-157 should be banned until it passes proper clinical trials\". The independent check favours Center (1.00), one step away; Center left gets 0.00. Verifier agreed. Confidence 60/100 (Medium).",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "307416b5c6244d118e0d4f636f2e85c2",
+      "category": "No-position trap",
+      "text": "The FDA should increase international inspections of imported produce",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Wrong label",
+      "reason": "gave Center left; expected no leaning",
+      "confidentError": false,
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 60,
+      "criteria": [
+        "ECO-1L: \"The FDA should increase international inspections of imported produce\""
+      ],
+      "explanation": "ECO-1L matched (close): \"The FDA should increase international inspections of imported produce\". The independent check favours Center (0.99), one step away; Center left gets 0.01. Verifier agreed. Confidence 60/100 (Medium).",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "603b2ac63f0c442680270245440d453c",
+      "category": "No-position trap",
+      "text": "Canada should reduce its economic dependence on the United States by accelerating trade diversification",
+      "expect": "either",
+      "acceptableLeanings": [],
+      "acceptableIdeologies": [],
+      "verdict": "Correct",
+      "reason": "no leaning, as acceptable",
+      "confidentError": false,
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    }
+  ]
+}

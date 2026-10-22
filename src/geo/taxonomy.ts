@@ -17,6 +17,8 @@ export interface Taxonomy {
   /** Short hash of every value's kind, id and name; changes whenever editors change the value lists. */
   fingerprint: string;
   byName: ReadonlyMap<string, TaxonomyValue>;
+  /** Geo's live descriptions of the two types, when loaded from Geo. */
+  definitions?: { politicalLeaning: string | null; ideology: string | null };
 }
 
 export interface RawValue {
@@ -71,17 +73,30 @@ const TAXONOMY_QUERY = /* GraphQL */ `
   query Taxonomy($leaningType: UUID!, $ideologyType: UUID!) {
     leanings: entities(typeId: $leaningType, first: 200) { id name description }
     ideologies: entities(typeId: $ideologyType, first: 200) { id name description }
+    leaningTypeEntity: entity(id: $leaningType) { description }
+    ideologyTypeEntity: entity(id: $ideologyType) { description }
   }
 `;
 
 /** Loads the current Political leaning and Ideology values from Geo. */
 export async function fetchTaxonomy(client: GeoClient): Promise<Taxonomy> {
-  const data = await client.query<{ leanings: RawValue[]; ideologies: RawValue[] }>(TAXONOMY_QUERY, {
+  const data = await client.query<{
+    leanings: RawValue[];
+    ideologies: RawValue[];
+    leaningTypeEntity: { description: string | null } | null;
+    ideologyTypeEntity: { description: string | null } | null;
+  }>(TAXONOMY_QUERY, {
     leaningType: IDS.politicalLeaningType,
     ideologyType: IDS.ideologyType,
   });
   if (!data.leanings.length || !data.ideologies.length) {
     throw new Error("Geo returned an empty Political leaning or Ideology list; refusing to classify against it.");
   }
-  return buildTaxonomy(data.leanings, data.ideologies);
+  return {
+    ...buildTaxonomy(data.leanings, data.ideologies),
+    definitions: {
+      politicalLeaning: data.leaningTypeEntity?.description?.trim() ?? null,
+      ideology: data.ideologyTypeEntity?.description?.trim() ?? null,
+    },
+  };
 }

@@ -81,11 +81,6 @@ export const IDEOLOGY_CARDS: IdeologyCard[] = [
     [["Puts protecting ecosystems or the climate ahead of competing economic goals.", true], ["Limits on pollution, fossil fuels or growth.", false]],
     ["An environmental benefit mentioned only in passing."],
     ["Progressive"], ["Far left", "Left", "Center left", "Center"]),
-  card("Fascist", "45422adc24e04208872091e84b403964",
-    "An outlook built on authoritarian nationalism, a single leader and party, suppression of opposition and the subordination of the individual to the state. It defined Mussolini's Italy and Nazi Germany and sits on the far right.",
-    [["Authoritarian nationalist rule by a single leader or party that suppresses opposition.", true], ["Subordinates the individual to the nation-state.", true]],
-    ["Strong-leader rhetoric that keeps elections and opposition intact."],
-    ["Nationalist"], ["Far right"]),
   card("Feminist", "5f90b6eaac214ef0911195d9c56983e9",
     "An outlook that seeks equal political, economic and social rights for women and challenges gender-based discrimination. Its currents range from liberal to radical, so feminists appear across the spectrum, most often on the left.",
     [["Explicitly seeks equal rights or status for women, or challenges gender-based discrimination.", true], ["Argues reproductive or bodily autonomy as a matter of women's rights.", false]],
@@ -136,7 +131,7 @@ export const IDEOLOGY_CARDS: IdeologyCard[] = [
     "An outlook that puts the interests, identity and sovereignty of the nation first, often skeptical of immigration and international institutions. It can appear on the left in independence movements, but today mostly sits on the right.",
     [["Puts the nation's interests, identity or sovereignty first, explicitly over international bodies or outsiders.", true], ["Restricts immigration to protect national identity.", false]],
     ["A state's official position in a territorial dispute (see G4).", "Border management without national-identity framing."],
-    ["MAGA", "Paleoconservative", "Populist", "Fascist"], ["Center right", "Right", "Far right", "Left"]),
+    ["MAGA", "Paleoconservative", "Populist"], ["Center right", "Right", "Far right", "Left"]),
   card("Neoconservative", "a0ff6257cfd8440dab75663a8ed90265",
     "An outlook that pairs conservative domestic views with an assertive foreign policy, using American power to spread democracy and confront rivals. It shaped Republican foreign policy in the 2000s and sits on the center right.",
     [["Uses national power assertively abroad to spread democracy or confront rivals.", true]],
@@ -182,11 +177,8 @@ export const IDEOLOGY_CARDS: IdeologyCard[] = [
     [["Inherited customs, religion or traditional institutions (family, gender roles) as the foundation of society.", true], ["Distrust of rapid social change.", false]],
     ["Nostalgia without a claim about how society should be ordered."],
     ["Conservative", "Christian conservative", "Paleoconservative"], ["Center right", "Right", "Far right"]),
-  card("Zionist", "2f7d5407c2704effb440f325ac2cdb87",
-    "An outlook supporting a Jewish national homeland in the Land of Israel and, since 1948, the State of Israel. Its currents range from left-wing labor Zionism to right-wing religious and revisionist Zionism.",
-    [["Supports a Jewish national homeland, or Israel's existence and sovereignty as a Jewish state.", true]],
-    ["Support for one Israeli policy or military action on its own (foreign policy, X-FOR)."],
-    ["Nationalist"], ALL),
 ];
+// Fascist and Zionist were deleted from Geo on 2026-10-22 (US Politics proposal
+// "Update Political leaning description, delete Fascist and Zionist"), so they have no cards.
 
 export const CARD_BY_NAME: ReadonlyMap<string, IdeologyCard> = new Map(IDEOLOGY_CARDS.map((c) => [c.name, c]));

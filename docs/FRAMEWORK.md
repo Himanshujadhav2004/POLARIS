@@ -1,10 +1,10 @@
-# Political leaning and ideology scoring framework (framework-v1.1)
+# Political leaning and ideology scoring framework (framework-v1.2)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the final leaning and confidence, so the same matches always give the same result.
 
 ## Definitions
 
-- **Political leaning**: A position on the left-right political spectrum, from far left to far right through the center. Declared bias and Detected bias both use it, so one scale compares an entity's claim with others' ratings.
+- **Political leaning**: Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.
 - **Ideology**: A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.
 
 Possible results: one of Geo's seven leanings (Far left … Far right), each marked **Clear** or **Potential**; **Uncertain** (with the reason); or **No political position** (with the check that failed).
@@ -212,17 +212,6 @@ An outlook that puts protecting ecosystems and the climate at the center of poli
 - Usually found at: Far left, Left, Center left, Center
 - Source: Geo Ideology description (draft until Armando approves)
 
-### Fascist (Draft)
-
-An outlook built on authoritarian nationalism, a single leader and party, suppression of opposition and the subordination of the individual to the state. It defined Mussolini's Italy and Nazi Germany and sits on the far right.
-
-- **T1** Authoritarian nationalist rule by a single leader or party that suppresses opposition. *(distinctive)*
-- **T2** Subordinates the individual to the nation-state. *(distinctive)*
-- Not this ideology: Strong-leader rhetoric that keeps elections and opposition intact.
-- Neighbours: Nationalist
-- Usually found at: Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
 ### Feminist (Draft)
 
 An outlook that seeks equal political, economic and social rights for women and challenges gender-based discrimination. Its currents range from liberal to radical, so feminists appear across the spectrum, most often on the left.
@@ -329,7 +318,7 @@ An outlook that puts the interests, identity and sovereignty of the nation first
 - **T2** Restricts immigration to protect national identity. *(shared)*
 - Not this ideology: A state's official position in a territorial dispute (see G4).
 - Not this ideology: Border management without national-identity framing.
-- Neighbours: MAGA, Paleoconservative, Populist, Fascist
+- Neighbours: MAGA, Paleoconservative, Populist
 - Usually found at: Center right, Right, Far right, Left
 - Source: Geo Ideology description (draft until Armando approves)
 
@@ -426,15 +415,5 @@ An outlook that sees inherited customs, religion and social institutions as the 
 - Not this ideology: Nostalgia without a claim about how society should be ordered.
 - Neighbours: Conservative, Christian conservative, Paleoconservative
 - Usually found at: Center right, Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Zionist (Draft)
-
-An outlook supporting a Jewish national homeland in the Land of Israel and, since 1948, the State of Israel. Its currents range from left-wing labor Zionism to right-wing religious and revisionist Zionism.
-
-- **T1** Supports a Jewish national homeland, or Israel's existence and sovereignty as a Jewish state. *(distinctive)*
-- Not this ideology: Support for one Israeli policy or military action on its own (foreign policy, X-FOR).
-- Neighbours: Nationalist
-- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
 - Source: Geo Ideology description (draft until Armando approves)
 
