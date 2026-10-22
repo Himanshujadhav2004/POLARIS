@@ -19,7 +19,8 @@ Fill the **Leanings** property on Geo claims with a Political leaning and/or an 
 
 ## Decisions
 
-- **Model provider:** OpenAI. Candidates are `gpt-5.5` and `gpt-5.4-mini`, compared on the dev set.
+- **Model:** OpenAI `gpt-5.5`. On the 41-claim dev set (prompt v1) it passed 41/41 and `gpt-5.4-mini` passed 35/41. Mini labelled a reported statement and picked "Zionist" for a two-state claim, which are the errors that matter most here. See `evals/results/`.
+  - gpt-5.5 averaged 2,616 input tokens (about 1,700 of them served from OpenAI's prompt cache) and 193 output tokens per claim.
 - **QA output:** a local spreadsheet (`qa/qa_sample.xlsx` plus a CSV). No Notion.
 - **Ideology duplicate:** `Libertarianism` is canonical. The agent never outputs `Libertarian` (`f69a3a6e…`).
 - **Geo writes:** the agent only writes a **local dry run** (operations plus a readable list). A person makes the proposals by hand.

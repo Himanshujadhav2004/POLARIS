@@ -1,0 +1,541 @@
+{
+  "model": "gpt-5.5",
+  "promptVersion": "v1",
+  "taxonomyFingerprint": "29b6190c8354",
+  "summary": {
+    "model": "gpt-5.5",
+    "total": 41,
+    "passed": 41,
+    "byExpect": {
+      "label": {
+        "total": 6,
+        "passed": 6
+      },
+      "none": {
+        "total": 20,
+        "passed": 20
+      },
+      "either": {
+        "total": 15,
+        "passed": 15
+      }
+    },
+    "falseLabels": 0,
+    "errors": 0,
+    "avgInputTokens": 2616,
+    "avgOutputTokens": 193
+  },
+  "items": [
+    {
+      "id": "02d3e6ee405d4b8691dc84b33bebad21",
+      "text": "Birthright citizenship should be ended",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Right",
+      "ideologies": [
+        "Nationalist"
+      ],
+      "confidence": "high",
+      "rationale": "Advocates ending automatic citizenship for people born in the U.S., a restrictive immigration and citizenship position conventionally associated with the political right and nationalist politics.",
+      "error": null
+    },
+    {
+      "id": "0533ecd48a16b382d15f725de99c6805",
+      "text": "Inheritance should be heavily taxed",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Left",
+      "ideologies": [
+        "Progressive"
+      ],
+      "confidence": "high",
+      "rationale": "Advocates a strong tax on inherited wealth, a redistributive policy conventionally associated with the left and progressive efforts to reduce wealth inequality.",
+      "error": null
+    },
+    {
+      "id": "07736de6dc19428f9b35004b9edbd92c",
+      "text": "Assault weapons should be banned",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Left",
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "Advocates a ban on a class of firearms, a gun-control position conventionally associated with the political left in U.S. politics.",
+      "error": null
+    },
+    {
+      "id": "066019796fe54f489aedd0c66b9cd3d9",
+      "text": "Transgender women should be allowed to compete in women's sports",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Left",
+      "ideologies": [
+        "Progressive"
+      ],
+      "confidence": "high",
+      "rationale": "Advocates transgender inclusion in women's sports, a position conventionally associated with the political left and progressive LGBTQ rights politics in current U.S. debates.",
+      "error": null
+    },
+    {
+      "id": "002f8e4ba6274856b55d4226b01bc9c8",
+      "text": "Hate speech should be illegal",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Left",
+      "ideologies": [],
+      "confidence": "medium",
+      "rationale": "The claim advocates legal restrictions on hateful expression, a stance commonly associated with left-of-center anti-discrimination and equality politics. Its exact placement varies by country and free-speech tradition, so confidence is medium.",
+      "error": null
+    },
+    {
+      "id": "04aab0abb4554e82b2dae5f48a325d6f",
+      "text": "The United States should impose high tariffs on Canadian imports",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Right",
+      "ideologies": [
+        "Nationalist"
+      ],
+      "confidence": "medium",
+      "rationale": "The claim advocates protectionist trade barriers against another country. In current U.S. politics, this kind of aggressive tariff policy is most associated with nationalist right-wing politics, though protectionism can also appear outside the right.",
+      "error": null
+    },
+    {
+      "id": "07bb4713228f7eff54e67f674b763591",
+      "text": "Federal Bureau of Prisons management should be able to change staffing and discipline rules without union approval",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center right",
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim advocates limiting union power and giving management more flexibility, a position conventionally associated with center-right labor policy, especially in the public sector.",
+      "error": null
+    },
+    {
+      "id": "02b765dcfb58f27285001dbd13553f5a",
+      "text": "All recreational drugs should be legalized",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": null,
+      "ideologies": [
+        "Libertarianism"
+      ],
+      "confidence": "high",
+      "rationale": "The claim advocates ending legal prohibitions on recreational drug use, a clear civil-liberties position strongly associated with libertarianism. Its left-right placement is not singular because drug legalization is supported by some on both the left and the libertarian right.",
+      "error": null
+    },
+    {
+      "id": "079d07a77a4249b58c498db29c68994d",
+      "text": "The United States should stop policing the world",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": null,
+      "ideologies": [
+        "Isolationist"
+      ],
+      "confidence": "high",
+      "rationale": "The claim advocates a non-interventionist foreign policy, opposing the U.S. role as a global military enforcer. This position appears on both the left and right, so no single left-right leaning is assigned.",
+      "error": null
+    },
+    {
+      "id": "04241f3e755ebdde2e9744e39fe342cd",
+      "text": "Governments should borrow for infrastructure during recessions even with high public debt",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center left",
+      "ideologies": [],
+      "confidence": "medium",
+      "rationale": "The claim endorses countercyclical deficit spending and public investment, a position commonly associated with center-left Keynesian fiscal policy, though it can also be supported by some centrists.",
+      "error": null
+    },
+    {
+      "id": "0224ebe6a5214bd691e329fb125964a0",
+      "text": "Donald Trump posted on Truth Social ... that Jerome Powell should be forced to resign ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports what Donald Trump posted, without endorsing the position itself.",
+      "error": null
+    },
+    {
+      "id": "075a6a3281354ed38cf2653779fbf443",
+      "text": "Representative Don Bacon stated that the United States should not turn its back on Afghan allies ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports Representative Don Bacon's stated position rather than endorsing it directly.",
+      "error": null
+    },
+    {
+      "id": "3a4020a73655450a8ba8847912ac65a2",
+      "text": "The US should split the childhood MMR vaccine into three separate doses",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim advocates a vaccine delivery policy, but support for splitting the MMR vaccine is not clearly located on the left-right spectrum and can stem from varied health or safety concerns.",
+      "error": null
+    },
+    {
+      "id": "3d5f845459b94f8fa4fb6288807acdc1",
+      "text": "GLP-1 medications should be covered by public insurance for obesity treatment",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center left",
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "Advocates expanding public insurance coverage for a medical treatment, a mainstream center-left health policy position favoring broader public healthcare support.",
+      "error": null
+    },
+    {
+      "id": "3c2e6b9aaebb4dc7b167d66eddd80cff",
+      "text": "Suspected measles patients should be immediately isolated ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "This is clinical infection-control guidance about isolating suspected measles patients, not a political position about policy or society.",
+      "error": null
+    },
+    {
+      "id": "3d00de40e4bc4424a5957031419818d7",
+      "text": "Standard two-step serologic testing should be part of Lyme disease diagnosis when indicated",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "This is clinical guidance about diagnostic testing for Lyme disease and does not take a political position.",
+      "error": null
+    },
+    {
+      "id": "89f507c8d64a48d9bf411e53a079942c",
+      "text": "Pennsylvania measles outbreak reaches 1,004 cases across 39 counties ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports public health case counts and geographic spread without advocating a policy or political position.",
+      "error": null
+    },
+    {
+      "id": "889c449489aa48308e41a6d27f52ede6",
+      "text": "SAMHSA reinstated $2 billion in mental health and substance use grants ... following bipartisan pushback.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports a government action and the political reaction to it without endorsing or opposing the grants.",
+      "error": null
+    },
+    {
+      "id": "3f0e6e8ad947442ab9756c645a17afdb",
+      "text": "The US government should restrict the use of unhosted cryptocurrency wallets",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim advocates restricting unhosted cryptocurrency wallets, but support for crypto restrictions can stem from financial regulation, anti-money-laundering enforcement, national security, or consumer protection concerns across the political spectrum. Its left-right placement is context-dependent rather than clearly conventional.",
+      "error": null
+    },
+    {
+      "id": "3cab7b9d26604ef18104a2f9e5ad4d4f",
+      "text": "The societal debate should focus on finding the right balance of financial rules, not eliminating them entirely.",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center",
+      "ideologies": [],
+      "confidence": "medium",
+      "rationale": "The claim advocates a moderate regulatory stance, rejecting total deregulation while not calling for expansive regulation. That is best characterized as centrist rather than a specific ideology.",
+      "error": null
+    },
+    {
+      "id": "6c4a1988209b42a3a6f888e0807b4506",
+      "text": "The Liquid Network suffered a $320 million exploit in September 2026 ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports an alleged cryptocurrency hack and its ranking by size without advocating any political position.",
+      "error": null
+    },
+    {
+      "id": "01f8231cb20f4c8a947b837cfc2cb991",
+      "text": "Right-leaning pollsters were paid to conduct polling to convince Donald Trump to scale back deportations ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports an alleged political strategy and actions by pollsters involving Donald Trump, without endorsing or advocating the immigration position itself.",
+      "error": null
+    },
+    {
+      "id": "3a6d6826b90172f1292b9ded9af9359b",
+      "text": "The US should reject global schemes to control AI",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Right",
+      "ideologies": [
+        "Nationalist"
+      ],
+      "confidence": "medium",
+      "rationale": "The claim advocates rejecting international or global governance over AI in favor of U.S. autonomy, a stance commonly associated with nationalist, right-leaning politics. The wording is explicit, though the exact ideological placement could vary depending on context.",
+      "error": null
+    },
+    {
+      "id": "3af68ffcbc8d2916148e97da8dc75f54",
+      "text": "AI companies should be required to make their systems more transparent",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center left",
+      "ideologies": [],
+      "confidence": "medium",
+      "rationale": "The claim advocates a regulatory requirement on private AI companies to increase transparency, a position generally associated with mainstream center-left support for corporate oversight. Its placement is somewhat debatable because AI transparency has some cross-partisan appeal.",
+      "error": null
+    },
+    {
+      "id": "6c4e6b3aa9734455bbcfaa571dd14d39",
+      "text": "Advanced Machine Intelligence raised $1.03 billion in a March 2026 seed round",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports a funding amount and date for a company without advocating any political position.",
+      "error": null
+    },
+    {
+      "id": "3abf816a83914df689e41ec9dca50b15",
+      "text": "Disney should aggressively integrate generative AI into its creative production",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim gives business/creative production strategy advice about using generative AI, without taking a clear political stance on law, rights, labor policy, or governance.",
+      "error": null
+    },
+    {
+      "id": "3b8a2aa6f2514c0f91549b982154b4f1",
+      "text": "Jerusalem should be divided between Israel and Palestine",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center left",
+      "ideologies": [],
+      "confidence": "medium",
+      "rationale": "Advocates a territorial compromise consistent with a two-state framework, a position commonly associated with center-left or left peace-process politics in the Israel-Palestine context. The exact left-right placement varies by audience, so confidence is medium.",
+      "error": null
+    },
+    {
+      "id": "3be0cedda44d496583330e6649faa965",
+      "text": "Poland should reintroduce border checks with EU neighbors to monitor transit",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Center right",
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "Advocates reinstating border controls within the EU, a restrictive border and sovereignty-oriented policy conventionally associated with the mainstream right or center right.",
+      "error": null
+    },
+    {
+      "id": "6c4f3b01f64f42358af9489178b00e8d",
+      "text": "The Yemeni government's July 2026 bombing of Sanaa airport was justified",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim endorses a specific military action in Yemen, but support for that bombing does not map reliably onto a left-right political leaning or named ideology without more context.",
+      "error": null
+    },
+    {
+      "id": "071490ef73d84c5289654d1ee38ff34e",
+      "text": "The margin of victory between the left-leaning opposition and the right-wing bloc in Sweden's ... election was approximately 50,000 votes",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim neutrally reports an election result and vote margin without endorsing either side or a policy position.",
+      "error": null
+    },
+    {
+      "id": "889add01e8bc4458bc141c2f24cbae62",
+      "text": "The entry of Ethiopian government forces into northern Tigray towns ... heightened geopolitical tensions",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports a military movement and its geopolitical effect without advocating a policy or political position.",
+      "error": null
+    },
+    {
+      "id": "029189412759437dbad4bf7d3fd3ef29",
+      "text": "The study found 80% of ChatGPT's responses were exclusively left-leaning, while 3% were right-leaning.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports a study's finding about ChatGPT responses rather than endorsing a political position itself.",
+      "error": null
+    },
+    {
+      "id": "3a9da993a0e343a493822ce2bee19b05",
+      "text": "A group known as the Integrists believes that the Catholic church should run the country.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports what a group known as the Integrists believes rather than endorsing the position itself.",
+      "error": null
+    },
+    {
+      "id": "bf435e2030394255a4cd4ed440f30e9d",
+      "text": "Populist parties on both the left and the right are making inroads with the UK electorate.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim reports a political trend about populist parties gaining support without endorsing or opposing that development.",
+      "error": null
+    },
+    {
+      "id": "3a9cb45a5a004a34bcb00d0416fe66fb",
+      "text": "The two-minute rule states that a new habit should be scaled down to an action that takes two minutes or less.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim describes a habit-formation rule and has no political or ideological stake.",
+      "error": null
+    },
+    {
+      "id": "3fa9573fcfbb4234a67c7fe23b3578a4",
+      "text": "Marriage should be between a man and a woman",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Right",
+      "ideologies": [
+        "Conservative",
+        "Traditionalist"
+      ],
+      "confidence": "high",
+      "rationale": "The claim endorses a traditional, opposite-sex-only definition of marriage, a socially conservative position associated with the political right.",
+      "error": null
+    },
+    {
+      "id": "3ad9461002ec5c16b17178ac14ffd336",
+      "text": "A man should head the family in regards to making certain decisions",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "political_leaning": "Right",
+      "ideologies": [
+        "Traditionalist"
+      ],
+      "confidence": "high",
+      "rationale": "The claim endorses a patriarchal family hierarchy and traditional gender roles, which are conventionally associated with right-wing social conservatism and traditionalism.",
+      "error": null
+    },
+    {
+      "id": "010427a6bd765078b4d58d950910a5cb",
+      "text": "Same-sex unions remove the ability to procreate, with the exception of adoption",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim asserts a factual proposition about procreation in same-sex unions without directly advocating a policy or normative political position.",
+      "error": null
+    },
+    {
+      "id": "3ee175a7710e2c57062437d9964283c0",
+      "text": "Partners in a committed relationship should share their phone passcodes",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "This is personal relationship advice about boundaries and privacy between partners, not a political position about law, policy, rights, the economy, or governance.",
+      "error": null
+    },
+    {
+      "id": "002e2bfdb58c52e99c8bc2a3ae773ace",
+      "text": "A woman should have input on date plans to ensure her time and energy are well-spent ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "This is personal dating advice about how couples should plan dates, not a political claim about law, rights, policy, or social organization.",
+      "error": null
+    },
+    {
+      "id": "0032d0d0d97157a1b2cd11b5d04f503a",
+      "text": "In contemporary dating, individuals have the freedom to choose what they want in a relationship",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "political_leaning": null,
+      "ideologies": [],
+      "confidence": "high",
+      "rationale": "The claim concerns personal relationship choice in dating and does not advocate a political policy, law, or broader governmental position.",
+      "error": null
+    }
+  ]
+}

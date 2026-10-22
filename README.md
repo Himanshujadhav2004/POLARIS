@@ -23,7 +23,12 @@ npm run cli -- counts                   # claims per target space
 npm run cli -- claim <id>               # a claim with the context the agent sees
 npm run cli -- sample <space> --count 10 --seed 1
 npm run cli -- schema                   # refresh schema/geo-schema.json from the live API
+
+npm run cli -- classify <id>            # label claims (needs OPENAI_API_KEY)
+npm run cli -- eval --models gpt-5.5,gpt-5.4-mini
 ```
+
+Classifications are cached in `data/state.sqlite` per claim, model, prompt version and taxonomy fingerprint, so re-running a command never pays for the same claim twice.
 
 ## Layout
 
@@ -35,6 +40,13 @@ src/geo/taxonomy.ts  Political leaning + Ideology values, loaded live
 src/geo/claims.ts    Claim fetching, random sampling, cursor paging
 src/geo/schema.ts    Live schema introspection
 src/util/random.ts   Seeded randomness for reproducible samples
+src/agent/prompt.ts  System prompt (PROMPT_VERSION) and claim message
+src/agent/schema.ts  Answer schema built from the live taxonomy; label validation
+src/agent/classify.ts  OpenAI structured-output call
+src/pipeline/        Cached classification runs (SQLite run state)
+src/eval/            Dev-set scoring and model comparison
+evals/dev-set.json   41 hand-labelled edge cases
+evals/results/       Eval output per model and prompt version
 schema/              Live Geo GraphQL schema
 test/                Unit tests (vitest)
 docs/PLAN.md         Plan and decisions
@@ -46,7 +58,7 @@ docs/PLAN.md         Plan and decisions
 |---|---|
 | 0 Project scaffold | Done |
 | 1 Geo read layer + live taxonomy | Done |
-| 2 Classifier + dev-set eval | Not started |
+| 2 Classifier + dev-set eval | Done: gpt-5.5 chosen (41/41 vs 35/41 for gpt-5.4-mini) |
 | 3 QA sample | Not started |
 | 4 Review loop | Not started |
 | 5 Full run | Not started |

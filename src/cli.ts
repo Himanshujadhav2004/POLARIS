@@ -1,10 +1,14 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { parseArgs } from "node:util";
-import { SPACES, spaceBySlug } from "./config.js";
+import { Classifier } from "./agent/classify.js";
+import { OPENAI_MODEL, SPACES, spaceBySlug } from "./config.js";
+import { renderSummary, runEval } from "./eval/run.js";
 import { countClaims, fetchClaims, sampleClaimIds } from "./geo/claims.js";
 import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
+import { classifyWithCache } from "./pipeline/classify-claims.js";
+import { RunState } from "./pipeline/state.js";
 import { seededRng } from "./util/random.js";
 
 const HELP = `Usage: npm run cli -- <command> [options]
@@ -16,6 +20,12 @@ Geo (read-only, no key needed)
   claim <id> [<id>...]         Show claims with the context the agent sees
   sample <space> [--count N] [--seed N]
                                Draw random claims from a space (slugs: ${SPACES.map((s) => s.slug).join(", ")})
+
+Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
+  classify <id> [<id>...] [--model M]
+                               Label claims and print the result
+  eval [--models a,b] [--concurrency N]
+                               Score models on evals/dev-set.json; writes evals/results/
 `;
 
 async function main(argv: string[]): Promise<void> {
@@ -25,6 +35,9 @@ async function main(argv: string[]): Promise<void> {
     options: {
       count: { type: "string" },
       seed: { type: "string" },
+      model: { type: "string" },
+      models: { type: "string" },
+      concurrency: { type: "string" },
       help: { type: "boolean", short: "h" },
     },
   });
@@ -69,6 +82,36 @@ async function main(argv: string[]): Promise<void> {
       const ids = await sampleClaimIds(geo, space.id, count, seededRng(seed));
       console.log(`${space.name}: ${ids.length} random claims (seed ${seed})\n`);
       for (const claim of await fetchClaims(geo, ids)) console.log(`  ${claim.id}  ${claim.text}`);
+      return;
+    }
+    case "classify": {
+      if (!rest.length) throw new Error("Give at least one claim ID.");
+      const taxonomy = await fetchTaxonomy(geo);
+      const classifier = new Classifier(taxonomy, { model: values.model });
+      const claims = await fetchClaims(geo, rest);
+      const state = new RunState();
+      try {
+        const outcomes = await classifyWithCache(classifier, state, claims.map((claim) => ({ claim, spaceId: null })), 4);
+        for (const claim of claims) {
+          const outcome = outcomes.get(claim.id)!;
+          console.log(`\n${claim.id}  ${claim.text}`);
+          console.log(JSON.stringify("error" in outcome ? outcome : { ...outcome.label, valueIds: outcome.valueIds, usage: outcome.usage }, null, 2));
+        }
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "eval": {
+      const models = (values.models ?? OPENAI_MODEL).split(",").map((m) => m.trim()).filter(Boolean);
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const summaries = await runEval({ geo, taxonomy, state, models, concurrency: Number(values.concurrency ?? 6) });
+        console.log(renderSummary(summaries));
+      } finally {
+        state.close();
+      }
       return;
     }
     default:
