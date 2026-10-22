@@ -12,40 +12,41 @@ const item = (over: Partial<TestItem>): TestItem => ({
   note: "",
   ...over,
 });
-const result = (outcome: "leaning" | "uncertain" | "no_position", leaning: string | null, qualifier: "Clear" | "Potential" | null, ideologies: [string, "Clear" | "Potential"][] = []) =>
-  ({ outcome, leaning, qualifier, ideologies: ideologies.map(([name, q]) => ({ name, qualifier: q })) }) as never;
+const result = (outcome: "leaning" | "no_label" | "no_position", leaning: string | null, ideologies: string[] = []) =>
+  ({ outcome, leaning, ideologies: ideologies.map((name) => ({ name })) }) as never;
 
 describe("judge", () => {
-  it("accepts an acceptable leaning and ideology", () => {
-    expect(judge(item({}), result("leaning", "Left", "Clear", [["Social democrat", "Clear"]])).verdict).toBe("Correct");
+  it("accepts an acceptable published leaning and ideology", () => {
+    expect(judge(item({}), result("leaning", "Left", ["Social democrat"])).verdict).toBe("Correct label");
   });
 
-  it("counts a missing leaning as a safe miss, not an error", () => {
-    expect(judge(item({}), result("uncertain", null, null)).verdict).toBe("Safe miss");
+  it("counts a missing leaning as a missed label, not an error", () => {
+    expect(judge(item({}), result("no_label", null)).verdict).toBe("Missed label");
   });
 
-  it("flags a wrong leaning, and a confident one as a confident error", () => {
-    const j = judge(item({}), result("leaning", "Right", "Clear"));
-    expect(j).toMatchObject({ verdict: "Wrong label", confidentError: true });
-    expect(judge(item({}), result("leaning", "Right", "Potential")).confidentError).toBe(false);
+  it("flags a wrong published leaning", () => {
+    expect(judge(item({}), result("leaning", "Right"))).toMatchObject({ verdict: "Wrong label" });
   });
 
-  it("treats any label on a no-position or uncertain item as wrong", () => {
-    expect(judge(item({ expect: "no_position", leanings: [], ideologies: [] }), result("leaning", "Left", "Potential")).verdict).toBe("Wrong label");
-    expect(judge(item({ expect: "no_position", leanings: [], ideologies: [] }), result("uncertain", null, null, [["Populist", "Potential"]])).verdict).toBe("Wrong ideology");
-    expect(judge(item({ expect: "uncertain", leanings: [] }), result("leaning", "Center", "Potential")).verdict).toBe("Wrong label");
+  it("treats any published label on a no-position or uncertain item as wrong", () => {
+    expect(judge(item({ expect: "no_position", leanings: [], ideologies: [] }), result("leaning", "Left")).verdict).toBe("Wrong label");
+    expect(judge(item({ expect: "no_position", leanings: [], ideologies: [] }), result("no_label", null, ["Populist"])).verdict).toBe("Wrong ideology");
+    expect(judge(item({ expect: "uncertain", leanings: [] }), result("leaning", "Center")).verdict).toBe("Wrong label");
   });
 
   it("allows a blank or an acceptable leaning for either-items, and nothing else", () => {
     const either = item({ expect: "either", leanings: ["Center right"] });
-    expect(judge(either, result("uncertain", null, null)).verdict).toBe("Correct");
-    expect(judge(either, result("leaning", "Center right", "Potential")).verdict).toBe("Correct");
-    expect(judge(either, result("leaning", "Center left", "Potential")).verdict).toBe("Wrong label");
+    expect(judge(either, result("no_label", null)).verdict).toBe("Correct blank");
+    expect(judge(either, result("leaning", "Center right")).verdict).toBe("Correct label");
+    expect(judge(either, result("leaning", "Center left")).verdict).toBe("Wrong label");
+  });
+
+  it("counts a correct ideology on a claim without a leaning as a correct label", () => {
+    expect(judge(item({ expect: "uncertain", leanings: [], ideologies: ["Populist"] }), result("no_label", null, ["Populist"])).verdict).toBe("Correct label");
   });
 
   it("flags an unacceptable ideology", () => {
-    const j = judge(item({}), result("leaning", "Left", "Clear", [["Marxist", "Clear"]]));
-    expect(j).toMatchObject({ verdict: "Wrong ideology", confidentError: true });
+    expect(judge(item({}), result("leaning", "Left", ["Marxist"]))).toMatchObject({ verdict: "Wrong ideology" });
   });
 });
 

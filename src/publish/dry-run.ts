@@ -1,9 +1,8 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Ops } from "@geoprotocol/geo-sdk";
-import { PROMPT_VERSION } from "../agent/prompt.js";
-import { VERIFIER_VERSION } from "../agent/verify.js";
 import { geoEntityUrl, IDS } from "../config.js";
+import { FRAMEWORK_VERSION } from "../framework/rubric.js";
 import type { Taxonomy } from "../geo/taxonomy.js";
 import type { Batch, BatchItem } from "./batch.js";
 
@@ -23,8 +22,8 @@ export function buildLeaningsOps(items: BatchItem[], taxonomy: Taxonomy): { rela
   const names = new Map([...taxonomy.byName.values()].map((v) => [v.id, v.name]));
   const relations: PlannedRelation[] = [];
   const ops: unknown[] = [];
-  for (const { claim, classification } of items) {
-    for (const valueId of classification.valueIds) {
+  for (const { claim, valueIds } of items) {
+    for (const valueId of valueIds) {
       const valueName = names.get(valueId);
       if (!valueName) throw new Error(`Value ${valueId} is no longer in the taxonomy`);
       const created = Ops.relations.create({ fromEntity: claim.id, toEntity: valueId, type: IDS.leaningsProperty });
@@ -82,19 +81,19 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
   mkdirSync(dir, { recursive: true });
   const { relations, ops } = buildLeaningsOps(batch.items, taxonomy);
   const generatedAt = new Date().toISOString();
-  const model = batch.items[0]?.classification.resolvedModel ?? "";
+  const model = batch.items[0]?.result.versions.scorer ?? "";
   const space = batch.space;
 
-  const claims = batch.items.map(({ claim, classification, verification }) => ({
+  const claims = batch.items.map(({ claim, result }) => ({
     claimId: claim.id,
     text: claim.text,
     link: geoEntityUrl(space.id, claim.id),
-    politicalLeaning: classification.label.political_leaning,
-    ideologies: classification.label.ideologies,
+    politicalLeaning: result.leaning,
+    ideologies: result.ideologies.map((i) => i.name),
     relations: relations.filter((r) => r.claimId === claim.id),
-    evidence: classification.label.evidence,
-    rationale: classification.label.rationale,
-    verifier: verification.verdict,
+    evidence: [...result.criteria.map((c) => c.evidence), ...result.ideologies.map((i) => i.evidence)],
+    explanation: result.explanation,
+    rules: result.checks.map((c) => `${c.id} ${c.pass ? "pass" : "FAIL"}: ${c.detail}`),
   }));
 
   const files = {
@@ -112,11 +111,9 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
       leaningsPropertyId: IDS.leaningsProperty,
       generatedAt,
       model,
-      promptVersion: PROMPT_VERSION,
-      verifierVersion: VERIFIER_VERSION,
+      framework: FRAMEWORK_VERSION,
       taxonomyFingerprint: taxonomy.fingerprint,
-      seed: batch.seed,
-      checks: ["claim is in the space", "claim has no Leanings yet", "agent confidence is high", "independent verifier agrees", "manual review"],
+      checks: ["Armando approved the label in Notion", "claim is in the space", "claim has no Leanings yet", "every publish rule passed (P1–P6 for a leaning, I3/I6 for an ideology)"],
       claims,
     }),
   );
@@ -143,9 +140,9 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     "",
     `- Space: ${space.name} (\`${space.id}\`)`,
     `- Claims: ${claims.length}; Leanings links to add: ${relations.length}`,
-    `- Generated ${generatedAt} with ${model}, prompt ${PROMPT_VERSION}, verifier ${VERIFIER_VERSION}, taxonomy ${taxonomy.fingerprint}`,
+    `- Generated ${generatedAt} with ${model}, ${FRAMEWORK_VERSION}, taxonomy ${taxonomy.fingerprint}`,
     "",
-    "Every claim below passed: it is in the space, it has no Leanings yet, the agent was highly confident, and an independent verifier agreed with every part of the label.",
+    "Every claim below passed: Armando approved its label in Notion, it is in the space, it has no Leanings yet, and the agent published the label because every publish rule passed.",
     "",
     "## Before you submit",
     "",
@@ -162,8 +159,8 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     "",
     ...claims.flatMap((c, i) => [
       `${i + 1}. **${c.text}**: ${leaningsText(c)}`,
-      `   - Evidence: "${c.evidence}"`,
-      `   - ${c.rationale}`,
+      `   - Evidence: ${c.evidence.map((e) => `“${e}”`).join("; ")}`,
+      `   - ${c.explanation}`,
       `   - Values: ${c.relations.map((r) => `${r.valueName} \`${r.valueId}\``).join(", ")}`,
     ]),
     "",

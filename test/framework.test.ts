@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
-import { ALL_CRITERIA, CONFIDENCE, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT } from "../src/framework/rubric.js";
+import { ALL_CRITERIA, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, PUBLISH_RULES, RULES } from "../src/framework/rubric.js";
 
 /** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted), minus the excluded duplicate "Libertarian". */
 const GEO_IDEOLOGIES = [
@@ -40,8 +40,16 @@ describe("rubric", () => {
     for (const c of ALL_CRITERIA) expect(LEANING_BY_SCORE[String(c.score) as keyof typeof LEANING_BY_SCORE]).toBeTruthy();
   });
 
-  it("splits confidence into parts that add up to 100", () => {
-    expect(CONFIDENCE.components.reduce((s, c) => s + c.max, 0)).toBe(100);
+  it("defines every level once, for the scorer, the independent check and the verifier alike", () => {
+    expect(Object.keys(LEVEL_RULES).sort()).toEqual([...LEANINGS_LEFT_TO_RIGHT].sort());
+    for (const text of Object.values(LEVEL_RULES)) expect(text.length).toBeGreaterThan(30);
+  });
+
+  it("numbers the publish rules P1–P6 and has no partial-label rule left", () => {
+    expect(PUBLISH_RULES.map((r) => r.id)).toEqual(["P1", "P2", "P3", "P4", "P5", "P6"]);
+    const md = renderFramework();
+    expect(md).not.toMatch(/Potential|confidence band/i);
+    expect(new Set(RULES.map((r) => r.id)).size).toBe(RULES.length);
   });
 });
 
@@ -63,9 +71,11 @@ describe("ideology cards", () => {
 });
 
 describe("renderFramework", () => {
-  it("documents every criterion and every card", () => {
+  it("documents every criterion, level, publish rule and card", () => {
     const md = renderFramework();
     for (const c of ALL_CRITERIA) expect(md).toContain(`**${c.id}**`);
+    for (const r of PUBLISH_RULES) expect(md).toContain(`**${r.id}**`);
+    for (const text of Object.values(LEVEL_RULES)) expect(md).toContain(text);
     for (const card of IDEOLOGY_CARDS) expect(md).toContain(`### ${card.name}`);
   });
 });

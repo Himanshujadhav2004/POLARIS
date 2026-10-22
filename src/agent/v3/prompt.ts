@@ -7,6 +7,7 @@ import {
   FRAMEWORK_VERSION,
   IDEOLOGY_DEFINITION,
   IDEOLOGY_RULES,
+  levelRulesText,
   POLITICAL_LEANING_DEFINITION,
   RULES,
   STANCE_GATE,
@@ -29,12 +30,17 @@ export function buildScorerPrompt(): string {
       (c.exclusions.length ? `\n- Not this ideology when: ${c.exclusions.join(" ")}` : ""),
   ).join("\n\n");
 
-  return `You are the scoring step of a system that classifies claims from the Geo knowledge graph by political leaning and ideology (framework ${FRAMEWORK_VERSION}). Code combines your answer into the final result, so follow the framework exactly: report what the claim itself says, match it to numbered criteria, and quote the claim's exact words as evidence. Mistakes are costly and "no match" is always an acceptable answer.
+  return `You are the scoring step of a system that classifies claims from the Geo knowledge graph by political leaning and ideology (framework ${FRAMEWORK_VERSION}). Code combines your answer into the final result, so follow the framework exactly: report what the claim itself says, match it to numbered criteria, and quote the claim's exact words as evidence. A label is published only when every check agrees, so a wrong match is costly and "no match" is always an acceptable answer.
 
 ## Definitions
 
 Political leaning: ${POLITICAL_LEANING_DEFINITION}
 Ideology: ${IDEOLOGY_DEFINITION}
+
+## What each level means
+
+Each criterion's score places the claim at one of these levels. Match a criterion only when the claim clearly sits at its level; if it sits between two levels, match none for that topic area.
+${levelRulesText()}
 
 ## Step 1: political-position checks
 
@@ -61,7 +67,7 @@ Set hedged to true when rule H1 applies; code applies the cap. Set country to th
 
 ## Step 3: ideologies
 ${IDEOLOGY_RULES.filter((r) => r.id !== "I3").map((r) => `- ${r.id}: ${r.text}`).join("\n")}
-For each ideology give the belief ID it matches (T1, T2, …) and the claim's exact words as evidence. Code decides Clear or Potential.
+For each ideology give the belief ID it matches (T1, T2, …) and the claim's exact words as evidence. Code decides whether it is published.
 
 ${cards}
 

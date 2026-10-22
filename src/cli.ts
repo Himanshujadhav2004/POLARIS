@@ -5,7 +5,6 @@ import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
 import { PROMPT_VERSION } from "./agent/prompt.js";
 import { ScoringAgent } from "./agent/v3/agent.js";
-import { Verifier } from "./agent/verify.js";
 import { loadTestSet, runBench, writeBench } from "./eval/bench.js";
 import { runEval3 } from "./eval/run3.js";
 import { OPENAI_MODEL, SPACES, spaceBySlug, SUBMISSIONS_PAUSED } from "./config.js";
@@ -16,6 +15,7 @@ import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
+import { buildFreshSet, usedClaimIds, writeFreshSet } from "./pipeline/fresh-set.js";
 import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
 import { buildBatch } from "./publish/batch.js";
@@ -53,15 +53,18 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   eval3 [--concurrency N]      Run agent v3 over evals/dev-set.json; writes evals/results/v3.<framework>.json
   bench [--file evals/test-set-v1.json] [--concurrency N]
                                Run agent v3 over the test set; writes evals/results/bench.<set>.<framework>.json
+  fresh-set [--seed 3] [--pool 45] [--per-space 10] [--labelled 6] [--concurrency N]
+                               Score never-used claims from every space and pick the 10-per-space QA sample;
+                               writes evals/fresh/fresh-seed<N>/fresh.json
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
                                Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
   qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
                                Score reviewer verdicts against the agent's output
 
 Proposals (local dry run only; nothing is sent to Geo)
-  dry-run --space <slug> [--count 10] [--pool 80] [--seed N] [--exclude id,id] [--only id,id]
-                               Pick claims that pass every check and write proposals/<space>/batch-NN/
-                               (--only: after manual review, use exactly these claims)
+  dry-run --space <slug> --only id,id [--concurrency N]
+                               Write proposals/<space>/batch-NN/ for claims whose labels Armando approved
+                               in Notion; a claim the agent no longer publishes is left out
   check-proposal --dir proposals/<space>/batch-NN
                                After you submit and it executes: confirm the Leanings now on Geo
 
@@ -201,12 +204,13 @@ async function main(argv: string[]): Promise<void> {
             continue;
           }
           console.log(`\n${claim.text}\n${"-".repeat(Math.min(claim.text.length, 100))}`);
-          console.log(`Result:      ${r.display}${r.confidence ? `   confidence ${r.confidence.total}/100 (${r.confidence.band})` : ""}`);
-          if (r.ideologies.length) console.log(`Ideology:    ${r.ideologies.map((i) => `${i.qualifier === "Clear" ? i.name : `Potentially ${i.name}`} [${i.tenet}]`).join(", ")}`);
-          for (const c of r.criteria) console.log(`Criterion:   ${c.id} (${c.strength}) "${c.evidence}"`);
-          if (r.confidence) console.log(`Confidence:  ${Object.entries(r.confidence.components).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+          console.log(`Result:      ${r.display}`);
+          if (r.ideologies.length) console.log(`Ideology:    ${r.ideologies.map((i) => `${i.name} [${i.tenet}]`).join(", ")}`);
+          for (const c of r.criteria) console.log(`Criterion:   ${c.id} (${c.strength}) “${c.evidence}”`);
+          for (const c of r.checks) console.log(`Rule:        ${c.id} ${c.skipped ? "skipped" : c.pass ? "pass" : "FAIL"}: ${c.detail}`);
           console.log(`Why:         ${r.explanation}`);
           for (const d of r.droppedIdeologies) console.log(`Not given:   ${d.name}: ${d.reason}`);
+          for (const n of r.reviewerNotes) console.log(`Model note:  ${n} (unverified)`);
           if (r.flags.length) console.log(`Flags:       ${r.flags.join("; ")}`);
         }
       } finally {
@@ -235,6 +239,30 @@ async function main(argv: string[]): Promise<void> {
         const { rows, summary } = await runBench(geo, agent, set, Number(values.concurrency ?? 4));
         console.log(JSON.stringify(summary, null, 2));
         console.log(`Wrote ${writeBench(rows, summary)}`);
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "fresh-set": {
+      const seed = Number(values.seed ?? 3);
+      const name = `fresh-seed${seed}`;
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const { rows, stats } = await buildFreshSet({
+          geo,
+          agent,
+          seed,
+          pool: Number(values.pool ?? 45),
+          perSpace: Number(values["per-space"] ?? 10),
+          labelled: Number(values.labelled ?? 6),
+          concurrency: Number(values.concurrency ?? 4),
+          exclude: usedClaimIds(),
+          log: (line) => console.log(line),
+        });
+        console.log(`Wrote ${writeFreshSet(name, seed, rows, stats)}`);
       } finally {
         state.close();
       }
@@ -287,39 +315,25 @@ async function main(argv: string[]): Promise<void> {
     }
     case "dry-run": {
       const space = spaceBySlug(values.space ?? "");
+      if (!values.only) {
+        throw new Error("Give the claims whose labels Armando approved in Notion: --only id,id. Nothing else is ever proposed.");
+      }
+      const approved = new Set(values.only.split(",").map((s) => s.trim()).filter(Boolean));
+      const taken = [...approved].filter((id) => idsInProposals().has(id));
+      if (taken.length) throw new Error(`Already in a proposal batch: ${taken.join(", ")}`);
       const taxonomy = await fetchTaxonomy(geo);
       const state = new RunState();
       try {
-        const exclude = new Set([...previouslyUsedIds(), ...idsInProposals(), ...(values.exclude ?? "").split(",").map((s) => s.trim()).filter(Boolean)]);
-        const batch = await buildBatch({
-          geo,
-          classifier: new Classifier(taxonomy, { model: values.model }),
-          verifier: new Verifier(taxonomy, { model: values.model }),
-          state,
-          space,
-          count: Number(values.count ?? 10),
-          pool: Number(values.pool ?? 80),
-          seed: Number(values.seed ?? 1),
-          concurrency: Number(values.concurrency ?? 6),
-          exclude,
-          nameIncludes: " should ",
-          only: values.only ? new Set(values.only.split(",").map((s) => s.trim()).filter(Boolean)) : undefined,
-          log: (line) => console.log(line),
-        });
-        if (!batch.items.length) throw new Error("No claim passed every check. Try a larger --pool.");
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const batch = await buildBatch({ geo, agent, taxonomy, space, approved, concurrency: Number(values.concurrency ?? 4), log: (line) => console.log(line) });
+        for (const r of batch.rejected) console.log(`  left out ${r.claim.id}: ${r.reason}`);
+        if (!batch.items.length) throw new Error("None of the approved claims still passes every publish rule.");
         const dir = nextBatchDir(space.slug);
         const files = writeDryRun(batch, taxonomy, dir);
-        console.log(`\n${batch.items.length} claims selected (${batch.spare.length} more passed and are held back)`);
-        for (const { claim, classification: c } of batch.items) {
-          console.log(`  ${claim.id}  ${[c.label.political_leaning, ...c.label.ideologies].filter(Boolean).join(", ").padEnd(36)} ${claim.text}`);
+        console.log(`\n${batch.items.length} claims in the batch:`);
+        for (const { claim, result } of batch.items) {
+          console.log(`  ${claim.id}  ${[result.leaning, ...result.ideologies.map((i) => i.name)].filter(Boolean).join(", ").padEnd(36)} ${claim.text}`);
         }
-        const reasons = new Map<string, number>();
-        for (const r of batch.rejected) {
-          const key = r.reason.startsWith("verifier disagreed") ? "verifier disagreed" : r.reason;
-          reasons.set(key, (reasons.get(key) ?? 0) + 1);
-        }
-        console.log(`\nLeft out ${batch.rejected.length} of ${batch.candidates} candidates:`);
-        for (const [reason, n] of [...reasons].sort((a, b) => b[1] - a[1])) console.log(`  ${String(n).padStart(3)}  ${reason}`);
         console.log(`\nWrote:\n${files.map((f) => `  ${f}`).join("\n")}`);
       } finally {
         state.close();

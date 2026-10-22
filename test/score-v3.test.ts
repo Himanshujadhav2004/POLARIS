@@ -1,12 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { parseDecision } from "../src/agent/v3/decisions.js";
 import {
+  allPass,
+  checkIdeology,
+  checkLeaning,
   compareWithIndependent,
   decideLeaning,
-  displayLabel,
   evidenceFound,
+  failedChecks,
+  quote,
+  readyForRepeats,
   resolveIdeologies,
-  scoreConfidence,
+  unverifiedQuotes,
+  type IdeologyGateInput,
+  type LeaningGateInput,
   type ScorerOutput,
 } from "../src/agent/v3/score.js";
 
@@ -119,50 +126,123 @@ describe("compareWithIndependent (A5)", () => {
   });
 });
 
-describe("scoreConfidence", () => {
-  it("adds the documented parts", () => {
-    const c = scoreConfidence({ hedged: false, weakestStrength: "direct", pStance: 0.99, pLeaning: 0.9, verifierAgrees: true });
-    expect(c.components).toEqual({ explicitness: 25, match: 25, probability: 27, verifier: 20 });
-    expect(c.total).toBe(97);
-    expect(c.band).toBe("High");
+describe("checkLeaning (publish rules P1–P6)", () => {
+  const dist = (top: string, p: number) =>
+    Object.fromEntries(["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"].map((l) => [l, l === top ? p : (1 - p) / 6])) as never;
+  const ok: LeaningGateInput = {
+    leaning: "Right",
+    pStance: 0.97,
+    weakestStrength: "direct",
+    hedged: false,
+    country: "United States",
+    independent: dist("Right", 0.9),
+    verifierAgrees: true,
+    repeats: ["Right", "Right"],
+  };
+  const failing = (over: Partial<LeaningGateInput>) => failedChecks(checkLeaning({ ...ok, ...over })).map((c) => c.id);
+
+  it("publishes only when every rule passes", () => {
+    expect(allPass(checkLeaning(ok))).toBe(true);
+    expect(failing({})).toEqual([]);
   });
 
-  it("drops to Medium or Low as signals weaken", () => {
-    expect(scoreConfidence({ hedged: true, weakestStrength: "close", pStance: 0.9, pLeaning: 0.6, verifierAgrees: true }).band).toBe("Medium");
-    expect(scoreConfidence({ hedged: false, weakestStrength: "direct", pStance: 0.9, pLeaning: 0.9, verifierAgrees: false }).band).toBe("Medium");
-    expect(scoreConfidence({ hedged: true, weakestStrength: "partial", pStance: 0.9, pLeaning: 0.3, verifierAgrees: false }).band).toBe("Low");
+  it("blocks on each rule by itself", () => {
+    expect(failing({ pStance: 0.79 })).toEqual(["P1"]);
+    expect(failing({ weakestStrength: "partial" })).toEqual(["P2"]);
+    expect(failing({ hedged: true })).toEqual(["P2"]);
+    expect(failing({ country: null })).toEqual(["P3"]);
+    expect(failing({ independent: dist("Center right", 0.9) })).toEqual(["P4"]);
+    expect(failing({ independent: dist("Right", 0.6) })).toEqual(["P4"]);
+    expect(failing({ verifierAgrees: false })).toEqual(["P5"]);
+    expect(failing({ repeats: ["Right", "Center right"] })).toEqual(["P6"]);
+    expect(failing({ repeats: ["Right", null] })).toEqual(["P6"]);
   });
 
-  it("is zero when the independent check says the claim takes no position", () => {
-    expect(scoreConfidence({ hedged: false, weakestStrength: "direct", pStance: 0.2, pLeaning: 1, verifierAgrees: true }).total).toBe(0);
+  it("an independent check one level away blocks, as in run-1's wrong 'Potentially' labels", () => {
+    const c = checkLeaning({ ...ok, leaning: "Far right", independent: { ...(dist("Right", 0.92) as Record<string, number>), "Far right": 0 } as never });
+    expect(c.find((x) => x.id === "P4")).toMatchObject({ pass: false, detail: "the independent check prefers Right (0.92); Far right gets 0.00" });
+  });
+
+  it("asks for the extra runs only when P1–P5 pass, and never publishes without them", () => {
+    const before = checkLeaning({ ...ok, repeats: null });
+    expect(readyForRepeats(before)).toBe(true);
+    expect(allPass(before)).toBe(false);
+    expect(failedChecks(before)).toEqual([]); // the skipped P6 is not reported as a failure
+    expect(readyForRepeats(checkLeaning({ ...ok, verifierAgrees: false, repeats: null }))).toBe(false);
+    expect(allPass([])).toBe(false);
   });
 });
 
 describe("resolveIdeologies", () => {
   const text = "Workers should be entitled to company board seats";
-  it("gives Potential for a shared belief, with the alternatives", () => {
-    const { assigned } = resolveIdeologies([{ name: "Social democrat", tenet: "T2", evidence: "company board seats" }], text, { "Social democrat": 0.9 }, "Left");
-    expect(assigned[0]).toMatchObject({ name: "Social democrat", qualifier: "Potential", alternatives: ["Democratic socialist", "Liberal", "Progressive"] });
+  it("keeps proposals whose belief exists and whose evidence is in the claim", () => {
+    const { candidates } = resolveIdeologies([{ name: "Social democrat", tenet: "T3", evidence: "company board seats" }], text, { "Social democrat": 0.9 });
+    expect(candidates[0]).toMatchObject({ name: "Social democrat", tenet: "T3", distinctive: false, probability: 0.9 });
   });
 
-  it("gives Clear only for a distinctive belief with probability ≥ 0.8 at a typical leaning", () => {
-    const t = "There should be a maximum legal income";
-    expect(resolveIdeologies([{ name: "Socialist", tenet: "T1", evidence: "maximum legal income" }], t, { Socialist: 0.93 }, "Far left").assigned[0]!.qualifier).toBe("Clear");
-    expect(resolveIdeologies([{ name: "Socialist", tenet: "T1", evidence: "maximum legal income" }], t, { Socialist: 0.93 }, "Center right").assigned[0]!.qualifier).toBe("Potential");
-  });
-
-  it("drops ideologies with low probability, missing evidence or an unknown belief", () => {
-    const { assigned, dropped } = resolveIdeologies(
+  it("drops missing evidence and unknown beliefs", () => {
+    const { candidates, dropped } = resolveIdeologies(
       [
-        { name: "Socialist", tenet: "T1", evidence: "board seats" },
+        { name: "Socialist", tenet: "T1", evidence: "abolish markets" },
         { name: "Marxist", tenet: "T3", evidence: "board seats" },
       ],
       text,
-      { Socialist: 0.3, Marxist: 0.9 },
-      "Left",
+      {},
     );
-    expect(assigned).toEqual([]);
-    expect(dropped.map((d) => d.reason)).toEqual([expect.stringMatching(/below 0.5/), expect.stringMatching(/does not exist/)]);
+    expect(candidates).toEqual([]);
+    expect(dropped.map((d) => d.reason)).toEqual([expect.stringMatching(/not in the claim/), expect.stringMatching(/does not exist/)]);
+  });
+});
+
+describe("checkIdeology (I3, I6)", () => {
+  const ok: IdeologyGateInput = {
+    candidate: { name: "Socialist", tenet: "T1", tenetText: "", distinctive: true, evidence: "maximum legal income", probability: 0.95 },
+    pStance: 0.95,
+    leaning: "Far left",
+    verifierAgrees: true,
+    matchingNeighbours: [],
+    repeats: [true, true],
+  };
+  const fails = (over: Partial<IdeologyGateInput>, candidate: Partial<IdeologyGateInput["candidate"]> = {}) =>
+    checkIdeology({ ...ok, ...over, candidate: { ...ok.candidate, ...candidate } });
+
+  it("publishes a distinctive, verified, stable ideology", () => {
+    expect(fails({})).toEqual([]);
+  });
+
+  it("never publishes a shared belief, a low probability or an unverified ideology", () => {
+    expect(fails({}, { distinctive: false })).toEqual([expect.stringMatching(/shared with Democratic socialist/)]);
+    expect(fails({}, { probability: 0.85 })).toEqual([expect.stringMatching(/below 0.9/)]);
+    expect(fails({ verifierAgrees: false })).toEqual(["the verifier disagreed"]);
+    expect(fails({ pStance: 0.5 })).toEqual([expect.stringMatching(/takes a position/)]);
+  });
+
+  it("blocks an atypical leaning, a matching neighbour and an unstable result", () => {
+    expect(fails({ leaning: "Center right" })).toEqual(["it is not usually found at Center right"]);
+    expect(fails({ matchingNeighbours: ["Democratic socialist"] })).toEqual(["the claim also matches Democratic socialist (I6)"]);
+    expect(fails({ repeats: [true, false] })).toEqual(["found in 2 of 3 runs"]);
+    expect(fails({ repeats: null })).toEqual(["extra runs not made"]);
+    expect(checkIdeology({ ...ok, repeats: null }, false)).toEqual([]);
+  });
+
+  it("no longer treats a tax-the-rich claim as distinctively Social democrat", () => {
+    const t = "Texas should raise taxes on corporations and billionaires to fund targeted tax credits";
+    const { candidates } = resolveIdeologies([{ name: "Social democrat", tenet: "T2", evidence: "raise taxes on corporations and billionaires" }], t, { "Social democrat": 0.96 });
+    expect(checkIdeology({ ...ok, candidate: candidates[0]!, leaning: "Center left" })).toEqual([expect.stringMatching(/belief T2 is shared/)]);
+  });
+});
+
+describe("unverifiedQuotes", () => {
+  const claim = "Jamaat Nusrat al-Islam wal-Muslimin (JNIM) seeks to establish Islamic law as the governing system in Mali";
+  it("accepts quotes made with the claim's own words", () => {
+    expect(unverifiedQuotes(`G1 failed: ${quote("(JNIM) seeks to establish Islamic law")}.`, claim)).toEqual([]);
+  });
+  it("catches a paraphrase presented as a quote, like run-1's JNIM explanation", () => {
+    expect(unverifiedQuotes(`G1 failed: ${quote("JNIM seeks to establish Islamic law")}.`, claim)).toEqual(["JNIM seeks to establish Islamic law"]);
+  });
+  it("keeps quotes inside the claim's own words checkable", () => {
+    const fetterman = 'John Fetterman described socialism as an "anti-American way of life."';
+    expect(unverifiedQuotes(quote('an "anti-American way of life."'), fetterman)).toEqual([]);
   });
 });
 
@@ -189,13 +269,5 @@ describe("parseDecision", () => {
     expect(s.leaning.Right).toBe(0);
     expect(s.ideologies.Anarchist).toBe(0.4);
     expect(s.refusals).toEqual(["ideology_1"]);
-  });
-});
-
-describe("displayLabel", () => {
-  it("follows Armando's 'Potentially …' style and keeps acronyms", () => {
-    expect(displayLabel("Center left", "Clear")).toBe("Center left");
-    expect(displayLabel("Center left", "Potential")).toBe("Potentially center left");
-    expect(displayLabel("MAGA", "Potential")).toBe("Potentially MAGA");
   });
 });

@@ -37,34 +37,34 @@ export function loadTestSet(path: string): TestSet {
   return set;
 }
 
-export type Verdict = "Correct" | "Safe miss" | "Wrong label" | "Wrong ideology";
+/**
+ * Correct label: something was published and all of it is acceptable.
+ * Correct blank: nothing was published, and a blank is acceptable.
+ * Missed label: a leaning was expected but none was published (safe, but lost coverage).
+ * Wrong label / Wrong ideology: a published label is not acceptable. These must be zero.
+ */
+export type Verdict = "Correct label" | "Correct blank" | "Missed label" | "Wrong label" | "Wrong ideology";
 
 export interface Judged {
   verdict: Verdict;
   reason: string;
-  /** A wrong result that was marked Clear: the error that must never happen. */
-  confidentError: boolean;
 }
 
-/** Compares one result with its expected answer. */
-export function judge(item: TestItem, r: Pick<ScoredClaim, "outcome" | "leaning" | "qualifier" | "ideologies">): Judged {
+/** Compares one result with its expected answer. Only published labels count. */
+export function judge(item: TestItem, r: Pick<ScoredClaim, "outcome" | "leaning" | "ideologies">): Judged {
   const given = r.outcome === "leaning" ? r.leaning : null;
   const ideologies = r.ideologies.map((i) => i.name);
   const wrongIdeologies = item.expect === "no_position" ? ideologies : ideologies.filter((n) => !item.ideologies.includes(n));
-  const clearIdeology = r.ideologies.some((i) => wrongIdeologies.includes(i.name) && i.qualifier === "Clear");
 
   const leaningWrong =
     given !== null && (item.expect === "no_position" || item.expect === "uncertain" || !item.leanings.includes(given));
-  if (leaningWrong) {
-    return { verdict: "Wrong label", reason: `gave ${given}; expected ${describe(item)}`, confidentError: r.qualifier === "Clear" };
-  }
+  if (leaningWrong) return { verdict: "Wrong label", reason: `published ${given}; expected ${describe(item)}` };
   if (wrongIdeologies.length) {
-    return { verdict: "Wrong ideology", reason: `gave ${wrongIdeologies.join(", ")}; acceptable: ${item.ideologies.join(", ") || "none"}`, confidentError: clearIdeology };
+    return { verdict: "Wrong ideology", reason: `published ${wrongIdeologies.join(", ")}; acceptable: ${item.ideologies.join(", ") || "none"}` };
   }
-  if (item.expect === "leaning" && given === null) {
-    return { verdict: "Safe miss", reason: `no leaning given; expected ${item.leanings.join(" or ")}`, confidentError: false };
-  }
-  return { verdict: "Correct", reason: given ? `${given} is acceptable` : "no leaning, as acceptable", confidentError: false };
+  if (item.expect === "leaning" && given === null) return { verdict: "Missed label", reason: `no leaning published; expected ${item.leanings.join(" or ")}` };
+  if (given || ideologies.length) return { verdict: "Correct label", reason: [given, ...ideologies].filter(Boolean).join(", ") + " acceptable" };
+  return { verdict: "Correct blank", reason: "nothing published, as acceptable" };
 }
 
 function describe(item: TestItem): string {
@@ -80,21 +80,35 @@ export interface BenchRow {
   judged: Judged | null;
 }
 
-export interface BenchSummary {
+interface Precision {
+  /** Of the leanings published, how many were acceptable. */
+  leaningPrecision: { correct: number; given: number };
+  /** Of the items that expect a leaning, how many got an acceptable one published. */
+  leaningCoverage: { correct: number; expected: number };
+  /** Of the ideologies published, how many were acceptable. */
+  ideologyPrecision: { correct: number; given: number };
+}
+
+export interface BenchSummary extends Precision {
   testSet: string;
   framework: string;
   items: number;
   verdicts: Record<Verdict | "Error", number>;
-  confidentErrors: number;
-  /** Of the leanings the agent gave, the share that were acceptable. */
-  leaningPrecision: { correct: number; given: number };
-  /** Of the items that expect a leaning, the share that got an acceptable one. */
-  leaningCoverage: { correct: number; expected: number };
-  ideologyPrecision: { correct: number; given: number };
+  /** Wrong labels plus wrong ideologies: the number that must be zero. */
+  wrongPublished: number;
+  /** The same counts for real Geo claims only (synthetic claims are easier). */
+  real: Precision & { items: number; wrongPublished: number };
+  /** Claims that got the extra runs (P6), and how many of them gave the same leaning every time. */
+  stability: { checked: number; stable: number };
   byCategory: Record<string, Record<Verdict | "Error", number>>;
 }
 
-const emptyCounts = (): Record<Verdict | "Error", number> => ({ Correct: 0, "Safe miss": 0, "Wrong label": 0, "Wrong ideology": 0, Error: 0 });
+const emptyCounts = (): Record<Verdict | "Error", number> => ({ "Correct label": 0, "Correct blank": 0, "Missed label": 0, "Wrong label": 0, "Wrong ideology": 0, Error: 0 });
+const emptyPrecision = (): Precision => ({
+  leaningPrecision: { correct: 0, given: 0 },
+  leaningCoverage: { correct: 0, expected: 0 },
+  ideologyPrecision: { correct: 0, given: 0 },
+});
 
 /** Real claims must still read as the test set recorded them; returns mismatches. */
 export function checkTexts(items: TestItem[], claims: Map<string, Claim>): string[] {
@@ -125,15 +139,19 @@ export async function runBench(geo: GeoClient, agent: ScoringAgent, set: TestSet
     }
   });
 
+  return { rows, summary: summarize(set.version, rows) };
+}
+
+export function summarize(testSet: string, rows: BenchRow[]): BenchSummary {
   const summary: BenchSummary = {
-    testSet: set.version,
+    testSet,
     framework: FRAMEWORK_VERSION,
     items: rows.length,
     verdicts: emptyCounts(),
-    confidentErrors: 0,
-    leaningPrecision: { correct: 0, given: 0 },
-    leaningCoverage: { correct: 0, expected: 0 },
-    ideologyPrecision: { correct: 0, given: 0 },
+    wrongPublished: 0,
+    ...emptyPrecision(),
+    real: { items: 0, wrongPublished: 0, ...emptyPrecision() },
+    stability: { checked: 0, stable: 0 },
     byCategory: {},
   };
   for (const { item, result, judged } of rows) {
@@ -141,23 +159,38 @@ export async function runBench(geo: GeoClient, agent: ScoringAgent, set: TestSet
     const v = judged?.verdict ?? "Error";
     summary.verdicts[v]++;
     cat[v]++;
-    if (judged?.confidentError) summary.confidentErrors++;
+    const wrong = v === "Wrong label" || v === "Wrong ideology";
+    if (wrong) summary.wrongPublished++;
+    if (!item.synthetic) {
+      summary.real.items++;
+      if (wrong) summary.real.wrongPublished++;
+    }
     if (!result) continue;
-    const given = result.outcome === "leaning" ? result.leaning : null;
-    if (given) {
-      summary.leaningPrecision.given++;
-      if (judged?.verdict !== "Wrong label") summary.leaningPrecision.correct++;
-    }
-    if (item.expect === "leaning") {
-      summary.leaningCoverage.expected++;
-      if (given && item.leanings.includes(given)) summary.leaningCoverage.correct++;
-    }
-    for (const i of result.ideologies) {
-      summary.ideologyPrecision.given++;
-      if (item.expect !== "no_position" && item.ideologies.includes(i.name)) summary.ideologyPrecision.correct++;
+    count(summary, item, result, judged);
+    if (!item.synthetic) count(summary.real, item, result, judged);
+    const p6 = result.checks.find((c) => c.id === "P6");
+    if (p6 && !p6.skipped) {
+      summary.stability.checked++;
+      if (p6.pass) summary.stability.stable++;
     }
   }
-  return { rows, summary };
+  return summary;
+}
+
+function count(p: Precision, item: TestItem, result: ScoredClaim, judged: Judged | null): void {
+  const given = result.outcome === "leaning" ? result.leaning : null;
+  if (given) {
+    p.leaningPrecision.given++;
+    if (judged?.verdict !== "Wrong label") p.leaningPrecision.correct++;
+  }
+  if (item.expect === "leaning") {
+    p.leaningCoverage.expected++;
+    if (given && item.leanings.includes(given)) p.leaningCoverage.correct++;
+  }
+  for (const i of result.ideologies) {
+    p.ideologyPrecision.given++;
+    if (item.expect !== "no_position" && item.ideologies.includes(i.name)) p.ideologyPrecision.correct++;
+  }
 }
 
 export function writeBench(rows: BenchRow[], summary: BenchSummary): string {
@@ -172,17 +205,22 @@ export function writeBench(rows: BenchRow[], summary: BenchSummary): string {
           id: item.id,
           category: item.category,
           text: item.text,
+          synthetic: item.synthetic ?? false,
           expect: item.expect,
           acceptableLeanings: item.leanings,
           acceptableIdeologies: item.ideologies,
           verdict: judged?.verdict ?? "Error",
           reason: judged?.reason ?? error,
-          confidentError: judged?.confidentError ?? false,
           display: result?.display ?? null,
-          ideologies: result?.ideologies.map((i) => `${i.name} (${i.qualifier})`) ?? [],
-          confidence: result?.confidence?.total ?? null,
-          criteria: result?.criteria.map((c) => `${c.id}: "${c.evidence}"`) ?? [],
+          leaning: result?.leaning ?? null,
+          candidateLeaning: result?.candidateLeaning ?? null,
+          ideologies: result?.ideologies.map((i) => i.name) ?? [],
+          checks: result?.checks.map((c) => `${c.id} ${c.skipped ? "skipped" : c.pass ? "pass" : "FAIL"}: ${c.detail}`) ?? [],
+          criteria: result?.criteria.map((c) => `${c.id} (${c.strength}): “${c.evidence}”`) ?? [],
           explanation: result?.explanation ?? null,
+          droppedIdeologies: result?.droppedIdeologies.map((d) => `${d.name}: ${d.reason}`) ?? [],
+          repeats: result?.repeats ?? null,
+          reviewerNotes: result?.reviewerNotes ?? [],
           flags: result?.flags ?? [],
         })),
       },

@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v1.2";
+export const FRAMEWORK_VERSION = "framework-v2.0";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -24,6 +24,27 @@ export type LeaningName = (typeof LEANING_BY_SCORE)[keyof typeof LEANING_BY_SCOR
  * keys ("0", "1", …) before "-3", "-2", "-1", which would scramble the scale.
  */
 export const LEANINGS_LEFT_TO_RIGHT: readonly LeaningName[] = ["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"];
+
+/**
+ * What each level means, shared word for word by the scorer, the independent check and the
+ * verifier, so all three place claims on the same scale. Geo's own value descriptions overlap
+ * (a mainstream party position fits both "Left" and "Center left"), which made the checks
+ * disagree by one level. Draft until Armando approves.
+ */
+export const LEVEL_RULES: Record<LeaningName, string> = {
+  "Far left": "Replaces capitalism, abolishes core institutions (police, prisons, borders, the family), or seeks power by revolution.",
+  Left: "Goes clearly beyond the center-left mainstream of the country, for example single-payer healthcare, a wealth tax or abolishing the immigration enforcement agency.",
+  "Center left": "A position commonly held across the center-left mainstream of the country, for example higher taxes on high earners, protecting abortion access or background checks for gun sales.",
+  Center: "Explicitly combines or balances a left and a right position as a compromise.",
+  "Center right": "A position commonly held across the center-right mainstream of the country, for example lower taxes, voter ID or stronger border enforcement.",
+  Right: "Goes clearly beyond the center-right mainstream of the country, for example a near-total abortion ban, ending birthright citizenship or abolishing a federal department.",
+  "Far right": "Removes rights from people because of ethnicity, religion or sexuality, imposes religious rule, or ends elections or civil liberties for opponents.",
+};
+
+/** The level rules as a list, left to right, with the criterion score that reaches each level. */
+export function levelRulesText(): string {
+  return LEANINGS_LEFT_TO_RIGHT.map((name, i) => `- ${name} (${i > 3 ? "+" : ""}${i - 3}): ${LEVEL_RULES[name]}`).join("\n");
+}
 
 /** Geo's own type descriptions. The agent refuses to run if Geo's live text differs (see ScoringAgent). */
 export const POLITICAL_LEANING_DEFINITION =
@@ -195,8 +216,36 @@ export const RULES = [
   { id: "A2", name: "Combining topic areas", text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center." },
   { id: "A3", name: "Center", text: "Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area is Uncertain (cross-cutting)." },
   { id: "A4", name: "Far left and far right", text: "Far left or Far right is given only when a −3 or +3 criterion matches." },
-  { id: "A5", name: "Independent check", text: "If the independent probability check's most likely leaning is two or more steps away from the criteria's leaning, or on the other side of the center, the leaning is Uncertain (signals disagree). One step apart lowers confidence and is reported in the explanation." },
+  { id: "A5", name: "Between two levels", text: "If the claim's position sits between two levels, match no criterion for that topic area. A missing label is always acceptable; a wrong one is not." },
 ] as const;
+
+// ---------------------------------------------------------------------------
+// Step 5: publish or leave blank. There are no partial labels: a leaning is published only when
+// every rule passes, otherwise the claim gets no label and the failed rules are recorded.
+
+export const PUBLISH = {
+  /** Minimum independent probability that the claim takes a political position. */
+  minStance: 0.8,
+  /** Minimum independent probability of the exact leaning. */
+  minLeaning: 0.7,
+  /** Minimum independent probability of an ideology. */
+  minIdeology: 0.9,
+  /** A neighbouring ideology at or above this probability is checked for a match too (I6). */
+  neighbour: 0.5,
+  /** Scorer runs that must give the same answer. */
+  runs: 3,
+} as const;
+
+export const PUBLISH_RULES = [
+  { id: "P1", name: "Takes a position", text: `All four position checks pass, and the independent probability that the claim takes a position is at least ${PUBLISH.minStance}.` },
+  { id: "P2", name: "Full match", text: "Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged." },
+  { id: "P3", name: "Country clear", text: "The country or region whose politics the claim is about is clear." },
+  { id: "P4", name: "Same level", text: `The independent check's most likely leaning is the same exact level, with a probability of at least ${PUBLISH.minLeaning}.` },
+  { id: "P5", name: "Verifier agrees", text: "The independent verifier agrees with the leaning." },
+  { id: "P6", name: "Stable", text: `The scorer gives the same leaning in all ${PUBLISH.runs} runs. The extra runs are made only when P1–P5 pass.` },
+] as const;
+
+export type PublishRuleId = (typeof PUBLISH_RULES)[number]["id"];
 
 // ---------------------------------------------------------------------------
 // Step 4: ideology rules (cards live in ideologies.ts).
@@ -204,25 +253,11 @@ export const RULES = [
 export const IDEOLOGY_RULES = [
   { id: "I1", text: "Assign an ideology only when the claim explicitly matches one of its core beliefs, quoted as evidence, and none of its exclusions applies." },
   { id: "I2", text: "Never infer an ideology from the topic alone. For example, an abortion claim is Christian conservative only with religious framing, and Feminist only when argued as women's rights." },
-  { id: "I3", text: "Clear when the matched belief is distinctive to that ideology and the independent probability is at least 0.8. Potential when the belief is shared with neighbouring ideologies or the probability is 0.5–0.8, with the alternatives listed. Dropped below 0.5." },
+  {
+    id: "I3",
+    text: `An ideology is published only when all of these hold: the matched belief is distinctive; the independent probability of the ideology is at least ${PUBLISH.minIdeology}; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; the ideology is usually found at the claim's leaning, when it has one; the verifier agrees; I6 passes; and all ${PUBLISH.runs} runs find it. Otherwise it is not published, and the reason is recorded.`,
+  },
   { id: "I4", text: "At most two ideologies per claim." },
-  { id: "I5", text: "When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes I1–I4 and the verifier." },
+  { id: "I5", text: "When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes every other rule." },
+  { id: "I6", text: `When a neighbouring ideology has an independent probability of ${PUBLISH.neighbour} or more, the scorer also takes a second look at it. If the claim matches one of the neighbour's beliefs too, the two cannot be told apart, so the ideology is published only if the neighbour is published as well.` },
 ] as const;
-
-// ---------------------------------------------------------------------------
-// Step 5: confidence.
-
-export const CONFIDENCE = {
-  components: [
-    { id: "explicitness", max: 25, text: "25 for direct, unhedged advocacy; 10 for hedged or descriptive wording." },
-    { id: "match", max: 25, text: "25 when the claim states a criterion's position directly, 15 when closely, 5 when only partly." },
-    { id: "probability", max: 30, text: "30 × the independent probability (Decisions API, gpt-6-luna) of the final leaning on the 7-point scale. If its probability that the claim takes a position is below 0.5, confidence is 0." },
-    { id: "verifier", max: 20, text: "20 when the independent verifier agrees with every part of the result, otherwise 0." },
-  ],
-  bands: [
-    { name: "High", min: 80, qualifier: "Clear" },
-    { name: "Medium", min: 60, qualifier: "Potential" },
-    { name: "Low", min: 0, qualifier: "Uncertain" },
-  ],
-  note: "Initial thresholds. They are tuned on the test set so that High results are always correct.",
-} as const;

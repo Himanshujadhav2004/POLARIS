@@ -1,7 +1,7 @@
 import type OpenAI from "openai";
 import type { Decision, DecisionCreateParams } from "openai/resources/decisions";
 import { IDEOLOGY_CARDS } from "../../framework/ideologies.js";
-import { LEANINGS_LEFT_TO_RIGHT, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
+import { LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
 import type { Claim } from "../../geo/claims.js";
 import type { Taxonomy } from "../../geo/taxonomy.js";
 
@@ -27,7 +27,11 @@ const ideologyQuestionName = (i: number) => `ideology_${i}`;
 type Question = DecisionCreateParams["questions"][number];
 
 export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
-  const describe = (name: LeaningName) => taxonomy.politicalLeanings.find((v) => v.name === name)?.description ?? name;
+  // Geo's description plus the framework's level rule, so this check and the scorer use the same scale.
+  const describe = (name: LeaningName) => {
+    const geo = taxonomy.politicalLeanings.find((v) => v.name === name)?.description;
+    return `${geo ? `${geo} ` : ""}In this framework: ${LEVEL_RULES[name]}`;
+  };
   return [
     {
       type: "predicate",

@@ -1,13 +1,15 @@
 import { CARD_BY_NAME } from "../../framework/ideologies.js";
 import {
   ALL_CRITERIA,
-  CONFIDENCE,
   LEANING_BY_SCORE,
   LEANINGS_LEFT_TO_RIGHT,
+  PUBLISH,
+  PUBLISH_RULES,
   STANCE_GATE,
   type Criterion,
   type GateCheck,
   type LeaningName,
+  type PublishRuleId,
   type Score,
 } from "../../framework/rubric.js";
 
@@ -24,7 +26,7 @@ export interface ScorerOutput {
 }
 
 export type Strength = "direct" | "close" | "partial";
-export type UncertainReason = "mixed signals" | "cross-cutting" | "no criterion matched" | "low confidence" | "signals disagree";
+export type UncertainReason = "mixed signals" | "cross-cutting" | "no criterion matched";
 
 export interface AppliedCriterion {
   id: string;
@@ -59,6 +61,14 @@ const normalize = (s: string) =>
 export function evidenceFound(claim: string, quote: string): boolean {
   const q = normalize(quote);
   return q.length >= 3 && normalize(claim).includes(q);
+}
+
+/** Wraps words from the claim in curly quotes. Published text quotes the claim only through this. */
+export const quote = (words: string): string => `“${words.replace(/[“”]/g, '"')}”`;
+
+/** Quoted spans (“…”) in published text that are not word for word in the claim; must be empty. */
+export function unverifiedQuotes(text: string, claim: string): string[] {
+  return [...text.matchAll(/“([^”]*)”/g)].map((m) => m[1]!).filter((q) => !evidenceFound(claim, q));
 }
 
 export const leaningOf = (score: Score): LeaningName => LEANING_BY_SCORE[String(score) as keyof typeof LEANING_BY_SCORE];
@@ -132,55 +142,96 @@ export function compareWithIndependent(leaning: LeaningName, distribution: Recor
 }
 
 // ---------------------------------------------------------------------------
-// Step 5: confidence.
+// Step 5: publish or leave blank (P1–P6).
 
-export interface ConfidenceInput {
-  hedged: boolean;
-  /** Weakest strength among the criteria that produced the leaning. */
-  weakestStrength: Strength;
+export interface RuleCheck {
+  id: PublishRuleId;
+  pass: boolean;
+  /** Plain words built by code from the numbers, never by a model. */
+  detail: string;
+  /** Not evaluated because an earlier rule failed (P6 only). Counts as not passed. */
+  skipped?: true;
+}
+
+export interface LeaningGateInput {
+  leaning: LeaningName;
   /** Decisions API: probability that the claim takes a position. */
   pStance: number;
-  /** Decisions API: probability of the final leaning on the 7-point scale. */
-  pLeaning: number;
+  /** Weakest strength among the criteria that produced the leaning. */
+  weakestStrength: Strength;
+  hedged: boolean;
+  country: string | null;
+  /** Decisions API: probability of each leaning. */
+  independent: Record<LeaningName, number>;
   verifierAgrees: boolean;
+  /** The leaning each extra scorer run gave; null while the extra runs have not been made. */
+  repeats: (LeaningName | null)[] | null;
 }
 
-export interface Confidence {
-  total: number;
-  band: "High" | "Medium" | "Low";
-  components: Record<"explicitness" | "match" | "probability" | "verifier", number>;
+const p2 = (n: number) => n.toFixed(2);
+export const ruleName = (id: PublishRuleId): string => PUBLISH_RULES.find((r) => r.id === id)!.name;
+
+/** Every publish rule for a leaning. The leaning is published only when all of them pass. */
+export function checkLeaning(i: LeaningGateInput): RuleCheck[] {
+  const cmp = compareWithIndependent(i.leaning, i.independent);
+  const pLeaning = i.independent[i.leaning];
+  const checks: RuleCheck[] = [
+    {
+      id: "P1",
+      pass: i.pStance >= PUBLISH.minStance,
+      detail: `independent probability that the claim takes a position: ${p2(i.pStance)}${i.pStance >= PUBLISH.minStance ? "" : `, below ${PUBLISH.minStance}`}`,
+    },
+    {
+      id: "P2",
+      pass: i.weakestStrength !== "partial" && !i.hedged,
+      detail: i.hedged ? "the claim is hedged" : i.weakestStrength === "partial" ? "a criterion matches only in part" : `the criteria match ${i.weakestStrength === "direct" ? "directly" : "closely"}`,
+    },
+    {
+      id: "P3",
+      pass: Boolean(i.country?.trim()),
+      detail: i.country?.trim() ? `country: ${i.country}` : "the claim does not make clear which country's politics it concerns",
+    },
+    {
+      id: "P4",
+      pass: cmp.steps === 0 && pLeaning >= PUBLISH.minLeaning,
+      detail:
+        cmp.steps !== 0
+          ? `the independent check prefers ${cmp.top} (${p2(cmp.pTop)}); ${i.leaning} gets ${p2(pLeaning)}`
+          : `the independent check gives ${i.leaning} ${p2(pLeaning)}${pLeaning >= PUBLISH.minLeaning ? "" : `, below ${PUBLISH.minLeaning}`}`,
+    },
+    { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? "the verifier agreed" : "the verifier disagreed" },
+  ];
+  checks.push(stability(i.leaning, i.repeats));
+  return checks;
 }
 
-const MATCH_POINTS: Record<Strength, number> = { direct: 25, close: 15, partial: 5 };
-
-export function scoreConfidence(i: ConfidenceInput): Confidence {
-  const components = {
-    explicitness: i.hedged ? 10 : 25,
-    match: MATCH_POINTS[i.weakestStrength],
-    probability: Math.round(30 * i.pLeaning),
-    verifier: i.verifierAgrees ? 20 : 0,
+function stability(leaning: LeaningName, repeats: (LeaningName | null)[] | null): RuleCheck {
+  if (!repeats) return { id: "P6", pass: false, skipped: true, detail: "extra runs not made, because an earlier rule failed" };
+  const same = repeats.filter((r) => r === leaning).length + 1;
+  const others = repeats.filter((r) => r !== leaning).map((r) => r ?? "no leaning");
+  return {
+    id: "P6",
+    pass: same === PUBLISH.runs,
+    detail: same === PUBLISH.runs ? `all ${PUBLISH.runs} runs gave ${leaning}` : `${same} of ${PUBLISH.runs} runs gave ${leaning}; the others gave ${others.join(", ")}`,
   };
-  const total = i.pStance < 0.5 ? 0 : components.explicitness + components.match + components.probability + components.verifier;
-  return { total, band: bandOf(total), components };
 }
 
-export function bandOf(total: number): Confidence["band"] {
-  return (CONFIDENCE.bands.find((b) => total >= b.min)?.name ?? "Low") as Confidence["band"];
-}
+/** P1–P5 pass, so the extra runs for P6 are worth making. */
+export const readyForRepeats = (checks: RuleCheck[]): boolean => checks.filter((c) => c.id !== "P6").every((c) => c.pass);
+export const allPass = (checks: RuleCheck[]): boolean => checks.length > 0 && checks.every((c) => c.pass);
+/** The rules that actually failed (a skipped P6 is left out: an earlier rule already failed). */
+export const failedChecks = (checks: RuleCheck[]): RuleCheck[] => checks.filter((c) => !c.pass && !c.skipped);
 
 // ---------------------------------------------------------------------------
 // Step 4: ideologies.
 
-export interface AssignedIdeology {
+export interface IdeologyCandidate {
   name: string;
-  qualifier: "Clear" | "Potential";
   tenet: string;
   tenetText: string;
   distinctive: boolean;
   evidence: string;
   probability: number;
-  /** Neighbouring ideologies a shared belief could also point to. */
-  alternatives: string[];
 }
 
 export interface DroppedIdeology {
@@ -188,13 +239,13 @@ export interface DroppedIdeology {
   reason: string;
 }
 
+/** Keeps proposals whose belief exists and whose evidence is in the claim (I1, E1, I4). */
 export function resolveIdeologies(
   proposed: ScorerOutput["ideologies"],
   claimText: string,
   probabilities: Record<string, number>,
-  finalLeaning: LeaningName | null,
-): { assigned: AssignedIdeology[]; dropped: DroppedIdeology[] } {
-  const assigned: AssignedIdeology[] = [];
+): { candidates: IdeologyCandidate[]; dropped: DroppedIdeology[] } {
+  const candidates: IdeologyCandidate[] = [];
   const dropped: DroppedIdeology[] = [];
   for (const p of proposed.slice(0, 2)) {
     const card = CARD_BY_NAME.get(p.name);
@@ -207,30 +258,40 @@ export function resolveIdeologies(
       dropped.push({ name: p.name, reason: "its evidence is not in the claim" });
       continue;
     }
-    const probability = probabilities[p.name] ?? 0;
-    if (probability < 0.5) {
-      dropped.push({ name: p.name, reason: `independent probability ${probability.toFixed(2)} is below 0.5` });
-      continue;
-    }
-    const atypical = finalLeaning !== null && !card.typicalLeanings.includes(finalLeaning);
-    const clear = tenet.distinctive && probability >= 0.8 && !atypical;
-    assigned.push({
-      name: card.name,
-      qualifier: clear ? "Clear" : "Potential",
-      tenet: tenet.id,
-      tenetText: tenet.text,
-      distinctive: tenet.distinctive,
-      evidence: p.evidence,
-      probability,
-      alternatives: tenet.distinctive ? [] : card.neighbours,
-    });
+    candidates.push({ name: card.name, tenet: tenet.id, tenetText: tenet.text, distinctive: tenet.distinctive, evidence: p.evidence, probability: probabilities[p.name] ?? 0 });
   }
-  return { assigned, dropped };
+  return { candidates, dropped };
 }
 
-/** "Potentially center left" / "Center left", in the style of Armando's example. */
-export function displayLabel(name: string, qualifier: "Clear" | "Potential"): string {
-  if (qualifier === "Clear") return name;
-  const isAcronym = name === name.toUpperCase();
-  return `Potentially ${isAcronym ? name : name.charAt(0).toLowerCase() + name.slice(1)}`;
+export interface IdeologyGateInput {
+  candidate: IdeologyCandidate;
+  pStance: number;
+  /** The leaning the criteria point to, published or not. */
+  leaning: LeaningName | null;
+  verifierAgrees: boolean;
+  /** Neighbouring ideologies whose own beliefs the claim also matches, and that are not published (I6). */
+  matchingNeighbours: string[];
+  /** Whether each extra run found this ideology too; null while the extra runs have not been made. */
+  repeats: boolean[] | null;
+}
+
+/** Rule I3: every reason this ideology cannot be published; empty means publish. */
+export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[] {
+  const c = i.candidate;
+  const card = CARD_BY_NAME.get(c.name)!;
+  const failed: string[] = [];
+  if (!c.distinctive) failed.push(`belief ${c.tenet} is shared${card.neighbours.length ? ` with ${card.neighbours.join(", ")}` : ""}`);
+  if (c.probability < PUBLISH.minIdeology) failed.push(`independent probability ${p2(c.probability)} is below ${PUBLISH.minIdeology}`);
+  if (i.pStance < PUBLISH.minStance) failed.push(`independent probability that the claim takes a position is ${p2(i.pStance)}, below ${PUBLISH.minStance}`);
+  if (i.leaning && !card.typicalLeanings.includes(i.leaning)) failed.push(`it is not usually found at ${i.leaning}`);
+  if (!i.verifierAgrees) failed.push("the verifier disagreed");
+  if (i.matchingNeighbours.length) failed.push(`the claim also matches ${i.matchingNeighbours.join(", ")} (I6)`);
+  if (withRepeats) {
+    // Missing extra runs only matter when nothing else already blocks it.
+    if (!i.repeats) {
+      if (!failed.length) failed.push("extra runs not made");
+    }
+    else if (!i.repeats.every(Boolean)) failed.push(`found in ${i.repeats.filter(Boolean).length + 1} of ${PUBLISH.runs} runs`);
+  }
+  return failed;
 }

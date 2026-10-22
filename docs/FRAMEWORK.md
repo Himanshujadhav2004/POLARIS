@@ -1,13 +1,25 @@
-# Political leaning and ideology scoring framework (framework-v1.2)
+# Political leaning and ideology scoring framework (framework-v2.0)
 
-Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the final leaning and confidence, so the same matches always give the same result.
+Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 
 ## Definitions
 
 - **Political leaning**: Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.
 - **Ideology**: A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.
 
-Possible results: one of Geo's seven leanings (Far left … Far right), each marked **Clear** or **Potential**; **Uncertain** (with the reason); or **No political position** (with the check that failed).
+Possible results: a **published** leaning (one of Geo's seven) and published ideologies; **No label**, naming the rule that blocked it; or **No political position**, naming the check that failed. There are no partial labels: anything not published is left blank.
+
+## What each level means
+
+The scorer, the independent check and the verifier all use these rules, so they place claims on the same scale.
+
+- Far left (-3): Replaces capitalism, abolishes core institutions (police, prisons, borders, the family), or seeks power by revolution.
+- Left (-2): Goes clearly beyond the center-left mainstream of the country, for example single-payer healthcare, a wealth tax or abolishing the immigration enforcement agency.
+- Center left (-1): A position commonly held across the center-left mainstream of the country, for example higher taxes on high earners, protecting abortion access or background checks for gun sales.
+- Center (0): Explicitly combines or balances a left and a right position as a compromise.
+- Center right (+1): A position commonly held across the center-right mainstream of the country, for example lower taxes, voter ID or stronger border enforcement.
+- Right (+2): Goes clearly beyond the center-right mainstream of the country, for example a near-total abortion ban, ending birthright citizenship or abolishing a federal department.
+- Far right (+3): Removes rights from people because of ethnicity, religion or sexuality, imposes religious rule, or ends elections or civil liberties for opponents.
 
 ## Step 1: does the claim take a political position?
 
@@ -109,28 +121,33 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 - **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center.
 - **A3 Center.** Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area is Uncertain (cross-cutting).
 - **A4 Far left and far right.** Far left or Far right is given only when a −3 or +3 criterion matches.
-- **A5 Independent check.** If the independent probability check's most likely leaning is two or more steps away from the criteria's leaning, or on the other side of the center, the leaning is Uncertain (signals disagree). One step apart lowers confidence and is reported in the explanation.
+- **A5 Between two levels.** If the claim's position sits between two levels, match no criterion for that topic area. A missing label is always acceptable; a wrong one is not.
 
 ## Step 4: ideologies
 
 - **I1.** Assign an ideology only when the claim explicitly matches one of its core beliefs, quoted as evidence, and none of its exclusions applies.
 - **I2.** Never infer an ideology from the topic alone. For example, an abortion claim is Christian conservative only with religious framing, and Feminist only when argued as women's rights.
-- **I3.** Clear when the matched belief is distinctive to that ideology and the independent probability is at least 0.8. Potential when the belief is shared with neighbouring ideologies or the probability is 0.5–0.8, with the alternatives listed. Dropped below 0.5.
+- **I3.** An ideology is published only when all of these hold: the matched belief is distinctive; the independent probability of the ideology is at least 0.9; the independent probability that the claim takes a position is at least 0.8; the ideology is usually found at the claim's leaning, when it has one; the verifier agrees; I6 passes; and all 3 runs find it. Otherwise it is not published, and the reason is recorded.
 - **I4.** At most two ideologies per claim.
-- **I5.** When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes I1–I4 and the verifier.
+- **I5.** When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes every other rule.
+- **I6.** When a neighbouring ideology has an independent probability of 0.5 or more, the scorer also takes a second look at it. If the claim matches one of the neighbour's beliefs too, the two cannot be told apart, so the ideology is published only if the neighbour is published as well.
 
-Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief gives at most Potential.
+Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief is never enough to publish.
 
-## Step 5: confidence (0–100)
+## Step 5: publish or leave blank
 
-| Part | Points | How it is scored |
-|---|---|---|
-| explicitness | 25 | 25 for direct, unhedged advocacy; 10 for hedged or descriptive wording. |
-| match | 25 | 25 when the claim states a criterion's position directly, 15 when closely, 5 when only partly. |
-| probability | 30 | 30 × the independent probability (Decisions API, gpt-6-luna) of the final leaning on the 7-point scale. If its probability that the claim takes a position is below 0.5, confidence is 0. |
-| verifier | 20 | 20 when the independent verifier agrees with every part of the result, otherwise 0. |
+A leaning is published only when every rule below passes. If any fails, the claim gets no label and the failed rules are recorded.
 
-Bands: **High** (80+) → Clear, **Medium** (60+) → Potential, **Low** (0+) → Uncertain. Initial thresholds. They are tuned on the test set so that High results are always correct.
+| Rule | Passes when |
+|---|---|
+| **P1** Takes a position | All four position checks pass, and the independent probability that the claim takes a position is at least 0.8. |
+| **P2** Full match | Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged. |
+| **P3** Country clear | The country or region whose politics the claim is about is clear. |
+| **P4** Same level | The independent check's most likely leaning is the same exact level, with a probability of at least 0.7. |
+| **P5** Verifier agrees | The independent verifier agrees with the leaning. |
+| **P6** Stable | The scorer gives the same leaning in all 3 runs. The extra runs are made only when P1–P5 pass. |
+
+Explanations quote the claim only through words checked to be in it, word for word. Notes written by the models are kept apart as unverified reviewer notes.
 
 ## Ideology definition cards
 
@@ -227,8 +244,8 @@ An outlook that seeks equal political, economic and social rights for women and 
 
 An outlook that favors international cooperation, open trade, migration and strong global institutions to address shared problems. Critics also use the label pejoratively for elites accused of putting world interests ahead of national ones.
 
-- **T1** Strengthens international institutions or cooperation, including over national sovereignty. *(distinctive)*
-- **T2** Open trade and migration as a global good. *(shared)*
+- **T1** Gives international institutions authority over national governments, or argues for global governance as such. *(distinctive)*
+- **T2** More international cooperation, open trade or migration as a global good. *(shared)*
 - Not this ideology: A narrow bilateral deal or foreign investment in one project.
 - Not this ideology: Use only when the claim itself argues for international governance; the term is often used pejoratively.
 - Neighbours: Neoliberal, Liberal
@@ -259,7 +276,7 @@ An outlook that wants Islamic law and principles to shape government and public 
 
 An outlook that wants a country to stay out of foreign wars, alliances and entanglements and to focus on domestic affairs. It has appeared on both the left and the right of American politics.
 
-- **T1** Stay out of foreign wars, alliances or entanglements. *(distinctive)*
+- **T1** Stay out of foreign wars, alliances or entanglements as a general rule. *(distinctive)*
 - **T2** Put domestic affairs ahead of foreign commitments. *(shared)*
 - Not this ideology: Opposition to one specific intervention argued on its own merits.
 - Neighbours: Paleoconservative, MAGA, Populist
@@ -272,7 +289,7 @@ An outlook built on civil liberties, individual rights and an active state that 
 
 - **T1** Gradual reform within existing institutions to reduce inequality or expand rights. *(shared)*
 - **T2** Civil liberties and individual rights protected by an active state. *(shared)*
-- Not this ideology: A single policy position: Liberal is broad, so it is at most Potential.
+- Not this ideology: A single policy position: Liberal is broad and has no distinctive belief, so it is never published from one claim alone.
 - Neighbours: Progressive, Social democrat, Classical liberal, Neoliberal
 - Usually found at: Left, Center left, Center
 - Source: Geo Ideology description (draft until Armando approves)
@@ -336,8 +353,9 @@ An outlook that pairs conservative domestic views with an assertive foreign poli
 
 An outlook that favors free markets, deregulation, privatization, open trade and fiscal restraint as the engine of growth. It shaped center-left and center-right governments alike from the 1980s onward, so it crosses party lines.
 
-- **T1** Free markets, deregulation, privatization and open trade as the engine of growth. *(distinctive)*
+- **T1** Free markets, deregulation, privatization and open trade as the general engine of growth, not one sector's rules. *(distinctive)*
 - **T2** Fiscal restraint. *(shared)*
+- **T3** Cutting the regulations of one sector or project to spur growth. *(shared)*
 - Not this ideology: Deregulation argued as individual liberty (see Libertarianism).
 - Neighbours: Classical liberal, Libertarianism, Conservative, Globalist
 - Usually found at: Center left, Center, Center right, Right
@@ -388,8 +406,9 @@ An outlook that wants religion kept separate from the state, with laws and publi
 
 An outlook that keeps a market economy but tames it with a large welfare state, strong unions and progressive taxation. It accepts capitalism and reforms it from within, which places it on the center left.
 
-- **T1** Keeps a market economy but expands the welfare state, unions or progressive taxation. *(distinctive)*
-- **T2** Worker representation and strong labour rights within firms. *(shared)*
+- **T1** Explicitly pairs keeping a market economy with a larger welfare state or stronger unions. *(distinctive)*
+- **T2** Higher taxes on the wealthy or on corporations to fund public services or welfare. *(shared)*
+- **T3** Worker representation and strong labour rights within firms. *(shared)*
 - Not this ideology: Social ownership of industries (see Democratic socialist or Socialist).
 - Neighbours: Democratic socialist, Liberal, Progressive
 - Usually found at: Center left, Left

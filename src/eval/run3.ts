@@ -11,10 +11,9 @@ export interface Eval3Summary {
   framework: string;
   total: number;
   passed: number;
-  /** Results shown as Clear that fail the dev-set expectation: the number that must be zero. */
-  confidentErrors: number;
+  /** Published labels that fail the dev-set expectation: the number that must be zero. */
+  wrongPublished: number;
   byOutcome: Record<string, number>;
-  byQualifier: Record<string, number>;
   errors: number;
 }
 
@@ -33,7 +32,7 @@ export async function runEval3(geo: GeoClient, agent: ScoringAgent, concurrency:
     }
   });
 
-  const summary: Eval3Summary = { framework: FRAMEWORK_VERSION, total: items.length, passed: 0, confidentErrors: 0, byOutcome: {}, byQualifier: {}, errors: 0 };
+  const summary: Eval3Summary = { framework: FRAMEWORK_VERSION, total: items.length, passed: 0, wrongPublished: 0, byOutcome: {}, errors: 0 };
   const rows = results.map(({ item, error, result }) => {
     if (!result) {
       summary.errors++;
@@ -50,10 +49,8 @@ export async function runEval3(geo: GeoClient, agent: ScoringAgent, concurrency:
     const abstained = !result.leaning && !result.ideologies.length;
     const score = scoreItem(item, label, abstained);
     if (score.pass) summary.passed++;
-    if (!score.pass && result.qualifier === "Clear") summary.confidentErrors++;
+    if (!score.pass && !abstained) summary.wrongPublished++;
     summary.byOutcome[result.outcome] = (summary.byOutcome[result.outcome] ?? 0) + 1;
-    const q = result.qualifier ?? result.outcome;
-    summary.byQualifier[q] = (summary.byQualifier[q] ?? 0) + 1;
     return {
       id: item.id,
       text: item.text,
@@ -61,8 +58,8 @@ export async function runEval3(geo: GeoClient, agent: ScoringAgent, concurrency:
       pass: score.pass,
       reason: score.reason,
       display: result.display,
-      ideologies: result.ideologies.map((i) => `${i.name} (${i.qualifier})`),
-      confidence: result.confidence?.total ?? null,
+      ideologies: result.ideologies.map((i) => i.name),
+      checks: result.checks.map((c) => `${c.id} ${c.skipped ? "skipped" : c.pass ? "pass" : "FAIL"}: ${c.detail}`),
       criteria: result.criteria.map((c) => c.id),
       explanation: result.explanation,
       flags: result.flags,
