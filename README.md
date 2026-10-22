@@ -25,6 +25,23 @@ The written criteria every classification must cite live in `src/framework/` and
 - 28 ideology definition cards (drafts until Armando approves them);
 - the confidence formula.
 
+### Agent v3 (scoring)
+
+`npm run cli -- score <claim-id>` or `score-text "<sentence>"` returns, for each claim:
+- a result: one of Geo's leanings marked **Clear** or **Potentially …**, **Uncertain** (with the reason), or **No political position** (with the failed check);
+- the criteria matched, each with the exact words from the claim;
+- ideologies with the belief they match;
+- a 0–100 confidence split into its parts;
+- a plain explanation and any flags.
+
+Four signals feed each result:
+1. **The scorer (gpt-5.5)** matches criteria and quotes evidence.
+2. **OpenAI's Decisions API (gpt-6-luna)** gives independent probabilities for the stance, the 7 leanings and each ideology.
+3. **A verifier (gpt-5.5, high reasoning)** judges the leaning and each ideology separately.
+4. **A focused second look** checks any ideology the independent probabilities rate highly but the scorer missed.
+
+Code turns these into the result; `src/agent/v3/score.ts` holds every rule, with unit tests. `npm run cli -- eval3` runs v3 over the dev set.
+
 **Submissions to Geo are paused** (`SUBMISSIONS_PAUSED` in `src/config.ts`) while the scoring system is built and tested.
 
 ## Commands
@@ -97,5 +114,6 @@ docs/PLAN.md         Plan and decisions
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
 | 4 Review loop | In progress: AI pre-review shows labels 59% → 83% (v1 → v2) and blanks 100%; human review of `qa/v2-seed2/` pending |
 | 5 Full run | Not started |
-| 7 Scoring framework v1 | Done: criteria, rules, 28 draft ideology cards, docs/FRAMEWORK.md |
+| 7 Scoring framework v1 | Done: criteria, rules, 28 draft ideology cards, docs/FRAMEWORK.md (now v1.1) |
+| 8 Agent v3 | Done: criteria-based scoring, Decisions API probabilities, per-part verifier, ideology second look |
 | 6 Proposals to Geo (paused) | Batch 02 (1 claim, 2 links) submitted 2026-10-22 as proposal `0xa1dab347…`, awaiting an editor's vote. Batch 01 (10 claims) ready; rebuild it without the batch-02 claim before sending |

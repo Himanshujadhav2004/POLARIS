@@ -29,6 +29,11 @@ export class RunState {
         created_at           TEXT NOT NULL,
         PRIMARY KEY (claim_id, model, prompt_version, taxonomy_fingerprint)
       );
+      CREATE TABLE IF NOT EXISTS cache (
+        key        TEXT PRIMARY KEY,
+        value_json TEXT NOT NULL,
+        created_at TEXT NOT NULL
+      );
       CREATE TABLE IF NOT EXISTS verifications (
         claim_id         TEXT NOT NULL,
         model            TEXT NOT NULL,
@@ -39,6 +44,27 @@ export class RunState {
         PRIMARY KEY (claim_id, model, verifier_version, label_key)
       );
     `);
+  }
+
+  /** Generic cache for the v3 pipeline. Keys include the framework version and model, so a change invalidates them. */
+  getCached<T>(key: string): T | undefined {
+    const row = this.db.prepare(`SELECT value_json FROM cache WHERE key = ?`).get(key) as { value_json: string } | undefined;
+    return row ? (JSON.parse(row.value_json) as T) : undefined;
+  }
+
+  putCached(key: string, value: unknown): void {
+    this.db
+      .prepare(`INSERT OR REPLACE INTO cache (key, value_json, created_at) VALUES (?, ?, ?)`)
+      .run(key, JSON.stringify(value), new Date().toISOString());
+  }
+
+  /** Returns the cached value for `key`, computing and storing it on a miss. */
+  async cached<T>(key: string, compute: () => Promise<T>): Promise<T> {
+    const hit = this.getCached<T>(key);
+    if (hit !== undefined) return hit;
+    const value = await compute();
+    this.putCached(key, value);
+    return value;
   }
 
   getVerification(claimId: string, model: string, verifierVersion: string, labelKey: string): Verification | undefined {

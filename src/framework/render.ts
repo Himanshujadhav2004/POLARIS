@@ -62,7 +62,7 @@ export function renderFramework(): string {
     "",
     ...IDEOLOGY_RULES.map((r) => `- **${r.id}.** ${r.text}`),
     "",
-    "Each ideology has a definition card (below). A belief marked *distinctive* belongs to that ideology alone; a *shared* belief gives at most Potential.",
+    "Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief gives at most Potential.",
     "",
     "## Step 5: confidence (0–100)",
     "",

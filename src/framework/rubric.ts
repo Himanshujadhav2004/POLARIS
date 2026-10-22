@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v1";
+export const FRAMEWORK_VERSION = "framework-v1.1";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -18,6 +18,12 @@ export const LEANING_BY_SCORE = {
 
 export type Score = -3 | -2 | -1 | 0 | 1 | 2 | 3;
 export type LeaningName = (typeof LEANING_BY_SCORE)[keyof typeof LEANING_BY_SCORE];
+
+/**
+ * Left to right. Use this, never Object.values(LEANING_BY_SCORE): JavaScript orders integer-like
+ * keys ("0", "1", …) before "-3", "-2", "-1", which would scramble the scale.
+ */
+export const LEANINGS_LEFT_TO_RIGHT: readonly LeaningName[] = ["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"];
 
 export const POLITICAL_LEANING_DEFINITION =
   "A position on the left-right political spectrum, from far left to far right through the center. Declared bias and Detected bias both use it, so one scale compares an entity's claim with others' ratings.";
@@ -183,11 +189,12 @@ export const ALL_CRITERIA: Criterion[] = DIMENSIONS.flatMap((d) => d.criteria);
 export const RULES = [
   { id: "C1", name: "Country context", text: "Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, the leaning is Uncertain." },
   { id: "E1", name: "Evidence", text: "Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence." },
-  { id: "H1", name: "Hedged wording", text: 'If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), its score moves one step toward the center and is capped at Center left or Center right.' },
+  { id: "H1", name: "Hedged wording", text: 'If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).' },
   { id: "A1", name: "Mixed signals", text: "If one topic area scores left (−1 or lower) and another scores right (+1 or higher), the leaning is Uncertain (mixed signals), never Center." },
   { id: "A2", name: "Combining topic areas", text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center." },
   { id: "A3", name: "Center", text: "Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area is Uncertain (cross-cutting)." },
   { id: "A4", name: "Far left and far right", text: "Far left or Far right is given only when a −3 or +3 criterion matches." },
+  { id: "A5", name: "Independent check", text: "If the independent probability check's most likely leaning is two or more steps away from the criteria's leaning, or on the other side of the center, the leaning is Uncertain (signals disagree). One step apart lowers confidence and is reported in the explanation." },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -198,6 +205,7 @@ export const IDEOLOGY_RULES = [
   { id: "I2", text: "Never infer an ideology from the topic alone. For example, an abortion claim is Christian conservative only with religious framing, and Feminist only when argued as women's rights." },
   { id: "I3", text: "Clear when the matched belief is distinctive to that ideology and the independent probability is at least 0.8. Potential when the belief is shared with neighbouring ideologies or the probability is 0.5–0.8, with the alternatives listed. Dropped below 0.5." },
   { id: "I4", text: "At most two ideologies per claim." },
+  { id: "I5", text: "When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes I1–I4 and the verifier." },
 ] as const;
 
 // ---------------------------------------------------------------------------

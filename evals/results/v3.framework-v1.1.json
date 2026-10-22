@@ -1,0 +1,798 @@
+{
+  "summary": {
+    "framework": "framework-v1.1",
+    "total": 53,
+    "passed": 52,
+    "confidentErrors": 0,
+    "byOutcome": {
+      "leaning": 15,
+      "uncertain": 17,
+      "no_position": 21
+    },
+    "byQualifier": {
+      "Clear": 6,
+      "Potential": 9,
+      "uncertain": 17,
+      "no_position": 21
+    },
+    "errors": 0
+  },
+  "rows": [
+    {
+      "id": "02d3e6ee405d4b8691dc84b33bebad21",
+      "text": "Birthright citizenship should be ended",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [
+        "NAT-2R"
+      ],
+      "explanation": "NAT-2R matched (direct): \"Birthright citizenship should be ended\". Independent probability for Right: 0.97. Verifier agreed. Confidence 99/100 (High).",
+      "flags": [
+        "independent check suggests Nationalist (p=0.81); second look found no matching belief: The claim calls for ending birthright citizenship, but it does not explicitly frame this as protecting national identity, national interests, sovereignty over outsiders, or opposition to international bodies. Under the rules, immigration or citizenship policy alone is not enough to classify as Nationalist."
+      ]
+    },
+    {
+      "id": "0533ecd48a16b382d15f725de99c6805",
+      "text": "Inheritance should be heavily taxed",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Left",
+      "ideologies": [],
+      "confidence": 85,
+      "criteria": [
+        "ECO-2L"
+      ],
+      "explanation": "ECO-2L matched (close): \"Inheritance should be heavily taxed\". Independent probability for Left: 0.82. Verifier agreed. Confidence 85/100 (High).",
+      "flags": [
+        "Social democrat added after a second look (I5, p=0.89)"
+      ]
+    },
+    {
+      "id": "07736de6dc19428f9b35004b9edbd92c",
+      "text": "Assault weapons should be banned",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 72,
+      "criteria": [
+        "LAW-1L"
+      ],
+      "explanation": "LAW-1L matched (direct): \"Assault weapons should be banned\". The independent check favours Left (0.94), one step away; Center left gets 0.06. Verifier agreed. Confidence 72/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "066019796fe54f489aedd0c66b9cd3d9",
+      "text": "Transgender women should be allowed to compete in women's sports",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 60,
+      "criteria": [
+        "SOC-1L"
+      ],
+      "explanation": "SOC-1L matched (close): \"Transgender women should be allowed to compete in women's sports\". The independent check favours Left (1.00), one step away; Center left gets 0.00. Verifier agreed. Confidence 60/100 (Medium).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "002f8e4ba6274856b55d4226b01bc9c8",
+      "text": "Hate speech should be illegal",
+      "expect": "label",
+      "pass": false,
+      "reason": "left blank but should be labelled",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "04aab0abb4554e82b2dae5f48a325d6f",
+      "text": "The United States should impose high tariffs on Canadian imports",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "07bb4713228f7eff54e67f674b763591",
+      "text": "Federal Bureau of Prisons management should be able to change staffing and discipline rules without union approval",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 73,
+      "criteria": [
+        "ECO-1R"
+      ],
+      "explanation": "ECO-1R matched (direct): \"management should be able to change staffing and discipline rules without union approval\". The independent check favours Right (0.89), one step away; Center right gets 0.11. Verifier agreed. Confidence 73/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "02b765dcfb58f27285001dbd13553f5a",
+      "text": "All recreational drugs should be legalized",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Left",
+      "ideologies": [],
+      "confidence": 96,
+      "criteria": [
+        "SOC-2L"
+      ],
+      "explanation": "SOC-2L matched (direct): \"All recreational drugs should be legalized\". Independent probability for Left: 0.86. Verifier agreed. Confidence 96/100 (High).",
+      "flags": [
+        "Libertarianism added after a second look (I5, p=0.80)"
+      ]
+    },
+    {
+      "id": "079d07a77a4249b58c498db29c68994d",
+      "text": "The United States should stop policing the world",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [
+        "Isolationist (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3). Ideology: Isolationist (belief T1: \"The United States should stop policing the world\", probability 0.87).",
+      "flags": []
+    },
+    {
+      "id": "04241f3e755ebdde2e9744e39fe342cd",
+      "text": "Governments should borrow for infrastructure during recessions even with high public debt",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 78,
+      "criteria": [
+        "ECO-1L"
+      ],
+      "explanation": "ECO-1L matched (close): \"Governments should borrow for infrastructure during recessions even with high public debt\". Independent probability for Center left: 0.59. Verifier agreed. Confidence 78/100 (Medium).",
+      "flags": []
+    },
+    {
+      "id": "0224ebe6a5214bd691e329fb125964a0",
+      "text": "Donald Trump posted on Truth Social ... that Jerome Powell should be forced to resign ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (attributed)",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed: The position is attributed to Donald Trump rather than stated in the claim's own voice: \"Donald Trump posted ... that former Federal Reserve Chair Jerome Powell should be forced to resign immediately\". Independent probability that it takes a position: 0.02.",
+      "flags": []
+    },
+    {
+      "id": "075a6a3281354ed38cf2653779fbf443",
+      "text": "Representative Don Bacon stated that the United States should not turn its back on Afghan allies ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (attributed)",
+      "ideologies": [],
+      "confidence": 95,
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed: The political position is attributed to Representative Don Bacon rather than asserted in the claim's own voice: \"Representative Don Bacon stated that\". Independent probability that it takes a position: 0.05.",
+      "flags": []
+    },
+    {
+      "id": "3a4020a73655450a8ba8847912ac65a2",
+      "text": "The US should split the childhood MMR vaccine into three separate doses",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (signals disagree)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The scorer found no political position (G3 Political subject failed), but the independent probability that the claim takes one is 0.75.",
+      "flags": []
+    },
+    {
+      "id": "3d5f845459b94f8fa4fb6288807acdc1",
+      "text": "GLP-1 medications should be covered by public insurance for obesity treatment",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 74,
+      "criteria": [
+        "ECO-1L"
+      ],
+      "explanation": "ECO-1L matched (close): \"should be covered by public insurance\". The independent check favours Left (0.49), one step away; Center left gets 0.45. Verifier agreed. Confidence 74/100 (Medium).",
+      "flags": [
+        "Social democrat added after a second look (I5, p=0.88)",
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "3c2e6b9aaebb4dc7b167d66eddd80cff",
+      "text": "Suspected measles patients should be immediately isolated ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim gives a recommendation, but it is a medical infection-control instruction rather than a political subject, and it is not a mainstream contested political issue. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "3d00de40e4bc4424a5957031419818d7",
+      "text": "Standard two-step serologic testing should be part of Lyme disease diagnosis when indicated",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim makes a recommendation in its own voice, but it concerns medical diagnosis and clinical guidelines rather than public policy, law, rights, government, the economy, or social organization. Any disagreement would be medical/scientific rather than a mainstream political contest. Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "89f507c8d64a48d9bf411e53a079942c",
+      "text": "Pennsylvania measles outbreak reaches 1,004 cases across 39 counties ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral factual description of a measles outbreak, not an argument for or against a policy or political position. It concerns public health facts rather than a contested political subject stated in the claim. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "889c449489aa48308e41a6d27f52ede6",
+      "text": "SAMHSA reinstated $2 billion in mental health and substance use grants ... following bipartisan pushback.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral factual description of an agency action and bipartisan reaction, not an argument or judgment; it also does not itself take a contested position. Independent probability that it takes a position: 0.02.",
+      "flags": []
+    },
+    {
+      "id": "3f0e6e8ad947442ab9756c645a17afdb",
+      "text": "The US government should restrict the use of unhosted cryptocurrency wallets",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [],
+      "confidence": 60,
+      "criteria": [
+        "ECO-1L"
+      ],
+      "explanation": "ECO-1L matched (close): \"The US government should restrict the use of unhosted cryptocurrency wallets\". The independent check favours Center (0.94), one step away; Center left gets 0.01. Verifier agreed. Confidence 60/100 (Medium).",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "3cab7b9d26604ef18104a2f9e5ad4d4f",
+      "text": "The societal debate should focus on finding the right balance of financial rules, not eliminating them entirely.",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Center",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [
+        "ECO-0"
+      ],
+      "explanation": "ECO-0 matched (direct): \"finding the right balance of financial rules, not eliminating them entirely\". Independent probability for Center: 0.96. Verifier agreed. Confidence 99/100 (High).",
+      "flags": []
+    },
+    {
+      "id": "6c4a1988209b42a3a6f888e0807b4506",
+      "text": "The Liquid Network suffered a $320 million exploit in September 2026 ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral factual description of a cryptocurrency hack and its size, not an argument or judgment about public policy. It concerns a technical/financial incident rather than a contested political subject. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "01f8231cb20f4c8a947b837cfc2cb991",
+      "text": "Right-leaning pollsters were paid to conduct polling to convince Donald Trump to scale back deportations ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a factual description of polling activity and persuasion efforts, not the claim's own argument for or against deportations or amnesty; the position is attributed as something polling was meant to convince Donald Trump to do. Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "3a6d6826b90172f1292b9ded9af9359b",
+      "text": "The US should reject global schemes to control AI",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": [
+        "Nationalist added after a second look (I5, p=0.82)"
+      ]
+    },
+    {
+      "id": "3af68ffcbc8d2916148e97da8dc75f54",
+      "text": "AI companies should be required to make their systems more transparent",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "6c4e6b3aa9734455bbcfaa571dd14d39",
+      "text": "Advanced Machine Intelligence raised $1.03 billion in a March 2026 seed round",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral factual description of a fundraising event, not an argument or judgment; it concerns a business/technology investment rather than public policy, and it does not state a contested political position. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "3abf816a83914df689e41ec9dca50b15",
+      "text": "Disney should aggressively integrate generative AI into its creative production",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 88,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim takes its own prescriptive position, but it is about a private company's business/creative technology strategy rather than public policy, law, rights, government, the economy, or social organization. As stated, it is not a mainstream political-camp dispute. Independent probability that it takes a position: 0.12.",
+      "flags": []
+    },
+    {
+      "id": "3b8a2aa6f2514c0f91549b982154b4f1",
+      "text": "Jerusalem should be divided between Israel and Palestine",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "3be0cedda44d496583330e6649faa965",
+      "text": "Poland should reintroduce border checks with EU neighbors to monitor transit",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center right",
+      "ideologies": [],
+      "confidence": 78,
+      "criteria": [
+        "NAT-1R"
+      ],
+      "explanation": "NAT-1R matched (direct): \"Poland should reintroduce border checks with EU neighbors to monitor transit\". The independent check favours Right (0.64), one step away; Center right gets 0.26. Verifier agreed. Confidence 78/100 (Medium).",
+      "flags": [
+        "independent check favours Right (one step away)"
+      ]
+    },
+    {
+      "id": "6c4f3b01f64f42358af9489178b00e8d",
+      "text": "The Yemeni government's July 2026 bombing of Sanaa airport was justified",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "071490ef73d84c5289654d1ee38ff34e",
+      "text": "The margin of victory between the left-leaning opposition and the right-wing bloc in Sweden's ... election was approximately 50,000 votes",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral factual description of an election result and vote margin, not an argument or judgment for or against a policy or political position. Because it only reports that the margin was “approximately 50,000 votes” between blocs, it is not itself a contested normative position. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "889add01e8bc4458bc141c2f24cbae62",
+      "text": "The entry of Ethiopian government forces into northern Tigray towns ... heightened geopolitical tensions",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a descriptive statement about events and their effects, not an argument for or against a policy or political position. It says the troop entry \"heightened geopolitical tensions,\" but does not take a contested normative position. Independent probability that it takes a position: 0.02.",
+      "flags": []
+    },
+    {
+      "id": "029189412759437dbad4bf7d3fd3ef29",
+      "text": "The study found 80% of ChatGPT's responses were exclusively left-leaning, while 3% were right-leaning.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 99,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim reports an attributed statistic rather than taking its own normative political position: \"The study found 80% of ChatGPT's responses were exclusively left-leaning, while 3% were right-leaning.\" Independent probability that it takes a position: 0.01.",
+      "flags": []
+    },
+    {
+      "id": "3a9da993a0e343a493822ce2bee19b05",
+      "text": "A group known as the Integrists believes that the Catholic church should run the country.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral description of what a group believes, not a position taken in the claim's own voice. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "bf435e2030394255a4cd4ed440f30e9d",
+      "text": "Populist parties on both the left and the right are making inroads with the UK electorate.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 94,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a neutral description of electoral trends, not an argument for or against a policy, party, or social arrangement. Because it takes no normative political position, there is no contested position to score. Independent probability that it takes a position: 0.06.",
+      "flags": []
+    },
+    {
+      "id": "3a9cb45a5a004a34bcb00d0416fe66fb",
+      "text": "The two-minute rule states that a new habit should be scaled down to an action that takes two minutes or less.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 100,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim neutrally describes a personal habit rule rather than taking its own political position; the prescriptive wording is attributed to 'The two-minute rule' and concerns self-improvement, not public policy or contested politics. Independent probability that it takes a position: 0.00.",
+      "flags": []
+    },
+    {
+      "id": "3fa9573fcfbb4234a67c7fe23b3578a4",
+      "text": "Marriage should be between a man and a woman",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Right",
+      "ideologies": [
+        "Traditionalist (Clear)",
+        "Conservative (Potential)"
+      ],
+      "confidence": 89,
+      "criteria": [
+        "SOC-2R"
+      ],
+      "explanation": "SOC-2R matched (close): \"Marriage should be between a man and a woman\". Independent probability for Right: 0.96. Verifier agreed. Confidence 89/100 (High). Ideology: Traditionalist (belief T1: \"Marriage should be between a man and a woman\", probability 0.93); Potentially conservative (belief T1: \"Marriage should be between a man and a woman\", probability 0.89; could also be Traditionalist, Christian conservative, Paleoconservative, Neoconservative, Classical liberal).",
+      "flags": [
+        "Conservative added after a second look (I5, p=0.89)"
+      ]
+    },
+    {
+      "id": "3ad9461002ec5c16b17178ac14ffd336",
+      "text": "A man should head the family in regards to making certain decisions",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center right",
+      "ideologies": [
+        "Traditionalist (Clear)"
+      ],
+      "confidence": 75,
+      "criteria": [
+        "SOC-1R"
+      ],
+      "explanation": "SOC-1R matched (close): \"A man should head the family in regards to making certain decisions\". Independent probability for Center right: 0.50. Verifier agreed. Confidence 75/100 (Medium). Ideology: Traditionalist (belief T1: \"A man should head the family in regards to making certain decisions\", probability 0.86).",
+      "flags": [
+        "Conservative added after a second look (I5, p=0.82)",
+        "Traditionalist added after a second look (I5, p=0.86)"
+      ]
+    },
+    {
+      "id": "010427a6bd765078b4d58d950910a5cb",
+      "text": "Same-sex unions remove the ability to procreate, with the exception of adoption",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 58,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is framed as a descriptive statement about same-sex unions and procreation, not an argument that a law or policy should change. It says \"Same-sex unions remove the ability to procreate, with the exception of adoption\" but does not itself endorse or oppose same-sex marriage or any political action. Independent probability that it takes a position: 0.42.",
+      "flags": []
+    },
+    {
+      "id": "3ee175a7710e2c57062437d9964283c0",
+      "text": "Partners in a committed relationship should share their phone passcodes",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 97,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim gives personal relationship advice about sharing phone passcodes, not a position on public policy, law, rights, government, the economy, or how society should be organized; it is not a mainstream political-camp dispute. Independent probability that it takes a position: 0.03.",
+      "flags": []
+    },
+    {
+      "id": "002e2bfdb58c52e99c8bc2a3ae773ace",
+      "text": "A woman should have input on date plans to ensure her time and energy are well-spent ...",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (not political)",
+      "ideologies": [],
+      "confidence": 97,
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed: The claim takes its own normative position using “should,” but it is personal dating/relationship advice rather than a position on public policy, law, rights, government, the economy, or societal organization. It is not a mainstream political-camp dispute as stated. Independent probability that it takes a position: 0.03.",
+      "flags": []
+    },
+    {
+      "id": "0032d0d0d97157a1b2cd11b5d04f503a",
+      "text": "In contemporary dating, individuals have the freedom to choose what they want in a relationship",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (descriptive)",
+      "ideologies": [],
+      "confidence": 96,
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed: The claim is a general statement about contemporary dating and personal relationship choice, not an explicit political position about policy, law, rights, government, the economy, or social organization. It does not present a contested mainstream political policy position in its own terms. Independent probability that it takes a position: 0.04.",
+      "flags": []
+    },
+    {
+      "id": "be8b29b591ce5c6fb42c56e53b940e37",
+      "text": "Universities remaining politically neutral and respecting both sides of an issue can uphold freedom of speech",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": [
+        "hedged wording: scores capped at ±1 (H1)"
+      ]
+    },
+    {
+      "id": "cdc12bc686034d13ae93c252e86b2a20",
+      "text": "Removing conversations about new technologies like COVID vaccines from the public sphere is dangerous for freedom of speech and societal discourse",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "6beb212c5bbf563fb8c9750010624620",
+      "text": "Social media companies have a responsibility to remove AI-generated disinformation to safeguard their users",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "17d1bac3decc4007a0fc3df90c456846",
+      "text": "Robinhood's 10x leveraged crypto perpetuals pose unacceptable financial risks to retail investors",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 0,
+      "criteria": [
+        "ECO-1L"
+      ],
+      "explanation": "ECO-1L matched (close): \"pose unacceptable financial risks to retail investors\". That points to Center left, but confidence is only 0/100 (verifier: The quoted words are a financial product-risk judgment, not a stated call for stronger consumer or financial regulation. Without an explicit public-policy remedy, ECO-1L and a Center-left leaning are not justified by the claim itself.), so the result is Uncertain.",
+      "flags": [
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "204b06e5cef44c4fa69c4d52bf403184",
+      "text": "The U.S.-DRC partnership should remain open to investors from countries outside the United States",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3).",
+      "flags": []
+    },
+    {
+      "id": "eff4319d8daa4ee3bd335220cef2fa58",
+      "text": "ICC member states should protect the Court from the effects of U.S. institutional sanctions",
+      "expect": "either",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Uncertain (cross-cutting)",
+      "ideologies": [
+        "Globalist (Clear)"
+      ],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The claim's position is on a topic that does not line up with left and right, so no leaning is given (rule A3). Ideology: Globalist (belief T1: \"ICC member states should protect the Court\", probability 0.91).",
+      "flags": []
+    },
+    {
+      "id": "1b825794e1af48f89506342e17abee8f",
+      "text": "Jammu and Kashmir is an integral and inalienable part of India",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "Uncertain (signals disagree)",
+      "ideologies": [],
+      "confidence": null,
+      "criteria": [],
+      "explanation": "The scorer found no political position (G4 Contested failed), but the independent probability that the claim takes one is 0.95.",
+      "flags": []
+    },
+    {
+      "id": "fa04dd88a5774f7cbfb4db7143060f8c",
+      "text": "The principle that no one should be a judge in their own cause is a fundamental justification for the separation of powers.",
+      "expect": "none",
+      "pass": true,
+      "reason": "blank as expected",
+      "display": "No political position (consensus)",
+      "ideologies": [],
+      "confidence": 88,
+      "criteria": [],
+      "explanation": "No political position: check G4 (Contested) failed: The claim concerns government structure and endorses a general justification for separation of powers, but this is a broadly shared constitutional/rule-of-law principle rather than a contested left-right political position. Independent probability that it takes a position: 0.12.",
+      "flags": []
+    },
+    {
+      "id": "f2891f4caf7d1d3301e33d5b35e7df9a",
+      "text": "No-fault divorce should be abolished",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Right",
+      "ideologies": [],
+      "confidence": 98,
+      "criteria": [
+        "SOC-2R"
+      ],
+      "explanation": "SOC-2R matched (direct): \"No-fault divorce should be abolished\". Independent probability for Right: 0.94. Verifier agreed. Confidence 98/100 (High).",
+      "flags": [
+        "independent check suggests Conservative (p=0.85); second look found no matching belief: The claim opposes no-fault divorce, which may relate to traditional views of marriage, but it does not explicitly argue for preserving tradition, established institutions, gradual change, limited government, or free enterprise. The ideology cannot be inferred from the divorce topic alone."
+      ]
+    },
+    {
+      "id": "061379d97ad258bb95134b5e5031a68c",
+      "text": "Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior, regardless of the intention",
+      "expect": "label",
+      "pass": true,
+      "reason": "acceptable label",
+      "display": "Potentially center left",
+      "ideologies": [
+        "Feminist (Potential)"
+      ],
+      "confidence": 64,
+      "criteria": [
+        "SOC-1L"
+      ],
+      "explanation": "SOC-1L matched (close): \"Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior\". The independent check favours Left (0.86), one step away; Center left gets 0.12. Verifier agreed. Confidence 64/100 (Medium). Ideology: Potentially feminist (belief T1: \"Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior\", probability 0.79).",
+      "flags": [
+        "independent check favours Left (one step away)"
+      ]
+    },
+    {
+      "id": "20b6085c0d2c54fb8d5bc7e531b0e4c4",
+      "text": "Without pre-made scripts from gender roles, people may be unable to effectively negotiate their roles in new relationships, especially when young",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 0,
+      "criteria": [
+        "SOC-1R"
+      ],
+      "explanation": "SOC-1R matched (partial): \"Without pre-made scripts from gender roles, people may be unable to effectively negotiate their roles in new relationships\". That points to Center right, but confidence is only 0/100 (verifier: The quoted claim is hedged and mainly descriptive/predictive (\"may be unable\") rather than directly advocating a center-right social policy. It suggests a possible benefit of gender-role scripts in dating, but it does not clearly state support for traditional marriage/family policy under SOC-1R.), so the result is Uncertain.",
+      "flags": [
+        "hedged wording: scores capped at ±1 (H1)",
+        "independent check favours Center (one step away)"
+      ]
+    },
+    {
+      "id": "c0831b6ffc6159ddbac421ad922bf066",
+      "text": "Adopting traditional gender roles can eliminate the need for a couple to negotiate their respective roles from scratch",
+      "expect": "either",
+      "pass": true,
+      "reason": "blank (acceptable)",
+      "display": "Uncertain (low confidence)",
+      "ideologies": [],
+      "confidence": 0,
+      "criteria": [
+        "SOC-1R"
+      ],
+      "explanation": "SOC-1R matched (partial): \"Adopting traditional gender roles can eliminate the need for a couple to negotiate their respective roles from scratch\". That points to Center right, but confidence is only 0/100 (verifier: The claim is framed as a hedged/descriptive causal statement (“can eliminate the need”) about a couple’s role negotiation, not direct advocacy that traditional gender roles or family arrangements should be adopted as policy or social norm. It therefore does not clearly pass G1, and the quoted evidence does not itself establish SOC-1R.), so the result is Uncertain.",
+      "flags": [
+        "hedged wording: scores capped at ±1 (H1)",
+        "independent check favours Right (one step away)"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Political leaning and ideology scoring framework (framework-v1)
+# Political leaning and ideology scoring framework (framework-v1.1)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the final leaning and confidence, so the same matches always give the same result.
 
@@ -104,11 +104,12 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 
 - **C1 Country context.** Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, the leaning is Uncertain.
 - **E1 Evidence.** Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence.
-- **H1 Hedged wording.** If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), its score moves one step toward the center and is capped at Center left or Center right.
+- **H1 Hedged wording.** If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).
 - **A1 Mixed signals.** If one topic area scores left (−1 or lower) and another scores right (+1 or higher), the leaning is Uncertain (mixed signals), never Center.
 - **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center.
 - **A3 Center.** Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area is Uncertain (cross-cutting).
 - **A4 Far left and far right.** Far left or Far right is given only when a −3 or +3 criterion matches.
+- **A5 Independent check.** If the independent probability check's most likely leaning is two or more steps away from the criteria's leaning, or on the other side of the center, the leaning is Uncertain (signals disagree). One step apart lowers confidence and is reported in the explanation.
 
 ## Step 4: ideologies
 
@@ -116,8 +117,9 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 - **I2.** Never infer an ideology from the topic alone. For example, an abortion claim is Christian conservative only with religious framing, and Feminist only when argued as women's rights.
 - **I3.** Clear when the matched belief is distinctive to that ideology and the independent probability is at least 0.8. Potential when the belief is shared with neighbouring ideologies or the probability is 0.5–0.8, with the alternatives listed. Dropped below 0.5.
 - **I4.** At most two ideologies per claim.
+- **I5.** When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes I1–I4 and the verifier.
 
-Each ideology has a definition card (below). A belief marked *distinctive* belongs to that ideology alone; a *shared* belief gives at most Potential.
+Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief gives at most Potential.
 
 ## Step 5: confidence (0–100)
 

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
-import { ALL_CRITERIA, CONFIDENCE, DIMENSIONS, LEANING_BY_SCORE } from "../src/framework/rubric.js";
+import { ALL_CRITERIA, CONFIDENCE, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT } from "../src/framework/rubric.js";
 
 /** Ideology values on Geo on 2026-10-22, minus the excluded duplicate "Libertarian". */
 const GEO_IDEOLOGIES = [
@@ -30,6 +30,10 @@ describe("rubric", () => {
       expect(scores).toContain(1);
       for (const c of d.criteria) expect(c.examples.length).toBeGreaterThan(0);
     }
+  });
+
+  it("lists the leanings left to right in score order", () => {
+    expect(LEANINGS_LEFT_TO_RIGHT).toEqual([-3, -2, -1, 0, 1, 2, 3].map((s) => LEANING_BY_SCORE[String(s) as keyof typeof LEANING_BY_SCORE]));
   });
 
   it("maps every score to a Geo leaning", () => {
