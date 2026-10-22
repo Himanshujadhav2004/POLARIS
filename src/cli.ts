@@ -1,7 +1,8 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
+import { PROMPT_VERSION } from "./agent/prompt.js";
 import { OPENAI_MODEL, SPACES, spaceBySlug } from "./config.js";
 import { renderSummary, runEval } from "./eval/run.js";
 import { countClaims, fetchClaims, sampleClaimIds } from "./geo/claims.js";
@@ -9,7 +10,7 @@ import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
-import { buildQaSample } from "./pipeline/qa-sample.js";
+import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
 import { exportQaSample } from "./qa/export.js";
 import { computeQaReport, renderQaReport } from "./qa/report.js";
@@ -32,8 +33,8 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   eval [--models a,b] [--concurrency N]
                                Score models on evals/dev-set.json; writes evals/results/
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
-                               Build the reviewer sample; writes qa/qa_sample.xlsx, .csv and .json
-  qa-report [--file qa/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
+                               Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
+  qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
                                Score reviewer verdicts against the agent's output
 `;
 
@@ -50,6 +51,7 @@ async function main(argv: string[]): Promise<void> {
       pool: { type: "string" },
       "per-space": { type: "string" },
       labelled: { type: "string" },
+      dir: { type: "string" },
       file: { type: "string" },
       out: { type: "string" },
       "label-bar": { type: "string" },
@@ -131,6 +133,11 @@ async function main(argv: string[]): Promise<void> {
       return;
     }
     case "qa-sample": {
+      const seed = Number(values.seed ?? 1);
+      const dir = `qa/${PROMPT_VERSION}-seed${seed}`;
+      if (existsSync(`${dir}/qa_sample.json`)) {
+        throw new Error(`${dir} already holds a QA round. Use another --seed, or delete the folder to rebuild it.`);
+      }
       const taxonomy = await fetchTaxonomy(geo);
       const classifier = new Classifier(taxonomy, { model: values.model });
       const state = new RunState();
@@ -139,7 +146,8 @@ async function main(argv: string[]): Promise<void> {
           geo,
           classifier,
           state,
-          seed: Number(values.seed ?? 1),
+          seed,
+          excludeIds: previouslyUsedIds(),
           pool: Number(values.pool ?? 60),
           maxRounds: 2,
           perSpace: Number(values["per-space"] ?? 10),
@@ -147,7 +155,7 @@ async function main(argv: string[]): Promise<void> {
           concurrency: Number(values.concurrency ?? 6),
           log: (line) => console.log(line),
         });
-        const files = await exportQaSample(sample, taxonomy);
+        const files = await exportQaSample(sample, taxonomy, dir);
         console.log(`\nWrote ${sample.rows.length} rows:\n${files.map((f) => `  ${f}`).join("\n")}`);
       } finally {
         state.close();
@@ -155,8 +163,9 @@ async function main(argv: string[]): Promise<void> {
       return;
     }
     case "qa-report": {
-      const file = values.file ?? "qa/qa_sample.xlsx";
-      const report = computeQaReport(readManifest("qa/qa_sample.json"), await readVerdicts(file), {
+      if (!values.dir) throw new Error("Give the QA round folder, e.g. --dir qa/v1-seed1");
+      const file = values.file ?? `${values.dir}/qa_sample.xlsx`;
+      const report = computeQaReport(readManifest(`${values.dir}/qa_sample.json`), await readVerdicts(file), {
         labels: Number(values["label-bar"] ?? 0.9),
         blanks: Number(values["blank-bar"] ?? 0.85),
       });

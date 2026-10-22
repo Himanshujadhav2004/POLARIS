@@ -1,6 +1,6 @@
 # QA report: gpt-5.5-2026-04-23, prompt v1
 
-Source: `qa/reviews/claude-review.xlsx`, reviewed by Claude (AI).
+Source: `qa/v1-seed1/claude-review.xlsx`, reviewed by Claude (AI).
 
 ## Result
 

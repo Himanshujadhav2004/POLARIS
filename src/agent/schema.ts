@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { Taxonomy } from "../geo/taxonomy.js";
 
-export const ABSTAIN_REASONS = ["factual_report", "apolitical", "ambiguous"] as const;
+export const ABSTAIN_REASONS = ["factual_report", "apolitical", "consensus", "ambiguous"] as const;
 export const CONFIDENCES = ["high", "medium", "low"] as const;
 
 export const LabelSchema = z.object({

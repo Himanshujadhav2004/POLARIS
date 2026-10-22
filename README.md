@@ -26,11 +26,11 @@ npm run cli -- schema                   # refresh schema/geo-schema.json from th
 
 npm run cli -- classify <id>            # label claims (needs OPENAI_API_KEY)
 npm run cli -- eval --models gpt-5.5,gpt-5.4-mini
-npm run cli -- qa-sample --seed 1          # writes qa/qa_sample.xlsx, .csv, .json
-npm run cli -- qa-report --file qa/qa_sample.xlsx --out qa/reports/round1.md
+npm run cli -- qa-sample --seed 2          # writes qa/<prompt>-seed2/qa_sample.xlsx, .csv, .json
+npm run cli -- qa-report --dir qa/v2-seed2 --out qa/v2-seed2/report.md
 ```
 
-Reviewers fill in the yellow columns of `qa/qa_sample.xlsx` (QA verdict, plus Correct leaning / Correct ideologies when it is not Correct). `qa-report` matches rows by Claim ID and scores labels and blanks separately against the bar (90% / 85% by default).
+Each QA round gets its own folder under `qa/`, and a new sample skips claims from the dev set and earlier rounds. Reviewers fill in the yellow columns of the round's `qa_sample.xlsx` (QA verdict, plus Correct leaning / Correct ideologies when it is not Correct). `qa-report` matches rows by Claim ID and scores labels and blanks separately against the bar (90% / 85% by default).
 
 Classifications are cached in `data/state.sqlite` per claim, model, prompt version and taxonomy fingerprint, so re-running a command never pays for the same claim twice.
 
@@ -54,8 +54,7 @@ evals/results/       Eval output per model and prompt version
 src/qa/export.ts     QA spreadsheet, CSV and JSON manifest
 src/qa/verdicts.ts   Reads reviewer verdicts from the spreadsheet
 src/qa/report.ts     Accuracy report (labels, blanks, per space, issues)
-qa/                  The current QA sample for reviewers
-qa/reviews/          Completed reviews and their reports
+qa/<prompt>-seed<N>/ One folder per QA round: sample, reviews, reports
 schema/              Live Geo GraphQL schema
 test/                Unit tests (vitest)
 docs/PLAN.md         Plan and decisions

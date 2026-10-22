@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import type { Classification, Classifier } from "../agent/classify.js";
 import { SPACES, type Space } from "../config.js";
 import { DEV_SET_PATH } from "../eval/run.js";
@@ -41,7 +42,21 @@ export interface QaSampleOptions {
   perSpace: number;
   labelled: number;
   concurrency: number;
+  /** Claims that must not appear, e.g. the dev set and earlier QA rounds. */
+  excludeIds: ReadonlySet<string>;
   log?: (line: string) => void;
+}
+
+/** IDs from the dev set and every earlier QA round, so a new sample is a clean test. */
+export function previouslyUsedIds(qaRoot = "qa"): Set<string> {
+  const ids = new Set((JSON.parse(readFileSync(DEV_SET_PATH, "utf8")) as { items: { id: string }[] }).items.map((i) => i.id));
+  if (!existsSync(qaRoot)) return ids;
+  for (const entry of readdirSync(qaRoot, { withFileTypes: true })) {
+    const manifest = join(qaRoot, entry.name, "qa_sample.json");
+    if (!entry.isDirectory() || !existsSync(manifest)) continue;
+    for (const row of (JSON.parse(readFileSync(manifest, "utf8")) as { rows: { claimId: string }[] }).rows) ids.add(row.claimId);
+  }
+  return ids;
 }
 
 /**
@@ -50,7 +65,6 @@ export interface QaSampleOptions {
  */
 export async function buildQaSample(options: QaSampleOptions): Promise<QaSample> {
   const log = options.log ?? (() => {});
-  const devIds = new Set((JSON.parse(readFileSync(DEV_SET_PATH, "utf8")) as { items: { id: string }[] }).items.map((i) => i.id));
   const rows: QaRow[] = [];
   const stats: SpaceStats[] = [];
 
@@ -61,7 +75,7 @@ export async function buildQaSample(options: QaSampleOptions): Promise<QaSample>
     let errors = 0;
 
     for (let round = 0; round < options.maxRounds; round++) {
-      const ids = (await sampleClaimIds(options.geo, space.id, options.pool, rng)).filter((id) => !seen.has(id) && !devIds.has(id));
+      const ids = (await sampleClaimIds(options.geo, space.id, options.pool, rng)).filter((id) => !seen.has(id) && !options.excludeIds.has(id));
       ids.forEach((id) => seen.add(id));
       // Claims that already carry Leanings are out of scope for the agent.
       const claims = (await fetchClaims(options.geo, ids)).filter((c) => c.text && c.leaningIds.length === 0);

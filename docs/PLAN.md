@@ -77,7 +77,7 @@ Share of random claims the agent labelled (gpt-5.5, prompt v1):
 
 ## QA review, round 1 (Claude AI pre-review of prompt v1)
 
-Full report: `qa/reviews/claude-review-report.md`. A human review of `qa/qa_sample.xlsx` is still pending.
+Full report: `qa/v1-seed1/claude-review-report.md`. A human review of `qa/v1-seed1/qa_sample.xlsx` is still pending.
 
 | Measure | Result | Bar |
 |---|---|---|
@@ -97,6 +97,15 @@ Planned prompt v2 changes:
 4. Hedged or descriptive claims ("can", "may") get at most a Center left / Center right leaning.
 
 v2 will be measured on the dev set and a fresh QA sample (a new seed), not on these 70 rows.
+
+## Prompt v2 (dev set)
+
+The four changes above, plus a new blank reason, `consensus`. The dev set grew to 53 claims, adding 12 from QA round 1.
+- **Result:** v2 passes 53/53.
+- **Not over-cautious:** it still labels 24 of the 29 claims that may be labelled.
+- **Unchanged clear labels:** every clear label from v1 stays the same.
+- **Ideology-only labels kept where right:** Libertarianism (drug legalization), Isolationist (stop policing the world), Globalist (protect the ICC).
+- **Hedged claims softened:** hedged gender-role claims now get Traditionalist only.
 
 ## Proposal format (prepared locally, submitted by hand)
 

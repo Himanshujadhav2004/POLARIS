@@ -6,12 +6,12 @@ import type { Claim } from "../geo/claims.js";
 import type { Taxonomy } from "../geo/taxonomy.js";
 import type { QaSample } from "../pipeline/qa-sample.js";
 
-export const QA_DIR = "qa";
 export const VERDICTS = ["Correct", "Partly correct", "Wrong label", "Should be blank", "Missed label"] as const;
 
 const BLANK_REASONS: Record<string, string> = {
   factual_report: "Reports facts or what someone said",
   apolitical: "No political stake",
+  consensus: "Shared across the spectrum",
   ambiguous: "Position unclear or contested",
 };
 
@@ -75,8 +75,9 @@ function toRecord(row: QaSample["rows"][number]): QaRecord {
   };
 }
 
-export async function exportQaSample(sample: QaSample, taxonomy: Taxonomy): Promise<string[]> {
-  mkdirSync(QA_DIR, { recursive: true });
+/** Writes qa_sample.xlsx, .csv and .json into `dir` (one folder per QA round). */
+export async function exportQaSample(sample: QaSample, taxonomy: Taxonomy, dir: string): Promise<string[]> {
+  mkdirSync(dir, { recursive: true });
   const records = sample.rows.map(toRecord);
   const generatedAt = new Date().toISOString();
   const model = sample.rows[0]?.result.resolvedModel ?? "";
@@ -156,11 +157,11 @@ export async function exportQaSample(sample: QaSample, taxonomy: Taxonomy): Prom
     row.getCell("correctLeaning").dataValidation = { type: "list", allowBlank: true, formulae: [leaningOptions] };
   }
 
-  const xlsxPath = `${QA_DIR}/qa_sample.xlsx`;
+  const xlsxPath = `${dir}/qa_sample.xlsx`;
   await wb.xlsx.writeFile(xlsxPath);
 
   // CSV with a BOM so Excel opens it as UTF-8.
-  const csvPath = `${QA_DIR}/qa_sample.csv`;
+  const csvPath = `${dir}/qa_sample.csv`;
   const escape = (v: string) => (/[",\n\r]/.test(v) ? `"${v.replaceAll('"', '""')}"` : v);
   const csv = [COLUMNS.map((c) => c.header), ...records.map((r) => COLUMNS.map((c) => r[c.key] ?? ""))]
     .map((line) => line.map(escape).join(","))
@@ -168,7 +169,7 @@ export async function exportQaSample(sample: QaSample, taxonomy: Taxonomy): Prom
   writeFileSync(csvPath, "﻿" + csv + "\r\n");
 
   // Machine-readable copy, used to join reviewer verdicts back to the agent's output.
-  const manifestPath = `${QA_DIR}/qa_sample.json`;
+  const manifestPath = `${dir}/qa_sample.json`;
   writeFileSync(
     manifestPath,
     JSON.stringify(
