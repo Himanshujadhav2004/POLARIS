@@ -107,6 +107,25 @@ The four changes above, plus a new blank reason, `consensus`. The dev set grew t
 - **Ideology-only labels kept where right:** Libertarianism (drug legalization), Isolationist (stop policing the world), Globalist (protect the ICC).
 - **Hedged claims softened:** hedged gender-role claims now get Traditionalist only.
 
+## QA review, round 2 (Claude AI pre-review of prompt v2, fresh sample)
+
+Sample: `qa/v2-seed2/`, seed 2. It contains no dev-set or round-1 claims. Full report: `qa/v2-seed2/claude-review-report.md`.
+
+| Measure | v1 (round 1) | v2 (round 2) | Bar |
+|---|---|---|---|
+| Agent labels marked Correct | 10/17 (59%) | **15/18 (83%)** | 90% |
+| Agent blanks marked Correct | 53/53 (100%) | 52/52 (100%) | 85% |
+| All rows marked Correct | 63/70 (90%) | 67/70 (96%) | |
+
+- **Fixed:** ideology-only labels are no longer a problem; the only one in round 2 was correct.
+- **Remaining errors (3):** all three are medium-confidence leanings with no ideology, on claims whose left-right placement is unclear:
+  - a coalition between a center-left and a far-right party in Romania;
+  - a contrarian case for legalizing insider trading;
+  - a psychological claim about masculine norms.
+- **By confidence:** high-confidence labels were 2/2 correct; medium were 13/16.
+- **Noise:** with 18 labels, one more correct row would move the score to 89%. Four rows marked Correct were close calls (noted in the review file), so a human review could move the score either way.
+- **Labelled share of the random pool:** 19 of 832 claims (2.3%). Relationships was highest (7/115), AI lowest (0/120).
+
 ## Proposal format (prepared locally, submitted by hand)
 
 For each label, one operation: `createRelation(from: claim, to: value, type: Leanings)`, grouped per space. Proposals in US Politics recently used FAST voting with a 24-hour window and executed on one "yes" vote.

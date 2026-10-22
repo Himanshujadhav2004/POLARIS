@@ -1,0 +1,1167 @@
+{
+  "generatedAt": "2026-10-22T08:44:41.028Z",
+  "model": "gpt-5.5-2026-04-23",
+  "promptVersion": "v2",
+  "taxonomyFingerprint": "29b6190c8354",
+  "seed": 2,
+  "stats": [
+    {
+      "space": "us-politics",
+      "claimsInSpace": 28132,
+      "pool": 118,
+      "labelled": 4,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "health",
+      "claimsInSpace": 32872,
+      "pool": 119,
+      "labelled": 1,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "crypto",
+      "claimsInSpace": 39498,
+      "pool": 120,
+      "labelled": 3,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "ai",
+      "claimsInSpace": 29336,
+      "pool": 120,
+      "labelled": 0,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "world-affairs",
+      "claimsInSpace": 40414,
+      "pool": 120,
+      "labelled": 2,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "podcasts",
+      "claimsInSpace": 216951,
+      "pool": 120,
+      "labelled": 2,
+      "errors": 0,
+      "rows": 10
+    },
+    {
+      "space": "relationships",
+      "claimsInSpace": 2506,
+      "pool": 115,
+      "labelled": 7,
+      "errors": 0,
+      "rows": 10
+    }
+  ],
+  "rows": [
+    {
+      "space": "us-politics",
+      "claimId": "a234183de12c5295957a4e9955a220cb",
+      "text": "In some cases, migration can destabilize a society to the point where its negative impacts outweigh its positive ones",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "migration can destabilize a society to the point where its negative impacts outweigh its positive ones",
+        "rationale": "The claim advances a skeptical view of migration's social effects, a position more commonly associated with the right, but it is hedged with \"in some cases\" and does not advocate a specific policy.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "3cef8ad32f9251359b523ec1f4e17a40",
+      "text": "Identity is constantly changing, making it an unsuitable fixed point around which to orient a course",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "identity ... unsuitable fixed point around which to orient a course",
+        "rationale": "The claim argues against centering a course around identity, a stance commonly associated with mainstream center-right critiques of DEI-oriented education. It does not clearly advance a specific ideology beyond that position.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "1469cf7c306193f3bdc9c1ce2d6a8ab8",
+      "text": "The Omar search chills criticism of the Trump administration by elected officials",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "chills criticism of the Trump administration by elected officials",
+        "rationale": "The claim criticizes a Trump administration-related search as suppressing political criticism, a stance conventionally associated with mainstream liberal or center-left opposition in this context. It does not clearly advance a specific ideology beyond that critique.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "74b1377d8e2447eeb2e957742259145d",
+      "text": "Washington's 2024 legislative map goes too far in using race to draw district boundaries",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "goes too far in using race to draw district boundaries",
+        "rationale": "The claim criticizes race-conscious redistricting, a stance more commonly associated with conservative and center-right views in U.S. voting-rights debates. It does not clearly advance a broader ideology beyond that policy position.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "us-politics",
+      "claimId": "ed761a8e3d8948a3a645d4a8e8c1bdb6",
+      "text": "The legal lawsuit seeks a court order restoring a prior 21-day advance notice requirement for asylum interviews and reinstating a good-cause standard for rescheduling requests.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what a lawsuit seeks without endorsing that legal or immigration policy position itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "1704429ffffd4272b142d5baa207fb23",
+      "text": "The shooting in Maine occurred less than a week after an ICE officer fatally shot 52-year-old Lorenzo Salgado Araujo during a traffic stop in Houston, Texas",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports the timing of one shooting relative to another and describes a fatal shooting by an ICE officer, without advocating any policy or political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "e2f25632a9324899a26e2dd71ac20f0e",
+      "text": "Tyler James Robinson pleaded not guilty on September 1, 2026, to charges including aggravated murder, felony discharge of a firearm, obstruction of justice, witness tampering, and committing a violent offense in the presence of a child",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a defendant's plea and charges in a criminal case without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "9c6e0adaec5d4395a55be0dfe8f87ac9",
+      "text": "Among likely general election voters, President Donald Trump had a net favorability rating of negative 23 points",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a polling figure about Donald Trump's net favorability among likely voters without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "f391cb23f0a448229f2d34ed54807643",
+      "text": "Saudi Crown Prince Mohammed bin Salman called U.S. President Donald Trump on September 17, 2026, to implore him to intervene militarily against advancing Houthi forces.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an alleged call and request by Mohammed bin Salman without endorsing or opposing military intervention itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "us-politics",
+      "claimId": "e2c671375caa400aa926422c64e78dc7",
+      "text": "Redistribution of districts moved Karen Bass to California's 37th congressional district in 2012",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a factual change in congressional district boundaries affecting Karen Bass without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "9c13947ec5654e209043448c19c971d9",
+      "text": "Healthcare systems should delay deploying AI screening tools until demographic performance gaps are resolved",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "should delay deploying AI screening tools until demographic performance gaps are resolved",
+        "rationale": "The claim advocates withholding healthcare AI until demographic disparities are fixed, a precautionary and equity-focused stance commonly associated with center-left politics. It does not clearly advance a specific ideology beyond that general leaning.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "health",
+      "claimId": "9b52e6775b2749b38b420f9a0c2e7875",
+      "text": "AstraZeneca recently agreed to pay up to $1.5 billion for rights to a marketed EGFR exon 20 therapy from Dizal Pharma.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a pharmaceutical business transaction without advocating any political or policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "f7a1a68ca1e042e9bb245eba90d5fe67",
+      "text": "Public health emergencies — debated due to differing expert opinions on optimal approaches and outcomes",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim describes that public health emergency approaches are debated because experts disagree, without endorsing any policy or political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "927b72b0d0984d139b3ac3d269664e6d",
+      "text": "The Trump Administration emphasizes the use of modern technology and interagency coordination as key tools in combating healthcare fraud",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports the Trump Administration's stated emphasis on technology and interagency coordination to combat healthcare fraud, without itself advocating a contested political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "17799a9c78744ed99a01fa755bf609a2",
+      "text": "While regulations in Europe and North America have successfully reduced industrial and transport PM2.5 emissions, human exposure to fire-related PM2.5 has increased",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an observed environmental/public health trend about emissions and PM2.5 exposure without advocating a policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "5dd0f50ed2e445a0acfd6a02e95daa71",
+      "text": "Sam Altman is a significant topic in the health domain with ongoing developments and regulatory implications.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim descriptively characterizes Sam Altman as relevant to the health domain and mentions regulatory implications without advocating any policy or political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "b5ce8e54ea674ac1839a9e3576877b2e",
+      "text": "U.K. Biobank participants meeting the World Health Organization recommendation of 150 minutes of moderate-to-vigorous physical activity weekly had a 39% lower risk of type 2 diabetes than those who exercised less.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports an observed health finding about physical activity and diabetes risk among U.K. Biobank participants, without advocating a political or policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "5f8359be486d44979497e69fc5bc17d9",
+      "text": "The approach to Healthcare disparities remains contested — debated due to differing perspectives on regulatory scope and public health impact",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim describes that healthcare disparities policy is contested and debated, without endorsing either side of the debate.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "8ee8b37c1e1d45bd90a946df0d43dd4d",
+      "text": "Tampa General Hospital's planned takeover of DeSoto Memorial Hospital follows DeSoto's $538,432 operating loss and its 65% revenue dependence on Medicare and Medicaid in fiscal 2024.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a planned hospital takeover and financial figures without advocating a policy position or taking a political stance.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "health",
+      "claimId": "2f133914cfc648f0b72660212e835b39",
+      "text": "Projections show pancreatic cancer will become the second-leading cause of cancer-related death in the U.S. by 2030",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a projection about cancer mortality and does not advocate any political or policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "d2c5710560a54012a3875afea0b96d80",
+      "text": "The SEC should regulate prediction contracts tied to corporate performance",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "The SEC should regulate prediction contracts tied to corporate performance",
+        "rationale": "The claim advocates government financial-market regulation of prediction contracts, a stance conventionally associated with center-left support for regulatory oversight. It does not clearly advance a broader ideology beyond that policy preference.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "crypto",
+      "claimId": "ff2273b30eb4456093afc35fa99e6326",
+      "text": "The corporate press portrays recessions as a negative event to justify government intervention and socialistic spending",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "justify government intervention and socialistic spending",
+        "rationale": "The claim frames government intervention and socialistic spending as illegitimate and criticizes media for supporting them, which aligns with a right-wing opposition to state economic intervention. It does not clearly advance a specific ideology beyond that leaning.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7a74f432548c417eb4abf9c45f3a7100"
+      ]
+    },
+    {
+      "space": "crypto",
+      "claimId": "6b672d0ed7d34300bc8b97c058d61d92",
+      "text": "Germany's proposed 50% crypto tax penalty unfairly burdens retail investors",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "unfairly burdens retail investors",
+        "rationale": "The claim takes a normative stance against a proposed high tax penalty, framing it as an unfair burden on investors. Opposition to punitive taxation or heavy financial regulation is generally associated with center-right politics, though the placement is somewhat context-dependent.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "crypto",
+      "claimId": "840521b552504da684751f9c47a7a98e",
+      "text": "Passage of the Clarity Act would be considered a surprise by the market",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim predicts how the market would react to passage of a law, without endorsing or opposing the Act or any policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "282b3536bf394e959e409d1b3cf29d60",
+      "text": "ENS Labs has spent approximately $20 million over a couple of years on development",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a factual spending figure by ENS Labs and does not take a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "0abe52f17ba54a6cbfc1c68231a40a59",
+      "text": "The KelpDAO attacker pushed through a fraudulent message that released pre-funded rsETH reserves representing approximately 18% of the token's circulating supply",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "Reports details of a crypto exploit and token reserves without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "03244ef7750449cf966985f4e7d4abcc",
+      "text": "Trading on Dango's perpetual decentralized exchange (DEX) will be halted on the Wednesday following its late July 2026 shutdown announcement",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a scheduled halt in trading following a shutdown announcement and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "41d345c0430341aa9e31a1061f4a8042",
+      "text": "Commissioner Peirce's statement noted that vault tokens and their function could raise issues under the Securities Act of 1933",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Commissioner Peirce's statement noted about possible legal issues, without itself endorsing a regulatory position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "9c2155bba1f64954badfadd1639bc9da",
+      "text": "Didius Julianus became emperor by bidding 25,000 sesterces for each member of the Praetorian Guard",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a historical factual claim about how Didius Julianus became emperor, not an endorsement of any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "crypto",
+      "claimId": "1f146a2419bb4ea8b13fe6929e3d95b3",
+      "text": "Canton Network is an institutional blockchain framework that allows financial institutions to control transaction visibility while coordinating joint transactions and asset transfers.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a technical/business description of a blockchain framework and its transaction-visibility features, with no contested political stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "0a7e768d04784cbba6856d6ffa018416",
+      "text": "The South Korean government proposed 3.4 trillion won in spending for a nuclear-powered submarine program and other strategic weapons within its 2027 budget proposal",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a South Korean government budget proposal and spending figure without endorsing or opposing the policy.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "1c9094c95fff4c63a86773b58e3526b8",
+      "text": "Corporate investors may need to reassess valuation models for AI startups in jurisdictions with restrictive foreign acquisition policies",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is business/investment advice about valuation risk in certain regulatory environments and does not advocate a political position on foreign acquisition policy.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "5dfc76f8e8ec45789735f5da8e330a0b",
+      "text": "Yellow.ai agreed to go public through a merger with Nasdaq-listed special purpose acquisition company Bluerock Acquisition Corp.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a business transaction involving Yellow.ai and a SPAC without advocating any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "67859615ac954d1d874c2cc616092340",
+      "text": "Tesla's robotaxi service expansion to Dallas and Houston represents increased competition for traditional taxi and rideshare operators in those markets",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a business/market assessment about competition from Tesla's robotaxi expansion, not a stance on policy, law, rights, or ideology.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "06c7572942d6496fb32a292519723be2",
+      "text": "Programmers are among the professional groups whose everyday lives have changed the most as a result of generative AI",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim describes the impact of generative AI on programmers' everyday lives without advocating any policy or political position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "473347d19a1840f49e70aba7fdb3c4d8",
+      "text": "Wispr Flow competes in the AI meeting assistant market against services including Granola, Fireflies, Otter, Fathom, and Read AI",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports market competition among AI meeting assistant products and does not advocate any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "1042c6331b58432abfc400e4e204c6fa",
+      "text": "Elon Musk told Tucker Carlson in 2023 that ChatGPT has a liberal bias",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Elon Musk said in 2023 rather than asserting that ChatGPT has a liberal bias itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "61c6d4c5f32b4adea840378efd35e6ca",
+      "text": "ZAYA1-8B sets a new standard for intelligence density in the small language model weight class",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim evaluates the performance of a small language model and does not take a position on policy, rights, governance, or society.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "1d3c0f129dff4c16bfd0cc1767804577",
+      "text": "150 engineers from Tomoro will join OpenAI Deployment Co.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a business staffing arrangement involving Tomoro and OpenAI Deployment Co. without taking any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "ai",
+      "claimId": "54031ad6a3254d1c989f36f07fd2005a",
+      "text": "OpenAI stated that algorithmic gains and hardware improvements reduce the cost to serve each token, lowering the cost per unit of intelligence",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what OpenAI stated about AI costs and efficiency without endorsing a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "1a7843ebaef94ee7aaa9d24ac6691016",
+      "text": "Western military aid to Saudi Arabia should be strictly limited to defensive operations",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "should be strictly limited to defensive operations",
+        "rationale": "The claim advocates restricting military aid to Saudi Arabia rather than allowing broader offensive support, a restrained foreign-policy position commonly associated with center-left human-rights and anti-intervention concerns. It does not clearly express a full ideology such as isolationism because it still supports defensive aid.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "75895eaf115244d5af80ff9675f5a1db",
+      "text": "A coalition between Romania's Social Democrats and the far-right AUR is justified",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "coalition between Romania's Social Democrats and the far-right AUR is justified",
+        "rationale": "The claim normatively endorses bringing a party described as far-right into a governing coalition, a contested stance generally associated with the right. It does not itself state AUR's substantive program strongly enough to label a specific ideology or far-right position.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "7a74f432548c417eb4abf9c45f3a7100"
+      ]
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "3416d9133ce5459d930e3f40b9caa052",
+      "text": "News reports noted that high global diesel prices were primarily driven by the U.S.-led war in Iran and tension around the Strait of Hormuz rather than Ukrainian refinery attacks",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what news reports noted about the causes of diesel prices, without itself advocating a political position or policy.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "665b33b90fc94b3e9aeb451fa4e60016",
+      "text": "Public trials regarding the March 2025 coastal violence began at the Palace of Justice in Aleppo on November 18, 2025.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a factual legal proceeding and date without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "def3a132cb72477eb3fcdbea146890bb",
+      "text": "Kremlin spokesman Dmitry Peskov said Putin had not yet seen Zelenskyy's letter and repeated that Zelenskyy could come to Moscow for talks",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Kremlin spokesman Dmitry Peskov said about Putin and Zelenskyy without endorsing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "d702788a0456441b90fdbcd31fd14d04",
+      "text": "Various European intelligence agencies labeled Russia as a direct threat to the West and to NATO in 2026",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports how European intelligence agencies characterized Russia rather than endorsing that characterization itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "61a82e79b56f426482b66e50b183bba1",
+      "text": "Sir Keir Starmer stated he wanted an orderly transition and had built a sound foundation for Andy Burnham",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports what Sir Keir Starmer stated rather than endorsing the position itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "82880690ecf143cfa037461805692d9b",
+      "text": "The Cypriot EU presidency in June 2026 proposed a 2% cut to the European Commission's near-€2 trillion budget proposal, which the six frugal nations rejected as too small.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a budget proposal and the reaction of the six frugal nations without endorsing either side.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "34184dde05224430859ab367fa944797",
+      "text": "Republicans hold a 53-47 majority in the U.S. Senate, requiring Democrats to net four seats in the November 2026 election to gain control",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports current Senate seat counts and the number of seats Democrats would need to gain control, without endorsing either party or a policy position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "world-affairs",
+      "claimId": "d7d63bb9896c43d9afc8c8403bbb9145",
+      "text": "Hungarian security expert Andras Racz warned on Facebook on April 2 that a fake attack on the TurkStream pipeline could be staged inside Serbia",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports a warning made by a security expert about a possible staged attack, without endorsing any political position itself.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "64c0d3e0631f4a7ea18c930e6527afd2",
+      "text": "Legalizing insider trading would provide the public with real-time information on the actions of government officials.",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "Legalizing insider trading would provide the public with real-time information",
+        "rationale": "The claim presents legalization of insider trading as beneficial, implying a pro-deregulation stance associated with center-right/free-market policy arguments. It does not clearly advance a full ideology beyond that policy preference.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "podcasts",
+      "claimId": "355d46a5d0c74aceb274b072883371b2",
+      "text": "Unforced errors contributing to US overstretch include large-scale fiscal expansion since the mid-2000s.",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "Unforced errors ... include large-scale fiscal expansion",
+        "rationale": "The claim negatively characterizes fiscal expansion as an error contributing to national overstretch, aligning with mainstream fiscal-restraint arguments commonly associated with the center right. It does not clearly advance a full ideology beyond that policy stance.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3"
+      ]
+    },
+    {
+      "space": "podcasts",
+      "claimId": "943ea642c3934180b5218e006b5882e9",
+      "text": "Success in tactical power modernization is defined as power becoming so reliable that it is no longer a concern in the field.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a technical/operational statement about reliability in tactical power modernization, not a contested political stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "a2b0696cc56a4313bb64cc2e0ccf0175",
+      "text": "Reading firsthand historical accounts, like Victor Klemperer’s diaries, is essential for recognizing the realities of totalitarian regimes.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim endorses learning from firsthand historical accounts to understand totalitarianism, a broadly shared educational and anti-totalitarian principle rather than a contested left-right policy stance.",
+        "abstain_reason": "consensus"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "a2afe36defeb4bdab67fb5f64b6c470a",
+      "text": "The act of reading involves a process of silently speaking the words within the brain.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a descriptive claim about cognition and reading, with no political or ideological position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "c4433e1f728743b486e664b8821d1479",
+      "text": "ServiceNow's sales organization uses AI to reduce meeting preparation time from days to minutes.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a business/technology claim about ServiceNow's internal use of AI and meeting preparation time, with no political stance or policy position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "b70c87d1dad747fe95f3ada333729887",
+      "text": "Shaboozi has a long-held ambition to be a filmmaker.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a biographical/pop-culture statement about Shaboozi's personal ambition and takes no position on policy, rights, or political ideology.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "84bb083270794926902a40fff21b9abe",
+      "text": "An eGFR decline of less than 30% after starting antihypertensive therapy typically reflects a hemodynamic change, not structural kidney injury.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a medical/clinical statement about kidney function changes after antihypertensive therapy, with no political or policy stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "355d2793817946f5848408ad9c6b2b0b",
+      "text": "In 2012, Wesleyan University hosted Supreme Court Justice Antonin Scalia for a talk as part of an annual series on free speech.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim reports that Wesleyan hosted Justice Scalia for a talk in a free speech series, without endorsing or opposing any political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "podcasts",
+      "claimId": "7960c7bb39e849d9a68ec2a6964bb00d",
+      "text": "Russian media reported that planning for the attack on Iran began months ago.",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim attributes information to Russian media and reports alleged planning without endorsing a political position.",
+        "abstain_reason": "factual_report"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "42b34fb8ef924a40802431db62fbaf15",
+      "text": "Women are often viewed as objects or service providers in relationships, particularly in marriage",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [
+          "Feminist"
+        ],
+        "confidence": "medium",
+        "evidence": "Women are often viewed as objects or service providers in relationships, particularly in marriage",
+        "rationale": "The claim presents a critique of gendered objectification and marital roles, which aligns with feminist social analysis. Because it is phrased as a broad descriptive claim rather than a policy demand, the leaning is softer.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78",
+        "5f90b6eaac214ef0911195d9c56983e9"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "f3a0c2bbf7b5b16d3cef0ad2c21bab05",
+      "text": "The pressure to appear self-reliant makes men less resilient",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [],
+        "confidence": "medium",
+        "evidence": "The pressure to appear self-reliant makes men less resilient",
+        "rationale": "The claim criticizes traditional masculine self-reliance norms as harmful, a social view more commonly associated with progressive or center-left gender-role critiques. It does not clearly advance a specific ideology such as feminism enough to label it that way.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "a5eea5133e545eed92583994a7051f28",
+      "text": "The movement to make children and parents co-dialogue partners was a mistake and is having negative consequences",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [
+          "Traditionalist"
+        ],
+        "confidence": "medium",
+        "evidence": "make children and parents co-dialogue partners was a mistake and is having negative consequences",
+        "rationale": "The claim rejects egalitarian parent-child relations and implies support for more hierarchical, traditional parental authority, a position associated with conservative/traditionalist social views. It is cultural rather than a specific policy proposal, so the placement is moderate and confidence is medium.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3",
+        "350419395b25466eb84a26746a74873e"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "ec8b609ade4057fd89969cf6b7c9ba6e",
+      "text": "A traditional gender role where a man is the primary breadwinner and a woman stays home to care for children can promote flourishing within individual marriages",
+      "abstained": false,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [
+          "Traditionalist"
+        ],
+        "confidence": "high",
+        "evidence": "traditional gender role where a man is the primary breadwinner and a woman stays home to care for children can promote flourishing",
+        "rationale": "The claim presents traditional male-breadwinner/female-caregiver roles as beneficial for marriages, which clearly fits a traditionalist social outlook. Because it is hedged with “can” and is framed around individual marriages rather than policy, no firm left-right leaning is necessary.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "350419395b25466eb84a26746a74873e"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "4b0e98409b7f3c65a7bcf70a13a70542",
+      "text": "The traditional nuclear family is still the best environment for raising children",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center right",
+        "ideologies": [
+          "Traditionalist"
+        ],
+        "confidence": "high",
+        "evidence": "traditional nuclear family is still the best environment for raising children",
+        "rationale": "The claim endorses a traditional family structure as superior for child-rearing, a socially conservative/traditionalist position. It does not invoke a specific policy or religious framework, so the ideology label is limited to Traditionalist.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "607819029b3d42cfa6160acd370562b3",
+        "350419395b25466eb84a26746a74873e"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "4ac8c30c8c235488a7516c71a181c271",
+      "text": "Men who do not believe women should be on an equal playing field are undesirable partners for women who support feminism",
+      "abstained": false,
+      "label": {
+        "political_leaning": "Center left",
+        "ideologies": [
+          "Feminist"
+        ],
+        "confidence": "medium",
+        "evidence": "women should be on an equal playing field",
+        "rationale": "The claim endorses a feminist norm of gender equality and frames men who reject it as undesirable partners for feminist women. This is most conventionally associated with center-left social politics, though the dating context makes the placement somewhat softer.",
+        "abstain_reason": null
+      },
+      "valueIds": [
+        "23c5b0b90630432d94d2a9572b4c5f78",
+        "5f90b6eaac214ef0911195d9c56983e9"
+      ]
+    },
+    {
+      "space": "relationships",
+      "claimId": "f2f3e510c5d15ab9ae968bbd9dccf90d",
+      "text": "Not everyone gives equal weight to a person's sexual history",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim describes variation in how people judge sexual history, without advocating a political, legal, or social-policy position.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "cd625df5e1322940f59142e8ab074ab3",
+      "text": "The most exciting relationships are rarely the healthiest",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is a general observation about romantic relationships and emotional health, with no political or policy stance.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "4ac6307f0d8954f1b013c5f15bd94f29",
+      "text": "Emotional connection to a partner inhibits a person from having sex with multiple partners",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "The claim makes a descriptive statement about relationships and sexual behavior without advocating any policy, rights position, or social order.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    },
+    {
+      "space": "relationships",
+      "claimId": "0ec7af4c1f895655a1754390cfbb14de",
+      "text": "Men's groups are a good way to build community and friendships",
+      "abstained": true,
+      "label": {
+        "political_leaning": null,
+        "ideologies": [],
+        "confidence": "high",
+        "evidence": "",
+        "rationale": "This is social/personal advice about building community and friendships, without advocating a political policy or ideological program.",
+        "abstain_reason": "apolitical"
+      },
+      "valueIds": []
+    }
+  ]
+}

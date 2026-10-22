@@ -68,6 +68,6 @@ docs/PLAN.md         Plan and decisions
 | 1 Geo read layer + live taxonomy | Done |
 | 2 Classifier + dev-set eval | Done: gpt-5.5 chosen (41/41 vs 35/41 for gpt-5.4-mini) |
 | 3 QA sample | Done: 70 rows in `qa/qa_sample.xlsx`, awaiting review |
-| 4 Review loop | In progress: AI pre-review of prompt v1 shows labels 59% / blanks 100%; prompt v2 next; human review pending |
+| 4 Review loop | In progress: AI pre-review shows labels 59% → 83% (v1 → v2) and blanks 100%; human review of `qa/v2-seed2/` pending |
 | 5 Full run | Not started |
 | 6 Local dry run for Geo | Not started |
