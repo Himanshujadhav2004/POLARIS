@@ -323,12 +323,12 @@ The Notion hub **"Political Leaning & Ideology Agent"** holds:
 | Page or database | What it holds |
 |---|---|
 | **Results framework v3.0 (Armando's taxonomy)** | His 45 examples and the labelled fresh claims: political leaning, ideological leanings, his labels, matched / not in his labels / missed, and an **Armando verdict** column |
-| **Scoring framework** | The rulebook (as in docs/FRAMEWORK.md) |
-| **Ideology definitions** | The tradition cards |
+| **Scoring framework v3.0** | The rulebook (as in docs/FRAMEWORK.md, without the cards) |
+| **Ideology definitions** | All 113 cards as the agent uses them: 27 traditions and 86 issue leanings, with Armando's descriptions, alternative names, example claims, and whether each value is on Geo yet |
 | **Fresh QA sample (10 per space)** | 70 never-used claims |
 | **Test set and results**, **Runs**, **Errors and improvements** | Earlier runs, run metrics, and every error found with its fix |
 
-Rows are produced with `npx tsx scripts/notion-rows.mts bench|fresh|v3 …` and written through the Notion MCP connector.
+Rows are produced with `npx tsx scripts/notion-rows.mts bench|fresh|v3|cards …` and written through the Notion MCP connector.
 
 ---
 

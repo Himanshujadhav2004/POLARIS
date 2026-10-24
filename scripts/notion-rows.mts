@@ -3,12 +3,14 @@
 //   npx tsx scripts/notion-rows.mts bench evals/results/bench.<set>.<framework>.json <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts fresh evals/fresh/<name>/fresh.json <out.json>
 //   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json evals/fresh/<name>/rescore.<framework>.json <run-name> <out.json>
+//   npx tsx scripts/notion-rows.mts cards <out.json>   (the Ideology definitions database)
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
+import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 
 const [mode, file, ...rest] = process.argv.slice(2);
-const usage = "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json>";
-if (!file || !["bench", "fresh", "v3"].includes(mode ?? "")) throw new Error(usage);
+const usage = "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json> | cards <out.json>";
+if (!file || !["bench", "fresh", "v3", "cards"].includes(mode ?? "")) throw new Error(usage);
 
 /** Notion text properties hold 2000 characters; cut at the last full sentence, never mid-sentence. */
 function fit(s: string, max = 1900): string {
@@ -117,8 +119,45 @@ function v3Rows(freshFile: string, run: string) {
   ];
 }
 
-const rows = mode === "bench" ? benchRows(rest[0] ?? "") : mode === "v3" ? v3Rows(rest[0] ?? "", rest[1] ?? "") : freshRows();
-const out = mode === "bench" ? rest[1] : mode === "v3" ? rest[2] : rest[0];
+/** One row per ideological leaning card (framework v3), as the agent uses it. */
+function cardRows() {
+  const US = SPACES.find((s) => s.slug === "us-politics")!;
+  const NOTES: Record<string, string> = {
+    Libertarian: "Near-duplicate of Libertarianism. Both are used, so a claim can get both: should one be preferred?",
+    Libertarianism: "Near-duplicate of Libertarian. Both are used, so a claim can get both: should one be preferred?",
+    Deaccelerationist: "Name kept as written in the doc.",
+    "Pro-Taiwan independance": "Name kept as written in the doc.",
+  };
+  return IDEOLOGY_CARDS.map((c) => ({
+    properties: {
+      Ideology: c.name,
+      Kind: c.kind === "issue" ? "Issue leaning" : "Tradition",
+      Issue: c.issue,
+      Group: c.group,
+      Definition: fit(c.definition),
+      "Core beliefs": lines(c.tenets.map((t) => `${t.id} ${t.text}`)),
+      "Not this ideology when": lines(c.exclusions),
+      Neighbours: c.neighbours.join(", "),
+      "Usually found at": JSON.stringify(c.kind === "issue" ? [] : c.typicalLeanings),
+      "Also called": c.aliases.join("; "),
+      "On Geo": c.geoId ? "__YES__" : "__NO__",
+      "Geo ID": c.geoId,
+      "Example claim": c.exampleClaimId ? geoEntityUrl(US.id, c.exampleClaimId) : null,
+      Source: c.source,
+      Status: c.status,
+      "Review notes": [
+        c.kind === "issue"
+          ? "Framework v3.0: the definition is the side itself."
+          : "Framework v3.0: the definition is Armando's; the characteristic positions, exclusions, related traditions and leanings are drafts for rule I2.",
+        ...(c.geoId ? [] : ["Not on Geo yet: labelled in results, never put in a Geo proposal."]),
+        ...(NOTES[c.name] ? [NOTES[c.name]!] : []),
+      ].join(" "),
+    },
+  }));
+}
+
+const rows = mode === "bench" ? benchRows(rest[0] ?? "") : mode === "v3" ? v3Rows(rest[0] ?? "", rest[1] ?? "") : mode === "cards" ? cardRows() : freshRows();
+const out = mode === "bench" ? rest[1] : mode === "v3" ? rest[2] : mode === "cards" ? file : rest[0];
 if (!out || (mode === "bench" && !rest[0])) throw new Error(usage);
 const batches: (typeof rows)[] = [];
 for (let i = 0; i < rows.length; i += 27) batches.push(rows.slice(i, i + 27));
