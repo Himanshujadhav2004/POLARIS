@@ -15,7 +15,8 @@ import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
-import { buildFreshSet, usedClaimIds, writeFreshSet } from "./pipeline/fresh-set.js";
+import { loadExamples, runExamples, summarizeExamples, writeExamples } from "./eval/examples.js";
+import { buildFreshSet, rescoreFreshSet, usedClaimIds, writeFreshSet } from "./pipeline/fresh-set.js";
 import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
 import { buildBatch } from "./publish/batch.js";
@@ -53,6 +54,11 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   eval3 [--concurrency N]      Run agent v3 over evals/dev-set.json; writes evals/results/v3.<framework>.json
   bench [--file evals/test-set-v1.json] [--concurrency N]
                                Run agent v3 over the test set; writes evals/results/bench.<set>.<framework>.json
+  examples [--file evals/armando-examples.json] [--concurrency N]
+                               Score Armando's example claims; compare with the leanings he linked to each;
+                               writes evals/results/examples.<set>.<framework>.json
+  fresh-rescore [--dir fresh-seed3] [--concurrency N]
+                               Score an existing fresh set again with the current framework
   fresh-set [--seed 3] [--pool 10] [--per-space 10] [--labelled 6] [--concurrency N]
                                Score never-used claims from every space (10 each by default: 70 claims)
                                and pick the 10-per-space QA sample;
@@ -240,6 +246,36 @@ async function main(argv: string[]): Promise<void> {
         const { rows, summary } = await runBench(geo, agent, set, Number(values.concurrency ?? 4));
         console.log(JSON.stringify(summary, null, 2));
         console.log(`Wrote ${writeBench(rows, summary)}`);
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "examples": {
+      const set = loadExamples(values.file ?? "evals/armando-examples.json");
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const rows = await runExamples(geo, agent, set.items, Number(values.concurrency ?? 4));
+        const summary = summarizeExamples(set.version, rows);
+        console.log(JSON.stringify(summary, null, 2));
+        console.log(`Wrote ${writeExamples(rows, summary)}`);
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "fresh-rescore": {
+      const name = values.dir ?? "fresh-seed3";
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const { file, rows } = await rescoreFreshSet(geo, agent, name, Number(values.concurrency ?? 4));
+        const published = rows.filter((r) => r.result && (r.result.leaning || r.result.ideologies.length));
+        console.log(`${rows.length} claims rescored, ${published.length} with a published label, ${rows.filter((r) => r.error).length} errors`);
+        console.log(`Wrote ${file}`);
       } finally {
         state.close();
       }

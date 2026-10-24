@@ -1,0 +1,2249 @@
+{
+  "source": "docs/armando/leanings-2026-10-23 (Armando's Notion doc \"Leanings\", completed 2026-10-23)",
+  "nameFixes": {
+    "Pro- universal healthcare": "Pro-universal healthcare",
+    "Pro Iran containment": "Pro-Iran containment",
+    "Pro legalization": "Pro-legalization",
+    "Anti legalization": "Anti-legalization",
+    "Pro internet freedom": "Pro-internet freedom",
+    "Anti zionist": "Anti-Zionist"
+  },
+  "politicalLeanings": [
+    {
+      "name": "Far left",
+      "description": "A position at the left extreme of the political spectrum, favoring radical economic redistribution and systemic change, often through anti-capitalist or revolutionary politics.",
+      "scale": 1,
+      "alternativeNames": [
+        "Radical left",
+        "Hard left",
+        "Extreme left"
+      ],
+      "note": null,
+      "geoId": "ea634ae07c3943f6aaad8791e287831f"
+    },
+    {
+      "name": "Left",
+      "description": "A position on the left of the political spectrum, favoring social equality, expanded government programs and progressive social policy.",
+      "scale": 2,
+      "alternativeNames": [
+        "Left-wing",
+        "Leftist",
+        "Liberal (US usage)"
+      ],
+      "note": null,
+      "geoId": "3628835899e04b4cbd2bdfc1027c53d3"
+    },
+    {
+      "name": "Center left",
+      "description": "A moderate position left of center, supporting liberal social and economic policies while staying close to the political mainstream.",
+      "scale": 3,
+      "alternativeNames": [
+        "Centre-left",
+        "Lean left",
+        "Moderate left"
+      ],
+      "note": null,
+      "geoId": "23c5b0b90630432d94d2a9572b4c5f78"
+    },
+    {
+      "name": "Center",
+      "description": "A position near the middle of the political spectrum, balancing left and right perspectives without a consistent ideological tilt.",
+      "scale": 4,
+      "alternativeNames": [
+        "Centrist",
+        "Moderate",
+        "Middle of the road"
+      ],
+      "note": null,
+      "geoId": "7f7335d40e234a958906f2a572560476"
+    },
+    {
+      "name": "Center right",
+      "description": "A moderate position right of center, supporting conservative social and economic policies while staying close to the political mainstream.",
+      "scale": 5,
+      "alternativeNames": [
+        "Centre-right",
+        "Lean right",
+        "Moderate right"
+      ],
+      "note": null,
+      "geoId": "607819029b3d42cfa6160acd370562b3"
+    },
+    {
+      "name": "Right",
+      "description": "A position on the right of the political spectrum, favoring limited government, free markets, traditional values and strong national defense.",
+      "scale": 6,
+      "alternativeNames": [
+        "Right-wing",
+        "Conservative (US usage)"
+      ],
+      "note": null,
+      "geoId": "7a74f432548c417eb4abf9c45f3a7100"
+    },
+    {
+      "name": "Far right",
+      "description": "A position at the right extreme of the political spectrum, marked by ultranationalism, nativism and hostility to pluralist institutions.",
+      "scale": 7,
+      "alternativeNames": [
+        "Radical right",
+        "Hard right",
+        "Extreme right"
+      ],
+      "note": null,
+      "geoId": "0b8f954dbd504db0b2c59c6e2ac38917"
+    },
+    {
+      "name": "Nonpartisan",
+      "description": null,
+      "scale": null,
+      "alternativeNames": [
+        "Neutral",
+        "Unaffiliated",
+        "Independent"
+      ],
+      "note": "For entities that claim no side (wire services, fact-checkers, courts). Off the 1-7 scale.",
+      "geoId": null
+    }
+  ],
+  "ideologies": [
+    {
+      "name": "Deaccelerationist",
+      "kind": "issue",
+      "description": "Advocates slowing the pace or reducing the scale of technological development and deployment.",
+      "issue": "Big Tech",
+      "group": "Economy",
+      "alternativeNames": [
+        "Big Tech critic",
+        "Anti-monopoly",
+        "Neo-Brandeisian",
+        "Trustbuster",
+        "Antitrust",
+        "Pro-breakup",
+        "Big Tech skeptic"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-innovation",
+        "Techno-optimist"
+      ]
+    },
+    {
+      "name": "Pro-online safety",
+      "kind": "issue",
+      "description": "Supports measures that reduce online harms, especially for children, while shaping platform rules and content moderation.",
+      "issue": "Speech online",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-platform accountability",
+        "Pro-misinformation controls",
+        "Pro-trust and safety",
+        "Pro-Kids Online Safety Act",
+        "Pro-platform regulation"
+      ],
+      "slogan": null,
+      "exampleClaimId": "002f8e4ba6274856b55d4226b01bc9c8",
+      "geoId": null,
+      "otherSides": [
+        "Pro-internet freedom"
+      ]
+    },
+    {
+      "name": "Pro-deregulation",
+      "kind": "issue",
+      "description": "Favors reducing or simplifying government rules on businesses and markets.",
+      "issue": "Regulation",
+      "group": "Economy",
+      "alternativeNames": [
+        "Deregulationist",
+        "Pro-business",
+        "Small-government",
+        "Deregulator",
+        "Pro-regulatory reform",
+        "Red-tape cutter",
+        "Free-market"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-regulation"
+      ]
+    },
+    {
+      "name": "Pro-regulation",
+      "kind": "issue",
+      "description": "Favors government rules and oversight to address market failures, protect the public, or constrain harmful conduct.",
+      "issue": "Regulation",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-consumer protection",
+        "Pro-oversight",
+        "Pro-public protections",
+        "Pro-safeguards",
+        "Pro-enforcement",
+        "Pro-watchdog"
+      ],
+      "slogan": null,
+      "exampleClaimId": "0e273e29e59f5d7496889b9a2d8d54a0",
+      "geoId": null,
+      "otherSides": [
+        "Pro-deregulation"
+      ]
+    },
+    {
+      "name": "Pro-court reform",
+      "kind": "issue",
+      "description": "Supports changes to the structure, procedures, or ethics rules of the courts, especially the Supreme Court.",
+      "issue": "Supreme Court",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-court expansion",
+        "Pro-Supreme Court term limits",
+        "Court packing (pejorative)",
+        "Pro-Supreme Court reform",
+        "Pro-term limits",
+        "Pro-Supreme Court ethics code",
+        "Court reformer"
+      ],
+      "slogan": null,
+      "exampleClaimId": "bb559328e94e779316b53684a9bc9ad9",
+      "geoId": null,
+      "otherSides": [
+        "Pro-judicial independence"
+      ]
+    },
+    {
+      "name": "Pro-criminal justice reform",
+      "kind": "issue",
+      "description": "Supports changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes.",
+      "issue": "Policing",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-police reform",
+        "Pro-decarceration",
+        "Pro-bail reform",
+        "Pro-police accountability",
+        "Smart on crime",
+        "Pro-sentencing reform",
+        "Pro-reform prosecutor"
+      ],
+      "slogan": null,
+      "exampleClaimId": "7e10e46dcaee57c684e09d5acf37741b",
+      "geoId": null,
+      "otherSides": [
+        "Pro-law enforcement"
+      ]
+    },
+    {
+      "name": "Pro-school choice",
+      "kind": "issue",
+      "description": "Supports giving families more options to choose schools, including public, charter, or private schools.",
+      "issue": "Education",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-vouchers",
+        "Pro-charter schools",
+        "Pro-education freedom",
+        "Pro-parental choice",
+        "Pro-ESA",
+        "Pro-universal school choice",
+        "Parent empowerment"
+      ],
+      "slogan": null,
+      "exampleClaimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "geoId": null,
+      "otherSides": [
+        "Pro-public education"
+      ]
+    },
+    {
+      "name": "Dove",
+      "kind": "issue",
+      "description": "Favors restraint in using military force and prefers diplomacy or limited commitments.",
+      "issue": "Use of force",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Restrainer",
+        "Non-interventionist",
+        "Anti-war",
+        "Realist",
+        "Pro-diplomacy",
+        "Prioritizer",
+        "Pro-military restraint"
+      ],
+      "slogan": null,
+      "exampleClaimId": "079d07a77a4249b58c498db29c68994d",
+      "geoId": null,
+      "otherSides": [
+        "Hawk"
+      ]
+    },
+    {
+      "name": "Pro-Iran containment",
+      "sourceName": "Pro Iran containment",
+      "kind": "issue",
+      "description": "Favors limiting Iran’s regional influence through deterrence, sanctions, or other pressure.",
+      "issue": "Iran",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-maximum pressure",
+        "Pro-strikes on Iran",
+        "Pro-pressure on Iran",
+        "Iran deal critic",
+        "Pro-sanctions on Iran",
+        "Pro-snapback"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Iran diplomacy"
+      ]
+    },
+    {
+      "name": "Pro-trade",
+      "kind": "issue",
+      "description": "Favors reducing barriers to international trade and maintaining open trade relationships.",
+      "issue": "Trade",
+      "group": "Economy",
+      "alternativeNames": [
+        "Free trader",
+        "Pro-globalization",
+        "Pro-trade deals",
+        "Free-trade",
+        "Pro-open trade",
+        "Trade liberal"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Protectionist"
+      ]
+    },
+    {
+      "name": "Pro-welfare expansion",
+      "kind": "issue",
+      "description": "Supports expanding public benefits or social programs that provide income, health, or other assistance.",
+      "issue": "Welfare",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-welfare state",
+        "Pro-social programs",
+        "Pro-safety net",
+        "Pro-social insurance",
+        "Pro-Medicaid expansion",
+        "Pro-SNAP"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-welfare reform"
+      ]
+    },
+    {
+      "name": "Crypto skeptic",
+      "kind": "issue",
+      "description": "Questions the benefits or safety of cryptocurrencies and favors caution or stronger safeguards.",
+      "issue": "Crypto",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Crypto critic",
+        "Pro-crypto regulation",
+        "Bitcoin skeptic",
+        "Pro-investor protection",
+        "Crypto regulation advocate",
+        "Pro-bank-style crypto rules"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-crypto"
+      ]
+    },
+    {
+      "name": "Pro-wage flexibility",
+      "kind": "issue",
+      "description": "Favors allowing wages to adjust with market conditions and opposes mandatory wage floors or increases.",
+      "issue": "Minimum wage",
+      "group": "Economy",
+      "alternativeNames": [
+        "Minimum wage skeptic",
+        "Pro-entry-level jobs",
+        "Wage-mandate skeptic",
+        "Pro-small business",
+        "Free-market"
+      ],
+      "slogan": null,
+      "exampleClaimId": "187ce0019d6146cba0d08ad9bbcef17b",
+      "geoId": null,
+      "otherSides": [
+        "Pro-living wage"
+      ]
+    },
+    {
+      "name": "Pro-judicial independence",
+      "kind": "issue",
+      "description": "Supports courts deciding cases independently, without political pressure from elected officials.",
+      "issue": "Supreme Court",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Originalist",
+        "Textualist",
+        "Pro-judicial restraint",
+        "Keep Nine",
+        "Pro-nine justices",
+        "Constitutionalist"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-court reform"
+      ]
+    },
+    {
+      "name": "Pro-Taiwan independance",
+      "kind": "issue",
+      "description": "Supports Taiwan becoming or remaining formally independent from the People’s Republic of China.",
+      "issue": "Taiwan",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-Taiwan defense",
+        "Pro-strategic clarity",
+        "Taiwan hawk",
+        "Pro-Taiwan arms sales",
+        "Pro-defense commitment to Taiwan",
+        "Pro-Taiwan security"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Taiwan reunification"
+      ]
+    },
+    {
+      "name": "Gender-critical",
+      "kind": "issue",
+      "description": "Holds that sex is a relevant category distinct from gender identity, especially in law or sex-separated settings.",
+      "issue": "Gender identity",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-sex-based rights",
+        "Pro-sex-based policies",
+        "Pro-women's sports",
+        "Pro-biological sex",
+        "Gender ideology critic",
+        "Pro-single-sex spaces",
+        "Pro-Protect Women's Sports Act"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-transgender rights"
+      ]
+    },
+    {
+      "name": "NATO skeptic",
+      "kind": "issue",
+      "description": "Questions NATO’s purpose, costs, expansion, or members’ obligations.",
+      "issue": "Alliances",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-burden shifting",
+        "America First",
+        "Alliance skeptic",
+        "Burden-shifter",
+        "Pro-dormant NATO",
+        "Pro-European defense autonomy"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Transatlanticist"
+      ]
+    },
+    {
+      "name": "Climate skeptic",
+      "kind": "issue",
+      "description": "Questions the extent, causes, impacts, or policy implications of human-caused climate change.",
+      "issue": "Climate",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Climate realist",
+        "Climate action skeptic",
+        "Climate denier (pejorative)",
+        "Climate doubter",
+        "Lukewarmer",
+        "Climate contrarian"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-climate action"
+      ]
+    },
+    {
+      "name": "Pro-LGBTQ rights",
+      "kind": "issue",
+      "description": "Supports equal legal rights and protections for LGBTQ people.",
+      "issue": "LGBTQ",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-equality",
+        "Pro-same-sex marriage",
+        "Pro-gay rights",
+        "Pro-marriage equality",
+        "Pro-LGBTQ equality",
+        "LGBTQ ally",
+        "Pro-Equality Act"
+      ],
+      "slogan": null,
+      "exampleClaimId": "94c0669ef0a54476a4b6cb253c7984ee",
+      "geoId": null,
+      "otherSides": [
+        "Social conservative"
+      ]
+    },
+    {
+      "name": "Pro-vaccination",
+      "kind": "issue",
+      "description": "Supports vaccination and policies that promote uptake to protect public health.",
+      "issue": "Public health",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-public health measures",
+        "Pro-vaccine",
+        "Pro-immunization requirements",
+        "Pro-school vaccine requirements"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-vaccine choice"
+      ]
+    },
+    {
+      "name": "Transatlanticist",
+      "kind": "issue",
+      "description": "Supports close political, security, and diplomatic ties between North America and Europe, including NATO.",
+      "issue": "Alliances",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Atlanticist",
+        "Pro-alliances",
+        "NATO supporter",
+        "Pro-collective defense",
+        "Pro-Article 5"
+      ],
+      "slogan": null,
+      "exampleClaimId": "69ef1fd9e06244e9920514cbab8ada72",
+      "geoId": null,
+      "otherSides": [
+        "NATO skeptic"
+      ]
+    },
+    {
+      "name": "Pro-legalization",
+      "sourceName": "Pro legalization",
+      "kind": "issue",
+      "description": "Supports removing criminal penalties for at least some currently prohibited drugs.",
+      "issue": "Drugs",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-decriminalization",
+        "Pro-cannabis legalization",
+        "Pro-harm reduction",
+        "Drug policy reformer",
+        "Pro-drug policy reform",
+        "Pro-cannabis reform"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Anti-legalization"
+      ]
+    },
+    {
+      "name": "Church-state separationist",
+      "kind": "issue",
+      "description": "Supports keeping government institutions and religious institutions legally separate.",
+      "issue": "Religion",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-separation of church and state",
+        "Secularist",
+        "Separationist",
+        "Pro-secular government",
+        "Pro-Establishment Clause"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-religious freedom"
+      ]
+    },
+    {
+      "name": "Protectionist",
+      "kind": "issue",
+      "description": "Supports trade barriers or domestic preferences intended to protect local industries and workers from foreign competition.",
+      "issue": "Trade",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-tariffs",
+        "Economic nationalist",
+        "Pro-fair trade",
+        "Trade hawk",
+        "Tariff hawk",
+        "America First trade",
+        "Pro-reshoring"
+      ],
+      "slogan": null,
+      "exampleClaimId": "410054a2d5cc4c748fcb2b532312912d",
+      "geoId": null,
+      "otherSides": [
+        "Pro-trade"
+      ]
+    },
+    {
+      "name": "Pro-living wage",
+      "kind": "issue",
+      "description": "Supports wages sufficient to meet basic living costs, often through a higher minimum wage.",
+      "issue": "Minimum wage",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-$15 minimum wage",
+        "Raise the Wage",
+        "Fight for $15",
+        "Pro-higher minimum wage",
+        "Pro-wage floor"
+      ],
+      "slogan": "Fight for $15",
+      "exampleClaimId": "1a167acc6a57ea552957258158b0cfbb",
+      "geoId": null,
+      "otherSides": [
+        "Pro-wage flexibility"
+      ]
+    },
+    {
+      "name": "Pro-USAID",
+      "kind": "issue",
+      "description": "Supports U.S. foreign assistance administered through USAID.",
+      "issue": "Foreign aid",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-development aid",
+        "Development advocate",
+        "Aid advocate",
+        "Pro-global health aid",
+        "Pro-soft power"
+      ],
+      "slogan": null,
+      "exampleClaimId": "491268d605734fe4ba8a6bfcd0d03b8d",
+      "geoId": null,
+      "otherSides": [
+        "Pro-foreign aid reform"
+      ]
+    },
+    {
+      "name": "Pro-AI acceleration",
+      "kind": "issue",
+      "description": "Favors rapid development and adoption of artificial intelligence, with limited constraints on innovation.",
+      "issue": "AI",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Accelerationist",
+        "e/acc",
+        "Pro-AI innovation",
+        "AI booster",
+        "Pro-light-touch AI",
+        "Pro-AI preemption",
+        "AI optimist"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-AI regulation"
+      ]
+    },
+    {
+      "name": "Pro-Palestinian",
+      "kind": "issue",
+      "description": "Supports Palestinian rights, interests, or political self-determination.",
+      "issue": "Israel–Palestine",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-Palestine",
+        "Palestinian rights advocate",
+        "Israel critic",
+        "Palestine solidarity",
+        "Pro-ceasefire",
+        "Pro-conditioning aid to Israel",
+        "Israel aid skeptic"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Israel",
+        "Anti-Zionist"
+      ]
+    },
+    {
+      "name": "Neighborhood preservation",
+      "kind": "issue",
+      "description": "Favors protecting the character or stability of existing residential neighborhoods, often through local land-use controls.",
+      "issue": "Housing",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-local control",
+        "Pro-neighborhood character",
+        "NIMBY (pejorative)",
+        "Slow-growth",
+        "Neighborhood preservationist",
+        "Pro-single-family zoning",
+        "Pro-home rule"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-housing development"
+      ]
+    },
+    {
+      "name": "Pro-nuclear power",
+      "kind": "issue",
+      "description": "Supports using or expanding nuclear energy to generate electricity.",
+      "issue": "Nuclear",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Pro-nuclear",
+        "Nuclear advocate",
+        "Nuclear supporter",
+        "Pro-nuclear energy",
+        "Pro-nuclear expansion",
+        "Pro-advanced reactors"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Anti-nuclear"
+      ]
+    },
+    {
+      "name": "Tax fairness",
+      "kind": "issue",
+      "description": "Supports tax rules intended to distribute the tax burden fairly, often through higher contributions from affluent taxpayers.",
+      "issue": "Taxes",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-tax the rich",
+        "Pro-wealth tax",
+        "Pro-higher taxes on the wealthy",
+        "Pro-fair share",
+        "Tax-the-rich",
+        "Pro-billionaire tax"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-tax cuts"
+      ]
+    },
+    {
+      "name": "Pro-welfare reform",
+      "kind": "issue",
+      "description": "Supports changing public assistance programs, often by emphasizing work requirements, eligibility rules, or reduced dependency.",
+      "issue": "Welfare",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-work requirements",
+        "Welfare skeptic",
+        "Workfare",
+        "Welfare-to-work",
+        "Pro-self-sufficiency",
+        "Pro-work"
+      ],
+      "slogan": null,
+      "exampleClaimId": "ef2cc805196176add2ec3b2c4cf78f72",
+      "geoId": null,
+      "otherSides": [
+        "Pro-welfare expansion"
+      ]
+    },
+    {
+      "name": "Pro-immigration",
+      "kind": "issue",
+      "description": "Supports immigration or policies that make immigration and immigrant integration easier.",
+      "issue": "Immigration",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-immigrant",
+        "Pro-amnesty",
+        "Open borders (pejorative)",
+        "Immigrant rights advocate",
+        "Immigration advocate",
+        "Pro-pathway to citizenship",
+        "Pro-legalization"
+      ],
+      "slogan": null,
+      "exampleClaimId": "4b69e8a281525f4faef63cff0190b83b",
+      "geoId": null,
+      "otherSides": [
+        "Pro-border security"
+      ]
+    },
+    {
+      "name": "Pro-Ukraine",
+      "kind": "issue",
+      "description": "Supports Ukraine’s sovereignty and its defense against Russia’s invasion.",
+      "issue": "Ukraine",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-Ukraine aid",
+        "Ukraine supporter",
+        "Ukraine hawk",
+        "Russia hawk",
+        "Pro-Kyiv",
+        "Pro-sanctions on Russia"
+      ],
+      "slogan": null,
+      "exampleClaimId": "bb10fcf1dfb545c5951124b7ea0ac543",
+      "geoId": null,
+      "otherSides": [
+        "Pro-Russia"
+      ]
+    },
+    {
+      "name": "Pro-entitlement reform",
+      "kind": "issue",
+      "description": "Supports changing large public benefit programs such as Social Security to address their long-term financing or structure.",
+      "issue": "Social Security",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-Social Security reform",
+        "Pro-Social Security privatization",
+        "Entitlement reformer",
+        "Pro-solvency",
+        "Pro-personal accounts",
+        "Pro-retirement age increase"
+      ],
+      "slogan": null,
+      "exampleClaimId": "579005b9fdf01d969d8c1ec081d6d2c3",
+      "geoId": null,
+      "otherSides": [
+        "Benefit preservation"
+      ]
+    },
+    {
+      "name": "Pro-repayment",
+      "kind": "issue",
+      "description": "Favors borrowers repaying student loans and opposes or limits loan cancellation.",
+      "issue": "Student debt",
+      "group": "Economy",
+      "alternativeNames": [
+        "Loan forgiveness skeptic",
+        "Pro-borrower responsibility",
+        "Pro-taxpayer fairness",
+        "Debt cancellation critic"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-student debt relief"
+      ]
+    },
+    {
+      "name": "Pro-public spending",
+      "kind": "issue",
+      "description": "Supports government spending on public programs, services, or investment.",
+      "issue": "Spending & deficit",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-government investment",
+        "Deficit dove",
+        "Keynesian",
+        "Pro-public investment",
+        "Fiscal dove",
+        "Deficit owl",
+        "Pro-stimulus"
+      ],
+      "slogan": null,
+      "exampleClaimId": "7fea6e932b774cc0976a6ba5160a5882",
+      "geoId": null,
+      "otherSides": [
+        "Pro-fiscal responsibility"
+      ]
+    },
+    {
+      "name": "Pro-Israel",
+      "kind": "issue",
+      "description": "Supports Israel’s security, interests, or right to exist as a Jewish state.",
+      "issue": "Israel–Palestine",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Israel supporter",
+        "Zionist",
+        "Israel hawk",
+        "Pro-Israel aid",
+        "Israel ally",
+        "Pro-US-Israel alliance"
+      ],
+      "slogan": null,
+      "exampleClaimId": "2f6dce22184547e486bcec5e8c68b206",
+      "geoId": null,
+      "otherSides": [
+        "Pro-Palestinian",
+        "Anti-Zionist"
+      ]
+    },
+    {
+      "name": "Pro-election integrity",
+      "kind": "issue",
+      "description": "Prioritizes safeguards intended to ensure elections are lawful, accurate, and secure.",
+      "issue": "Elections",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-voter ID",
+        "Pro-election security",
+        "Pro-proof of citizenship",
+        "Pro-SAVE Act",
+        "Pro-secure elections",
+        "Pro-voter roll integrity"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-voting rights"
+      ]
+    },
+    {
+      "name": "Anti-nuclear",
+      "kind": "issue",
+      "description": "Opposes nuclear power or its expansion.",
+      "issue": "Nuclear",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Nuclear critic",
+        "Nuclear opponent",
+        "Nuclear power opponent",
+        "Nuclear safety advocate",
+        "No-nukes"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-nuclear power"
+      ]
+    },
+    {
+      "name": "Pro-gun control",
+      "kind": "issue",
+      "description": "Supports laws that restrict or regulate access to firearms.",
+      "issue": "Guns",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-gun safety",
+        "Pro-gun reform",
+        "Gun-control advocate",
+        "Gun violence prevention",
+        "Pro-gun violence prevention",
+        "Pro-gun regulation",
+        "Pro-firearm regulation"
+      ],
+      "slogan": null,
+      "exampleClaimId": "4b142b070e944f7fb54ed77057bf79b6",
+      "geoId": null,
+      "otherSides": [
+        "Pro-gun rights"
+      ]
+    },
+    {
+      "name": "Pro-gun rights",
+      "kind": "issue",
+      "description": "Supports the right to own and use firearms, with limited government restrictions.",
+      "issue": "Guns",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-Second Amendment",
+        "Pro-2A",
+        "Gun-rights advocate",
+        "Pro-gun",
+        "Second Amendment supporter",
+        "Pro-gun owner",
+        "Pro-constitutional carry"
+      ],
+      "slogan": null,
+      "exampleClaimId": "024eda17a14c9ffa7643edf89df0892a",
+      "geoId": null,
+      "otherSides": [
+        "Pro-gun control"
+      ]
+    },
+    {
+      "name": "Pro-internet freedom",
+      "sourceName": "Pro internet freedom",
+      "kind": "issue",
+      "description": "Supports broad freedom of expression and access online, with limited government or platform restrictions.",
+      "issue": "Speech online",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-free speech",
+        "Free speech advocate",
+        "Pro-First Amendment",
+        "Pro-free expression",
+        "Free speech maximalist",
+        "Censorship critic"
+      ],
+      "slogan": null,
+      "exampleClaimId": "f98079d925d3b56806ba6d84ab42c17f",
+      "geoId": null,
+      "otherSides": [
+        "Pro-online safety"
+      ]
+    },
+    {
+      "name": "Pro-climate action",
+      "kind": "issue",
+      "description": "Supports public or private measures to reduce climate change or adapt to its effects.",
+      "issue": "Climate",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Pro-climate",
+        "Climate hawk",
+        "Environmentalist",
+        "Climate advocate",
+        "Pro-decarbonization",
+        "Pro-net zero",
+        "Climate activist"
+      ],
+      "slogan": null,
+      "exampleClaimId": "148b0cf1d60c4319b499d376ef6bf38f",
+      "geoId": null,
+      "otherSides": [
+        "Climate skeptic"
+      ]
+    },
+    {
+      "name": "Pro-states' rights",
+      "kind": "issue",
+      "description": "Supports state governments’ authority relative to the federal government.",
+      "issue": "Federalism",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Federalist",
+        "Pro-local control",
+        "Pro-decentralization",
+        "Pro-federalism",
+        "Pro-Tenth Amendment",
+        "Pro-state sovereignty",
+        "Tenth Amendment advocate"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-federal authority"
+      ]
+    },
+    {
+      "name": "Pro-energy production",
+      "kind": "issue",
+      "description": "Supports expanding domestic energy production, including fossil-fuel or other energy sources.",
+      "issue": "Energy",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Pro-oil and gas",
+        "Pro-drilling",
+        "Pro-energy dominance",
+        "All-of-the-above",
+        "Pro-American energy",
+        "Pro-energy independence"
+      ],
+      "slogan": "Drill, baby, drill",
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-clean energy"
+      ]
+    },
+    {
+      "name": "Social conservative",
+      "kind": "issue",
+      "description": "Favors traditional social norms and policies, often including conventional views of family, sexuality, and gender.",
+      "issue": "LGBTQ",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-family values",
+        "Pro-natural marriage",
+        "Pro-family",
+        "Pro-biblical marriage",
+        "Pro-man-woman marriage"
+      ],
+      "slogan": null,
+      "exampleClaimId": "4de298d58d96434085a8a83c8cc5bf82",
+      "geoId": null,
+      "otherSides": [
+        "Pro-LGBTQ rights"
+      ]
+    },
+    {
+      "name": "Pro-universal healthcare",
+      "sourceName": "Pro- universal healthcare",
+      "kind": "issue",
+      "description": "Supports guaranteeing access to health coverage for everyone, usually through public programs or universal coverage rules.",
+      "issue": "Healthcare",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-Medicare for All",
+        "Pro-single-payer",
+        "Pro-public option",
+        "Pro-universal coverage",
+        "Medicare for All",
+        "Health care as a right",
+        "Pro-government health care"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Free-market healthcare"
+      ]
+    },
+    {
+      "name": "Pro-innovation",
+      "kind": "issue",
+      "description": "Favors policies that enable technological innovation and growth in the technology sector.",
+      "issue": "Big Tech",
+      "group": "Economy",
+      "alternativeNames": [
+        "Antitrust skeptic",
+        "Pro-Silicon Valley",
+        "Techno-optimist",
+        "Pro-tech",
+        "Pro-consumer welfare standard",
+        "Light-touch regulation"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Deaccelerationist",
+        "Techno-optimist"
+      ]
+    },
+    {
+      "name": "Pro-China engagement",
+      "kind": "issue",
+      "description": "Supports diplomacy, trade, or cooperation with China rather than isolating or confronting it.",
+      "issue": "China",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "China dove",
+        "Pro-détente",
+        "Pro-trade with China",
+        "Engager",
+        "Pro-engagement",
+        "Competitive coexister",
+        "Pro-coexistence"
+      ],
+      "slogan": null,
+      "exampleClaimId": "5023ce9fba3945128221f4c28d74b5b6",
+      "geoId": null,
+      "otherSides": [
+        "Pro-China containment"
+      ]
+    },
+    {
+      "name": "Pro-voting rights",
+      "kind": "issue",
+      "description": "Supports protecting or expanding access to voting and participation in elections.",
+      "issue": "Elections",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-ballot access",
+        "Pro-mail voting",
+        "Pro-voter participation",
+        "Pro-democracy",
+        "Pro-automatic voter registration",
+        "Pro-John Lewis Act"
+      ],
+      "slogan": null,
+      "exampleClaimId": "ec0a71df06f74225bf6811508b2ca4df",
+      "geoId": null,
+      "otherSides": [
+        "Pro-election integrity"
+      ]
+    },
+    {
+      "name": "Pro-fiscal responsibility",
+      "kind": "issue",
+      "description": "Favors limiting deficits and public debt through spending discipline, revenue, or both.",
+      "issue": "Spending & deficit",
+      "group": "Economy",
+      "alternativeNames": [
+        "Deficit hawk",
+        "Pro-balanced budget",
+        "Fiscal conservative",
+        "Budget hawk",
+        "Spending hawk",
+        "Debt hawk"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-public spending"
+      ]
+    },
+    {
+      "name": "Pro-federal authority",
+      "kind": "issue",
+      "description": "Supports federal government authority over states in areas assigned to or best handled by the national government.",
+      "issue": "Federalism",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-national standards",
+        "Pro-federal preemption",
+        "Pro-national uniformity",
+        "Pro-federal supremacy",
+        "Pro-federal oversight"
+      ],
+      "slogan": null,
+      "exampleClaimId": "5872ac2be0d3495296b3e811e395f16f",
+      "geoId": null,
+      "otherSides": [
+        "Pro-states' rights"
+      ]
+    },
+    {
+      "name": "Pro-border security",
+      "kind": "issue",
+      "description": "Supports stronger enforcement and security measures at national borders.",
+      "issue": "Immigration",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-deportation",
+        "Immigration restrictionist",
+        "Immigration hawk",
+        "Border hawk",
+        "Pro-enforcement",
+        "Low-immigration"
+      ],
+      "slogan": null,
+      "exampleClaimId": "c381476542ef4d8087cf2d209abdb8f8",
+      "geoId": null,
+      "otherSides": [
+        "Pro-immigration"
+      ]
+    },
+    {
+      "name": "Pro-Iran diplomacy",
+      "kind": "issue",
+      "description": "Supports negotiating with Iran and using diplomacy to manage disputes or reduce conflict.",
+      "issue": "Iran",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-Iran deal",
+        "Iran dove",
+        "Pro-JCPOA",
+        "Pro-engagement with Iran",
+        "Pro-nuclear deal",
+        "Pro-diplomacy with Iran",
+        "Iran engager"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Iran containment"
+      ]
+    },
+    {
+      "name": "Pro-law enforcement",
+      "kind": "issue",
+      "description": "Supports police and other law-enforcement agencies, their capacity, or their role in public safety.",
+      "issue": "Policing",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Back the Blue",
+        "Tough on crime",
+        "Pro-police funding",
+        "Law and order",
+        "Pro-law and order",
+        "Pro-public safety",
+        "Pro-qualified immunity"
+      ],
+      "slogan": "Back the Blue",
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-criminal justice reform"
+      ]
+    },
+    {
+      "name": "Pro-vaccine choice",
+      "kind": "issue",
+      "description": "Supports individual choice about vaccination and opposes vaccine mandates.",
+      "issue": "Public health",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-vaccine exemptions",
+        "Pro-health freedom",
+        "Mandate skeptic",
+        "Pro-medical liberty",
+        "MAHA",
+        "Pro-informed consent"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-vaccination"
+      ]
+    },
+    {
+      "name": "Pro-clean energy",
+      "kind": "issue",
+      "description": "Supports energy sources with lower greenhouse-gas emissions, such as renewables or nuclear power.",
+      "issue": "Energy",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Pro-green energy",
+        "Clean energy advocate",
+        "Pro-energy transition",
+        "Pro-solar and wind",
+        "Pro-clean energy abundance"
+      ],
+      "slogan": null,
+      "exampleClaimId": "b5a25ff21e89400cabfd6fd1484514af",
+      "geoId": null,
+      "otherSides": [
+        "Pro-energy production"
+      ]
+    },
+    {
+      "name": "Pro-meritocracy",
+      "kind": "issue",
+      "description": "Favors selection and advancement based on individual ability and performance rather than group identity or preferential treatment.",
+      "issue": "DEI",
+      "group": "Society",
+      "alternativeNames": [
+        "Anti-DEI",
+        "Pro-merit",
+        "Pro-colorblind policy",
+        "Pro-MEI",
+        "Pro-race-neutral policy",
+        "Pro-equal treatment"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-equity"
+      ]
+    },
+    {
+      "name": "Pro-equity",
+      "kind": "issue",
+      "description": "Supports policies intended to reduce disparities and improve fair access or outcomes across groups.",
+      "issue": "DEI",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-diversity",
+        "Pro-affirmative action",
+        "Pro-inclusion",
+        "DEI supporter",
+        "Pro-race-conscious policy",
+        "Pro-DEIA"
+      ],
+      "slogan": null,
+      "exampleClaimId": "05ec6bbd12e457adb86c97cd5d60f9d8",
+      "geoId": null,
+      "otherSides": [
+        "Pro-meritocracy"
+      ]
+    },
+    {
+      "name": "Pro-religious freedom",
+      "kind": "issue",
+      "description": "Supports the right to practice religion and protections for religious belief and exercise.",
+      "issue": "Religion",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-faith in public life",
+        "Pro-conscience rights",
+        "Accommodationist",
+        "Pro-religious exemptions",
+        "Pro-free exercise"
+      ],
+      "slogan": null,
+      "exampleClaimId": "130164625b3d493ca208d6e82f000443",
+      "geoId": null,
+      "otherSides": [
+        "Church-state separationist"
+      ]
+    },
+    {
+      "name": "Pro-housing development",
+      "kind": "issue",
+      "description": "Supports building more housing or reducing barriers to new residential construction.",
+      "issue": "Housing",
+      "group": "Economy",
+      "alternativeNames": [
+        "YIMBY",
+        "Pro-zoning reform",
+        "Pro-abundance",
+        "Pro-housing",
+        "Pro-supply",
+        "Pro-density",
+        "Pro-building"
+      ],
+      "slogan": null,
+      "exampleClaimId": "344a407e3958a818b69a6184f266fef0",
+      "geoId": null,
+      "otherSides": [
+        "Neighborhood preservation"
+      ]
+    },
+    {
+      "name": "Pro-foreign aid reform",
+      "kind": "issue",
+      "description": "Supports changing foreign assistance programs to improve their effectiveness, scope, or accountability.",
+      "issue": "Foreign aid",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-foreign aid cuts",
+        "Foreign aid critic",
+        "Aid skeptic",
+        "Pro-aid reform",
+        "Pro-America First aid",
+        "Pro-USAID overhaul"
+      ],
+      "slogan": null,
+      "exampleClaimId": "8271598b04824a4088775686c1e4cea1",
+      "geoId": null,
+      "otherSides": [
+        "Pro-USAID"
+      ]
+    },
+    {
+      "name": "Pro-death penalty",
+      "kind": "issue",
+      "description": "Supports retaining or applying capital punishment for certain serious crimes.",
+      "issue": "Death penalty",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-capital punishment",
+        "Death penalty supporter",
+        "Retentionist",
+        "Death penalty retentionist",
+        "Pro-retention"
+      ],
+      "slogan": null,
+      "exampleClaimId": "3006371ab3d8e965a31c943fa9bcbda5",
+      "geoId": null,
+      "otherSides": [
+        "Death penalty abolitionist"
+      ]
+    },
+    {
+      "name": "Benefit preservation",
+      "kind": "issue",
+      "description": "Supports maintaining existing public benefits, especially Social Security benefits.",
+      "issue": "Social Security",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-Social Security",
+        "Pro-entitlements",
+        "Expand Social Security",
+        "Pro-Social Security 2100",
+        "Pro-benefit increase"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-entitlement reform"
+      ]
+    },
+    {
+      "name": "Pro-Russia",
+      "kind": "issue",
+      "description": "Supports Russia’s government, interests, or policies in a given dispute.",
+      "issue": "Ukraine",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-negotiated settlement",
+        "Ukraine aid critic",
+        "Pro-Russia (pejorative)",
+        "Ukraine skeptic",
+        "Pro-peace deal",
+        "Ukraine dove",
+        "Prioritizer"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Ukraine"
+      ]
+    },
+    {
+      "name": "Anti-legalization",
+      "sourceName": "Anti legalization",
+      "kind": "issue",
+      "description": "Opposes legalizing currently prohibited drugs.",
+      "issue": "Drugs",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-war on drugs",
+        "Drug warrior",
+        "Prohibitionist",
+        "Pro-recriminalization",
+        "Pro-drug enforcement",
+        "Pro-drug-free"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-legalization"
+      ]
+    },
+    {
+      "name": "Pro-tax cuts",
+      "kind": "issue",
+      "description": "Supports reducing tax rates or the amount of tax people or businesses pay.",
+      "issue": "Taxes",
+      "group": "Economy",
+      "alternativeNames": [
+        "Tax cutter",
+        "Low-tax",
+        "Anti-tax",
+        "Supply-sider",
+        "Pro-growth",
+        "Taxpayer advocate",
+        "Pro-flat tax"
+      ],
+      "slogan": "Read my lips: no new taxes",
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Tax fairness"
+      ]
+    },
+    {
+      "name": "Pro-national security",
+      "kind": "issue",
+      "description": "Prioritizes protecting the country from threats, including through security powers and surveillance.",
+      "issue": "Privacy",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-national security surveillance",
+        "Pro-FISA",
+        "Security hawk",
+        "National security hawk",
+        "Pro-Section 702",
+        "Pro-clean reauthorization"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-privacy"
+      ]
+    },
+    {
+      "name": "Pro-transgender rights",
+      "kind": "issue",
+      "description": "Supports equal legal rights and protections for transgender people.",
+      "issue": "Gender identity",
+      "group": "Society",
+      "alternativeNames": [
+        "Pro-trans rights",
+        "Pro-gender-affirming care",
+        "Pro-trans inclusion",
+        "Trans-inclusive",
+        "Trans ally",
+        "Pro-gender identity protections"
+      ],
+      "slogan": null,
+      "exampleClaimId": "24541de6d13f88ac4b7cbd6752e06b4b",
+      "geoId": null,
+      "otherSides": [
+        "Gender-critical"
+      ]
+    },
+    {
+      "name": "Pro-life",
+      "kind": "issue",
+      "description": "Opposes abortion, especially on the grounds that fetal life should receive legal protection.",
+      "issue": "Abortion",
+      "group": "Society",
+      "alternativeNames": [
+        "Anti-abortion (AP style)",
+        "Pro-abortion restrictions",
+        "Pro-personhood",
+        "Abortion abolitionist",
+        "Pro-unborn"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-choice"
+      ]
+    },
+    {
+      "name": "Death penalty abolitionist",
+      "kind": "issue",
+      "description": "Supports ending capital punishment.",
+      "issue": "Death penalty",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Anti-death penalty",
+        "Pro-abolition of capital punishment",
+        "Abolitionist",
+        "Pro-abolition",
+        "Pro-repeal",
+        "Death penalty opponent"
+      ],
+      "slogan": null,
+      "exampleClaimId": "f7bdffdd5f06e4b760247767b6989a32",
+      "geoId": null,
+      "otherSides": [
+        "Pro-death penalty"
+      ]
+    },
+    {
+      "name": "Pro-choice",
+      "kind": "issue",
+      "description": "Supports legal access to abortion and the right to decide whether to continue a pregnancy.",
+      "issue": "Abortion",
+      "group": "Society",
+      "alternativeNames": [
+        "Abortion-rights (AP style)",
+        "Pro-abortion rights",
+        "Pro-reproductive rights",
+        "Pro-reproductive freedom",
+        "Pro-bodily autonomy",
+        "Reproductive justice",
+        "Pro-Roe"
+      ],
+      "slogan": "My body, my choice",
+      "exampleClaimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "geoId": null,
+      "otherSides": [
+        "Pro-life"
+      ]
+    },
+    {
+      "name": "Pro-union",
+      "kind": "issue",
+      "description": "Supports labor unions and collective bargaining rights for workers.",
+      "issue": "Labor",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-labor",
+        "Pro-collective bargaining",
+        "Pro-worker",
+        "Pro-organized labor",
+        "Union ally",
+        "Pro-PRO Act",
+        "Labor-backed"
+      ],
+      "slogan": null,
+      "exampleClaimId": "4203a7a7f808485fb9ad85db9655da30",
+      "geoId": null,
+      "otherSides": [
+        "Anti-union"
+      ]
+    },
+    {
+      "name": "Pro-public education",
+      "kind": "issue",
+      "description": "Supports public schools and public investment in education.",
+      "issue": "Education",
+      "group": "Society",
+      "alternativeNames": [
+        "Voucher skeptic",
+        "Public school advocate",
+        "Pro-public school funding",
+        "Pro-neighborhood schools",
+        "Voucher opponent"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-school choice"
+      ]
+    },
+    {
+      "name": "Hawk",
+      "kind": "issue",
+      "description": "Favors a more forceful foreign policy and is comparatively willing to use military power.",
+      "issue": "Use of force",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Interventionist",
+        "Internationalist",
+        "Primacist",
+        "Liberal internationalist",
+        "Neoconservative",
+        "Pro-deterrence"
+      ],
+      "slogan": null,
+      "exampleClaimId": "157d1128ad4277bef5ee4926b49c4690",
+      "geoId": null,
+      "otherSides": [
+        "Dove"
+      ]
+    },
+    {
+      "name": "Pro-Taiwan reunification",
+      "kind": "issue",
+      "description": "Supports political unification of Taiwan with the People’s Republic of China.",
+      "issue": "Taiwan",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-One China policy",
+        "Taiwan restraint",
+        "Pro-status quo",
+        "Taiwan dove",
+        "Pro-cross-strait dialogue",
+        "Ambiguity advocate"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Taiwan independance"
+      ]
+    },
+    {
+      "name": "Pro-China containment",
+      "kind": "issue",
+      "description": "Favors limiting China’s power or influence through deterrence, alliances, or other pressure.",
+      "issue": "China",
+      "group": "Foreign policy",
+      "alternativeNames": [
+        "Pro-decoupling",
+        "China skeptic",
+        "New Cold Warrior",
+        "Pro-strategic competition",
+        "Pro-containment",
+        "China critic"
+      ],
+      "slogan": null,
+      "exampleClaimId": "d7800b2a01904345aab1f4fdb12055e3",
+      "geoId": null,
+      "otherSides": [
+        "Pro-China engagement"
+      ]
+    },
+    {
+      "name": "Pro-privacy",
+      "kind": "issue",
+      "description": "Supports protecting personal information and limiting unwarranted data collection or surveillance.",
+      "issue": "Privacy",
+      "group": "Justice & democracy",
+      "alternativeNames": [
+        "Pro-civil liberties",
+        "Pro-data protection",
+        "Surveillance critic",
+        "Privacy hawk",
+        "Pro-warrant requirement",
+        "Pro-Fourth Amendment",
+        "Civil libertarian"
+      ],
+      "slogan": null,
+      "exampleClaimId": "1fdcbe35bfde4d0bbe5eb78632dc02c4",
+      "geoId": null,
+      "otherSides": [
+        "Pro-national security"
+      ]
+    },
+    {
+      "name": "Anti-union",
+      "kind": "issue",
+      "description": "Opposes labor unions or supports restricting their power, membership, or collective bargaining.",
+      "issue": "Labor",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-open shop",
+        "Union skeptic",
+        "Right-to-work",
+        "Pro-voluntary unionism",
+        "Pro-worker freedom",
+        "Pro-paycheck protection"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-union"
+      ]
+    },
+    {
+      "name": "Free-market healthcare",
+      "kind": "issue",
+      "description": "Favors market competition and private choice in healthcare, with a limited role for government.",
+      "issue": "Healthcare",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-private healthcare",
+        "Pro-health savings accounts",
+        "Obamacare critic",
+        "Consumer-driven healthcare",
+        "Pro-patient choice",
+        "Pro-market competition"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-universal healthcare"
+      ]
+    },
+    {
+      "name": "Pro-crypto",
+      "kind": "issue",
+      "description": "Supports cryptocurrencies and policies that enable their use or growth.",
+      "issue": "Crypto",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Crypto advocate",
+        "Pro-digital assets",
+        "Pro-Bitcoin",
+        "Crypto supporter",
+        "Crypto-friendly",
+        "Crypto booster",
+        "Pro-crypto innovation"
+      ],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Crypto skeptic"
+      ]
+    },
+    {
+      "name": "Pro-AI regulation",
+      "kind": "issue",
+      "description": "Supports rules or oversight governing the development or use of artificial intelligence.",
+      "issue": "AI",
+      "group": "Climate energy & tech",
+      "alternativeNames": [
+        "Pro-AI safety",
+        "AI safety advocate",
+        "AI doomer (pejorative)",
+        "Pro-AI guardrails",
+        "Pro-AI oversight",
+        "AI safetyist",
+        "Pro-state AI laws"
+      ],
+      "slogan": null,
+      "exampleClaimId": "67adf984b5b04dcfbdd8cb6aefd4e31b",
+      "geoId": null,
+      "otherSides": [
+        "Pro-AI acceleration"
+      ]
+    },
+    {
+      "name": "Pro-student debt relief",
+      "kind": "issue",
+      "description": "Supports reducing or cancelling student loan debt for borrowers.",
+      "issue": "Student debt",
+      "group": "Economy",
+      "alternativeNames": [
+        "Pro-loan forgiveness",
+        "Pro-free college",
+        "Pro-debt cancellation",
+        "Cancel student debt",
+        "Pro-debt relief",
+        "Debt abolitionist"
+      ],
+      "slogan": null,
+      "exampleClaimId": "9d5c11e66b50480babdef68c7a4c0d05",
+      "geoId": null,
+      "otherSides": [
+        "Pro-repayment"
+      ]
+    },
+    {
+      "name": "Techno-optimist",
+      "kind": "issue",
+      "description": "Believes technological progress and innovation are broadly beneficial and should generally be encouraged.",
+      "issue": "Big Tech",
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Deaccelerationist",
+        "Pro-innovation"
+      ]
+    },
+    {
+      "name": "Anti-Zionist",
+      "sourceName": "Anti zionist",
+      "kind": "issue",
+      "description": "Opposes Zionism, the movement supporting Jewish national self-determination in the historic land of Israel; views on Israel, Palestinians, and Jewish people vary among anti-Zionists.",
+      "issue": "Israel–Palestine",
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": null,
+      "otherSides": [
+        "Pro-Palestinian",
+        "Pro-Israel"
+      ]
+    },
+    {
+      "name": "Classical liberal",
+      "kind": "tradition",
+      "description": "A political outlook emphasizing individual rights, civil liberties, the rule of law, limited government, and market economies.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "f98079d925d3b56806ba6d84ab42c17f",
+      "geoId": "c42000dc8f0643e4ae2b3e792c55ca39",
+      "otherSides": []
+    },
+    {
+      "name": "Nationalist",
+      "kind": "tradition",
+      "description": "An outlook prioritizing national identity, sovereignty, and interests. Nationalist movements may be left- or right-wing and vary in their views on immigration and international institutions.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "78d0d62134114b809b54167e11d4db4f",
+      "geoId": "949d526009a5476b809b0ab9795907aa",
+      "otherSides": []
+    },
+    {
+      "name": "Globalist",
+      "kind": "tradition",
+      "description": "A political outlook favoring international cooperation, cross-border trade, and global institutions to address shared issues. The label is also used pejoratively, so context matters.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "4b69e8a281525f4faef63cff0190b83b",
+      "geoId": "bae9b302e5eb4ac3a67951f1131abd1e",
+      "otherSides": []
+    },
+    {
+      "name": "Secularist",
+      "kind": "tradition",
+      "description": "An outlook supporting separation of religious institutions from state authority and secular governance, while protecting freedom of belief.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "b2727c4b6d2243cbb3b5161f33535568",
+      "otherSides": []
+    },
+    {
+      "name": "Conservative",
+      "kind": "tradition",
+      "description": "A political outlook that generally values tradition and social continuity and favors gradual change; priorities such as limited government, markets, and social norms vary by context.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "4de298d58d96434085a8a83c8cc5bf82",
+      "geoId": "4e93d425a84e40d1a2403263de57a847",
+      "otherSides": []
+    },
+    {
+      "name": "Paleoconservative",
+      "kind": "tradition",
+      "description": "A U.S. conservative current emphasizing national sovereignty, cultural tradition, restrictive immigration, and restraint in foreign intervention.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "079d07a77a4249b58c498db29c68994d",
+      "geoId": "fcb006f0fa2c43e480f154fe37979abc",
+      "otherSides": []
+    },
+    {
+      "name": "MAGA",
+      "kind": "tradition",
+      "description": "The U.S. political movement organized around Donald Trump's Make America Great Again slogan, commonly associated with America First nationalism, restrictive immigration, and opposition to established political institutions.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": "Make America Great Again",
+      "exampleClaimId": "c381476542ef4d8087cf2d209abdb8f8",
+      "geoId": "f62bcc598efb4ce89fabd3c34dd77c92",
+      "otherSides": []
+    },
+    {
+      "name": "Democratic socialist",
+      "kind": "tradition",
+      "description": "An outlook supporting social ownership or public control of key sectors and broad social protections pursued through democratic elections and institutions.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "d892d9b32bf644359676bf0bf2299c60",
+      "otherSides": []
+    },
+    {
+      "name": "Liberal",
+      "kind": "tradition",
+      "description": "In U.S. politics, a center-left outlook emphasizing civil liberties, individual rights, social equality, and government action to address economic or social problems. The term has different meanings internationally.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "f98079d925d3b56806ba6d84ab42c17f",
+      "geoId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+      "otherSides": []
+    },
+    {
+      "name": "Socialist",
+      "kind": "tradition",
+      "description": "An outlook supporting social, public, or worker ownership or control of major productive resources. Socialist traditions differ on markets, democracy, and how ownership should work.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "a050df4dc2414b3fabbb538483eea93a",
+      "otherSides": []
+    },
+    {
+      "name": "Feminist",
+      "kind": "tradition",
+      "description": "An outlook seeking political, economic, and social equality for women and opposing gender-based discrimination. Feminist traditions differ in their analysis and policy priorities.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "5f90b6eaac214ef0911195d9c56983e9",
+      "otherSides": []
+    },
+    {
+      "name": "Marxist",
+      "kind": "tradition",
+      "description": "An outlook based on Karl Marx's critique of capitalism and analysis of class relations and class struggle. Marxists differ on political strategy and social organization.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "103be43ad08aed03d3e55c3f6f530b9d",
+      "geoId": "5b7e92e968fa4ef19d7945bcdb3fa0d6",
+      "otherSides": []
+    },
+    {
+      "name": "Neoconservative",
+      "kind": "tradition",
+      "description": "A conservative outlook associated with an assertive U.S. foreign policy, military strength, and support for promoting democracy abroad.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "157d1128ad4277bef5ee4926b49c4690",
+      "geoId": "a0ff6257cfd8440dab75663a8ed90265",
+      "otherSides": []
+    },
+    {
+      "name": "Communist",
+      "kind": "tradition",
+      "description": "A political ideology aiming for a classless society with collective ownership of productive resources. Historical communist governments have often relied on one-party rule and centralized planning.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "a461ba2edccf4c06842cead379d80519",
+      "otherSides": []
+    },
+    {
+      "name": "Social democrat",
+      "kind": "tradition",
+      "description": "An outlook supporting a market economy alongside strong public services, social welfare, labor protections, unions, and progressive taxation, generally pursued through democratic reform.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "1a167acc6a57ea552957258158b0cfbb",
+      "geoId": "196f3d425aee453eaf6625540dd1faec",
+      "otherSides": []
+    },
+    {
+      "name": "Humanist",
+      "kind": "tradition",
+      "description": "A worldview grounding ethics in human dignity, reason, and human welfare; humanist traditions vary in how they relate to religion.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "855d0e3058bb4fe0956d723e7f0b0321",
+      "otherSides": []
+    },
+    {
+      "name": "Traditionalist",
+      "kind": "tradition",
+      "description": "An outlook that values inherited customs and institutions and favors preserving social continuity over rapid change.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "0707ac7581416e7280f479d0ea55570e",
+      "geoId": "350419395b25466eb84a26746a74873e",
+      "otherSides": []
+    },
+    {
+      "name": "Neoliberal",
+      "kind": "tradition",
+      "description": "A political and economic outlook favoring market competition and private enterprise, often including deregulation, privatization, free trade, and fiscal restraint. The term is contested.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "d18bda990d0f41f1a8620255d0590011",
+      "otherSides": []
+    },
+    {
+      "name": "Populist",
+      "kind": "tradition",
+      "description": "A political outlook framing politics as a struggle between ordinary people and a powerful elite and claiming to represent the people. It can be left- or right-wing.",
+      "issue": null,
+      "group": "Justice & democracy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "e6cb2a73c4dd46bc8ecb8680638c6b89",
+      "otherSides": []
+    },
+    {
+      "name": "Libertarian",
+      "kind": "tradition",
+      "description": "An outlook prioritizing individual liberty and sharply limited government, usually combining free-market economics with broad personal freedoms.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "187ce0019d6146cba0d08ad9bbcef17b",
+      "geoId": "f69a3a6e8ac14423aad8a9361dd7258a",
+      "otherSides": []
+    },
+    {
+      "name": "Islamist",
+      "kind": "tradition",
+      "description": "A political outlook advocating that Islamic principles or law influence government and public life. Islamist movements vary widely and are distinct from Muslim identity and the religion of Islam.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "e7abad19f4f34f6c8eab79b2825987f9",
+      "otherSides": []
+    },
+    {
+      "name": "Environmentalist",
+      "kind": "tradition",
+      "description": "An outlook prioritizing protection of the natural environment and ecosystems, often through conservation, pollution reduction, and climate action.",
+      "issue": null,
+      "group": "Climate energy & tech",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "148b0cf1d60c4319b499d376ef6bf38f",
+      "geoId": "fc34ee62e0a843779741a251140c546b",
+      "otherSides": []
+    },
+    {
+      "name": "Progressive",
+      "kind": "tradition",
+      "description": "A U.S. political outlook supporting reforms or structural changes to expand social and economic equality, civil rights, and environmental protection.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "05ec6bbd12e457adb86c97cd5d60f9d8",
+      "geoId": "8cf9e9560faf46ff8c127036168c3163",
+      "otherSides": []
+    },
+    {
+      "name": "Libertarianism",
+      "kind": "tradition",
+      "description": "A political philosophy that prioritizes individual liberty and limits state power in economic and personal affairs. Libertarian traditions differ on the proper scope of government.",
+      "issue": null,
+      "group": "Economy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "024eda17a14c9ffa7643edf89df0892a",
+      "geoId": "23a5ddbd99c54fe1ad2c2c55d943f4fc",
+      "otherSides": []
+    },
+    {
+      "name": "Christian conservative",
+      "kind": "tradition",
+      "description": "A political outlook that draws on Christian beliefs to shape public policy, particularly on abortion, marriage, religious liberty, and education.",
+      "issue": null,
+      "group": "Society",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "4de298d58d96434085a8a83c8cc5bf82",
+      "geoId": "c11e061c625b442c9f1a1ebea357f2e3",
+      "otherSides": []
+    },
+    {
+      "name": "Isolationist",
+      "kind": "tradition",
+      "description": "An outlook favoring limited involvement in foreign wars, alliances, and international commitments, with priority given to domestic affairs.",
+      "issue": null,
+      "group": "Foreign policy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": "079d07a77a4249b58c498db29c68994d",
+      "geoId": "a27f1e4a0a2248999ca1f07a2823ea12",
+      "otherSides": []
+    },
+    {
+      "name": "Anarchist",
+      "kind": "tradition",
+      "description": "A political outlook opposing the state and other coercive hierarchies and favoring voluntary association and self-governance. Anarchist traditions differ widely on property, markets, and social organization.",
+      "issue": null,
+      "group": "Justice & democracy",
+      "alternativeNames": [],
+      "slogan": null,
+      "exampleClaimId": null,
+      "geoId": "c3a9c4dcbb6d473ab8e0deda7b893914",
+      "otherSides": []
+    }
+  ]
+}

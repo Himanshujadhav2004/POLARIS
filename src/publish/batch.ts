@@ -38,7 +38,7 @@ export function valueIdsFor(r: ScoredClaim, taxonomy: Taxonomy): string[] {
     .filter((n): n is string => Boolean(n))
     .map((name) => {
       const value = taxonomy.byName.get(name);
-      if (!value) throw new Error(`"${name}" is not in Geo's taxonomy`);
+      if (!value) throw new Error(`"${name}" is not on Geo yet, so it cannot go into a proposal until it is published there`);
       return value.id;
     });
 }

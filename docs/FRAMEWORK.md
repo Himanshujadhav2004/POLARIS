@@ -1,4 +1,4 @@
-# Political leaning and ideology scoring framework (framework-v2.1)
+# Political leaning and ideology scoring framework (framework-v3.0)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 
@@ -6,6 +6,7 @@ Every classification cites the numbered criteria below. The model finds evidence
 
 - **Political leaning**: Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.
 - **Ideology**: A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.
+- **Leanings** (the property the agent fills): The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview. A claim has at most one political leaning but can have several ideological leanings.
 
 Possible results: a **published** leaning (one of Geo's seven) and published ideologies; **No label**, naming the rule that blocked it; or **No political position**, naming the check that failed. There are no partial labels: anything not published is left blank.
 
@@ -13,13 +14,13 @@ Possible results: a **published** leaning (one of Geo's seven) and published ide
 
 The scorer, the independent check and the verifier all use these rules, so they place claims on the same scale.
 
-- Far left (-3): Replaces capitalism, abolishes core institutions (police, prisons, borders, the family), or seeks power by revolution.
-- Left (-2): Goes clearly beyond the center-left mainstream of the country, for example single-payer healthcare, a wealth tax or abolishing the immigration enforcement agency.
-- Center left (-1): A position commonly held across the center-left mainstream of the country, for example higher taxes on high earners, protecting abortion access or background checks for gun sales.
-- Center (0): Explicitly combines or balances a left and a right position as a compromise.
-- Center right (+1): A position commonly held across the center-right mainstream of the country, for example lower taxes, voter ID or stronger border enforcement.
-- Right (+2): Goes clearly beyond the center-right mainstream of the country, for example a near-total abortion ban, ending birthright citizenship or abolishing a federal department.
-- Far right (+3): Removes rights from people because of ethnicity, religion or sexuality, imposes religious rule, or ends elections or civil liberties for opponents.
+- Far left (-3): Radical: replaces capitalism or seeks systemic, often revolutionary change; abolishes core institutions such as police, prisons or borders.
+- Left (-2): The mainstream liberal or progressive position (in the US, what liberals and Democrats typically support), for example higher taxes on the wealthy, protecting abortion access, a path to citizenship, gun-safety laws or climate action, including bold plans such as single-payer healthcare.
+- Center left (-1): A moderate, lean-left position: a modest or incremental step in a liberal direction, or a left-leaning position with explicit centrist limits.
+- Center (0): Explicitly combines or balances a left and a right position as a compromise, with no consistent tilt.
+- Center right (+1): A moderate, lean-right position: a modest or incremental step in a conservative direction, or a right-leaning position with explicit centrist limits.
+- Right (+2): The mainstream conservative position (in the US, what conservatives and Republicans typically support), for example lower taxes, stricter immigration enforcement and deportation, abortion restrictions, gun rights or voter ID, including bold plans such as abolishing a federal department.
+- Far right (+3): Ultranationalist, nativist or hostile to pluralist institutions: removes rights from people because of ethnicity, religion or sexuality, imposes religious rule, or ends elections or civil liberties for opponents.
 
 ## Step 1: does the claim take a political position?
 
@@ -42,12 +43,12 @@ Covers: Taxes, public spending, welfare and public services, labour and unions, 
 
 | Criterion | Score | Matches when the claim | Examples |
 |---|---|---|---|
-| **ECO-3L** | -3 Far left | Replace or abolish market capitalism: nationalize the economy, abolish private ownership of major industries, cap income or wealth by law, or expropriate. | "There should be a maximum legal income"; "All major industries should be nationalized" |
-| **ECO-2L** | -2 Left | Expand the state's economic role well beyond current mainstream center-left policy: single-payer healthcare, tuition-free public universities, wealth taxes, abolishing private provision of a public service, worker seats on company boards. | "U.S. public universities should charge no tuition"; "Workers should be entitled to company board seats" |
-| **ECO-1L** | -1 Center left | Mainstream center-left economic policy: higher taxes on high earners or corporations, expanding existing public programs, raising the minimum wage, stronger consumer or financial regulation, protecting unions and job tenure. | "The minimum wage should be raised"; "U.S. public-school teachers should have tenure" |
+| **ECO-3L** | -3 Far left | Replace or abolish market capitalism: nationalize the economy, abolish private ownership of major industries, cap income or wealth by law, expropriate, or overthrow capitalism. | "There should be a maximum legal income"; "All major industries should be nationalized" |
+| **ECO-2L** | -2 Left | The mainstream liberal or progressive economic position: higher taxes on high earners or corporations, a wealth tax, expanding public programs and the safety net, raising the minimum wage, universal or single-payer healthcare, tuition-free college, student debt relief, stronger unions, consumer and financial regulation. | "The minimum wage should be raised"; "Congress should raise taxes on high earners"; "Student loan debt should be forgiven" |
+| **ECO-1L** | -1 Center left | A moderate, lean-left economic step with explicit centrist limits: targeted or means-tested help, modest expansions of existing programs, fixing rather than replacing a program, market-friendly regulation. | "The Affordable Care Act should be improved rather than replaced"; "The child tax credit should be expanded for low-income working families only" |
 | **ECO-0** | 0 Center | Explicitly argues for a balance or compromise between market and state, rejecting both expansion and reduction as such. | "The debate should focus on the right balance of financial rules, not eliminating them entirely" |
-| **ECO-1R** | +1 Center right | Mainstream center-right economic policy: lower taxes, deficit and spending restraint, less regulation, market competition and school choice in public services, limits on union power. | "The federal deficit should be capped at 3% of GDP"; "Democratic governors should opt in to the Federal Scholarship Tax Credit program" |
-| **ECO-2R** | +2 Right | Shrink the state's economic role well beyond mainstream center-right policy: abolish major agencies or programs, a flat tax, privatize Social Security or Medicare, abolish the minimum wage. | "The minimum wage should be abolished"; "Social Security should be privatized" |
+| **ECO-1R** | +1 Center right | A moderate, lean-right economic step with explicit centrist limits: modest or targeted tax relief, spending restraint that protects core programs, targeted deregulation, market reforms within existing programs. | "The Affordable Care Act should let insurers sell cheaper basic plans"; "Small businesses should get targeted tax relief" |
+| **ECO-2R** | +2 Right | The mainstream conservative economic position: lower taxes, spending and deficit cuts, deregulation, school choice, limits on union power, work requirements for welfare, opposition to minimum-wage increases, including bold plans such as abolishing federal departments or agencies, a flat tax, or privatizing Social Security. | "Taxes should be cut"; "Raising the minimum wage kills jobs"; "The Department of Education should be abolished" |
 
 ### SOC: Social and cultural values
 
@@ -56,11 +57,11 @@ Covers: Abortion, LGBTQ rights, gender roles and family, religion in public life
 | Criterion | Score | Matches when the claim | Examples |
 |---|---|---|---|
 | **SOC-3L** | -3 Far left | Abolish core social institutions such as marriage or the family, or suppress religion in private life. | "Marriage should be abolished as a legal institution" |
-| **SOC-2L** | -2 Left | Social change well beyond mainstream center-left policy: abortion without restriction including for minors without consent, decriminalizing all drugs, reparations. | "Minors should be allowed abortions without parental consent"; "All recreational drugs should be legalized" |
-| **SOC-1L** | -1 Center left | Mainstream center-left social policy: protect abortion access, LGBTQ rights and recognition, gender-equality measures, anti-discrimination and diversity, secular public institutions, legal marijuana. | "Same-sex marriage should remain legal"; "People who want to participate in the culture of a different gender should be supported" |
+| **SOC-2L** | -2 Left | The mainstream liberal or progressive social position: protect or expand abortion access, LGBTQ and transgender rights, same-sex marriage, anti-discrimination and DEI measures, secular public institutions, legal marijuana, including bold plans such as decriminalizing all drugs or reparations. | "Abortion should be legal"; "Same-sex marriage should be legal nationwide"; "Religious schools should not receive public money" |
+| **SOC-1L** | -1 Center left | A moderate, lean-left social position with explicit centrist limits, for example abortion legal up to viability, or decriminalizing marijuana without legalizing it. | "Abortion should be legal up to fetal viability" |
 | **SOC-0** | 0 Center | Explicitly argues for a compromise between socially liberal and socially conservative positions. | "Abortion should be legal early in pregnancy and restricted later" |
-| **SOC-1R** | +1 Center right | Mainstream center-right social policy: limits on abortion after a set point, parental rights in education, traditional marriage and family, religious-liberty exemptions, limits on gender-transition care for minors. | "The traditional nuclear family is still the best environment for raising children" |
-| **SOC-2R** | +2 Right | Social conservatism well beyond mainstream center-right policy: near-total abortion bans, criminalizing abortion travel, reversing same-sex marriage, abolishing no-fault divorce, religious instruction in public schools. | "Traveling to another state for an abortion should be criminalized"; "No-fault divorce should be abolished" |
+| **SOC-1R** | +1 Center right | A moderate, lean-right social position with explicit centrist limits, for example limits on late-term abortion with broad exceptions, or religious accommodations that keep anti-discrimination law. | "Late-term abortion should be restricted, with exceptions for the health of the mother and fetal anomalies" |
+| **SOC-2R** | +2 Right | The mainstream conservative social position: abortion restrictions or bans, traditional marriage and family, parental rights in education, limits on gender-transition care for minors, religious-liberty exemptions, opposition to DEI, including bold plans such as reversing same-sex marriage or ending no-fault divorce. | "Abortion is murder"; "Gender-affirming care for minors should be banned"; "Marriage is the best foundation for raising children" |
 | **SOC-3R** | +3 Far right | Remove civil rights from people because of race, religion or sexuality, criminalize homosexuality, or impose religious rule. | "Homosexuality should be criminalized" |
 
 ### NAT: Immigration, citizenship and national identity
@@ -70,11 +71,11 @@ Covers: Immigration levels and enforcement, refugees and asylum, citizenship, na
 | Criterion | Score | Matches when the claim | Examples |
 |---|---|---|---|
 | **NAT-3L** | -3 Far left | Abolish national borders or all immigration control. | "National borders should be abolished" |
-| **NAT-2L** | -2 Left | Go well beyond mainstream center-left policy: abolish immigration enforcement agencies, end deportations, blanket amnesty. | "ICE should be abolished" |
-| **NAT-1L** | -1 Center left | Mainstream center-left policy: a path to citizenship, protection for refugees, due process and limits on enforcement tactics for migrants. | "ICE should reveal third-country destinations before migrants lose their chance to object" |
+| **NAT-2L** | -2 Left | The mainstream liberal or progressive immigration position: a path to citizenship, protection for refugees and asylum seekers, limits on enforcement, immigration as a benefit, including bold plans such as abolishing ICE or ending deportations. | "Undocumented immigrants should have a path to citizenship"; "ICE should be abolished" |
+| **NAT-1L** | -1 Center left | A moderate, lean-left immigration step with explicit centrist limits, for example legal status for a narrow group, or due process alongside border control. | "Dreamers brought to the US as children should be allowed to stay" |
 | **NAT-0** | 0 Center | Explicitly pairs stronger enforcement with legal pathways as a compromise. | "Immigration reform should pair stronger border security with a path to citizenship" |
-| **NAT-1R** | +1 Center right | Mainstream center-right policy: stronger border enforcement, lower immigration levels, deporting people who commit crimes, workplace verification. | "The US should hire more border agents" |
-| **NAT-2R** | +2 Right | Go well beyond mainstream center-right policy: end birthright citizenship, mass deportation, an immigration moratorium. | "Birthright citizenship should be ended" |
+| **NAT-1R** | +1 Center right | A moderate, lean-right immigration step with explicit centrist limits, for example more border agents alongside legal immigration, or deporting only people convicted of serious crimes. | "Only immigrants convicted of violent crimes should be deported" |
+| **NAT-2R** | +2 Right | The mainstream conservative immigration position: stronger border enforcement, deporting people in the country illegally, lower immigration, ending sanctuary policies, including bold plans such as mass deportation, ending birthright citizenship or an immigration moratorium. | "All illegal aliens should be deported"; "Birthright citizenship should be ended" |
 | **NAT-3R** | +3 Far right | Exclude or remove people because of ethnicity or religion, or strip citizenship from groups. | "Muslims should be barred from entering the country" |
 
 ### LAW: Law, justice, guns and elections
@@ -84,11 +85,11 @@ Covers: Policing, courts and sentencing, guns, the death penalty, voting rules a
 | Criterion | Score | Matches when the claim | Examples |
 |---|---|---|---|
 | **LAW-3L** | -3 Far left | Abolish the police or prisons. | "Police departments should be abolished" |
-| **LAW-2L** | -2 Left | Go well beyond mainstream center-left policy: sharply defund the police, mandatory gun buybacks, end most incarceration. | "Assault weapons should be subject to mandatory buybacks" |
-| **LAW-1L** | -1 Center left | Mainstream center-left policy: gun-safety laws (background checks, magazine limits, assault-weapon bans), police accountability, sentencing reform, wider voting access, abolishing the Electoral College. | "Large-capacity magazine limits should remain enforceable during appeals"; "The Electoral College should be abolished" |
+| **LAW-2L** | -2 Left | The mainstream liberal or progressive position: gun-safety laws (universal background checks, assault-weapon bans), police accountability, criminal-justice reform, ending cash bail, abolishing the death penalty, wider voting access, abolishing the Electoral College, including bold plans such as defunding the police or mandatory gun buybacks. | "Universal background checks should be required for every gun sale"; "The death penalty should be abolished" |
+| **LAW-1L** | -1 Center left | A moderate, lean-left step with explicit centrist limits, for example a narrow gun measure such as red-flag laws while protecting gun ownership, or police reform paired with funding. | "Red-flag laws should let courts remove guns from people in crisis, without other new gun restrictions" |
 | **LAW-0** | 0 Center | Explicitly balances public safety and civil liberties as a compromise. | "Police should get more funding and stronger accountability rules" |
-| **LAW-1R** | +1 Center right | Mainstream center-right policy: gun rights, tougher sentencing, more police funding, voter ID and election-security rules, the death penalty. | "Voters should be required to show photo ID" |
-| **LAW-2R** | +2 Right | Go well beyond mainstream center-right policy: repeal most gun laws, deploy the military for domestic policing, broadly restrict voting. | "All federal gun laws should be repealed" |
+| **LAW-1R** | +1 Center right | A moderate, lean-right step with explicit centrist limits, for example voter ID with free IDs provided, or tougher sentences for one specific violent crime. | "Voter ID should be required, with free IDs for everyone who needs one" |
+| **LAW-2R** | +2 Right | The mainstream conservative position: gun rights, tougher sentencing, more police funding, the death penalty, voter ID and election-security rules, limits on mail-in voting, including bold plans such as repealing most gun laws or using the military for domestic policing. | "The right to own a gun is a fundamental human right"; "Mail-in voting should be abolished" |
 | **LAW-3R** | +3 Far right | Suspend elections or civil liberties for opponents, rule by decree, or endorse political violence. | "The president should be able to suspend elections during a crisis" |
 
 ### ENV: Environment and energy
@@ -98,11 +99,11 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 | Criterion | Score | Matches when the claim | Examples |
 |---|---|---|---|
 | **ENV-3L** | -3 Far left | Abandon economic growth or the market economy to protect the climate. | "Economic growth should be abandoned to save the climate" |
-| **ENV-2L** | -2 Left | Go well beyond mainstream center-left policy: ban new fossil-fuel projects, rapid forced phase-out of fossil fuels. | "All new oil and gas drilling should be banned" |
-| **ENV-1L** | -1 Center left | Mainstream center-left policy: climate regulation, emission limits, renewable-energy subsidies, conservation limits. | "The federal government should subsidize solar installations for low-income families" |
+| **ENV-2L** | -2 Left | The mainstream liberal or progressive climate position: climate regulation, emission limits, carbon pricing, clean-energy subsidies, rejoining climate agreements, conservation, including bold plans such as banning new fossil-fuel projects. | "Climate change is an existential threat that requires urgent government action"; "All new oil and gas drilling should be banned" |
+| **ENV-1L** | -1 Center left | A moderate, lean-left step with explicit centrist limits, for example clean-energy incentives without mandates. | "Clean energy should get tax incentives, but no fossil fuel should be banned" |
 | **ENV-0** | 0 Center | Explicitly supports an all-of-the-above energy compromise. | "The US should expand both renewables and natural gas" |
-| **ENV-1R** | +1 Center right | Mainstream center-right policy: expand domestic oil and gas, faster permitting, put energy costs ahead of climate rules. | "Permitting for natural gas pipelines should be streamlined" |
-| **ENV-2R** | +2 Right | Go well beyond mainstream center-right policy: abolish the environmental regulator or leave all climate agreements and rules. | "The EPA should be abolished" |
+| **ENV-1R** | +1 Center right | A moderate, lean-right step with explicit centrist limits, for example faster permitting for every kind of energy, or market-based conservation. | "Permitting should be faster for both pipelines and wind farms" |
+| **ENV-2R** | +2 Right | The mainstream conservative energy position: expand domestic oil and gas, cut climate regulations, leave climate agreements, put energy costs ahead of climate rules, including bold plans such as abolishing the EPA. | "The US should drill for more oil and gas"; "The EPA should be abolished" |
 
 ### Cross-cutting topics (recorded, never scored)
 
@@ -114,25 +115,24 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 
 ## Step 3: combining rules
 
-- **C1 Country context.** Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, the leaning is Uncertain.
+- **C1 Country context.** Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, no leaning is given.
 - **E1 Evidence.** Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence.
 - **H1 Hedged wording.** If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).
-- **A1 Mixed signals.** If one topic area scores left (−1 or lower) and another scores right (+1 or higher), the leaning is Uncertain (mixed signals), never Center.
+- **A1 Mixed signals.** If one topic area scores left (−1 or lower) and another scores right (+1 or higher), no leaning is given (mixed signals), never Center.
 - **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center.
-- **A3 Center.** Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area is Uncertain (cross-cutting).
+- **A3 Center.** Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area gets no leaning (cross-cutting).
 - **A4 Far left and far right.** Far left or Far right is given only when a −3 or +3 criterion matches.
 - **A5 Between two levels.** If the claim's position sits between two levels, match no criterion for that topic area. A missing label is always acceptable; a wrong one is not.
 
-## Step 4: ideologies
+## Step 4: ideological leanings
 
-- **I1.** Assign an ideology only when the claim explicitly matches one of its core beliefs, quoted as evidence, and none of its exclusions applies.
-- **I2.** Never infer an ideology from the topic alone. For example, an abortion claim is Christian conservative only with religious framing, and Feminist only when argued as women's rights.
-- **I3.** An ideology is published only when all of these hold: the matched belief is distinctive; the independent probability of the ideology is at least 0.9; the independent probability that the claim takes a position is at least 0.8; the ideology is usually found at the claim's leaning, when it has one; the verifier agrees; I6 passes; and all 3 runs find it. Otherwise it is not published, and the reason is recorded.
-- **I4.** At most two ideologies per claim.
-- **I5.** When the independent check gives an ideology a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The ideology is added only if it then quotes a matching belief, and it still passes every other rule.
-- **I6.** When a neighbouring ideology has an independent probability of 0.5 or more, the scorer also takes a second look at it. If the claim matches one of the neighbour's beliefs too, the two cannot be told apart, so the ideology is published only if the neighbour is published as well.
+Two kinds, both of Geo type Ideology: **issue leanings** (one side of an issue, such as Pro-life) and **traditions** (classic ideologies, such as Conservative). A claim can have several.
 
-Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief is never enough to publish.
+- **I1.** Issue leanings: assign one when the claim itself takes that side of its issue, quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.
+- **I2.** Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply.
+- **I3.** An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least 0.8; for an issue leaning, its independent probability is at least 0.9 and every other side of the issue is at most 0.1; for a tradition, its independent probability is at least 0.8 and, when the claim has a leaning, the tradition is usually found there; the verifier agrees; and all 3 runs find it. Otherwise it is not published, and the reason is recorded.
+- **I4.** A claim has at most one political leaning but can have several ideological leanings, up to 5.
+- **I5.** When the independent check gives an ideological leaning a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule.
 
 ## Step 5: publish or leave blank
 
@@ -149,290 +149,629 @@ A leaning is published only when every rule below passes. If any fails, the clai
 
 Explanations quote the claim only through words checked to be in it, word for word. Notes written by the models are kept apart as unverified reviewer notes.
 
-## Ideology definition cards
+## Political leanings
 
-### Anarchist (Draft)
+From Armando's Political leanings table. A claim gets at most one, and never Nonpartisan.
 
-An outlook that rejects the state and other coercive hierarchies, favoring voluntary cooperation and self-organized communities. Most currents sit on the far left, while anarcho-capitalists apply the same distrust of the state to free markets.
+| Value | Scale | Description | Also called |
+|---|---|---|---|
+| **Far left** | 1 | A position at the left extreme of the political spectrum, favoring radical economic redistribution and systemic change, often through anti-capitalist or revolutionary politics. | Radical left; Hard left; Extreme left |
+| **Left** | 2 | A position on the left of the political spectrum, favoring social equality, expanded government programs and progressive social policy. | Left-wing; Leftist; Liberal (US usage) |
+| **Center left** | 3 | A moderate position left of center, supporting liberal social and economic policies while staying close to the political mainstream. | Centre-left; Lean left; Moderate left |
+| **Center** | 4 | A position near the middle of the political spectrum, balancing left and right perspectives without a consistent ideological tilt. | Centrist; Moderate; Middle of the road |
+| **Center right** | 5 | A moderate position right of center, supporting conservative social and economic policies while staying close to the political mainstream. | Centre-right; Lean right; Moderate right |
+| **Right** | 6 | A position on the right of the political spectrum, favoring limited government, free markets, traditional values and strong national defense. | Right-wing; Conservative (US usage) |
+| **Far right** | 7 | A position at the right extreme of the political spectrum, marked by ultranationalism, nativism and hostility to pluralist institutions. | Radical right; Hard right; Extreme right |
+| **Nonpartisan** | off the scale | For entities that claim no side (wire services, fact-checkers, courts). Off the 1-7 scale. | Neutral; Unaffiliated; Independent |
 
-- **T1** Abolish the state, or replace it with voluntary, self-organized communities. *(distinctive)*
-- **T2** Reject coercive hierarchies such as police, prisons or bosses in favour of mutual aid. *(shared)*
-- Not this ideology: Calls to shrink or reform government while keeping it.
-- Neighbours: Communist, Marxist, Libertarianism
-- Usually found at: Far left, Left, Right
-- Source: Geo Ideology description (draft until Armando approves)
+## Issue leanings
 
-### Christian conservative (Draft)
+One side of a political issue (Armando's "Ideological leanings" table). Values marked *not on Geo yet* are labelled but never put in a Geo proposal.
 
-An outlook that brings Christian moral teaching into politics, notably on abortion, marriage, religious liberty and education. In the US it forms a core constituency of the Republican right, often called the religious right.
+### Big Tech (Economy)
 
-- **T1** Grounds a political position explicitly in Christian faith or morality. *(distinctive)*
-- **T2** Restricts abortion, defends traditional marriage or religious liberty, argued on religious grounds. *(shared)*
-- Not this ideology: The same positions without religious framing (use Conservative or Traditionalist, or no ideology).
-- Neighbours: Traditionalist, Conservative, Paleoconservative
-- Usually found at: Center right, Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
+| Leaning | Description | Also called |
+|---|---|---|
+| **Deaccelerationist** *(not on Geo yet)* | Advocates slowing the pace or reducing the scale of technological development and deployment. | Big Tech critic; Anti-monopoly; Neo-Brandeisian; Trustbuster; Antitrust; Pro-breakup; Big Tech skeptic |
+| **Pro-innovation** *(not on Geo yet)* | Favors policies that enable technological innovation and growth in the technology sector. | Antitrust skeptic; Pro-Silicon Valley; Techno-optimist; Pro-tech; Pro-consumer welfare standard; Light-touch regulation |
+| **Techno-optimist** *(not on Geo yet)* | Believes technological progress and innovation are broadly beneficial and should generally be encouraged. |  |
+
+### Speech online (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-online safety** *(not on Geo yet)* | Supports measures that reduce online harms, especially for children, while shaping platform rules and content moderation. | Pro-platform accountability; Pro-misinformation controls; Pro-trust and safety; Pro-Kids Online Safety Act; Pro-platform regulation |
+| **Pro-internet freedom** *(not on Geo yet)* | Supports broad freedom of expression and access online, with limited government or platform restrictions. | Pro-free speech; Free speech advocate; Pro-First Amendment; Pro-free expression; Free speech maximalist; Censorship critic |
+
+### Regulation (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-deregulation** *(not on Geo yet)* | Favors reducing or simplifying government rules on businesses and markets. | Deregulationist; Pro-business; Small-government; Deregulator; Pro-regulatory reform; Red-tape cutter; Free-market |
+| **Pro-regulation** *(not on Geo yet)* | Favors government rules and oversight to address market failures, protect the public, or constrain harmful conduct. | Pro-consumer protection; Pro-oversight; Pro-public protections; Pro-safeguards; Pro-enforcement; Pro-watchdog |
+
+### Supreme Court (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-court reform** *(not on Geo yet)* | Supports changes to the structure, procedures, or ethics rules of the courts, especially the Supreme Court. | Pro-court expansion; Pro-Supreme Court term limits; Court packing (pejorative); Pro-Supreme Court reform; Pro-term limits; Pro-Supreme Court ethics code; Court reformer |
+| **Pro-judicial independence** *(not on Geo yet)* | Supports courts deciding cases independently, without political pressure from elected officials. | Originalist; Textualist; Pro-judicial restraint; Keep Nine; Pro-nine justices; Constitutionalist |
+
+### Policing (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-criminal justice reform** *(not on Geo yet)* | Supports changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes. | Pro-police reform; Pro-decarceration; Pro-bail reform; Pro-police accountability; Smart on crime; Pro-sentencing reform; Pro-reform prosecutor |
+| **Pro-law enforcement** *(not on Geo yet)* | Supports police and other law-enforcement agencies, their capacity, or their role in public safety. | Back the Blue; Tough on crime; Pro-police funding; Law and order; Pro-law and order; Pro-public safety; Pro-qualified immunity; "Back the Blue" |
+
+### Education (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-school choice** *(not on Geo yet)* | Supports giving families more options to choose schools, including public, charter, or private schools. | Pro-vouchers; Pro-charter schools; Pro-education freedom; Pro-parental choice; Pro-ESA; Pro-universal school choice; Parent empowerment |
+| **Pro-public education** *(not on Geo yet)* | Supports public schools and public investment in education. | Voucher skeptic; Public school advocate; Pro-public school funding; Pro-neighborhood schools; Voucher opponent |
+
+### Use of force (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Dove** *(not on Geo yet)* | Favors restraint in using military force and prefers diplomacy or limited commitments. | Restrainer; Non-interventionist; Anti-war; Realist; Pro-diplomacy; Prioritizer; Pro-military restraint |
+| **Hawk** *(not on Geo yet)* | Favors a more forceful foreign policy and is comparatively willing to use military power. | Interventionist; Internationalist; Primacist; Liberal internationalist; Neoconservative; Pro-deterrence |
+
+### Iran (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-Iran containment** *(not on Geo yet)* | Favors limiting Iran’s regional influence through deterrence, sanctions, or other pressure. | Pro-maximum pressure; Pro-strikes on Iran; Pro-pressure on Iran; Iran deal critic; Pro-sanctions on Iran; Pro-snapback |
+| **Pro-Iran diplomacy** *(not on Geo yet)* | Supports negotiating with Iran and using diplomacy to manage disputes or reduce conflict. | Pro-Iran deal; Iran dove; Pro-JCPOA; Pro-engagement with Iran; Pro-nuclear deal; Pro-diplomacy with Iran; Iran engager |
+
+### Trade (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-trade** *(not on Geo yet)* | Favors reducing barriers to international trade and maintaining open trade relationships. | Free trader; Pro-globalization; Pro-trade deals; Free-trade; Pro-open trade; Trade liberal |
+| **Protectionist** *(not on Geo yet)* | Supports trade barriers or domestic preferences intended to protect local industries and workers from foreign competition. | Pro-tariffs; Economic nationalist; Pro-fair trade; Trade hawk; Tariff hawk; America First trade; Pro-reshoring |
+
+### Welfare (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-welfare expansion** *(not on Geo yet)* | Supports expanding public benefits or social programs that provide income, health, or other assistance. | Pro-welfare state; Pro-social programs; Pro-safety net; Pro-social insurance; Pro-Medicaid expansion; Pro-SNAP |
+| **Pro-welfare reform** *(not on Geo yet)* | Supports changing public assistance programs, often by emphasizing work requirements, eligibility rules, or reduced dependency. | Pro-work requirements; Welfare skeptic; Workfare; Welfare-to-work; Pro-self-sufficiency; Pro-work |
+
+### Crypto (Climate energy & tech)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Crypto skeptic** *(not on Geo yet)* | Questions the benefits or safety of cryptocurrencies and favors caution or stronger safeguards. | Crypto critic; Pro-crypto regulation; Bitcoin skeptic; Pro-investor protection; Crypto regulation advocate; Pro-bank-style crypto rules |
+| **Pro-crypto** *(not on Geo yet)* | Supports cryptocurrencies and policies that enable their use or growth. | Crypto advocate; Pro-digital assets; Pro-Bitcoin; Crypto supporter; Crypto-friendly; Crypto booster; Pro-crypto innovation |
+
+### Minimum wage (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-wage flexibility** *(not on Geo yet)* | Favors allowing wages to adjust with market conditions and opposes mandatory wage floors or increases. | Minimum wage skeptic; Pro-entry-level jobs; Wage-mandate skeptic; Pro-small business; Free-market |
+| **Pro-living wage** *(not on Geo yet)* | Supports wages sufficient to meet basic living costs, often through a higher minimum wage. | Pro-$15 minimum wage; Raise the Wage; Fight for $15; Pro-higher minimum wage; Pro-wage floor; "Fight for $15" |
+
+### Taiwan (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-Taiwan independance** *(not on Geo yet)* | Supports Taiwan becoming or remaining formally independent from the People’s Republic of China. | Pro-Taiwan defense; Pro-strategic clarity; Taiwan hawk; Pro-Taiwan arms sales; Pro-defense commitment to Taiwan; Pro-Taiwan security |
+| **Pro-Taiwan reunification** *(not on Geo yet)* | Supports political unification of Taiwan with the People’s Republic of China. | Pro-One China policy; Taiwan restraint; Pro-status quo; Taiwan dove; Pro-cross-strait dialogue; Ambiguity advocate |
+
+### Gender identity (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Gender-critical** *(not on Geo yet)* | Holds that sex is a relevant category distinct from gender identity, especially in law or sex-separated settings. | Pro-sex-based rights; Pro-sex-based policies; Pro-women's sports; Pro-biological sex; Gender ideology critic; Pro-single-sex spaces; Pro-Protect Women's Sports Act |
+| **Pro-transgender rights** *(not on Geo yet)* | Supports equal legal rights and protections for transgender people. | Pro-trans rights; Pro-gender-affirming care; Pro-trans inclusion; Trans-inclusive; Trans ally; Pro-gender identity protections |
+
+### Alliances (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **NATO skeptic** *(not on Geo yet)* | Questions NATO’s purpose, costs, expansion, or members’ obligations. | Pro-burden shifting; America First; Alliance skeptic; Burden-shifter; Pro-dormant NATO; Pro-European defense autonomy |
+| **Transatlanticist** *(not on Geo yet)* | Supports close political, security, and diplomatic ties between North America and Europe, including NATO. | Atlanticist; Pro-alliances; NATO supporter; Pro-collective defense; Pro-Article 5 |
+
+### Climate (Climate energy & tech)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Climate skeptic** *(not on Geo yet)* | Questions the extent, causes, impacts, or policy implications of human-caused climate change. | Climate realist; Climate action skeptic; Climate denier (pejorative); Climate doubter; Lukewarmer; Climate contrarian |
+| **Pro-climate action** *(not on Geo yet)* | Supports public or private measures to reduce climate change or adapt to its effects. | Pro-climate; Climate hawk; Environmentalist; Climate advocate; Pro-decarbonization; Pro-net zero; Climate activist |
+
+### LGBTQ (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-LGBTQ rights** *(not on Geo yet)* | Supports equal legal rights and protections for LGBTQ people. | Pro-equality; Pro-same-sex marriage; Pro-gay rights; Pro-marriage equality; Pro-LGBTQ equality; LGBTQ ally; Pro-Equality Act |
+| **Social conservative** *(not on Geo yet)* | Favors traditional social norms and policies, often including conventional views of family, sexuality, and gender. | Pro-family values; Pro-natural marriage; Pro-family; Pro-biblical marriage; Pro-man-woman marriage |
+
+### Public health (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-vaccination** *(not on Geo yet)* | Supports vaccination and policies that promote uptake to protect public health. | Pro-public health measures; Pro-vaccine; Pro-immunization requirements; Pro-school vaccine requirements |
+| **Pro-vaccine choice** *(not on Geo yet)* | Supports individual choice about vaccination and opposes vaccine mandates. | Pro-vaccine exemptions; Pro-health freedom; Mandate skeptic; Pro-medical liberty; MAHA; Pro-informed consent |
+
+### Drugs (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-legalization** *(not on Geo yet)* | Supports removing criminal penalties for at least some currently prohibited drugs. | Pro-decriminalization; Pro-cannabis legalization; Pro-harm reduction; Drug policy reformer; Pro-drug policy reform; Pro-cannabis reform |
+| **Anti-legalization** *(not on Geo yet)* | Opposes legalizing currently prohibited drugs. | Pro-war on drugs; Drug warrior; Prohibitionist; Pro-recriminalization; Pro-drug enforcement; Pro-drug-free |
+
+### Religion (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Church-state separationist** *(not on Geo yet)* | Supports keeping government institutions and religious institutions legally separate. | Pro-separation of church and state; Secularist; Separationist; Pro-secular government; Pro-Establishment Clause |
+| **Pro-religious freedom** *(not on Geo yet)* | Supports the right to practice religion and protections for religious belief and exercise. | Pro-faith in public life; Pro-conscience rights; Accommodationist; Pro-religious exemptions; Pro-free exercise |
+
+### Foreign aid (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-USAID** *(not on Geo yet)* | Supports U.S. foreign assistance administered through USAID. | Pro-development aid; Development advocate; Aid advocate; Pro-global health aid; Pro-soft power |
+| **Pro-foreign aid reform** *(not on Geo yet)* | Supports changing foreign assistance programs to improve their effectiveness, scope, or accountability. | Pro-foreign aid cuts; Foreign aid critic; Aid skeptic; Pro-aid reform; Pro-America First aid; Pro-USAID overhaul |
+
+### AI (Climate energy & tech)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-AI acceleration** *(not on Geo yet)* | Favors rapid development and adoption of artificial intelligence, with limited constraints on innovation. | Accelerationist; e/acc; Pro-AI innovation; AI booster; Pro-light-touch AI; Pro-AI preemption; AI optimist |
+| **Pro-AI regulation** *(not on Geo yet)* | Supports rules or oversight governing the development or use of artificial intelligence. | Pro-AI safety; AI safety advocate; AI doomer (pejorative); Pro-AI guardrails; Pro-AI oversight; AI safetyist; Pro-state AI laws |
+
+### Israel–Palestine (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-Palestinian** *(not on Geo yet)* | Supports Palestinian rights, interests, or political self-determination. | Pro-Palestine; Palestinian rights advocate; Israel critic; Palestine solidarity; Pro-ceasefire; Pro-conditioning aid to Israel; Israel aid skeptic |
+| **Pro-Israel** *(not on Geo yet)* | Supports Israel’s security, interests, or right to exist as a Jewish state. | Israel supporter; Zionist; Israel hawk; Pro-Israel aid; Israel ally; Pro-US-Israel alliance |
+| **Anti-Zionist** *(not on Geo yet)* | Opposes Zionism, the movement supporting Jewish national self-determination in the historic land of Israel; views on Israel, Palestinians, and Jewish people vary among anti-Zionists. |  |
+
+### Housing (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Neighborhood preservation** *(not on Geo yet)* | Favors protecting the character or stability of existing residential neighborhoods, often through local land-use controls. | Pro-local control; Pro-neighborhood character; NIMBY (pejorative); Slow-growth; Neighborhood preservationist; Pro-single-family zoning; Pro-home rule |
+| **Pro-housing development** *(not on Geo yet)* | Supports building more housing or reducing barriers to new residential construction. | YIMBY; Pro-zoning reform; Pro-abundance; Pro-housing; Pro-supply; Pro-density; Pro-building |
+
+### Nuclear (Climate energy & tech)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-nuclear power** *(not on Geo yet)* | Supports using or expanding nuclear energy to generate electricity. | Pro-nuclear; Nuclear advocate; Nuclear supporter; Pro-nuclear energy; Pro-nuclear expansion; Pro-advanced reactors |
+| **Anti-nuclear** *(not on Geo yet)* | Opposes nuclear power or its expansion. | Nuclear critic; Nuclear opponent; Nuclear power opponent; Nuclear safety advocate; No-nukes |
+
+### Taxes (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Tax fairness** *(not on Geo yet)* | Supports tax rules intended to distribute the tax burden fairly, often through higher contributions from affluent taxpayers. | Pro-tax the rich; Pro-wealth tax; Pro-higher taxes on the wealthy; Pro-fair share; Tax-the-rich; Pro-billionaire tax |
+| **Pro-tax cuts** *(not on Geo yet)* | Supports reducing tax rates or the amount of tax people or businesses pay. | Tax cutter; Low-tax; Anti-tax; Supply-sider; Pro-growth; Taxpayer advocate; Pro-flat tax; "Read my lips: no new taxes" |
+
+### Immigration (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-immigration** *(not on Geo yet)* | Supports immigration or policies that make immigration and immigrant integration easier. | Pro-immigrant; Pro-amnesty; Open borders (pejorative); Immigrant rights advocate; Immigration advocate; Pro-pathway to citizenship; Pro-legalization |
+| **Pro-border security** *(not on Geo yet)* | Supports stronger enforcement and security measures at national borders. | Pro-deportation; Immigration restrictionist; Immigration hawk; Border hawk; Pro-enforcement; Low-immigration |
+
+### Ukraine (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-Ukraine** *(not on Geo yet)* | Supports Ukraine’s sovereignty and its defense against Russia’s invasion. | Pro-Ukraine aid; Ukraine supporter; Ukraine hawk; Russia hawk; Pro-Kyiv; Pro-sanctions on Russia |
+| **Pro-Russia** *(not on Geo yet)* | Supports Russia’s government, interests, or policies in a given dispute. | Pro-negotiated settlement; Ukraine aid critic; Pro-Russia (pejorative); Ukraine skeptic; Pro-peace deal; Ukraine dove; Prioritizer |
+
+### Social Security (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-entitlement reform** *(not on Geo yet)* | Supports changing large public benefit programs such as Social Security to address their long-term financing or structure. | Pro-Social Security reform; Pro-Social Security privatization; Entitlement reformer; Pro-solvency; Pro-personal accounts; Pro-retirement age increase |
+| **Benefit preservation** *(not on Geo yet)* | Supports maintaining existing public benefits, especially Social Security benefits. | Pro-Social Security; Pro-entitlements; Expand Social Security; Pro-Social Security 2100; Pro-benefit increase |
+
+### Student debt (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-repayment** *(not on Geo yet)* | Favors borrowers repaying student loans and opposes or limits loan cancellation. | Loan forgiveness skeptic; Pro-borrower responsibility; Pro-taxpayer fairness; Debt cancellation critic |
+| **Pro-student debt relief** *(not on Geo yet)* | Supports reducing or cancelling student loan debt for borrowers. | Pro-loan forgiveness; Pro-free college; Pro-debt cancellation; Cancel student debt; Pro-debt relief; Debt abolitionist |
+
+### Spending & deficit (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-public spending** *(not on Geo yet)* | Supports government spending on public programs, services, or investment. | Pro-government investment; Deficit dove; Keynesian; Pro-public investment; Fiscal dove; Deficit owl; Pro-stimulus |
+| **Pro-fiscal responsibility** *(not on Geo yet)* | Favors limiting deficits and public debt through spending discipline, revenue, or both. | Deficit hawk; Pro-balanced budget; Fiscal conservative; Budget hawk; Spending hawk; Debt hawk |
+
+### Elections (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-election integrity** *(not on Geo yet)* | Prioritizes safeguards intended to ensure elections are lawful, accurate, and secure. | Pro-voter ID; Pro-election security; Pro-proof of citizenship; Pro-SAVE Act; Pro-secure elections; Pro-voter roll integrity |
+| **Pro-voting rights** *(not on Geo yet)* | Supports protecting or expanding access to voting and participation in elections. | Pro-ballot access; Pro-mail voting; Pro-voter participation; Pro-democracy; Pro-automatic voter registration; Pro-John Lewis Act |
+
+### Guns (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-gun control** *(not on Geo yet)* | Supports laws that restrict or regulate access to firearms. | Pro-gun safety; Pro-gun reform; Gun-control advocate; Gun violence prevention; Pro-gun violence prevention; Pro-gun regulation; Pro-firearm regulation |
+| **Pro-gun rights** *(not on Geo yet)* | Supports the right to own and use firearms, with limited government restrictions. | Pro-Second Amendment; Pro-2A; Gun-rights advocate; Pro-gun; Second Amendment supporter; Pro-gun owner; Pro-constitutional carry |
+
+### Federalism (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-states' rights** *(not on Geo yet)* | Supports state governments’ authority relative to the federal government. | Federalist; Pro-local control; Pro-decentralization; Pro-federalism; Pro-Tenth Amendment; Pro-state sovereignty; Tenth Amendment advocate |
+| **Pro-federal authority** *(not on Geo yet)* | Supports federal government authority over states in areas assigned to or best handled by the national government. | Pro-national standards; Pro-federal preemption; Pro-national uniformity; Pro-federal supremacy; Pro-federal oversight |
+
+### Energy (Climate energy & tech)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-energy production** *(not on Geo yet)* | Supports expanding domestic energy production, including fossil-fuel or other energy sources. | Pro-oil and gas; Pro-drilling; Pro-energy dominance; All-of-the-above; Pro-American energy; Pro-energy independence; "Drill, baby, drill" |
+| **Pro-clean energy** *(not on Geo yet)* | Supports energy sources with lower greenhouse-gas emissions, such as renewables or nuclear power. | Pro-green energy; Clean energy advocate; Pro-energy transition; Pro-solar and wind; Pro-clean energy abundance |
+
+### Healthcare (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-universal healthcare** *(not on Geo yet)* | Supports guaranteeing access to health coverage for everyone, usually through public programs or universal coverage rules. | Pro-Medicare for All; Pro-single-payer; Pro-public option; Pro-universal coverage; Medicare for All; Health care as a right; Pro-government health care |
+| **Free-market healthcare** *(not on Geo yet)* | Favors market competition and private choice in healthcare, with a limited role for government. | Pro-private healthcare; Pro-health savings accounts; Obamacare critic; Consumer-driven healthcare; Pro-patient choice; Pro-market competition |
+
+### China (Foreign policy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-China engagement** *(not on Geo yet)* | Supports diplomacy, trade, or cooperation with China rather than isolating or confronting it. | China dove; Pro-détente; Pro-trade with China; Engager; Pro-engagement; Competitive coexister; Pro-coexistence |
+| **Pro-China containment** *(not on Geo yet)* | Favors limiting China’s power or influence through deterrence, alliances, or other pressure. | Pro-decoupling; China skeptic; New Cold Warrior; Pro-strategic competition; Pro-containment; China critic |
+
+### DEI (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-meritocracy** *(not on Geo yet)* | Favors selection and advancement based on individual ability and performance rather than group identity or preferential treatment. | Anti-DEI; Pro-merit; Pro-colorblind policy; Pro-MEI; Pro-race-neutral policy; Pro-equal treatment |
+| **Pro-equity** *(not on Geo yet)* | Supports policies intended to reduce disparities and improve fair access or outcomes across groups. | Pro-diversity; Pro-affirmative action; Pro-inclusion; DEI supporter; Pro-race-conscious policy; Pro-DEIA |
+
+### Death penalty (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-death penalty** *(not on Geo yet)* | Supports retaining or applying capital punishment for certain serious crimes. | Pro-capital punishment; Death penalty supporter; Retentionist; Death penalty retentionist; Pro-retention |
+| **Death penalty abolitionist** *(not on Geo yet)* | Supports ending capital punishment. | Anti-death penalty; Pro-abolition of capital punishment; Abolitionist; Pro-abolition; Pro-repeal; Death penalty opponent |
+
+### Privacy (Justice & democracy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-national security** *(not on Geo yet)* | Prioritizes protecting the country from threats, including through security powers and surveillance. | Pro-national security surveillance; Pro-FISA; Security hawk; National security hawk; Pro-Section 702; Pro-clean reauthorization |
+| **Pro-privacy** *(not on Geo yet)* | Supports protecting personal information and limiting unwarranted data collection or surveillance. | Pro-civil liberties; Pro-data protection; Surveillance critic; Privacy hawk; Pro-warrant requirement; Pro-Fourth Amendment; Civil libertarian |
+
+### Abortion (Society)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-life** *(not on Geo yet)* | Opposes abortion, especially on the grounds that fetal life should receive legal protection. | Anti-abortion (AP style); Pro-abortion restrictions; Pro-personhood; Abortion abolitionist; Pro-unborn |
+| **Pro-choice** *(not on Geo yet)* | Supports legal access to abortion and the right to decide whether to continue a pregnancy. | Abortion-rights (AP style); Pro-abortion rights; Pro-reproductive rights; Pro-reproductive freedom; Pro-bodily autonomy; Reproductive justice; Pro-Roe; "My body, my choice" |
+
+### Labor (Economy)
+
+| Leaning | Description | Also called |
+|---|---|---|
+| **Pro-union** *(not on Geo yet)* | Supports labor unions and collective bargaining rights for workers. | Pro-labor; Pro-collective bargaining; Pro-worker; Pro-organized labor; Union ally; Pro-PRO Act; Labor-backed |
+| **Anti-union** *(not on Geo yet)* | Opposes labor unions or supports restricting their power, membership, or collective bargaining. | Pro-open shop; Union skeptic; Right-to-work; Pro-voluntary unionism; Pro-worker freedom; Pro-paycheck protection |
+
+## Traditions
+
+Classic ideologies. A tradition applies when the claim's position is characteristic of it (rule I2).
 
 ### Classical liberal (Draft)
 
-An outlook rooted in individual rights, the rule of law, limited government and free markets, as framed by thinkers such as Locke and Adam Smith. It is the common ancestor of modern liberals and libertarians.
+A political outlook emphasizing individual rights, civil liberties, the rule of law, limited government, and market economies.
 
-- **T1** Limits government power to protect individual rights, explicitly as a matter of liberty. *(shared)*
-- **T2** Free markets with limited government, framed as protecting individual liberty. *(shared)*
-- **T3** Invokes the classical-liberal tradition of limited, constitutional government (Locke, Smith, natural rights). *(distinctive)*
-- Not this ideology: General support for free speech or the rule of law (shared across the mainstream; see G4).
-- Neighbours: Libertarianism, Liberal, Neoliberal, Conservative
+- **T1** Protect individual rights and civil liberties, including free speech, against state power.
+- **T2** Limited, constitutional government under the rule of law.
+- **T3** Free markets defended as a matter of individual liberty.
+- Not this tradition: A principle shared across the mainstream, such as the rule of law in general (see G4).
+- Related: Libertarian, Libertarianism, Liberal, Neoliberal, Conservative
 - Usually found at: Center left, Center, Center right, Right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Communist (Draft)
-
-An outlook that aims for a classless society in which property is held in common and the state eventually withers away. In practice it has meant one-party states with planned economies, at the far left.
-
-- **T1** Common ownership of property and the means of production, toward a classless society. *(distinctive)*
-- **T2** Revolution or one-party rule to achieve it. *(distinctive)*
-- Not this ideology: Reforms within a market economy, however large.
-- Neighbours: Marxist, Socialist, Anarchist
-- Usually found at: Far left
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Conservative (Draft)
-
-An outlook that values tradition, limited government, free enterprise and established social and moral norms, preferring gradual change over rupture. It anchors the center right and the right, though its priorities vary widely between countries.
-
-- **T1** Preserve established institutions and norms; prefer gradual change over rupture. *(shared)*
-- **T2** Combines limited government and free enterprise with traditional social norms. *(distinctive)*
-- Not this ideology: A single economic policy (such as a tax cut) on its own: give a leaning, not an ideology.
-- Neighbours: Traditionalist, Christian conservative, Paleoconservative, Neoconservative, Classical liberal
-- Usually found at: Center right, Right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Democratic socialist (Draft)
-
-An outlook that seeks social ownership of key industries and a strong welfare state, reached through elections and democratic institutions rather than revolution. In US politics it stands to the left of mainstream liberals.
-
-- **T1** Social ownership of key industries or services, reached through democratic means. *(distinctive)*
-- **T2** Universal public provision (single-payer healthcare, free college) as a step beyond the welfare state. *(shared)*
-- Not this ideology: Revolution or one-party rule (Communist).
-- Neighbours: Socialist, Social democrat, Progressive
-- Usually found at: Left, Far left
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Environmentalist (Draft)
-
-An outlook that puts protecting ecosystems and the climate at the center of politics, often demanding limits on growth, pollution and fossil fuels. Green parties carry it, mostly on the left of the spectrum.
-
-- **T1** Puts protecting ecosystems or the climate ahead of competing economic goals. *(distinctive)*
-- **T2** Limits on pollution, fossil fuels or growth. *(shared)*
-- Not this ideology: An environmental benefit mentioned only in passing.
-- Neighbours: Progressive
-- Usually found at: Far left, Left, Center left, Center
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Feminist (Draft)
-
-An outlook that seeks equal political, economic and social rights for women and challenges gender-based discrimination. Its currents range from liberal to radical, so feminists appear across the spectrum, most often on the left.
-
-- **T1** Explicitly seeks equal rights or status for women, or challenges gender-based discrimination. *(distinctive)*
-- **T2** Argues reproductive or bodily autonomy as a matter of women's rights. *(shared)*
-- Not this ideology: An abortion or family claim not argued in terms of women's equality or rights.
-- Neighbours: Progressive, Liberal
-- Usually found at: Far left, Left, Center left, Center
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Globalist (Draft)
-
-An outlook that favors international cooperation, open trade, migration and strong global institutions to address shared problems. Critics also use the label pejoratively for elites accused of putting world interests ahead of national ones.
-
-- **T1** Gives international institutions authority over national governments, or argues for global governance as such. *(distinctive)*
-- **T2** More international cooperation, open trade or migration as a global good. *(shared)*
-- Not this ideology: A narrow bilateral deal or foreign investment in one project.
-- Not this ideology: Use only when the claim itself argues for international governance; the term is often used pejoratively.
-- Neighbours: Neoliberal, Liberal
-- Usually found at: Center left, Center, Center right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Humanist (Draft)
-
-A worldview that grounds ethics and politics in reason, human dignity and shared welfare rather than religious authority. It cuts across the left-right spectrum, so its followers can sit anywhere from the left to the center right.
-
-- **T1** Grounds ethics or policy explicitly in reason and human dignity rather than religious authority. *(distinctive)*
-- Not this ideology: General humanitarian concern without that grounding.
-- Neighbours: Secularist
-- Usually found at: Left, Center left, Center, Center right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Islamist (Draft)
-
-An outlook that wants Islamic law and principles to shape government and public life. Its currents range from parties working through elections to armed movements, and it is distinct from the Muslim faith itself.
-
-- **T1** Islamic law or principles should shape government, law or public life. *(distinctive)*
-- Not this ideology: Claims about Muslims' rights or religious freedom.
-- Neighbours: none
-- Usually found at: Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Isolationist (Draft)
-
-An outlook that wants a country to stay out of foreign wars, alliances and entanglements and to focus on domestic affairs. It has appeared on both the left and the right of American politics.
-
-- **T1** Stay out of foreign wars, alliances or entanglements as a general rule. *(distinctive)*
-- **T2** Put domestic affairs ahead of foreign commitments. *(shared)*
-- Not this ideology: Opposition to one specific intervention argued on its own merits.
-- Neighbours: Paleoconservative, MAGA, Populist
-- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Liberal (Draft)
-
-An outlook built on civil liberties, individual rights and an active state that reduces inequality through gradual reform within existing institutions. In the US the label means center left, while elsewhere it often signals free-market positions.
-
-- **T1** Gradual reform within existing institutions to reduce inequality or expand rights. *(shared)*
-- **T2** Civil liberties and individual rights protected by an active state. *(shared)*
-- Not this ideology: A single policy position: Liberal is broad and has no distinctive belief, so it is never published from one claim alone.
-- Neighbours: Progressive, Social democrat, Classical liberal, Neoliberal
-- Usually found at: Left, Center left, Center
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Libertarianism (Draft)
-
-An outlook that puts individual liberty first and wants minimal government in both economic and personal life, from taxes to drug policy. It pairs free-market economics with socially liberal stances, so it fits poorly on a single left-right axis.
-
-- **T1** Minimal government in both economic and personal life, argued together. *(distinctive)*
-- **T2** Oppose state restrictions on personal choices (drugs, speech, guns) as a matter of individual liberty. *(shared)*
-- **T3** Free markets with minimal taxation and regulation, argued as liberty. *(shared)*
-- Not this ideology: Deregulation argued for growth rather than liberty (see Neoliberal).
-- Neighbours: Classical liberal, Anarchist, Neoliberal
-- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
-- Source: Geo description of the duplicate value Libertarian; Libertarianism has none in Geo (draft until Armando approves)
-
-### MAGA (Draft)
-
-The political movement behind Donald Trump's Make America Great Again agenda, combining nationalism, America First trade and foreign policy, restrictive immigration and hostility to established institutions. It has been the dominant current on the Republican right since 2016.
-
-- **T1** Explicitly invokes Trump, America First or Make America Great Again. *(distinctive)*
-- **T2** Combines restrictive immigration, America First trade and hostility to established institutions. *(shared)*
-- Not this ideology: A single restrictive policy without MAGA framing: give a leaning, or Nationalist with national-identity framing.
-- Neighbours: Paleoconservative, Nationalist, Populist
-- Usually found at: Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Marxist (Draft)
-
-An outlook that reads history and politics through class struggle and the critique of capitalism developed by Karl Marx. It shapes communist, socialist and academic currents alike, mostly on the far left and the left.
-
-- **T1** Explains politics through class struggle or a critique of capitalism as exploitation. *(distinctive)*
-- Not this ideology: Inequality concerns without class analysis.
-- Neighbours: Communist, Socialist
-- Usually found at: Far left, Left
-- Source: Geo Ideology description (draft until Armando approves)
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
 ### Nationalist (Draft)
 
-An outlook that puts the interests, identity and sovereignty of the nation first, often skeptical of immigration and international institutions. It can appear on the left in independence movements, but today mostly sits on the right.
+An outlook prioritizing national identity, sovereignty, and interests. Nationalist movements may be left- or right-wing and vary in their views on immigration and international institutions.
 
-- **T1** Puts the nation's interests, identity or sovereignty first, explicitly over international bodies or outsiders. *(distinctive)*
-- **T2** Restricts immigration to protect national identity. *(shared)*
-- Not this ideology: A state's official position in a territorial dispute (see G4).
-- Not this ideology: Border management without national-identity framing.
-- Neighbours: MAGA, Paleoconservative, Populist
-- Usually found at: Center right, Right, Far right, Left
-- Source: Geo Ideology description (draft until Armando approves)
+- **T1** Put national identity, sovereignty and interests first, including over international bodies.
+- Not this tradition: A state's official position in a territorial or sovereignty dispute (see G4).
+- Related: MAGA, Paleoconservative, Populist
+- Usually found at: Left, Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
-### Neoconservative (Draft)
+### Globalist (Draft)
 
-An outlook that pairs conservative domestic views with an assertive foreign policy, using American power to spread democracy and confront rivals. It shaped Republican foreign policy in the 2000s and sits on the center right.
+A political outlook favoring international cooperation, cross-border trade, and global institutions to address shared issues. The label is also used pejoratively, so context matters.
 
-- **T1** Uses national power assertively abroad to spread democracy or confront rivals. *(distinctive)*
-- Not this ideology: Defensive aid or deterrence alone.
-- Neighbours: Conservative
-- Usually found at: Center right, Right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Neoliberal (Draft)
-
-An outlook that favors free markets, deregulation, privatization, open trade and fiscal restraint as the engine of growth. It shaped center-left and center-right governments alike from the 1980s onward, so it crosses party lines.
-
-- **T1** Free markets, deregulation, privatization and open trade as the general engine of growth, not one sector's rules. *(distinctive)*
-- **T2** Fiscal restraint. *(shared)*
-- **T3** Cutting the regulations of one sector or project to spur growth. *(shared)*
-- Not this ideology: Deregulation argued as individual liberty (see Libertarianism).
-- Neighbours: Classical liberal, Libertarianism, Conservative, Globalist
-- Usually found at: Center left, Center, Center right, Right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Paleoconservative (Draft)
-
-An outlook that defends tradition, national sovereignty and restricted immigration while opposing foreign interventions and free-trade deals. It predates MAGA but shares much of its program and sits on the right.
-
-- **T1** Combines tradition, national sovereignty and restricted immigration with opposition to foreign intervention or free trade. *(distinctive)*
-- Not this ideology: Any one of these positions on its own.
-- Neighbours: MAGA, Traditionalist, Isolationist, Nationalist
-- Usually found at: Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Populist (Draft)
-
-An outlook that frames politics as a struggle between ordinary people and a corrupt elite, and claims to speak for the people directly. It attaches to both left and right programs, so populists appear at both ends.
-
-- **T1** Frames politics as ordinary people against a corrupt elite. *(distinctive)*
-- Not this ideology: Criticism of a specific official or company without people-versus-elite framing.
-- Neighbours: MAGA, Nationalist, Progressive
-- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
-
-### Progressive (Draft)
-
-An outlook that seeks deep structural change to reduce economic inequality, advance racial justice and act on climate, rather than incremental reform. In US politics it sits on the left, beyond mainstream liberals.
-
-- **T1** Deep structural change to reduce economic inequality, advance racial justice or act on climate, beyond incremental reform. *(distinctive)*
-- **T2** Expand rights and protections for marginalized groups. *(shared)*
-- Not this ideology: Incremental reform within existing programs (see Liberal).
-- Neighbours: Liberal, Democratic socialist, Social democrat, Environmentalist
-- Usually found at: Left, Center left
-- Source: Geo Ideology description (draft until Armando approves)
+- **T1** International cooperation and global institutions to address shared problems.
+- **T2** Open cross-border trade.
+- **T3** Migration as a benefit.
+- Not this tradition: A narrow bilateral deal or one foreign investment.
+- Not this tradition: Never use the label as an insult: it applies only to the claim's own position.
+- Related: Neoliberal, Liberal
+- Usually found at: Left, Center left, Center, Center right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
 ### Secularist (Draft)
 
-An outlook that wants religion kept separate from the state, with laws and public institutions grounded in non-religious reasoning. It defends freedom of belief for all and appears across the spectrum, more often on the left.
+An outlook supporting separation of religious institutions from state authority and secular governance, while protecting freedom of belief.
 
-- **T1** Keep religion separate from the state, law or public institutions. *(distinctive)*
-- Not this ideology: Defending one group's religious freedom.
-- Neighbours: Humanist, Liberal
+- **T1** Separate religious institutions from state authority; secular government and law.
+- **T2** Freedom of belief for everyone.
+- Not this tradition: Defending one group's religious freedom.
+- Related: Humanist, Liberal
 - Usually found at: Left, Center left, Center, Center right
-- Source: Geo Ideology description (draft until Armando approves)
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
-### Social democrat (Draft)
+### Conservative (Draft)
 
-An outlook that keeps a market economy but tames it with a large welfare state, strong unions and progressive taxation. It accepts capitalism and reforms it from within, which places it on the center left.
+A political outlook that generally values tradition and social continuity and favors gradual change; priorities such as limited government, markets, and social norms vary by context.
 
-- **T1** Explicitly pairs keeping a market economy with a larger welfare state or stronger unions. *(distinctive)*
-- **T2** Higher taxes on the wealthy or on corporations to fund public services or welfare. *(shared)*
-- **T3** Worker representation and strong labour rights within firms. *(shared)*
-- Not this ideology: Social ownership of industries (see Democratic socialist or Socialist).
-- Neighbours: Democratic socialist, Liberal, Progressive
-- Usually found at: Center left, Left
-- Source: Geo Ideology description (draft until Armando approves)
+- **T1** Preserve tradition, established institutions and social continuity; prefer gradual change.
+- **T2** Traditional family and social norms.
+- **T3** Limited government and markets.
+- Not this tradition: A technical policy with no link to tradition, social norms or limited government.
+- Related: Traditionalist, Christian conservative, Paleoconservative, Neoconservative, Classical liberal
+- Usually found at: Center right, Right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Paleoconservative (Draft)
+
+A U.S. conservative current emphasizing national sovereignty, cultural tradition, restrictive immigration, and restraint in foreign intervention.
+
+- **T1** National sovereignty and cultural tradition.
+- **T2** Restrictive immigration.
+- **T3** Restraint in foreign intervention.
+- Not this tradition: A single policy with no link to sovereignty, tradition or restraint.
+- Related: MAGA, Traditionalist, Isolationist, Nationalist
+- Usually found at: Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### MAGA (Draft)
+
+The U.S. political movement organized around Donald Trump's Make America Great Again slogan, commonly associated with America First nationalism, restrictive immigration, and opposition to established political institutions.
+
+- **T1** Donald Trump's Make America Great Again agenda and America First nationalism.
+- **T2** Restrictive immigration and enforcement under Trump.
+- **T3** Opposition to established political institutions.
+- Not this tradition: A restrictive position that does not invoke Trump, America First or MAGA (use the issue leaning instead).
+- Related: Paleoconservative, Nationalist, Populist
+- Usually found at: Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Democratic socialist (Draft)
+
+An outlook supporting social ownership or public control of key sectors and broad social protections pursued through democratic elections and institutions.
+
+- **T1** Social ownership or public control of key sectors.
+- **T2** Universal public provision such as single-payer healthcare or free college, and broad social protections.
+- **T3** Reaching these through elections and democratic institutions.
+- Not this tradition: Revolution or one-party rule (see Communist).
+- Related: Socialist, Social democrat, Progressive
+- Usually found at: Far left, Left
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Liberal (Draft)
+
+In U.S. politics, a center-left outlook emphasizing civil liberties, individual rights, social equality, and government action to address economic or social problems. The term has different meanings internationally.
+
+- **T1** Civil liberties and individual rights.
+- **T2** Social equality.
+- **T3** Government action to address economic or social problems.
+- Not this tradition: The international, free-market sense of the word: in Geo, Liberal means the US center-left outlook.
+- Related: Progressive, Social democrat, Classical liberal, Neoliberal
+- Usually found at: Left, Center left, Center
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
 ### Socialist (Draft)
 
-An outlook that wants the means of production and key services owned or tightly steered by the public, to end class inequality. It ranges from gradual reformers to revolutionaries and sits firmly on the left.
+An outlook supporting social, public, or worker ownership or control of major productive resources. Socialist traditions differ on markets, democracy, and how ownership should work.
 
-- **T1** Public ownership or tight public control of the means of production or key services, to end class inequality. *(distinctive)*
-- **T2** Legal limits on private wealth to achieve economic equality. *(shared)*
-- Not this ideology: Welfare expansion within a market economy (see Social democrat).
-- Neighbours: Democratic socialist, Communist, Marxist, Social democrat
+- **T1** Social, public or worker ownership or control of major productive resources.
+- **T2** Legal limits on private wealth to reach economic equality.
+- Not this tradition: Welfare expansion within a market economy (see Social democrat).
+- Related: Democratic socialist, Communist, Marxist, Social democrat
 - Usually found at: Far left, Left
-- Source: Geo Ideology description (draft until Armando approves)
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Feminist (Draft)
+
+An outlook seeking political, economic, and social equality for women and opposing gender-based discrimination. Feminist traditions differ in their analysis and policy priorities.
+
+- **T1** Political, economic and social equality for women.
+- **T2** Oppose gender-based discrimination.
+- Not this tradition: A family or abortion position not argued in terms of women's equality or rights.
+- Related: Progressive, Liberal
+- Usually found at: Far left, Left, Center left, Center
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Marxist (Draft)
+
+An outlook based on Karl Marx's critique of capitalism and analysis of class relations and class struggle. Marxists differ on political strategy and social organization.
+
+- **T1** Critique of capitalism as exploitation or as doing more harm than good.
+- **T2** Analysis of politics through class relations and class struggle.
+- Not this tradition: Inequality concerns with no critique of capitalism or class analysis.
+- Related: Communist, Socialist
+- Usually found at: Far left, Left
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Neoconservative (Draft)
+
+A conservative outlook associated with an assertive U.S. foreign policy, military strength, and support for promoting democracy abroad.
+
+- **T1** An assertive foreign policy that uses military strength or pressure.
+- **T2** Promoting democracy abroad and confronting rivals.
+- Not this tradition: Defensive aid or deterrence alone.
+- Related: Conservative
+- Usually found at: Center right, Right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Communist (Draft)
+
+A political ideology aiming for a classless society with collective ownership of productive resources. Historical communist governments have often relied on one-party rule and centralized planning.
+
+- **T1** Collective ownership of productive resources, toward a classless society.
+- **T2** Overthrow capitalism, by revolution or one-party rule.
+- Not this tradition: Reforms within a market economy, however large.
+- Related: Marxist, Socialist, Anarchist
+- Usually found at: Far left
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Social democrat (Draft)
+
+An outlook supporting a market economy alongside strong public services, social welfare, labor protections, unions, and progressive taxation, generally pursued through democratic reform.
+
+- **T1** A market economy with strong public services and social welfare.
+- **T2** Labor protections, unions and higher wages for workers.
+- **T3** Progressive taxation, pursued through democratic reform.
+- Not this tradition: Social ownership of industries (see Democratic socialist or Socialist).
+- Related: Democratic socialist, Liberal, Progressive
+- Usually found at: Left, Center left
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Humanist (Draft)
+
+A worldview grounding ethics in human dignity, reason, and human welfare; humanist traditions vary in how they relate to religion.
+
+- **T1** Ground ethics and policy in human dignity, reason and human welfare rather than religious authority.
+- Not this tradition: General humanitarian concern without that grounding.
+- Related: Secularist
+- Usually found at: Left, Center left, Center, Center right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 
 ### Traditionalist (Draft)
 
-An outlook that sees inherited customs, religion and social institutions as the foundation of a good society and distrusts rapid change. It underpins several conservative currents and sits on the right.
+An outlook that values inherited customs and institutions and favors preserving social continuity over rapid change.
 
-- **T1** Inherited customs, religion or traditional institutions (family, gender roles) as the foundation of society. *(distinctive)*
-- **T2** Distrust of rapid social change. *(shared)*
-- Not this ideology: Nostalgia without a claim about how society should be ordered.
-- Neighbours: Conservative, Christian conservative, Paleoconservative
+- **T1** Inherited customs, institutions and traditional values as the foundation of society.
+- **T2** Preserve social continuity over rapid change.
+- Not this tradition: Nostalgia without a claim about how society should be ordered.
+- Related: Conservative, Christian conservative, Paleoconservative
 - Usually found at: Center right, Right, Far right
-- Source: Geo Ideology description (draft until Armando approves)
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Neoliberal (Draft)
+
+A political and economic outlook favoring market competition and private enterprise, often including deregulation, privatization, free trade, and fiscal restraint. The term is contested.
+
+- **T1** Market competition and private enterprise as the general engine of growth.
+- **T2** Deregulation, privatization, free trade and fiscal restraint as a program.
+- Not this tradition: Cutting the rules of one sector or project only.
+- Not this tradition: Deregulation argued as individual liberty (see Libertarian).
+- Related: Classical liberal, Libertarian, Libertarianism, Conservative, Globalist
+- Usually found at: Center left, Center, Center right, Right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Populist (Draft)
+
+A political outlook framing politics as a struggle between ordinary people and a powerful elite and claiming to represent the people. It can be left- or right-wing.
+
+- **T1** Frame politics as ordinary people against a powerful elite, claiming to represent the people.
+- Not this tradition: Criticism of a specific official or company without people-versus-elite framing.
+- Related: MAGA, Nationalist, Progressive
+- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Libertarian (Draft)
+
+An outlook prioritizing individual liberty and sharply limited government, usually combining free-market economics with broad personal freedoms.
+
+- **T1** Sharply limited government.
+- **T2** Free markets and opposition to economic mandates such as minimum wages.
+- **T3** Broad personal freedoms, for example on drugs, guns and speech.
+- Not this tradition: Deregulation argued for growth rather than liberty (see Neoliberal).
+- Related: Libertarianism, Classical liberal, Anarchist, Neoliberal
+- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Islamist (Draft)
+
+A political outlook advocating that Islamic principles or law influence government and public life. Islamist movements vary widely and are distinct from Muslim identity and the religion of Islam.
+
+- **T1** Islamic principles or law should shape government and public life.
+- Not this tradition: Claims about Muslims' rights, Muslim identity or the religion of Islam itself.
+- Related: none
+- Usually found at: Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Environmentalist (Draft)
+
+An outlook prioritizing protection of the natural environment and ecosystems, often through conservation, pollution reduction, and climate action.
+
+- **T1** Protect the natural environment and ecosystems; conservation.
+- **T2** Reduce pollution.
+- **T3** Urgent action against climate change.
+- Not this tradition: An environmental benefit mentioned only in passing.
+- Related: Progressive
+- Usually found at: Far left, Left, Center left, Center
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Progressive (Draft)
+
+A U.S. political outlook supporting reforms or structural changes to expand social and economic equality, civil rights, and environmental protection.
+
+- **T1** Reforms or structural change to expand social and economic equality.
+- **T2** Civil rights and equity, including diversity, equity and inclusion.
+- **T3** Environmental protection.
+- Not this tradition: A small technical adjustment with no equality, civil-rights or environmental aim.
+- Related: Liberal, Democratic socialist, Social democrat, Environmentalist
+- Usually found at: Far left, Left, Center left
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Libertarianism (Draft)
+
+A political philosophy that prioritizes individual liberty and limits state power in economic and personal affairs. Libertarian traditions differ on the proper scope of government.
+
+- **T1** Individual liberty first, with state power limited in economic and personal affairs.
+- **T2** Rights such as gun ownership or free expression defended as individual liberty.
+- Not this tradition: Deregulation argued for growth rather than liberty (see Neoliberal).
+- Related: Libertarian, Classical liberal, Anarchist, Neoliberal
+- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Christian conservative (Draft)
+
+A political outlook that draws on Christian beliefs to shape public policy, particularly on abortion, marriage, religious liberty, and education.
+
+- **T1** Restrict or ban abortion.
+- **T2** Defend traditional marriage and the family as the basis of society.
+- **T3** Protect religious liberty and the place of faith in public life and education.
+- Not this tradition: Positions that touch none of abortion, marriage and family, religion or education.
+- Related: Traditionalist, Conservative, Paleoconservative
+- Usually found at: Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Isolationist (Draft)
+
+An outlook favoring limited involvement in foreign wars, alliances, and international commitments, with priority given to domestic affairs.
+
+- **T1** Limit involvement in foreign wars, alliances and international commitments.
+- **T2** Put domestic affairs ahead of foreign commitments.
+- Not this tradition: Opposition to one intervention argued only on that intervention's merits.
+- Related: Paleoconservative, MAGA, Populist
+- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
+
+### Anarchist (Draft)
+
+A political outlook opposing the state and other coercive hierarchies and favoring voluntary association and self-governance. Anarchist traditions differ widely on property, markets, and social organization.
+
+- **T1** Abolish the state or replace it with voluntary association and self-governance.
+- **T2** Reject coercive hierarchies such as police, prisons or bosses.
+- Not this tradition: Calls to shrink or reform government while keeping it.
+- Related: Communist, Marxist, Libertarian, Libertarianism
+- Usually found at: Far left, Left, Right
+- Source: Armando's Notion doc "Leanings" (2026-10-23)
 

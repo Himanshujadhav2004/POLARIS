@@ -1,0 +1,335 @@
+{
+  "version": "armando-examples-v1",
+  "source": "docs/armando/leanings-2026-10-23, Exemple column: the example claim Armando linked to each ideological leaning",
+  "items": [
+    {
+      "id": "002f8e4ba6274856b55d4226b01bc9c8",
+      "text": "Hate speech should be illegal",
+      "leanings": [
+        "Pro-online safety"
+      ]
+    },
+    {
+      "id": "0e273e29e59f5d7496889b9a2d8d54a0",
+      "text": "Market economies require government regulation to address issues like monopolies",
+      "leanings": [
+        "Pro-regulation"
+      ]
+    },
+    {
+      "id": "bb559328e94e779316b53684a9bc9ad9",
+      "text": "Supreme Court reform should resume after the midterms",
+      "leanings": [
+        "Pro-court reform"
+      ]
+    },
+    {
+      "id": "7e10e46dcaee57c684e09d5acf37741b",
+      "text": "Allowing convicted prisoners to vote can be a tool for criminal justice reform",
+      "leanings": [
+        "Pro-criminal justice reform"
+      ]
+    },
+    {
+      "id": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "text": "Families already paying private-school tuition deserve federal school-choice support",
+      "leanings": [
+        "Pro-school choice"
+      ]
+    },
+    {
+      "id": "079d07a77a4249b58c498db29c68994d",
+      "text": "The United States should stop policing the world",
+      "leanings": [
+        "Dove",
+        "Paleoconservative",
+        "Isolationist"
+      ]
+    },
+    {
+      "id": "187ce0019d6146cba0d08ad9bbcef17b",
+      "text": "Raising the minimum wage kills jobs",
+      "leanings": [
+        "Pro-wage flexibility",
+        "Libertarian"
+      ]
+    },
+    {
+      "id": "94c0669ef0a54476a4b6cb253c7984ee",
+      "text": "Same-sex marriage should be legal nationwide",
+      "leanings": [
+        "Pro-LGBTQ rights"
+      ]
+    },
+    {
+      "id": "69ef1fd9e06244e9920514cbab8ada72",
+      "text": "A bipartisan delegation of United States senators, led by Senator Jeanne Shaheen, is traveling to the Ankara summit to show support for NATO allies",
+      "leanings": [
+        "Transatlanticist"
+      ]
+    },
+    {
+      "id": "410054a2d5cc4c748fcb2b532312912d",
+      "text": "Free trade agreements are the primary cause of industrial decline in the Dayton region",
+      "leanings": [
+        "Protectionist"
+      ]
+    },
+    {
+      "id": "1a167acc6a57ea552957258158b0cfbb",
+      "text": "Minimum wages should rise automatically with the cost of living",
+      "leanings": [
+        "Pro-living wage",
+        "Social democrat"
+      ]
+    },
+    {
+      "id": "491268d605734fe4ba8a6bfcd0d03b8d",
+      "text": "USAID should be restored as an independent agency",
+      "leanings": [
+        "Pro-USAID"
+      ]
+    },
+    {
+      "id": "ef2cc805196176add2ec3b2c4cf78f72",
+      "text": "The welfare state discourages work",
+      "leanings": [
+        "Pro-welfare reform"
+      ]
+    },
+    {
+      "id": "4b69e8a281525f4faef63cff0190b83b",
+      "text": "On the whole, the benefits of migration to the United States have been positive",
+      "leanings": [
+        "Pro-immigration",
+        "Globalist"
+      ]
+    },
+    {
+      "id": "bb10fcf1dfb545c5951124b7ea0ac543",
+      "text": "The United States should keep arming Ukraine",
+      "leanings": [
+        "Pro-Ukraine"
+      ]
+    },
+    {
+      "id": "579005b9fdf01d969d8c1ec081d6d2c3",
+      "text": "The retirement age should be raised to save Social Security",
+      "leanings": [
+        "Pro-entitlement reform"
+      ]
+    },
+    {
+      "id": "7fea6e932b774cc0976a6ba5160a5882",
+      "text": "Congress should raise tax revenue rather than cut spending to reduce the deficit",
+      "leanings": [
+        "Pro-public spending"
+      ]
+    },
+    {
+      "id": "2f6dce22184547e486bcec5e8c68b206",
+      "text": "The US should provide military aid to Israel",
+      "leanings": [
+        "Pro-Israel"
+      ]
+    },
+    {
+      "id": "4b142b070e944f7fb54ed77057bf79b6",
+      "text": "Universal background checks should be required for every gun sale",
+      "leanings": [
+        "Pro-gun control"
+      ]
+    },
+    {
+      "id": "024eda17a14c9ffa7643edf89df0892a",
+      "text": "The right to own a gun is a fundamental human right",
+      "leanings": [
+        "Pro-gun rights",
+        "Libertarianism"
+      ]
+    },
+    {
+      "id": "f98079d925d3b56806ba6d84ab42c17f",
+      "text": "Hate speech should be protected as free speech",
+      "leanings": [
+        "Pro-internet freedom",
+        "Classical liberal",
+        "Liberal"
+      ]
+    },
+    {
+      "id": "148b0cf1d60c4319b499d376ef6bf38f",
+      "text": "Climate change is an existential threat that requires urgent government action",
+      "leanings": [
+        "Pro-climate action",
+        "Environmentalist"
+      ]
+    },
+    {
+      "id": "4de298d58d96434085a8a83c8cc5bf82",
+      "text": "Marriage is the best foundation for raising children",
+      "leanings": [
+        "Social conservative",
+        "Conservative",
+        "Christian conservative"
+      ]
+    },
+    {
+      "id": "5023ce9fba3945128221f4c28d74b5b6",
+      "text": "The United States should extend its trade truce with China",
+      "leanings": [
+        "Pro-China engagement"
+      ]
+    },
+    {
+      "id": "ec0a71df06f74225bf6811508b2ca4df",
+      "text": "Voter ID laws disproportionately burden minority voters",
+      "leanings": [
+        "Pro-voting rights"
+      ]
+    },
+    {
+      "id": "5872ac2be0d3495296b3e811e395f16f",
+      "text": "Federal elections are a federal issue that should be regulated by federal legislation for consistency across states",
+      "leanings": [
+        "Pro-federal authority"
+      ]
+    },
+    {
+      "id": "c381476542ef4d8087cf2d209abdb8f8",
+      "text": "Trump's immigration crackdown makes the United States safer",
+      "leanings": [
+        "Pro-border security",
+        "MAGA"
+      ]
+    },
+    {
+      "id": "b5a25ff21e89400cabfd6fd1484514af",
+      "text": "California Energy Commission Chair David Hochschild said states retain the ability to drive a transition away from fossil fuels.",
+      "leanings": [
+        "Pro-clean energy"
+      ]
+    },
+    {
+      "id": "05ec6bbd12e457adb86c97cd5d60f9d8",
+      "text": "Diversity, Equity, and Inclusion (DEI) initiatives were, to some extent, addressing the effects of historical racial discrimination",
+      "leanings": [
+        "Pro-equity",
+        "Progressive"
+      ]
+    },
+    {
+      "id": "130164625b3d493ca208d6e82f000443",
+      "text": "Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty",
+      "leanings": [
+        "Pro-religious freedom"
+      ]
+    },
+    {
+      "id": "344a407e3958a818b69a6184f266fef0",
+      "text": "Cities should abolish single-family-only zoning",
+      "leanings": [
+        "Pro-housing development"
+      ]
+    },
+    {
+      "id": "8271598b04824a4088775686c1e4cea1",
+      "text": "The United States should reduce foreign aid spending",
+      "leanings": [
+        "Pro-foreign aid reform"
+      ]
+    },
+    {
+      "id": "3006371ab3d8e965a31c943fa9bcbda5",
+      "text": "Nidal Hasan’s terrorism conviction justifies the death penalty",
+      "leanings": [
+        "Pro-death penalty"
+      ]
+    },
+    {
+      "id": "24541de6d13f88ac4b7cbd6752e06b4b",
+      "text": "Gender identity should take precedence over biological sex",
+      "leanings": [
+        "Pro-transgender rights"
+      ]
+    },
+    {
+      "id": "f7bdffdd5f06e4b760247767b6989a32",
+      "text": "The death penalty should be abolished",
+      "leanings": [
+        "Death penalty abolitionist"
+      ]
+    },
+    {
+      "id": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "text": "Abortion should be legal",
+      "leanings": [
+        "Pro-choice"
+      ]
+    },
+    {
+      "id": "4203a7a7f808485fb9ad85db9655da30",
+      "text": "Unions are important for protecting workers",
+      "leanings": [
+        "Pro-union"
+      ]
+    },
+    {
+      "id": "157d1128ad4277bef5ee4926b49c4690",
+      "text": "Military pressure is more likely than diplomatic restraint to produce an Iran settlement",
+      "leanings": [
+        "Hawk",
+        "Neoconservative"
+      ]
+    },
+    {
+      "id": "d7800b2a01904345aab1f4fdb12055e3",
+      "text": "The United States should treat China as an enemy",
+      "leanings": [
+        "Pro-China containment"
+      ]
+    },
+    {
+      "id": "1fdcbe35bfde4d0bbe5eb78632dc02c4",
+      "text": "Civil liberties groups including the ACLU, EFF, and Institute for Justice are litigating whether blanket ALPR camera surveillance requires a Fourth Amendment warrant.",
+      "leanings": [
+        "Pro-privacy"
+      ]
+    },
+    {
+      "id": "67adf984b5b04dcfbdd8cb6aefd4e31b",
+      "text": "States should enact independent AI safety regulations",
+      "leanings": [
+        "Pro-AI regulation"
+      ]
+    },
+    {
+      "id": "9d5c11e66b50480babdef68c7a4c0d05",
+      "text": "Student loan debt should be forgiven",
+      "leanings": [
+        "Pro-student debt relief"
+      ]
+    },
+    {
+      "id": "78d0d62134114b809b54167e11d4db4f",
+      "text": "US sanctions against the International Criminal Court are a justified defense of national sovereignty",
+      "leanings": [
+        "Nationalist"
+      ]
+    },
+    {
+      "id": "103be43ad08aed03d3e55c3f6f530b9d",
+      "text": "Capitalism has done more harm than good",
+      "leanings": [
+        "Marxist"
+      ]
+    },
+    {
+      "id": "0707ac7581416e7280f479d0ea55570e",
+      "text": "Traditional values are essential for a healthy society",
+      "leanings": [
+        "Traditionalist"
+      ]
+    }
+  ]
+}

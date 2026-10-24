@@ -1,9 +1,10 @@
-import { IDEOLOGY_CARDS } from "./ideologies.js";
+import { IDEOLOGY_CARDS, ISSUES, POLITICAL_LEANING_VALUES } from "./ideologies.js";
 import {
   CROSS_CUTTING,
   DIMENSIONS,
   FRAMEWORK_VERSION,
   IDEOLOGY_DEFINITION,
+  LEANINGS_PROPERTY_DEFINITION,
   IDEOLOGY_RULES,
   LEANING_BY_SCORE,
   levelRulesText,
@@ -27,6 +28,7 @@ export function renderFramework(): string {
     "",
     `- **Political leaning**: ${POLITICAL_LEANING_DEFINITION}`,
     `- **Ideology**: ${IDEOLOGY_DEFINITION}`,
+    `- **Leanings** (the property the agent fills): ${LEANINGS_PROPERTY_DEFINITION} A claim has at most one political leaning but can have several ideological leanings.`,
     "",
     "Possible results: a **published** leaning (one of Geo's seven) and published ideologies; **No label**, naming the rule that blocked it; or **No political position**, naming the check that failed. There are no partial labels: anything not published is left blank.",
     "",
@@ -65,11 +67,11 @@ export function renderFramework(): string {
     "",
     ...RULES.map((r) => `- **${r.id} ${r.name}.** ${r.text}`),
     "",
-    "## Step 4: ideologies",
+    "## Step 4: ideological leanings",
+    "",
+    "Two kinds, both of Geo type Ideology: **issue leanings** (one side of an issue, such as Pro-life) and **traditions** (classic ideologies, such as Conservative). A claim can have several.",
     "",
     ...IDEOLOGY_RULES.map((r) => `- **${r.id}.** ${r.text}`),
-    "",
-    "Each ideology has a definition card. A belief marked *distinctive* belongs to that ideology alone; a *shared* belief is never enough to publish.",
     "",
     "## Step 5: publish or leave blank",
     "",
@@ -81,18 +83,38 @@ export function renderFramework(): string {
     "",
     "Explanations quote the claim only through words checked to be in it, word for word. Notes written by the models are kept apart as unverified reviewer notes.",
     "",
-    "## Ideology definition cards",
+    "## Political leanings",
+    "",
+    "From Armando's Political leanings table. A claim gets at most one, and never Nonpartisan.",
+    "",
+    "| Value | Scale | Description | Also called |",
+    "|---|---|---|---|",
+    ...POLITICAL_LEANING_VALUES.map(
+      (v) => `| **${v.name}** | ${v.scale ?? "off the scale"} | ${cell(v.description ?? v.note ?? "")} | ${cell(v.alternativeNames.join("; "))} |`,
+    ),
+    "",
+    "## Issue leanings",
+    "",
+    "One side of a political issue (Armando's \"Ideological leanings\" table). Values marked *not on Geo yet* are labelled but never put in a Geo proposal.",
     "",
   );
-  for (const card of IDEOLOGY_CARDS) {
+  for (const { issue, group, sides } of ISSUES) {
+    out.push(`### ${issue} (${group})`, "", "| Leaning | Description | Also called |", "|---|---|---|");
+    for (const c of sides) {
+      out.push(`| **${c.name}**${c.geoId ? "" : " *(not on Geo yet)*"} | ${cell(c.definition)} | ${cell(c.aliases.join("; "))} |`);
+    }
+    out.push("");
+  }
+  out.push("## Traditions", "", "Classic ideologies. A tradition applies when the claim's position is characteristic of it (rule I2).", "");
+  for (const card of IDEOLOGY_CARDS.filter((c) => c.kind === "tradition")) {
     out.push(
       `### ${card.name} (${card.status})`,
       "",
       card.definition,
       "",
-      ...card.tenets.map((t) => `- **${t.id}** ${t.text} *(${t.distinctive ? "distinctive" : "shared"})*`),
-      ...card.exclusions.map((e) => `- Not this ideology: ${e}`),
-      `- Neighbours: ${card.neighbours.length ? card.neighbours.join(", ") : "none"}`,
+      ...card.tenets.map((t) => `- **${t.id}** ${t.text}`),
+      ...card.exclusions.map((e) => `- Not this tradition: ${e}`),
+      `- Related: ${card.neighbours.length ? card.neighbours.join(", ") : "none"}`,
       `- Usually found at: ${card.typicalLeanings.join(", ")}`,
       `- Source: ${card.source}`,
       "",

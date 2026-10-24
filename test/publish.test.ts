@@ -50,7 +50,7 @@ describe("valueIdsFor", () => {
     expect(valueIdsFor(scored("Right", ["Nationalist"]), taxonomy)).toEqual(["7a74f432548c417eb4abf9c45f3a7100", "949d526009a5476b809b0ab9795907aa"]);
   });
   it("refuses a name Geo does not have", () => {
-    expect(() => valueIdsFor(scored("Left"), taxonomy)).toThrow(/not in Geo's taxonomy/);
+    expect(() => valueIdsFor(scored("Left"), taxonomy)).toThrow(/not on Geo yet/);
   });
 });
 

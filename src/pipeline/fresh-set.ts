@@ -100,6 +100,26 @@ export async function buildFreshSet(o: FreshSetOptions): Promise<{ rows: FreshRo
   return { rows, stats };
 }
 
+const rowJson = ({ space, claim, result, error, inSample }: FreshRow) => ({
+  claimId: claim.id,
+  space: space.slug,
+  spaceId: space.id,
+  text: claim.text,
+  inSample,
+  error,
+  published: published(result),
+  display: result?.display ?? null,
+  leaning: result?.leaning ?? null,
+  candidateLeaning: result?.candidateLeaning ?? null,
+  ideologies: result?.ideologies.map((i) => i.name) ?? [],
+  checks: result?.checks.map((c) => `${c.id} ${c.skipped ? "skipped" : c.pass ? "pass" : "FAIL"}: ${c.detail}`) ?? [],
+  criteria: result?.criteria.map((c) => `${c.id} (${c.strength}): “${c.evidence}”`) ?? [],
+  explanation: result?.explanation ?? null,
+  droppedIdeologies: result?.droppedIdeologies.map((d) => `${d.name}: ${d.reason}`) ?? [],
+  repeats: result?.repeats ?? null,
+  reviewerNotes: result?.reviewerNotes ?? [],
+});
+
 export function writeFreshSet(name: string, seed: number, rows: FreshRow[], stats: FreshStats[]): string {
   const dir = join(FRESH_ROOT, name);
   if (existsSync(join(dir, "fresh.json"))) throw new Error(`${dir} already holds a fresh set; use another --seed`);
@@ -107,36 +127,29 @@ export function writeFreshSet(name: string, seed: number, rows: FreshRow[], stat
   const file = join(dir, "fresh.json");
   writeFileSync(
     file,
-    JSON.stringify(
-      {
-        name,
-        seed,
-        framework: FRAMEWORK_VERSION,
-        generatedAt: new Date().toISOString(),
-        stats,
-        rows: rows.map(({ space, claim, result, error, inSample }) => ({
-          claimId: claim.id,
-          space: space.slug,
-          spaceId: space.id,
-          text: claim.text,
-          inSample,
-          error,
-          published: published(result),
-          display: result?.display ?? null,
-          leaning: result?.leaning ?? null,
-          candidateLeaning: result?.candidateLeaning ?? null,
-          ideologies: result?.ideologies.map((i) => i.name) ?? [],
-          checks: result?.checks.map((c) => `${c.id} ${c.skipped ? "skipped" : c.pass ? "pass" : "FAIL"}: ${c.detail}`) ?? [],
-          criteria: result?.criteria.map((c) => `${c.id} (${c.strength}): “${c.evidence}”`) ?? [],
-          explanation: result?.explanation ?? null,
-          droppedIdeologies: result?.droppedIdeologies.map((d) => `${d.name}: ${d.reason}`) ?? [],
-          repeats: result?.repeats ?? null,
-          reviewerNotes: result?.reviewerNotes ?? [],
-        })),
-      },
-      null,
-      2,
-    ) + "\n",
+    JSON.stringify({ name, seed, framework: FRAMEWORK_VERSION, generatedAt: new Date().toISOString(), stats, rows: rows.map(rowJson) }, null, 2) + "\n",
   );
   return file;
+}
+
+/**
+ * Scores an existing fresh set again with the current framework, keeping the same claims and
+ * sample, and writes evals/fresh/<name>/rescore.<framework>.json next to the original.
+ */
+export async function rescoreFreshSet(geo: GeoClient, agent: ScoringAgent, name: string, concurrency: number): Promise<{ file: string; rows: FreshRow[] }> {
+  const original = JSON.parse(readFileSync(join(FRESH_ROOT, name, "fresh.json"), "utf8")) as { seed: number; rows: { claimId: string; space: string; inSample: boolean }[] };
+  const claims = new Map((await fetchClaims(geo, original.rows.map((r) => r.claimId))).map((c) => [c.id, c]));
+  const rows = await mapPool(original.rows, concurrency, async (r): Promise<FreshRow> => {
+    const space = SPACES.find((s) => s.slug === r.space)!;
+    const claim = claims.get(r.claimId);
+    if (!claim) throw new Error(`${r.claimId} is no longer on Geo`);
+    try {
+      return { space, claim, result: await agent.score(claim), error: null, inSample: r.inSample };
+    } catch (err) {
+      return { space, claim, result: null, error: err instanceof Error ? err.message : String(err), inSample: r.inSample };
+    }
+  });
+  const file = join(FRESH_ROOT, name, `rescore.${FRAMEWORK_VERSION}.json`);
+  writeFileSync(file, JSON.stringify({ name, seed: original.seed, framework: FRAMEWORK_VERSION, generatedAt: new Date().toISOString(), rows: rows.map(rowJson) }, null, 2) + "\n");
+  return { file, rows };
 }

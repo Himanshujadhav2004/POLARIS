@@ -1,6 +1,6 @@
 import type OpenAI from "openai";
 import type { Decision, DecisionCreateParams } from "openai/resources/decisions";
-import { IDEOLOGY_CARDS } from "../../framework/ideologies.js";
+import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../../framework/ideologies.js";
 import { LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
 import type { Claim } from "../../geo/claims.js";
 import type { Taxonomy } from "../../geo/taxonomy.js";
@@ -54,10 +54,14 @@ export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
         type: "predicate",
         name: ideologyQuestionName(i),
         instructions:
-          `Does the claim itself clearly advance the ideology "${card.name}" (${card.definition}) by arguing for one of its core beliefs: ` +
-          card.tenets.map((t) => t.text).join(" / ") +
-          (card.exclusions.length ? ` It does not count when: ${card.exclusions.join(" ")}` : "") +
-          " Never decide from the topic alone.",
+          card.kind === "issue"
+            ? `Does the claim itself, in its own voice, take the side "${card.name}" on the issue ${card.issue}? ${card.name}: ${card.definition} ` +
+              `The other side: ${card.neighbours.map((n) => `${n}: ${CARD_BY_NAME.get(n)?.definition ?? ""}`).join(" ")} ` +
+              "It counts only if the claim argues for this side; mentioning the issue or reporting someone else's view does not count."
+            : `Is the position this claim itself takes characteristic of the ideology "${card.name}" (${card.definition}), meaning its adherents typically hold that position, even if the claim does not name it? ` +
+              `Characteristic positions: ${card.tenets.map((t) => t.text).join(" / ")}` +
+              (card.exclusions.length ? ` It does not count when: ${card.exclusions.join(" ")}` : "") +
+              " Never decide from the topic alone.",
       }),
     ),
   ];

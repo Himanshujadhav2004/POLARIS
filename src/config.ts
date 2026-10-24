@@ -50,10 +50,10 @@ export const IDS = {
 } as const;
 
 /**
- * Taxonomy values the agent must never output.
- * "Libertarian" duplicates "Libertarianism", which the team chose as canonical.
+ * Taxonomy values the agent must never output. Empty since 2026-10-25: Armando's doc describes
+ * both "Libertarian" and "Libertarianism", and both are used.
  */
-export const EXCLUDED_VALUE_IDS: ReadonlySet<string> = new Set(["f69a3a6e8ac14423aad8a9361dd7258a"]);
+export const EXCLUDED_VALUE_IDS: ReadonlySet<string> = new Set();
 
 export function geoEntityUrl(spaceId: string, entityId: string): string {
   return `${GEO_WEB_URL}/space/${spaceId}/${entityId}`;

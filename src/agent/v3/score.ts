@@ -227,9 +227,11 @@ export const failedChecks = (checks: RuleCheck[]): RuleCheck[] => checks.filter(
 
 export interface IdeologyCandidate {
   name: string;
+  kind: "tradition" | "issue";
+  /** For issue leanings, the issue. */
+  issue: string | null;
   tenet: string;
   tenetText: string;
-  distinctive: boolean;
   evidence: string;
   probability: number;
 }
@@ -239,7 +241,7 @@ export interface DroppedIdeology {
   reason: string;
 }
 
-/** Keeps proposals whose belief exists and whose evidence is in the claim (I1, E1, I4). */
+/** Keeps proposals whose card and position exist and whose evidence is in the claim (E1, I4). */
 export function resolveIdeologies(
   proposed: ScorerOutput["ideologies"],
   claimText: string,
@@ -247,18 +249,31 @@ export function resolveIdeologies(
 ): { candidates: IdeologyCandidate[]; dropped: DroppedIdeology[] } {
   const candidates: IdeologyCandidate[] = [];
   const dropped: DroppedIdeology[] = [];
-  for (const p of proposed.slice(0, 2)) {
+  for (const p of proposed) {
+    if (candidates.some((c) => c.name === p.name)) continue;
+    if (candidates.length >= PUBLISH.maxIdeologies) {
+      dropped.push({ name: p.name, reason: `more than ${PUBLISH.maxIdeologies} ideological leanings proposed (I4)` });
+      continue;
+    }
     const card = CARD_BY_NAME.get(p.name);
     const tenet = card?.tenets.find((t) => t.id === p.tenet);
     if (!card || !tenet) {
-      dropped.push({ name: p.name, reason: `belief ${p.tenet} does not exist on the card` });
+      dropped.push({ name: p.name, reason: `position ${p.tenet} does not exist on the card` });
       continue;
     }
     if (!evidenceFound(claimText, p.evidence)) {
       dropped.push({ name: p.name, reason: "its evidence is not in the claim" });
       continue;
     }
-    candidates.push({ name: card.name, tenet: tenet.id, tenetText: tenet.text, distinctive: tenet.distinctive, evidence: p.evidence, probability: probabilities[p.name] ?? 0 });
+    candidates.push({
+      name: card.name,
+      kind: card.kind,
+      issue: card.issue,
+      tenet: tenet.id,
+      tenetText: tenet.text,
+      evidence: p.evidence,
+      probability: probabilities[p.name] ?? 0,
+    });
   }
   return { candidates, dropped };
 }
@@ -269,29 +284,32 @@ export interface IdeologyGateInput {
   /** The leaning the criteria point to, published or not. */
   leaning: LeaningName | null;
   verifierAgrees: boolean;
-  /** Neighbouring ideologies whose own beliefs the claim also matches, and that are not published (I6). */
-  matchingNeighbours: string[];
-  /** Whether each extra run found this ideology too; null while the extra runs have not been made. */
+  /** Issue leanings: the independent probability of each other side of the issue. */
+  otherSides: Record<string, number>;
+  /** Whether each extra run found this leaning too; null while the extra runs have not been made. */
   repeats: boolean[] | null;
 }
 
-/** Rule I3: every reason this ideology cannot be published; empty means publish. */
+/** Rule I3: every reason this ideological leaning cannot be published; empty means publish. */
 export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[] {
   const c = i.candidate;
   const card = CARD_BY_NAME.get(c.name)!;
   const failed: string[] = [];
-  if (!c.distinctive) failed.push(`belief ${c.tenet} is shared${card.neighbours.length ? ` with ${card.neighbours.join(", ")}` : ""}`);
-  if (c.probability < PUBLISH.minIdeology) failed.push(`independent probability ${p2(c.probability)} is below ${PUBLISH.minIdeology}`);
   if (i.pStance < PUBLISH.minStance) failed.push(`independent probability that the claim takes a position is ${p2(i.pStance)}, below ${PUBLISH.minStance}`);
-  if (i.leaning && !card.typicalLeanings.includes(i.leaning)) failed.push(`it is not usually found at ${i.leaning}`);
+  if (c.kind === "issue") {
+    if (c.probability < PUBLISH.minIssue) failed.push(`independent probability ${p2(c.probability)} is below ${PUBLISH.minIssue}`);
+    const rival = Object.entries(i.otherSides).filter(([, p]) => p > PUBLISH.maxOtherSide);
+    if (rival.length) failed.push(`the other side of ${c.issue} also scores: ${rival.map(([n, p]) => `${n} ${p2(p)}`).join(", ")}`);
+  } else {
+    if (c.probability < PUBLISH.minTradition) failed.push(`independent probability ${p2(c.probability)} is below ${PUBLISH.minTradition}`);
+    if (i.leaning && !card.typicalLeanings.includes(i.leaning)) failed.push(`it is not usually found at ${i.leaning}`);
+  }
   if (!i.verifierAgrees) failed.push("the verifier disagreed");
-  if (i.matchingNeighbours.length) failed.push(`the claim also matches ${i.matchingNeighbours.join(", ")} (I6)`);
   if (withRepeats) {
     // Missing extra runs only matter when nothing else already blocks it.
     if (!i.repeats) {
       if (!failed.length) failed.push("extra runs not made");
-    }
-    else if (!i.repeats.every(Boolean)) failed.push(`found in ${i.repeats.filter(Boolean).length + 1} of ${PUBLISH.runs} runs`);
+    } else if (!i.repeats.every(Boolean)) failed.push(`found in ${i.repeats.filter(Boolean).length + 1} of ${PUBLISH.runs} runs`);
   }
   return failed;
 }

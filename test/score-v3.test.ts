@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { parseDecision } from "../src/agent/v3/decisions.js";
 import { buildScorerMessage } from "../src/agent/v3/prompt.js";
+import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import {
   allPass,
   checkIdeology,
@@ -175,17 +176,17 @@ describe("checkLeaning (publish rules P1–P6)", () => {
 });
 
 describe("resolveIdeologies", () => {
-  const text = "Workers should be entitled to company board seats";
-  it("keeps proposals whose belief exists and whose evidence is in the claim", () => {
-    const { candidates } = resolveIdeologies([{ name: "Social democrat", tenet: "T3", evidence: "company board seats" }], text, { "Social democrat": 0.9 });
-    expect(candidates[0]).toMatchObject({ name: "Social democrat", tenet: "T3", distinctive: false, probability: 0.9 });
+  const text = "Abortion is murder and should be banned";
+  it("keeps proposals whose position exists and whose evidence is in the claim", () => {
+    const { candidates } = resolveIdeologies([{ name: "Pro-life", tenet: "T1", evidence: "Abortion is murder" }], text, { "Pro-life": 0.97 });
+    expect(candidates[0]).toMatchObject({ name: "Pro-life", kind: "issue", issue: "Abortion", tenet: "T1", probability: 0.97 });
   });
 
-  it("drops missing evidence and unknown beliefs", () => {
+  it("drops missing evidence and unknown positions", () => {
     const { candidates, dropped } = resolveIdeologies(
       [
         { name: "Socialist", tenet: "T1", evidence: "abolish markets" },
-        { name: "Marxist", tenet: "T3", evidence: "board seats" },
+        { name: "Pro-choice", tenet: "T3", evidence: "Abortion is murder" },
       ],
       text,
       {},
@@ -193,43 +194,52 @@ describe("resolveIdeologies", () => {
     expect(candidates).toEqual([]);
     expect(dropped.map((d) => d.reason)).toEqual([expect.stringMatching(/not in the claim/), expect.stringMatching(/does not exist/)]);
   });
+
+  it("allows several ideological leanings, up to 5 (I4)", () => {
+    const names = ["Pro-life", "Social conservative", "Christian conservative", "Conservative", "Traditionalist", "MAGA"];
+    const { candidates, dropped } = resolveIdeologies(names.map((name) => ({ name, tenet: "T1", evidence: "Abortion is murder" })), text, {});
+    expect(candidates.map((c) => c.name)).toEqual(names.slice(0, 5));
+    expect(dropped).toEqual([{ name: "MAGA", reason: expect.stringMatching(/more than 5/) }]);
+  });
 });
 
-describe("checkIdeology (I3, I6)", () => {
-  const ok: IdeologyGateInput = {
-    candidate: { name: "Socialist", tenet: "T1", tenetText: "", distinctive: true, evidence: "maximum legal income", probability: 0.95 },
+describe("checkIdeology (I3)", () => {
+  const issue: IdeologyGateInput = {
+    candidate: { name: "Pro-life", kind: "issue", issue: "Abortion", tenet: "T1", tenetText: "", evidence: "Abortion is murder", probability: 0.96 },
     pStance: 0.95,
-    leaning: "Far left",
+    leaning: "Right",
     verifierAgrees: true,
-    matchingNeighbours: [],
+    otherSides: { "Pro-choice": 0.02 },
     repeats: [true, true],
   };
-  const fails = (over: Partial<IdeologyGateInput>, candidate: Partial<IdeologyGateInput["candidate"]> = {}) =>
-    checkIdeology({ ...ok, ...over, candidate: { ...ok.candidate, ...candidate } });
+  const tradition: IdeologyGateInput = {
+    ...issue,
+    candidate: { name: "Christian conservative", kind: "tradition", issue: null, tenet: "T2", tenetText: "", evidence: "Marriage is the best foundation", probability: 0.84 },
+    otherSides: {},
+  };
+  const fails = (base: IdeologyGateInput, over: Partial<IdeologyGateInput>, candidate: Partial<IdeologyGateInput["candidate"]> = {}) =>
+    checkIdeology({ ...base, ...over, candidate: { ...base.candidate, ...candidate } });
 
-  it("publishes a distinctive, verified, stable ideology", () => {
-    expect(fails({})).toEqual([]);
+  it("publishes an issue leaning when its side is clear and the other side is not", () => {
+    expect(fails(issue, {})).toEqual([]);
+    expect(fails(issue, {}, { probability: 0.85 })).toEqual([expect.stringMatching(/below 0.9/)]);
+    expect(fails(issue, { otherSides: { "Pro-choice": 0.3 } })).toEqual(["the other side of Abortion also scores: Pro-choice 0.30"]);
   });
 
-  it("never publishes a shared belief, a low probability or an unverified ideology", () => {
-    expect(fails({}, { distinctive: false })).toEqual([expect.stringMatching(/shared with Democratic socialist/)]);
-    expect(fails({}, { probability: 0.85 })).toEqual([expect.stringMatching(/below 0.9/)]);
-    expect(fails({ verifierAgrees: false })).toEqual(["the verifier disagreed"]);
-    expect(fails({ pStance: 0.5 })).toEqual([expect.stringMatching(/takes a position/)]);
+  it("publishes a tradition by association (Armando's convention) at probability 0.8 and a typical leaning", () => {
+    expect(fails(tradition, {})).toEqual([]);
+    expect(fails(tradition, {}, { probability: 0.7 })).toEqual([expect.stringMatching(/below 0.8/)]);
+    expect(fails(tradition, { leaning: "Left" })).toEqual(["it is not usually found at Left"]);
   });
 
-  it("blocks an atypical leaning, a matching neighbour and an unstable result", () => {
-    expect(fails({ leaning: "Center right" })).toEqual(["it is not usually found at Center right"]);
-    expect(fails({ matchingNeighbours: ["Democratic socialist"] })).toEqual(["the claim also matches Democratic socialist (I6)"]);
-    expect(fails({ repeats: [true, false] })).toEqual(["found in 2 of 3 runs"]);
-    expect(fails({ repeats: null })).toEqual(["extra runs not made"]);
-    expect(checkIdeology({ ...ok, repeats: null }, false)).toEqual([]);
-  });
-
-  it("no longer treats a tax-the-rich claim as distinctively Social democrat", () => {
-    const t = "Texas should raise taxes on corporations and billionaires to fund targeted tax credits";
-    const { candidates } = resolveIdeologies([{ name: "Social democrat", tenet: "T2", evidence: "raise taxes on corporations and billionaires" }], t, { "Social democrat": 0.96 });
-    expect(checkIdeology({ ...ok, candidate: candidates[0]!, leaning: "Center left" })).toEqual([expect.stringMatching(/belief T2 is shared/)]);
+  it("needs the verifier, a position and stable runs for both kinds", () => {
+    for (const base of [issue, tradition]) {
+      expect(fails(base, { verifierAgrees: false })).toEqual(["the verifier disagreed"]);
+      expect(fails(base, { pStance: 0.5 })).toEqual([expect.stringMatching(/takes a position/)]);
+      expect(fails(base, { repeats: [true, false] })).toEqual(["found in 2 of 3 runs"]);
+      expect(fails(base, { repeats: null })).toEqual(["extra runs not made"]);
+      expect(checkIdeology({ ...base, repeats: null }, false)).toEqual([]);
+    }
   });
 });
 
@@ -277,7 +287,7 @@ describe("parseDecision", () => {
     expect(s.pStance).toBe(0.97);
     expect(s.leaning.Left).toBe(0.6);
     expect(s.leaning.Right).toBe(0);
-    expect(s.ideologies.Anarchist).toBe(0.4);
+    expect(s.ideologies[IDEOLOGY_CARDS[0]!.name]).toBe(0.4);
     expect(s.refusals).toEqual(["ideology_1"]);
   });
 });

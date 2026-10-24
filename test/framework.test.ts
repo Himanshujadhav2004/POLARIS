@@ -3,10 +3,10 @@ import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
 import { ALL_CRITERIA, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, PUBLISH_RULES, RULES } from "../src/framework/rubric.js";
 
-/** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted), minus the excluded duplicate "Libertarian". */
+/** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted). Both Libertarian values are used. */
 const GEO_IDEOLOGIES = [
   "Anarchist", "Christian conservative", "Classical liberal", "Communist", "Conservative", "Democratic socialist",
-  "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal",
+  "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal", "Libertarian",
   "Libertarianism", "MAGA", "Marxist", "Nationalist", "Neoconservative", "Neoliberal", "Paleoconservative",
   "Populist", "Progressive", "Secularist", "Social democrat", "Socialist", "Traditionalist",
 ];
@@ -54,14 +54,21 @@ describe("rubric", () => {
 });
 
 describe("ideology cards", () => {
-  it("has exactly one card per Geo ideology", () => {
-    expect(IDEOLOGY_CARDS.map((c) => c.name).sort()).toEqual([...GEO_IDEOLOGIES].sort());
+  it("has one tradition card per Geo ideology, all with their Geo ID", () => {
+    const traditions = IDEOLOGY_CARDS.filter((c) => c.kind === "tradition");
+    expect(traditions.map((c) => c.name).sort()).toEqual([...GEO_IDEOLOGIES].sort());
+    for (const c of traditions) expect(c.geoId).toMatch(/^[0-9a-f]{32}$/);
   });
 
-  it("gives every card a definition, numbered beliefs and valid neighbours", () => {
+  it("has Armando's 86 issue leanings, none on Geo yet", () => {
+    const issues = IDEOLOGY_CARDS.filter((c) => c.kind === "issue");
+    expect(issues).toHaveLength(86);
+    for (const c of issues) expect(c.geoId).toBeNull();
+  });
+
+  it("gives every card a definition, numbered positions and valid neighbours", () => {
     for (const card of IDEOLOGY_CARDS) {
-      expect(card.definition.length).toBeGreaterThan(40);
-      expect(card.geoId).toMatch(/^[0-9a-f]{32}$/);
+      expect(card.definition.length).toBeGreaterThan(20);
       expect(card.tenets.length).toBeGreaterThan(0);
       expect(card.tenets.map((t) => t.id)).toEqual(card.tenets.map((_, i) => `T${i + 1}`));
       expect(card.typicalLeanings.length).toBeGreaterThan(0);
@@ -76,6 +83,6 @@ describe("renderFramework", () => {
     for (const c of ALL_CRITERIA) expect(md).toContain(`**${c.id}**`);
     for (const r of PUBLISH_RULES) expect(md).toContain(`**${r.id}**`);
     for (const text of Object.values(LEVEL_RULES)) expect(md).toContain(text);
-    for (const card of IDEOLOGY_CARDS) expect(md).toContain(`### ${card.name}`);
+    for (const card of IDEOLOGY_CARDS) expect(md).toContain(card.kind === "issue" ? `**${card.name}**` : `### ${card.name}`);
   });
 });
