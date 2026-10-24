@@ -2,12 +2,13 @@
 // Usage:
 //   npx tsx scripts/notion-rows.mts bench evals/results/bench.<set>.<framework>.json <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts fresh evals/fresh/<name>/fresh.json <out.json>
+//   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json evals/fresh/<name>/rescore.<framework>.json <run-name> <out.json>
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
 
 const [mode, file, ...rest] = process.argv.slice(2);
-const usage = "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json>";
-if (!file || (mode !== "bench" && mode !== "fresh")) throw new Error(usage);
+const usage = "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json>";
+if (!file || !["bench", "fresh", "v3"].includes(mode ?? "")) throw new Error(usage);
 
 /** Notion text properties hold 2000 characters; cut at the last full sentence, never mid-sentence. */
 function fit(s: string, max = 1900): string {
@@ -75,8 +76,49 @@ function freshRows() {
     }));
 }
 
-const rows = mode === "bench" ? benchRows(rest[0] ?? "") : freshRows();
-const out = mode === "bench" ? rest[1] : rest[0];
+/** Framework v3 review rows: Armando's example claims (with his labels) and a re-scored fresh set. */
+function v3Rows(freshFile: string, run: string) {
+  const US = SPACES.find((s) => s.slug === "us-politics")!;
+  const examples = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
+  const fresh = JSON.parse(readFileSync(freshFile, "utf8")) as { rows: Record<string, any>[] };
+  const common = (r: Record<string, any>, ideologies: string[]) => ({
+    Claim: fit(r.text, 300),
+    "Political leaning": r.leaning ?? r.display ?? `Error: ${r.error}`,
+    "Ideological leanings": ideologies.join(", "),
+    Rules: lines(r.checks),
+    Explanation: fit(r.explanation ?? ""),
+    "Reviewer notes": lines([...(r.droppedIdeologies ?? []).map((d: string) => `Not published: ${d}`), ...r.reviewerNotes]),
+    Run: run,
+  });
+  return [
+    ...examples.rows.map((r) => ({
+      properties: {
+        ...common(r, r.published),
+        Set: "Armando example",
+        Space: "us-politics",
+        "Armando's leanings": (r.armando as string[]).join(", "),
+        Matched: (r.matched as string[]).join(", "),
+        "Not in Armando's labels": (r.extra as string[]).join(", "),
+        Missed: (r.missed as string[]).join(", "),
+        "Geo link": geoEntityUrl(US.id, r.id),
+        "Claim ID": r.id,
+      },
+    })),
+    // Fresh claims with no political position are already in "Fresh QA sample"; only labelled or blocked ones are added.
+    ...fresh.rows.filter((r) => r.published || String(r.display ?? "").startsWith("No label")).map((r) => ({
+      properties: {
+        ...common(r, r.ideologies),
+        Set: "Fresh sample",
+        Space: r.space,
+        "Geo link": geoEntityUrl(r.spaceId, r.claimId),
+        "Claim ID": r.claimId,
+      },
+    })),
+  ];
+}
+
+const rows = mode === "bench" ? benchRows(rest[0] ?? "") : mode === "v3" ? v3Rows(rest[0] ?? "", rest[1] ?? "") : freshRows();
+const out = mode === "bench" ? rest[1] : mode === "v3" ? rest[2] : rest[0];
 if (!out || (mode === "bench" && !rest[0])) throw new Error(usage);
 const batches: (typeof rows)[] = [];
 for (let i = 0; i < rows.length; i += 27) batches.push(rows.slice(i, i + 27));
