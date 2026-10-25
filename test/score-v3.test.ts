@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseDecision } from "../src/agent/v3/decisions.js";
+import { buildDecisionQuestions, parseDecision } from "../src/agent/v3/decisions.js";
 import { buildScorerMessage } from "../src/agent/v3/prompt.js";
 import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import {
@@ -263,6 +263,22 @@ describe("unverifiedQuotes", () => {
   it("keeps quotes inside the claim's own words checkable", () => {
     const fetterman = 'John Fetterman described socialism as an "anti-American way of life."';
     expect(unverifiedQuotes(quote('an "anti-American way of life."'), fetterman)).toEqual([]);
+  });
+});
+
+describe("buildDecisionQuestions", () => {
+  const questions = buildDecisionQuestions({ politicalLeanings: [], ideologies: [], fingerprint: "test", byName: new Map() });
+  const instructionsFor = (name: string) => {
+    const q = questions[2 + IDEOLOGY_CARDS.findIndex((c) => c.name === name)];
+    return q && "instructions" in q ? q.instructions : "";
+  };
+
+  it("gives the independent check Armando's alternative names for each side of an issue", () => {
+    expect(instructionsFor("Pro-foreign aid reform")).toContain("Also called: Pro-foreign aid cuts;");
+    expect(instructionsFor("Pro-internet freedom")).toContain("Pro-free speech");
+  });
+  it("still describes the other side of the issue", () => {
+    expect(instructionsFor("Pro-life")).toContain("The other side: Pro-choice:");
   });
 });
 
