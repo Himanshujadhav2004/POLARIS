@@ -277,6 +277,9 @@ describe("buildDecisionQuestions", () => {
     expect(instructionsFor("Pro-foreign aid reform")).toContain("Also called: Pro-foreign aid cuts;");
     expect(instructionsFor("Pro-internet freedom")).toContain("Pro-free speech");
   });
+  it("says the names set the scope, so sharing words with a side is not taking it", () => {
+    expect(instructionsFor("Gender-critical")).toContain("uses some of the same words while arguing for a different side does not count");
+  });
   it("still describes the other side of the issue", () => {
     expect(instructionsFor("Pro-life")).toContain("The other side: Pro-choice:");
   });

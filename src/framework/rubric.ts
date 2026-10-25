@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.1";
+export const FRAMEWORK_VERSION = "framework-v3.2";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {

@@ -57,7 +57,11 @@ export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
           card.kind === "issue"
             ? `Does the claim itself, in its own voice, take the side "${card.name}" on the issue ${card.issue}? ${card.name}: ${card.definition} ` +
               // Armando's alternative names set the scope of a side (e.g. "Pro-foreign aid cuts"), as in the scorer prompt.
-              (card.aliases.length ? `Also called: ${card.aliases.join("; ")}. ` : "") +
+              // Without the guard sentence the check matched words instead of sides (v3.1: Gender-critical 0.54
+              // on "Gender identity should take precedence over biological sex").
+              (card.aliases.length
+                ? `Also called: ${card.aliases.join("; ")}. These names only show what this side covers: a claim that uses some of the same words while arguing for a different side does not count. `
+                : "") +
               `The other side: ${card.neighbours.map((n) => `${n}: ${CARD_BY_NAME.get(n)?.definition ?? ""}`).join(" ")} ` +
               "It counts only if the claim argues for this side; mentioning the issue or reporting someone else's view does not count."
             : `Is the position this claim itself takes characteristic of the ideology "${card.name}" (${card.definition}), meaning its adherents typically hold that position, even if the claim does not name it? ` +
