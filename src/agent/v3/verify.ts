@@ -58,6 +58,29 @@ const SCHEMA = {
   },
 };
 
+/**
+ * Several separate verifier checks of the same result: a part counts as agreed only when every check
+ * agrees, so a label near the bar does not flip between runs. Objections from all checks are kept.
+ */
+export function combineVerdicts(verdicts: VerifierVerdict[]): VerifierVerdict {
+  const merge = (parts: PartVerdict[]): PartVerdict => {
+    const objections = parts.filter((p) => p.verdict === "disagree");
+    return objections.length
+      ? { verdict: "disagree", problems: objections.map((p) => p.problems).filter(Boolean).join(" / ") || "the verifier disagreed" }
+      : { verdict: "agree", problems: "" };
+  };
+  const leanings = verdicts.map((v) => v.leaning);
+  const names = [...new Set(verdicts.flatMap((v) => v.ideologies.map((i) => i.name)))];
+  return {
+    // A check that gave no verdict on the leaning counts as not approving it.
+    leaning: leanings.every((l) => l === null) ? null : merge(leanings.map((l) => l ?? { verdict: "disagree", problems: "the verifier gave no verdict" })),
+    ideologies: names.map((name) => ({
+      name,
+      ...merge(verdicts.map((v) => v.ideologies.find((i) => i.name === name) ?? { verdict: "disagree", problems: "the verifier did not assess it" })),
+    })),
+  };
+}
+
 /** Independent check of a finished result against the full framework. It never sees the scorer's reasoning. */
 export class FrameworkVerifier {
   private readonly system: string;

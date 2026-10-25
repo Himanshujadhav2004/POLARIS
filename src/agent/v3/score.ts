@@ -199,7 +199,7 @@ export function checkLeaning(i: LeaningGateInput): RuleCheck[] {
           ? `the independent check prefers ${cmp.top} (${p2(cmp.pTop)}); ${i.leaning} gets ${p2(pLeaning)}`
           : `the independent check gives ${i.leaning} ${p2(pLeaning)}${pLeaning >= PUBLISH.minLeaning ? "" : `, below ${PUBLISH.minLeaning}`}`,
     },
-    { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? "the verifier agreed" : "the verifier disagreed" },
+    { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? `the verifier agreed in all ${PUBLISH.verifierChecks} checks` : "the verifier disagreed" },
   ];
   checks.push(stability(i.leaning, i.repeats));
   return checks;
@@ -312,4 +312,59 @@ export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[
     } else if (!i.repeats.every(Boolean)) failed.push(`found in ${i.repeats.filter(Boolean).length + 1} of ${PUBLISH.runs} runs`);
   }
   return failed;
+}
+
+/** A bar missed by less than this is a near miss: listed for reviewers, never published. */
+export const NEAR_MISS_MARGIN = 0.1;
+const nearLow = (bar: number) => Math.round((bar - NEAR_MISS_MARGIN) * 100) / 100;
+const nearHigh = (bar: number) => Math.round((bar + NEAR_MISS_MARGIN) * 100) / 100;
+
+/**
+ * An unpublished ideological leaning the verifier agreed with, blocked only by numbers short of their
+ * bars by less than NEAR_MISS_MARGIN. Null when anything else blocked it.
+ */
+export function ideologyNearMiss(i: IdeologyGateInput): string | null {
+  const c = i.candidate;
+  if (!i.verifierAgrees || (i.repeats && !i.repeats.every(Boolean))) return null;
+  const short: string[] = [];
+  if (i.pStance < PUBLISH.minStance) {
+    if (i.pStance < nearLow(PUBLISH.minStance)) return null;
+    short.push(`takes a position ${p2(i.pStance)} (needs ${PUBLISH.minStance})`);
+  }
+  if (c.kind === "issue") {
+    if (c.probability < PUBLISH.minIssue) {
+      if (c.probability < nearLow(PUBLISH.minIssue)) return null;
+      short.push(`independent probability ${p2(c.probability)} (needs ${PUBLISH.minIssue})`);
+    }
+    for (const [name, p] of Object.entries(i.otherSides)) {
+      if (p <= PUBLISH.maxOtherSide) continue;
+      if (p > nearHigh(PUBLISH.maxOtherSide)) return null;
+      short.push(`other side ${name} ${p2(p)} (limit ${PUBLISH.maxOtherSide})`);
+    }
+  } else {
+    if (i.leaning && !CARD_BY_NAME.get(c.name)!.typicalLeanings.includes(i.leaning)) return null;
+    if (c.probability < PUBLISH.minTradition) {
+      if (c.probability < nearLow(PUBLISH.minTradition)) return null;
+      short.push(`independent probability ${p2(c.probability)} (needs ${PUBLISH.minTradition})`);
+    }
+  }
+  if (!short.length) return null;
+  return `${c.name}: ${short.join("; ")}${i.repeats ? "" : " (extra runs not made)"}`;
+}
+
+/** The candidate leaning, when only P1 or P4 blocked it and each by less than NEAR_MISS_MARGIN. */
+export function leaningNearMiss(i: LeaningGateInput, checks: RuleCheck[]): string | null {
+  const failed = failedChecks(checks);
+  if (!failed.length || failed.some((c) => c.id !== "P1" && c.id !== "P4")) return null;
+  const short: string[] = [];
+  if (failed.some((c) => c.id === "P1")) {
+    if (i.pStance < nearLow(PUBLISH.minStance)) return null;
+    short.push(`takes a position ${p2(i.pStance)} (needs ${PUBLISH.minStance})`);
+  }
+  if (failed.some((c) => c.id === "P4")) {
+    const p = i.independent[i.leaning];
+    if (compareWithIndependent(i.leaning, i.independent).steps !== 0 || p < nearLow(PUBLISH.minLeaning)) return null;
+    short.push(`the independent check gives ${i.leaning} ${p2(p)} (needs ${PUBLISH.minLeaning})`);
+  }
+  return `${i.leaning}: ${short.join("; ")}${checks.some((c) => c.id === "P6" && c.skipped) ? " (extra runs not made)" : ""}`;
 }

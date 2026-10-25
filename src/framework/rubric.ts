@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.2";
+export const FRAMEWORK_VERSION = "framework-v3.3";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -73,6 +73,13 @@ export interface GateCheck {
   /** Shown as "No political position (<reason>)" when this check fails. */
   reason: "descriptive" | "attributed" | "not political" | "consensus";
 }
+
+/**
+ * Rule E2. Armando's examples label claims argued through an effect ("Raising the minimum wage kills
+ * jobs" → Pro-wage flexibility); before v3.3 the independent check scored them as taking no position.
+ */
+export const EFFECT_RULE =
+  'A claim that asserts a contested effect of a policy, which is the argument one side makes for or against it, takes that side (for example, "Raising the minimum wage kills jobs" argues against raising it).';
 
 export const STANCE_GATE: GateCheck[] = [
   {
@@ -221,6 +228,7 @@ export const ALL_CRITERIA: Criterion[] = DIMENSIONS.flatMap((d) => d.criteria);
 export const RULES = [
   { id: "C1", name: "Country context", text: "Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, no leaning is given." },
   { id: "E1", name: "Evidence", text: "Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence." },
+  { id: "E2", name: "Arguing through effects", text: EFFECT_RULE },
   { id: "H1", name: "Hedged wording", text: 'If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).' },
   { id: "A1", name: "Mixed signals", text: "If one topic area scores left (−1 or lower) and another scores right (+1 or higher), no leaning is given (mixed signals), never Center." },
   { id: "A2", name: "Combining topic areas", text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center." },
@@ -248,6 +256,8 @@ export const PUBLISH = {
   maxIdeologies: 5,
   /** Scorer runs that must give the same answer. */
   runs: 3,
+  /** Separate verifier checks that must all agree, so a label near the bar does not flip between runs. */
+  verifierChecks: 2,
 } as const;
 
 export const PUBLISH_RULES = [
@@ -255,7 +265,7 @@ export const PUBLISH_RULES = [
   { id: "P2", name: "Full match", text: "Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged." },
   { id: "P3", name: "Country clear", text: "The country or region whose politics the claim is about is clear." },
   { id: "P4", name: "Same level", text: `The independent check's most likely leaning is the same exact level, with a probability of at least ${PUBLISH.minLeaning}.` },
-  { id: "P5", name: "Verifier agrees", text: "The independent verifier agrees with the leaning." },
+  { id: "P5", name: "Verifier agrees", text: `The independent verifier agrees with the leaning in all ${PUBLISH.verifierChecks} of its separate checks.` },
   { id: "P6", name: "Stable", text: `The scorer gives the same leaning in all ${PUBLISH.runs} runs. The extra runs are made only when P1–P5 pass.` },
 ] as const;
 
@@ -267,15 +277,15 @@ export type PublishRuleId = (typeof PUBLISH_RULES)[number]["id"];
 export const IDEOLOGY_RULES = [
   {
     id: "I1",
-    text: "Issue leanings: assign one when the claim itself takes that side of its issue, quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.",
+    text: "Issue leanings: assign one when the claim itself takes that side of its issue, directly or through an effect that side argues (rule E2), quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.",
   },
   {
     id: "I2",
-    text: "Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply.",
+    text: "Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply. A position argued through its effects counts (rule E2).",
   },
   {
     id: "I3",
-    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; for an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; for a tradition, its independent probability is at least ${PUBLISH.minTradition} and, when the claim has a leaning, the tradition is usually found there; the verifier agrees; and all ${PUBLISH.runs} runs find it. Otherwise it is not published, and the reason is recorded.`,
+    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; for an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; for a tradition, its independent probability is at least ${PUBLISH.minTradition} and, when the claim has a leaning, the tradition is usually found there; the verifier agrees in all ${PUBLISH.verifierChecks} of its checks; and all ${PUBLISH.runs} runs find it. Otherwise it is not published, and the reason is recorded.`,
   },
   { id: "I4", text: `A claim has at most one political leaning but can have several ideological leanings, up to ${PUBLISH.maxIdeologies}.` },
   {

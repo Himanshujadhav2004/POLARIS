@@ -1,4 +1,4 @@
-# Political leaning and ideology scoring framework (framework-v3.2)
+# Political leaning and ideology scoring framework (framework-v3.3)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 
@@ -117,6 +117,7 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 
 - **C1 Country context.** Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, no leaning is given.
 - **E1 Evidence.** Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence.
+- **E2 Arguing through effects.** A claim that asserts a contested effect of a policy, which is the argument one side makes for or against it, takes that side (for example, "Raising the minimum wage kills jobs" argues against raising it).
 - **H1 Hedged wording.** If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).
 - **A1 Mixed signals.** If one topic area scores left (−1 or lower) and another scores right (+1 or higher), no leaning is given (mixed signals), never Center.
 - **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center.
@@ -128,9 +129,9 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 
 Two kinds, both of Geo type Ideology: **issue leanings** (one side of an issue, such as Pro-life) and **traditions** (classic ideologies, such as Conservative). A claim can have several.
 
-- **I1.** Issue leanings: assign one when the claim itself takes that side of its issue, quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.
-- **I2.** Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply.
-- **I3.** An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least 0.8; for an issue leaning, its independent probability is at least 0.9 and every other side of the issue is at most 0.1; for a tradition, its independent probability is at least 0.8 and, when the claim has a leaning, the tradition is usually found there; the verifier agrees; and all 3 runs find it. Otherwise it is not published, and the reason is recorded.
+- **I1.** Issue leanings: assign one when the claim itself takes that side of its issue, directly or through an effect that side argues (rule E2), quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.
+- **I2.** Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply. A position argued through its effects counts (rule E2).
+- **I3.** An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least 0.8; for an issue leaning, its independent probability is at least 0.9 and every other side of the issue is at most 0.1; for a tradition, its independent probability is at least 0.8 and, when the claim has a leaning, the tradition is usually found there; the verifier agrees in all 2 of its checks; and all 3 runs find it. Otherwise it is not published, and the reason is recorded.
 - **I4.** A claim has at most one political leaning but can have several ideological leanings, up to 5.
 - **I5.** When the independent check gives an ideological leaning a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule.
 
@@ -144,7 +145,7 @@ A leaning is published only when every rule below passes. If any fails, the clai
 | **P2** Full match | Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged. |
 | **P3** Country clear | The country or region whose politics the claim is about is clear. |
 | **P4** Same level | The independent check's most likely leaning is the same exact level, with a probability of at least 0.7. |
-| **P5** Verifier agrees | The independent verifier agrees with the leaning. |
+| **P5** Verifier agrees | The independent verifier agrees with the leaning in all 2 of its separate checks. |
 | **P6** Stable | The scorer gives the same leaning in all 3 runs. The extra runs are made only when P1–P5 pass. |
 
 Explanations quote the claim only through words checked to be in it, word for word. Notes written by the models are kept apart as unverified reviewer notes.

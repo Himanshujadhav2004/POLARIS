@@ -90,6 +90,7 @@ function v3Rows(freshFile: string, run: string) {
     Rules: lines(r.checks),
     Explanation: fit(r.explanation ?? ""),
     "Reviewer notes": lines([...(r.droppedIdeologies ?? []).map((d: string) => `Not published: ${d}`), ...r.reviewerNotes]),
+    "Near misses": lines(r.nearMisses ?? []),
     Run: run,
   });
   return [
@@ -106,8 +107,8 @@ function v3Rows(freshFile: string, run: string) {
         "Claim ID": r.id,
       },
     })),
-    // Fresh claims with no political position are already in "Fresh QA sample"; only labelled or blocked ones are added.
-    ...fresh.rows.filter((r) => r.published || String(r.display ?? "").startsWith("No label")).map((r) => ({
+    // Fresh claims with no political position are already in "Fresh QA sample"; only labelled, blocked or near-miss ones are added.
+    ...fresh.rows.filter((r) => r.published || String(r.display ?? "").startsWith("No label") || r.nearMisses?.length).map((r) => ({
       properties: {
         ...common(r, r.ideologies),
         Set: "Fresh sample",

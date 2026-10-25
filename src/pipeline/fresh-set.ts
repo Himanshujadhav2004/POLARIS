@@ -118,6 +118,7 @@ const rowJson = ({ space, claim, result, error, inSample }: FreshRow) => ({
   droppedIdeologies: result?.droppedIdeologies.map((d) => `${d.name}: ${d.reason}`) ?? [],
   repeats: result?.repeats ?? null,
   reviewerNotes: result?.reviewerNotes ?? [],
+  nearMisses: result?.nearMisses ?? [],
 });
 
 export function writeFreshSet(name: string, seed: number, rows: FreshRow[], stats: FreshStats[]): string {

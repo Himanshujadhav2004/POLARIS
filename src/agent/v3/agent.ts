@@ -23,6 +23,8 @@ import {
   checkLeaning,
   decideLeaning,
   failedChecks,
+  ideologyNearMiss,
+  leaningNearMiss,
   quote,
   readyForRepeats,
   resolveIdeologies,
@@ -31,12 +33,13 @@ import {
   type AppliedCriterion,
   type DroppedIdeology,
   type IdeologyCandidate,
+  type LeaningGateInput,
   type RuleCheck,
   type ScorerOutput,
   type Strength,
   type UncertainReason,
 } from "./score.js";
-import { FrameworkVerifier, type VerifierVerdict } from "./verify.js";
+import { combineVerdicts, FrameworkVerifier, type VerifierVerdict } from "./verify.js";
 
 /** Why nothing was published at the leaning level. */
 export type NoLabelReason = UncertainReason | "signals disagree" | "publish rules";
@@ -79,6 +82,8 @@ export interface ScoredClaim {
   flags: string[];
   /** What the extra scorer runs gave (P6); null when they were not needed. */
   repeats: RepeatRun[] | null;
+  /** Unpublished labels that missed only a numeric bar, by less than 0.1. For reviewers; never published. */
+  nearMisses: string[];
   signals: { decisions: DecisionSignals; verifier: VerifierVerdict | null };
   versions: { framework: string; scorer: string; decisions: string; verifier: string };
 }
@@ -287,7 +292,7 @@ If it matches, give the position ID and the claim's exact words as evidence. If 
     if (decision.kind === "no_position") {
       const check = STANCE_GATE.find((g) => g.id === decision.failedCheck)!;
       const p = decisions.pStance.toFixed(2);
-      const empty = { leaning: null, checks: [], ideologies: [], droppedIdeologies: [], repeats: null, signals: { decisions, verifier: null } };
+      const empty = { leaning: null, checks: [], ideologies: [], droppedIdeologies: [], repeats: null, nearMisses: [], signals: { decisions, verifier: null } };
       if (decisions.pStance >= 0.5) {
         return this.finish(
           { ...base, ...empty, outcome: "no_label", noLabelReason: "signals disagree", noPosition: null },
@@ -313,7 +318,13 @@ If it matches, give the position ID and the claim's exact words as evidence. If 
         ideologies: candidates.map((i) => ({ name: i.name, belief: i.tenetText, evidence: i.evidence })),
       };
       const resultKey = [candidateLeaning ?? "-", ...applied.map((a) => a.id), ...candidates.map((i) => `${i.name}/${i.tenet}`)].join("|");
-      verifier = await this.state.cached(this.key("verifier2", claim.id, resultKey), () => this.verifier.verify(claim, toVerify));
+      // Separate checks (P5, I3), cached apart so each is its own sample; check 1 keeps the earlier key.
+      const verifierRuns = Array.from({ length: PUBLISH.verifierChecks }, (_, i) => i + 1);
+      verifier = combineVerdicts(
+        await Promise.all(
+          verifierRuns.map((n) => this.state.cached(this.key("verifier2", claim.id, n > 1 ? `${resultKey}:check${n}` : resultKey), () => this.verifier.verify(claim, toVerify))),
+        ),
+      );
     }
     if (verifier?.leaning?.verdict === "disagree") notes.push(`Verifier on the leaning: ${verifier.leaning.problems}`);
     for (const v of verifier?.ideologies ?? []) if (v.verdict === "disagree") notes.push(`Verifier on ${v.name}: ${v.problems}`);
@@ -321,19 +332,18 @@ If it matches, give the position ID and the claim's exact words as evidence. If 
 
     // Leaning rules P1–P5; P6 needs the extra runs.
     const weakest = applied.map((a) => a.strength).sort((a, b) => STRENGTH_ORDER.indexOf(a) - STRENGTH_ORDER.indexOf(b))[0] ?? "partial";
+    const leaningInput = (leaning: LeaningName, repeats: (LeaningName | null)[] | null): LeaningGateInput => ({
+      leaning,
+      pStance: decisions.pStance,
+      weakestStrength: weakest,
+      hedged: out.hedged,
+      country: out.country,
+      independent: decisions.leaning,
+      verifierAgrees: verifier?.leaning?.verdict === "agree",
+      repeats,
+    });
     const leaningChecks = (repeats: (LeaningName | null)[] | null): RuleCheck[] =>
-      candidateLeaning
-        ? checkLeaning({
-            leaning: candidateLeaning,
-            pStance: decisions.pStance,
-            weakestStrength: weakest,
-            hedged: out.hedged,
-            country: out.country,
-            independent: decisions.leaning,
-            verifierAgrees: verifier?.leaning?.verdict === "agree",
-            repeats,
-          })
-        : [];
+      candidateLeaning ? checkLeaning(leaningInput(candidateLeaning, repeats)) : [];
     let checks = leaningChecks(null);
 
     // Ideological leanings (I3): issue leanings also need every other side of their issue to score low.
@@ -362,7 +372,11 @@ If it matches, give the position ID and the claim's exact words as evidence. If 
     }
 
     const leaning = candidateLeaning && allPass(checks) ? candidateLeaning : null;
-    const rest = { checks, ideologies: published, droppedIdeologies: dropped, repeats, signals: { decisions, verifier }, noPosition: null };
+    const nearMisses = [
+      candidateLeaning && !leaning ? leaningNearMiss(leaningInput(candidateLeaning, repeats?.map((r) => r.leaning) ?? null), checks) : null,
+      ...candidates.filter((c) => !published.includes(c)).map((c) => ideologyNearMiss(ideologyInput(c, repeats))),
+    ].filter((m): m is string => m !== null);
+    const rest = { checks, ideologies: published, droppedIdeologies: dropped, repeats, nearMisses, signals: { decisions, verifier }, noPosition: null };
     if (leaning) {
       return this.finish(
         { ...base, ...rest, outcome: "leaning", leaning, noLabelReason: null },

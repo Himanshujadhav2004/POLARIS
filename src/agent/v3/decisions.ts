@@ -1,7 +1,7 @@
 import type OpenAI from "openai";
 import type { Decision, DecisionCreateParams } from "openai/resources/decisions";
 import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../../framework/ideologies.js";
-import { LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
+import { EFFECT_RULE, LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, STANCE_GATE, type LeaningName } from "../../framework/rubric.js";
 import type { Claim } from "../../geo/claims.js";
 import type { Taxonomy } from "../../geo/taxonomy.js";
 import { spaceNames } from "./prompt.js";
@@ -40,7 +40,7 @@ export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
       instructions:
         "Does the claim itself, in its own voice, take a contested political position? It counts only when all of these hold: " +
         STANCE_GATE.map((g) => `${g.name.toLowerCase()} (${g.passes})`).join("; ") +
-        ". Reports of what someone said, statistics, neutral descriptions, advice and widely shared principles do not count.",
+        `. ${EFFECT_RULE} Reports of what someone said, statistics, neutral descriptions, advice and widely shared principles do not count.`,
     },
     {
       type: "score",
@@ -63,11 +63,11 @@ export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
                 ? `Also called: ${card.aliases.join("; ")}. These names only show what this side covers: a claim that uses some of the same words while arguing for a different side does not count. `
                 : "") +
               `The other side: ${card.neighbours.map((n) => `${n}: ${CARD_BY_NAME.get(n)?.definition ?? ""}`).join(" ")} ` +
-              "It counts only if the claim argues for this side; mentioning the issue or reporting someone else's view does not count."
+              "It counts only if the claim argues for this side, directly or by asserting an effect that this side uses as its argument; mentioning the issue or reporting someone else's view does not count."
             : `Is the position this claim itself takes characteristic of the ideology "${card.name}" (${card.definition}), meaning its adherents typically hold that position, even if the claim does not name it? ` +
               `Characteristic positions: ${card.tenets.map((t) => t.text).join(" / ")}` +
               (card.exclusions.length ? ` It does not count when: ${card.exclusions.join(" ")}` : "") +
-              " Never decide from the topic alone.",
+              ` Never decide from the topic alone. ${EFFECT_RULE}`,
       }),
     ),
   ];

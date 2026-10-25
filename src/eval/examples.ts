@@ -135,6 +135,7 @@ export function writeExamples(rows: ExampleRow[], summary: ExamplesSummary): str
           explanation: result?.explanation ?? null,
           droppedIdeologies: result?.droppedIdeologies.map((d) => `${d.name}: ${d.reason}`) ?? [],
           reviewerNotes: result?.reviewerNotes ?? [],
+          nearMisses: result?.nearMisses ?? [],
         })),
       },
       null,

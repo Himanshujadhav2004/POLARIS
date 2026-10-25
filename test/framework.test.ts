@@ -1,7 +1,17 @@
 import { describe, expect, it } from "vitest";
 import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
-import { ALL_CRITERIA, DIMENSIONS, LEANING_BY_SCORE, LEANINGS_LEFT_TO_RIGHT, LEVEL_RULES, PUBLISH_RULES, RULES } from "../src/framework/rubric.js";
+import {
+  ALL_CRITERIA,
+  DIMENSIONS,
+  EFFECT_RULE,
+  IDEOLOGY_RULES,
+  LEANING_BY_SCORE,
+  LEANINGS_LEFT_TO_RIGHT,
+  LEVEL_RULES,
+  PUBLISH_RULES,
+  RULES,
+} from "../src/framework/rubric.js";
 
 /** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted). Both Libertarian values are used. */
 const GEO_IDEOLOGIES = [
@@ -50,6 +60,12 @@ describe("rubric", () => {
     const md = renderFramework();
     expect(md).not.toMatch(/Potential|confidence band/i);
     expect(new Set(RULES.map((r) => r.id)).size).toBe(RULES.length);
+  });
+
+  it("counts a side argued through its effects (E2) for positions and ideological leanings alike", () => {
+    expect(RULES.find((r) => r.id === "E2")?.text).toBe(EFFECT_RULE);
+    for (const id of ["I1", "I2"]) expect(IDEOLOGY_RULES.find((r) => r.id === id)?.text).toContain("rule E2");
+    expect(renderFramework()).toContain(EFFECT_RULE);
   });
 });
 

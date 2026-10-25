@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { buildDecisionQuestions, parseDecision } from "../src/agent/v3/decisions.js";
 import { buildScorerMessage } from "../src/agent/v3/prompt.js";
+import { combineVerdicts } from "../src/agent/v3/verify.js";
 import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
+import { EFFECT_RULE } from "../src/framework/rubric.js";
 import {
   allPass,
   checkIdeology,
@@ -10,6 +12,8 @@ import {
   decideLeaning,
   evidenceFound,
   failedChecks,
+  ideologyNearMiss,
+  leaningNearMiss,
   quote,
   readyForRepeats,
   resolveIdeologies,
@@ -148,6 +152,16 @@ describe("checkLeaning (publish rules P1–P6)", () => {
     expect(failing({})).toEqual([]);
   });
 
+  it("lists a near miss only when P1 or P4 alone fell short by less than 0.1", () => {
+    const near = (over: Partial<LeaningGateInput>) => leaningNearMiss({ ...ok, ...over }, checkLeaning({ ...ok, ...over }));
+    expect(near({ pStance: 0.72, repeats: null })).toBe("Right: takes a position 0.72 (needs 0.8) (extra runs not made)");
+    expect(near({ independent: dist("Right", 0.65) })).toBe("Right: the independent check gives Right 0.65 (needs 0.7)");
+    expect(near({})).toBeNull();
+    expect(near({ pStance: 0.6 })).toBeNull();
+    expect(near({ independent: dist("Left", 0.9) })).toBeNull();
+    expect(near({ pStance: 0.75, verifierAgrees: false })).toBeNull();
+  });
+
   it("blocks on each rule by itself", () => {
     expect(failing({ pStance: 0.79 })).toEqual(["P1"]);
     expect(failing({ weakestStrength: "partial" })).toEqual(["P2"]);
@@ -241,6 +255,46 @@ describe("checkIdeology (I3)", () => {
       expect(checkIdeology({ ...base, repeats: null }, false)).toEqual([]);
     }
   });
+
+  const near = (base: IdeologyGateInput, over: Partial<IdeologyGateInput>, candidate: Partial<IdeologyGateInput["candidate"]> = {}) =>
+    ideologyNearMiss({ ...base, ...over, candidate: { ...base.candidate, ...candidate } });
+
+  it("lists a near miss when only a number falls short, by less than 0.1", () => {
+    expect(near(issue, {}, { probability: 0.88 })).toBe("Pro-life: independent probability 0.88 (needs 0.9)");
+    expect(near(issue, { otherSides: { "Pro-choice": 0.18 } })).toBe("Pro-life: other side Pro-choice 0.18 (limit 0.1)");
+    expect(near(tradition, { pStance: 0.79, repeats: null })).toBe("Christian conservative: takes a position 0.79 (needs 0.8) (extra runs not made)");
+    expect(near(tradition, {}, { probability: 0.7 })).toBe("Christian conservative: independent probability 0.70 (needs 0.8)");
+  });
+
+  it("is not a near miss when it passed, missed by more, or failed a judgement", () => {
+    expect(near(issue, {})).toBeNull();
+    expect(near(issue, {}, { probability: 0.79 })).toBeNull();
+    expect(near(issue, { otherSides: { "Pro-choice": 0.3 } })).toBeNull();
+    expect(near(issue, { verifierAgrees: false }, { probability: 0.88 })).toBeNull();
+    expect(near(issue, { repeats: [true, false] }, { probability: 0.88 })).toBeNull();
+    expect(near(tradition, { leaning: "Left" }, { probability: 0.75 })).toBeNull();
+  });
+});
+
+describe("combineVerdicts (verifier asked twice)", () => {
+  const agree = { verdict: "agree" as const, problems: "" };
+  const no = (problems: string) => ({ verdict: "disagree" as const, problems });
+  it("agrees only when every check agrees, and keeps every objection", () => {
+    const v = combineVerdicts([
+      { leaning: agree, ideologies: [{ name: "Pro-life", ...agree }, { name: "Conservative", ...agree }] },
+      { leaning: no("between two levels"), ideologies: [{ name: "Pro-life", ...agree }, { name: "Conservative", ...no("too broad") }] },
+    ]);
+    expect(v.leaning).toEqual(no("between two levels"));
+    expect(v.ideologies).toEqual([{ name: "Pro-life", ...agree }, { name: "Conservative", ...no("too broad") }]);
+  });
+  it("treats a part one check did not assess as not approved", () => {
+    const v = combineVerdicts([
+      { leaning: null, ideologies: [{ name: "Pro-life", ...agree }] },
+      { leaning: null, ideologies: [] },
+    ]);
+    expect(v.leaning).toBeNull();
+    expect(v.ideologies).toEqual([{ name: "Pro-life", ...no("the verifier did not assess it") }]);
+  });
 });
 
 describe("buildScorerMessage", () => {
@@ -279,6 +333,11 @@ describe("buildDecisionQuestions", () => {
   });
   it("says the names set the scope, so sharing words with a side is not taking it", () => {
     expect(instructionsFor("Gender-critical")).toContain("uses some of the same words while arguing for a different side does not count");
+  });
+  it("counts a side argued through its effects (rule E2) in the position, issue and tradition questions", () => {
+    expect("instructions" in questions[0]! && questions[0].instructions).toContain(EFFECT_RULE);
+    expect(instructionsFor("Pro-wage flexibility")).toContain("directly or by asserting an effect that this side uses as its argument");
+    expect(instructionsFor("Libertarian")).toContain(EFFECT_RULE);
   });
   it("still describes the other side of the issue", () => {
     expect(instructionsFor("Pro-life")).toContain("The other side: Pro-choice:");
