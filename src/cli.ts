@@ -59,10 +59,12 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                writes evals/results/examples.<set>.<framework>.json
   fresh-rescore [--dir fresh-seed3] [--concurrency N]
                                Score an existing fresh set again with the current framework
-  fresh-set [--seed 3] [--pool 10] [--per-space 10] [--labelled 6] [--concurrency N]
+  fresh-set [--seed 3] [--pool 10] [--per-space 10] [--labelled 6] [--includes " should | must "] [--concurrency N]
                                Score never-used claims from every space (10 each by default: 70 claims)
                                and pick the 10-per-space QA sample;
-                               writes evals/fresh/fresh-seed<N>/fresh.json
+                               writes evals/fresh/fresh-seed<N>/fresh.json. With --includes ("|"-separated,
+                               case-sensitive) only claims containing one of the texts are drawn:
+                               an opinion sample, written to evals/fresh/opinion-seed<N>/
   qa-sample [--seed N] [--pool 60] [--per-space 10] [--labelled 6] [--concurrency N]
                                Build a reviewer sample in qa/<prompt>-seed<N>/ (skips dev-set and earlier QA claims)
   qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
@@ -94,6 +96,7 @@ async function main(argv: string[]): Promise<void> {
       pool: { type: "string" },
       "per-space": { type: "string" },
       labelled: { type: "string" },
+      includes: { type: "string" },
       dir: { type: "string" },
       file: { type: "string" },
       out: { type: "string" },
@@ -283,12 +286,14 @@ async function main(argv: string[]): Promise<void> {
     }
     case "fresh-set": {
       const seed = Number(values.seed ?? 3);
-      const name = `fresh-seed${seed}`;
+      const includes = values.includes?.split("|").filter((t) => t.trim());
+      const name = `${includes?.length ? "opinion" : "fresh"}-seed${seed}`;
       const taxonomy = await fetchTaxonomy(geo);
       const state = new RunState();
       try {
         const agent = new ScoringAgent(taxonomy, state, { model: values.model });
         const { rows, stats } = await buildFreshSet({
+          includes,
           geo,
           agent,
           seed,

@@ -7,18 +7,19 @@ import { fetchClaims, sampleClaimIds, type Claim } from "../geo/claims.js";
 import type { GeoClient } from "../geo/client.js";
 import { idsInProposals } from "../publish/dry-run.js";
 import { mapPool } from "../util/pool.js";
-import { seededRng } from "../util/random.js";
+import { seededRng, type Rng } from "../util/random.js";
 import { previouslyUsedIds, selectRows } from "./qa-sample.js";
 
 export const FRESH_ROOT = "evals/fresh";
 
 /**
  * Every claim used so far, so a fresh set measures the agent on claims it was never tuned on:
- * the dev set, QA rounds, test sets, proposal batches and earlier fresh sets.
+ * the dev set, QA rounds, test sets, Armando's examples, proposal batches and earlier fresh sets.
  */
 export function usedClaimIds(o: { qaRoot?: string; testSets?: string[]; proposalsRoot?: string; freshRoot?: string } = {}): Set<string> {
   const ids = previouslyUsedIds(o.qaRoot);
-  for (const file of o.testSets ?? ["evals/test-set-v1.json"]) {
+  // Armando's examples are the calibration set, so a fresh (held-out) sample must never draw them.
+  for (const file of o.testSets ?? ["evals/test-set-v1.json", "evals/armando-examples.json"]) {
     for (const item of (JSON.parse(readFileSync(file, "utf8")) as { items: { id: string }[] }).items) ids.add(item.id);
   }
   for (const id of idsInProposals(o.proposalsRoot)) ids.add(id);
@@ -62,7 +63,21 @@ export interface FreshSetOptions {
   labelled: number;
   concurrency: number;
   exclude: ReadonlySet<string>;
+  /**
+   * Draw only claims whose text contains one of these (case-sensitive), split evenly. Random claims are
+   * rarely political, so an opinion sample (" should ", " must ") is what measures label accuracy.
+   */
+  includes?: string[];
   log?: (line: string) => void;
+}
+
+/** Claim IDs for one space: a plain random draw, or an even split over the `includes` texts. */
+export async function drawIds(geo: GeoClient, spaceId: string, want: number, rng: Rng, includes?: string[]): Promise<string[]> {
+  if (!includes?.length) return sampleClaimIds(geo, spaceId, want, rng);
+  const ids: string[] = [];
+  // One text at a time, so the seeded draws happen in a fixed order.
+  for (const text of includes) ids.push(...(await sampleClaimIds(geo, spaceId, Math.ceil(want / includes.length), rng, 2, text)));
+  return [...new Set(ids)];
 }
 
 const published = (r: ScoredClaim | null) => Boolean(r && (r.leaning || r.ideologies.length));
@@ -75,7 +90,7 @@ export async function buildFreshSet(o: FreshSetOptions): Promise<{ rows: FreshRo
   for (const [index, space] of SPACES.entries()) {
     const rng = seededRng(o.seed * 1000 + index);
     // Draw extra IDs: some are excluded, have no text or already carry Leanings.
-    const ids = (await sampleClaimIds(o.geo, space.id, Math.ceil(o.pool * 1.5), rng)).filter((id) => !o.exclude.has(id));
+    const ids = (await drawIds(o.geo, space.id, Math.ceil(o.pool * 1.5), rng, o.includes)).filter((id) => !o.exclude.has(id));
     const claims = (await fetchClaims(o.geo, ids)).filter((c) => c.text && c.leaningIds.length === 0).slice(0, o.pool);
     const scored = await mapPool(claims, o.concurrency, async (claim) => {
       try {
