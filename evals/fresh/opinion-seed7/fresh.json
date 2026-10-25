@@ -1,0 +1,1767 @@
+{
+  "name": "opinion-seed7",
+  "seed": 7,
+  "framework": "framework-v3.3",
+  "generatedAt": "2026-10-25T20:37:16.575Z",
+  "stats": [
+    {
+      "space": "US Politics",
+      "scored": 10,
+      "published": 1,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "Health",
+      "scored": 10,
+      "published": 1,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "Crypto",
+      "scored": 10,
+      "published": 1,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "AI",
+      "scored": 10,
+      "published": 3,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "World affairs",
+      "scored": 10,
+      "published": 0,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "Podcasts",
+      "scored": 10,
+      "published": 0,
+      "errors": 0,
+      "sample": 10
+    },
+    {
+      "space": "Relationships",
+      "scored": 10,
+      "published": 0,
+      "errors": 0,
+      "sample": 10
+    }
+  ],
+  "rows": [
+    {
+      "claimId": "faf3847add0a0a5d1b5e061b1eb2f07e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress, rather than the president, should establish any nationwide standards governing mail-in ballots",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-states' rights: The claim argues that Congress, not the president, should set nationwide mail-in ballot standards. It does not support state governments’ authority relative to the federal government."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "faff62fef79b49f59a93e76bcc580df4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. President Donald Trump stated on October 19, 2026, that Ukrainian President Volodymyr Zelenskyy should have settled the war with Russia a long time ago",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral report of an attributed statement, not a position in the claim's own voice: \"U.S. President Donald Trump stated\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "87cddddfcb5b49f9b9cdc4121a7eb390",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan State Senator Jeremy Moss denounced Hasan Piker's comments as an attempt to create further divisions, stating he would not be lectured by a California podcaster about what the Jewish community should believe",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed reaction: Jeremy Moss “denounced Hasan Piker's comments” and “stating he would not be lectured,” rather than taking that position in the claim's own voice. It also does not state a clear public-policy, legal, rights, economic, or governmental position for mainstream camps to contest."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b25cad2954b5546397387db5cd4f5149",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "People who want to participate in the culture of a different gender should be supported",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P2 Full match)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Progressive",
+        "Liberal"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.84",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "SOC-2L (partial): “People who want to participate in the culture of a different gender should be supported”"
+      ],
+      "explanation": "No label. SOC-2L matched (partial): “People who want to participate in the culture of a different gender should be supported”. That points to Left, but rule P2 (Full match) failed: a criterion matches only in part. Ideology: Progressive (belief T2: “People who want to participate in the culture of a different gender should be supported”, independent probability 0.85). Ideology: Liberal (belief T2: “People who want to participate in the culture of a different gender should be supported”, independent probability 0.84). Not published: Pro-transgender rights (independent probability 0.82 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-transgender rights: independent probability 0.82 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Progressive",
+            "Liberal"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Progressive",
+            "Liberal"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-transgender rights: The claim supports people who want to participate in the culture of a different gender, but it does not specifically assert equal legal rights or protections for transgender people."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "fc1d4cd086b64a1aad8d6f06dcbe2278",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Wanying Zhang appeared in a Los Angeles federal court on October 5, 2026, where she offered no plea, was ordered held by a judge, and was told she must hire a private attorney",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of a court appearance and detention order, not an argument for or against a contested political position. It does not take a side on a mainstream political disagreement."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "fc24e66312f14c3cb4ed0a0ce300e427",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To qualify for public financing, gubernatorial candidates must collect at least 3,200 qualifying contributions of $5 from registered voters",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes an eligibility rule for public financing rather than arguing for or against it."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2a76a4f56c604ded8bbd1ae679277bdf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Eagle Wireless licensed its initial module designs from China-based Quectel Wireless Solutions and must replace it with proprietary technology by 2030.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual/descriptive statement about a company's licensed module designs and replacement obligation, not an argument for or against a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2ed6d4f836dd4958ad66a8600dee2bf3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The conservation group Prutehi Guahan filed a lawsuit in January 2022 arguing that the U.S. Air Force must conduct an environmental review under the National Environmental Policy Act before renewing its permit to detonate munitions at Tarague Beach",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual report about a lawsuit and attributes the policy position to Prutehi Guahan rather than taking it in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "18a49581d0e2485db16c886dc84a239b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court's decision in Department of Air Force v. Guahan could establish a precedent regarding whether federal agencies must conduct National Environmental Policy Act reviews for actions already regulated under separate hazardous waste laws",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral prediction about what a Supreme Court decision could do, not an argument for or against a policy or legal rule."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4ffae0498da741fea26a3cb5157edce2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump remarked regarding violence toward firefighters in certain neighborhoods that you ought to blow up the damn place",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed position: \"President Donald Trump remarked\"; it does not take the position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f1b84c4f107c478b9dc63d0f1e54a598",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Biological aging should become a routine cancer screening tool",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own position with “should,” but it is a medical/clinical screening recommendation rather than a political subject about law, government, rights, the economy, or social organization. It also does not present an issue that mainstream political camps contest."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f20196892f1841549afd42888cfe1371",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "The FDA should approve Definium's LSD-based drug DT120",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (consensus)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G4 (Contested) failed. The independent probability that the claim takes a position is 0.42.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own position on a government regulatory action by saying the FDA \"should approve\" a specific drug, but approval of a particular medicine is primarily a technical/scientific regulatory decision rather than a left-right contested political position between mainstream camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b0c9787273c7418b987b855c5ac0012b",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Ken Paxton should be held liable for Tierra Walker's death",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-criminal justice reform: The claim concerns legal liability for a death in the context of abortion policy, not changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b1115c4600e14f5c97fe4e808d428dde",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "If a tick is found attached, it should be removed using fine-tipped tweezers, pulling upward with steady pressure close to the skin",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives medical advice about tick removal, not a political position about public policy, law, rights, government, the economy, or social organization; it is not a contested issue between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0c020b49906c412fa1817a792a48d72e",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "The FDA should not appoint pharmaceutical industry executives to lead its regulatory centers",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.94",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center left (0.66); Left gets 0.32",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2L (partial): “The FDA should not appoint pharmaceutical industry executives to lead its regulatory centers”"
+      ],
+      "explanation": "No label. ECO-2L matched (partial): “The FDA should not appoint pharmaceutical industry executives to lead its regulatory centers”. That points to Left, but rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check prefers Center left (0.66); Left gets 0.32; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim opposes a specific kind of FDA appointment, but it does not directly call for higher taxes, expanded public programs, stronger unions, or consumer/financial regulation as described by ECO-2L. Its exact left-right level is doubtful because anti–industry-capture or conflict-of-interest concerns can be framed across camps.",
+        "Verifier on Pro-regulation: The evidence does not directly support government rules or oversight of markets; it supports excluding pharmaceutical industry executives from FDA regulatory-center leadership. That may be compatible with pro-regulation, but the claim itself is more about appointments or conflicts of interest than a clear pro-regulation stance."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5faca27665615ea89a1a84b8a16cd44a",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "The environment in which children grow up must also change to address childhood obesity",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.31.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a recommendation in its own voice, but it is a public-health/medical claim rather than a clear claim about public policy, law, rights, government, the economy, or political organization. It also states a broad goal/approach to address childhood obesity without a politically contested means."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6138729bdd5241478a66d7ec2484e7ce",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Under the new rule, Medicaid recipients can self-attest to their medical frailty in 2027 and once in 2028, but must provide documentation to prove it during 2028 renewals",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes Medicaid documentation rules and does not argue for or against them."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f9bde6736c194aaca3cea62de0fbb934",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Technology transfers for pandemic vaccines and treatments must remain strictly voluntary",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Libertarianism",
+        "Libertarian"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: Global",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 2 of 3 runs gave Right; the others gave Center right"
+      ],
+      "criteria": [
+        "ECO-2R (close): “Technology transfers for pandemic vaccines and treatments must remain strictly voluntary”"
+      ],
+      "explanation": "No label. ECO-2R matched (close): “Technology transfers for pandemic vaccines and treatments must remain strictly voluntary”. That points to Right, but rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave Center right. Ideology: Libertarianism (belief T1: “Technology transfers for pandemic vaccines and treatments must remain strictly voluntary”, independent probability 0.83). Ideology: Libertarian (belief T2: “Technology transfers for pandemic vaccines and treatments must remain strictly voluntary”, independent probability 0.82). Not published: Pro-deregulation (independent probability 0.08 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-deregulation: independent probability 0.08 is below 0.9"
+      ],
+      "repeats": [
+        {
+          "leaning": "Center right",
+          "ideologies": [
+            "Pro-deregulation",
+            "Libertarianism",
+            "Libertarian"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "ideologies": [
+            "Pro-deregulation",
+            "Libertarianism",
+            "Libertarian"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "fae8e426f0344f61853cad014e81c0c2",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "PCAB-accredited pharmacies must document sterility testing along with potency and purity checks to keep their accreditation",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim describes a technical accreditation requirement for pharmacies rather than arguing a contested political position; it concerns health/pharmacy standards, not public policy or ideology."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cc6c6a9013bb4decb992b9f21c7fefc9",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Under the FDA's May 11, 2026 guidance, manufacturers' applications must have been filed and accepted by the FDA to avoid enforcement prioritization",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.06.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes what FDA guidance requires rather than arguing for or against a policy, and the requirement is attributed to the FDA guidance rather than stated in the claim's own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ec6d7606c8a347a6aa6a954d3c1e19f1",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Solana should implement the final 200-millisecond slot time upgrade",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim uses prescriptive language in its own voice, but it is about a technical blockchain protocol upgrade for Solana rather than public policy, law, rights, government, or social organization; mainstream political camps do not contest this as a political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ec7ae5962a2e47b8a4ca6c006f9b1b1b",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Congress should ban federal candidates from trading prediction markets on their own elections",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P2 Full match, P4 Same level, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [
+        "Pro-regulation"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center (0.85); Center left gets 0.13",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Center left; the others gave no leaning, no leaning"
+      ],
+      "criteria": [
+        "ECO-1L (partial): “Congress should ban federal candidates from trading prediction markets on their own elections”"
+      ],
+      "explanation": "No label. ECO-1L matched (partial): “Congress should ban federal candidates from trading prediction markets on their own elections”. That points to Center left, but rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check prefers Center (0.85); Center left gets 0.13; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Center left; the others gave no leaning, no leaning. Ideology: Pro-regulation (belief T1: “Congress should ban federal candidates from trading prediction markets on their own elections”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The quote supports a narrow conflict-of-interest or election-ethics ban, but it does not clearly place the claim at the exact Center left level. Treating this as ECO-1L is doubtful because the position is not clearly a partisan economic regulation rather than a broadly acceptable candidate-ethics rule. / The quoted claim supports a narrow conflict-of-interest/election-integrity ban, not a clearly center-left economic policy under ECO-1L. It does not clearly sit at an exact left/right level; this kind of candidate self-dealing rule could be nonpartisan or cross-cutting rather than Center left."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0d65ed0b6e8744e19658bc0cb7d3b2d5",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The NBA should ban active players from endorsing prediction markets",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.78, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own position with “should ban,” but it is about an internal NBA endorsement rule rather than public policy, law, rights, government, or a clearly political economic program. It also is not clearly a mainstream left-right contested political issue from the claim text alone."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0de9b88b5ad243c0a80df850b6c7fbcf",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Aave should delegate risk controls to Risk Stewards",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.08.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own position with \"should,\" but it concerns internal Aave/DeFi protocol risk governance rather than public policy, law, rights, government, or society-wide economic organization, and it is not a mainstream partisan political dispute."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "710e0a728c1d45ebb7a49e25e2084765",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The ECB should proceed with launching a retail digital euro",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b6a14da7f38b430988474f7f13a4d408",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Coinkite released updated firmware to patch the flaw, but stated that affected users must generate entirely new seeds and migrate their funds because the update cannot repair already compromised seeds.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual/technical report about firmware and wallet seeds, and the prescriptive wording is attributed to Coinkite rather than stated in the claim's own political voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b93424d879584d3f88806afedfa6833b",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Under the Financial Accounting Standards Board proposal, a qualifying stablecoin must have segregated reserves of at least one-to-one held in short-term, highly liquid assets",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.11.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes an attributed FASB proposal rather than taking its own political position: \"Under the Financial Accounting Standards Board proposal\". The accounting condition for qualifying stablecoins is technical and not clearly a mainstream partisan contest in the claim itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "583c8826587546aea9758b84a6972ebc",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Governments must inflate their money supply to manage debt because defaults are not an option in a modern credit system",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "587ca3d53ba0405bb0eb77b069178a3c",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Under one model proposed by ASIC in Consultation Paper 392 on October 15, 2026, platforms without qualifying third-party custody must hold at least A$14 million in net tangible assets or 10% of average revenue",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes a regulatory model attributed to ASIC rather than taking its own position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0e1854d54f8447d3bb5e50b80617dc7d",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Starting October 1, 2026, under Brazil's Resolution BCB 588, regulated firms must report crypto transfers of $10,000 or more involving self-custody wallets to the Financial Activities Control Council by the next business day without determining if they are suspicious.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.06.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes a Brazilian regulatory requirement rather than arguing for or against it; the obligation is attributed to \"Brazil's Resolution BCB 588,\" not asserted as the claim's own position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "717917f86c634b73bde4afccd0aa9737",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "AI developers should deliberately pace the development of frontier models",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Deaccelerationist"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Deaccelerationist (belief T1: “should deliberately pace the development of frontier models”, independent probability 1.00). Not published: Pro-AI regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-AI regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "ideologies": [
+            "Deaccelerationist",
+            "Pro-AI regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "ideologies": [
+            "Deaccelerationist",
+            "Pro-AI regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-AI regulation: The claim says developers should \"deliberately pace the development\" of AI models, but it does not itself call for rules, regulation, or oversight governing AI development or use. / The claim says AI developers should “deliberately pace the development of frontier models,” but it does not clearly support rules or oversight governing AI. This could be voluntary pacing rather than regulation."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "718e78ee3f40d8935065ecb30ffea114",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Frontier AI models should undergo mandatory third-party safety evaluations before release",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-AI regulation",
+        "Pro-regulation"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Pro-AI regulation (belief T1: “Frontier AI models should undergo mandatory third-party safety evaluations before release”, independent probability 1.00). Ideology: Pro-regulation (belief T1: “should undergo mandatory third-party safety evaluations before release”, independent probability 1.00). Not published: Deaccelerationist (independent probability 0.85 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Deaccelerationist: independent probability 0.85 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation",
+            "Deaccelerationist"
+          ]
+        },
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation",
+            "Deaccelerationist"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Second look at Pro-online safety: The claim supports safety evaluations for frontier AI models before release, but it does not address online speech, platform accountability, content moderation, misinformation controls, or reducing online harms on platforms.",
+        "Verifier on Deaccelerationist: The claim supports mandatory safety evaluations, but it does not itself advocate slowing the pace or reducing the scale of AI development or deployment. Any delay before release is only an implied possible effect, not the stated side of the issue. / The claim supports “mandatory third-party safety evaluations before release,” which is AI safety oversight, but it does not advocate slowing the pace or reducing the scale of technological development or deployment."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2179e2605d4360b7811d9d4abd79f11b",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Senator Mark Kelly believes communities should have a say in energy price decisions",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim contains a policy-like 'should' position, but it is attributed to Senator Mark Kelly rather than stated in the claim's own voice. The broad procedural idea that communities should be heard is not clearly a contested left-right policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "21efe8b57d974f769edc06ea5f294bb2",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "The US should completely ban the export of advanced AI chips to China",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-China containment"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE, X-TECH). Ideology: Pro-China containment (belief T1: “completely ban the export of advanced AI chips to China”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed). Not published: Deaccelerationist (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed",
+        "Deaccelerationist: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-China containment",
+            "Pro-regulation",
+            "Deaccelerationist"
+          ]
+        },
+        {
+          "leaning": null,
+          "ideologies": [
+            "Pro-China containment",
+            "Pro-regulation",
+            "Deaccelerationist"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Second look at Protectionist: The claim supports an export ban on advanced AI chips to China, but it does not state a protectionist rationale such as protecting domestic industries or workers from foreign competition.",
+        "Verifier on Pro-regulation: The claim supports an export ban aimed at China, but that is better read as a foreign-policy/China-containment measure than a general pro-regulation position about market failures, public protection, or constraining harmful conduct. / The claim supports an export ban aimed at China, which is best read as geopolitical or national-security pressure. It does not clearly take the general pro-regulation economic position of using rules to address market failures or business conduct.",
+        "Verifier on Deaccelerationist: The claim would restrict exports of advanced AI chips to China, but it does not advocate slowing or reducing technological development or deployment generally. / The claim would restrict China’s access to advanced AI chips, but it does not advocate slowing technological development or deployment generally. It could be compatible with accelerating AI development outside China."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "58905f56c05d4697990ea2194733f36a",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Microsoft President Brad Smith stated that safety rules should legally require companies to notify victims if a rogue AI agent breaches their systems",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.02.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to Microsoft President Brad Smith rather than asserted in the claim's own voice: \"Microsoft President Brad Smith stated that\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "93e10b0c58bf40de95b8456900f2fed3",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "President Donald Trump stated on July 23, 2026, that the United States must dominate artificial intelligence and cryptocurrency to remain the number one superpower",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed statement by President Donald Trump rather than taking the position in its own voice: \"President Donald Trump stated\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "93f5ed39f4084a30bf4d7e5caf4accb2",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "The Five Eyes agencies urged political and business leaders to act immediately, stating that cyber risk must be treated as a core business risk and leadership responsibility",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral attribution of what Five Eyes agencies urged, not a position in the claim's own voice, and treating cyber risk as a leadership responsibility is not a clear left-right contested political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "604d601742678c0112bb3f1567d138a5",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Bill Gates says law enforcement and politicians must help decide what AI safeguards and monitoring look like",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to Bill Gates rather than asserted in the claim's own voice: \"Bill Gates says\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "653b1a5977004d2e8294f9ce20d94277",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "UK AI Minister Kanishka Narayan stated on September 28, 2026, that countries must harden and build their defenses against AI risks, calling existing model testing insufficient.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to another person rather than stated in the claim's own voice: \"UK AI Minister Kanishka Narayan stated\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4a0a2a4fb15a4c0c945b4009871dbf87",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Lina Khan stated that business incentives shape how AI advancements get deployed, and policymakers must ensure the public is protected",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.10.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to another person rather than asserted in the claim's own voice: \"Lina Khan stated\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "965015af7cbc9ab9e481facfa279acbc",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Nuclear-armed states should eliminate their nuclear arsenals even if conventional threats remain",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Dove (independent probability 0.74 is below 0.9).",
+      "droppedIdeologies": [
+        "Dove: independent probability 0.74 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "966346770118454e87b094877d3025dd",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "India should halt Russian oil purchases to avoid US tariffs",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE). Not published: Pro-Ukraine (independent probability 0.84 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-Ukraine: independent probability 0.84 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-Ukraine: The claim says India should stop buying Russian oil “to avoid US tariffs,” not to support Ukraine’s sovereignty or defense against Russia. The quoted evidence does not show the claim itself taking a Pro-Ukraine position. / The claim’s stated reason is “to avoid US tariffs,” not support for Ukraine’s sovereignty or defense. “India should halt Russian oil purchases” may align with pressure on Russia, but it does not itself take the Pro-Ukraine side clearly enough."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a6bd7ec6321a4dcf8e1e2f67f043a95a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Romania's main pro-European parties should form a broad coalition to end the government-formation crisis",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST, X-FOR).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a717375632da4a1180d5403707f27ae8",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Private investment should lead the reconstruction of Lebanon's electricity sector",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Center right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: Lebanon",
+        "P4 FAIL: the independent check prefers Right (0.95); Center right gets 0.05",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-1R (close): “Private investment should lead the reconstruction of Lebanon's electricity sector”"
+      ],
+      "explanation": "No label. ECO-1R matched (close): “Private investment should lead the reconstruction of Lebanon's electricity sector”. That points to Center right, but rule P4 (Same level) failed: the independent check prefers Right (0.95); Center right gets 0.05; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Neoliberal (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Neoliberal: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted words support a pro-private-investment economic position, but they do not show the explicit centrist limits required for ECO-1R, such as a targeted or modest market reform within existing programs. The exact Center right level is therefore not established. / The quoted words support a market-oriented preference, but ECO-1R requires a moderate lean-right step with explicit centrist limits; the claim does not state any such limits. It may be pro-private investment, but the proposed Center right criterion is not directly matched.",
+        "Verifier on Neoliberal: The claim concerns private investment in one sector, not a broader program of market competition, deregulation, privatization, free trade, or fiscal restraint; the Neoliberal card excludes using the tradition for a one-sector/project position alone. / The claim concerns private investment in one sector, not a broader program of market competition, deregulation, privatization, free trade, or fiscal restraint. The Neoliberal card also excludes one-sector/project-only market reforms."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "10ce9b7a856b49918282112c6f266531",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Eurozone governments should address energy-driven inflation primarily through fiscal and energy policies rather than monetary tightening",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cfff908f1851460eadf1fb5df712d6d7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "During his visit to France, Pope Leo XIV condemned French legislation permitting medically assisted dying for the incurably ill, calling the law immoral 'false compassion' and stating that medicine must never serve programmed death",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.28.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed position by Pope Leo XIV rather than taking the position in its own voice: \"Pope Leo XIV condemned\" and \"calling the law immoral 'false compassion'\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d1486b93f7084552aa822ed11690877e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "A third condition is that Ukraine must have \"robust and legally binding security guarantees\" once a ceasefire is in place",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.46.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports a peace-talk condition rather than taking the position in its own voice; the quoted requirement that Ukraine must have guarantees is attributed/descriptive, not the claim's own argument."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "02f146d020794ec59790b66f33154fda",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Some personnel from 2nd Armored Brigade Combat Team, 1st Cavalry Division were already in Europe and must now redeploy back to the US",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual/descriptive statement about troop redeployment, not a normative political position or judgment."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0424c33335374caab3b3724ecfc00438",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Philippine president Ferdinand Marcos Jr stated \"We must ensure ​regional ⁠energy security and resilience\" at the Association of Southeast Asian Nations meeting on May 8, 2026",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to Ferdinand Marcos Jr rather than stated in the claim's own voice, and the quoted goal to “ensure regional energy security and resilience” gives no contested means."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cecdf6e3356a44fda1e67c4763716311",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Under proposed Australian AI standards, large-scale data centres must underwrite their own power supply and pay their full share of grid connection",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G1, Takes a position, failed), but the independent probability that the claim takes one is 0.93, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes requirements in proposed standards rather than endorsing them in its own voice: \"Under proposed Australian AI standards\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "12e38d4713154d71a01f8ee5f7ef8299",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "The Free Beacon ran a story on the belief that AI models should be granted rights similar to human or animal rights",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.02.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of a publication running a story and attributes the position to a “belief,” rather than endorsing it in the claim’s own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "12e90047071849c487655023047ce8a0",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Biometric information held by centralized third parties should be presumed to be at risk of compromise.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.15.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a risk-presumption recommendation about biometric data, but it is framed as a data-security/privacy judgment rather than a position on public policy, law, government, rights, the economy, or social organization. It also does not state a contested partisan policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "18930bc47af54e31996b4d3caef557d9",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Companies are not democracies and should not be run as such.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 0.89, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative position about how companies should be run, but it is a broad private-organization principle rather than a clearly mainstream-contested public-policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "18ab4d7b4277404ea3e19dce31a8e641",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Senator Roger Marshall, who is a doctor, has publicly stated that Dr. Anthony Fauci should be in jail.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed statement rather than taking the position in its own voice: “has publicly stated that Dr. Anthony Fauci should be in jail.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "abe7d805e3944e1c9d829fb6a53b06c7",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "During a debate, Abdul El-Sayed proposed that no senior citizen should have to pay a Medicare premium.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to Abdul El-Sayed rather than stated in the claim's own voice: \"Abdul El-Sayed proposed that\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e53197fbe940432e979c390718feea49",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "The SEC has adopted new rules mandating that most U.S. Treasury trades must go through central clearinghouses.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes an agency action rather than arguing for or against it."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e5425c87e2ce4389886d0e1ef1af788b",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Without a hybrid system, power generation must be sized for peak demand, even if that peak is rarely reached.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim states a technical/design requirement about power generation sizing, not a political or policy position, and it is not framed as a contested mainstream political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "434a058d29bb48c4a3083ae069e131a1",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "A newly formed government must win a vote of confidence in the Knesset before it can officially take power.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally describes a government-formation rule rather than arguing for or against it, and it states an official institutional requirement rather than a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "439ca22ecc6a422891c39eca5f3d4afd",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "New AI services in China must be reviewed and approved by both local and national authorities before launch.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.10.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim describes an approval requirement for AI services in China rather than arguing that the requirement is good, bad, or should exist."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3e041026c8ea475e92bc1bd631a6e1af",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Earth is the only planet known to exist and must be protected.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (consensus)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G4 (Contested) failed. The independent probability that the claim takes a position is 0.08.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative position on protecting Earth, but it states a broad shared goal without a contested policy means; mainstream political camps do not clearly disagree with “must be protected” at this level of generality."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2ffa9b8ca62f4558b4f8f597b213a005",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "A marriage that ends should not be considered a failure, but as something that worked for as long as it did",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a normative relationship judgment, but it is about how to regard a marriage ending, not public policy, law, rights, government, the economy, or a contested political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "30ca59a6ac1050749e4040715d9a4ea1",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "There should be a place for emotions and emotional support for children, including boys",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative position, but it is relationship/child emotional-support advice rather than a claim about public policy, law, rights, government, the economy, or political organization. It also states a broad social value that is not clearly contested between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "eef7798da606905caa2233379fa23713",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Dating apps should ban AI-enhanced profile photos",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own prescriptive position, but it is about dating-app product/platform rules rather than public policy, law, rights, government, the economy, or political organization; it is also not a mainstream partisan political dispute."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ef0501cd74d2cb93688bae3982c77bd2",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Parents should worry more about their own phone use than their children's screen time",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives personal parenting advice about phone use and children's screen time, not a position on public policy, law, rights, government, the economy, or political organization; it is not a mainstream partisan political dispute."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e2639caa3d9159529a0122398e38b815",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "A man should pay for the first date",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes a normative position in its own voice, but it is personal dating advice rather than a claim about public policy, law, rights, government, the economy, or political organization; mainstream political camps do not clearly contest this as a political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "57047c461dca575bbabc69a27915559f",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "People who attend sex parties must make a choice to accept that they may face unfair judgments",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives personal or relationship advice about people attending sex parties, not a position on public policy, law, rights, government, the economy, or society-wide political organization. It is not a mainstream partisan political dispute as stated."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5985b5114b1b500eac5cfb4d5d762fdd",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "A person must be able to trust their significant other in a relationship",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative position about trust in a romantic relationship, but it is personal relationship advice rather than a political subject, and it is not a contested issue between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "de6fee5c619158c1b126235f8b6444f0",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "For a real, intentional relationship to develop, the initial 'games' of dating, like being hard to get, must stop",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own position using “must stop,” but it is about dating and personal relationships, not public policy, law, rights, government, the economy, or political organization; it is not a mainstream political-camp dispute."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ea979371b5064d618faea76fd4c427bb",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Individuals must focus on their own economic and personal development before they are in a position to benefit others",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.29.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim uses prescriptive language, but it is personal advice about individual self-development rather than public policy, law, rights, government, the economy, or how society should be organized. It also does not state a position that mainstream political camps clearly contest."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3c1a42809d805a699fe60dd775ed164a",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "If a partner with a history of attending sex parties commits to monogamy, their partner must trust that commitment",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives personal relationship advice, not a position on public policy, law, rights, government, the economy, or how society should be organized; it is not a mainstream political-camp dispute."
+      ],
+      "nearMisses": []
+    }
+  ]
+}
