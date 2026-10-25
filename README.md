@@ -8,7 +8,7 @@ The taxonomy and its definitions come from Armando's Notion doc "Leanings" (in [
 
 The project is built for one rule above all: **a wrong label is worse than no label.** A label is published only when several independent checks agree on it; otherwise the claim is left blank and the reason is recorded. Every result can be traced to numbered criteria and to the claim's exact words.
 
-> **Status (25 Oct 2026):** framework v3.0, rebuilt on Armando's taxonomy. Nothing is published to Geo: claim submissions are **paused**, and Armando's 86 new issue leanings are not on Geo yet. The latest results are waiting for Armando's review. See [Results so far](#results-so-far).
+> **Status (26 Oct 2026):** framework v3.2, built on Armando's taxonomy. Nothing is published to Geo: claim submissions are **paused**, and Armando's 86 new issue leanings are not on Geo yet. The latest results are waiting for Armando's review. See [Results so far](#results-so-far).
 
 ---
 
@@ -84,6 +84,8 @@ flowchart TD
    It does **not** choose the final answer.
 2. **Code.** Code drops any evidence that is not word for word in the claim, applies the combining rules, and works out the candidate leaning.
 3. **Independent check (OpenAI Decisions API, gpt-6-luna).** One call of 115 questions returns probabilities: that the claim takes a position, for each of the 7 levels, and for each of the 113 ideological leanings. It never sees the scorer's answer.
+   - Each issue-leaning question includes Armando's alternative names, which set the scope of that side. It also includes the rule that a claim using the same words while arguing another side does not count.
+   - The check is deterministic: identical calls return identical numbers.
 4. **Verifier (gpt-5.5, high reasoning).** It checks the candidate leaning, and each ideological leaning separately, against the full framework.
 5. **Second look.** A focused question about any ideological leaning the independent check rates highly (≥ 0.8) but the scorer missed.
 6. **Publish rules (code).** P1–P6 for the political leaning; I3 for each ideological leaning (below). Anything that passes must also give the same answer in **3 of 3 scorer runs**. The extra runs are made only when the other rules pass, so they cost little.
@@ -96,7 +98,7 @@ Every model call is cached, so scoring the same claim again costs nothing (see [
 
 The rulebook lives in [`src/framework/rubric.ts`](src/framework/rubric.ts) (criteria and rules) and [`src/framework/ideologies.ts`](src/framework/ideologies.ts) (ideological leanings). The ideological leanings are built from [`src/framework/leanings.json`](src/framework/leanings.json), Armando's data. The full text is generated into [docs/FRAMEWORK.md](docs/FRAMEWORK.md) by `npm run cli -- framework`.
 
-The scorer's prompt, the independent check and the verifier are all built from the same source, so changing a rule changes the agent. Every change bumps `FRAMEWORK_VERSION` (now `framework-v3.0`).
+The scorer's prompt, the independent check and the verifier are all built from the same source, so changing a rule changes the agent. Every change bumps `FRAMEWORK_VERSION` (now `framework-v3.2`).
 
 ### Step 1: does the claim take a political position?
 
@@ -311,8 +313,12 @@ So re-running never pays twice, and a new framework version or a changed Geo tax
 | run-1 | v1.2 | 106 (test set v1) | 3 wrong labels and 2 wrong ideologies, **all from "Potentially" labels**, which led to v2 (publish or blank). |
 | fresh-seed3 | v2.1 | 70 never-used claims, 10 per space | 1 label published ("Abortion is murder" → Right); the other 69 have no political position. |
 | **v3.0 run-1** | **v3.0** | **Armando's 45 examples + the 70 fresh claims** | **Issue leanings:** 28 published, **25 match Armando**, 3 not in his labels (defensible). **Traditions:** 32 published, 10 match; the agent adds traditions (Liberal, Progressive, Conservative) more often than Armando does. **Misses:** mostly claims argued through an effect ("Raising the minimum wage kills jobs"), which the independent check doesn't treat as positions; 4 news or attributed claims stay No political position by decision. **Fresh claims:** "Abortion is murder" now also gets Pro-life, Christian conservative and Conservative. |
+| v3.1 run-1 | v3.1 | Same 115 claims | Alternative names in the independent check fixed the target miss (Pro-foreign aid reform). But the check started matching words, not sides: Gender-critical scored 0.54 on a pro-trans claim. Superseded. |
+| **v3.2 run-1** | **v3.2** | **Same 115 claims** | **37 of Armando's 59 labels found** (v3.0: 35). <br>**Issue leanings:** 26 of 29 published match. Gained Pro-foreign aid reform and Pro-border security; lost Pro-transgender rights (Gender-critical 0.18, above the 0.1 limit). <br>**Traditions:** 11 match (adds Paleoconservative). <br>**Extras:** 25 (unchanged). **Political leanings:** 13 (unchanged). No rule violations. <br>**Fresh claims:** unchanged. |
 
-The calibration questions (how generous traditions should be, and whether effect claims count) are Armando's to answer; the agent is not tuned to his examples. **No test proves 100%:** Armando approves every label before it goes to Geo.
+The calibration questions are Armando's to answer: how generous traditions should be, and whether effect claims count. The agent is not tuned to his examples.
+
+Labels close to a threshold can change between runs, because the models are sampled again each time. The scorer must agree 3 of 3 times, but the verifier answers once. Between v3.0 and v3.2, Liberal on the unions claim and Conservative on the gun claim flipped, and so did Paleoconservative, one of Armando's own labels. **No test proves 100%:** Armando approves every label before it goes to Geo.
 
 ---
 
@@ -322,8 +328,8 @@ The Notion hub **"Political Leaning & Ideology Agent"** holds:
 
 | Page or database | What it holds |
 |---|---|
-| **Results framework v3.0 (Armando's taxonomy)** | His 45 examples and the labelled fresh claims: political leaning, ideological leanings, his labels, matched / not in his labels / missed, and an **Armando verdict** column |
-| **Scoring framework v3.0** | The rulebook (as in docs/FRAMEWORK.md, without the cards) |
+| **Results framework v3.2 (Armando's taxonomy)** | His 45 examples and the labelled fresh claims: political leaning, ideological leanings, his labels, matched / not in his labels / missed, and an **Armando verdict** column |
+| **Scoring framework v3.2** | The rulebook (as in docs/FRAMEWORK.md, without the cards) |
 | **Ideology definitions** | All 113 cards as the agent uses them: 27 traditions and 86 issue leanings, with Armando's descriptions, alternative names, example claims, and whether each value is on Geo yet |
 | **Fresh QA sample (10 per space)** | 70 never-used claims |
 | **Test set and results**, **Runs**, **Errors and improvements** | Earlier runs, run metrics, and every error found with its fix |
@@ -428,6 +434,7 @@ data/                    Local cache and logs (git-ignored)
 | **Framework v1.x** | After Armando asked for a transparent, objective system: numbered criteria, quoted evidence, the independent check, a per-part verifier, a 0–100 confidence score and Clear/Potential labels. |
 | **Framework v2.0–v2.1** | After QA showed every error came from "Potentially" labels. Publish-or-blank (P1–P6), level rules shared by all checks, the no-hallucination guard, approved-only proposals, and the Geo space as context. |
 | **Framework v3.0** | Rebuilt on Armando's doc "Leanings": <ul><li>86 issue leanings and 27 traditions as ideological leanings;</li><li>at most one political leaning and up to 5 ideological leanings;</li><li>his level convention (mainstream liberal = Left, conservative = Right);</li><li>traditions by association;</li><li>both Libertarian values;</li><li>values not on Geo labelled but never proposed;</li><li>his example claims as a test set.</li></ul> |
+| **Framework v3.1–v3.2** | After a row-by-row QA of v3.0: the independent check gets Armando's alternative names for each issue leaning (v3.1), plus the rule that sharing words with a side is not taking it (v3.2). |
 
 The decision log is the **Errors and improvements** database in Notion.
 
@@ -436,10 +443,15 @@ The decision log is the **Errors and improvements** database in Notion.
 ## Open decisions and known limits
 
 **For Armando:**
-1. **Verdicts** on the rows of "Results framework v3.0", especially the traditions the agent adds beyond his labels (Liberal, Progressive, Conservative).
+1. **Verdicts** on the rows of "Results framework v3.2", especially the traditions the agent adds beyond his labels (Liberal, Progressive, Conservative).
 2. **Effect claims:** should a claim argued through an effect ("Raising the minimum wage kills jobs") get the matching issue leaning, as in his examples?
 3. **Libertarian and Libertarianism** are near-duplicates and often published together. Should one be preferred?
-4. **Publishing:** when to publish his 86 issue leanings, the new descriptions and Nonpartisan to Geo. "Deaccelerationist" and "Pro-Taiwan independance" are kept as written in his doc.
+4. **His definitions and his examples disagree** in three places:
+   - his Pro-fiscal responsibility description includes "revenue", so the tax-revenue claim fits both sides;
+   - the "Speech online" sides are described as online, but his examples are about hate speech in general;
+   - Hawk is published on "keep arming Ukraine", yet he lists "Ukraine hawk" as another name for Pro-Ukraine.
+5. **Stability:** should the verifier be asked twice, publishing only when both answers agree?
+6. **Publishing:** when to publish his 86 issue leanings, the new descriptions and Nonpartisan to Geo. "Deaccelerationist" and "Pro-Taiwan independance" are kept as written in his doc.
 
 **Known limits:**
 - **Coverage.** Publish-or-blank leaves some claims without labels; that is the chosen trade.
