@@ -3,7 +3,7 @@
 // claim with a Political position and an Issue position, Left and Right alternating, no Issue position
 // twice, and a Political ideology where there is one. Writes <out>/batch-1.txt, batch-2.txt and selection.md.
 // Usage: npx tsx scripts/publish-select.mts <out-dir> <first-n> <total> <results.json> [<results.json> ...]
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { CARD_BY_NAME } from "../src/framework/ideologies.js";
 import { FRAMEWORK_VERSION } from "../src/framework/rubric.js";
@@ -22,11 +22,16 @@ interface Row {
   ideologies: string[];
   explanation: string | null;
 }
+// <out>/exclude.txt: claims left out after hand review, one ID per line with "# reason".
+const excludeFile = join(out, "exclude.txt");
+const excluded = new Set(existsSync(excludeFile) ? readFileSync(excludeFile, "utf8").split(/\r?\n/).map((l) => l.split("#")[0]!.trim()).filter(Boolean) : []);
 const rows = new Map<string, Row>();
 for (const file of files) {
   const json = JSON.parse(readFileSync(file, "utf8")) as { framework: string; rows: Row[] };
   if (json.framework !== FRAMEWORK_VERSION) throw new Error(`${file} was scored with ${json.framework}, not ${FRAMEWORK_VERSION}`);
-  for (const r of json.rows) if (r.space === "us-politics" && !r.error && (r.leaning || r.ideologies.length) && !rows.has(r.claimId)) rows.set(r.claimId, r);
+  for (const r of json.rows) {
+    if (r.space === "us-politics" && !r.error && (r.leaning || r.ideologies.length) && !rows.has(r.claimId) && !excluded.has(r.claimId)) rows.set(r.claimId, r);
+  }
 }
 const split = (r: Row) => ({
   ideology: r.ideologies.find((n) => CARD_BY_NAME.get(n)?.kind === "tradition") ?? null,
@@ -60,7 +65,7 @@ writeFileSync(
   [
     `# US Politics claims to publish (${FRAMEWORK_VERSION})`,
     "",
-    `${rows.size} claims have a published label; ${firstBatch.length} in the first batch (for review), ${rest.length} in the second.`,
+    `${rows.size} claims have a published label (${excluded.size} more left out after hand review, see exclude.txt); ${firstBatch.length} in the first batch (for review), ${rest.length} in the second.`,
     "",
     "## Batch 1 (for review)",
     "",
