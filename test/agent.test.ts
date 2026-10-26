@@ -2,8 +2,7 @@ import type OpenAI from "openai";
 import { describe, expect, it } from "vitest";
 import { ScoringAgent } from "../src/agent/v3/agent.js";
 import type { ScorerOutput } from "../src/agent/v3/score.js";
-import { IDEOLOGY_CARDS, MERGED_INTO, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
-import data from "../src/framework/leanings.json" with { type: "json" };
+import { IDEOLOGY_CARDS, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
 import { LEANINGS_LEFT_TO_RIGHT, type LeaningName } from "../src/framework/rubric.js";
 import type { Claim } from "../src/geo/claims.js";
 import { buildTaxonomy } from "../src/geo/taxonomy.js";
@@ -82,9 +81,12 @@ function stub(o: StubOptions) {
   return { client: client as unknown as OpenAI, calls };
 }
 
+const geoValues = (kind: "tradition" | "issue") =>
+  IDEOLOGY_CARDS.filter((c) => c.kind === kind).map((c) => ({ id: c.geoId!, name: c.name, description: c.definition }));
 const taxonomy = buildTaxonomy(
   POLITICAL_LEANING_VALUES.filter((v) => v.geoId).map((v) => ({ id: v.geoId!, name: v.name, description: null })),
-  data.ideologies.filter((i) => i.geoId && !MERGED_INTO[i.name]).map((i) => ({ id: i.geoId!, name: i.name, description: null })),
+  geoValues("tradition"),
+  geoValues("issue"),
   new Set(),
 );
 
@@ -244,6 +246,26 @@ describe("ScoringAgent.score", () => {
     expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life"]);
     expect(calls.secondLookCards).not.toContain("Christian conservative");
     expect(calls.secondLookCards).toContain("Pro-life");
+  });
+
+  it("publishes at most one Political ideology, the most probable, next to any number of Issue positions (I4)", async () => {
+    const { agent: a } = agent({
+      scorer: [
+        scorer({
+          ideologies: [
+            { name: "Pro-life", tenet: "T1", evidence: ABORTION },
+            { name: "Social conservative", tenet: "T1", evidence: ABORTION },
+            { name: "Christian conservative", tenet: "T1", evidence: ABORTION },
+          ],
+        }),
+      ],
+      ...clearRight,
+      ideologies: { ...clearRight.ideologies, "Christian conservative": 0.95, "Social conservative": 0.9 },
+    });
+    const r = await a.score(claim(ABORTION));
+    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Christian conservative"]);
+    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Political ideology per claim (I4): Christian conservative scored higher" });
+    expect(r.explanation).toMatch(/Issue position: Pro-life .*Political ideology: Christian conservative/);
   });
 
   it("refuses an empty claim without calling any model", async () => {

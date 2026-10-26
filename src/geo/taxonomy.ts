@@ -2,7 +2,8 @@ import { createHash } from "node:crypto";
 import { EXCLUDED_VALUE_IDS, IDS } from "../config.js";
 import type { GeoClient } from "./client.js";
 
-export type TaxonomyKind = "political_leaning" | "ideology";
+/** Geo's three Leanings types: Political position, Political ideology and Issue position. */
+export type TaxonomyKind = "political_leaning" | "ideology" | "issue_position";
 
 export interface TaxonomyValue {
   id: string;
@@ -12,13 +13,17 @@ export interface TaxonomyValue {
 }
 
 export interface Taxonomy {
+  /** Political position values (Far left … Far right). */
   politicalLeanings: TaxonomyValue[];
+  /** Political ideology values (traditions). */
   ideologies: TaxonomyValue[];
+  /** Issue position values (one side of one issue). */
+  issuePositions: TaxonomyValue[];
   /** Short hash of every value's kind, id and name; changes whenever editors change the value lists. */
   fingerprint: string;
   byName: ReadonlyMap<string, TaxonomyValue>;
-  /** Geo's live descriptions of the two types, when loaded from Geo. */
-  definitions?: { politicalLeaning: string | null; ideology: string | null };
+  /** Geo's live descriptions of the three types, when loaded from Geo. */
+  definitions?: { politicalLeaning: string | null; ideology: string | null; issuePosition: string | null };
 }
 
 export interface RawValue {
@@ -33,6 +38,7 @@ const SPECTRUM_ORDER = ["Far left", "Left", "Center left", "Center", "Center rig
 export function buildTaxonomy(
   rawLeanings: RawValue[],
   rawIdeologies: RawValue[],
+  rawIssuePositions: RawValue[] = [],
   excluded: ReadonlySet<string> = EXCLUDED_VALUE_IDS,
 ): Taxonomy {
   const toValues = (raw: RawValue[], kind: TaxonomyKind): TaxonomyValue[] =>
@@ -48,9 +54,10 @@ export function buildTaxonomy(
     (a, b) => spectrumIndex(a.name) - spectrumIndex(b.name) || a.name.localeCompare(b.name),
   );
   const ideologies = toValues(rawIdeologies, "ideology").sort((a, b) => a.name.localeCompare(b.name));
+  const issuePositions = toValues(rawIssuePositions, "issue_position").sort((a, b) => a.name.localeCompare(b.name));
 
   const byName = new Map<string, TaxonomyValue>();
-  for (const value of [...politicalLeanings, ...ideologies]) {
+  for (const value of [...politicalLeanings, ...ideologies, ...issuePositions]) {
     const clash = byName.get(value.name);
     if (clash) {
       throw new Error(
@@ -66,37 +73,44 @@ export function buildTaxonomy(
     .digest("hex")
     .slice(0, 12);
 
-  return { politicalLeanings, ideologies, fingerprint, byName };
+  return { politicalLeanings, ideologies, issuePositions, fingerprint, byName };
 }
 
 const TAXONOMY_QUERY = /* GraphQL */ `
-  query Taxonomy($leaningType: UUID!, $ideologyType: UUID!) {
+  query Taxonomy($leaningType: UUID!, $ideologyType: UUID!, $issueType: UUID!) {
     leanings: entities(typeId: $leaningType, first: 200) { id name description }
     ideologies: entities(typeId: $ideologyType, first: 200) { id name description }
+    issues: entities(typeId: $issueType, first: 200) { id name description }
     leaningTypeEntity: entity(id: $leaningType) { description }
     ideologyTypeEntity: entity(id: $ideologyType) { description }
+    issueTypeEntity: entity(id: $issueType) { description }
   }
 `;
 
-/** Loads the current Political leaning and Ideology values from Geo. */
+/** Loads the current Political position, Political ideology and Issue position values from Geo. */
 export async function fetchTaxonomy(client: GeoClient): Promise<Taxonomy> {
+  type Described = { description: string | null } | null;
   const data = await client.query<{
     leanings: RawValue[];
     ideologies: RawValue[];
-    leaningTypeEntity: { description: string | null } | null;
-    ideologyTypeEntity: { description: string | null } | null;
+    issues: RawValue[];
+    leaningTypeEntity: Described;
+    ideologyTypeEntity: Described;
+    issueTypeEntity: Described;
   }>(TAXONOMY_QUERY, {
     leaningType: IDS.politicalLeaningType,
     ideologyType: IDS.ideologyType,
+    issueType: IDS.issuePositionType,
   });
-  if (!data.leanings.length || !data.ideologies.length) {
-    throw new Error("Geo returned an empty Political leaning or Ideology list; refusing to classify against it.");
+  if (!data.leanings.length || !data.ideologies.length || !data.issues.length) {
+    throw new Error("Geo returned an empty Political position, Political ideology or Issue position list; refusing to classify against it.");
   }
   return {
-    ...buildTaxonomy(data.leanings, data.ideologies),
+    ...buildTaxonomy(data.leanings, data.ideologies, data.issues),
     definitions: {
       politicalLeaning: data.leaningTypeEntity?.description?.trim() ?? null,
       ideology: data.ideologyTypeEntity?.description?.trim() ?? null,
+      issuePosition: data.issueTypeEntity?.description?.trim() ?? null,
     },
   };
 }

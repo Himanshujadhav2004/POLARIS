@@ -11,6 +11,7 @@ const taxonomy = buildTaxonomy(
     { id: "cons", name: "Conservative", description: null },
     { id: "nat", name: "Nationalist", description: null },
   ],
+  [],
   new Set(),
 );
 

@@ -17,12 +17,25 @@ const claim = (over: Partial<Claim> = {}): Claim => ({
   leaningIds: [],
   ...over,
 });
+const ISSUES = new Set(["Pro-life", "Pro-border security"]);
 const scored = (leaning: string | null, ideologies: string[] = []) =>
-  ({ leaning, ideologies: ideologies.map((name) => ({ name })), display: leaning ?? "No label (P4 Same level)" }) as unknown as ScoredClaim;
+  ({
+    claimId: "c1",
+    leaning,
+    ideologies: ideologies.map((name) => ({ name, kind: ISSUES.has(name) ? "issue" : "tradition" })),
+    display: leaning ?? "No label (P4 Same level)",
+  }) as unknown as ScoredClaim;
 
 const taxonomy = buildTaxonomy(
   [{ id: "7a74f432548c417eb4abf9c45f3a7100", name: "Right", description: null }],
-  [{ id: "949d526009a5476b809b0ab9795907aa", name: "Nationalist", description: null }],
+  [
+    { id: "949d526009a5476b809b0ab9795907aa", name: "Nationalist", description: null },
+    { id: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", name: "MAGA", description: null },
+  ],
+  [
+    { id: "053a4341639d43a5b0d534b40f7efe4f", name: "Pro-life", description: null },
+    { id: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", name: "Pro-border security", description: null },
+  ],
   new Set(),
 );
 
@@ -51,6 +64,12 @@ describe("valueIdsFor", () => {
   });
   it("refuses a name Geo does not have", () => {
     expect(() => valueIdsFor(scored("Left"), taxonomy)).toThrow(/not on Geo yet/);
+  });
+  it("allows one Political position, one Political ideology and several Issue positions, each of its own Geo type", () => {
+    expect(valueIdsFor(scored("Right", ["Pro-life", "Pro-border security", "MAGA"]), taxonomy)).toHaveLength(4);
+    expect(() => valueIdsFor(scored("Right", ["Nationalist", "MAGA"]), taxonomy)).toThrow(/more than one Political ideology/);
+    const wrongType = { ...scored(null), ideologies: [{ name: "Nationalist", kind: "issue" }] } as unknown as ScoredClaim;
+    expect(() => valueIdsFor(wrongType, taxonomy)).toThrow(/is a ideology on Geo, not a issue_position/);
   });
 });
 

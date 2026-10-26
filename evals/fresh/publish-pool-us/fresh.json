@@ -1,0 +1,919 @@
+{
+  "name": "publish-pool-us",
+  "seed": null,
+  "framework": "framework-v3.5",
+  "generatedAt": "2026-10-26T14:18:27.107Z",
+  "note": "Claims an earlier run labelled, in US Politics with no Leanings on Geo",
+  "rows": [
+    {
+      "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion is murder",
+      "inSample": true
+    },
+    {
+      "claimId": "76fc621ebdd85e61b5d1b0ca07487aa1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Certain content, such as racial propaganda, should be banned from social media platforms",
+      "inSample": true
+    },
+    {
+      "claimId": "8bdb67d19119bff92f5e789c11dd35d2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Cosmetic-procedure ads should be banned in spaces primarily used by teenagers",
+      "inSample": true
+    },
+    {
+      "claimId": "9df6a915a66d4e5381f68b5306013287",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Conversion therapy should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public companies should be banned from buying back their shares",
+      "inSample": true
+    },
+    {
+      "claimId": "e38a9ed5e98e4c5c9d8841235643be53",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fake information from human trafficking groups should be removed, and the perpetrators should be banned and prosecuted",
+      "inSample": true
+    },
+    {
+      "claimId": "b1a1520b2cb83bde5791a330d13219f2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fashion brands should be banned from destroying unsold clothing",
+      "inSample": true
+    },
+    {
+      "claimId": "be0f530d211f3f552d9b5524da5b9a91",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Private prisons should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "538b3931c2619c67cc94840a5745b097",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fashion brands should be legally responsible for labor conditions across their supply chains",
+      "inSample": true
+    },
+    {
+      "claimId": "5f19c4fc0895457795ec6cc622911f6c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The EPA should be legally required to restore Harris County's solar grant funds",
+      "inSample": true
+    },
+    {
+      "claimId": "ad1eb7fa069da3039fe1f698a11bb41e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Financial advisers should be legally required to prioritize clients’ interests over their own pay",
+      "inSample": true
+    },
+    {
+      "claimId": "8b3117d585a5597b16f1a522c742aeaa",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be legal at any stage of pregnancy",
+      "inSample": true
+    },
+    {
+      "claimId": "0db3e2db56d04a9d8f186aa6a67134c6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should ban federal agencies from using automatic license plate readers",
+      "inSample": true
+    },
+    {
+      "claimId": "24a13e11e6d740b1b8b24a111449dc2c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The UK should ban trade imports from illegal Israeli settlements",
+      "inSample": true
+    },
+    {
+      "claimId": "7be46964e7084d6baf1f3a8922317fd6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should ban federal agencies from using automated license plate readers",
+      "inSample": true
+    },
+    {
+      "claimId": "ff0ca90b88a04575908823a76b3f0f13",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US federal government should ban its agencies from using facial recognition",
+      "inSample": true
+    },
+    {
+      "claimId": "c438114e9c424f48bac590f807d4ca3f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should ban Bombardier aircraft sales unless they are manufactured domestically",
+      "inSample": true
+    },
+    {
+      "claimId": "c89074c5442b40869b6e191567102cdd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "South Dakota should ban automatic voting machines",
+      "inSample": true
+    },
+    {
+      "claimId": "4c7539168bf94e238d1f3257f67a2602",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should ban its agents from conducting vehicle stops",
+      "inSample": true
+    },
+    {
+      "claimId": "000d743616bf4e38a4f98950eb6f2588",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should end its military conflict with Iran",
+      "inSample": true
+    },
+    {
+      "claimId": "16c2d8519f2b446c8694e12dd7347656",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should end its military campaign against Iran",
+      "inSample": true
+    },
+    {
+      "claimId": "4ecab0c3e9a26257b0b7a6dea291db7c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should end its war with Iran even if Iran's current government stays in power",
+      "inSample": true
+    },
+    {
+      "claimId": "a639919409345a22914a05c3952ad553",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media companies should be required to take down hate speech from their platforms",
+      "inSample": true
+    },
+    {
+      "claimId": "406b669021604795ac693cdb0e54890f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media companies should be required to remove misinformation",
+      "inSample": true
+    },
+    {
+      "claimId": "f7706948a64d33e347647157e5e863ef",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious schools should be required to teach scientific accounts of evolution",
+      "inSample": true
+    },
+    {
+      "claimId": "6705489b3e9b61b70971b62dc539835b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Shops should be required to accept cash",
+      "inSample": true
+    },
+    {
+      "claimId": "c57e87fc7fe14f4eb8ba77dde219eb80",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Schools should be required to notify parents if a student changes gender identity",
+      "inSample": true
+    },
+    {
+      "claimId": "9fcd2847cc63e055901dc7ca215910aa",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Companies should be required to put women on their boards",
+      "inSample": true
+    },
+    {
+      "claimId": "553deda6b6244998b1bbc39792df7d5c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voters should be required to show photo ID",
+      "inSample": true
+    },
+    {
+      "claimId": "20d0c620e3134aa5a3283d4fabc96738",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should be required to use unique barcodes for mail-in ballots",
+      "inSample": true
+    },
+    {
+      "claimId": "20ec81349df047acb4aff40d24daa2bb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Supreme Court justices should be required to publicly explain their recusal decisions",
+      "inSample": true
+    },
+    {
+      "claimId": "c1078bf965f447b89220f4a33df4def4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should expand the Supreme Court beyond nine justices",
+      "inSample": true
+    },
+    {
+      "claimId": "a067c8e4b3ff4aff8a80a998d2fd3187",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US military should expand its counter-cartel operations to include land strikes",
+      "inSample": true
+    },
+    {
+      "claimId": "a6664fdb55b6552789c6336600814bff",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Individuals who overstay their temporary visas and are asked to leave should be deported",
+      "inSample": true
+    },
+    {
+      "claimId": "ebd86857a9944f8393cd7000d39e680c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should restrict President Trump's authority to continue military action in Iran",
+      "inSample": true
+    },
+    {
+      "claimId": "60058ceab63d47a5947a3a5d8a8e785f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. government should restrict denaturalization to national security threats",
+      "inSample": true
+    },
+    {
+      "claimId": "d3e4772934eb1c6e04b12ef54f168486",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should restrict federal use of Flock data when local agencies share nationwide access",
+      "inSample": true
+    },
+    {
+      "claimId": "646b21ea4af241f09381fd86dcb4d25d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "California should restrict law enforcement activities near polling places",
+      "inSample": true
+    },
+    {
+      "claimId": "65ff14c95dcb4ff6b047c07399aa0314",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should restrict denaturalization to national security threats and war crimes",
+      "inSample": true
+    },
+    {
+      "claimId": "109dacecf174f3a59ecfa3a6dcfec2bf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Greenland deal should restrict Chinese investment in strategic infrastructure",
+      "inSample": true
+    },
+    {
+      "claimId": "3eda9036a48ffa167563e2b1026afa18",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should restrict fuel exports during domestic price spikes",
+      "inSample": true
+    },
+    {
+      "claimId": "c3b162bb37f393349208ac2360531fb1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Doctors should be allowed to refuse abortions on conscience grounds",
+      "inSample": true
+    },
+    {
+      "claimId": "7030e8e5ec5646bd9fe18a18541bde7c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ranchers should be allowed to sell meat without USDA inspections",
+      "inSample": true
+    },
+    {
+      "claimId": "5624df882f58407f94d76fd377743a45",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "People should be able to change their gender on their government documents",
+      "inSample": true
+    },
+    {
+      "claimId": "87a5bfc3c1364781816b7d7d207634ff",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A person whose name is on the voting roll should be allowed to vote without additional identification requirements",
+      "inSample": true
+    },
+    {
+      "claimId": "bc2fff62681c67e64c70c040554cb593",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "High earners should pay Social Security tax on all their income",
+      "inSample": true
+    },
+    {
+      "claimId": "54c149de5ef2a8488a56c65a62518666",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "European governments should pay the full cost of Ukraine’s air defenses",
+      "inSample": true
+    },
+    {
+      "claimId": "62e94fe8f9346b632c50bf14458f2f6c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Oil companies should pay an extra tax when fuel prices spike",
+      "inSample": true
+    },
+    {
+      "claimId": "0a675161bf794021ac07b6c21a56e8a4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The wealthy should pay significantly higher taxes",
+      "inSample": true
+    },
+    {
+      "claimId": "dae7555f430a4d7f90d1c7cf2b2fd7d2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Law enforcement agencies should stop using Flock Safety cameras",
+      "inSample": true
+    },
+    {
+      "claimId": "8bee7ed2d0574bafbc50013bc2235504",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Cities should stop using Flock Safety cameras",
+      "inSample": true
+    },
+    {
+      "claimId": "4e3a8e5937394929b925e67ba7c1af89",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should eliminate funding for race-conscious and DEI programs",
+      "inSample": true
+    },
+    {
+      "claimId": "7679fd216c0c435aa95cb44db140300f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal cultural institutions should eliminate diversity, equity, and inclusion programs",
+      "inSample": true
+    },
+    {
+      "claimId": "ba08ab217c6c41d5b3712e3e2537d9e9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should eliminate post-graduation work options for international students",
+      "inSample": true
+    },
+    {
+      "claimId": "8e7f33581f2a41638231c0e67615b398",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should eliminate collective bargaining for federal employees",
+      "inSample": true
+    },
+    {
+      "claimId": "8ec7692ac8dc47779cd09ac95f350224",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should eliminate tariffs on non-strategic Chinese consumer goods",
+      "inSample": true
+    },
+    {
+      "claimId": "e1918fbfd21643629440759d7a18b41b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should mandate a human-activated kill switch for all AI systems",
+      "inSample": true
+    },
+    {
+      "claimId": "e97aedc5edde4427a1eedd753aaf78e6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The FTC should mandate that canceling a digital subscription be as easy as signing up",
+      "inSample": true
+    },
+    {
+      "claimId": "783596011b2c4c96a90e3c3080459167",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should mandate a kill switch for advanced AI systems",
+      "inSample": true
+    },
+    {
+      "claimId": "960f2dfef5c6469cb0707005ff590d15",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Courts should mandate the removal of addictive social media features for teens",
+      "inSample": true
+    },
+    {
+      "claimId": "05afe4f1449e452aa9e4a5e2b1729476",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should mandate uniform security requirements for mail-in ballots",
+      "inSample": true
+    },
+    {
+      "claimId": "164faafe763e40e49be9a75947ab471c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should mandate that data centers pay for grid upgrades",
+      "inSample": true
+    },
+    {
+      "claimId": "9aea9dcebd2144739a5496bbbd03ea06",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "California should mandate emergency kill switches for advanced AI models",
+      "inSample": true
+    },
+    {
+      "claimId": "a42dfc714ec844eba915db2053ba76eb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Pentagon should mandate uniform safety standards for all military AI tools",
+      "inSample": true
+    },
+    {
+      "claimId": "b90d3efde445487c82ed9de6126350cc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US government should mandate safety testing for advanced AI models before release",
+      "inSample": true
+    },
+    {
+      "claimId": "51f7eb32e5985ba8c4a53e2b4ea93871",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should abolish work requirements for welfare benefits",
+      "inSample": true
+    },
+    {
+      "claimId": "1d4264e853ecc24552667a0c0867759b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Large inheritances should be taxed more heavily than earned income",
+      "inSample": true
+    },
+    {
+      "claimId": "d89c30fee1eaff3c5cc2acb0de92ee4b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Stand-your-ground laws should be repealed",
+      "inSample": true
+    },
+    {
+      "claimId": "b2d43328d77d4f72a9e332a134b36bc1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US voting age should be lowered to 16",
+      "inSample": true
+    },
+    {
+      "claimId": "c1abb195a84a46529b05cb6663895ca2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sanctuary city policies undermine public safety and should be eliminated",
+      "inSample": true
+    },
+    {
+      "claimId": "2f57fa8d5fa053f1b923449baa7408ce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Disinformation and false online news that could harm users should be restricted",
+      "inSample": true
+    },
+    {
+      "claimId": "1503c85ab14e48c1bdb9db806e53b1eb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should be prohibited from arresting asylum seekers at immigration courthouses",
+      "inSample": true
+    },
+    {
+      "claimId": "1ec17e9c5e18447ba86d9a424c72361b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Law enforcement officers should be prohibited from wearing masks while on duty",
+      "inSample": true
+    },
+    {
+      "claimId": "10bfc211a3e14de6b48a97a6f30a8762",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Participating in elections should be mandatory",
+      "inSample": true
+    },
+    {
+      "claimId": "93cbf9dd4c736fea9a8017cc9d2d4b87",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "School meals should be free for all children",
+      "inSample": true
+    },
+    {
+      "claimId": "9a9b21fde05f4ef6944b339182969029",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Business owners should be free to decline to serve same-sex weddings",
+      "inSample": true
+    },
+    {
+      "claimId": "5551dc4b6b2c54faa0f27d3101530721",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public transport should be free",
+      "inSample": true
+    },
+    {
+      "claimId": "c08a629149f94e6d2bbf1ce616b757ce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should be free to run immigration detention their own way",
+      "inSample": true
+    },
+    {
+      "claimId": "33a13c92ece24c9b99bf359a4a757444",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Planned Parenthood should be defunded",
+      "inSample": true
+    },
+    {
+      "claimId": "6a6ae4451ac940cdac2864fd25bbe861",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The police should be defunded",
+      "inSample": true
+    },
+    {
+      "claimId": "b25cad2954b5546397387db5cd4f5149",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "People who want to participate in the culture of a different gender should be supported",
+      "inSample": true
+    },
+    {
+      "claimId": "ac5631236637f4eac1bd1458aa9ea54f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal ballot barcodes should not become a condition of receiving a ballot",
+      "inSample": true
+    },
+    {
+      "claimId": "73aef60360f4465ba5238f45c806aaa5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be banned nationwide",
+      "inSample": true
+    },
+    {
+      "claimId": "82b3c239a5ff465a9860417206b5a025",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voting rights should be restored after people complete felony sentences",
+      "inSample": true
+    },
+    {
+      "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Property taxes on people's homes should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "b60172f03a102f2973466f5cc5a69798",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mail-in voting should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "d08075dfc965cb3a83ace89310296eb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Education should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Cash bail should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "16148774ed6c490b9f8f58514d74df5e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "All illegal aliens should be deported",
+      "inSample": true
+    },
+    {
+      "claimId": "cbff1fa13c3ec8f74e36501fc1d61780",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign students who join campus protests should be deported",
+      "inSample": true
+    },
+    {
+      "claimId": "121d357639a54bc9a7526462c2f697d5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gender-affirming care for minors should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "1b4c590a4e58590c26006707a5972460",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Drag shows for children should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "20f8caa87deb4fe0b983d1236ca0b6cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be legal up to fetal viability",
+      "inSample": true
+    },
+    {
+      "claimId": "6bcb7138969c483faa46a922c046207e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be illegal even in cases of rape",
+      "inSample": true
+    },
+    {
+      "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Late-term abortion should be illegal",
+      "inSample": true
+    },
+    {
+      "claimId": "97fdfead23a240f483555ff48b8ece5b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ordering abortion pills should be illegal",
+      "inSample": true
+    },
+    {
+      "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Race-based affirmative action in college admissions should be illegal",
+      "inSample": true
+    },
+    {
+      "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "inSample": true
+    },
+    {
+      "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "inSample": true
+    },
+    {
+      "claimId": "a29794bbc69a4bd0b75b7c8590f867bd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should cut the FEMA workforce by 50%",
+      "inSample": true
+    },
+    {
+      "claimId": "a3587b68b72f6f5a934864f10aee92b9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan should cut regulations that block home construction",
+      "inSample": true
+    },
+    {
+      "claimId": "5047770b00d3679b3bad262f156b8a32",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should end the H-1B visa program",
+      "inSample": true
+    },
+    {
+      "claimId": "329492b464ba5a818f17807d3b3ae63e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Propaganda and Nazi viewpoints should be banned from social media",
+      "inSample": true
+    },
+    {
+      "claimId": "07a1ef43ec93adcd0a1b39f1e14e278d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Selling newly made animal-fur clothing should be illegal",
+      "inSample": true
+    },
+    {
+      "claimId": "09046cc50842019c0ef7c503a2a9f587",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Governments should be banned from using live facial recognition in public spaces",
+      "inSample": true
+    },
+    {
+      "claimId": "94dd96e01e4a45d6bdd2b5877b812f73",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should increase federal nonprofit security funding to $1 billion annually",
+      "inSample": true
+    },
+    {
+      "claimId": "0533ecd48a16b382d15f725de99c6805",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Inheritance should be heavily taxed",
+      "inSample": true
+    },
+    {
+      "claimId": "07736de6dc19428f9b35004b9edbd92c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Assault weapons should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "066019796fe54f489aedd0c66b9cd3d9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender women should be allowed to compete in women's sports",
+      "inSample": true
+    },
+    {
+      "claimId": "6beb212c5bbf563fb8c9750010624620",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media companies have a responsibility to remove AI-generated disinformation to safeguard their users",
+      "inSample": true
+    },
+    {
+      "claimId": "c8ce4455389f82f6817856bfa8d5ab10",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Blasphemy laws should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Families already paying private-school tuition deserve federal school-choice support",
+      "inSample": true
+    },
+    {
+      "claimId": "94c0669ef0a54476a4b6cb253c7984ee",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Same-sex marriage should be legal nationwide",
+      "inSample": true
+    },
+    {
+      "claimId": "1a167acc6a57ea552957258158b0cfbb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Minimum wages should rise automatically with the cost of living",
+      "inSample": true
+    },
+    {
+      "claimId": "4b142b070e944f7fb54ed77057bf79b6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universal background checks should be required for every gun sale",
+      "inSample": true
+    },
+    {
+      "claimId": "024eda17a14c9ffa7643edf89df0892a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The right to own a gun is a fundamental human right",
+      "inSample": true
+    },
+    {
+      "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Climate change is an existential threat that requires urgent government action",
+      "inSample": true
+    },
+    {
+      "claimId": "c381476542ef4d8087cf2d209abdb8f8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump's immigration crackdown makes the United States safer",
+      "inSample": true
+    },
+    {
+      "claimId": "8271598b04824a4088775686c1e4cea1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should reduce foreign aid spending",
+      "inSample": true
+    },
+    {
+      "claimId": "3006371ab3d8e965a31c943fa9bcbda5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Nidal Hasan’s terrorism conviction justifies the death penalty",
+      "inSample": true
+    },
+    {
+      "claimId": "24541de6d13f88ac4b7cbd6752e06b4b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gender identity should take precedence over biological sex",
+      "inSample": true
+    },
+    {
+      "claimId": "f7bdffdd5f06e4b760247767b6989a32",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The death penalty should be abolished",
+      "inSample": true
+    },
+    {
+      "claimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be legal",
+      "inSample": true
+    },
+    {
+      "claimId": "9d5c11e66b50480babdef68c7a4c0d05",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Student loan debt should be forgiven",
+      "inSample": true
+    },
+    {
+      "claimId": "187ce0019d6146cba0d08ad9bbcef17b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Raising the minimum wage kills jobs",
+      "inSample": true
+    },
+    {
+      "claimId": "ef2cc805196176add2ec3b2c4cf78f72",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The welfare state discourages work",
+      "inSample": true
+    },
+    {
+      "claimId": "ec0a71df06f74225bf6811508b2ca4df",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voter ID laws disproportionately burden minority voters",
+      "inSample": true
+    },
+    {
+      "claimId": "130164625b3d493ca208d6e82f000443",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty",
+      "inSample": true
+    },
+    {
+      "claimId": "4b69e8a281525f4faef63cff0190b83b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "On the whole, the benefits of migration to the United States have been positive",
+      "inSample": true
+    },
+    {
+      "claimId": "079d07a77a4249b58c498db29c68994d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should stop policing the world",
+      "inSample": true
+    }
+  ]
+}

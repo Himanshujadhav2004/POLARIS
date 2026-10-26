@@ -18,12 +18,15 @@ import {
   RULES,
 } from "../src/framework/rubric.js";
 
-/** Ideology values on Geo after 2026-10-26 (Fascist and Zionist deleted on 10-22, the duplicate Libertarianism on 10-26). */
+/**
+ * Political ideology values on Geo after 2026-10-26 (Fascist and Zionist deleted on 10-22, the duplicate
+ * Libertarianism on 10-26; on the split, Isolationist became an Issue position and Social conservative a Political ideology).
+ */
 const GEO_IDEOLOGIES = [
   "Anarchist", "Christian conservative", "Classical liberal", "Communist", "Conservative", "Democratic socialist",
-  "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal", "Libertarian",
+  "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Liberal", "Libertarian",
   "MAGA", "Marxist", "Nationalist", "Neoconservative", "Neoliberal", "Paleoconservative",
-  "Populist", "Progressive", "Secularist", "Social democrat", "Socialist", "Traditionalist",
+  "Populist", "Progressive", "Secularist", "Social conservative", "Social democrat", "Socialist", "Traditionalist",
 ];
 
 describe("rubric", () => {
@@ -81,10 +84,10 @@ describe("ideology cards", () => {
     for (const c of traditions) expect(c.geoId).toMatch(/^[0-9a-f]{32}$/);
   });
 
-  it("has Armando's 86 issue leanings, none on Geo yet", () => {
+  it("has Armando's 86 issue leanings, all on Geo as Issue positions since 2026-10-26", () => {
     const issues = IDEOLOGY_CARDS.filter((c) => c.kind === "issue");
     expect(issues).toHaveLength(86);
-    for (const c of issues) expect(c.geoId).toBeNull();
+    for (const c of issues) expect(c.geoId, c.name).toMatch(/^[0-9a-f]{32}$/);
   });
 
   it("gives every card a definition, numbered positions and valid neighbours", () => {
@@ -127,7 +130,7 @@ describe("framework text shared by every prompt (v3.4)", () => {
   });
 
   it("leaves names that contradict their side out of every prompt", () => {
-    const decisions = buildDecisionQuestions({ politicalLeanings: [], ideologies: [], fingerprint: "test", byName: new Map() })
+    const decisions = buildDecisionQuestions({ politicalLeanings: [], ideologies: [], issuePositions: [], fingerprint: "test", byName: new Map() })
       .map((q) => ("instructions" in q ? q.instructions : ""))
       .join("\n");
     for (const name of ["Pro-negotiated settlement", "Ambiguity advocate", "Pro-conditioning aid to Israel", "Keep Nine", "Pro-strategic clarity", "Pro-peace deal"]) {
