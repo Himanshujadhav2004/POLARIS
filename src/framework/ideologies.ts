@@ -26,7 +26,10 @@ export interface IdeologyCard {
   /** For issue leanings: the issue, e.g. "Abortion". */
   issue: string | null;
   group: string;
+  /** Armando's alternative names and slogan, as shown in the prompts (rule I7). */
   aliases: string[];
+  /** Alternative names from his doc that are left out of the prompts (see EXCLUDED_ALIASES). */
+  excludedAliases: string[];
   source: string;
   status: "Draft" | "Approved";
   /** Traditions: positions characteristic of the tradition. Issue leanings: the side itself. */
@@ -73,19 +76,19 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   Anarchist: {
     positions: ["Abolish the state or replace it with voluntary association and self-governance.", "Reject coercive hierarchies such as police, prisons or bosses."],
     exclusions: ["Calls to shrink or reform government while keeping it."],
-    neighbours: ["Communist", "Marxist", "Libertarian", "Libertarianism"],
+    neighbours: ["Communist", "Marxist", "Libertarian"],
     typical: ["Far left", "Left", "Right"],
   },
   "Christian conservative": {
-    positions: ["Restrict or ban abortion.", "Defend traditional marriage and the family as the basis of society.", "Protect religious liberty and the place of faith in public life and education."],
-    exclusions: ["Positions that touch none of abortion, marriage and family, religion or education."],
+    positions: ["Restrict or ban abortion.", "Defend traditional marriage and the family as the basis of society.", "Christian or traditional religious practice in public life and schools, and religious liberty for it."],
+    exclusions: ["Positions that touch none of abortion, marriage and family, religion or education.", "Other faiths, or education and parental-rights positions with no religious element."],
     neighbours: ["Traditionalist", "Conservative", "Paleoconservative"],
     typical: ["Center right", "Right", "Far right"],
   },
   "Classical liberal": {
     positions: ["Protect individual rights and civil liberties, including free speech, against state power.", "Limited, constitutional government under the rule of law.", "Free markets defended as a matter of individual liberty."],
     exclusions: ["A principle shared across the mainstream, such as the rule of law in general (see G4)."],
-    neighbours: ["Libertarian", "Libertarianism", "Liberal", "Neoliberal", "Conservative"],
+    neighbours: ["Libertarian", "Liberal", "Neoliberal", "Conservative"],
     typical: ["Center left", "Center", "Center right", "Right"],
   },
   Communist: {
@@ -95,13 +98,16 @@ const TRADITIONS: Record<string, TraditionDetail> = {
     typical: ["Far left"],
   },
   Conservative: {
-    positions: ["Preserve tradition, established institutions and social continuity; prefer gradual change.", "Traditional family and social norms.", "Limited government and markets."],
-    exclusions: ["A technical policy with no link to tradition, social norms or limited government."],
+    positions: ["Preserve tradition, established institutions and social continuity; prefer gradual change.", "Traditional family and social norms."],
+    exclusions: [
+      "A technical policy with no link to tradition or social norms.",
+      "A mainstream right policy (tax or spending cuts, deregulation, gun rights, immigration enforcement) with no appeal to tradition, continuity or traditional norms: that is the Right leaning.",
+    ],
     neighbours: ["Traditionalist", "Christian conservative", "Paleoconservative", "Neoconservative", "Classical liberal"],
     typical: ["Center right", "Right"],
   },
   "Democratic socialist": {
-    positions: ["Social ownership or public control of key sectors.", "Universal public provision such as single-payer healthcare or free college, and broad social protections.", "Reaching these through elections and democratic institutions."],
+    positions: ["Social ownership or public control of key sectors.", "Universal public provision replacing private provision, such as single-payer healthcare or free college.", "Reaching these through elections and democratic institutions."],
     exclusions: ["Revolution or one-party rule (see Communist)."],
     neighbours: ["Socialist", "Social democrat", "Progressive"],
     typical: ["Far left", "Left"],
@@ -143,32 +149,32 @@ const TRADITIONS: Record<string, TraditionDetail> = {
     typical: ALL,
   },
   Liberal: {
-    positions: ["Civil liberties and individual rights.", "Social equality.", "Government action to address economic or social problems."],
-    exclusions: ["The international, free-market sense of the word: in Geo, Liberal means the US center-left outlook."],
+    positions: [
+      "Civil liberties and individual rights defended against state or majority restriction, such as due process or protecting unpopular speech.",
+      "Social equality pursued through civil rights and equal treatment.",
+    ],
+    exclusions: [
+      "The international, free-market sense of the word: in Geo, Liberal means the US center-left outlook.",
+      "A mainstream left policy (taxes, spending, guns, climate, abortion, unions, student debt) argued without civil-liberties or equal-rights reasoning: that is the Left leaning.",
+    ],
     neighbours: ["Progressive", "Social democrat", "Classical liberal", "Neoliberal"],
     typical: ["Left", "Center left", "Center"],
   },
   Libertarian: {
     positions: ["Sharply limited government.", "Free markets and opposition to economic mandates such as minimum wages.", "Broad personal freedoms, for example on drugs, guns and speech."],
     exclusions: ["Deregulation argued for growth rather than liberty (see Neoliberal)."],
-    neighbours: ["Libertarianism", "Classical liberal", "Anarchist", "Neoliberal"],
-    typical: ALL,
-  },
-  Libertarianism: {
-    positions: ["Individual liberty first, with state power limited in economic and personal affairs.", "Rights such as gun ownership or free expression defended as individual liberty."],
-    exclusions: ["Deregulation argued for growth rather than liberty (see Neoliberal)."],
-    neighbours: ["Libertarian", "Classical liberal", "Anarchist", "Neoliberal"],
+    neighbours: ["Classical liberal", "Anarchist", "Neoliberal"],
     typical: ALL,
   },
   MAGA: {
     positions: ["Donald Trump's Make America Great Again agenda and America First nationalism.", "Restrictive immigration and enforcement under Trump.", "Opposition to established political institutions."],
-    exclusions: ["A restrictive position that does not invoke Trump, America First or MAGA (use the issue leaning instead)."],
+    exclusions: ["Any position that does not invoke Trump, America First or MAGA (use the issue leaning instead)."],
     neighbours: ["Paleoconservative", "Nationalist", "Populist"],
     typical: ["Right", "Far right"],
   },
   Marxist: {
     positions: ["Critique of capitalism as exploitation or as doing more harm than good.", "Analysis of politics through class relations and class struggle."],
-    exclusions: ["Inequality concerns with no critique of capitalism or class analysis."],
+    exclusions: ["Inequality concerns with no critique of capitalism or class analysis.", "Criticism of corporations or of \"unregulated\" capitalism without class analysis."],
     neighbours: ["Communist", "Socialist"],
     typical: ["Far left", "Left"],
   },
@@ -187,7 +193,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   Neoliberal: {
     positions: ["Market competition and private enterprise as the general engine of growth.", "Deregulation, privatization, free trade and fiscal restraint as a program."],
     exclusions: ["Cutting the rules of one sector or project only.", "Deregulation argued as individual liberty (see Libertarian)."],
-    neighbours: ["Classical liberal", "Libertarian", "Libertarianism", "Conservative", "Globalist"],
+    neighbours: ["Classical liberal", "Libertarian", "Conservative", "Globalist"],
     typical: ["Center left", "Center", "Center right", "Right"],
   },
   Paleoconservative: {
@@ -203,8 +209,11 @@ const TRADITIONS: Record<string, TraditionDetail> = {
     typical: ALL,
   },
   Progressive: {
-    positions: ["Reforms or structural change to expand social and economic equality.", "Civil rights and equity, including diversity, equity and inclusion.", "Environmental protection."],
-    exclusions: ["A small technical adjustment with no equality, civil-rights or environmental aim."],
+    positions: ["Structural reform argued as reducing inequality between groups or classes.", "Civil rights and equity, including diversity, equity and inclusion.", "Environmental protection as part of a wider reform agenda."],
+    exclusions: [
+      "A small technical adjustment with no equality, civil-rights or environmental aim.",
+      "One mainstream left policy not argued in terms of equality, equity or structural change: that is the Left leaning.",
+    ],
     neighbours: ["Liberal", "Democratic socialist", "Social democrat", "Environmentalist"],
     typical: ["Far left", "Left", "Center left"],
   },
@@ -221,7 +230,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
     typical: ["Left", "Center left"],
   },
   Socialist: {
-    positions: ["Social, public or worker ownership or control of major productive resources.", "Legal limits on private wealth to reach economic equality."],
+    positions: ["Social, public or worker ownership or control of major productive resources.", "Caps on income or wealth set by law to reach economic equality (a tax is not a cap)."],
     exclusions: ["Welfare expansion within a market economy (see Social democrat)."],
     neighbours: ["Democratic socialist", "Communist", "Marxist", "Social democrat"],
     typical: ["Far left", "Left"],
@@ -234,28 +243,83 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   },
 };
 
+/**
+ * Alternative names from Armando's doc that are left out of the prompts (rule I7). Some contradict the
+ * side's own description ("Pro-negotiated settlement" is not Pro-Russia); others are also another side's
+ * name or a tradition's name, so the models matched the word, not the side (v3.4 QA). They stay in
+ * leanings.json and in his doc, and are listed for him to review.
+ */
+export const EXCLUDED_ALIASES: Record<string, string[]> = {
+  "Pro-Russia": ["Pro-negotiated settlement", "Pro-peace deal", "Ukraine dove", "Ukraine aid critic", "Prioritizer"],
+  "Pro-Taiwan reunification": ["Pro-One China policy", "Pro-status quo", "Taiwan dove", "Ambiguity advocate"],
+  "Pro-Taiwan independance": ["Pro-Taiwan arms sales", "Pro-strategic clarity", "Pro-Taiwan defense"],
+  "Pro-Palestinian": ["Pro-ceasefire", "Pro-conditioning aid to Israel"],
+  Deaccelerationist: ["Antitrust", "Trustbuster", "Neo-Brandeisian", "Pro-breakup"],
+  "Pro-judicial independence": ["Originalist", "Textualist", "Keep Nine"],
+  "Pro-vaccine choice": ["MAHA", "Pro-informed consent"],
+  "Crypto skeptic": ["Pro-crypto regulation"],
+  "Pro-tax cuts": ["Pro-growth"],
+  "Pro-wage flexibility": ["Pro-small business", "Free-market"],
+  "Pro-voting rights": ["Pro-democracy"],
+  "Pro-LGBTQ rights": ["Pro-equality"],
+  // Names shared with another leaning.
+  "Pro-immigration": ["Pro-legalization"],
+  Dove: ["Prioritizer"],
+  "Pro-regulation": ["Pro-enforcement"],
+  "Pro-border security": ["Pro-enforcement"],
+  "Neighborhood preservation": ["Pro-local control"],
+  "Pro-states' rights": ["Pro-local control"],
+  "Pro-deregulation": ["Free-market"],
+  "Pro-climate action": ["Environmentalist"],
+  "Church-state separationist": ["Secularist"],
+  Hawk: ["Neoconservative"],
+  "Pro-innovation": ["Techno-optimist"],
+};
+
+/**
+ * Values Geo deleted as duplicates of another. The deleted value's card is dropped, its name becomes an
+ * alternative name of the value kept, and Armando's labels with the old name count as the kept one.
+ * On 2026-10-26 Geo removed Libertarianism, the near-duplicate of Libertarian.
+ */
+export const MERGED_INTO: Readonly<Record<string, string>> = { Libertarianism: "Libertarian" };
+export const canonicalName = (name: string): string => MERGED_INTO[name] ?? name;
+
+/** Leanings on one issue that are the same side, not opposites, although his doc lists them as one issue's sides. */
+const SAME_SIDE: string[][] = [
+  ["Pro-innovation", "Techno-optimist"],
+  ["Pro-Palestinian", "Anti-Zionist"],
+];
+
 function toCard(row: LeaningRow): IdeologyCard {
+  const excluded = EXCLUDED_ALIASES[row.name] ?? [];
   const base = {
     name: row.name,
     geoId: row.geoId,
     definition: row.description,
     group: row.group,
-    aliases: [...row.alternativeNames, ...(row.slogan ? [`"${row.slogan}"`] : [])],
+    aliases: [
+      ...row.alternativeNames.filter((a) => !excluded.includes(a)),
+      ...Object.keys(MERGED_INTO).filter((from) => MERGED_INTO[from] === row.name),
+      ...(row.slogan ? [`"${row.slogan}"`] : []),
+    ],
+    excludedAliases: row.alternativeNames.filter((a) => excluded.includes(a)),
     source: ARMANDO,
     status: "Draft" as const,
     exampleClaimId: row.exampleClaimId,
   };
   if (row.kind === "issue") {
+    const sameSide = SAME_SIDE.find((group) => group.includes(row.name)) ?? [];
+    const otherSides = row.otherSides.filter((n) => !sameSide.includes(n));
     return {
       ...base,
       kind: "issue",
       issue: row.issue,
       tenets: [{ id: "T1", text: row.description, distinctive: true }],
       exclusions: [
-        `The claim takes the other side of ${row.issue} (${row.otherSides.join(" or ")}).`,
+        `The claim takes the other side of ${row.issue} (${otherSides.join(" or ")}).`,
         `The claim only mentions ${row.issue} without taking a side, or reports someone else's side.`,
       ],
-      neighbours: row.otherSides,
+      neighbours: otherSides,
       typicalLeanings: ALL,
     };
   }
@@ -272,7 +336,7 @@ function toCard(row: LeaningRow): IdeologyCard {
   };
 }
 
-export const IDEOLOGY_CARDS: IdeologyCard[] = (data.ideologies as LeaningRow[]).map(toCard);
+export const IDEOLOGY_CARDS: IdeologyCard[] = (data.ideologies as LeaningRow[]).filter((row) => !MERGED_INTO[row.name]).map(toCard);
 
 export const CARD_BY_NAME: ReadonlyMap<string, IdeologyCard> = new Map(IDEOLOGY_CARDS.map((c) => [c.name, c]));
 

@@ -1,0 +1,3216 @@
+{
+  "name": "political-candidates",
+  "seed": 0,
+  "framework": "framework-v3.4.1",
+  "generatedAt": "2026-10-26T13:00:57.366Z",
+  "rows": [
+    {
+      "claimId": "86547f225f1a492d826445470152883f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Far left (0.85); Left gets 0.14",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "NAT-2L (direct): “ICE should be abolished”"
+      ],
+      "explanation": "No label. NAT-2L matched (direct): “ICE should be abolished”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Far left (0.85); Left gets 0.14. Not published: Pro-immigration (independent probability 0.54 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-immigration: independent probability 0.54 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Property taxes on people's homes should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-tax cuts"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “Property taxes on people's homes should be abolished”"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “Property taxes on people's homes should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-tax cuts (belief T1: “Property taxes on people's homes should be abolished”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-tax cuts"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-tax cuts"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b60172f03a102f2973466f5cc5a69798",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mail-in voting should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "LAW-2R (direct): “Mail-in voting should be abolished”"
+      ],
+      "explanation": "Published: Right. LAW-2R matched (direct): “Mail-in voting should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-election integrity (independent probability 0.77 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-election integrity: independent probability 0.77 is below 0.9"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-election integrity"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-election integrity"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d08075dfc965cb3a83ace89310296eb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Education should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “The Department of Education should be abolished”"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “The Department of Education should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right.",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": []
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": []
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Cash bail should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-criminal justice reform"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "LAW-2L (direct): “Cash bail should be abolished”"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Cash bail should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-criminal justice reform (belief T1: “Cash bail should be abolished”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "16148774ed6c490b9f8f58514d74df5e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "All illegal aliens should be deported",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-border security"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "NAT-2R (direct): “All illegal aliens should be deported”"
+      ],
+      "explanation": "Published: Right. NAT-2R matched (direct): “All illegal aliens should be deported”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-border security (belief T1: “All illegal aliens should be deported”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cbff1fa13c3ec8f74e36501fc1d61780",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign students who join campus protests should be deported",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Far right",
+      "ideologies": [
+        "Pro-border security"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (1.00); Far right gets 0.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 1 of 3 runs gave Far right; the others gave Right, Right"
+      ],
+      "criteria": [
+        "LAW-3R (close): “Foreign students who join campus protests should be deported”"
+      ],
+      "explanation": "No label. LAW-3R matched (close): “Foreign students who join campus protests should be deported”. That points to Far right, but rule P4 (Same level) failed: the independent check prefers Right (1.00); Far right gets 0.00; rule P6 (Stable) failed: 1 of 3 runs gave Far right; the others gave Right, Right. Ideology: Pro-border security (belief T1: “Foreign students who join campus protests should be deported”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "121d357639a54bc9a7526462c2f697d5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gender-affirming care for minors should be banned",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Social conservative"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Gender-affirming care for minors should be banned”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Gender-affirming care for minors should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Social conservative (belief T1: “Gender-affirming care for minors should be banned”, independent probability 1.00). Not published: Pro-regulation (independent probability 0.89 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.89 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is about a social/gender-identity policy, not economy regulation of businesses or markets. Because a more specific gender/LGBTQ issue covers the position, the general Regulation leaning should not be assigned. / The claim supports a ban on medical care for minors, but Regulation covers rules on businesses and markets, not individual medical/legal restrictions. The more specific gender-identity issue also controls, so the general Pro-regulation side should not be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1b4c590a4e58590c26006707a5972460",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Drag shows for children should be banned",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Social conservative"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.98",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Drag shows for children should be banned”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Drag shows for children should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Social conservative (belief T1: “Drag shows for children should be banned”, independent probability 0.99). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim supports a social/cultural ban, not government rules on businesses or markets to address market failures or constrain commercial conduct. The Regulation issue leaning does not cover this kind of rule on individuals or performances. / The claim supports a social/cultural ban on drag shows for children, not government rules on businesses or markets to address market failures or constrain market conduct. The Regulation issue leaning does not apply to this kind of social-policy restriction."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "20f8caa87deb4fe0b983d1236ca0b6cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be legal up to fetal viability",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [
+        "Pro-choice"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.96); Center left gets 0.04",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Center left"
+      ],
+      "criteria": [
+        "SOC-1L (direct): “Abortion should be legal up to fetal viability”"
+      ],
+      "explanation": "No label. SOC-1L matched (direct): “Abortion should be legal up to fetal viability”. That points to Center left, but rule P4 (Same level) failed: the independent check prefers Left (0.96); Center left gets 0.04. Ideology: Pro-choice (belief T1: “Abortion should be legal up to fetal viability”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Center left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-choice"
+          ]
+        },
+        {
+          "leaning": "Center left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-choice"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6bcb7138969c483faa46a922c046207e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be illegal even in cases of rape",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-life"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Abortion should be illegal even in cases of rape”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Not published: Christian conservative (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Christian conservative: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Christian conservative: The claim supports an abortion ban, but it does not invoke Christianity, religious practice, religious liberty, traditional marriage/family, or any broader Christian-conservative worldview. Under I2, a mainstream right/pro-life abortion position alone is not enough to assign a political tradition."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Late-term abortion should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-life"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Late-term abortion should be illegal”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Late-term abortion should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-life (belief T1: “Late-term abortion should be illegal”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "97fdfead23a240f483555ff48b8ece5b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ordering abortion pills should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-life"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Ordering abortion pills should be illegal”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Ordering abortion pills should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-life (belief T1: “Ordering abortion pills should be illegal”, independent probability 0.98). Not published: Pro-regulation (the verifier disagreed). Not published: Christian conservative (the issue side it rests on is in doubt: Pro-regulation (the verifier rejected it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed",
+        "Christian conservative: the issue side it rests on is in doubt: Pro-regulation (the verifier rejected it); the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life",
+            "Christian conservative",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Christian conservative: The claim supports an abortion restriction, but it does not invoke Christian beliefs, religious practice, traditional marriage, or family. By itself, this is a mainstream right/pro-life position rather than enough to establish the Christian conservative tradition.",
+        "Verifier on Pro-regulation: The claim is about restricting abortion pills, not government rules on businesses or markets to address market failures, protect the public, or constrain harmful commercial conduct. The more specific abortion issue leaning applies instead. / The claim is about making abortion pills illegal, not government rules on businesses or markets to address market failures or harmful commercial conduct. The specific abortion issue side applies instead, so the general Regulation leaning should not be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Race-based affirmative action in college admissions should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-meritocracy"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Race-based affirmative action in college admissions should be illegal”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Race-based affirmative action in college admissions should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-meritocracy (belief T1: “Race-based affirmative action in college admissions should be illegal”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-meritocracy"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-meritocracy"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Tax fairness"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (direct): “raise taxes on high earners”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “raise taxes on high earners”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Tax fairness (belief T1: “raise taxes on high earners”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Tax fairness"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.86",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (direct): “raise taxes on corporations and billionaires”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “raise taxes on corporations and billionaires”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.86; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Tax fairness (belief T1: “raise taxes on corporations and billionaires”, independent probability 1.00). Not published: Pro-public spending (independent probability 0.89 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-public spending: independent probability 0.89 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness",
+            "Pro-public spending"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness",
+            "Pro-public spending"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-public spending: The claim is specifically about taxes and tax credits, so the more specific Taxes issue leaning covers it; rule I6 says the general Spending & deficit side should not also be assigned. Also, “targeted tax credits” is not clearly a broad claim for government spending on public programs, services, or investment. / The claim is specifically about tax policy—“raise taxes on corporations and billionaires” and “targeted tax credits”—so the more specific Taxes issue covers it. Under rule I6, the general Spending & deficit side should not also be assigned, and “tax credits” are not clearly government spending on public programs, services, or investment."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a29794bbc69a4bd0b75b7c8590f867bd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should cut the FEMA workforce by 50%",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “should cut the FEMA workforce by 50%”"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “should cut the FEMA workforce by 50%”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-fiscal responsibility (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-fiscal responsibility"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-fiscal responsibility"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-fiscal responsibility: The claim says only that the administration “should cut the FEMA workforce by 50%”; it does not frame the cut as limiting deficits, public debt, or fiscal responsibility rather than agency downsizing or efficiency. / The claim supports cutting FEMA's workforce, but it does not say the cut is to limit deficits or public debt, nor clearly frame it as fiscal responsibility rather than agency restructuring or capacity reduction."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "db169bb9591085a36daff2bc7bd018ed",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Europe should cut welfare spending to pay for defense",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Right 0.98",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “cut welfare spending”"
+      ],
+      "explanation": "No label. ECO-2R matched (direct): “cut welfare spending”. That points to Right, but rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is about Europe, not United States politics, so rule P3/C1 blocks publishing a Geo political leaning even if “cut welfare spending” resembles ECO-2R. / The claim is about Europe, not United States politics, so rule P3/C1 blocks publishing a Geo political leaning. Although “cut welfare spending” resembles ECO-2R, the proposed Right leaning should be left blank for non-U.S. context."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0e36eafead0f4106b2c4bf750a8507f8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Discarding unused embryos from IVF should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (partial): “Discarding unused embryos from IVF should be illegal”"
+      ],
+      "explanation": "No label. SOC-2R matched (partial): “Discarding unused embryos from IVF should be illegal”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-life (the verifier disagreed). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-life: the verifier disagreed",
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim takes a position on IVF embryo disposal, but the cited SOC-2R criterion covers abortion restrictions/bans, traditional marriage and family, parental rights, gender-transition care, religious-liberty exemptions, or DEI. The quoted words do not directly or closely state any of those positions, so the exact Right leaning is doubtful under the cited criterion.",
+        "Verifier on Pro-life: The Pro-life card requires opposition to abortion; the claim is about discarding unused IVF embryos, not abortion. Its words do not state opposition to abortion or abortion restrictions.",
+        "Verifier on Pro-regulation: The Regulation issue concerns government rules on businesses and markets to address market failures, protect the public, or constrain harmful conduct. This is a moral/legal ban on embryo disposal, so sharing the idea that something “should be illegal” is not enough. / The claim is about making disposal of IVF embryos illegal, a reproductive-ethics/social position, not government rules on businesses and markets. A general Regulation leaning is also displaced by the more specific embryo/abortion-life issue under I6."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c1870eeda558909aab71f379ca9743cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The government should cut funding to universities that fail to stop antisemitism",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.70",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “should cut funding to universities”"
+      ],
+      "explanation": "No label. ECO-2R matched (direct): “should cut funding to universities”. That points to Right, but rule P5 (Verifier agrees) failed: the verifier disagreed.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted words support a conditional funding penalty for universities that fail to address antisemitism, not a general conservative economic position of lower spending, deficit cuts, deregulation, or school choice under ECO-2R. This is at best a campus/civil-rights enforcement claim and does not clearly sit at the Right level on the stated criterion. / The evidence supports a targeted, conditional funding penalty for universities that fail to stop antisemitism, not the ECO-2R criterion of broad conservative “spending and deficit cuts” or education-funding cuts as such. If scored at all, its explicit limit (“universities that fail to stop antisemitism”) makes the proposed exact level doubtful."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e98817406d494ba5a67f7886ba50502c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should cut funding to the Smithsonian over its exhibition content",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Center right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (1.00); Center right gets 0.00",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-1R (close): “federal government should cut funding to the Smithsonian”"
+      ],
+      "explanation": "No label. ECO-1R matched (close): “federal government should cut funding to the Smithsonian”. That points to Center right, but rule P4 (Same level) failed: the independent check prefers Right (1.00); Center right gets 0.00; rule P5 (Verifier agrees) failed: the verifier disagreed.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The quote supports a funding cut, but ECO-1R requires an explicitly moderate or limited right-leaning step such as spending restraint that protects core programs. “should cut funding to the Smithsonian” has no centrist limit; if scored economically, it is closer to a general conservative spending-cut position than Center right."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5d2ae72c5ad8629d59171f2b87a195ae",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Governments should end lawful immigration enforcement policies that cause disproportionate harm",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Left 0.81",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "NAT-2L (close): “Governments should end lawful immigration enforcement policies that cause disproportionate harm”"
+      ],
+      "explanation": "No label. NAT-2L matched (close): “Governments should end lawful immigration enforcement policies that cause disproportionate harm”. That points to Left, but rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-immigration (independent probability 0.85 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-immigration: independent probability 0.85 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is framed as about “Governments” generally, not United States politics, so a Geo political leaning should not be published under P3/C1. Even if it limits immigration enforcement, the proposed U.S.-spectrum Left label is blocked by the country-context rule. / The claim is not clearly about United States politics; it says \"Governments\" and the context is \"World affairs,\" so P3 blocks a published Geo political leaning even if it favors limits on immigration enforcement."
+      ],
+      "nearMisses": [
+        "Pro-immigration: independent probability 0.85 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "0b1e06a9387041a8b68521ee6009dde7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The EU should cut its next long-term budget by hundreds of billions of euros",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Pro-fiscal responsibility (independent probability 0.89 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: independent probability 0.89 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-fiscal responsibility: independent probability 0.89 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "1e09eaf24e7728ceadf509bac96213d4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious schools should be banned",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Far left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.93); Far left gets 0.01",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-3L (close): “Religious schools should be banned”"
+      ],
+      "explanation": "No label. SOC-3L matched (close): “Religious schools should be banned”. That points to Far left, but rule P4 (Same level) failed: the independent check prefers Left (0.93); Far left gets 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Church-state separationist: The claim opposes religious schools generally, but it does not specifically support keeping government institutions and religious institutions legally separate. It is not a church-state separation claim as defined."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "00c2b2dad6a74f3aa21d974c172a29eb",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Wealthier countries should provide grant-based climate-adaptation funding to vulnerable Himalayan states",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P3 United States, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-climate action"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Left 0.78",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave no leaning, Left, but not clearly about the United States"
+      ],
+      "criteria": [
+        "ENV-2L (close): “should provide grant-based climate-adaptation funding”"
+      ],
+      "explanation": "No label. ENV-2L matched (close): “should provide grant-based climate-adaptation funding”. That points to Left, but rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave no leaning, Left, but not clearly about the United States. Ideology: Pro-climate action (belief T1: “climate-adaptation funding”, independent probability 0.99). Not published: Pro-public spending (independent probability 0.88 is below 0.9; the verifier disagreed). Not published: Globalist (independent probability 0.75 is below 0.8; the issue side it rests on is in doubt: Pro-public spending (the verifier rejected it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-public spending: independent probability 0.88 is below 0.9; the verifier disagreed",
+        "Globalist: independent probability 0.75 is below 0.8; the issue side it rests on is in doubt: Pro-public spending (the verifier rejected it); the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Globalist",
+            "Environmentalist",
+            "Pro-public spending"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Globalist",
+            "Environmentalist",
+            "Pro-public spending"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is about wealthier countries and vulnerable Himalayan states, not United States politics, so P3/C1 blocks a U.S. political leaning. The cited ENV-2L evidence also concerns international climate-adaptation funding rather than a clearly U.S.-spectrum policy position. / The claim is about wealthier countries and vulnerable Himalayan states, not United States politics, so C1/P3 blocks a Geo political leaning. A U.S. Left label should not be published even though the claim takes a climate-policy position.",
+        "Verifier on Globalist: The claim supports international climate funding, but it does not clearly endorse global institutions, open trade, migration, or a broader globalist worldview. A single climate-aid proposal is too thin for the Globalist tradition under I2.",
+        "Verifier on Pro-public spending: Because the specific Climate issue leaning covers the claim’s position, the general Spending & deficit side should not also be assigned under I6. The spending aspect is incidental to the climate-adaptation position. / The claim’s specific issue is climate adaptation, which is already covered by Pro-climate action. Under I6, the general Spending & deficit side should not also be assigned when a specific issue leaning covers the position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "20ec120ccbb05b578e6a08a87e54db1f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The late stages of capitalism can bring serious issues",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2053745423c651e48fd0ba32a7783cbe",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Late-stage feminism advocates for the complete elimination of gender roles, which contributes to difficulty in dating",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.12.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim describes what “Late-stage feminism advocates” and asserts an effect on dating, but it does not take a policy/legal/government position; the dating effect is outside rule E2."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "32a9bb5f4bbe8189ea52851ec5900a1a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United States should end its economic embargo on Cuba",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE). Not published: Pro-trade (independent probability 0.63 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-trade: independent probability 0.63 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c8ce4455389f82f6817856bfa8d5ab10",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Blasphemy laws should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 1.00, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: G4 fails because abolishing blasphemy laws is a broad civil-liberties/free-expression position in the U.S. context rather than a live disagreement between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a3587b68b72f6f5a934864f10aee92b9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan should cut regulations that block home construction",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-housing development"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.90",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 2 of 3 runs gave Right; the others gave Center right"
+      ],
+      "criteria": [
+        "ECO-2R (direct): “should cut regulations that block home construction”"
+      ],
+      "explanation": "No label. ECO-2R matched (direct): “should cut regulations that block home construction”. That points to Right, but rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave Center right. Ideology: Pro-housing development (belief T1: “should cut regulations that block home construction”, independent probability 1.00). Not published: Pro-deregulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-deregulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-housing development",
+            "Pro-deregulation"
+          ]
+        },
+        {
+          "leaning": "Center right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-housing development",
+            "Pro-deregulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted words support only a targeted housing deregulation step—“cut regulations that block home construction”—which fits a narrower center-right/targeted-deregulation idea more closely than broad ECO-2R “deregulation” at the Right level. / The claim supports a targeted cut to regulations affecting home construction, which fits at most ECO-1R targeted deregulation; ECO-2R broad mainstream conservative deregulation is too strong for this wording.",
+        "Verifier on Pro-deregulation: Although the claim mentions cutting regulations, the more specific Housing issue applies: “cut regulations that block home construction” directly supports reducing barriers to new residential construction, so the general Regulation side should not also be assigned under the specific-before-general rule. / The claim is specifically about reducing barriers to new residential construction, so the specific Housing leaning covers it; under I6 the general Regulation side should not also be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5047770b00d3679b3bad262f156b8a32",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should end the H-1B visa program",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "NAT-2R (direct): “The US should end the H-1B visa program”"
+      ],
+      "explanation": "Published: Right. NAT-2R matched (direct): “The US should end the H-1B visa program”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right.",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": []
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": []
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2f40f652e04b9a6a846509add4bd4e23",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sharia councils should be banned in Western countries",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "329492b464ba5a818f17807d3b3ae63e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Propaganda and Nazi viewpoints should be banned from social media",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-online safety"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH, X-TECH). Ideology: Pro-online safety (belief T1: “Propaganda and Nazi viewpoints should be banned from social media”, independent probability 0.94).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "329c1f2e939d5bcd8cf753e750a18d0a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Hate speech should be illegal if it causes harm to a person",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH). Not published: Pro-regulation (independent probability 0.88 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.88 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is about making hate speech illegal, not government rules or oversight for businesses or markets. The Regulation issue leaning does not cover restrictions on individual speech. / The claim is about making harmful hate speech illegal, i.e. regulation of speech by individuals, not government rules on businesses or markets. Under the framework, Regulation does not cover rules on individuals, so the quoted words do not meet the Pro-regulation issue leaning."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "07a1ef43ec93adcd0a1b39f1e14e278d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Selling newly made animal-fur clothing should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-regulation"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-regulation (belief T1: “Selling newly made animal-fur clothing should be illegal”, independent probability 0.98).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0ad100dede4d4869b5f10dfbdd7e0a8e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Gulf states should expand legal migration pathways for people from the Horn of Africa",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-immigration"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-immigration (belief T1: “expand legal migration pathways”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "Gulf states",
+          "ideologies": [
+            "Pro-immigration"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "Gulf states",
+          "ideologies": [
+            "Pro-immigration"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5b3471739009e6cf770ecef856e3fb69",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Employers should raise pay before recruiting workers from abroad",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Protectionist (independent probability 0.57 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Protectionist: independent probability 0.57 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Protectionist: The claim does not support trade barriers or a trade policy; it is about employers raising pay before hiring workers from abroad. Any preference for local labor is immigration/labor-related, not the Trade-side “Protectionist” belief as defined. / The claim is about employer pay and recruiting workers from abroad, not trade barriers or domestic-preference trade policy. The quoted words do not clearly meet the Protectionist description of protecting industries or workers through trade barriers or domestic preferences against foreign competition."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3d80328451913fd3a8a8f7c0fe5f4871",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Severe mental illness should reduce punishment, never eliminate criminal responsibility",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P3 United States, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim does not make clear which country's politics it concerns",
+        "P4 FAIL: the independent check prefers Center right (0.42); Center left gets 0.03",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "LAW-1L (close): “Severe mental illness should reduce punishment, never eliminate criminal responsibility”"
+      ],
+      "explanation": "No label. LAW-1L matched (close): “Severe mental illness should reduce punishment, never eliminate criminal responsibility”. That points to Center left, but rule P3 (United States) failed: the claim does not make clear which country's politics it concerns; rule P4 (Same level) failed: the independent check prefers Center right (0.42); Center left gets 0.03; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-criminal justice reform (independent probability 0.29 is below 0.9; the other side of Policing also scores: Pro-law enforcement 0.12).",
+      "droppedIdeologies": [
+        "Pro-criminal justice reform: independent probability 0.29 is below 0.9; the other side of Policing also scores: Pro-law enforcement 0.12"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim does not make a United States political context clear, so rule C1/P3 blocks a published Geo political leaning. The sentencing-mitigation position may be a limited criminal-justice reform, but the proposed Center left label should not be published without U.S. context. / The quoted claim takes a sentencing position, but it does not make a United States context clear, so a Geo political leaning should not be published under P3/C1."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2be6e12c7d98484a9ed656455167f247",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Gain-of-function research that could cause pandemics, such as modifying viruses to become more transmissible, should be banned.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim supports banning dangerous gain-of-function research, but the Regulation issue leaning is for rules on businesses and markets. This is a public-health/biosecurity research ban, not clearly a market or business regulation side. / The claim supports banning a type of scientific research, but the Pro-regulation issue card covers government rules on businesses and markets. The quoted words do not show regulation of business or market activity."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1f2158a51442272cb987b44fee7fc998",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Under-15s should be banned from social media",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-online safety"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Pro-online safety (belief T1: “Under-15s should be banned from social media”, independent probability 0.99). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about banning under-15s from social media, which fits the Speech online/online safety issue; under rule I6, the general Regulation side should not also be assigned. It is not a general position on government rules for businesses or markets. / The more specific Speech online side covers this claim: “Under-15s should be banned from social media” is a child online-safety measure, so rule I6 blocks adding the general Regulation side. The claim is also about access to social media, not clearly a general rule on businesses and markets."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "09046cc50842019c0ef7c503a2a9f587",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Governments should be banned from using live facial recognition in public spaces",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-privacy"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Pro-privacy (belief T1: “Governments should be banned from using live facial recognition in public spaces”, independent probability 0.99). Not published: Pro-criminal justice reform (the verifier disagreed). Not published: Pro-regulation (independent probability 0.87 is below 0.9; the verifier disagreed). Not published: Classical liberal (independent probability 0.78 is below 0.8; it is not usually found at Left; the issue side it rests on is in doubt: Pro-criminal justice reform (the verifier rejected it)).",
+      "droppedIdeologies": [
+        "Pro-criminal justice reform: the verifier disagreed",
+        "Pro-regulation: independent probability 0.87 is below 0.9; the verifier disagreed",
+        "Classical liberal: independent probability 0.78 is below 0.8; it is not usually found at Left; the issue side it rests on is in doubt: Pro-criminal justice reform (the verifier rejected it)"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-privacy",
+            "Classical liberal",
+            "Pro-criminal justice reform",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-privacy",
+            "Classical liberal",
+            "Pro-criminal justice reform",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-criminal justice reform: The claim limits government use of facial recognition, but it does not specifically propose changes to policing, courts, sentencing, or incarceration, nor does the quoted wording state a criminal-justice fairness or outcomes rationale. / The claim limits government use of live facial recognition, but it does not specifically call for changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes. This is more directly a privacy/surveillance position.",
+        "Verifier on Pro-regulation: The claim regulates government surveillance, not businesses or markets. Under the framework, Regulation covers rules on businesses and markets, and the more specific privacy issue fits instead. / The Regulation issue card covers rules on businesses and markets; this claim restricts government use of surveillance technology, not market conduct. The specific privacy issue also fits the claim better than a general regulation label."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "01f14badb63258a9acf2f81dda31d2a4",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Tech companies should not be allowed to set their own safety guidelines",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-AI regulation"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Pro-AI regulation (belief T1: “Tech companies should not be allowed to set their own safety guidelines”, independent probability 0.97). Not published: Pro-regulation (independent probability 0.86 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.86 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about AI/tech safety rules, so the specific Pro-AI regulation issue covers it. Under rule I6, the general Regulation leaning should not also be assigned when a specific issue leaning applies. / The claim is in the AI topic and is covered by the more specific Pro-AI regulation side; under I6, the general Regulation side should not also be assigned when a specific issue leaning covers the position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9b677fbebf8c4472a6c8dbb5bc3bf120",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "States should not be allowed to set vaccine schedules that diverge from federal CDC guidance",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-federal authority"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Ideology: Pro-federal authority (belief T1: “States should not be allowed to set vaccine schedules that diverge from federal CDC guidance”, independent probability 1.00). Not published: Pro-vaccination (the other side of Public health also scores: Pro-vaccine choice 0.12; the verifier disagreed). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-vaccination: the other side of Public health also scores: Pro-vaccine choice 0.12; the verifier disagreed",
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-federal authority",
+            "Pro-regulation",
+            "Pro-vaccination"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-vaccination",
+            "Pro-federal authority",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-vaccination: The claim supports federal CDC guidance over divergent state schedules, but it does not itself say vaccination should be promoted or that uptake should increase. A state schedule could diverge in either direction, so the quoted words do not clearly meet the Pro-vaccination side.",
+        "Verifier on Pro-regulation: The cited position is about state versus federal control over vaccine schedules, not government rules on businesses or markets. Under the framework, Regulation covers market/business rules, so this evidence does not meet Pro-regulation. / The Regulation issue leaning is for government rules and oversight on businesses and markets. This claim is about federal versus state authority over vaccine schedules, not business or market regulation."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "34d515d0812b52ce98abe6d0884293ff",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Genetically enhancing an embryo through genetic modification should not be allowed",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3d8a48bccb59f4b2f7b7698d1b01c3ec",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "The White House Accord on Super Intelligence should be legally binding",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-AI regulation"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Pro-AI regulation (belief T1: “should be legally binding”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-AI regulation",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about AI, and the AI issue card covers this position; under I6, the general Regulation side should not also be assigned. / The claim is specifically about an AI accord, and the AI-specific issue leaning covers the position. Under I6, the general Regulation leaning should not also be assigned when a specific AI issue leaning applies."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "068f800f052ba2c809f94f701ab85275",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Lifetime alimony should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 0.98, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own policy position on family law, but it is not clearly an issue on which mainstream political camps disagree in the framework."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1e834f17cf7c4f1dbd014f9ce1db134f",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Cryptocurrency mixing services like CoinJoin should be legally banned",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Crypto skeptic"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Ideology: Crypto skeptic (belief T1: “Cryptocurrency mixing services like CoinJoin should be legally banned”, independent probability 0.95). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Crypto skeptic",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Crypto skeptic",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about crypto: “Cryptocurrency mixing services like CoinJoin should be legally banned.” Under I6, when a specific issue leaning such as Crypto covers the position, the general Regulation leaning should not also be assigned. / The claim is specifically about cryptocurrency mixing services, so the more specific Crypto issue leaning covers the position; under I6, the general Regulation side should not also be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6c0581918dd346c4b842a1e1d0c82426",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Czech government should reduce military support for Ukraine",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Dove (the other side of Use of force also scores: Hawk 0.44). Not published: Pro-Russia (independent probability 0.85 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Dove: the other side of Use of force also scores: Hawk 0.44",
+        "Pro-Russia: independent probability 0.85 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-Russia: The quoted words say the Czech government should reduce military support for Ukraine, but they do not themselves support Russia’s government, policies, or interests. A reduction in aid can be a restraint position without clearly being Pro-Russia. / The claim says the Czech government should reduce support for Ukraine, but it does not itself support Russia’s government, interests, or policies. That inference is too indirect for the Pro-Russia side."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "8f56f0c35e174f33be2a99fa4429a051",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United States should reduce or cut military aid to Israel",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-foreign aid reform"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Pro-foreign aid reform (belief T1: “The United States should reduce or cut military aid to Israel”, independent probability 0.98). Not published: Pro-Palestinian (independent probability 0.77 is below 0.9). Not published: Dove (the other side of Use of force also scores: Hawk 0.33; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-Palestinian: independent probability 0.77 is below 0.9",
+        "Dove: the other side of Use of force also scores: Hawk 0.33; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-Palestinian",
+            "Dove",
+            "Pro-foreign aid reform"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-Palestinian",
+            "Dove",
+            "Pro-foreign aid reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Dove: The claim is specifically about U.S. military aid to Israel, so the Israel–Palestine/foreign-aid issue leanings cover it; under I6 the general Use of force side should not also be assigned. It also does not explicitly prefer diplomacy, only cutting aid. / The claim is about a specific Israel–Palestine/foreign-aid position, not a general preference for military restraint, diplomacy, or limited commitments. Under the specific-before-general rule, the general Use of force side should not be added when the Israel–Palestine issue covers the position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "94dd96e01e4a45d6bdd2b5877b812f73",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should increase federal nonprofit security funding to $1 billion annually",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-public spending"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check gives Left 0.41, below 0.7",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Center left"
+      ],
+      "criteria": [
+        "ECO-2L (close): “Congress should increase federal nonprofit security funding to $1 billion annually”"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “Congress should increase federal nonprofit security funding to $1 billion annually”. That points to Left, but rule P4 (Same level) failed: the independent check gives Left 0.41, below 0.7; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Center left. Ideology: Pro-public spending (belief T1: “increase federal nonprofit security funding to $1 billion annually”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-public spending"
+          ]
+        },
+        {
+          "leaning": "Center left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-public spending"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The evidence supports increasing one targeted federal security grant, but ECO-2L is about mainstream liberal economic positions such as broad public-program/safety-net expansion, taxes, unions, healthcare, education, or regulation. Nonprofit security funding is a public-safety/security spending claim and does not clearly sit at the exact Left level. / The quoted claim supports more federal security funding for nonprofits, but that is not clearly the mainstream liberal/progressive economic position described by ECO-2L, which is about taxes, safety-net/public-program expansion, wages, unions, healthcare, education, and regulation. Security grants for nonprofits are not enough to place the claim clearly at Left."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1cb8dd45c1815a3ee4f5ad49d01f6673",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Deepfakes of political candidates should be illegal",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH, X-SPEECH). Not published: Pro-AI regulation (independent probability 0.35 is below 0.9). Not published: Pro-online safety (the verifier disagreed). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-AI regulation: independent probability 0.35 is below 0.9",
+        "Pro-online safety: the verifier disagreed",
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-online safety: The claim supports banning candidate deepfakes, but it does not specifically support online-safety measures, child protection, platform rules, or content moderation as described by this side. / The claim supports banning candidate deepfakes, but it does not specifically support online-safety measures, platform rules, content moderation, or child-safety measures.",
+        "Verifier on Pro-regulation: The general Regulation side covers rules on businesses and markets, and a specific AI issue side covers this claim more directly. “Deepfakes of political candidates should be illegal” is not a market/business regulation claim. / A more specific AI issue leaning covers the position, so the general Regulation side should not also be assigned; the claim is also not about rules on businesses or markets."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "02bcb956966144b6bb362ade5a21da07",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The Federal Reserve should raise interest rates at its September 2026 meeting",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2792d3c733e140a4873081cadbd57cb6",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "BPC-157 should be banned until it passes proper clinical trials",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (consensus)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G4 (Contested) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own policy position on banning a peptide pending clinical trials, but it is a drug-safety/approval claim rather than a position clearly contested between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "307416b5c6244d118e0d4f636f2e85c2",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "The FDA should increase international inspections of imported produce",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-regulation"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.97",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center left (0.55); Left gets 0.25",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 2 of 3 runs gave Left; the others gave Center left"
+      ],
+      "criteria": [
+        "ECO-2L (close): “The FDA should increase international inspections of imported produce”"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “The FDA should increase international inspections of imported produce”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Center left (0.55); Left gets 0.25; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 2 of 3 runs gave Left; the others gave Center left. Ideology: Pro-regulation (belief T1: “The FDA should increase international inspections of imported produce”, independent probability 0.96).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Center left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The evidence supports a specific, targeted increase in FDA oversight of imported produce, not the broad mainstream-left economic program described by ECO-2L. If scored at all, it fits a narrower regulatory step closer to ECO-1L than Left. / The evidence shows support for a narrow increase in FDA inspections of imported produce, not the broader ECO-2L left position of consumer regulation at a mainstream liberal/progressive level. If scored at all, it is closer to a targeted/modest regulatory step under ECO-1L, or possibly too technical/consensus-dependent for a leaning."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "603b2ac63f0c442680270245440d453c",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Canada should reduce its economic dependence on the United States by accelerating trade diversification",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TRADE). Not published: Pro-trade (independent probability 0.49 is below 0.9; the verifier disagreed). Not published: Nationalist (independent probability 0.59 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Center; the issue side it rests on is in doubt: Pro-trade (the verifier rejected it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-trade: independent probability 0.49 is below 0.9; the verifier disagreed",
+        "Nationalist: independent probability 0.59 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Center; the issue side it rests on is in doubt: Pro-trade (the verifier rejected it); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-trade: The quoted words \"accelerating trade diversification\" support diversifying trade partners, but they do not clearly favor reducing trade barriers or maintaining open trade relationships as the Pro-trade side requires.",
+        "Verifier on Nationalist: \"Canada should reduce its economic dependence on the United States\" is a national-interest argument, but it is too narrow to show a distinctive Nationalist worldview of putting national identity or sovereignty first, especially over international bodies. / The claim favors reducing Canada's economic dependence through trade diversification, but it does not clearly put national identity, sovereignty, or national interests first in a way distinctive of the Nationalist tradition. This is better read as a trade-diversification position than as a nationalist worldview."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "02d3e6ee405d4b8691dc84b33bebad21",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Birthright citizenship should be ended",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0533ecd48a16b382d15f725de99c6805",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Inheritance should be heavily taxed",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Tax fairness"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (close): “Inheritance should be heavily taxed”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “Inheritance should be heavily taxed”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Tax fairness (belief T1: “Inheritance should be heavily taxed”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "07736de6dc19428f9b35004b9edbd92c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Assault weapons should be banned",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-gun control"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "LAW-2L (direct): “Assault weapons should be banned”"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Assault weapons should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-gun control (belief T1: “Assault weapons should be banned”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-gun control",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-gun control",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about firearms access, which is covered by the Guns issue side, not the general Regulation side. Rule I6 also says the general Regulation leaning should not be assigned when a specific issue such as Guns covers the position. / The specific Guns issue covers the position, so the general Regulation side should not also be assigned under rule I6. Regulation also covers rules on businesses and markets, while “Assault weapons should be banned” is about firearm access."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "066019796fe54f489aedd0c66b9cd3d9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender women should be allowed to compete in women's sports",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Transgender women should be allowed to compete in women's sports”"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Transgender women should be allowed to compete in women's sports”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Not published: Pro-transgender rights (independent probability 0.72 is below 0.9). Not published: Pro-LGBTQ rights (independent probability 0.81 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-transgender rights: independent probability 0.72 is below 0.9",
+        "Pro-LGBTQ rights: independent probability 0.81 is below 0.9"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Pro-LGBTQ rights"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Pro-LGBTQ rights"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-LGBTQ rights: independent probability 0.81 (needs 0.9)"
+      ]
+    },
+    {
+      "claimId": "3fa9573fcfbb4234a67c7fe23b3578a4",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Marriage should be between a man and a woman",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P3 United States, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Social conservative"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.96",
+        "P2 pass: the criteria match directly",
+        "P3 FAIL: the claim does not make clear which country's politics it concerns",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Right; the others gave Right, but not clearly about the United States, Right, but not clearly about the United States"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “Marriage should be between a man and a woman”"
+      ],
+      "explanation": "No label. SOC-2R matched (direct): “Marriage should be between a man and a woman”. That points to Right, but rule P3 (United States) failed: the claim does not make clear which country's politics it concerns; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Right; the others gave Right, but not clearly about the United States, Right, but not clearly about the United States. Ideology: Social conservative (belief T1: “Marriage should be between a man and a woman”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Social conservative",
+            "Conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": null,
+          "ideologies": [
+            "Social conservative",
+            "Conservative"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The words match the traditional-marriage part of SOC-2R, but the claim does not make a United States context clear. Under C1/P3, a political leaning should not be published without U.S. political context. / The quoted words do match SOC-2R's traditional-marriage position, but the claim does not make a United States political context clear. Under P3/C1, a political leaning should not be published without U.S. context."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f2891f4caf7d1d3301e33d5b35e7df9a",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "No-fault divorce should be abolished",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 FAIL: the claim does not make clear which country's politics it concerns",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (direct): “No-fault divorce should be abolished”"
+      ],
+      "explanation": "No label. SOC-2R matched (direct): “No-fault divorce should be abolished”. That points to Right, but rule P3 (United States) failed: the claim does not make clear which country's politics it concerns; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Social conservative (independent probability 0.26 is below 0.9). Not published: Conservative (independent probability 0.79 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "Social conservative: independent probability 0.26 is below 0.9",
+        "Conservative: independent probability 0.79 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim matches SOC-2R on substance, but it does not make a United States context clear. Under C1/P3, a political leaning is not published for a claim with no clear U.S. country context. / Although the quoted claim supports abolishing no-fault divorce, rule A5 specifically lists “ending no-fault divorce” as a boundary position that matches no topic criterion, so SOC-2R cannot support a published Right leaning. The claim also gives no United States context for P3."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "061379d97ad258bb95134b5e5031a68c",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior, regardless of the intention",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P1 Takes a position, P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.34, below 0.8",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim does not make clear which country's politics it concerns",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior”"
+      ],
+      "explanation": "No label. SOC-2L matched (close): “Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior”. That points to Left, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.34, below 0.8; rule P3 (United States) failed: the claim does not make clear which country's politics it concerns; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Feminist (independent probability that the claim takes a position is 0.34, below 0.8; independent probability 0.86 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "Feminist: independent probability that the claim takes a position is 0.34, below 0.8; independent probability 0.86 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-equity: The claim criticizes traditional gender roles as implying women are inferior, but it does not support or argue for any DEI-related public policy intended to reduce disparities or improve fair access/outcomes.",
+        "Verifier on the leaning: The quoted words criticize traditional gender roles as implying women’s inferiority, but they do not directly match SOC-2L’s policy positions such as abortion access, LGBTQ rights, anti-discrimination/DEI measures, secular institutions, or drug legalization. The claim also is not clearly about U.S. politics or a public policy/legal position, so a U.S. Left leaning is not justified. / The claim does not make a United States political context clear, so Geo's political leaning should not be published under P3/C1. Even if the claim is socially progressive, a generic statement about traditional gender roles cannot receive the U.S.-scale Left label."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "be8b29b591ce5c6fb42c56e53b940e37",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universities remaining politically neutral and respecting both sides of an issue can uphold freedom of speech",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6beb212c5bbf563fb8c9750010624620",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media companies have a responsibility to remove AI-generated disinformation to safeguard their users",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-online safety"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH, X-SPEECH). Ideology: Pro-online safety (belief T1: “remove AI-generated disinformation to safeguard their users”, independent probability 0.99). Not published: Pro-AI regulation (independent probability 0.89 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-AI regulation: independent probability 0.89 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-AI regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-AI regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-AI regulation: The claim targets removal of \"AI-generated disinformation\" by social media companies, which is content moderation/online safety. It does not support rules or oversight governing AI development or use; \"AI-generated\" only identifies the type of disinformation. / The claim supports removing “AI-generated disinformation” from social media to “safeguard their users,” which is a content-moderation/online-safety position. It does not clearly support government rules or oversight governing AI development or use itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "17d1bac3decc4007a0fc3df90c456846",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Robinhood's 10x leveraged crypto perpetuals pose unacceptable financial risks to retail investors",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes an in-voice judgment that Robinhood's product poses unacceptable risk, but it is a product/financial-risk judgment about crypto perpetuals rather than a claim about public policy, law, government, rights, or how society should be organized."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "fdfce452c2fc45d4a2b069550b0d6a59",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The mass demolition of entire Palestinian communities amounts to forcible transfer",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Pro-Palestinian (independent probability that the claim takes a position is 0.42, below 0.8).",
+      "droppedIdeologies": [
+        "Pro-Palestinian: independent probability that the claim takes a position is 0.42, below 0.8"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0a0519b902624a1283fa5da620cf3220",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The California Coastal Commission's strict permitting process is justified despite emergency threats to infrastructure",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match, P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check gives Left 0.52, below 0.7",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ENV-2L (partial): “The California Coastal Commission's strict permitting process is justified”"
+      ],
+      "explanation": "No label. ENV-2L matched (partial): “The California Coastal Commission's strict permitting process is justified”. That points to Left, but rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check gives Left 0.52, below 0.7. Not published: Pro-regulation (independent probability 0.84 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.84 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-regulation: independent probability 0.84 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "76f6dd5eac9e4068b585393a9ead2e59",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Latvia should prioritise defence spending despite domestic cost-of-living pressures",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f0646be0dd3b449e92c020d3867ebd77",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Individuals are in a better position to benefit themselves and others within the institution of marriage",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a general judgment in its own voice, but it is about personal and social benefits of marriage rather than public policy, law, rights, government, the economy, or a contested political program. Its words, \"benefit themselves and others within the institution of marriage,\" do not specify a political/legal position such as marriage policy or family law."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "20b6085c0d2c54fb8d5bc7e531b0e4c4",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Without pre-made scripts from gender roles, people may be unable to effectively negotiate their roles in new relationships, especially when young",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is about personal relationship dynamics—“negotiate their roles in new relationships”—rather than public policy, law, rights, government, the economy, or political organization. Because it is framed as relationship advice/cultural commentary rather than a political subject, it does not pass the political-position checks."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "543681a7651f57c49cc425161b9bc203",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Women possess the autonomy to explore their sexuality and engage in safe, consensual relationships as they choose",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.59, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a normative statement in its own voice, but it is about personal sexual autonomy and consensual relationships rather than public policy, law, rights, government, the economy, or societal organization. As phrased, it does not present a contested mainstream political policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c0831b6ffc6159ddbac421ad922bf066",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Adopting traditional gender roles can eliminate the need for a couple to negotiate their respective roles from scratch",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.11.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim states a hedged effect of a personal relationship practice, not a policy position; effects of behavior outside public policy do not count under E2. It concerns a couple's private role negotiation rather than public policy, law, rights, government, the economy, or political organization."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a234183de12c5295957a4e9955a220cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "In some cases, migration can destabilize a society to the point where its negative impacts outweigh its positive ones",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3cef8ad32f9251359b523ec1f4e17a40",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Identity is constantly changing, making it an unsuitable fixed point around which to orient a course",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P1 Takes a position, P2 Full match, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.03, below 0.8",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center (0.61); Right gets 0.03",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (partial): “Identity is constantly changing, making it an unsuitable fixed point around which to orient a course”"
+      ],
+      "explanation": "No label. SOC-2R matched (partial): “Identity is constantly changing, making it an unsuitable fixed point around which to orient a course”. That points to Right, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.03, below 0.8; rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check prefers Center (0.61); Right gets 0.03; rule P5 (Verifier agrees) failed: the verifier disagreed.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim criticizes orienting a course around “Identity,” but it does not clearly state opposition to DEI as a policy or curriculum program. Without a closer match to “opposition to DEI,” the SOC-2R criterion and exact Right leaning are too doubtful. / The quoted claim does not clearly match SOC-2R's mainstream conservative positions such as opposition to DEI; it only says that changing identity is an unsuitable basis for orienting a course. That is a pedagogical judgment about identity-centered coursework, not a clear Right-level political position in its own words."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1469cf7c306193f3bdc9c1ce2d6a8ab8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Omar search chills criticism of the Trump administration by elected officials",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH). Not published: Classical liberal (independent probability that the claim takes a position is 0.79, below 0.8; independent probability 0.77 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Left).",
+      "droppedIdeologies": [
+        "Classical liberal: independent probability that the claim takes a position is 0.79, below 0.8; independent probability 0.77 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Left"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "74b1377d8e2447eeb2e957742259145d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Washington's 2024 legislative map goes too far in using race to draw district boundaries",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-meritocracy: The claim criticizes race-conscious redistricting (“using race to draw district boundaries”), but it does not address DEI selection or advancement based on individual ability/performance versus group identity or preferential treatment."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9c13947ec5654e209043448c19c971d9",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Healthcare systems should delay deploying AI screening tools until demographic performance gaps are resolved",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Not published: Pro-AI regulation (independent probability that the claim takes a position is 0.39, below 0.8; independent probability 0.73 is below 0.9). Not published: Pro-equity (independent probability that the claim takes a position is 0.39, below 0.8; independent probability 0.88 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-AI regulation: independent probability that the claim takes a position is 0.39, below 0.8; independent probability 0.73 is below 0.9",
+        "Pro-equity: independent probability that the claim takes a position is 0.39, below 0.8; independent probability 0.88 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d2c5710560a54012a3875afea0b96d80",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The SEC should regulate prediction contracts tied to corporate performance",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-regulation"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.97",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center (0.57); Left gets 0.02",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 2 of 3 runs gave Left; the others gave Center left"
+      ],
+      "criteria": [
+        "ECO-2L (direct): “The SEC should regulate prediction contracts tied to corporate performance”"
+      ],
+      "explanation": "No label. ECO-2L matched (direct): “The SEC should regulate prediction contracts tied to corporate performance”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Center (0.57); Left gets 0.02; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 2 of 3 runs gave Left; the others gave Center left. Ideology: Pro-regulation (belief T1: “The SEC should regulate prediction contracts tied to corporate performance”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": "Center left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim supports regulation, but only for the narrow category “prediction contracts tied to corporate performance.” That targeted scope does not clearly match ECO-2L/Left broad “consumer and financial regulation”; it is at most a narrower center-left/technical regulatory position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ff2273b30eb4456093afc35fa99e6326",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The corporate press portrays recessions as a negative event to justify government intervention and socialistic spending",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.91",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2R (partial): “justify government intervention and socialistic spending”"
+      ],
+      "explanation": "No label. ECO-2R matched (partial): “justify government intervention and socialistic spending”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6b672d0ed7d34300bc8b97c058d61d92",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Germany's proposed 50% crypto tax penalty unfairly burdens retail investors",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH). Not published: Pro-crypto (independent probability 0.25 is below 0.9; the other side of Crypto also scores: Crypto skeptic 0.39).",
+      "droppedIdeologies": [
+        "Pro-crypto: independent probability 0.25 is below 0.9; the other side of Crypto also scores: Crypto skeptic 0.39"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1a7843ebaef94ee7aaa9d24ac6691016",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Western military aid to Saudi Arabia should be strictly limited to defensive operations",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Dove"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Dove (belief T1: “should be strictly limited to defensive operations”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "Western countries",
+          "ideologies": [
+            "Dove"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "Western countries / Saudi Arabia",
+          "ideologies": [
+            "Dove"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "75895eaf115244d5af80ff9675f5a1db",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "A coalition between Romania's Social Democrats and the far-right AUR is justified",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "64c0d3e0631f4a7ea18c930e6527afd2",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Legalizing insider trading would provide the public with real-time information on the actions of government officials.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 0.71, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim argues through a claimed effect of a law or policy, in its own voice, on a legal/economic subject, but legalizing insider trading is not a clear issue on which mainstream political camps disagree."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "355d46a5d0c74aceb274b072883371b2",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Unforced errors contributing to US overstretch include large-scale fiscal expansion since the mid-2000s.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P1 Takes a position)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.78, below 0.8",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.91",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2R (close): “Unforced errors contributing to US overstretch include large-scale fiscal expansion since the mid-2000s”"
+      ],
+      "explanation": "No label. ECO-2R matched (close): “Unforced errors contributing to US overstretch include large-scale fiscal expansion since the mid-2000s”. That points to Right, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.78, below 0.8. Not published: Pro-fiscal responsibility (independent probability that the claim takes a position is 0.78, below 0.8; independent probability 0.74 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: independent probability that the claim takes a position is 0.78, below 0.8; independent probability 0.74 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Right: takes a position 0.78 (needs 0.8) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "42b34fb8ef924a40802431db62fbaf15",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Women are often viewed as objects or service providers in relationships, particularly in marriage",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Feminist (independent probability that the claim takes a position is 0.01, below 0.8; independent probability 0.84 is below 0.9 (no issue leaning or political leaning is published with it); the claim is hedged; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Feminist: independent probability that the claim takes a position is 0.01, below 0.8; independent probability 0.84 is below 0.9 (no issue leaning or political leaning is published with it); the claim is hedged; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Feminist: The claim is a hedged/descriptive statement that women are \"often viewed as objects or service providers,\" not an explicit position for women's equality or against gender-based discrimination. Because it is a relationship/marriage claim not argued in terms of women's equality or rights, the Feminist tradition is doubtful under the card's exclusion."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f3a0c2bbf7b5b16d3cef0ad2c21bab05",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The pressure to appear self-reliant makes men less resilient",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.18.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim criticizes a social/relationship norm, but it does not concern public policy, law, rights, government, the economy, or a concrete political dispute; it is mainly about relationships and emotional health."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a5eea5133e545eed92583994a7051f28",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The movement to make children and parents co-dialogue partners was a mistake and is having negative consequences",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.21.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim judges a parenting/family interaction style as a mistake, but it is framed as relationship or family advice rather than a position on public policy, law, rights, government, the economy, or a contested mainstream political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4b0e98409b7f3c65a7bcf70a13a70542",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The traditional nuclear family is still the best environment for raising children",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P1 Takes a position, P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.71, below 0.8",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim does not make clear which country's politics it concerns",
+        "P4 pass: the independent check gives Right 0.98",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (close): “The traditional nuclear family is still the best environment for raising children”"
+      ],
+      "explanation": "No label. SOC-2R matched (close): “The traditional nuclear family is still the best environment for raising children”. That points to Right, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.71, below 0.8; rule P3 (United States) failed: the claim does not make clear which country's politics it concerns; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Social conservative (independent probability that the claim takes a position is 0.71, below 0.8; independent probability 0.83 is below 0.9). Not published: Conservative (independent probability that the claim takes a position is 0.71, below 0.8).",
+      "droppedIdeologies": [
+        "Social conservative: independent probability that the claim takes a position is 0.71, below 0.8; independent probability 0.83 is below 0.9",
+        "Conservative: independent probability that the claim takes a position is 0.71, below 0.8"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim matches a traditional-family position under SOC-2R, but it does not say it is about U.S. politics. Under C1/P3, a published political leaning requires a clear United States context. / The quoted words plausibly match SOC-2R’s traditional-family position, but the claim is not clearly about United States politics. Under C1/P3, no political leaning should be published without U.S. context."
+      ],
+      "nearMisses": [
+        "Social conservative: takes a position 0.71 (needs 0.8); independent probability 0.83 (needs 0.9) (extra runs not made)",
+        "Conservative: takes a position 0.71 (needs 0.8) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "4ac8c30c8c235488a7516c71a181c271",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Men who do not believe women should be on an equal playing field are undesirable partners for women who support feminism",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim makes a relationship judgment about who is an \"undesirable\" partner, but it is personal dating advice rather than a position on public policy, law, rights, government, the economy, or social organization. It also does not present a mainstream contested political policy position."
+      ],
+      "nearMisses": []
+    }
+  ]
+}

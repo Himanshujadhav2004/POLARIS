@@ -1,0 +1,994 @@
+{
+  "name": "opinion-seed11",
+  "seed": 11,
+  "framework": "framework-v3.4",
+  "generatedAt": "2026-10-26T12:21:22.610Z",
+  "stats": [
+    {
+      "space": "World affairs",
+      "scored": 40,
+      "published": 3,
+      "errors": 0,
+      "sample": 10
+    }
+  ],
+  "rows": [
+    {
+      "claimId": "799293aa3db54b239cbc257c5e575436",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Displaced Myanmar refugees in Malaysia and Thailand express fear of returning due to active conflict and Myanmar's military conscription law targeting young adults.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is descriptive and reports that refugees “express fear,” rather than arguing for or against a policy in its own voice. It does not state a contested policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7a1927fcd2054b70b1d0a66a6a318cc7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Kyauktaw strike demonstrates that conditions do not permit the safe return of Myanmar refugees",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Pro-immigration (independent probability that the claim takes a position is 0.44, below 0.8; independent probability 0.07 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-immigration: independent probability that the claim takes a position is 0.44, below 0.8; independent probability 0.07 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-immigration: The quoted words say only that conditions do not allow the safe return of a specific group of Myanmar refugees. They do not themselves support immigration, admission, legal status, or immigrant integration policies, so Pro-immigration is too broad or at least doubtful."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f4e075068ac94250a9d3e1844c0c7347",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Under Prime Minister Ulf Kristersson's four-year administration, Sweden abolished permanent residency for refugees, tightened welfare rules, and increased expulsions of individuals without a right to stay",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: G1 fails because the claim is a factual description of what Sweden did under Ulf Kristersson, not an argument or judgment about what should be done."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f656289bd39c4c53a05495d13d091b99",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United Nations High Commissioner for Refugees stated that more than 65,000 registered refugees and asylum seekers inside Yemen, primarily from Somalia and Ethiopia, face heightened risks due to the fighting",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive, attributed report rather than the claim's own policy position: it says the UNHCR \"stated\" that refugees \"face heightened risks due to the fighting.\" It does not take a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2aab3db00aa24d888254cd4515e154f9",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United Nations High Commissioner for Refugees representative in Djibouti, Sandrine Desamours, stated that arriving refugees are exhausted and distressed, putting the local response capacity under severe pressure",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive, attributed report: it says Sandrine Desamours “stated that arriving refugees are exhausted and distressed,” rather than taking its own policy position. It also does not present a contested political prescription."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2ba2e96249044db4bf9b0713205876cb",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "More than 3.5 million Sudanese refugees and asylum seekers have fled to neighboring countries as of September 25, 2026.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of refugee numbers, not an argument for or against a policy or political position, and it does not present a contested political stance."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a0e0340264c0422286e42198059163e7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Water-taxis are inflatable boats that cruise along the coastline picking up migrants and refugees who wade into shallow waters to climb on board",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of what “Water-taxis” are and do, not an argument for or against a policy. It does not take a contested political position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "abf023e6a7f040a2b35c54d991780142",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "ASEAN governments should share responsibility for protecting refugees from Myanmar",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P3 United States, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Left 0.77",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "NAT-2L (direct): “protecting refugees from Myanmar”"
+      ],
+      "explanation": "No label. NAT-2L matched (direct): “protecting refugees from Myanmar”. That points to Left, but rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-immigration (independent probability 0.61 is below 0.9). Not published: Globalist (independent probability 0.79 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "Pro-immigration: independent probability 0.61 is below 0.9",
+        "Globalist: independent probability 0.79 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is about ASEAN governments and refugees from Myanmar, not United States politics, so P3/C1 blocks a U.S. political leaning. Even if refugee protection resembles NAT-2L, the proposed Left leaning should not be published for this non-U.S. claim. / The claim is about ASEAN governments and refugees from Myanmar, not United States politics, so P3/C1 blocks a published U.S. left-right leaning even though it supports refugee protection."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "bde0076cd9e3a68b697aecfadd20815f",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Existing two-state frameworks provide defined mechanisms for addressing borders, Jerusalem, refugees and security",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c7eba5ed85214fb4addd689c782b134e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "More than 2,000 Yemeni refugees have fled across the sea into Djibouti, arriving in the coastal city of Obock",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of refugee movement and does not argue for or against a policy; it also does not state a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ce6557da8bf145afb32ca5532c8f5d0a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Greece should suspend asylum claims for migrants arriving by sea",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-border security"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-border security (belief T1: “suspend asylum claims for migrants arriving by sea”, independent probability 0.98).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "Greece",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "Greece",
+          "ideologies": [
+            "Pro-border security"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "da650668689d48d6a9b0159092928c4d",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The State Department's screening of current B1 and B2 visa holders began after receiving asylum request data from the United States Citizenship and Immigration Services",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of when a State Department screening process began, not an argument for or against a policy. It does concern U.S. government immigration/visa administration, but the claim itself does not take a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b20746d2631f4cfe965769ff479e48cf",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Current applicants for B1 and B2 visas must affirm they will not seek asylum in the United States and provide proof of their intent to return to their home countries",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.02.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual description of a visa/asylum requirement, not an argument for or against it; the wording “must affirm” states what applicants are required to do rather than the claim’s own policy judgment."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b494a4168a234d5e962c2251193d109d",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Dr. Vincent Brown, originally from Kigali, entered the United Kingdom as an asylum seeker in 1998, obtained British citizenship and changed his name in 2004, and worked for a London-based charity",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral biographical description of Dr. Vincent Brown's asylum, citizenship, name change, and charity work; it does not argue for or against a political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "eefbdf8f2d64499097919666cf690190",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The rally in The Hague on September 19, 2026, organized by the far-right group 'We Are the People,' was called to protest against Dutch government policies, specifically regarding immigration and asylum",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of a rally and attributes the protest purpose to the rally/group rather than endorsing a position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f201029953d34fb2abb10bcc390e067a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Eritreans lodged 6,952 asylum applications in the UK in the year ending June 2026, representing approximately 8% of total UK asylum claims.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral statistic about asylum applications, not an argument for or against a policy or group. It states that Eritreans lodged a certain number of UK asylum applications, but does not take a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b998e942b6ea49aaa450f0924cf3a80f",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Eritrean Embassy in London claimed that Britain's policy of offering prima facie asylum attracts non-Eritrean asylum seekers masquerading as Eritreans.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed position: “The Eritrean Embassy in London claimed that,” rather than taking the asylum-policy position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "be0b7032d88b4cd19203a6d97d3723cd",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Hamideh Soleimani Afshar was granted asylum in 2019",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description that “Hamideh Soleimani Afshar was granted asylum in 2019,” not an argument for or against an asylum policy. It concerns a named asylum grant rather than a contested policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "52b3e1137d344355bf66298badda60f0",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Syrian government has repeatedly demanded that Russia extradite ousted President Bashar al-Assad, who received asylum in Russia after fleeing Damascus in December 2024",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual report of what the Syrian government demanded, not an argument in the claim's own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "593d304406494241be034a5f52151c09",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "UN Human Rights Chief Volker Turk warned the law weakens safeguards for asylum seekers and risks expanding detention",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed warning rather than taking the position in its own voice: “UN Human Rights Chief Volker Turk warned.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9a31736e3dcd4d11ba4e2770d4e2617d",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United Nations Loss and Damage Fund, established in 2022 under the Paris Agreement, faces a $2.8 billion funding gap as it prepares to approve its first climate recovery projects",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of a UN climate fund and its stated funding gap, not an argument for or against a policy. It also does not state a contested political position in its own right."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "11192993ad4c40e88adf4209708795a4",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "In northwest Argentina, where mining activity is concentrated, glacial reserves have shrunk by 17 percent in the last decade, mainly due to climate change",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive factual statement about glacier shrinkage and its attributed cause, not an argument for or against a public policy. It is also a scientific/environmental observation rather than a position on law, rights, government, or social organization."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1264ac61b2544668a8a58d3ad178cdca",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Climate-vulnerable countries should not acquire additional sovereign debt to recover from climate-related disasters",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "68244be0740344f3b6a90e326cf8eb9a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Canadian Prime Minister Mark Carney stated that Canada and France are facing common challenges, including climate change, threats to sovereignty, and the erosion of democratic norms.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral report of what Mark Carney said rather than the claim's own policy position: \"stated that Canada and France are facing common challenges\". It also frames broad shared concerns such as \"climate change, threats to sovereignty, and the erosion of democratic norms\" without a contested policy means."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6a63ffae70a24bf6a1ef8d7be7b3826d",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Allied leaders endorsed the NATO 2030 agenda, a package of decisions to strengthen political consultation, resilience, technological adaptation and climate security across the Alliance",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive report that \"Allied leaders endorsed\" an agenda, not the claim's own argument for or against a policy."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c6fcecdcec7549b4baa5b311c3cfb889",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Pacific island states should have greater influence over international climate negotiations",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Globalist (independent probability 0.72 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "Globalist: independent probability 0.72 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cbfd6417b97b411eab00d005e3da119e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Nepal's Prime Minister Balendra Shah highlighted at the United Nations General Assembly on September 24, 2026, that Nepal contributes less than 0.1 percent of global greenhouse gas emissions yet is paying a colossal price for the climate crisis.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed statement rather than taking its own position: \"Nepal's Prime Minister Balendra Shah highlighted\" the point. It describes emissions and climate impacts, but does not itself argue for a contested policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "776d8c25f90a40738137b2f63198c53d",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The American Hotel and Lodging Association (AHLA) report cited U.S. visa issues and the tense geopolitical climate as deterrents for travelers",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral attributed description of what an AHLA report cited, not the claim taking its own political position. Saying visa issues and geopolitical climate are travel deterrents is not itself a contested policy stance."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7836127d2cb04e3c999483af035c3213",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Pope's address also touched on artificial intelligence, the climate emergency, abortion, and euthanasia",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of topics in an address and does not argue for or against any policy or social position; any discussion is attributed to \"The Pope's address\" rather than stated in the claim's own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0d3441b6d849435981f149976fcad8c7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "French high school protesters are demanding more teachers, smaller class sizes, buildings adapted to the climate, and the elimination of a controversial university admissions system",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports what protesters are demanding rather than taking the position in its own voice: “French high school protesters are demanding.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0ebc80cf4f2c4985a64b12e4d068590a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "French President Emmanuel Macron and Canadian Prime Minister Mark Carney met on September 20, 2026, in the French territory of Saint-Pierre and Miquelon to pledge closer cooperation on energy, security, and climate change.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual description of a meeting and pledge by named leaders, not the claim's own argument for or against a contested policy."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e72e5afb124149fcaf4402515a5f1914",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Countries with high historical emissions should finance Nepal's glacial-flood prevention efforts",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P3 United States, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-climate action"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match closely",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Left 0.74",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave Left, but not clearly about the United States, Left, but not clearly about the United States"
+      ],
+      "criteria": [
+        "ENV-2L (close): “Countries with high historical emissions should finance Nepal's glacial-flood prevention efforts”"
+      ],
+      "explanation": "No label. ENV-2L matched (close): “Countries with high historical emissions should finance Nepal's glacial-flood prevention efforts”. That points to Left, but rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave Left, but not clearly about the United States, Left, but not clearly about the United States. Ideology: Pro-climate action (belief T1: “should finance Nepal's glacial-flood prevention efforts”, independent probability 0.98). Not published: Globalist (the verifier disagreed; found in 2 of 3 runs).",
+      "droppedIdeologies": [
+        "Globalist: the verifier disagreed; found in 2 of 3 runs"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Environmentalist"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Globalist"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is about Nepal and unspecified countries, not U.S. politics, so C1/P3 bars publishing a U.S. political leaning. Even if it is a climate-policy position, the proposed Left leaning cannot be approved. / The claim is about countries financing Nepal, not U.S. politics, so a U.S. left-right political leaning should not be published under P3/C1. It also does not directly match ENV-2L examples like climate regulation, emissions limits, clean-energy subsidies, or conservation.",
+        "Verifier on Globalist: The claim supports cross-border financing for one climate-adaptation effort, but it does not clearly express the Globalist tradition’s broader commitment to international cooperation or global institutions. The evidence is closer to an issue-specific climate-finance position than a distinctive Globalist worldview. / The claim supports climate-adaptation finance for Nepal, but it does not clearly advocate global institutions, open trade, or migration as a broader Globalist tradition. This is closer to a specific climate-finance position than a distinctive Globalist worldview."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "99edf3eb38dd45cc84df6ed391b2f534",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Air travel for teams, fans, and media is expected to account for 85-87% of the tournament's total carbon emissions",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.21.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive forecast/statistic, not a policy judgment or argument: it says air travel “is expected to account for 85-87%” of emissions. It does not state what government, law, or society should do, and the percentage forecast itself is not a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a507803c575f4a7dae211e8678f69e0e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Austria, Czechia, Hungary, Slovakia, and Poland are pushing for changes to the European Union's carbon market to give European industry more time and flexibility to cut emissions.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.06.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual description of what named European countries are doing, not an argument in the claim's own voice; the position is attributed to “Austria, Czechia, Hungary, Slovakia, and Poland.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6d45aa82deaf4116b816b13b4ac6d410",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Italy, Slovakia, Hungary, Poland, and the Czech Republic called at the EU summit for the introduction of the ETS2 emissions trading system to be postponed until 2030 due to Middle East war impacts.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports that named countries “called at the EU summit” for a policy delay, so it does not take the position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4ad7a850fd31485a88a1181819b54a88",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The European Union's Carbon Border Adjustment Mechanism requires importers of carbon-heavy goods like steel, aluminum, and fertilizer to declare embedded CO2 emissions and pay a levy exceeding European Union standards.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: G1 fails because the claim neutrally describes what the European Union's Carbon Border Adjustment Mechanism does rather than arguing for or against it."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "55e4fdf6dea245a5a075dd681d0fc866",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Rapid emissions reduction should take priority over large-scale carbon removal",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P2 Full match, P3 United States, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-climate action",
+        "Environmentalist"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 FAIL: the claim is not about United States politics, and political leanings follow US criteria",
+        "P4 pass: the independent check gives Left 0.96",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Left, but not clearly about the United States"
+      ],
+      "criteria": [
+        "ENV-2L (partial): “Rapid emissions reduction should take priority over large-scale carbon removal”"
+      ],
+      "explanation": "No label. ENV-2L matched (partial): “Rapid emissions reduction should take priority over large-scale carbon removal”. That points to Left, but rule P2 (Full match) failed: a criterion matches only in part; rule P3 (United States) failed: the claim is not about United States politics, and political leanings follow US criteria; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Left, but not clearly about the United States. Ideology: Pro-climate action (belief T1: “Rapid emissions reduction should take priority over large-scale carbon removal”, independent probability 0.98). Ideology: Environmentalist (belief T3: “Rapid emissions reduction should take priority over large-scale carbon removal”, independent probability 0.94).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Environmentalist"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "World",
+          "ideologies": [
+            "Pro-climate action",
+            "Environmentalist"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is not about U.S. politics; the context is “World affairs,” so rule P3/C1 blocks publishing a U.S.-scale political leaning even if the climate position resembles ENV-2L. / The claim is not about United States politics; it is framed in a World affairs/UNEP context. Under C1/P3, a U.S. left-right political leaning should not be published even though the claim supports climate action."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a621ee4c21934442a0263714ffb67ac6",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The launch is part of India's goal to achieve net-zero carbon emissions in its railways by 2030 and for the country by 2070",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of a launch and reports \"India's goal\" rather than taking a position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3ebe2a09d9b6438aaaf5bb9b31789090",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Historical tensions over federal energy policy in Alberta date back to Pierre Trudeau's 1980 National Energy Program and continued under Justin Trudeau's national carbon tax and emissions limits",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral historical description of tensions over Canadian federal energy policy, not an argument for or against a policy. It does not take a contested political position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4197afd9c137456290da7ef01dac897a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "France and Germany reached a provisional deal on October 15, 2026, to soften EU car emissions targets and allow the UK to join the Made in Europe scheme.",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of a provisional deal, not an argument or judgment in its own voice; it reports that France and Germany \"reached a provisional deal\" rather than endorsing or opposing the policy."
+      ],
+      "nearMisses": []
+    }
+  ]
+}

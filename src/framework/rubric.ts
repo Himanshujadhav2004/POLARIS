@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.3";
+export const FRAMEWORK_VERSION = "framework-v3.4.1";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -41,9 +41,9 @@ export const OFF_SCALE_LEANINGS: readonly string[] = ["Nonpartisan"];
 export const LEVEL_RULES: Record<LeaningName, string> = {
   "Far left": "Radical: replaces capitalism or seeks systemic, often revolutionary change; abolishes core institutions such as police, prisons or borders.",
   Left: "The mainstream liberal or progressive position (in the US, what liberals and Democrats typically support), for example higher taxes on the wealthy, protecting abortion access, a path to citizenship, gun-safety laws or climate action, including bold plans such as single-payer healthcare.",
-  "Center left": "A moderate, lean-left position: a modest or incremental step in a liberal direction, or a left-leaning position with explicit centrist limits.",
+  "Center left": "A moderate, lean-left position with explicit centrist limits: a step in a liberal direction that the claim itself keeps narrow (targeted, means-tested, or keeping the existing system in place).",
   Center: "Explicitly combines or balances a left and a right position as a compromise, with no consistent tilt.",
-  "Center right": "A moderate, lean-right position: a modest or incremental step in a conservative direction, or a right-leaning position with explicit centrist limits.",
+  "Center right": "A moderate, lean-right position with explicit centrist limits: a step in a conservative direction that the claim itself keeps narrow (targeted, with exceptions, or keeping the existing system in place).",
   Right: "The mainstream conservative position (in the US, what conservatives and Republicans typically support), for example lower taxes, stricter immigration enforcement and deportation, abortion restrictions, gun rights or voter ID, including bold plans such as abolishing a federal department.",
   "Far right": "Ultranationalist, nativist or hostile to pluralist institutions: removes rights from people because of ethnicity, religion or sexuality, imposes religious rule, or ends elections or civil liberties for opponents.",
 };
@@ -56,8 +56,9 @@ export function levelRulesText(): string {
 /** Geo's own type descriptions. The agent refuses to run if Geo's live text differs (see ScoringAgent). */
 export const POLITICAL_LEANING_DEFINITION =
   "Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.";
+/** Geo's description of the Ideology type, word for word (shortened on Geo on 2026-10-26). */
 export const IDEOLOGY_DEFINITION =
-  "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.";
+  "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist.";
 /** The Leanings property, from Armando's doc. It holds one political leaning and any ideological leanings. */
 export const LEANINGS_PROPERTY_DEFINITION =
   "The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview.";
@@ -76,17 +77,25 @@ export interface GateCheck {
 
 /**
  * Rule E2. Armando's examples label claims argued through an effect ("Raising the minimum wage kills
- * jobs" → Pro-wage flexibility); before v3.3 the independent check scored them as taking no position.
+ * jobs" → Pro-wage flexibility). v3.4 states its limits, so factual health, crypto or AI claims
+ * ("Vaccines cause autism") never become a side. One text, used by every prompt.
  */
 export const EFFECT_RULE =
-  'A claim that asserts a contested effect of a policy, which is the argument one side makes for or against it, takes that side (for example, "Raising the minimum wage kills jobs" argues against raising it).';
+  'A claim takes a side when, in its own voice, it states a general effect of a public policy, law or government program, and that effect is the argument one side makes for or against it ("Raising the minimum wage kills jobs" argues against raising it). This does not apply to effects of a technology, product, substance, medicine, asset or behaviour (vaccines, social media, Bitcoin, AI) unless the claim also says what government or law should do; to dated or measured results, study findings and forecasts, which stay descriptive; to a hedged concession that an effect may happen ("Raising the minimum wage may cost some jobs"); or to a claim that only denies the other side\'s effect.';
+
+/**
+ * Alternative names from Armando's doc are what people call a side. Without this sentence the models
+ * matched words instead of sides (v3.1). One text, used by every prompt that shows the names.
+ */
+export const ALIAS_RULE =
+  "Alternative names are names people use for a side. They never widen its description: a claim belongs to a side only if it meets the description itself, and sharing words with a name is not enough.";
 
 export const STANCE_GATE: GateCheck[] = [
   {
     id: "G1",
     name: "Takes a position",
     passes: 'The claim argues for or against something: "should", "must", "ought", "is justified", "is wrong", or a judgement about a policy or group.',
-    fails: "Neutral descriptions, statistics, predictions, definitions and histories.",
+    fails: "Neutral descriptions, statistics, predictions, definitions and histories; questions; effects outside rule E2.",
     reason: "descriptive",
   },
   {
@@ -100,7 +109,7 @@ export const STANCE_GATE: GateCheck[] = [
     id: "G3",
     name: "Political subject",
     passes: "It concerns public policy, law, rights, government, the economy or how society should be organized.",
-    fails: "Personal or relationship advice, business strategy, product judgements, technical, medical or scientific claims.",
+    fails: "Personal or relationship advice, business strategy, product judgements, technical, medical or scientific claims, including claims about what a technology, product, substance or medicine does (rule E2).",
     reason: "not political",
   },
   {
@@ -147,11 +156,11 @@ export const DIMENSIONS: Dimension[] = [
     covers: "Taxes, public spending, welfare and public services, labour and unions, markets and regulation, housing, healthcare and education funding.",
     criteria: [
       c("ECO", -3, "Replace or abolish market capitalism: nationalize the economy, abolish private ownership of major industries, cap income or wealth by law, expropriate, or overthrow capitalism.", ["There should be a maximum legal income", "All major industries should be nationalized"]),
-      c("ECO", -2, "The mainstream liberal or progressive economic position: higher taxes on high earners or corporations, a wealth tax, expanding public programs and the safety net, raising the minimum wage, universal or single-payer healthcare, tuition-free college, student debt relief, stronger unions, consumer and financial regulation.", ["The minimum wage should be raised", "Congress should raise taxes on high earners", "Student loan debt should be forgiven"]),
+      c("ECO", -2, "The mainstream liberal or progressive economic position: higher taxes on high earners or corporations, a wealth tax, expanding public programs and the safety net, raising the minimum wage, universal or single-payer healthcare, tuition-free college, student debt relief, stronger unions, consumer and financial regulation.", ["The minimum wage should be raised", "Congress should raise taxes on high earners", "Public colleges should be tuition-free"]),
       c("ECO", -1, "A moderate, lean-left economic step with explicit centrist limits: targeted or means-tested help, modest expansions of existing programs, fixing rather than replacing a program, market-friendly regulation.", ["The Affordable Care Act should be improved rather than replaced", "The child tax credit should be expanded for low-income working families only"]),
       c("ECO", 0, "Explicitly argues for a balance or compromise between market and state, rejecting both expansion and reduction as such.", ["The debate should focus on the right balance of financial rules, not eliminating them entirely"]),
       c("ECO", 1, "A moderate, lean-right economic step with explicit centrist limits: modest or targeted tax relief, spending restraint that protects core programs, targeted deregulation, market reforms within existing programs.", ["The Affordable Care Act should let insurers sell cheaper basic plans", "Small businesses should get targeted tax relief"]),
-      c("ECO", 2, "The mainstream conservative economic position: lower taxes, spending and deficit cuts, deregulation, school choice, limits on union power, work requirements for welfare, opposition to minimum-wage increases, including bold plans such as abolishing federal departments or agencies, a flat tax, or privatizing Social Security.", ["Taxes should be cut", "Raising the minimum wage kills jobs", "The Department of Education should be abolished"]),
+      c("ECO", 2, "The mainstream conservative economic position: lower taxes, spending and deficit cuts, deregulation, school choice, limits on union power, work requirements for welfare, opposition to minimum-wage increases, including bold plans such as abolishing federal departments or agencies, a flat tax, or privatizing Social Security.", ["Taxes should be cut", "Rent control reduces the supply of housing", "The Department of Education should be abolished"]),
     ],
   },
   {
@@ -160,11 +169,11 @@ export const DIMENSIONS: Dimension[] = [
     covers: "Abortion, LGBTQ rights, gender roles and family, religion in public life, race and identity, drugs and personal morality, school curricula.",
     criteria: [
       c("SOC", -3, "Abolish core social institutions such as marriage or the family, or suppress religion in private life.", ["Marriage should be abolished as a legal institution"]),
-      c("SOC", -2, "The mainstream liberal or progressive social position: protect or expand abortion access, LGBTQ and transgender rights, same-sex marriage, anti-discrimination and DEI measures, secular public institutions, legal marijuana, including bold plans such as decriminalizing all drugs or reparations.", ["Abortion should be legal", "Same-sex marriage should be legal nationwide", "Religious schools should not receive public money"]),
+      c("SOC", -2, "The mainstream liberal or progressive social position: protect or expand abortion access, LGBTQ and transgender rights, same-sex marriage, anti-discrimination and DEI measures, secular public institutions, legal marijuana, including bold plans such as decriminalizing all drugs or reparations.", ["Abortion access should be protected in federal law", "Transgender people should be protected from discrimination at work", "Religious schools should not receive public money"]),
       c("SOC", -1, "A moderate, lean-left social position with explicit centrist limits, for example abortion legal up to viability, or decriminalizing marijuana without legalizing it.", ["Abortion should be legal up to fetal viability"]),
       c("SOC", 0, "Explicitly argues for a compromise between socially liberal and socially conservative positions.", ["Abortion should be legal early in pregnancy and restricted later"]),
       c("SOC", 1, "A moderate, lean-right social position with explicit centrist limits, for example limits on late-term abortion with broad exceptions, or religious accommodations that keep anti-discrimination law.", ["Late-term abortion should be restricted, with exceptions for the health of the mother and fetal anomalies"]),
-      c("SOC", 2, "The mainstream conservative social position: abortion restrictions or bans, traditional marriage and family, parental rights in education, limits on gender-transition care for minors, religious-liberty exemptions, opposition to DEI, including bold plans such as reversing same-sex marriage or ending no-fault divorce.", ["Abortion is murder", "Gender-affirming care for minors should be banned", "Marriage is the best foundation for raising children"]),
+      c("SOC", 2, "The mainstream conservative social position: abortion restrictions or bans, traditional marriage and family, parental rights in education, limits on gender-transition care for minors, religious-liberty exemptions, opposition to DEI, including bold plans such as ending no-fault divorce.", ["Abortion should be banned after six weeks of pregnancy", "Gender-affirming care for minors should be banned"]),
       c("SOC", 3, "Remove civil rights from people because of race, religion or sexuality, criminalize homosexuality, or impose religious rule.", ["Homosexuality should be criminalized"]),
     ],
   },
@@ -174,11 +183,11 @@ export const DIMENSIONS: Dimension[] = [
     covers: "Immigration levels and enforcement, refugees and asylum, citizenship, national identity and belonging.",
     criteria: [
       c("NAT", -3, "Abolish national borders or all immigration control.", ["National borders should be abolished"]),
-      c("NAT", -2, "The mainstream liberal or progressive immigration position: a path to citizenship, protection for refugees and asylum seekers, limits on enforcement, immigration as a benefit, including bold plans such as abolishing ICE or ending deportations.", ["Undocumented immigrants should have a path to citizenship", "ICE should be abolished"]),
+      c("NAT", -2, "The mainstream liberal or progressive immigration position: a path to citizenship, protection for refugees and asylum seekers, limits on enforcement, immigration as a benefit, including bold plans such as abolishing ICE.", ["Undocumented immigrants should have a path to citizenship", "ICE should be abolished"]),
       c("NAT", -1, "A moderate, lean-left immigration step with explicit centrist limits, for example legal status for a narrow group, or due process alongside border control.", ["Dreamers brought to the US as children should be allowed to stay"]),
-      c("NAT", 0, "Explicitly pairs stronger enforcement with legal pathways as a compromise.", ["Immigration reform should pair stronger border security with a path to citizenship"]),
+      c("NAT", 0, "Explicitly pairs stronger enforcement with legal pathways as a compromise.", ["Congress should fund more immigration judges and expand legal work visas"]),
       c("NAT", 1, "A moderate, lean-right immigration step with explicit centrist limits, for example more border agents alongside legal immigration, or deporting only people convicted of serious crimes.", ["Only immigrants convicted of violent crimes should be deported"]),
-      c("NAT", 2, "The mainstream conservative immigration position: stronger border enforcement, deporting people in the country illegally, lower immigration, ending sanctuary policies, including bold plans such as mass deportation, ending birthright citizenship or an immigration moratorium.", ["All illegal aliens should be deported", "Birthright citizenship should be ended"]),
+      c("NAT", 2, "The mainstream conservative immigration position: stronger border enforcement, deporting people in the country illegally, lower immigration, ending sanctuary policies, including bold plans such as mass deportation or an immigration moratorium.", ["All illegal aliens should be deported", "Employers should be required to verify workers' immigration status"]),
       c("NAT", 3, "Exclude or remove people because of ethnicity or religion, or strip citizenship from groups.", ["Muslims should be barred from entering the country"]),
     ],
   },
@@ -188,11 +197,11 @@ export const DIMENSIONS: Dimension[] = [
     covers: "Policing, courts and sentencing, guns, the death penalty, voting rules and electoral institutions.",
     criteria: [
       c("LAW", -3, "Abolish the police or prisons.", ["Police departments should be abolished"]),
-      c("LAW", -2, "The mainstream liberal or progressive position: gun-safety laws (universal background checks, assault-weapon bans), police accountability, criminal-justice reform, ending cash bail, abolishing the death penalty, wider voting access, abolishing the Electoral College, including bold plans such as defunding the police or mandatory gun buybacks.", ["Universal background checks should be required for every gun sale", "The death penalty should be abolished"]),
+      c("LAW", -2, "The mainstream liberal or progressive position: gun-safety laws (universal background checks, assault-weapon bans), police accountability, criminal-justice reform, ending cash bail, abolishing the death penalty, wider voting access, abolishing the Electoral College, including bold plans such as mandatory gun buybacks.", ["Assault-style rifles should be banned", "Cash bail should be ended"]),
       c("LAW", -1, "A moderate, lean-left step with explicit centrist limits, for example a narrow gun measure such as red-flag laws while protecting gun ownership, or police reform paired with funding.", ["Red-flag laws should let courts remove guns from people in crisis, without other new gun restrictions"]),
       c("LAW", 0, "Explicitly balances public safety and civil liberties as a compromise.", ["Police should get more funding and stronger accountability rules"]),
-      c("LAW", 1, "A moderate, lean-right step with explicit centrist limits, for example voter ID with free IDs provided, or tougher sentences for one specific violent crime.", ["Voter ID should be required, with free IDs for everyone who needs one"]),
-      c("LAW", 2, "The mainstream conservative position: gun rights, tougher sentencing, more police funding, the death penalty, voter ID and election-security rules, limits on mail-in voting, including bold plans such as repealing most gun laws or using the military for domestic policing.", ["The right to own a gun is a fundamental human right", "Mail-in voting should be abolished"]),
+      c("LAW", 1, "A moderate, lean-right step with explicit centrist limits, for example voter ID with free IDs provided, or tougher sentences for one specific kind of violent crime.", ["States should require voter ID while letting voters without one sign a sworn affidavit"]),
+      c("LAW", 2, "The mainstream conservative position: gun rights, tougher sentencing, more police funding, the death penalty, voter ID and election-security rules, limits on mail-in voting, including bold plans such as repealing most gun laws.", ["Concealed-carry permits should be valid in every state", "Mail-in voting should be abolished"]),
       c("LAW", 3, "Suspend elections or civil liberties for opponents, rule by decree, or endorse political violence.", ["The president should be able to suspend elections during a crisis"]),
     ],
   },
@@ -202,7 +211,7 @@ export const DIMENSIONS: Dimension[] = [
     covers: "Climate policy, pollution, conservation, fossil fuels and renewable energy.",
     criteria: [
       c("ENV", -3, "Abandon economic growth or the market economy to protect the climate.", ["Economic growth should be abandoned to save the climate"]),
-      c("ENV", -2, "The mainstream liberal or progressive climate position: climate regulation, emission limits, carbon pricing, clean-energy subsidies, rejoining climate agreements, conservation, including bold plans such as banning new fossil-fuel projects.", ["Climate change is an existential threat that requires urgent government action", "All new oil and gas drilling should be banned"]),
+      c("ENV", -2, "The mainstream liberal or progressive climate position: climate regulation, emission limits, carbon pricing, clean-energy subsidies, rejoining climate agreements, conservation, including bold plans such as banning new fossil-fuel projects.", ["Power plants should face strict limits on carbon emissions", "All new oil and gas drilling should be banned"]),
       c("ENV", -1, "A moderate, lean-left step with explicit centrist limits, for example clean-energy incentives without mandates.", ["Clean energy should get tax incentives, but no fossil fuel should be banned"]),
       c("ENV", 0, "Explicitly supports an all-of-the-above energy compromise.", ["The US should expand both renewables and natural gas"]),
       c("ENV", 1, "A moderate, lean-right step with explicit centrist limits, for example faster permitting for every kind of energy, or market-based conservation.", ["Permitting should be faster for both pipelines and wind farms"]),
@@ -226,7 +235,7 @@ export const ALL_CRITERIA: Criterion[] = DIMENSIONS.flatMap((d) => d.criteria);
 // Rules applied while scoring and combining.
 
 export const RULES = [
-  { id: "C1", name: "Country context", text: "Place a position relative to the mainstream politics of the country or region the claim is about. The examples are from the United States. If placement depends on a country the claim does not make clear, no leaning is given." },
+  { id: "C1", name: "Country context", text: "The criteria list positions in United States politics, so a political leaning is given only for claims about the United States (rule P3). A claim about another country, a region or the whole world gets no political leaning, though its ideological leanings are still checked. If the claim does not make its country clear, no leaning is given." },
   { id: "E1", name: "Evidence", text: "Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence." },
   { id: "E2", name: "Arguing through effects", text: EFFECT_RULE },
   { id: "H1", name: "Hedged wording", text: 'If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).' },
@@ -234,7 +243,7 @@ export const RULES = [
   { id: "A2", name: "Combining topic areas", text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center." },
   { id: "A3", name: "Center", text: "Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area gets no leaning (cross-cutting)." },
   { id: "A4", name: "Far left and far right", text: "Far left or Far right is given only when a −3 or +3 criterion matches." },
-  { id: "A5", name: "Between two levels", text: "If the claim's position sits between two levels, match no criterion for that topic area. A missing label is always acceptable; a wrong one is not." },
+  { id: "A5", name: "Between two levels", text: "If the claim's position sits between two levels, match no criterion for that topic area; matching one topic area at two levels gives no leaning. These positions sit on a boundary and match no criterion: reversing same-sex marriage, ending birthright citizenship, ending all deportations, defunding the police, using the military for domestic policing, and the sentence of one named person or case. A missing label is always acceptable; a wrong one is not." },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -250,8 +259,16 @@ export const PUBLISH = {
   minIssue: 0.9,
   /** Issue leanings: maximum independent probability of any other side of the same issue. */
   maxOtherSide: 0.1,
-  /** Traditions: minimum independent probability that the claim's position is characteristic. */
+  /** Traditions: minimum independent probability, when an issue leaning or the political leaning is also published. */
   minTradition: 0.8,
+  /** Traditions: minimum independent probability when nothing else is published on the claim. */
+  minTraditionAlone: 0.9,
+  /** Traditions: the independent check's top leaning stands in for a missing leaning when it is at least this. */
+  minContextLeaning: 0.7,
+  /** I5: an issue leaning the scorer missed gets a second look when the independent check gives it this much. */
+  minSecondLook: 0.8,
+  /** No position from the scorer but at least this from the independent check: "signals disagree", no label. */
+  signalsDisagree: 0.5,
   /** Ideological leanings per claim (a claim has at most one political leaning). */
   maxIdeologies: 5,
   /** Scorer runs that must give the same answer. */
@@ -263,10 +280,10 @@ export const PUBLISH = {
 export const PUBLISH_RULES = [
   { id: "P1", name: "Takes a position", text: `All four position checks pass, and the independent probability that the claim takes a position is at least ${PUBLISH.minStance}.` },
   { id: "P2", name: "Full match", text: "Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged." },
-  { id: "P3", name: "Country clear", text: "The country or region whose politics the claim is about is clear." },
+  { id: "P3", name: "United States", text: "The claim is about the politics of the United States, whose positions the criteria list (rule C1)." },
   { id: "P4", name: "Same level", text: `The independent check's most likely leaning is the same exact level, with a probability of at least ${PUBLISH.minLeaning}.` },
   { id: "P5", name: "Verifier agrees", text: `The independent verifier agrees with the leaning in all ${PUBLISH.verifierChecks} of its separate checks.` },
-  { id: "P6", name: "Stable", text: `The scorer gives the same leaning in all ${PUBLISH.runs} runs. The extra runs are made only when P1–P5 pass.` },
+  { id: "P6", name: "Stable", text: `The scorer gives the same leaning in all ${PUBLISH.runs} runs, each one also passing P2 and P3. The extra runs are made only when P1–P5 pass.` },
 ] as const;
 
 export type PublishRuleId = (typeof PUBLISH_RULES)[number]["id"];
@@ -274,22 +291,33 @@ export type PublishRuleId = (typeof PUBLISH_RULES)[number]["id"];
 // ---------------------------------------------------------------------------
 // Step 4: ideology rules (cards live in ideologies.ts).
 
+/** I6: issues whose sides are general; a side on a more specific issue takes precedence. */
+export const GENERAL_ISSUES = ["Regulation", "Spending & deficit", "Welfare", "Use of force"] as const;
+
 export const IDEOLOGY_RULES = [
   {
     id: "I1",
-    text: "Issue leanings: assign one when the claim itself takes that side of its issue, directly or through an effect that side argues (rule E2), quoting the claim's words. Taking another side, only mentioning the issue, or reporting someone else's side never counts.",
+    text: "Issue leanings: assign one when the claim itself takes that side of its issue, directly or through an effect that side argues (rule E2), quoting the claim's words. The claim must meet the side's own description (rule I7). Taking another side, only mentioning the issue, reporting someone else's side or a hedged concession never counts, and two opposite sides of one issue are never both assigned.",
   },
   {
     id: "I2",
-    text: "Traditions (Armando's convention): assign one when the position the claim takes is characteristic of it, meaning its adherents typically hold that position, even if the claim does not name the tradition or its reasons. The topic alone never counts: the claim's actual position must be characteristic, and the card's exclusions apply. A position argued through its effects counts (rule E2).",
+    text: "Traditions (Armando's convention): assign one only when the position the claim takes is distinctive of the tradition: its adherents typically hold it, and it is not simply the mainstream left or right position, which the political leaning already records. A mainstream Left or Right policy position alone never makes a claim Liberal, Progressive or Conservative (in Armando's table Left is also called \"Liberal (US usage)\" and Right \"Conservative (US usage)\"). The topic alone never counts, and the card's exclusions apply. A position argued through its effects counts (rule E2).",
   },
   {
     id: "I3",
-    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; for an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; for a tradition, its independent probability is at least ${PUBLISH.minTradition} and, when the claim has a leaning, the tradition is usually found there; the verifier agrees in all ${PUBLISH.verifierChecks} of its checks; and all ${PUBLISH.runs} runs find it. Otherwise it is not published, and the reason is recorded.`,
+    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; the verifier agrees in all ${PUBLISH.verifierChecks} of its checks; and all ${PUBLISH.runs} runs find it. For an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; a side the independent check refused to score cannot be ruled out, so it blocks. For a tradition: its independent probability is at least ${PUBLISH.minTradition} when an issue leaning or the political leaning is also published, otherwise at least ${PUBLISH.minTraditionAlone}; the claim is not hedged; no issue side on the claim is in doubt (another side of its issue scoring above ${PUBLISH.maxOtherSide} or refused, or the verifier rejecting the side); and the tradition is usually found at the claim's leaning, or when it has none at the independent check's most likely leaning if that is at least ${PUBLISH.minContextLeaning}. Otherwise it is not published, and the reason is recorded.`,
   },
-  { id: "I4", text: `A claim has at most one political leaning but can have several ideological leanings, up to ${PUBLISH.maxIdeologies}.` },
+  {
+    id: "I4",
+    text: `A claim has at most one political leaning but can have several ideological leanings, up to ${PUBLISH.maxIdeologies}.`,
+  },
   {
     id: "I5",
-    text: "When the independent check gives an ideological leaning a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule.",
+    text: `When the independent check gives an issue leaning a probability of at least ${PUBLISH.minSecondLook} that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule. Traditions are never added by a second look.`,
   },
+  {
+    id: "I6",
+    text: "Specific before general: when an issue that names the claim's topic covers its position (for example Guns, AI, Crypto, Climate, Energy, Minimum wage, Healthcare, Student debt, Foreign aid, Ukraine, Israel–Palestine, Taiwan, China, Iran or Housing), the general side of Regulation, Spending & deficit, Welfare or Use of force is not also assigned. Regulation covers rules on businesses and markets, not on individuals, candidates or officials.",
+  },
+  { id: "I7", text: ALIAS_RULE },
 ] as const;

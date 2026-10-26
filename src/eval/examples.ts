@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { z } from "zod";
 import type { ScoredClaim, ScoringAgent } from "../agent/v3/agent.js";
-import { CARD_BY_NAME } from "../framework/ideologies.js";
+import { canonicalName, CARD_BY_NAME } from "../framework/ideologies.js";
 import { FRAMEWORK_VERSION } from "../framework/rubric.js";
 import { fetchClaims } from "../geo/claims.js";
 import type { GeoClient } from "../geo/client.js";
@@ -21,6 +21,8 @@ export type ExampleItem = z.infer<typeof Examples>["items"][number];
 
 export function loadExamples(path: string): { version: string; items: ExampleItem[] } {
   const set = Examples.parse(JSON.parse(readFileSync(path, "utf8")));
+  // A label naming a value Geo merged into another (Libertarianism) counts as the value kept.
+  for (const item of set.items) item.leanings = [...new Set(item.leanings.map(canonicalName))];
   for (const item of set.items) for (const name of item.leanings) if (!CARD_BY_NAME.has(name)) throw new Error(`${item.id}: unknown leaning "${name}"`);
   return set;
 }

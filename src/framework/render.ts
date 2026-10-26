@@ -95,7 +95,7 @@ export function renderFramework(): string {
     "",
     "## Issue leanings",
     "",
-    "One side of a political issue (Armando's \"Ideological leanings\" table). Values marked *not on Geo yet* are labelled but never put in a Geo proposal.",
+    "One side of a political issue (Armando's \"Ideological leanings\" table). Values marked *not on Geo yet* are labelled but never put in a Geo proposal. Alternative names never widen a side (rule I7); names that contradict their side or belong to another leaning are left out.",
     "",
   );
   for (const { issue, group, sides } of ISSUES) {
@@ -105,7 +105,7 @@ export function renderFramework(): string {
     }
     out.push("");
   }
-  out.push("## Traditions", "", "Classic ideologies. A tradition applies when the claim's position is characteristic of it (rule I2).", "");
+  out.push("## Traditions", "", "Classic ideologies. A tradition applies when the claim's position is distinctive of it, not simply the mainstream left or right position (rule I2).", "");
   for (const card of IDEOLOGY_CARDS.filter((c) => c.kind === "tradition")) {
     out.push(
       `### ${card.name} (${card.status})`,

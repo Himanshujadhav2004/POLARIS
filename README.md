@@ -8,7 +8,7 @@ The taxonomy and its definitions come from Armando's Notion doc "Leanings" (in [
 
 The project is built for one rule above all: **a wrong label is worse than no label.** A label is published only when several independent checks agree on it; otherwise the claim is left blank and the reason is recorded. Every result can be traced to numbered criteria and to the claim's exact words.
 
-> **Status (26 Oct 2026):** framework v3.3, built on Armando's taxonomy. Nothing is published to Geo: claim submissions are **paused**, and Armando's 86 new issue leanings are not on Geo yet. The latest results are waiting for Armando's review. See [Results so far](#results-so-far).
+> **Status (26 Oct 2026):** framework v3.4, built on Armando's taxonomy after a full QA of v3.3. On claims it was never tuned on, it published **0 wrong labels** in 67 held-out opinion claims and **1 debatable wrong label** in a 60-claim challenge set (v3.3: 21). Nothing is published to Geo: claim submissions are **paused**, and Armando's 86 new issue leanings are not on Geo yet. See [Results so far](#results-so-far).
 
 ---
 
@@ -84,11 +84,12 @@ flowchart TD
    It does **not** choose the final answer.
 2. **Code.** Code drops any evidence that is not word for word in the claim, applies the combining rules, and works out the candidate leaning.
 3. **Independent check (OpenAI Decisions API, gpt-6-luna).** One call of 115 questions returns probabilities: that the claim takes a position, for each of the 7 levels, and for each of the 113 ideological leanings. It never sees the scorer's answer.
-   - Each issue-leaning question includes Armando's alternative names, which set the scope of that side. It also includes the rule that a claim using the same words while arguing another side does not count.
+   - Each issue-leaning question includes Armando's alternative names, with rule I7: names never widen a side, and sharing words with a name is not taking it. Names that contradict their side are left out (see [Open decisions](#open-decisions-and-known-limits)).
+   - A refused question is asked once more. If it is still refused, its probability counts as unknown, so it can never rule out the other side of an issue.
    - The check is deterministic: identical calls return identical numbers.
 4. **Verifier (gpt-5.5, high reasoning).** It checks the candidate leaning, and each ideological leaning separately, against the full framework. It runs as **2 separate checks**, and a part counts as approved only when both agree.
-5. **Second look.** A focused question about any ideological leaning the independent check rates highly (≥ 0.8) but the scorer missed.
-6. **Publish rules (code).** P1–P6 for the political leaning; I3 for each ideological leaning (below). Anything that passes must also give the same answer in **3 of 3 scorer runs**. The extra runs are made only when the other rules pass, so they cost little.
+5. **Second look.** A focused question about any issue leaning the independent check rates highly (≥ 0.8) but the scorer missed. Traditions never get one (v3.4: second looks almost always said yes to them).
+6. **Publish rules (code).** P1–P6 for the political leaning; I3, I4 and I6 for the ideological leanings (below). Anything that passes must also give the same answer, reached the same way, in **3 of 3 scorer runs**. The extra runs are made only when the other rules pass, so they cost little.
 7. **Near misses (code).** A label the verifier approved that missed only a numeric bar, by less than 0.1, is listed for Armando to approve. It is never published automatically.
 
 Every model call is cached, so scoring the same claim again costs nothing (see [Caching](#caching-and-reproducibility)).
@@ -99,7 +100,7 @@ Every model call is cached, so scoring the same claim again costs nothing (see [
 
 The rulebook lives in [`src/framework/rubric.ts`](src/framework/rubric.ts) (criteria and rules) and [`src/framework/ideologies.ts`](src/framework/ideologies.ts) (ideological leanings). The ideological leanings are built from [`src/framework/leanings.json`](src/framework/leanings.json), Armando's data. The full text is generated into [docs/FRAMEWORK.md](docs/FRAMEWORK.md) by `npm run cli -- framework`.
 
-The scorer's prompt, the independent check and the verifier are all built from the same source, so changing a rule changes the agent. Every change bumps `FRAMEWORK_VERSION` (now `framework-v3.3`).
+The scorer's prompt, the independent check and the verifier are all built from the same source, so changing a rule changes the agent. Every change bumps `FRAMEWORK_VERSION` (now `framework-v3.4`).
 
 ### Step 1: does the claim take a political position?
 
@@ -144,15 +145,15 @@ The scorer, the independent check and the verifier all receive these rules. They
 
 | Rule | What it does |
 |---|---|
-| **C1** Country context | A position is placed relative to its country's mainstream. The claim's Geo space counts as context (US Politics means the United States). |
-| **E1** Evidence | Every criterion and ideological leaning must quote the claim's exact words. |
-| **E2** Arguing through effects | A claim that asserts a contested effect of a policy, which is the argument one side makes, takes that side. For example, "Raising the minimum wage kills jobs" argues against raising it. |
+| **C1** Country context | The criteria list positions in **United States** politics, so only claims about the United States get a political leaning (P3). Claims about other countries or the whole world keep their ideological leanings. The claim's Geo space counts as context (US Politics means the United States) but never shows a side. |
+| **E1** Evidence | Every criterion and ideological leaning must quote the claim's exact words, as whole words ("legal" is not found in "legally"). |
+| **E2** Arguing through effects | A claim that states, in its own voice, a general effect of a **public policy, law or government program**, which is the argument one side makes, takes that side: "Raising the minimum wage kills jobs" argues against raising it. It does not apply to effects of a technology, product, substance, medicine or asset ("Vaccines cause autism"), to measured results, studies or forecasts, to a hedged "may cost some jobs", or to a claim that only denies the other side's effect. |
 | **H1** Hedged wording | "can", "may", "often" cap the score at ±1 (and P2 blocks publishing anyway). |
 | **A1** Mixed signals | One topic area left and another right gives no leaning, never Center. |
 | **A2** Combining | Several areas pointing the same way are averaged, rounded toward the center. |
 | **A3** Center | Center only through a `…-0` criterion; no scored area gives no leaning (cross-cutting). |
 | **A4** Far | Far left or Far right only through a ±3 criterion. |
-| **A5** Between two levels | If the position sits between two levels, no criterion is matched. |
+| **A5** Between two levels | If the position sits between two levels, no criterion is matched; one topic area matched at two levels gives no leaning. Boundary cases that match no criterion: reversing same-sex marriage, ending birthright citizenship, ending all deportations, defunding the police, using the military for domestic policing, the sentence of one named person or case. |
 
 ### Step 4: ideological leanings
 
@@ -162,11 +163,13 @@ The scorer, the independent check and the verifier all receive these rules. They
 
 | Rule | Text |
 |---|---|
-| **I1** Issue leanings | Assigned when the claim itself takes that side of the issue, directly or through an effect that side argues (E2), quoted. Another side, only mentioning the issue, or reporting someone else's side never counts. |
-| **I2** Traditions (Armando's convention) | Assigned when the claim's position is characteristic of the tradition (its adherents typically hold it), even if the claim does not name it. A position argued through its effects counts (E2). The topic alone never counts. |
-| **I3** Publish | Evidence quoted word for word; the claim takes a position (≥ 0.8); **issue leaning**: its side ≥ 0.9 and every other side of the issue ≤ 0.1; **tradition**: ≥ 0.8 and usually found at the claim's leaning; the verifier agrees in both checks; all 3 runs find it. |
-| **I4** How many | At most one political leaning, up to 5 ideological leanings. |
-| **I5** Second look | Any ideological leaning the independent check rates ≥ 0.8 gets a focused second look. |
+| **I1** Issue leanings | Assigned when the claim itself meets that side's description, directly or through an effect that side argues (E2), quoted. Another side, only mentioning the issue, reporting someone else's side or a hedged concession never counts, and two opposite sides are never both assigned. |
+| **I2** Traditions (Armando's convention) | Assigned when the claim's position is **distinctive** of the tradition: its adherents typically hold it, and it is not simply the mainstream left or right position, which the political leaning already records. A mainstream Left or Right policy alone never makes a claim Liberal, Progressive or Conservative. The topic alone never counts. |
+| **I3** Publish | Evidence quoted word for word; the claim takes a position (≥ 0.8); the verifier agrees in both checks; all 3 runs find it. **Issue leaning:** its side ≥ 0.9, and every other side of the issue ≤ 0.1 and actually scored. **Tradition:** ≥ 0.8 next to a published political or issue leaning, otherwise ≥ 0.9; the claim is not hedged; no issue side on the claim is in doubt; usually found at the claim's leaning (or, with none, at the independent check's top leaning when it is ≥ 0.7). |
+| **I4** How many | At most one political leaning, up to 5 ideological leanings. Libertarian and Libertarianism are near-duplicates: only the higher-scoring one is published. |
+| **I5** Second look | An issue leaning the independent check rates ≥ 0.8 but the scorer missed gets a focused second look. Traditions never do. |
+| **I6** Specific before general | The general side of Regulation, Spending & deficit, Welfare or Use of force is not published next to a side of a more specific issue (Pro-AI regulation, not also Pro-regulation). |
+| **I7** Alternative names | Names never widen a side: the claim must meet the description itself. |
 
 ### Step 5: publish rules for the political leaning
 
@@ -174,10 +177,10 @@ The scorer, the independent check and the verifier all receive these rules. They
 |---|---|
 | **P1** Takes a position | All four position checks pass, and the independent probability that the claim takes a position is ≥ 0.8. |
 | **P2** Full match | Every criterion behind the leaning matches directly or closely, and the claim is not hedged. |
-| **P3** Country clear | The country or region the claim is about is clear. |
+| **P3** United States | The claim is about United States politics, whose positions the criteria list (C1). |
 | **P4** Same level | The independent check's most likely level is the same exact level, with probability ≥ 0.7. |
 | **P5** Verifier agrees | The verifier agrees with the leaning in both of its 2 checks. |
-| **P6** Stable | The scorer gives the same leaning in all 3 runs. |
+| **P6** Stable | The scorer gives the same leaning in all 3 runs, each one also passing P2 and P3, so the result does not depend on which run comes first. |
 
 The thresholds live in `PUBLISH` in [`src/framework/rubric.ts`](src/framework/rubric.ts).
 
@@ -269,6 +272,7 @@ Every model call is stored in SQLite under a key made of:
 - the model;
 - the taxonomy fingerprint;
 - the claim ID;
+- a hash of what the model actually saw (claim text, context, spaces), and for the verifier, of the result it checks, evidence included;
 - the run number, for repeat runs.
 
 So re-running never pays twice, and a new framework version or a changed Geo taxonomy re-scores everything. Random samples use seeded randomness (`--seed`).
@@ -281,7 +285,9 @@ So re-running never pays twice, and a new framework version or a changed Geo tax
 
 | Set | What it is | Use |
 |---|---|---|
-| **Armando's examples** (`evals/armando-examples.json`) | 45 claims from his doc's Exemple column, each with every leaning he linked to it (59 labels in total) | The main check for ideological leanings (`examples`). Never used for tuning. |
+| **Armando's examples** (`evals/armando-examples.json`) | 45 claims from his doc's Exemple column, each with every leaning he linked to it (59 labels in total) | The main check for ideological leanings (`examples`). Never used for tuning; since v3.4 none of them is a criterion example. |
+| **Challenge set v1** (`evals/challenge-set-v1.json`) | 60 risky claims written for v3.4 across all 7 spaces: negation, sarcasm, questions, hedges, factual health, crypto and AI claims, non-US claims, alternative-name traps, mixed positions, and clear cases. Each has an expected result (developer-written, pending Armando) | Strict count of **wrong** labels (`challenge`) |
+| **Opinion samples** (`evals/fresh/opinion-seed7`, `opinion-seed8`) | Never-used claims containing "should", "must" or "ought to", 10 per space | Held-out check on claims that take positions. opinion-seed8 was drawn and scored once, with v3.4 only |
 | **Fresh sets** (`evals/fresh/`) | Random claims never used before, 10 per space | Real-world behaviour (`fresh-set`, `fresh-rescore`) |
 | **Test set v1** (`evals/test-set-v1.json`) | 106 claims written for framework v1–v2 | History. Its expected answers use the old level convention. |
 | **Dev set** (`evals/dev-set.json`) | 41 hand-labelled edge cases | Early model choice |
@@ -298,9 +304,12 @@ So re-running never pays twice, and a new framework version or a changed Geo tax
 
 ### Unit tests
 
-`npm test` runs the vitest suite (94 tests). It covers:
-- every combining rule and publish rule;
-- the ideological-leaning gate (issue side and other side, traditions, cap of 5);
+`npm test` runs the vitest suite (149 tests). It covers:
+- every combining rule and publish rule, including P3 (United States) and P6 like for like;
+- the ideological-leaning gate (issue side and other side, refused answers, traditions alone or anchored, hedged claims, sides in doubt, I6, Libertarian/Libertarianism, cap of 5);
+- the whole `ScoringAgent.score` flow with a stub OpenAI client: run order, non-US claims, refusals and retries, the "signals disagree" path, the cache, second looks;
+- the verifier's answer handling;
+- shared prompt text: the alias and effect rules everywhere, no excluded name in any prompt, none of Armando's or the challenge claims among criterion examples;
 - Armando's data (27 traditions, 86 issue leanings across 42 issues, the approved spelling fixes);
 - the Geo sync check;
 - the quote checker;
@@ -318,16 +327,24 @@ So re-running never pays twice, and a new framework version or a changed Geo tax
 | v3.1 run-1 | v3.1 | Same 115 claims | Alternative names in the independent check fixed the target miss (Pro-foreign aid reform). But the check started matching words, not sides: Gender-critical scored 0.54 on a pro-trans claim. Superseded. |
 | **v3.2 run-1** | **v3.2** | **Same 115 claims** | **37 of Armando's 59 labels found** (v3.0: 35). <br>**Issue leanings:** 26 of 29 published match. Gained Pro-foreign aid reform and Pro-border security; lost Pro-transgender rights (Gender-critical 0.18, above the 0.1 limit). <br>**Traditions:** 11 match (adds Paleoconservative). <br>**Extras:** 25 (unchanged). **Political leanings:** 13 (unchanged). No rule violations. <br>**Fresh claims:** unchanged. |
 | **v3.3 run-1** | **v3.3** | **Same 115 claims** | **42 of Armando's 59 labels found** (v3.2: 37), **plus 5 as near misses** for him to approve. <br>**Issue leanings:** 30 of 42. **Traditions:** 12 of 17. <br>**Effect claims now labelled:** "Raising the minimum wage kills jobs" → Right, Pro-wage flexibility, Libertarian; "The welfare state discourages work" → Right, Pro-welfare reform; voter ID → Left, Pro-voting rights; religious liberty → Right, Pro-religious freedom. <br>**Extras:** 35, mostly Liberal, Progressive and Conservative. **Political leanings:** 16. No rule violations. <br>**Fresh claims:** unchanged, with no new false positives. |
+| **v3.4** | **v3.4** | **Challenge set v1 (60), Armando's 45 examples, opinion-seed7 and fresh-seed3 re-scored, new held-out opinion-seed8 (67)** | **Wrong labels (what v3.4 targets):** challenge set 21 → **1** (Socialist on "The UK should bring its railways back into public ownership", debatable), no wrong political leaning; held-out opinion-seed8, scored once and checked by hand: **7 labels, 0 wrong**. <br>**Armando's examples:** 32 of his 59 labels (v3.3: 42), labels not in his **2** (v3.3: 35), 6 near misses. <br>**opinion-seed7:** the 4 doubtful traditions are gone; Pro-AI regulation and Pro-China containment stay. **fresh-seed3:** "Abortion is murder" → Right, Pro-life. |
 
-**Where Armando's 59 labels stand in v3.3:**
+**v3.4 in one line:** far fewer labels nobody asked for, at the cost of some of Armando's. Of his 10 labels lost since v3.3, 5 are traditions the stricter rules now leave out (Paleoconservative, Libertarian, Social democrat, Globalist, Classical liberal), and 4 are issue leanings just below the independent check's bar. Part of v3.3's 42 was also inflated: 9 of his 45 claims were our own criterion examples, which v3.4 replaced.
+
+**Where Armando's 59 labels stand in v3.4:**
 
 | Status | Labels | What decides it |
 |---|---|---|
-| Found | 42 | – |
-| Near misses, listed for him to approve | 5 | His verdict |
-| On news or attributed claims, kept blank | 5 | Decision 5: the agent labels only what a claim argues itself |
-| His definitions conflict with his own example | 4 | A change to his doc (tax revenue; "Speech online"; Liberal on hate speech) |
-| Blocked by the checks | 3 | Protectionist (0.77), Neoconservative (verifier), Pro-transgender rights (opposite side 0.66) |
+| Found | 32 | – |
+| Near misses, listed for him to approve | 6 | His verdict: Pro-court reform, Protectionist, Pro-USAID, Social conservative, Conservative, Pro-death penalty |
+| On news or attributed claims, kept blank | 3 | Decision 5: the agent labels only what a claim argues itself |
+| Traditions the stricter v3.4 rules leave out | 8 | His verdict on D2: Paleoconservative, Libertarian, Social democrat, Liberal, Christian conservative, Neoconservative, Globalist, Classical liberal |
+| Blocked by the checks | 10 | Low independent probability (Pro-welfare reform 0.65, Pro-transgender rights 0.79), position probability (Pro-union, Pro-equity, Progressive, Hawk), the verifier (Pro-internet freedom), the other side (Pro-criminal justice reform), or not proposed (Pro-online safety, Pro-public spending) |
+
+**How v3.4 measures accuracy:**
+- **Challenge set** (60 risky claims, all 7 spaces): every published label not in the expected answer counts as wrong. v3.3 had 21 wrong labels on 14 claims; v3.4 has 1.
+- **Held-out opinion samples:** never-used claims with "should", "must" or "ought to". opinion-seed8 was drawn only after every v3.4 change and scored once; each published label was checked by hand against Armando's definitions.
+- **Armando's examples:** recall of his labels, with labels not in his counted separately (they can only be judged by his verdicts).
 
 Matching his doc exactly is not a well-defined target. His doc gives **one example claim per leaning**: 59 leanings have one example and 54 have none. It doesn't list every label a claim should carry. So extras can only be judged by his verdicts. The agent is not tuned to his 45 examples, because doing so would only fit those claims.
 
@@ -344,8 +361,9 @@ The Notion hub **"Political Leaning & Ideology Agent"** holds:
 
 | Page or database | What it holds |
 |---|---|
-| **Results framework v3.3 (Armando's taxonomy)** | His 45 examples and the labelled fresh claims: political leaning, ideological leanings, his labels, matched / not in his labels / missed, **near misses**, and an **Armando verdict** column |
-| **Scoring framework v3.3** | The rulebook (as in docs/FRAMEWORK.md, without the cards) |
+| **Results framework v3.4 (Armando's taxonomy)** | His 45 examples and the labelled or blocked held-out claims (opinion-seed8, opinion-seed7, fresh-seed3): political leaning, ideological leanings, his labels, matched / not in his labels / missed, **near misses**, and an **Armando verdict** column. The v3.3 table is kept, with any verdicts in it. |
+| **Challenge set v1** | The 60 challenge claims: expected result, the v3.4 result next to the v3.3 baseline, wrong and missed labels |
+| **Scoring framework v3.4** | The rulebook (as in docs/FRAMEWORK.md, without the cards) |
 | **Ideology definitions** | All 113 cards as the agent uses them: 27 traditions and 86 issue leanings, with Armando's descriptions, alternative names, example claims, and whether each value is on Geo yet |
 | **Fresh QA sample (10 per space)** | 70 never-used claims |
 | **Test set and results**, **Runs**, **Errors and improvements** | Earlier runs, run metrics, and every error found with its fix |
@@ -400,7 +418,8 @@ All commands run as `npm run cli -- <command>`.
 | `score <id> … [--json]` | Score Geo claims and show the full result |
 | `score-text "<sentence>" …` | Score any sentence. It has no Geo space, so its country is often unclear (P3). |
 | `examples [--file evals/armando-examples.json]` | Score Armando's example claims and compare with his labels |
-| `fresh-set [--seed N] [--pool 10] [--per-space 10]` | Score never-used claims from every space (70 by default) |
+| `fresh-set [--seed N] [--pool 10] [--per-space 10] [--includes " should \| must "]` | Score never-used claims from every space (70 by default); with `--includes`, only claims containing one of the texts (an `opinion-seed<N>` sample) |
+| `challenge [--file evals/challenge-set-v1.json]` | Score the challenge set and count wrong and missed labels against its expected answers |
 | `fresh-rescore [--dir fresh-seed3]` | Score an existing fresh set again with the current framework |
 | `bench [--file …]` | Run a test set (test set v1 uses the old level convention) |
 | `dry-run`, `submit`, `check-proposal` | Proposals (see [Publishing](#publishing-to-geo-paused)) |
@@ -452,6 +471,7 @@ data/                    Local cache and logs (git-ignored)
 | **Framework v3.0** | Rebuilt on Armando's doc "Leanings": <ul><li>86 issue leanings and 27 traditions as ideological leanings;</li><li>at most one political leaning and up to 5 ideological leanings;</li><li>his level convention (mainstream liberal = Left, conservative = Right);</li><li>traditions by association;</li><li>both Libertarian values;</li><li>values not on Geo labelled but never proposed;</li><li>his example claims as a test set.</li></ul> |
 | **Framework v3.1–v3.2** | After a row-by-row QA of v3.0: the independent check gets Armando's alternative names for each issue leaning (v3.1), plus the rule that sharing words with a side is not taking it (v3.2). |
 | **Framework v3.3** | Following Armando's examples: a claim argued through its effect counts as taking that side (E2). The verifier must agree in 2 separate checks. Labels that missed a bar by less than 0.1 are listed as near misses for Armando to approve. |
+| **Framework v3.4** | After a full QA of v3.3 (held-out claims, code and framework). <ul><li>Political leanings for US claims only.</li><li>Traditions only when distinctive, with a higher bar alone, none on hedged claims, and no second looks.</li><li>Libertarian or Libertarianism, not both; specific issue before general.</li><li>Names that contradict their side left out of prompts.</li><li>E2 limited to policy effects.</li><li>P6 like for like.</li><li>Whole-word evidence; refused answers never count as 0.</li><li>Cache keys cover what each model saw.</li><li>The challenge set and the first tests of the whole agent flow.</li></ul> |
 
 The decision log is the **Errors and improvements** database in Notion.
 
@@ -460,15 +480,18 @@ The decision log is the **Errors and improvements** database in Notion.
 ## Open decisions and known limits
 
 **For Armando:**
-1. **Verdicts** on the rows of "Results framework v3.3": the near misses, and the traditions the agent adds beyond his labels (Liberal, Progressive, Conservative).
-2. **Effect claims (E2)** are now counted, as his examples do. He can still reject the rule.
-3. **Libertarian and Libertarianism** are near-duplicates and often published together. Should one be preferred?
-4. **His definitions and his examples disagree** in three places:
+1. **Verdicts** on the rows of "Results framework v3.4" (the near misses) and on the challenge set's expected answers, which are developer-written.
+2. **Traditions (D2):** v3.4 gives one only when the position is distinctive, not simply the mainstream left or right position. That removed 33 labels not in his set and 5 of his own. Is this the convention he wants?
+3. **US only (D1):** only claims about the United States get a political leaning. Claims that name no country, outside the US Politics space ("No-fault divorce should be abolished"), are left blank.
+4. **Alternative names left out of the prompts** because they contradict their side or belong to another leaning, for example "Pro-negotiated settlement" under Pro-Russia and "Ambiguity advocate" under Pro-Taiwan reunification. The full list is in `EXCLUDED_ALIASES` in [`src/framework/ideologies.ts`](src/framework/ideologies.ts) and in the Ideology definitions database.
+5. **Libertarian and Libertarianism** are near-duplicates; since v3.4 only the higher-scoring one is published.
+6. **Effect claims (E2)** are counted for policy effects only. He can still reject the rule.
+7. **His definitions and his examples disagree** in three places:
    - his Pro-fiscal responsibility description includes "revenue", so the tax-revenue claim fits both sides;
    - the "Speech online" sides are described as online, but his examples are about hate speech in general;
    - Hawk is published on "keep arming Ukraine", yet he lists "Ukraine hawk" as another name for Pro-Ukraine.
-5. **News and attributed claims:** should they carry the leaning of the actor they report, as 4 of his examples do? A test showed this would bring 19 of the 70 fresh claims, mostly news, into scope.
-6. **Publishing:** when to publish his 86 issue leanings, the new descriptions and Nonpartisan to Geo. "Deaccelerationist" and "Pro-Taiwan independance" are kept as written in his doc.
+8. **News and attributed claims:** should they carry the leaning of the actor they report, as 4 of his examples do? A test showed this would bring 19 of the 70 fresh claims, mostly news, into scope.
+9. **Publishing:** when to publish his 86 issue leanings, the new descriptions and Nonpartisan to Geo. "Deaccelerationist" and "Pro-Taiwan independance" are kept as written in his doc.
 
 **Known limits:**
 - **Coverage.** Publish-or-blank leaves some claims without labels; that is the chosen trade.

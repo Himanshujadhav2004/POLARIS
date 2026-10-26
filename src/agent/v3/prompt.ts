@@ -75,14 +75,14 @@ ${CROSS_CUTTING.map((x) => `- ${x.id} ${x.name}: ${x.note}`).join("\n")}
 
 ## Rules
 ${RULES.map((r) => `- ${r.id} ${r.name}: ${r.text}`).join("\n")}
-Set hedged to true when rule H1 applies; code applies the cap. Set country to the country or region whose politics the claim is about, or null if it is unclear. The claim's Geo spaces (geo_spaces) count as context for this: a claim in the US Politics space is about the United States unless it names another country.
+Set hedged to true when rule H1 applies; code applies the cap. Set country to the country or region whose politics the claim is about, or null if it is unclear. The claim's Geo spaces (geo_spaces) count as context for this: a claim in the US Politics space is about the United States unless it names another country. A space is background only: it never shows which side the claim takes.
 
 ## Step 3: ideological leanings
 There are two kinds, and a claim can have several of both (at most ${PUBLISH.maxIdeologies} in all): issue leanings, which are a side of one issue, and traditions.
 ${IDEOLOGY_RULES.filter((r) => r.id !== "I3").map((r) => `- ${r.id}: ${r.text}`).join("\n")}
 For each one give its name, the position ID it matches (always T1 for an issue leaning) and the claim's exact words as evidence. Code decides whether it is published.
 
-### Issue leanings, grouped by issue (pick at most one side per issue)
+### Issue leanings, grouped by issue (pick at most one side per issue, never two opposite sides; alternative names never widen a side, rule I7)
 ${issues}
 
 ### Traditions, with their characteristic positions

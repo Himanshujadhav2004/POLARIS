@@ -1,8 +1,10 @@
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { usedClaimIds } from "../src/pipeline/fresh-set.js";
+import { drawIds, FRESH_ROOT, rescoreFreshSet, spaceShare, usedClaimIds } from "../src/pipeline/fresh-set.js";
+import { mapPool } from "../src/util/pool.js";
+import { seededRng } from "../src/util/random.js";
 
 const write = (file: string, value: unknown) => {
   mkdirSync(join(file, ".."), { recursive: true });
@@ -28,9 +30,76 @@ describe("usedClaimIds", () => {
     for (const { id } of devSet) expect(ids.has(id)).toBe(true);
   });
 
-  it("covers every claim of test-set-v1 by default", () => {
+  it("covers every claim of test-set-v1 and Armando's examples by default", () => {
     const ids = usedClaimIds({ qaRoot: "missing", proposalsRoot: "missing", freshRoot: "missing" });
-    const set = (JSON.parse(readFileSync("evals/test-set-v1.json", "utf8")) as { items: { id: string }[] }).items;
-    for (const { id } of set) expect(ids.has(id)).toBe(true);
+    for (const file of ["evals/test-set-v1.json", "evals/armando-examples.json"]) {
+      const set = (JSON.parse(readFileSync(file, "utf8")) as { items: { id: string }[] }).items;
+      for (const { id } of set) expect(ids.has(id)).toBe(true);
+    }
+  });
+});
+
+describe("drawIds", () => {
+  // A fake Geo client that answers the pivot query with claims whose text contains the filter, if any.
+  const claims = [
+    { id: "1".repeat(32), name: "Congress should cut taxes" },
+    { id: "2".repeat(32), name: "Bitcoin hit a record" },
+    { id: "3".repeat(32), name: "States must expand Medicaid" },
+  ];
+  const geo = {
+    query: async (_q: string, v: { filter: { id: { greaterThan: string }; name?: { includes: string } } }) => ({
+      entities: claims.filter((c) => c.id > v.filter.id.greaterThan && (!v.filter.name || c.name.includes(v.filter.name.includes))).slice(0, 2),
+    }),
+  } as never;
+
+  it("draws only claims containing one of the texts, split across them", async () => {
+    const ids = await drawIds(geo, "space", 4, seededRng(1), [" should ", " must "]);
+    expect(new Set(ids)).toEqual(new Set(["1".repeat(32), "3".repeat(32)]));
+  });
+  it("draws any claim without texts", async () => {
+    expect((await drawIds(geo, "space", 3, seededRng(1))).length).toBeGreaterThan(0);
+  });
+});
+
+describe("rescoreFreshSet", () => {
+  it("records a claim that is no longer on Geo as an error row and scores the rest", async () => {
+    const name = `_test-rescore-${process.pid}`;
+    const gone = "a".repeat(32);
+    const kept = "b".repeat(32);
+    write(join(FRESH_ROOT, name, "fresh.json"), {
+      seed: 1,
+      rows: [
+        { claimId: gone, space: "us-politics", text: "Removed claim", inSample: true },
+        { claimId: kept, space: "us-politics", text: "Congress should cut taxes", inSample: false },
+      ],
+    });
+    const geo = { query: async () => ({ entities: [{ id: kept, name: "Congress should cut taxes", spaceIds: [], valuesList: [], relationsList: [] }] }) } as never;
+    const agent = { score: async () => { throw new Error("scorer down"); } } as never;
+    try {
+      const { rows } = await rescoreFreshSet(geo, agent, name, 2);
+      expect(rows.map((r) => [r.claim.id, r.error])).toEqual([
+        [gone, `${gone} is no longer on Geo`],
+        [kept, "scorer down"],
+      ]);
+    } finally {
+      rmSync(join(FRESH_ROOT, name), { recursive: true, force: true });
+    }
+  });
+});
+
+describe("spaceShare", () => {
+  it("splits a total over the 7 spaces, the first ones taking the remainder", () => {
+    const shares = Array.from({ length: 7 }, (_, i) => spaceShare(50, i));
+    expect(shares).toEqual([8, 7, 7, 7, 7, 7, 7]);
+    expect(shares.reduce((a, b) => a + b, 0)).toBe(50);
+    expect([spaceShare(5, 0, 2), spaceShare(5, 1, 2)]).toEqual([3, 2]);
+  });
+});
+
+describe("mapPool", () => {
+  it("keeps input order and refuses a concurrency of 0 or NaN", async () => {
+    expect(await mapPool([3, 1, 2], 2, async (n) => n * 10)).toEqual([30, 10, 20]);
+    await expect(mapPool([1], 0, async (n) => n)).rejects.toThrow(/at least 1/);
+    await expect(mapPool([1], Number.NaN, async (n) => n)).rejects.toThrow(/at least 1/);
   });
 });

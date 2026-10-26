@@ -17,9 +17,10 @@ export class RunState {
   constructor(path = DEFAULT_STATE_PATH) {
     if (path !== ":memory:") mkdirSync(dirname(path), { recursive: true });
     this.db = new DatabaseSync(path);
+    // busy_timeout first, so a second process waits for the lock instead of failing on the WAL switch.
     this.db.exec(`
-      PRAGMA journal_mode = WAL;
       PRAGMA busy_timeout = 15000;
+      PRAGMA journal_mode = WAL;
       CREATE TABLE IF NOT EXISTS classifications (
         claim_id             TEXT NOT NULL,
         model                TEXT NOT NULL,

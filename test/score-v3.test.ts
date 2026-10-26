@@ -3,9 +3,10 @@ import { buildDecisionQuestions, parseDecision } from "../src/agent/v3/decisions
 import { buildScorerMessage } from "../src/agent/v3/prompt.js";
 import { combineVerdicts } from "../src/agent/v3/verify.js";
 import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
-import { EFFECT_RULE } from "../src/framework/rubric.js";
+import { ALIAS_RULE, EFFECT_RULE } from "../src/framework/rubric.js";
 import {
   allPass,
+  applyOverlapRules,
   checkIdeology,
   checkLeaning,
   compareWithIndependent,
@@ -18,8 +19,10 @@ import {
   readyForRepeats,
   resolveIdeologies,
   unverifiedQuotes,
+  type IdeologyCandidate,
   type IdeologyGateInput,
   type LeaningGateInput,
+  type RepeatLeaning,
   type ScorerOutput,
 } from "../src/agent/v3/score.js";
 
@@ -44,6 +47,16 @@ describe("evidenceFound", () => {
   it("rejects words that are not in the claim", () => {
     expect(evidenceFound(claim, "abolish private property")).toBe(false);
     expect(evidenceFound(claim, "")).toBe(false);
+  });
+  it("matches whole words only, never part of a word", () => {
+    expect(evidenceFound("Abortion should be legally restricted", "Abortion should be legal")).toBe(false);
+    expect(evidenceFound("Abolish the police", "ICE")).toBe(false);
+    expect(evidenceFound("Abolish ICE now", "ICE")).toBe(true);
+    expect(evidenceFound("Taxes should rise.", "taxes should rise")).toBe(true);
+  });
+  it("treats dashes, quotes and full-width letters as the same characters", () => {
+    expect(evidenceFound("The Israel–Palestine conflict needs a two-state solution", "Israel-Palestine conflict")).toBe(true);
+    expect(evidenceFound("Ｂａｎ assault weapons", "ban assault weapons")).toBe(true);
   });
 });
 
@@ -89,8 +102,18 @@ describe("decideLeaning", () => {
       }),
       text,
     );
-    // Same topic area: the strongest match wins (direct ECO-2L).
-    expect(decision).toEqual({ kind: "leaning", score: -2, leaning: "Left" });
+    // One topic area at two levels (ECO-2L and ECO-1L): between them, no leaning (A5), whatever the order.
+    expect(decision).toEqual({ kind: "uncertain", reason: "between two levels" });
+    const reversed = decideLeaning(
+      out({
+        matches: [
+          { criterion: "ECO-1L", strength: "close", evidence: "raise the minimum wage" },
+          { criterion: "ECO-2L", strength: "direct", evidence: "Abolish private schools" },
+        ],
+      }),
+      text,
+    );
+    expect(reversed.decision).toEqual(decision);
 
     const two = decideLeaning(
       out({
@@ -102,6 +125,21 @@ describe("decideLeaning", () => {
       text,
     );
     expect(two.decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
+  });
+
+  it("keeps the strongest of two matches at the same level of one topic area", () => {
+    const text = "Raise the minimum wage and tax the wealthiest more";
+    const { decision, applied } = decideLeaning(
+      out({
+        matches: [
+          { criterion: "ECO-1L", strength: "close", evidence: "Raise the minimum wage" },
+          { criterion: "ECO-1L", strength: "direct", evidence: "tax the wealthiest more" },
+        ],
+      }),
+      text,
+    );
+    expect(decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
+    expect(applied.map((a) => a.strength)).toEqual(["direct"]);
   });
 
   it("caps hedged claims at ±1 (H1) and never reaches Far without a ±3 criterion", () => {
@@ -132,6 +170,14 @@ describe("compareWithIndependent (A5)", () => {
   });
 });
 
+const run = (leaning: RepeatLeaning["leaning"], over: Partial<RepeatLeaning> = {}): RepeatLeaning => ({
+  leaning,
+  weakestStrength: leaning ? "direct" : null,
+  hedged: false,
+  country: "United States",
+  ...over,
+});
+
 describe("checkLeaning (publish rules P1–P6)", () => {
   const dist = (top: string, p: number) =>
     Object.fromEntries(["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"].map((l) => [l, l === top ? p : (1 - p) / 6])) as never;
@@ -143,7 +189,7 @@ describe("checkLeaning (publish rules P1–P6)", () => {
     country: "United States",
     independent: dist("Right", 0.9),
     verifierAgrees: true,
-    repeats: ["Right", "Right"],
+    repeats: [run("Right"), run("Right")],
   };
   const failing = (over: Partial<LeaningGateInput>) => failedChecks(checkLeaning({ ...ok, ...over })).map((c) => c.id);
 
@@ -170,8 +216,26 @@ describe("checkLeaning (publish rules P1–P6)", () => {
     expect(failing({ independent: dist("Center right", 0.9) })).toEqual(["P4"]);
     expect(failing({ independent: dist("Right", 0.6) })).toEqual(["P4"]);
     expect(failing({ verifierAgrees: false })).toEqual(["P5"]);
-    expect(failing({ repeats: ["Right", "Center right"] })).toEqual(["P6"]);
-    expect(failing({ repeats: ["Right", null] })).toEqual(["P6"]);
+    expect(failing({ repeats: [run("Right"), run("Center right")] })).toEqual(["P6"]);
+    expect(failing({ repeats: [run("Right"), run(null)] })).toEqual(["P6"]);
+  });
+
+  it("gives a political leaning only for claims about the United States (P3, rule C1)", () => {
+    for (const country of ["United States", "USA", "U.S.", " united states of america "]) expect(failing({ country })).toEqual([]);
+    for (const country of ["Global", "United Kingdom", "Europe", "", null]) expect(failing({ country })).toEqual(["P3"]);
+    const detail = (country: string | null) => checkLeaning({ ...ok, country }).find((c) => c.id === "P3")!.detail;
+    expect(detail("United States")).toBe("country: United States");
+    expect(detail("Global")).toBe("the claim is not about United States politics, and political leanings follow US criteria");
+    expect(detail(null)).toBe("the claim does not make clear which country's politics it concerns");
+  });
+
+  it("counts an extra run as agreeing only when it reached the same leaning the same way (P6)", () => {
+    const p6 = (r: RepeatLeaning) => checkLeaning({ ...ok, repeats: [run("Right"), r] }).find((c) => c.id === "P6")!;
+    expect(p6(run("Right")).pass).toBe(true);
+    expect(p6(run("Right", { hedged: true }))).toMatchObject({ pass: false, detail: "2 of 3 runs gave Right; the others gave Right, but hedged" });
+    expect(p6(run("Right", { weakestStrength: "partial" })).pass).toBe(false);
+    expect(p6(run("Right", { country: "Global" })).pass).toBe(false);
+    expect(p6(run("Right", { country: null })).pass).toBe(false);
   });
 
   it("an independent check one level away blocks, as in run-1's wrong 'Potentially' labels", () => {
@@ -224,7 +288,11 @@ describe("checkIdeology (I3)", () => {
     leaning: "Right",
     verifierAgrees: true,
     otherSides: { "Pro-choice": 0.02 },
+    refusedSides: [],
     repeats: [true, true],
+    hedged: false,
+    anchored: true,
+    sideInDoubt: null,
   };
   const tradition: IdeologyGateInput = {
     ...issue,
@@ -240,10 +308,30 @@ describe("checkIdeology (I3)", () => {
     expect(fails(issue, { otherSides: { "Pro-choice": 0.3 } })).toEqual(["the other side of Abortion also scores: Pro-choice 0.30"]);
   });
 
-  it("publishes a tradition by association (Armando's convention) at probability 0.8 and a typical leaning", () => {
+  it("never treats an other side the independent check refused to score as ruled out", () => {
+    expect(fails(issue, { otherSides: { "Pro-choice": 0 }, refusedSides: ["Pro-choice"] })).toEqual([
+      "the independent check refused to score the other side: Pro-choice",
+    ]);
+  });
+
+  it("publishes a tradition next to a published leaning at probability 0.8 and a typical leaning", () => {
     expect(fails(tradition, {})).toEqual([]);
-    expect(fails(tradition, {}, { probability: 0.7 })).toEqual([expect.stringMatching(/below 0.8/)]);
+    expect(fails(tradition, {}, { probability: 0.7 })).toEqual([expect.stringMatching(/below 0.8$/)]);
     expect(fails(tradition, { leaning: "Left" })).toEqual(["it is not usually found at Left"]);
+  });
+
+  it("needs 0.9 for a tradition published on its own", () => {
+    expect(fails(tradition, { anchored: false })).toEqual(["independent probability 0.84 is below 0.9 (no issue leaning or political leaning is published with it)"]);
+    expect(fails(tradition, { anchored: false }, { probability: 0.93 })).toEqual([]);
+  });
+
+  it("never publishes a tradition on a hedged claim or when an issue side on the claim is in doubt", () => {
+    expect(fails(tradition, { hedged: true })).toEqual(["the claim is hedged"]);
+    expect(fails(tradition, { sideInDoubt: "Pro-LGBTQ rights (the verifier rejected it)" })).toEqual([
+      "the issue side it rests on is in doubt: Pro-LGBTQ rights (the verifier rejected it)",
+    ]);
+    // Neither applies to issue leanings: their own side is checked directly.
+    expect(fails(issue, { hedged: true, sideInDoubt: "x" })).toEqual([]);
   });
 
   it("needs the verifier, a position and stable runs for both kinds", () => {
@@ -264,6 +352,7 @@ describe("checkIdeology (I3)", () => {
     expect(near(issue, { otherSides: { "Pro-choice": 0.18 } })).toBe("Pro-life: other side Pro-choice 0.18 (limit 0.1)");
     expect(near(tradition, { pStance: 0.79, repeats: null })).toBe("Christian conservative: takes a position 0.79 (needs 0.8) (extra runs not made)");
     expect(near(tradition, {}, { probability: 0.7 })).toBe("Christian conservative: independent probability 0.70 (needs 0.8)");
+    expect(near(tradition, { anchored: false })).toBe("Christian conservative: independent probability 0.84 (needs 0.9)");
   });
 
   it("is not a near miss when it passed, missed by more, or failed a judgement", () => {
@@ -273,6 +362,36 @@ describe("checkIdeology (I3)", () => {
     expect(near(issue, { verifierAgrees: false }, { probability: 0.88 })).toBeNull();
     expect(near(issue, { repeats: [true, false] }, { probability: 0.88 })).toBeNull();
     expect(near(tradition, { leaning: "Left" }, { probability: 0.75 })).toBeNull();
+    expect(near(issue, { refusedSides: ["Pro-choice"] }, { probability: 0.88 })).toBeNull();
+    expect(near(tradition, { hedged: true }, { probability: 0.75 })).toBeNull();
+    expect(near(tradition, { sideInDoubt: "x" }, { probability: 0.75 })).toBeNull();
+  });
+});
+
+describe("applyOverlapRules (I6)", () => {
+  const cand = (name: string, kind: "issue" | "tradition", issue: string | null, probability = 0.95): IdeologyCandidate => ({
+    name,
+    kind,
+    issue,
+    tenet: "T1",
+    tenetText: "",
+    evidence: "x",
+    probability,
+  });
+  const names = (r: { kept: IdeologyCandidate[] }) => r.kept.map((c) => c.name);
+
+  it("drops a general side next to a specific issue leaning (I6)", () => {
+    const r = applyOverlapRules([cand("Pro-AI regulation", "issue", "AI"), cand("Pro-regulation", "issue", "Regulation")]);
+    expect(names(r)).toEqual(["Pro-AI regulation"]);
+    expect(r.dropped).toEqual([{ name: "Pro-regulation", reason: "Pro-AI regulation is the more specific issue leaning for this claim (I6)" }]);
+  });
+
+  it("keeps a general side when it is the only issue leaning", () => {
+    expect(names(applyOverlapRules([cand("Pro-regulation", "issue", "Regulation"), cand("Progressive", "tradition", null)]))).toEqual(["Pro-regulation", "Progressive"]);
+  });
+
+  it("never drops a tradition for being next to an issue leaning", () => {
+    expect(names(applyOverlapRules([cand("Pro-gun rights", "issue", "Guns"), cand("Libertarian", "tradition", null)]))).toEqual(["Pro-gun rights", "Libertarian"]);
   });
 });
 
@@ -331,12 +450,22 @@ describe("buildDecisionQuestions", () => {
     expect(instructionsFor("Pro-foreign aid reform")).toContain("Also called: Pro-foreign aid cuts;");
     expect(instructionsFor("Pro-internet freedom")).toContain("Pro-free speech");
   });
-  it("says the names set the scope, so sharing words with a side is not taking it", () => {
-    expect(instructionsFor("Gender-critical")).toContain("uses some of the same words while arguing for a different side does not count");
+  it("says the names never widen a side (rule I7), and leaves out names that contradict it", () => {
+    expect(instructionsFor("Gender-critical")).toContain(ALIAS_RULE);
+    expect(instructionsFor("Pro-Russia")).not.toContain("Pro-negotiated settlement");
+    expect(instructionsFor("Pro-Russia")).toContain("Ukraine skeptic");
+  });
+  it("lists each check's failing cases in the position question, and assumes no country", () => {
+    const stance = "instructions" in questions[0]! ? questions[0].instructions : "";
+    expect(stance).toContain("Not: Neutral descriptions");
+    const leaning = "instructions" in questions[1]! ? questions[1].instructions : "";
+    expect(leaning).not.toMatch(/if unclear/);
   });
   it("counts a side argued through its effects (rule E2) in the position, issue and tradition questions", () => {
     expect("instructions" in questions[0]! && questions[0].instructions).toContain(EFFECT_RULE);
     expect(instructionsFor("Pro-wage flexibility")).toContain("directly or by asserting an effect that this side uses as its argument");
+    // The full E2 text lowered the probability of clear sides when appended to every issue question (v3.4 A/B).
+    expect(instructionsFor("Pro-wage flexibility")).not.toContain(EFFECT_RULE);
     expect(instructionsFor("Libertarian")).toContain(EFFECT_RULE);
   });
   it("still describes the other side of the issue", () => {
@@ -367,5 +496,13 @@ describe("parseDecision", () => {
     expect(s.leaning.Right).toBe(0);
     expect(s.ideologies[IDEOLOGY_CARDS[0]!.name]).toBe(0.4);
     expect(s.refusals).toEqual(["ideology_1"]);
+    expect(s.unansweredIdeologies).toEqual([IDEOLOGY_CARDS[1]!.name]);
+  });
+
+  it("counts a question with no answer as refused, and rejects answers to questions never asked", () => {
+    const s = parseDecision([{ type: "predicate", name: "stance", probability: 0.9 }], ["stance", "leaning", "ideology_0"]);
+    expect(s.refusals).toEqual(["leaning", "ideology_0"]);
+    expect(s.unansweredIdeologies).toEqual([IDEOLOGY_CARDS[0]!.name]);
+    expect(() => parseDecision([{ type: "predicate", name: "ideology_999", probability: 0.9 }], ["stance"])).toThrow(/not asked/);
   });
 });
