@@ -279,6 +279,7 @@ describe("ScoringAgent.score", () => {
 
 // The default since 2026-10-27: PUBLISH.verifierChecks = 0, so no verifier call is made at all.
 describe("ScoringAgent.score with the verifier turned off", () => {
+  withVerifier(0);
   it("publishes without asking the verifier and records P5 as skipped", async () => {
     const { agent: a, calls } = agent({ scorer: [scorer()], ...clearRight });
     const r = await a.score(claim(ABORTION));

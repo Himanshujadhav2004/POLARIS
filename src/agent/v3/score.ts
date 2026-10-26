@@ -237,7 +237,7 @@ export function checkLeaning(i: LeaningGateInput): RuleCheck[] {
     },
     PUBLISH.verifierChecks === 0
       ? { id: "P5", pass: true, skipped: true, detail: "the verifier is turned off" }
-      : { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? `the verifier agreed in all ${PUBLISH.verifierChecks} checks` : "the verifier disagreed" },
+      : { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? (PUBLISH.verifierChecks === 1 ? "the verifier agreed" : `the verifier agreed in all ${PUBLISH.verifierChecks} checks`) : "the verifier disagreed" },
   ];
   checks.push(stability(i.leaning, i.repeats));
   return checks;
