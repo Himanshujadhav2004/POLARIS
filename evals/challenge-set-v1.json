@@ -1,0 +1,760 @@
+{
+  "version": "challenge-v1",
+  "source": "Written by the framework QA agent and reviewed by the developer on 2026-10-26; expected answers follow Armando's definitions but are not yet reviewed by him. A published label outside expect* and accept* counts as wrong; an expected label not published counts as missed.",
+  "items": [
+    {
+      "id": "c01",
+      "text": "Billionaires should pay an annual wealth tax",
+      "space": "us-politics",
+      "expectLeaning": "Left",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Tax fairness"
+      ],
+      "acceptIdeologies": [],
+      "note": "Clear positive (ECO-2L wealth tax; Tax fairness alias Pro-wealth tax). Socialist is wrong: a tax is not a legal cap on wealth. Liberal/Progressive only by association: count as extra until Armando rules."
+    },
+    {
+      "id": "c02",
+      "text": "Sanctuary city policies should be ended",
+      "space": "us-politics",
+      "expectLeaning": "Right",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-border security"
+      ],
+      "acceptIdeologies": [],
+      "note": "Clear positive (NAT-2R). MAGA is wrong: no Trump, America First or MAGA."
+    },
+    {
+      "id": "c03",
+      "text": "Sanctuary policies make American cities more dangerous",
+      "space": "us-politics",
+      "expectLeaning": "Right",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-border security"
+      ],
+      "acceptIdeologies": [],
+      "note": "E2 positive with the same shape as Armando's 'Trump's immigration crackdown makes the United States safer'. If Armando rejects E2, expect No label and []."
+    },
+    {
+      "id": "c04",
+      "text": "Mail-in ballots should be sent automatically to every registered voter",
+      "space": "us-politics",
+      "expectLeaning": "Left",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-voting rights"
+      ],
+      "acceptIdeologies": [],
+      "note": "Clear positive (LAW-2L wider voting access; alias Pro-mail voting)."
+    },
+    {
+      "id": "c05",
+      "text": "Abortion should not be legal",
+      "space": "us-politics",
+      "expectLeaning": "Right",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-life"
+      ],
+      "acceptIdeologies": [
+        "Christian conservative",
+        "Conservative"
+      ],
+      "note": "Negation test: Pro-choice or Left is a reversed label. Christian conservative/Conservative only by association (pending Armando)."
+    },
+    {
+      "id": "c06",
+      "text": "Raising the minimum wage does not kill jobs",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Negation of Armando's example. Pro-wage flexibility or Right is a reversed label. Pro-living wage/Left is defensible under E2 but the claim only rebuts: debatable, expect nothing."
+    },
+    {
+      "id": "c07",
+      "text": "Raising the minimum wage may cost some jobs",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Hedged concession (H1). P2 blocks the leaning today, but I3 ignores hedging, so Pro-wage flexibility can still be published: it should not be."
+    },
+    {
+      "id": "c08",
+      "text": "Immigration reform should pair more border agents with legal status for long-term undocumented residents",
+      "space": "us-politics",
+      "expectLeaning": "Center",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "NAT-0 compromise. Neither immigration side: the claim holds both."
+    },
+    {
+      "id": "c09",
+      "text": "Taxes on the wealthy should be raised and illegal immigrants should be deported",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Tax fairness",
+        "Pro-border security"
+      ],
+      "acceptIdeologies": [],
+      "note": "A1 mixed signals (ECO-2L + NAT-2R): never Center. Both issue sides are clear. Populist is wrong (no people-versus-elite framing)."
+    },
+    {
+      "id": "c10",
+      "text": "Naturalized Muslims should be stripped of their citizenship",
+      "space": "us-politics",
+      "expectLeaning": "Far right",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Nationalist"
+      ],
+      "note": "NAT-3R. Nationalist/Paleoconservative/Christian conservative are association guesses: not expected."
+    },
+    {
+      "id": "c11",
+      "text": "Should the Electoral College be abolished?",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "A question takes no position (G1)."
+    },
+    {
+      "id": "c12",
+      "text": "Sure, cutting taxes for billionaires always trickles down to workers",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Sarcasm. The literal reading (Pro-tax cuts, Right) is a reversed label; the intended reading (Tax fairness, Left) is debatable to infer. Expect nothing."
+    },
+    {
+      "id": "c13",
+      "text": "The Fort Hood shooter deserves the death penalty",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-death penalty"
+      ],
+      "acceptIdeologies": [],
+      "note": "One named case sits between LAW-1R (one specific violent crime) and LAW-2R: A5, no leaning. v3.3 published Right on Armando's similar Nidal Hasan claim, where he gave only Pro-death penalty."
+    },
+    {
+      "id": "c14",
+      "text": "Trump's tariffs are destroying American farmers",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Pro-trade"
+      ],
+      "note": "Mentions Trump while opposing his policy: MAGA or Protectionist is a reversed label. Pro-trade is defensible under E2 (mirror of Armando's Dayton free-trade claim) but debatable."
+    },
+    {
+      "id": "c15",
+      "text": "Undocumented immigrants who have lived here for a decade should be given legal status",
+      "space": "us-politics",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [
+        "Left"
+      ],
+      "expectIdeologies": [
+        "Pro-immigration"
+      ],
+      "acceptIdeologies": [],
+      "note": "Name collision: 'Pro-legalization' is both the Drugs side and a Pro-immigration alias; Pro-legalization is wrong. Leaning sits between NAT-1L (narrow group) and NAT-2L: A5."
+    },
+    {
+      "id": "c16",
+      "text": "States should require photo ID to vote, but accept many kinds of ID and provide them free to anyone who needs one",
+      "space": "us-politics",
+      "expectLeaning": "Center right",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-election integrity"
+      ],
+      "acceptIdeologies": [],
+      "note": "LAW-1R positive (explicit centrist limit). Right would be the wrong level."
+    },
+    {
+      "id": "c17",
+      "text": "Vaccines cause autism",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Medical/scientific claim (G3). E2 must not turn it into Pro-vaccine choice, which is about mandates and choice."
+    },
+    {
+      "id": "c18",
+      "text": "Vaccine mandates violate bodily autonomy",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-vaccine choice"
+      ],
+      "acceptIdeologies": [
+        "Libertarian",
+        "Libertarianism"
+      ],
+      "note": "Clear side. No criterion covers vaccine mandates, so no leaning. Libertarian/Libertarianism by association: extra."
+    },
+    {
+      "id": "c19",
+      "text": "Amtrak should require passengers to be vaccinated against highly contagious diseases",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-vaccination"
+      ],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 119164f3. Pro-regulation would be a general side stacked on a specific one (proposed I6)."
+    },
+    {
+      "id": "c20",
+      "text": "Fluoridated drinking water lowers children's IQ",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Scientific effect claim. Pro-vaccine choice via the 'MAHA' alias is a keyword error."
+    },
+    {
+      "id": "c21",
+      "text": "Social media use harms teenagers' mental health",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Effect of a technology, not of a policy. Pro-online safety or Deaccelerationist would be E2 overreach."
+    },
+    {
+      "id": "c22",
+      "text": "Mental health screening in schools should require explicit parental consent",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 003f8d53. Right (SOC-2R parental rights) vs Center right is debatable (A5). Christian conservative/Conservative are wrong: no religious or traditional framing."
+    },
+    {
+      "id": "c23",
+      "text": "The FDA should approve psychedelics for therapeutic use",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 20b6fdb8. Pro-legalization (removing criminal penalties) is wrong: drug approval is not decriminalization."
+    },
+    {
+      "id": "c24",
+      "text": "Doctors must obtain informed consent before any treatment",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Shared medical ethics (G3/G4). Pro-vaccine choice via the 'Pro-informed consent' alias is a keyword error."
+    },
+    {
+      "id": "c25",
+      "text": "Technology transfers for pandemic vaccines and treatments must remain strictly voluntary",
+      "space": "health",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real (opinion-seed7). v3.3 published Libertarian + Libertarianism (both via I5) and Right passed P1-P5 with country 'Global'. Global IP policy: no US-scale leaning; traditions not characteristic."
+    },
+    {
+      "id": "c26",
+      "text": "Bitcoin is a hedge against inflation",
+      "space": "crypto",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Investment claim about an asset, not a policy: E2 must not make it Pro-crypto."
+    },
+    {
+      "id": "c27",
+      "text": "The SEC's crypto crackdown pushed innovation offshore",
+      "space": "crypto",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-crypto"
+      ],
+      "acceptIdeologies": [],
+      "note": "E2 on a policy (SEC enforcement), general effect. Pro-deregulation not expected (specific before general). Crypto is not in the criteria: no leaning."
+    },
+    {
+      "id": "c28",
+      "text": "Illinois should repeal its 0.2% digital asset tax",
+      "space": "crypto",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [
+        "Right",
+        "Center right"
+      ],
+      "expectIdeologies": [
+        "Pro-tax cuts"
+      ],
+      "acceptIdeologies": [
+        "Pro-crypto"
+      ],
+      "note": "Real Geo claim 1a1bb98d. Pro-crypto acceptable. Leaning between ECO-1R (targeted relief) and ECO-2R: A5."
+    },
+    {
+      "id": "c29",
+      "text": "The US needs clear stablecoin rules so the crypto industry can grow",
+      "space": "crypto",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-crypto"
+      ],
+      "acceptIdeologies": [],
+      "note": "Crypto skeptic (alias 'Pro-crypto regulation') and Pro-regulation are wrong: the rules are wanted to help crypto grow."
+    },
+    {
+      "id": "c30",
+      "text": "The Federal Reserve should stay hawkish until inflation is back at 2%",
+      "space": "crypto",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Monetary policy is not a partisan-camp split (G4). Hawk (Use of force) is a keyword error."
+    },
+    {
+      "id": "c31",
+      "text": "The US government should regulate artificial intelligence to slow its development",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-AI regulation",
+        "Deaccelerationist"
+      ],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 1019d26f; both sides match their descriptions. X-TECH: no leaning."
+    },
+    {
+      "id": "c32",
+      "text": "AI companies that build superintelligence should face the corporate death penalty",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-AI regulation"
+      ],
+      "acceptIdeologies": [
+        "Deaccelerationist"
+      ],
+      "note": "Real Geo claim 0904efac. Keyword trap: Pro-death penalty is wrong. Deaccelerationist acceptable."
+    },
+    {
+      "id": "c33",
+      "text": "Frontier AI models should undergo mandatory third-party safety evaluations before release",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-AI regulation"
+      ],
+      "acceptIdeologies": [],
+      "note": "Real (opinion-seed7). v3.3 also published Pro-regulation, a general side stacked on the specific one; Armando's analogous example has Pro-AI regulation only."
+    },
+    {
+      "id": "c34",
+      "text": "Federal law should preempt state AI laws",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-federal authority"
+      ],
+      "acceptIdeologies": [
+        "Pro-AI acceleration"
+      ],
+      "note": "Both via Armando's own names (Pro-AI preemption; Pro-federal preemption). Pro-states' rights is reversed."
+    },
+    {
+      "id": "c35",
+      "text": "AI will eliminate half of entry-level office jobs within five years",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Prediction about a technology (G1). E2 must not apply."
+    },
+    {
+      "id": "c36",
+      "text": "Regulators should block major AI companies from acquiring hardware and media startups",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Pro-regulation",
+        "Deaccelerationist"
+      ],
+      "note": "Real Geo claim 085535d3. Antitrust: Deaccelerationist fits its aliases (Antitrust, Trustbuster) but not its description (slowing technology); card conflict, ask Armando. Expect nothing."
+    },
+    {
+      "id": "c37",
+      "text": "AI developers should deliberately pace the development of frontier models",
+      "space": "ai",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Deaccelerationist"
+      ],
+      "acceptIdeologies": [],
+      "note": "Real (opinion-seed7); v3.3 correct. Pro-AI regulation is wrong: no government role (the verifier rejected it correctly)."
+    },
+    {
+      "id": "c38",
+      "text": "The UK should bring its railways back into public ownership",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "C1: mainstream UK Labour policy. Far left via ECO-3L ('nationalize major industries') and Socialist/Democratic socialist are wrong."
+    },
+    {
+      "id": "c39",
+      "text": "The NHS should remain free at the point of use",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Consensus across UK parties (G4 under C1). Left + Pro-universal healthcare would apply a US lens."
+    },
+    {
+      "id": "c40",
+      "text": "Taiwan should formally declare independence from China",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-Taiwan independance"
+      ],
+      "acceptIdeologies": [],
+      "note": "Clear side (Armando's spelling). X-FOR: no leaning."
+    },
+    {
+      "id": "c41",
+      "text": "The US should keep its policy of strategic ambiguity on defending Taiwan",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Alias trap: 'Ambiguity advocate' and 'Pro-status quo' sit under Pro-Taiwan reunification, which this claim does not support."
+    },
+    {
+      "id": "c42",
+      "text": "The war in Ukraine should end through a negotiated settlement",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Dove"
+      ],
+      "note": "Alias trap: 'Pro-negotiated settlement' and 'Pro-peace deal' sit under Pro-Russia ('Supports Russia's government, interests'). Pro-Russia is wrong."
+    },
+    {
+      "id": "c43",
+      "text": "The US should give Ukraine long-range missiles to strike military targets inside Russia",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-Ukraine"
+      ],
+      "acceptIdeologies": [
+        "Hawk"
+      ],
+      "note": "Clear side. Hawk debatable (Armando lists 'Ukraine hawk' under Pro-Ukraine; open question)."
+    },
+    {
+      "id": "c44",
+      "text": "Israel and Hamas should agree to a permanent ceasefire",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Dove",
+        "Pro-Palestinian"
+      ],
+      "note": "Alias trap: 'Pro-ceasefire' sits under Pro-Palestinian; ceasefire calls came from both camps. Debatable: expect nothing."
+    },
+    {
+      "id": "c45",
+      "text": "Israel should not exist as a Jewish state",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Anti-Zionist"
+      ],
+      "acceptIdeologies": [
+        "Pro-Palestinian"
+      ],
+      "note": "Tests the 3-sided issue: Pro-Palestinian overlaps rather than opposes, and today its score above 0.1 blocks Anti-Zionist. Pro-Palestinian acceptable."
+    },
+    {
+      "id": "c46",
+      "text": "Kashmir is an integral part of India",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "A country's official position in a territorial dispute (G4). Nationalist is wrong (Nationalist card exclusion)."
+    },
+    {
+      "id": "c47",
+      "text": "The UK should restore its foreign aid budget to 0.7% of national income",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Pro-USAID is about US aid through USAID: wrong for the UK. No other card fits."
+    },
+    {
+      "id": "c48",
+      "text": "The United States should end its military conflict with Iran",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Dove"
+      ],
+      "acceptIdeologies": [
+        "Pro-Iran diplomacy"
+      ],
+      "note": "Real Geo claim 000d7436. Paleoconservative/Isolationist are wrong (one intervention; the typical-leaning filter is skipped on cross-cutting claims). Pro-Iran diplomacy debatable."
+    },
+    {
+      "id": "c49",
+      "text": "Congress should block the U.S.-Saudi civil nuclear agreement",
+      "space": "world-affairs",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 080f6a9b. Keyword trap: Anti-nuclear (nuclear power) is wrong; this is non-proliferation."
+    },
+    {
+      "id": "c50",
+      "text": "Washington elites have rigged the economy against working families",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Populist"
+      ],
+      "acceptIdeologies": [],
+      "note": "People-versus-elite framing, used by left and right: no leaning."
+    },
+    {
+      "id": "c51",
+      "text": "Government should help people when they need it, such as through education and basic necessities, without establishing a total command economy",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [
+        "Center left"
+      ],
+      "expectIdeologies": [],
+      "acceptIdeologies": [
+        "Social democrat"
+      ],
+      "note": "Real Geo claim 283412fe. Between Center left and Left (A5). Social democrat defensible; Liberal/Progressive by association are extra."
+    },
+    {
+      "id": "c52",
+      "text": "The First Amendment protects freedom of speech, and media should be able to speak freely",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 1060f4c1. Free expression in general (G4). Classical liberal/Pro-internet freedom are wrong."
+    },
+    {
+      "id": "c53",
+      "text": "Joe Rogan argued that the Federal Reserve should be abolished",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Attributed (G2)."
+    },
+    {
+      "id": "c54",
+      "text": "Why should taxpayers fund foreign wars while veterans sleep on the streets?",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Rhetorical question. Isolationist/Populist/Pro-foreign aid reform are debatable readings: expect nothing."
+    },
+    {
+      "id": "c55",
+      "text": "Voter turnout in Georgia rose after its 2021 election law took effect",
+      "space": "podcasts",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Statistic/history (G1). On the real version of this claim (fresh-seed3) the v3.3 scorer applied E2 and matched LAW-2R + Pro-election integrity."
+    },
+    {
+      "id": "c56",
+      "text": "Private ownership of factories and farmland should be abolished and handed to workers' councils",
+      "space": "podcasts",
+      "expectLeaning": "Far left",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Socialist"
+      ],
+      "acceptIdeologies": [
+        "Communist",
+        "Marxist"
+      ],
+      "note": "ECO-3L positive. Communist defensible; Liberal/Progressive/Social democrat are wrong."
+    },
+    {
+      "id": "c57",
+      "text": "Same-sex couples should have the same adoption rights as opposite-sex couples",
+      "space": "relationships",
+      "expectLeaning": "Left",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Pro-LGBTQ rights"
+      ],
+      "acceptIdeologies": [],
+      "note": "Clear positive in this space (SOC-2L)."
+    },
+    {
+      "id": "c58",
+      "text": "No-fault divorce should be abolished",
+      "space": "relationships",
+      "expectLeaning": "Right",
+      "acceptLeanings": [],
+      "expectIdeologies": [
+        "Social conservative"
+      ],
+      "acceptIdeologies": [
+        "Christian conservative",
+        "Traditionalist",
+        "Conservative"
+      ],
+      "note": "SOC-2R bold plan. Christian conservative/Traditionalist/Conservative acceptable only by association (pending Armando)."
+    },
+    {
+      "id": "c59",
+      "text": "In a serious relationship intended for marriage, the man should lead and pay for as much as he can",
+      "space": "relationships",
+      "expectLeaning": null,
+      "blankReason": "No political position",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 2b535a65. Personal relationship advice (G3). Traditionalist/Social conservative are wrong."
+    },
+    {
+      "id": "c60",
+      "text": "Polyamory should be society's default",
+      "space": "relationships",
+      "expectLeaning": null,
+      "blankReason": "No label",
+      "acceptLeanings": [],
+      "expectIdeologies": [],
+      "acceptIdeologies": [],
+      "note": "Real Geo claim 03a30bf0. Not a policy; Far left via SOC-3L (abolish marriage) is wrong. Debatable: expect nothing."
+    }
+  ]
+}

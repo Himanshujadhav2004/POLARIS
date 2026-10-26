@@ -15,6 +15,7 @@ import { GeoClient } from "./geo/client.js";
 import { fetchSchema } from "./geo/schema.js";
 import { fetchTaxonomy } from "./geo/taxonomy.js";
 import { classifyWithCache } from "./pipeline/classify-claims.js";
+import { loadChallenge, runChallenge, summarizeChallenge, writeChallenge } from "./eval/challenge.js";
 import { loadExamples, runExamples, summarizeExamples, writeExamples } from "./eval/examples.js";
 import { buildFreshSet, rescoreFreshSet, usedClaimIds, writeFreshSet } from "./pipeline/fresh-set.js";
 import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
@@ -57,6 +58,9 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   examples [--file evals/armando-examples.json] [--concurrency N]
                                Score Armando's example claims; compare with the leanings he linked to each;
                                writes evals/results/examples.<set>.<framework>.json
+  challenge [--file evals/challenge-set-v1.json] [--concurrency N]
+                               Score the challenge set (written claims for the risky cases) and count wrong and
+                               missed labels; writes evals/results/challenge.<set>.<framework>.json
   fresh-rescore [--dir fresh-seed3] [--concurrency N]
                                Score an existing fresh set again with the current framework
   fresh-set [--seed 3] [--pool 10] [--per-space 10] [--labelled 6] [--includes " should | must "] [--concurrency N]
@@ -264,6 +268,21 @@ async function main(argv: string[]): Promise<void> {
         const summary = summarizeExamples(set.version, rows);
         console.log(JSON.stringify(summary, null, 2));
         console.log(`Wrote ${writeExamples(rows, summary)}`);
+      } finally {
+        state.close();
+      }
+      return;
+    }
+    case "challenge": {
+      const set = loadChallenge(values.file ?? "evals/challenge-set-v1.json");
+      const taxonomy = await fetchTaxonomy(geo);
+      const state = new RunState();
+      try {
+        const agent = new ScoringAgent(taxonomy, state, { model: values.model });
+        const rows = await runChallenge(agent, set.items, Number(values.concurrency ?? 4));
+        const summary = summarizeChallenge(set.version, rows);
+        console.log(JSON.stringify(summary, null, 2));
+        console.log(`Wrote ${writeChallenge(rows, summary)}`);
       } finally {
         state.close();
       }
