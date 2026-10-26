@@ -1,14 +1,15 @@
 # POLARIS: Political leaning and ideology agent for Geo
 
-POLARIS reads claims from the [Geo](https://www.geobrowser.io) knowledge graph and fills their **Leanings** property. It gives each claim:
-- **at most one political leaning**, from Far left to Far right;
-- **one or more ideological leanings**: a side of an issue, such as Pro-life or Pro-gun control, or a tradition, such as Conservative or Socialist.
+POLARIS reads claims from the [Geo](https://www.geobrowser.io) knowledge graph and fills their **Leanings** property (`ff40a84705194415b30473badda2e534`) with values of Geo's three types. It gives each claim:
+- **at most one Political position**, from Far left to Far right;
+- **at most one Political ideology**, a tradition such as Conservative or Socialist;
+- **any number of Issue positions**: a side of one issue, such as Pro-life or Pro-gun control.
 
-The taxonomy and its definitions come from Armando's Notion doc "Leanings" (in [docs/armando/](docs/armando/leanings-2026-10-23/)).
+The taxonomy and its definitions come from Armando's Notion doc "Leanings" ([docs/armando/leanings-2026-10-26/](docs/armando/leanings-2026-10-26/)) and are checked against Geo before every run.
 
 The project is built for one rule above all: **a wrong label is worse than no label.** A label is published only when several independent checks agree on it; otherwise the claim is left blank and the reason is recorded. Every result can be traced to numbered criteria and to the claim's exact words.
 
-> **Status (26 Oct 2026):** framework v3.4, built on Armando's taxonomy after a full QA of v3.3. On claims it was never tuned on, it published **0 wrong labels** in 67 held-out opinion claims and **1 debatable wrong label** in a 60-claim challenge set (v3.3: 21). Nothing is published to Geo: claim submissions are **paused**, and Armando's 86 new issue leanings are not on Geo yet. See [Results so far](#results-so-far).
+> **Status (26 Oct 2026):** framework v3.5 follows Geo's split of Leanings into **Political position**, **Political ideology** and **Issue position** (all 86 issue positions are now live on Geo), with at most one Political position and one Political ideology per claim. Publishing to US Politics has started: about 100 claims, the first 10 for Armando's review (see [Publishing to Geo](#publishing-to-geo)). v3.4 results: on claims it was never tuned on, **0 wrong labels** in 67 held-out opinion claims and **1 debatable wrong label** in a 60-claim challenge set (v3.3: 21). See [Results so far](#results-so-far).
 
 ---
 
@@ -22,7 +23,7 @@ The project is built for one rule above all: **a wrong label is worse than no la
 6. [Testing and evaluation](#testing-and-evaluation)
 7. [Results so far](#results-so-far)
 8. [Review in Notion](#review-in-notion)
-9. [Publishing to Geo (paused)](#publishing-to-geo-paused)
+9. [Publishing to Geo](#publishing-to-geo)
 10. [Setup](#setup)
 11. [Commands](#commands)
 12. [Repository layout](#repository-layout)
@@ -46,9 +47,11 @@ There are **no partial labels** such as "Potentially center left". Anything the 
 
 | Kind | Geo type | Values |
 |---|---|---|
-| **Political leaning** | Political leaning `efa158a20ac34e63a31de1b103b1e7b0` | Far left, Left, Center left, Center, Center right, Right, Far right. Nonpartisan is proposed for news services and courts; it is never given to a claim. |
-| **Issue leanings** | Ideology `bdb20cbb75a644c2bc2aa4d14aeef883` | 86 values, one or two sides per issue, across 42 issues (Abortion: Pro-life / Pro-choice; Guns: Pro-gun control / Pro-gun rights; …). **Not on Geo yet.** |
-| **Traditions** | Ideology | 27 values on Geo (Anarchist … Traditionalist), with Armando's new descriptions. Libertarian and Libertarianism are both used. |
+| **Political leaning** (at most 1) | Political position `efa158a20ac34e63a31de1b103b1e7b0` | Far left, Left, Center left, Center, Center right, Right, Far right. Nonpartisan is proposed for news services and courts; it is never given to a claim. |
+| **Traditions** (at most 1) | Political ideology `bdb20cbb75a644c2bc2aa4d14aeef883` | 26 values (Anarchist … Traditionalist, including Social conservative). |
+| **Issue leanings** (several) | Issue position `7391b5e238444157a49307884f6b93b4` | 86 values, one to three sides per issue, across 43 issues (Abortion: Pro-life / Pro-choice; Guns: Pro-gun control / Pro-gun rights; …), including Isolationist. |
+
+`scripts/sync-geo-leanings.mts` keeps the cards in line with Geo (names, IDs, types, descriptions); the agent refuses to run if they differ. Geo renamed 13 sides on 2026-10-26 (for example Pro-Russia → Ukraine aid skeptic, Tax fairness → Progressive taxation); see `src/framework/renames.ts`.
 
 **Spaces in scope:** US Politics `4582fbbee28a16589154f7e36f1ee3c5`, Health `52c7ae149838b6d47ce0f3b2a5974546`, Crypto `c9f267dcb0d270718c2a3c45a64afd32`, AI `41e851610e13a19441c4d980f2f2ce6b`, World affairs `89bd89bf28ff8a0963faf92a8c905e20`, Podcasts `b5a31f8182b042437ede0f84ee02f104`, Relationships `224406e0de3c48d78ef12774111b8b2f`.
 
@@ -261,7 +264,7 @@ flowchart LR
   - Geo's Political leaning list is not the 7 levels (plus Nonpartisan);
   - Geo's type descriptions changed.
 - **Values not on Geo yet** (Armando's 86 issue leanings) are labelled in results, but `dry-run` refuses to put them in a proposal.
-- **Submissions paused:** `SUBMISSIONS_PAUSED = true` in `src/config.ts` blocks `submit --yes`.
+- **Submissions:** `SUBMISSIONS_PAUSED` in `src/config.ts` blocks `submit --yes` when true (lifted on 2026-10-26 for the US Politics batches).
 - **Approved claims only:** proposals are built only for claims Armando approved (`dry-run --only`). A claim the agent no longer publishes is dropped, and a claim already in a batch is never proposed twice.
 
 ### Caching and reproducibility
@@ -372,13 +375,16 @@ Rows are produced with `npx tsx scripts/notion-rows.mts bench|fresh|v3|cards …
 
 ---
 
-## Publishing to Geo (paused)
+## Publishing to Geo
 
-The agent never writes to Geo by itself. Two kinds of publishing are designed but **not done**:
-- **Claim labels:** `dry-run --space <slug> --only <approved ids>` → `proposals/<space>/batch-NN/` → `submit` (blocked while `SUBMISSIONS_PAUSED` is true) → `check-proposal`. Only values that exist on Geo can be proposed.
-- **Armando's taxonomy:** the 86 issue leanings (type Ideology, US Politics), the 27 new descriptions, and Nonpartisan. This waits for the go-ahead; until then the 86 values cannot appear in any proposal.
+The agent never writes to Geo by itself. Claim labels go out as proposals to the space:
 
-The submitting wallet is a member, not an editor, of US Politics, so its proposals need an editor's vote.
+1. `npx tsx scripts/publish-pool.mts us-politics publish-pool-us`, then `fresh-rescore --dir publish-pool-us`: the claims earlier runs labelled, still in the space with no Leanings, scored with the current framework.
+2. `dry-run --space us-politics --file ids.txt` → `proposals/<space>/batch-NN/` (proposal.md, proposal.csv, proposal.json, ops.json): one Leanings relation per value. Each value is checked against its Geo type, and a claim never gets two Political positions or two Political ideologies.
+3. `submit --dir … ` (read-only checks), then `submit --dir … --yes` once the dry run is reviewed.
+4. `check-proposal --dir …` after the proposal is voted through.
+
+**Plan for US Politics (2026-10-26):** about 100 claims; the first batch of 10 goes to Armando for review and approval before the remaining 90. The submitting wallet is a member, not an editor, of US Politics, so its proposals need an editor's vote.
 
 ---
 
@@ -422,7 +428,7 @@ All commands run as `npm run cli -- <command>`.
 | `challenge [--file evals/challenge-set-v1.json]` | Score the challenge set and count wrong and missed labels against its expected answers |
 | `fresh-rescore [--dir fresh-seed3]` | Score an existing fresh set again with the current framework |
 | `bench [--file …]` | Run a test set (test set v1 uses the old level convention) |
-| `dry-run`, `submit`, `check-proposal` | Proposals (see [Publishing](#publishing-to-geo-paused)) |
+| `dry-run`, `submit`, `check-proposal` | Proposals (see [Publishing](#publishing-to-geo)) |
 
 To re-import Armando's doc after he changes it, export it again and run `npx tsx scripts/import-leanings.mts docs/armando/<folder>`.
 
