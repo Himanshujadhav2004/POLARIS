@@ -1,0 +1,150 @@
+{
+  "measuredAt": "2026-10-26T19:10:03.572Z",
+  "model": "gpt-5.5",
+  "rows": [
+    {
+      "kind": "independent check (114 questions)",
+      "model": "gpt-6-luna",
+      "input": 39657,
+      "cachedInput": 0,
+      "output": 0,
+      "reasoning": 0,
+      "seconds": 3.341
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 0,
+      "output": 616,
+      "reasoning": 458,
+      "seconds": 13.313
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 686,
+      "reasoning": 512,
+      "seconds": 12.502
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 672,
+      "reasoning": 512,
+      "seconds": 12.898
+    },
+    {
+      "kind": "verifier (1 of 2 checks)",
+      "model": "gpt-5.5",
+      "input": 15198,
+      "cachedInput": 0,
+      "output": 354,
+      "reasoning": 195,
+      "seconds": 7.059
+    },
+    {
+      "kind": "second look",
+      "model": "gpt-5.5",
+      "input": 558,
+      "cachedInput": 0,
+      "output": 406,
+      "reasoning": 329,
+      "seconds": 8.056
+    },
+    {
+      "kind": "independent check (114 questions)",
+      "model": "gpt-6-luna",
+      "input": 39657,
+      "cachedInput": 0,
+      "output": 0,
+      "reasoning": 0,
+      "seconds": 1.463
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 587,
+      "reasoning": 375,
+      "seconds": 11.24
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 591,
+      "reasoning": 394,
+      "seconds": 10.968
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 731,
+      "reasoning": 502,
+      "seconds": 12.534
+    },
+    {
+      "kind": "second look",
+      "model": "gpt-5.5",
+      "input": 558,
+      "cachedInput": 0,
+      "output": 128,
+      "reasoning": 63,
+      "seconds": 3.339
+    },
+    {
+      "kind": "verifier (1 of 2 checks)",
+      "model": "gpt-5.5",
+      "input": 15198,
+      "cachedInput": 14080,
+      "output": 352,
+      "reasoning": 202,
+      "seconds": 7.179
+    },
+    {
+      "kind": "independent check (114 questions)",
+      "model": "gpt-6-luna",
+      "input": 39661,
+      "cachedInput": 0,
+      "output": 0,
+      "reasoning": 0,
+      "seconds": 0.454
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12659,
+      "cachedInput": 12032,
+      "output": 295,
+      "reasoning": 134,
+      "seconds": 5.566
+    },
+    {
+      "kind": "independent check (114 questions)",
+      "model": "gpt-6-luna",
+      "input": 39657,
+      "cachedInput": 0,
+      "output": 0,
+      "reasoning": 0,
+      "seconds": 0.64
+    },
+    {
+      "kind": "scorer",
+      "model": "gpt-5.5",
+      "input": 12655,
+      "cachedInput": 12032,
+      "output": 326,
+      "reasoning": 170,
+      "seconds": 7.206
+    }
+  ]
+}
