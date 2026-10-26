@@ -1,8 +1,8 @@
 {
   "space": "us-politics",
   "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
-  "generatedAt": "2026-10-26T15:49:38.397Z",
-  "opCount": 27,
+  "trimmedAt": "2026-10-26T15:54:10.276Z",
+  "opCount": 21,
   "ops": [
     {
       "type": "createRelation",
@@ -50,22 +50,6 @@
       "entity": "1423891bda3542c4bf47d30d45f07b42",
       "from": "c381476542ef4d8087cf2d209abdb8f8",
       "to": "f62bcc598efb4ce89fabd3c34dd77c92",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
-      "id": "1a12041cb49f428a9ef0c2e1293286a0",
-      "entity": "e2be40adf9864d2583b22a4b99f37fb8",
-      "from": "4b69e8a281525f4faef63cff0190b83b",
-      "to": "3628835899e04b4cbd2bdfc1027c53d3",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
-      "id": "68974268a0294072aa8bd3e75331401a",
-      "entity": "397eb424d3f14b398bfe1d74c3bb500c",
-      "from": "4b69e8a281525f4faef63cff0190b83b",
-      "to": "1f08bda6ed0344f7902f00705a4f5325",
       "relationType": "ff40a84705194415b30473badda2e534"
     },
     {
@@ -166,22 +150,6 @@
     },
     {
       "type": "createRelation",
-      "id": "a0a903d64b6a4a5ea927c88fea2846db",
-      "entity": "be12112dea004b0a8db80815e83cda52",
-      "from": "824760f73a7c491a968d66e71c6f2f39",
-      "to": "7a74f432548c417eb4abf9c45f3a7100",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
-      "id": "74d122b590f447f3808143e99e6c0a66",
-      "entity": "3d441c83b1a3434982e93bb30f0860ff",
-      "from": "824760f73a7c491a968d66e71c6f2f39",
-      "to": "1a2decfbb1654e399809f5000b7a0272",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
       "id": "bc4dc7e53edd4e7d9e557b3ec70f2c51",
       "entity": "a1263cc775a74cef9a38d4624f2fb85d",
       "from": "556d34906b86480da6c989576a04c6ed",
@@ -202,22 +170,6 @@
       "entity": "6bf1628aed55477fb405b637ef5787da",
       "from": "556d34906b86480da6c989576a04c6ed",
       "to": "c11e061c625b442c9f1a1ebea357f2e3",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
-      "id": "7d7587c3e9d748888f1bd70571fa463c",
-      "entity": "47b8936228c24f0686b8c4253ab94f59",
-      "from": "6bcb7138969c483faa46a922c046207e",
-      "to": "7a74f432548c417eb4abf9c45f3a7100",
-      "relationType": "ff40a84705194415b30473badda2e534"
-    },
-    {
-      "type": "createRelation",
-      "id": "bec2476179c74137bc72b988c3c79bdb",
-      "entity": "ca1438e9d8784881802905b0d1ed08ae",
-      "from": "6bcb7138969c483faa46a922c046207e",
-      "to": "053a4341639d43a5b0d534b40f7efe4f",
       "relationType": "ff40a84705194415b30473badda2e534"
     }
   ]

@@ -1,11 +1,8 @@
-# Batch 1 for Armando's review: 10 claims with all three fields (Political position, Political ideology, Issue position)
+# Batch 1 for Armando's review: 7 claims with all three fields (Political position, Political ideology, Issue position)
 148b0cf1d60c4319b499d376ef6bf38f
 c381476542ef4d8087cf2d209abdb8f8
-4b69e8a281525f4faef63cff0190b83b
 0db0016ea3c4177d7273d92a3abb4d6b
 87530d21a13042eba1709f902d0f3422
 3a86111db36a2b369f22aa997691a652
 f03d920d02a6ebb809899c3952a94d09
-824760f73a7c491a968d66e71c6f2f39
 556d34906b86480da6c989576a04c6ed
-6bcb7138969c483faa46a922c046207e

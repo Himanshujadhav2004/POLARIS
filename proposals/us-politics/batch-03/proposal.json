@@ -111,46 +111,6 @@
       ]
     },
     {
-      "claimId": "4b69e8a281525f4faef63cff0190b83b",
-      "text": "On the whole, the benefits of migration to the United States have been positive",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/4b69e8a281525f4faef63cff0190b83b",
-      "politicalPosition": "Left",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-immigration"
-      ],
-      "relations": [
-        {
-          "relationId": "1a12041cb49f428a9ef0c2e1293286a0",
-          "entityId": "e2be40adf9864d2583b22a4b99f37fb8",
-          "claimId": "4b69e8a281525f4faef63cff0190b83b",
-          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
-          "valueName": "Left"
-        },
-        {
-          "relationId": "68974268a0294072aa8bd3e75331401a",
-          "entityId": "397eb424d3f14b398bfe1d74c3bb500c",
-          "claimId": "4b69e8a281525f4faef63cff0190b83b",
-          "valueId": "1f08bda6ed0344f7902f00705a4f5325",
-          "valueName": "Pro-immigration"
-        }
-      ],
-      "evidence": [
-        "the benefits of migration to the United States have been positive",
-        "the benefits of migration to the United States have been positive"
-      ],
-      "explanation": "Published: Left. NAT-2L matched (close): “the benefits of migration to the United States have been positive”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.95; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-immigration (belief T1: “the benefits of migration to the United States have been positive”, independent probability 0.94).",
-      "removedAfterReview": [],
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 0.96",
-        "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Left 0.95",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Left"
-      ]
-    },
-    {
       "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
       "text": "Employers should be barred from requiring women to wear high heels",
       "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/0db0016ea3c4177d7273d92a3abb4d6b",
@@ -343,46 +303,6 @@
       ]
     },
     {
-      "claimId": "824760f73a7c491a968d66e71c6f2f39",
-      "text": "The Supreme Court should revive the Trump administration's third-country deportation program",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/824760f73a7c491a968d66e71c6f2f39",
-      "politicalPosition": "Right",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-border security"
-      ],
-      "relations": [
-        {
-          "relationId": "a0a903d64b6a4a5ea927c88fea2846db",
-          "entityId": "be12112dea004b0a8db80815e83cda52",
-          "claimId": "824760f73a7c491a968d66e71c6f2f39",
-          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
-          "valueName": "Right"
-        },
-        {
-          "relationId": "74d122b590f447f3808143e99e6c0a66",
-          "entityId": "3d441c83b1a3434982e93bb30f0860ff",
-          "claimId": "824760f73a7c491a968d66e71c6f2f39",
-          "valueId": "1a2decfbb1654e399809f5000b7a0272",
-          "valueName": "Pro-border security"
-        }
-      ],
-      "evidence": [
-        "should revive the Trump administration's third-country deportation program",
-        "should revive the Trump administration's third-country deportation program"
-      ],
-      "explanation": "Published: Right. NAT-2R matched (close): “should revive the Trump administration's third-country deportation program”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “should revive the Trump administration's third-country deportation program”, independent probability 0.96). Not published: MAGA (the verifier disagreed).",
-      "removedAfterReview": [],
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 0.99",
-        "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Right 1.00",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Right"
-      ]
-    },
-    {
       "claimId": "556d34906b86480da6c989576a04c6ed",
       "text": "Christians should oppose abortion even in cases of rape",
       "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/556d34906b86480da6c989576a04c6ed",
@@ -424,46 +344,6 @@
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.99",
         "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Right 1.00",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Right"
-      ]
-    },
-    {
-      "claimId": "6bcb7138969c483faa46a922c046207e",
-      "text": "Abortion should be illegal even in cases of rape",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/6bcb7138969c483faa46a922c046207e",
-      "politicalPosition": "Right",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-life"
-      ],
-      "relations": [
-        {
-          "relationId": "7d7587c3e9d748888f1bd70571fa463c",
-          "entityId": "47b8936228c24f0686b8c4253ab94f59",
-          "claimId": "6bcb7138969c483faa46a922c046207e",
-          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
-          "valueName": "Right"
-        },
-        {
-          "relationId": "bec2476179c74137bc72b988c3c79bdb",
-          "entityId": "ca1438e9d8784881802905b0d1ed08ae",
-          "claimId": "6bcb7138969c483faa46a922c046207e",
-          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
-          "valueName": "Pro-life"
-        }
-      ],
-      "evidence": [
-        "Abortion should be illegal even in cases of rape",
-        "Abortion should be illegal even in cases of rape"
-      ],
-      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Not published: Christian conservative (the verifier disagreed).",
-      "removedAfterReview": [],
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 1.00",
-        "P2 pass: the criteria match directly",
         "P3 pass: country: United States",
         "P4 pass: the independent check gives Right 1.00",
         "P5 pass: the verifier agreed in all 2 checks",
