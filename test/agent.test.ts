@@ -2,8 +2,7 @@ import type OpenAI from "openai";
 import { describe, expect, it } from "vitest";
 import { ScoringAgent } from "../src/agent/v3/agent.js";
 import type { ScorerOutput } from "../src/agent/v3/score.js";
-import { IDEOLOGY_CARDS, MERGED_INTO, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
-import data from "../src/framework/leanings.json" with { type: "json" };
+import { IDEOLOGY_CARDS, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
 import { LEANINGS_LEFT_TO_RIGHT, type LeaningName } from "../src/framework/rubric.js";
 import type { Claim } from "../src/geo/claims.js";
 import { buildTaxonomy } from "../src/geo/taxonomy.js";
@@ -82,9 +81,12 @@ function stub(o: StubOptions) {
   return { client: client as unknown as OpenAI, calls };
 }
 
+const geoValues = (kind: "tradition" | "issue") =>
+  IDEOLOGY_CARDS.filter((c) => c.kind === kind).map((c) => ({ id: c.geoId!, name: c.name, description: c.definition }));
 const taxonomy = buildTaxonomy(
   POLITICAL_LEANING_VALUES.filter((v) => v.geoId).map((v) => ({ id: v.geoId!, name: v.name, description: null })),
-  data.ideologies.filter((i) => i.geoId && !MERGED_INTO[i.name]).map((i) => ({ id: i.geoId!, name: i.name, description: null })),
+  geoValues("tradition"),
+  geoValues("issue"),
   new Set(),
 );
 

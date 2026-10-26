@@ -8,6 +8,7 @@ import {
   FRAMEWORK_VERSION,
   IDEOLOGY_DEFINITION,
   IDEOLOGY_RULES,
+  ISSUE_POSITION_DEFINITION,
   LEANINGS_PROPERTY_DEFINITION,
   levelRulesText,
   POLITICAL_LEANING_DEFINITION,
@@ -44,10 +45,11 @@ export function buildScorerPrompt(): string {
 
 ## Definitions
 
-Political leaning: ${POLITICAL_LEANING_DEFINITION}
-Ideology: ${IDEOLOGY_DEFINITION}
+Political leaning (Geo type Political position): ${POLITICAL_LEANING_DEFINITION}
+Tradition (Geo type Political ideology): ${IDEOLOGY_DEFINITION}
+Issue leaning (Geo type Issue position): ${ISSUE_POSITION_DEFINITION}
 Leanings (the property being filled): ${LEANINGS_PROPERTY_DEFINITION}
-A claim has at most one political leaning but can have several ideological leanings.
+A claim has at most one political leaning and at most one tradition, but can have several issue leanings.
 
 ## What each level means
 

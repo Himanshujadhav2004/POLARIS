@@ -14,8 +14,6 @@ import { rebuildOps, type PlannedRelation } from "./dry-run.js";
 interface ManifestClaim {
   claimId: string;
   text: string;
-  politicalLeaning: string | null;
-  ideologies: string[];
   relations: PlannedRelation[];
 }
 

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
@@ -75,9 +75,9 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                Score reviewer verdicts against the agent's output
 
 Proposals (local dry run only; nothing is sent to Geo)
-  dry-run --space <slug> --only id,id [--concurrency N]
-                               Write proposals/<space>/batch-NN/ for claims whose labels Armando approved
-                               in Notion; a claim the agent no longer publishes is left out
+  dry-run --space <slug> (--only id,id | --file ids.txt) [--concurrency N]
+                               Write proposals/<space>/batch-NN/ for the claims chosen after review
+                               (one ID per line in --file); a claim the agent no longer publishes is left out
   check-proposal --dir proposals/<space>/batch-NN
                                After you submit and it executes: confirm the Leanings now on Geo
 
@@ -135,10 +135,12 @@ async function main(argv: string[]): Promise<void> {
     case "taxonomy": {
       const taxonomy = await fetchTaxonomy(geo);
       console.log(`Fingerprint ${taxonomy.fingerprint}\n`);
-      console.log(`Political leaning (${taxonomy.politicalLeanings.length})`);
+      console.log(`Political position (${taxonomy.politicalLeanings.length})`);
       for (const v of taxonomy.politicalLeanings) console.log(`  ${v.id}  ${v.name}`);
-      console.log(`\nIdeology (${taxonomy.ideologies.length})`);
+      console.log(`\nPolitical ideology (${taxonomy.ideologies.length})`);
       for (const v of taxonomy.ideologies) console.log(`  ${v.id}  ${v.name}`);
+      console.log(`\nIssue position (${taxonomy.issuePositions.length})`);
+      for (const v of taxonomy.issuePositions) console.log(`  ${v.id}  ${v.name}`);
       return;
     }
     case "counts": {
@@ -380,10 +382,11 @@ async function main(argv: string[]): Promise<void> {
     }
     case "dry-run": {
       const space = spaceBySlug(values.space ?? "");
-      if (!values.only) {
-        throw new Error("Give the claims whose labels Armando approved in Notion: --only id,id. Nothing else is ever proposed.");
+      if (!values.only && !values.file) {
+        throw new Error("Give the claims chosen for this proposal: --only id,id or --file ids.txt (one ID per line). Nothing else is ever proposed.");
       }
-      const approved = new Set(values.only.split(",").map((s) => s.trim()).filter(Boolean));
+      const listed = values.only ? values.only.split(",") : readFileSync(values.file!, "utf8").split(/\r?\n/);
+      const approved = new Set(listed.map((s) => s.trim()).filter((s) => s && !s.startsWith("#")));
       const taken = [...approved].filter((id) => idsInProposals().has(id));
       if (taken.length) throw new Error(`Already in a proposal batch: ${taken.join(", ")}`);
       const taxonomy = await fetchTaxonomy(geo);
@@ -397,7 +400,7 @@ async function main(argv: string[]): Promise<void> {
         const files = writeDryRun(batch, taxonomy, dir);
         console.log(`\n${batch.items.length} claims in the batch:`);
         for (const { claim, result } of batch.items) {
-          console.log(`  ${claim.id}  ${[result.leaning, ...result.ideologies.map((i) => i.name)].filter(Boolean).join(", ").padEnd(36)} ${claim.text}`);
+          console.log(`  ${claim.id}  ${[result.leaning, ...result.ideologies.map((i) => i.name)].filter(Boolean).join(", ").padEnd(48)} ${claim.text}`);
         }
         console.log(`\nWrote:\n${files.map((f) => `  ${f}`).join("\n")}`);
       } finally {
@@ -419,9 +422,7 @@ async function main(argv: string[]): Promise<void> {
       console.log(`Proposal:       ${plan.name}`);
       console.log(`Space:          ${plan.manifest.space} (${plan.manifest.spaceId})`);
       console.log(`Operations:     ${plan.ops.length} createRelation (Leanings)`);
-      for (const c of plan.manifest.claims) {
-        console.log(`  - ${c.text}  ->  ${[c.politicalLeaning, ...c.ideologies].filter(Boolean).join(", ")}`);
-      }
+      for (const c of plan.manifest.claims) console.log(`  - ${c.text}  ->  ${c.relations.map((r) => r.valueName).join(", ")}`);
       console.log(`Wallet:         ${plan.account.address}`);
       console.log(`Personal space: ${plan.personalSpaceId ?? "none"}`);
       console.log(`Role in space:  ${plan.role}`);

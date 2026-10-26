@@ -2,7 +2,7 @@ import type { ScoredClaim, ScoringAgent } from "../agent/v3/agent.js";
 import type { Space } from "../config.js";
 import { fetchClaims, type Claim } from "../geo/claims.js";
 import type { GeoClient } from "../geo/client.js";
-import type { Taxonomy } from "../geo/taxonomy.js";
+import type { Taxonomy, TaxonomyKind } from "../geo/taxonomy.js";
 import { mapPool } from "../util/pool.js";
 
 export interface BatchItem {
@@ -32,15 +32,22 @@ export function publishGate(space: Space, claim: Claim, r: ScoredClaim): string 
   return null;
 }
 
-/** Geo value IDs for everything the agent published. */
+/**
+ * Geo value IDs for everything the agent published, each checked against its Geo type: at most one
+ * Political position, at most one Political ideology, and any number of Issue positions.
+ */
 export function valueIdsFor(r: ScoredClaim, taxonomy: Taxonomy): string[] {
-  return [r.leaning, ...r.ideologies.map((i) => i.name)]
-    .filter((n): n is string => Boolean(n))
-    .map((name) => {
-      const value = taxonomy.byName.get(name);
-      if (!value) throw new Error(`"${name}" is not on Geo yet, so it cannot go into a proposal until it is published there`);
-      return value.id;
-    });
+  const wanted: { name: string; kind: TaxonomyKind }[] = [
+    ...(r.leaning ? [{ name: r.leaning, kind: "political_leaning" as const }] : []),
+    ...r.ideologies.map((i) => ({ name: i.name, kind: i.kind === "tradition" ? ("ideology" as const) : ("issue_position" as const) })),
+  ];
+  if (wanted.filter((w) => w.kind === "ideology").length > 1) throw new Error(`${r.claimId} has more than one Political ideology`);
+  return wanted.map(({ name, kind }) => {
+    const value = taxonomy.byName.get(name);
+    if (!value) throw new Error(`"${name}" is not on Geo yet, so it cannot go into a proposal until it is published there`);
+    if (value.kind !== kind) throw new Error(`"${name}" is a ${value.kind} on Geo, not a ${kind}`);
+    return value.id;
+  });
 }
 
 export interface BuildBatchOptions {
@@ -48,7 +55,7 @@ export interface BuildBatchOptions {
   agent: ScoringAgent;
   taxonomy: Taxonomy;
   space: Space;
-  /** Claims whose labels Armando approved in Notion. Nothing else is ever proposed. */
+  /** Claims chosen for this proposal after review. Nothing else is ever proposed. */
   approved: ReadonlySet<string>;
   concurrency: number;
   log?: (line: string) => void;

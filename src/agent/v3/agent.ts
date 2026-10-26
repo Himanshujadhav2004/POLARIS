@@ -7,6 +7,7 @@ import {
   FRAMEWORK_VERSION,
   IDEOLOGY_DEFINITION,
   IDEOLOGY_RULES,
+  ISSUE_POSITION_DEFINITION,
   LEANINGS_LEFT_TO_RIGHT,
   OFF_SCALE_LEANINGS,
   POLITICAL_LEANING_DEFINITION,
@@ -122,20 +123,28 @@ const SECOND_LOOK_SCHEMA = {
 
 /**
  * The agent refuses to run when Geo and the framework disagree:
- * - every Ideology value on Geo needs a card (cards for values not yet on Geo, such as Armando's
- *   new issue leanings, are allowed: they are labelled but never put in a proposal);
- * - a card's Geo ID must still exist on Geo;
- * - the Political leaning values must be the 7 spectrum values, plus Nonpartisan if present.
+ * - every Political ideology value on Geo needs a tradition card, and every Issue position value an
+ *   issue card, with the same Geo ID and Geo's live description (scripts/sync-geo-leanings.mts);
+ * - every card must be one of those values on Geo;
+ * - the Political position values must be the 7 spectrum values, plus Nonpartisan if present.
  */
 export function checkTaxonomySync(taxonomy: Taxonomy): void {
   const problems: string[] = [];
-  for (const v of taxonomy.ideologies) {
-    const card = CARD_BY_NAME.get(v.name);
-    if (!card) problems.push(`Geo has the ideology "${v.name}" but there is no card for it`);
-    else if (card.geoId && card.geoId !== v.id) problems.push(`the card "${v.name}" has Geo ID ${card.geoId}, but Geo's value is ${v.id}`);
-  }
-  for (const card of IDEOLOGY_CARDS) {
-    if (card.geoId && !taxonomy.ideologies.some((v) => v.id === card.geoId)) problems.push(`the card "${card.name}" points to ${card.geoId}, which is no longer an Ideology on Geo`);
+  const kinds = [
+    { kind: "tradition", type: "Political ideology", values: taxonomy.ideologies },
+    { kind: "issue", type: "Issue position", values: taxonomy.issuePositions },
+  ] as const;
+  for (const { kind, type, values } of kinds) {
+    for (const v of values) {
+      const card = CARD_BY_NAME.get(v.name);
+      if (!card) problems.push(`Geo has the ${type} "${v.name}" but there is no card for it`);
+      else if (card.kind !== kind) problems.push(`"${v.name}" is of type ${type} on Geo but its card is a ${card.kind}`);
+      else if (card.geoId !== v.id) problems.push(`the card "${v.name}" has Geo ID ${card.geoId}, but Geo's value is ${v.id}`);
+      else if (v.description && card.definition !== v.description) problems.push(`Geo changed the description of "${v.name}"`);
+    }
+    for (const card of IDEOLOGY_CARDS.filter((c) => c.kind === kind)) {
+      if (!values.some((v) => v.id === card.geoId)) problems.push(`the card "${card.name}" is not a ${type} on Geo`);
+    }
   }
   const leanings = taxonomy.politicalLeanings.map((v) => v.name);
   for (const name of LEANINGS_LEFT_TO_RIGHT) if (!leanings.includes(name)) problems.push(`Geo no longer has the political leaning "${name}"`);
@@ -164,8 +173,9 @@ export class ScoringAgent {
     const defs = taxonomy.definitions;
     if (defs) {
       const stale = [
-        defs.politicalLeaning !== null && defs.politicalLeaning !== POLITICAL_LEANING_DEFINITION ? `Political leaning (Geo now says: "${defs.politicalLeaning}")` : null,
-        defs.ideology !== null && defs.ideology !== IDEOLOGY_DEFINITION ? `Ideology (Geo now says: "${defs.ideology}")` : null,
+        defs.politicalLeaning !== null && defs.politicalLeaning !== POLITICAL_LEANING_DEFINITION ? `Political position (Geo now says: "${defs.politicalLeaning}")` : null,
+        defs.ideology !== null && defs.ideology !== IDEOLOGY_DEFINITION ? `Political ideology (Geo now says: "${defs.ideology}")` : null,
+        defs.issuePosition !== null && defs.issuePosition !== ISSUE_POSITION_DEFINITION ? `Issue position (Geo now says: "${defs.issuePosition}")` : null,
       ].filter(Boolean);
       if (stale.length) throw new Error(`Framework definitions are out of sync with Geo: ${stale.join("; ")}. Update src/framework/rubric.ts.`);
     }
@@ -422,10 +432,14 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
     for (const c of issues) judge(c, false);
     const anchored = leaning !== null || passed.length > 0;
     for (const c of candidates.filter((c) => c.kind === "tradition")) judge(c, anchored);
-    // I6 and near-duplicate traditions.
+    // I6, then I4: at most one tradition (Geo's Political ideology), the most probable one.
     const overlap = applyOverlapRules(passed);
     dropped.push(...overlap.dropped);
-    const published = candidates.filter((c) => overlap.kept.includes(c));
+    const traditions = overlap.kept.filter((c) => c.kind === "tradition").sort((a, b) => b.probability - a.probability);
+    for (const extra of traditions.slice(PUBLISH.maxTraditions)) {
+      dropped.push({ name: extra.name, reason: `only one Political ideology per claim (I4): ${traditions[0]!.name} scored higher` });
+    }
+    const published = candidates.filter((c) => overlap.kept.includes(c) && !traditions.slice(PUBLISH.maxTraditions).includes(c));
 
     const nearMisses = [
       candidateLeaning && !leaning ? leaningNearMiss(leaningInput(candidateLeaning, repeats), checks) : null,
@@ -461,7 +475,9 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
                 .join(", ")})`
             : `No label (${r.noLabelReason})`;
     const ideologyText = [
-      ...r.ideologies.map((i) => ` Ideology: ${i.name} (belief ${i.tenet}: ${quote(i.evidence)}, independent probability ${i.probability.toFixed(2)}).`),
+      ...r.ideologies.map(
+        (i) => ` ${i.kind === "tradition" ? "Political ideology" : "Issue position"}: ${i.name} (belief ${i.tenet}: ${quote(i.evidence)}, independent probability ${i.probability.toFixed(2)}).`,
+      ),
       ...r.droppedIdeologies.map((d) => ` Not published: ${d.name} (${d.reason}).`),
     ].join("");
     const full = explanation + ideologyText;

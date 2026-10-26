@@ -15,13 +15,13 @@ const ideologies: RawValue[] = [
 
 describe("buildTaxonomy", () => {
   it("orders political leanings left to right and ideologies by name", () => {
-    const t = buildTaxonomy(leanings, ideologies, new Set(["lib"]));
+    const t = buildTaxonomy(leanings, ideologies, [], new Set(["lib"]));
     expect(t.politicalLeanings.map((v) => v.name)).toEqual(["Far left", "Center", "Right"]);
     expect(t.ideologies.map((v) => v.name)).toEqual(["Libertarianism", "Socialist"]);
   });
 
   it("drops excluded and unnamed values", () => {
-    const t = buildTaxonomy(leanings, ideologies, new Set(["lib"]));
+    const t = buildTaxonomy(leanings, ideologies, [], new Set(["lib"]));
     expect(t.byName.has("Libertarian")).toBe(false);
     expect(t.byName.get("Libertarianism")?.id).toBe("libism");
     expect([...t.byName.keys()]).not.toContain("");
@@ -29,14 +29,14 @@ describe("buildTaxonomy", () => {
 
   it("rejects two values with the same name", () => {
     const dup = [...ideologies, { id: "soc2", name: "Socialist", description: null }];
-    expect(() => buildTaxonomy(leanings, dup, new Set(["lib"]))).toThrow(/two values named "Socialist"/);
+    expect(() => buildTaxonomy(leanings, dup, [], new Set(["lib"]))).toThrow(/two values named "Socialist"/);
   });
 
   it("gives the same fingerprint regardless of input order", () => {
-    const a = buildTaxonomy(leanings, ideologies, new Set(["lib"]));
-    const b = buildTaxonomy([...leanings].reverse(), [...ideologies].reverse(), new Set(["lib"]));
+    const a = buildTaxonomy(leanings, ideologies, [], new Set(["lib"]));
+    const b = buildTaxonomy([...leanings].reverse(), [...ideologies].reverse(), [], new Set(["lib"]));
     expect(a.fingerprint).toBe(b.fingerprint);
-    const c = buildTaxonomy(leanings.slice(1), ideologies, new Set(["lib"]));
+    const c = buildTaxonomy(leanings.slice(1), ideologies, [], new Set(["lib"]));
     expect(c.fingerprint).not.toBe(a.fingerprint);
   });
 });
