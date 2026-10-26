@@ -235,7 +235,9 @@ export function checkLeaning(i: LeaningGateInput): RuleCheck[] {
           ? `the independent check prefers ${cmp.top} (${p2(cmp.pTop)}); ${i.leaning} gets ${p2(pLeaning)}`
           : `the independent check gives ${i.leaning} ${p2(pLeaning)}${pLeaning >= PUBLISH.minLeaning ? "" : `, below ${PUBLISH.minLeaning}`}`,
     },
-    { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? `the verifier agreed in all ${PUBLISH.verifierChecks} checks` : "the verifier disagreed" },
+    PUBLISH.verifierChecks === 0
+      ? { id: "P5", pass: true, skipped: true, detail: "the verifier is turned off" }
+      : { id: "P5", pass: i.verifierAgrees, detail: i.verifierAgrees ? `the verifier agreed in all ${PUBLISH.verifierChecks} checks` : "the verifier disagreed" },
   ];
   checks.push(stability(i.leaning, i.repeats));
   return checks;
@@ -371,7 +373,7 @@ export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[
     if (i.hedged) failed.push("the claim is hedged");
     if (i.sideInDoubt) failed.push(`the issue side it rests on is in doubt: ${i.sideInDoubt}`);
   }
-  if (!i.verifierAgrees) failed.push("the verifier disagreed");
+  if (PUBLISH.verifierChecks > 0 && !i.verifierAgrees) failed.push("the verifier disagreed");
   if (withRepeats) {
     // Missing extra runs only matter when nothing else already blocks it.
     if (!i.repeats) {
@@ -410,7 +412,7 @@ const nearHigh = (bar: number) => Math.round((bar + NEAR_MISS_MARGIN) * 100) / 1
  */
 export function ideologyNearMiss(i: IdeologyGateInput): string | null {
   const c = i.candidate;
-  if (!i.verifierAgrees || (i.repeats && !i.repeats.every(Boolean))) return null;
+  if ((PUBLISH.verifierChecks > 0 && !i.verifierAgrees) || (i.repeats && !i.repeats.every(Boolean))) return null;
   // Judgements, not numbers: a hedged claim, a doubtful side or an unscored other side is no near miss.
   if (i.refusedSides.length || (c.kind === "tradition" && (i.hedged || i.sideInDoubt))) return null;
   const short: string[] = [];

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildDecisionQuestions, parseDecision } from "../src/agent/v3/decisions.js";
 import { buildScorerMessage } from "../src/agent/v3/prompt.js";
 import { combineVerdicts } from "../src/agent/v3/verify.js";
+import { withVerifier } from "./verifier-on.js";
 import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { ALIAS_RULE, EFFECT_RULE } from "../src/framework/rubric.js";
 import {
@@ -179,6 +180,7 @@ const run = (leaning: RepeatLeaning["leaning"], over: Partial<RepeatLeaning> = {
 });
 
 describe("checkLeaning (publish rules P1–P6)", () => {
+  withVerifier();
   const dist = (top: string, p: number) =>
     Object.fromEntries(["Far left", "Left", "Center left", "Center", "Center right", "Right", "Far right"].map((l) => [l, l === top ? p : (1 - p) / 6])) as never;
   const ok: LeaningGateInput = {
@@ -282,6 +284,7 @@ describe("resolveIdeologies", () => {
 });
 
 describe("checkIdeology (I3)", () => {
+  withVerifier();
   const issue: IdeologyGateInput = {
     candidate: { name: "Pro-life", kind: "issue", issue: "Abortion", tenet: "T1", tenetText: "", evidence: "Abortion is murder", probability: 0.96 },
     pStance: 0.95,

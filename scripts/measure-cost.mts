@@ -11,7 +11,7 @@ import { buildScorerMessage, buildScorerPrompt, buildScorerSchema } from "../src
 import { FrameworkVerifier } from "../src/agent/v3/verify.js";
 import { OPENAI_MODEL, requireEnv, SPACES } from "../src/config.js";
 import { CARD_BY_NAME } from "../src/framework/ideologies.js";
-import { EFFECT_RULE, IDEOLOGY_RULES } from "../src/framework/rubric.js";
+import { EFFECT_RULE, IDEOLOGY_RULES, PUBLISH } from "../src/framework/rubric.js";
 import type { Claim } from "../src/geo/claims.js";
 import { GeoClient } from "../src/geo/client.js";
 import { fetchTaxonomy } from "../src/geo/taxonomy.js";
@@ -188,7 +188,7 @@ const costOf = (kind: string) => {
   return (fresh * p.input + cached * p.cachedInput + avg(kind, (u) => u.output) * p.output) / 1e6;
 };
 
-console.log(`Measured ${usage.length} real API calls (${OPENAI_MODEL} + ${DECISIONS_MODEL})\n`);
+console.log(`Verifier: ${PUBLISH.verifierChecks === 0 ? "off" : `${PUBLISH.verifierChecks} checks`}. Measured ${usage.length} real API calls (${OPENAI_MODEL} + ${DECISIONS_MODEL})\n`);
 console.log("call                               input   cached   output  reasoning   seconds   $ per call");
 for (const kind of kinds) {
   console.log(
@@ -215,7 +215,7 @@ for (const file of ["evals/fresh/publish-pool-us/rescore.framework-v3.5.json", "
 const perCall = { scorer: costOf("scorer"), decisions: costOf(kinds.find((k) => k.startsWith("independent check"))!), verifier: costOf("verifier (1 of 2 checks)"), secondlook: costOf("second look") };
 const claimCost = (calls: number, labelled: boolean) =>
   labelled
-    ? perCall.scorer * 3 + perCall.decisions + perCall.verifier * 2 + perCall.secondlook * Math.max(0, calls - 6)
+    ? perCall.scorer * PUBLISH.runs + perCall.decisions + perCall.verifier * PUBLISH.verifierChecks + perCall.secondlook * Math.max(0, calls - 6)
     : perCall.scorer * Math.max(1, calls - 1) + perCall.decisions;
 
 const sample = [...callsPerClaim.entries()].filter(([id]) => outcomes.has(id));
@@ -243,7 +243,7 @@ const latency = { scorer: avg("scorer", (u) => u.seconds), decisions: avg(kinds.
 /** Seconds of waiting for one claim: run 1 and the independent check together, second looks one by one, the extra runs, then both verifier checks together. */
 const claimSeconds = (calls: number, labelled: boolean) =>
   labelled
-    ? Math.max(latency.scorer, latency.decisions) + latency.scorer + latency.verifier + latency.secondlook * Math.max(0, calls - 6)
+    ? Math.max(latency.scorer, latency.decisions) + latency.scorer + (PUBLISH.verifierChecks > 0 ? latency.verifier : 0) + latency.secondlook * Math.max(0, calls - 6)
     : Math.max(latency.scorer, latency.decisions) + latency.scorer * Math.max(0, calls - 2);
 const secLabelled = mean(labelled.map(([, n]) => claimSeconds(n, true)));
 const secBlank = mean(blank.map(([, n]) => claimSeconds(n, false)));

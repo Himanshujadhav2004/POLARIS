@@ -339,9 +339,9 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
     const proposed = await this.proposeIdeologies(claim, out, decisions, 1, flags, notes);
     const { candidates, dropped } = resolveIdeologies(proposed, claim.text, decisions.ideologies);
 
-    // The verifier checks anything that could carry a label.
+    // The verifier checks anything that could carry a label; PUBLISH.verifierChecks = 0 turns it off.
     let verifier: VerifierVerdict | null = null;
-    if (candidateLeaning || candidates.length) {
+    if (PUBLISH.verifierChecks > 0 && (candidateLeaning || candidates.length)) {
       const toVerify = {
         leaning: candidateLeaning,
         criteria: applied.map((a) => ({ id: a.id, text: a.text, evidence: a.evidence })),
@@ -359,7 +359,8 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
     }
     if (verifier?.leaning?.verdict === "disagree") notes.push(`Verifier on the leaning: ${verifier.leaning.problems}`);
     for (const v of verifier?.ideologies ?? []) if (v.verdict === "disagree") notes.push(`Verifier on ${v.name}: ${v.problems}`);
-    const ideologyAgreed = (name: string) => verifier?.ideologies.find((v) => v.name === name)?.verdict === "agree";
+    // With the verifier off nothing is rejected by it, so every candidate counts as agreed.
+    const ideologyAgreed = (name: string) => PUBLISH.verifierChecks === 0 || verifier?.ideologies.find((v) => v.name === name)?.verdict === "agree";
 
     // Leaning rules P1–P5; P6 needs the extra runs.
     const leaningInput = (leaning: LeaningName, repeats: RepeatLeaning[] | null): LeaningGateInput => ({
@@ -369,7 +370,7 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
       hedged: out.hedged,
       country: out.country,
       independent: decisions.leaning,
-      verifierAgrees: verifier?.leaning?.verdict === "agree",
+      verifierAgrees: PUBLISH.verifierChecks === 0 || verifier?.leaning?.verdict === "agree",
       repeats,
     });
     const leaningChecks = (repeats: RepeatLeaning[] | null): RuleCheck[] => (candidateLeaning ? checkLeaning(leaningInput(candidateLeaning, repeats)) : []);

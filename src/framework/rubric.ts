@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.5.2";
+export const FRAMEWORK_VERSION = "framework-v3.6";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -282,8 +282,14 @@ export const PUBLISH = {
   maxTraditions: 1,
   /** Scorer runs that must give the same answer. */
   runs: 3,
-  /** Separate verifier checks that must all agree, so a label near the bar does not flip between runs. */
-  verifierChecks: 2,
+  /**
+   * Separate verifier checks that must all agree, so a label near the bar does not flip between runs.
+   * 0 turns the verifier off: no verifier calls are made, rule P5 is skipped and I3 drops its verifier
+   * condition. Turned off on 2026-10-27 at the user's decision, for cost: it was 47% of a labelled
+   * claim's price. On the 502 claims scored under v3.5 it had blocked 85 labels (26 political positions
+   * and 59 ideologies), so expect about 35% more labels, none of them checked by a second model.
+   */
+  verifierChecks: 0,
 } as const;
 
 export const PUBLISH_RULES = [
@@ -291,7 +297,11 @@ export const PUBLISH_RULES = [
   { id: "P2", name: "Full match", text: "Every criterion behind the leaning matches directly or closely, not only in part, and the claim is not hedged." },
   { id: "P3", name: "United States", text: "The claim is about the politics of the United States, whose positions the criteria list (rule C1)." },
   { id: "P4", name: "Same level", text: `The independent check's most likely leaning is the same exact level, with a probability of at least ${PUBLISH.minLeaning}.` },
-  { id: "P5", name: "Verifier agrees", text: `The independent verifier agrees with the leaning in all ${PUBLISH.verifierChecks} of its separate checks.` },
+  {
+    id: "P5",
+    name: "Verifier agrees",
+    text: PUBLISH.verifierChecks > 0 ? `The independent verifier agrees with the leaning in all ${PUBLISH.verifierChecks} of its separate checks.` : "Not applied: the verifier is turned off (PUBLISH.verifierChecks = 0).",
+  },
   { id: "P6", name: "Stable", text: `The scorer gives the same leaning in all ${PUBLISH.runs} runs, each one also passing P2 and P3. The extra runs are made only when P1–P5 pass.` },
 ] as const;
 
@@ -314,7 +324,7 @@ export const IDEOLOGY_RULES = [
   },
   {
     id: "I3",
-    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; the verifier agrees in all ${PUBLISH.verifierChecks} of its checks; and all ${PUBLISH.runs} runs find it. For an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; a side the independent check refused to score cannot be ruled out, so it blocks. For a tradition: its independent probability is at least ${PUBLISH.minTradition} when an issue leaning or the political leaning is also published, otherwise at least ${PUBLISH.minTraditionAlone}; the claim is not hedged; no issue side on the claim is in doubt (another side of its issue scoring above ${PUBLISH.maxOtherSide} or refused, or the verifier rejecting the side); and the tradition is usually found at the claim's leaning, or when it has none at the independent check's most likely leaning if that is at least ${PUBLISH.minContextLeaning}. Otherwise it is not published, and the reason is recorded.`,
+    text: `An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least ${PUBLISH.minStance}; ${PUBLISH.verifierChecks > 0 ? `the verifier agrees in all ${PUBLISH.verifierChecks} of its checks; ` : ""}and all ${PUBLISH.runs} runs find it. For an issue leaning, its independent probability is at least ${PUBLISH.minIssue} and every other side of the issue is at most ${PUBLISH.maxOtherSide}; a side the independent check refused to score cannot be ruled out, so it blocks. For a tradition: its independent probability is at least ${PUBLISH.minTradition} when an issue leaning or the political leaning is also published, otherwise at least ${PUBLISH.minTraditionAlone}; the claim is not hedged; no issue side on the claim is in doubt (another side of its issue scoring above ${PUBLISH.maxOtherSide} or refused, or the verifier rejecting the side); and the tradition is usually found at the claim's leaning, or when it has none at the independent check's most likely leaning if that is at least ${PUBLISH.minContextLeaning}. Otherwise it is not published, and the reason is recorded.`,
   },
   {
     id: "I4",
