@@ -57,6 +57,11 @@ export interface FreshSetOptions {
   seed: number;
   /** New claims scored per space. */
   pool: number;
+  /**
+   * Instead of `pool` per space: this many claims in all, split as evenly as possible over the spaces
+   * (the first spaces take the remainder). A space with too few new claims passes its shortfall on.
+   */
+  total?: number;
   /** Rows per space in the QA sample. */
   perSpace: number;
   /** Rows with a published label to put first in each space's sample (the rest are blanks). */
@@ -82,16 +87,23 @@ export async function drawIds(geo: GeoClient, spaceId: string, want: number, rng
 
 const published = (r: ScoredClaim | null) => Boolean(r && (r.leaning || r.ideologies.length));
 
+/** A space's share of `total` claims split evenly over the spaces, the first ones taking the remainder. */
+export const spaceShare = (total: number, index: number): number =>
+  Math.floor(total / SPACES.length) + (index < total % SPACES.length ? 1 : 0);
+
 /** Scores `pool` never-used claims per space and picks the 10-per-space QA sample from them. */
 export async function buildFreshSet(o: FreshSetOptions): Promise<{ rows: FreshRow[]; stats: FreshStats[] }> {
   const log = o.log ?? (() => {});
   const rows: FreshRow[] = [];
   const stats: FreshStats[] = [];
+  let shortfall = 0;
   for (const [index, space] of SPACES.entries()) {
     const rng = seededRng(o.seed * 1000 + index);
+    const want = o.total === undefined ? o.pool : spaceShare(o.total, index) + shortfall;
     // Draw extra IDs: some are excluded, have no text or already carry Leanings.
-    const ids = (await drawIds(o.geo, space.id, Math.ceil(o.pool * 1.5), rng, o.includes)).filter((id) => !o.exclude.has(id));
-    const claims = (await fetchClaims(o.geo, ids)).filter((c) => c.text && c.leaningIds.length === 0).slice(0, o.pool);
+    const ids = (await drawIds(o.geo, space.id, Math.ceil(want * (o.total === undefined ? 1.5 : 2)), rng, o.includes)).filter((id) => !o.exclude.has(id));
+    const claims = (await fetchClaims(o.geo, ids)).filter((c) => c.text && c.leaningIds.length === 0).slice(0, want);
+    if (o.total !== undefined) shortfall = want - claims.length;
     const scored = await mapPool(claims, o.concurrency, async (claim) => {
       try {
         return { space, claim, result: await o.agent.score(claim), error: null, inSample: false } as FreshRow;

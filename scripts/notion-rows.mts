@@ -5,14 +5,15 @@
 //   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json <fresh-or-rescore.json>[,<more.json>] <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts cards <out.json>   (the Ideology definitions database)
 //   npx tsx scripts/notion-rows.mts challenge evals/results/challenge.<set>.<framework>.json[,<baseline.json>] <run-name> <out.json>
+//   npx tsx scripts/notion-rows.mts showcase evals/fresh/<name>/fresh.json <out.json>   (one row per claim, for presenting a run)
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
 import { EXCLUDED_ALIASES, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 
 const [mode, file, ...rest] = process.argv.slice(2);
 const usage =
-  "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json> | cards <out.json> | challenge <challenge.json> <run-name> <out.json>";
-if (!file || !["bench", "fresh", "v3", "cards", "challenge"].includes(mode ?? "")) throw new Error(usage);
+  "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json> | cards <out.json> | challenge <challenge.json> <run-name> <out.json> | showcase <fresh.json> <out.json>";
+if (!file || !["bench", "fresh", "v3", "cards", "challenge", "showcase"].includes(mode ?? "")) throw new Error(usage);
 
 /** Notion text properties hold 2000 characters; cut at the last full sentence, never mid-sentence. */
 function fit(s: string, max = 1900): string {
@@ -201,6 +202,29 @@ function challengeRows(run: string) {
   });
 }
 
+/** Every claim of a run, in plain terms, for presenting it: claim, space, results, explanation, links. */
+function showcaseRows() {
+  const run = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
+  const outcome = (r: Record<string, any>) =>
+    r.error ? "Error" : r.published ? "Labelled" : String(r.display).startsWith("No political position") ? "No political position" : "No label";
+  // Labelled claims first, then blanks; within each, Geo spaces in the usual order.
+  const rank = ["Labelled", "No label", "No political position", "Error"];
+  const space = (r: Record<string, any>) => SPACES.findIndex((s) => s.slug === r.space);
+  const sorted = [...run.rows].sort((a, b) => rank.indexOf(outcome(a)) - rank.indexOf(outcome(b)) || space(a) - space(b));
+  return sorted.map((r) => ({
+    properties: {
+      Claim: fit(r.text, 300),
+      Space: SPACES.find((s) => s.slug === r.space)?.name ?? r.space,
+      "Political leaning": r.leaning ?? "—",
+      "Ideological leanings": (r.ideologies as string[]).length ? (r.ideologies as string[]).join(", ") : "—",
+      Outcome: outcome(r),
+      Explanation: fit(r.explanation ?? `Error: ${r.error}`),
+      "Claim ID": r.claimId,
+      "Geo link": geoEntityUrl(r.spaceId, r.claimId),
+    },
+  }));
+}
+
 const rows =
   mode === "bench"
     ? benchRows(rest[0] ?? "")
@@ -210,7 +234,9 @@ const rows =
         ? cardRows()
         : mode === "challenge"
           ? challengeRows(rest[0] ?? "")
-          : freshRows();
+          : mode === "showcase"
+            ? showcaseRows()
+            : freshRows();
 const out = mode === "bench" || mode === "challenge" ? rest[1] : mode === "v3" ? rest[2] : mode === "cards" ? file : rest[0];
 if (!out || ((mode === "bench" || mode === "challenge") && !rest[0])) throw new Error(usage);
 const batches: (typeof rows)[] = [];

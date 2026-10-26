@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "nod
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { drawIds, FRESH_ROOT, rescoreFreshSet, usedClaimIds } from "../src/pipeline/fresh-set.js";
+import { drawIds, FRESH_ROOT, rescoreFreshSet, spaceShare, usedClaimIds } from "../src/pipeline/fresh-set.js";
 import { mapPool } from "../src/util/pool.js";
 import { seededRng } from "../src/util/random.js";
 
@@ -84,6 +84,14 @@ describe("rescoreFreshSet", () => {
     } finally {
       rmSync(join(FRESH_ROOT, name), { recursive: true, force: true });
     }
+  });
+});
+
+describe("spaceShare", () => {
+  it("splits a total over the 7 spaces, the first ones taking the remainder", () => {
+    const shares = Array.from({ length: 7 }, (_, i) => spaceShare(50, i));
+    expect(shares).toEqual([8, 7, 7, 7, 7, 7, 7]);
+    expect(shares.reduce((a, b) => a + b, 0)).toBe(50);
   });
 });
 
