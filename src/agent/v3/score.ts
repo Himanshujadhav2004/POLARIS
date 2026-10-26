@@ -3,7 +3,6 @@ import {
   ALL_CRITERIA,
   GENERAL_ISSUES,
   LEANING_BY_SCORE,
-  NEAR_DUPLICATE_TRADITIONS,
   LEANINGS_LEFT_TO_RIGHT,
   PUBLISH,
   PUBLISH_RULES,
@@ -383,29 +382,20 @@ export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[
 }
 
 /**
- * After I3, two rules about leanings that overlap:
- * - I6 specific before general: a general side (Regulation, Spending & deficit, Welfare, Use of force) is
- *   not published next to an issue leaning on a specific issue, which already records the position.
- * - Near-duplicate traditions (Libertarian, Libertarianism): only the higher-scoring one is published.
+ * After I3, rule I6 specific before general: a general side (Regulation, Spending & deficit, Welfare, Use of
+ * force) is not published next to an issue leaning on a specific issue, which already records the position.
  */
 export function applyOverlapRules(published: IdeologyCandidate[]): { kept: IdeologyCandidate[]; dropped: DroppedIdeology[] } {
   const dropped: DroppedIdeology[] = [];
   const isGeneral = (c: IdeologyCandidate) => c.kind === "issue" && (GENERAL_ISSUES as readonly string[]).includes(c.issue ?? "");
   const specific = published.find((c) => c.kind === "issue" && !isGeneral(c));
-  let kept = published.filter((c) => {
+  const kept = published.filter((c) => {
     if (specific && isGeneral(c)) {
       dropped.push({ name: c.name, reason: `${specific.name} is the more specific issue leaning for this claim (I6)` });
       return false;
     }
     return true;
   });
-  for (const pair of NEAR_DUPLICATE_TRADITIONS) {
-    const both = kept.filter((c) => (pair as readonly string[]).includes(c.name));
-    if (both.length < 2) continue;
-    const [best, ...rest] = [...both].sort((a, b) => b.probability - a.probability || pair.indexOf(a.name as never) - pair.indexOf(b.name as never));
-    for (const c of rest) dropped.push({ name: c.name, reason: `${best!.name} is a near-duplicate and scores higher; only one is published (I4)` });
-    kept = kept.filter((c) => !rest.includes(c));
-  }
   return { kept, dropped };
 }
 

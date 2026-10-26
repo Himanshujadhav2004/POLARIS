@@ -133,8 +133,7 @@ function v3Rows(freshFiles: string, run: string) {
 function cardRows() {
   const US = SPACES.find((s) => s.slug === "us-politics")!;
   const NOTES: Record<string, string> = {
-    Libertarian: "Near-duplicate of Libertarianism. Both are used, but a claim gets only the higher-scoring one (I4, v3.4).",
-    Libertarianism: "Near-duplicate of Libertarian. Both are used, but a claim gets only the higher-scoring one (I4, v3.4).",
+    Libertarian: "Geo removed its near-duplicate Libertarianism on 2026-10-26; that name is now another name for Libertarian (v3.4.1).",
     Deaccelerationist: "Name kept as written in the doc.",
     "Pro-Taiwan independance": "Name kept as written in the doc.",
   };
@@ -221,6 +220,9 @@ function showcaseRows() {
       Explanation: fit(r.explanation ?? `Error: ${r.error}`),
       "Claim ID": r.claimId,
       "Geo link": geoEntityUrl(r.spaceId, r.claimId),
+      // Rows collected by scripts/showcase.mts also say where each claim came from.
+      ...(r.source ? { Source: r.source.startsWith("Armando") ? "Armando's example" : "Geo sample" } : {}),
+      ...(r.armando ? { "Armando's labels": (r.armando as string[]).join(", ") } : {}),
     },
   }));
 }

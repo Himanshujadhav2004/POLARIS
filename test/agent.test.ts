@@ -2,7 +2,7 @@ import type OpenAI from "openai";
 import { describe, expect, it } from "vitest";
 import { ScoringAgent } from "../src/agent/v3/agent.js";
 import type { ScorerOutput } from "../src/agent/v3/score.js";
-import { IDEOLOGY_CARDS, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
+import { IDEOLOGY_CARDS, MERGED_INTO, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
 import data from "../src/framework/leanings.json" with { type: "json" };
 import { LEANINGS_LEFT_TO_RIGHT, type LeaningName } from "../src/framework/rubric.js";
 import type { Claim } from "../src/geo/claims.js";
@@ -84,7 +84,7 @@ function stub(o: StubOptions) {
 
 const taxonomy = buildTaxonomy(
   POLITICAL_LEANING_VALUES.filter((v) => v.geoId).map((v) => ({ id: v.geoId!, name: v.name, description: null })),
-  data.ideologies.filter((i) => i.geoId).map((i) => ({ id: i.geoId!, name: i.name, description: null })),
+  data.ideologies.filter((i) => i.geoId && !MERGED_INTO[i.name]).map((i) => ({ id: i.geoId!, name: i.name, description: null })),
   new Set(),
 );
 
@@ -204,15 +204,15 @@ describe("ScoringAgent.score", () => {
 
   it("needs 0.9 for a tradition with nothing else published, and 0.8 next to a published issue leaning", async () => {
     const text = "Taxes are theft";
-    const out = scorer({ matches: [], cross_cutting: ["X-FOR"], ideologies: [{ name: "Libertarianism", tenet: "T1", evidence: "Taxes are theft" }] });
-    const alone = await agent({ scorer: [out], leaning: { Right: 0.8 }, ideologies: { Libertarianism: 0.85 } }).agent.score(claim(text));
+    const out = scorer({ matches: [], cross_cutting: ["X-FOR"], ideologies: [{ name: "Libertarian", tenet: "T1", evidence: "Taxes are theft" }] });
+    const alone = await agent({ scorer: [out], leaning: { Right: 0.8 }, ideologies: { Libertarian: 0.85 } }).agent.score(claim(text));
     expect(alone.ideologies).toEqual([]);
-    expect(alone.nearMisses).toEqual(["Libertarianism: independent probability 0.85 (needs 0.9)"]);
-    const strong = await agent({ scorer: [out], leaning: { Right: 0.8 }, ideologies: { Libertarianism: 0.93 } }).agent.score(claim(text));
-    expect(strong.ideologies.map((i) => i.name)).toEqual(["Libertarianism"]);
+    expect(alone.nearMisses).toEqual(["Libertarian: independent probability 0.85 (needs 0.9)"]);
+    const strong = await agent({ scorer: [out], leaning: { Right: 0.8 }, ideologies: { Libertarian: 0.93 } }).agent.score(claim(text));
+    expect(strong.ideologies.map((i) => i.name)).toEqual(["Libertarian"]);
   });
 
-  it("publishes only one of Libertarian and Libertarianism, and drops a general side next to a specific one (I6)", async () => {
+  it("drops a general side next to a specific one (I6)", async () => {
     const text = "Frontier AI labs should be licensed by a federal agency";
     const { agent: a } = agent({
       scorer: [

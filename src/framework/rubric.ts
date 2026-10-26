@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.4";
+export const FRAMEWORK_VERSION = "framework-v3.4.1";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -293,9 +293,6 @@ export type PublishRuleId = (typeof PUBLISH_RULES)[number]["id"];
 /** I6: issues whose sides are general; a side on a more specific issue takes precedence. */
 export const GENERAL_ISSUES = ["Regulation", "Spending & deficit", "Welfare", "Use of force"] as const;
 
-/** I4: near-duplicate traditions; at most one of each group is published on a claim. */
-export const NEAR_DUPLICATE_TRADITIONS = [["Libertarianism", "Libertarian"]] as const;
-
 export const IDEOLOGY_RULES = [
   {
     id: "I1",
@@ -311,7 +308,7 @@ export const IDEOLOGY_RULES = [
   },
   {
     id: "I4",
-    text: `A claim has at most one political leaning but can have several ideological leanings, up to ${PUBLISH.maxIdeologies}. Libertarian and Libertarianism are near-duplicates: only the higher-scoring one is published.`,
+    text: `A claim has at most one political leaning but can have several ideological leanings, up to ${PUBLISH.maxIdeologies}.`,
   },
   {
     id: "I5",

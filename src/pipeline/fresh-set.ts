@@ -62,6 +62,8 @@ export interface FreshSetOptions {
    * (the first spaces take the remainder). A space with too few new claims passes its shortfall on.
    */
   total?: number;
+  /** Only these spaces (by slug); all 7 by default. */
+  spaces?: string[];
   /** Rows per space in the QA sample. */
   perSpace: number;
   /** Rows with a published label to put first in each space's sample (the rest are blanks). */
@@ -87,9 +89,9 @@ export async function drawIds(geo: GeoClient, spaceId: string, want: number, rng
 
 const published = (r: ScoredClaim | null) => Boolean(r && (r.leaning || r.ideologies.length));
 
-/** A space's share of `total` claims split evenly over the spaces, the first ones taking the remainder. */
-export const spaceShare = (total: number, index: number): number =>
-  Math.floor(total / SPACES.length) + (index < total % SPACES.length ? 1 : 0);
+/** A space's share of `total` claims split evenly over `spaces` spaces, the first ones taking the remainder. */
+export const spaceShare = (total: number, index: number, spaces: number = SPACES.length): number =>
+  Math.floor(total / spaces) + (index < total % spaces ? 1 : 0);
 
 /** Scores `pool` never-used claims per space and picks the 10-per-space QA sample from them. */
 export async function buildFreshSet(o: FreshSetOptions): Promise<{ rows: FreshRow[]; stats: FreshStats[] }> {
@@ -97,9 +99,13 @@ export async function buildFreshSet(o: FreshSetOptions): Promise<{ rows: FreshRo
   const rows: FreshRow[] = [];
   const stats: FreshStats[] = [];
   let shortfall = 0;
-  for (const [index, space] of SPACES.entries()) {
+  const chosen = SPACES.filter((s) => !o.spaces || o.spaces.includes(s.slug));
+  if (o.spaces && chosen.length !== o.spaces.length) throw new Error(`Unknown space in ${o.spaces.join(", ")}`);
+  for (const [position, space] of chosen.entries()) {
+    // Seeded by the space's place among all 7, so a space draws the same claims with or without --spaces.
+    const index = SPACES.indexOf(space);
     const rng = seededRng(o.seed * 1000 + index);
-    const want = o.total === undefined ? o.pool : spaceShare(o.total, index) + shortfall;
+    const want = o.total === undefined ? o.pool : spaceShare(o.total, position, chosen.length) + shortfall;
     // Draw extra IDs: some are excluded, have no text or already carry Leanings.
     const ids = (await drawIds(o.geo, space.id, Math.ceil(want * (o.total === undefined ? 1.5 : 2)), rng, o.includes)).filter((id) => !o.exclude.has(id));
     const claims = (await fetchClaims(o.geo, ids)).filter((c) => c.text && c.leaningIds.length === 0).slice(0, want);

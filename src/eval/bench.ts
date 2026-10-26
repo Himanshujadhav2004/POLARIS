@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { z } from "zod";
 import type { ScoredClaim, ScoringAgent } from "../agent/v3/agent.js";
 import { evidenceFound } from "../agent/v3/score.js";
-import { CARD_BY_NAME } from "../framework/ideologies.js";
+import { canonicalName, CARD_BY_NAME } from "../framework/ideologies.js";
 import { FRAMEWORK_VERSION, LEANINGS_LEFT_TO_RIGHT } from "../framework/rubric.js";
 import { fetchClaims, type Claim } from "../geo/claims.js";
 import type { GeoClient } from "../geo/client.js";
@@ -30,6 +30,8 @@ export function loadTestSet(path: string): TestSet {
   const set = TestSet.parse(JSON.parse(readFileSync(path, "utf8")));
   const ids = new Set<string>();
   for (const item of set.items) {
+    // A name Geo merged into another (Libertarianism) counts as the value kept.
+    item.ideologies = [...new Set(item.ideologies.map(canonicalName))];
     if (ids.has(item.id)) throw new Error(`Duplicate test item ${item.id}`);
     ids.add(item.id);
     for (const name of item.ideologies) if (!CARD_BY_NAME.has(name)) throw new Error(`${item.id}: unknown ideology "${name}"`);

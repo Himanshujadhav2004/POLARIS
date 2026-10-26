@@ -63,7 +63,7 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                missed labels; writes evals/results/challenge.<set>.<framework>.json
   fresh-rescore [--dir fresh-seed3] [--concurrency N]
                                Score an existing fresh set again with the current framework
-  fresh-set [--seed 3] [--pool 10 | --total N] [--per-space 10] [--labelled 6] [--includes " should | must "] [--concurrency N]
+  fresh-set [--seed 3] [--pool 10 | --total N] [--spaces us-politics,world-affairs] [--per-space 10] [--labelled 6] [--includes " should | must "] [--concurrency N]
                                Score never-used claims from every space (10 each by default: 70 claims)
                                and pick the 10-per-space QA sample;
                                writes evals/fresh/fresh-seed<N>/fresh.json. With --includes ("|"-separated,
@@ -99,6 +99,7 @@ async function main(argv: string[]): Promise<void> {
       concurrency: { type: "string" },
       pool: { type: "string" },
       total: { type: "string" },
+      spaces: { type: "string" },
       "per-space": { type: "string" },
       labelled: { type: "string" },
       includes: { type: "string" },
@@ -319,6 +320,7 @@ async function main(argv: string[]): Promise<void> {
           seed,
           pool: Number(values.pool ?? 10),
           total: values.total === undefined ? undefined : Number(values.total),
+          spaces: values.spaces?.split(",").map((s) => s.trim()),
           perSpace: Number(values["per-space"] ?? 10),
           labelled: Number(values.labelled ?? 6),
           concurrency: Number(values.concurrency ?? 4),

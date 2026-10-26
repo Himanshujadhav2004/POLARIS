@@ -368,7 +368,7 @@ describe("checkIdeology (I3)", () => {
   });
 });
 
-describe("applyOverlapRules (I6, I4)", () => {
+describe("applyOverlapRules (I6)", () => {
   const cand = (name: string, kind: "issue" | "tradition", issue: string | null, probability = 0.95): IdeologyCandidate => ({
     name,
     kind,
@@ -390,12 +390,8 @@ describe("applyOverlapRules (I6, I4)", () => {
     expect(names(applyOverlapRules([cand("Pro-regulation", "issue", "Regulation"), cand("Progressive", "tradition", null)]))).toEqual(["Pro-regulation", "Progressive"]);
   });
 
-  it("publishes only the higher-scoring of Libertarian and Libertarianism", () => {
-    const r = applyOverlapRules([cand("Libertarian", "tradition", null, 0.91), cand("Libertarianism", "tradition", null, 0.94)]);
-    expect(names(r)).toEqual(["Libertarianism"]);
-    expect(r.dropped[0]).toMatchObject({ name: "Libertarian" });
-    // A tie goes to the first name of the pair.
-    expect(names(applyOverlapRules([cand("Libertarian", "tradition", null, 0.9), cand("Libertarianism", "tradition", null, 0.9)]))).toEqual(["Libertarianism"]);
+  it("never drops a tradition for being next to an issue leaning", () => {
+    expect(names(applyOverlapRules([cand("Pro-gun rights", "issue", "Guns"), cand("Libertarian", "tradition", null)]))).toEqual(["Pro-gun rights", "Libertarian"]);
   });
 });
 

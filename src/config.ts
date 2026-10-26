@@ -50,8 +50,8 @@ export const IDS = {
 } as const;
 
 /**
- * Taxonomy values the agent must never output. Empty since 2026-10-25: Armando's doc describes
- * both "Libertarian" and "Libertarianism", and both are used.
+ * Taxonomy values the agent must never output. Empty: Geo itself removed the duplicate "Libertarianism"
+ * on 2026-10-26 (see MERGED_INTO in src/framework/ideologies.ts).
  */
 export const EXCLUDED_VALUE_IDS: ReadonlySet<string> = new Set();
 

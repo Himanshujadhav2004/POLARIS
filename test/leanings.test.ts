@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { checkTaxonomySync } from "../src/agent/v3/agent.js";
 import { judgeExample, loadExamples } from "../src/eval/examples.js";
-import { CARD_BY_NAME, EXCLUDED_ALIASES, IDEOLOGY_CARDS, ISSUES, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
+import { CARD_BY_NAME, EXCLUDED_ALIASES, IDEOLOGY_CARDS, ISSUES, MERGED_INTO, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
 import data from "../src/framework/leanings.json" with { type: "json" };
 import { buildTaxonomy, type RawValue } from "../src/geo/taxonomy.js";
 
 describe("Armando's leanings data", () => {
-  it("has 27 traditions and 86 issue leanings across 42 issues, each issue with 2–3 sides", () => {
-    expect(IDEOLOGY_CARDS.filter((c) => c.kind === "tradition")).toHaveLength(27);
+  it("has 26 traditions and 86 issue leanings across 42 issues, each issue with 2–3 sides", () => {
+    expect(IDEOLOGY_CARDS.filter((c) => c.kind === "tradition")).toHaveLength(26);
     expect(ISSUES).toHaveLength(42);
     for (const { issue, sides } of ISSUES) {
       expect(sides.length, issue).toBeGreaterThanOrEqual(2);
@@ -21,6 +21,12 @@ describe("Armando's leanings data", () => {
         }
       }
     }
+  });
+
+  it("follows Geo's removal of Libertarianism: no card, another name for Libertarian", () => {
+    expect(CARD_BY_NAME.has("Libertarianism")).toBe(false);
+    expect(CARD_BY_NAME.get("Libertarian")?.aliases).toContain("Libertarianism");
+    expect(data.ideologies.some((i) => i.name === "Libertarianism")).toBe(true); // Armando's data is kept as he wrote it
   });
 
   it("treats Pro-innovation and Techno-optimist, and Pro-Palestinian and Anti-Zionist, as one side", () => {
@@ -59,7 +65,8 @@ describe("Armando's leanings data", () => {
 describe("checkTaxonomySync", () => {
   const leanings = (extra: string[] = []): RawValue[] =>
     [...POLITICAL_LEANING_VALUES.filter((v) => v.geoId), ...extra.map((name) => ({ name, geoId: name }))].map((v) => ({ id: v.geoId!, name: v.name, description: null }));
-  const traditions: RawValue[] = data.ideologies.filter((i) => i.geoId).map((i) => ({ id: i.geoId!, name: i.name, description: null }));
+  // Geo as it is now: the values in Armando's export minus the ones Geo has since merged (Libertarianism).
+  const traditions: RawValue[] = data.ideologies.filter((i) => i.geoId && !MERGED_INTO[i.name]).map((i) => ({ id: i.geoId!, name: i.name, description: null }));
 
   it("accepts Geo as it is today, with Armando's new values still pending", () => {
     expect(() => checkTaxonomySync(buildTaxonomy(leanings(), traditions, new Set()))).not.toThrow();
@@ -83,6 +90,9 @@ describe("Armando's examples", () => {
     expect(set.items.length).toBe(45);
     const marriage = set.items.find((i) => i.text === "Marriage is the best foundation for raising children");
     expect(marriage?.leanings.sort()).toEqual(["Christian conservative", "Conservative", "Social conservative"]);
+    // His Libertarianism label counts as Libertarian since Geo removed the duplicate.
+    const guns = set.items.find((i) => i.text === "The right to own a gun is a fundamental human right");
+    expect(guns?.leanings.sort()).toEqual(["Libertarian", "Pro-gun rights"]);
   });
 
   it("splits published leanings into matched, extra and missed", () => {

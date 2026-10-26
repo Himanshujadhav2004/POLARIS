@@ -18,11 +18,11 @@ import {
   RULES,
 } from "../src/framework/rubric.js";
 
-/** Ideology values on Geo after 2026-10-22 (Fascist and Zionist deleted). Both Libertarian values are used. */
+/** Ideology values on Geo after 2026-10-26 (Fascist and Zionist deleted on 10-22, the duplicate Libertarianism on 10-26). */
 const GEO_IDEOLOGIES = [
   "Anarchist", "Christian conservative", "Classical liberal", "Communist", "Conservative", "Democratic socialist",
   "Environmentalist", "Feminist", "Globalist", "Humanist", "Islamist", "Isolationist", "Liberal", "Libertarian",
-  "Libertarianism", "MAGA", "Marxist", "Nationalist", "Neoconservative", "Neoliberal", "Paleoconservative",
+  "MAGA", "Marxist", "Nationalist", "Neoconservative", "Neoliberal", "Paleoconservative",
   "Populist", "Progressive", "Secularist", "Social democrat", "Socialist", "Traditionalist",
 ];
 

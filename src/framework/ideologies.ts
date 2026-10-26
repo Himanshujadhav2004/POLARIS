@@ -76,7 +76,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   Anarchist: {
     positions: ["Abolish the state or replace it with voluntary association and self-governance.", "Reject coercive hierarchies such as police, prisons or bosses."],
     exclusions: ["Calls to shrink or reform government while keeping it."],
-    neighbours: ["Communist", "Marxist", "Libertarian", "Libertarianism"],
+    neighbours: ["Communist", "Marxist", "Libertarian"],
     typical: ["Far left", "Left", "Right"],
   },
   "Christian conservative": {
@@ -88,7 +88,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   "Classical liberal": {
     positions: ["Protect individual rights and civil liberties, including free speech, against state power.", "Limited, constitutional government under the rule of law.", "Free markets defended as a matter of individual liberty."],
     exclusions: ["A principle shared across the mainstream, such as the rule of law in general (see G4)."],
-    neighbours: ["Libertarian", "Libertarianism", "Liberal", "Neoliberal", "Conservative"],
+    neighbours: ["Libertarian", "Liberal", "Neoliberal", "Conservative"],
     typical: ["Center left", "Center", "Center right", "Right"],
   },
   Communist: {
@@ -163,13 +163,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   Libertarian: {
     positions: ["Sharply limited government.", "Free markets and opposition to economic mandates such as minimum wages.", "Broad personal freedoms, for example on drugs, guns and speech."],
     exclusions: ["Deregulation argued for growth rather than liberty (see Neoliberal)."],
-    neighbours: ["Libertarianism", "Classical liberal", "Anarchist", "Neoliberal"],
-    typical: ALL,
-  },
-  Libertarianism: {
-    positions: ["Individual liberty first, with state power limited in economic and personal affairs.", "Rights such as gun ownership or free expression defended as individual liberty."],
-    exclusions: ["Deregulation argued for growth rather than liberty (see Neoliberal)."],
-    neighbours: ["Libertarian", "Classical liberal", "Anarchist", "Neoliberal"],
+    neighbours: ["Classical liberal", "Anarchist", "Neoliberal"],
     typical: ALL,
   },
   MAGA: {
@@ -199,7 +193,7 @@ const TRADITIONS: Record<string, TraditionDetail> = {
   Neoliberal: {
     positions: ["Market competition and private enterprise as the general engine of growth.", "Deregulation, privatization, free trade and fiscal restraint as a program."],
     exclusions: ["Cutting the rules of one sector or project only.", "Deregulation argued as individual liberty (see Libertarian)."],
-    neighbours: ["Classical liberal", "Libertarian", "Libertarianism", "Conservative", "Globalist"],
+    neighbours: ["Classical liberal", "Libertarian", "Conservative", "Globalist"],
     typical: ["Center left", "Center", "Center right", "Right"],
   },
   Paleoconservative: {
@@ -282,6 +276,14 @@ export const EXCLUDED_ALIASES: Record<string, string[]> = {
   "Pro-innovation": ["Techno-optimist"],
 };
 
+/**
+ * Values Geo deleted as duplicates of another. The deleted value's card is dropped, its name becomes an
+ * alternative name of the value kept, and Armando's labels with the old name count as the kept one.
+ * On 2026-10-26 Geo removed Libertarianism, the near-duplicate of Libertarian.
+ */
+export const MERGED_INTO: Readonly<Record<string, string>> = { Libertarianism: "Libertarian" };
+export const canonicalName = (name: string): string => MERGED_INTO[name] ?? name;
+
 /** Leanings on one issue that are the same side, not opposites, although his doc lists them as one issue's sides. */
 const SAME_SIDE: string[][] = [
   ["Pro-innovation", "Techno-optimist"],
@@ -295,7 +297,11 @@ function toCard(row: LeaningRow): IdeologyCard {
     geoId: row.geoId,
     definition: row.description,
     group: row.group,
-    aliases: [...row.alternativeNames.filter((a) => !excluded.includes(a)), ...(row.slogan ? [`"${row.slogan}"`] : [])],
+    aliases: [
+      ...row.alternativeNames.filter((a) => !excluded.includes(a)),
+      ...Object.keys(MERGED_INTO).filter((from) => MERGED_INTO[from] === row.name),
+      ...(row.slogan ? [`"${row.slogan}"`] : []),
+    ],
     excludedAliases: row.alternativeNames.filter((a) => excluded.includes(a)),
     source: ARMANDO,
     status: "Draft" as const,
@@ -330,7 +336,7 @@ function toCard(row: LeaningRow): IdeologyCard {
   };
 }
 
-export const IDEOLOGY_CARDS: IdeologyCard[] = (data.ideologies as LeaningRow[]).map(toCard);
+export const IDEOLOGY_CARDS: IdeologyCard[] = (data.ideologies as LeaningRow[]).filter((row) => !MERGED_INTO[row.name]).map(toCard);
 
 export const CARD_BY_NAME: ReadonlyMap<string, IdeologyCard> = new Map(IDEOLOGY_CARDS.map((c) => [c.name, c]));
 

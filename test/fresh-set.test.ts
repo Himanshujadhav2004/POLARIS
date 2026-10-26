@@ -92,6 +92,7 @@ describe("spaceShare", () => {
     const shares = Array.from({ length: 7 }, (_, i) => spaceShare(50, i));
     expect(shares).toEqual([8, 7, 7, 7, 7, 7, 7]);
     expect(shares.reduce((a, b) => a + b, 0)).toBe(50);
+    expect([spaceShare(5, 0, 2), spaceShare(5, 1, 2)]).toEqual([3, 2]);
   });
 });
 

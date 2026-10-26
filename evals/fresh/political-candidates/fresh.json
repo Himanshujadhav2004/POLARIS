@@ -1,0 +1,719 @@
+{
+  "name": "political-candidates",
+  "seed": 0,
+  "note": "Not a random sample: real Geo claims that earlier test sets or classifier versions marked as political (test set v1, dev set, QA rounds v1/v2), collected to find claims that get both a political leaning and an ideological leaning under framework v3.4. Scored with fresh-rescore.",
+  "rows": [
+    {
+      "claimId": "86547f225f1a492d826445470152883f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Property taxes on people's homes should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "b60172f03a102f2973466f5cc5a69798",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mail-in voting should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "d08075dfc965cb3a83ace89310296eb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Education should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Cash bail should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "16148774ed6c490b9f8f58514d74df5e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "All illegal aliens should be deported",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "cbff1fa13c3ec8f74e36501fc1d61780",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign students who join campus protests should be deported",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "121d357639a54bc9a7526462c2f697d5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gender-affirming care for minors should be banned",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "1b4c590a4e58590c26006707a5972460",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Drag shows for children should be banned",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "20f8caa87deb4fe0b983d1236ca0b6cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be legal up to fetal viability",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "6bcb7138969c483faa46a922c046207e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Abortion should be illegal even in cases of rape",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Late-term abortion should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "97fdfead23a240f483555ff48b8ece5b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ordering abortion pills should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Race-based affirmative action in college admissions should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "a29794bbc69a4bd0b75b7c8590f867bd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should cut the FEMA workforce by 50%",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "db169bb9591085a36daff2bc7bd018ed",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Europe should cut welfare spending to pay for defense",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "0e36eafead0f4106b2c4bf750a8507f8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Discarding unused embryos from IVF should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "c1870eeda558909aab71f379ca9743cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The government should cut funding to universities that fail to stop antisemitism",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "e98817406d494ba5a67f7886ba50502c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should cut funding to the Smithsonian over its exhibition content",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "5d2ae72c5ad8629d59171f2b87a195ae",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Governments should end lawful immigration enforcement policies that cause disproportionate harm",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "0b1e06a9387041a8b68521ee6009dde7",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The EU should cut its next long-term budget by hundreds of billions of euros",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "1e09eaf24e7728ceadf509bac96213d4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious schools should be banned",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "00c2b2dad6a74f3aa21d974c172a29eb",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Wealthier countries should provide grant-based climate-adaptation funding to vulnerable Himalayan states",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "20ec120ccbb05b578e6a08a87e54db1f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The late stages of capitalism can bring serious issues",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "2053745423c651e48fd0ba32a7783cbe",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Late-stage feminism advocates for the complete elimination of gender roles, which contributes to difficulty in dating",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "32a9bb5f4bbe8189ea52851ec5900a1a",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United States should end its economic embargo on Cuba",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "c8ce4455389f82f6817856bfa8d5ab10",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Blasphemy laws should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "a3587b68b72f6f5a934864f10aee92b9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan should cut regulations that block home construction",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "5047770b00d3679b3bad262f156b8a32",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should end the H-1B visa program",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "2f40f652e04b9a6a846509add4bd4e23",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sharia councils should be banned in Western countries",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "329492b464ba5a818f17807d3b3ae63e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Propaganda and Nazi viewpoints should be banned from social media",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "329c1f2e939d5bcd8cf753e750a18d0a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Hate speech should be illegal if it causes harm to a person",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "07a1ef43ec93adcd0a1b39f1e14e278d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Selling newly made animal-fur clothing should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "0ad100dede4d4869b5f10dfbdd7e0a8e",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Gulf states should expand legal migration pathways for people from the Horn of Africa",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "5b3471739009e6cf770ecef856e3fb69",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Employers should raise pay before recruiting workers from abroad",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "3d80328451913fd3a8a8f7c0fe5f4871",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Severe mental illness should reduce punishment, never eliminate criminal responsibility",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "2be6e12c7d98484a9ed656455167f247",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Gain-of-function research that could cause pandemics, such as modifying viruses to become more transmissible, should be banned.",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "1f2158a51442272cb987b44fee7fc998",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Under-15s should be banned from social media",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "09046cc50842019c0ef7c503a2a9f587",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Governments should be banned from using live facial recognition in public spaces",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "01f14badb63258a9acf2f81dda31d2a4",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "Tech companies should not be allowed to set their own safety guidelines",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "9b677fbebf8c4472a6c8dbb5bc3bf120",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "States should not be allowed to set vaccine schedules that diverge from federal CDC guidance",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "34d515d0812b52ce98abe6d0884293ff",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Genetically enhancing an embryo through genetic modification should not be allowed",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "3d8a48bccb59f4b2f7b7698d1b01c3ec",
+      "space": "ai",
+      "spaceId": "41e851610e13a19441c4d980f2f2ce6b",
+      "text": "The White House Accord on Super Intelligence should be legally binding",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "068f800f052ba2c809f94f701ab85275",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Lifetime alimony should be abolished",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "1e834f17cf7c4f1dbd014f9ce1db134f",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Cryptocurrency mixing services like CoinJoin should be legally banned",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "6c0581918dd346c4b842a1e1d0c82426",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The Czech government should reduce military support for Ukraine",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "8f56f0c35e174f33be2a99fa4429a051",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The United States should reduce or cut military aid to Israel",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "94dd96e01e4a45d6bdd2b5877b812f73",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should increase federal nonprofit security funding to $1 billion annually",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "1cb8dd45c1815a3ee4f5ad49d01f6673",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Deepfakes of political candidates should be illegal",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "02bcb956966144b6bb362ade5a21da07",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The Federal Reserve should raise interest rates at its September 2026 meeting",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "2792d3c733e140a4873081cadbd57cb6",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "BPC-157 should be banned until it passes proper clinical trials",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "307416b5c6244d118e0d4f636f2e85c2",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "The FDA should increase international inspections of imported produce",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "603b2ac63f0c442680270245440d453c",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Canada should reduce its economic dependence on the United States by accelerating trade diversification",
+      "inSample": false,
+      "source": "test-set-v1"
+    },
+    {
+      "claimId": "02d3e6ee405d4b8691dc84b33bebad21",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Birthright citizenship should be ended",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "0533ecd48a16b382d15f725de99c6805",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Inheritance should be heavily taxed",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "07736de6dc19428f9b35004b9edbd92c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Assault weapons should be banned",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "066019796fe54f489aedd0c66b9cd3d9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender women should be allowed to compete in women's sports",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "3fa9573fcfbb4234a67c7fe23b3578a4",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Marriage should be between a man and a woman",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "f2891f4caf7d1d3301e33d5b35e7df9a",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "No-fault divorce should be abolished",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "061379d97ad258bb95134b5e5031a68c",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Traditional gender roles, like the husband being the primary breadwinner, communicate the idea that women are inferior, regardless of the intention",
+      "inSample": false,
+      "source": "dev-set"
+    },
+    {
+      "claimId": "be8b29b591ce5c6fb42c56e53b940e37",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universities remaining politically neutral and respecting both sides of an issue can uphold freedom of speech",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "6beb212c5bbf563fb8c9750010624620",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media companies have a responsibility to remove AI-generated disinformation to safeguard their users",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "17d1bac3decc4007a0fc3df90c456846",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Robinhood's 10x leveraged crypto perpetuals pose unacceptable financial risks to retail investors",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "fdfce452c2fc45d4a2b069550b0d6a59",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The mass demolition of entire Palestinian communities amounts to forcible transfer",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "0a0519b902624a1283fa5da620cf3220",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "The California Coastal Commission's strict permitting process is justified despite emergency threats to infrastructure",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "76f6dd5eac9e4068b585393a9ead2e59",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Latvia should prioritise defence spending despite domestic cost-of-living pressures",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "f0646be0dd3b449e92c020d3867ebd77",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Individuals are in a better position to benefit themselves and others within the institution of marriage",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "20b6085c0d2c54fb8d5bc7e531b0e4c4",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Without pre-made scripts from gender roles, people may be unable to effectively negotiate their roles in new relationships, especially when young",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "543681a7651f57c49cc425161b9bc203",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Women possess the autonomy to explore their sexuality and engage in safe, consensual relationships as they choose",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "c0831b6ffc6159ddbac421ad922bf066",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Adopting traditional gender roles can eliminate the need for a couple to negotiate their respective roles from scratch",
+      "inSample": false,
+      "source": "qa/v1-seed1"
+    },
+    {
+      "claimId": "a234183de12c5295957a4e9955a220cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "In some cases, migration can destabilize a society to the point where its negative impacts outweigh its positive ones",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "3cef8ad32f9251359b523ec1f4e17a40",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Identity is constantly changing, making it an unsuitable fixed point around which to orient a course",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "1469cf7c306193f3bdc9c1ce2d6a8ab8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Omar search chills criticism of the Trump administration by elected officials",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "74b1377d8e2447eeb2e957742259145d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Washington's 2024 legislative map goes too far in using race to draw district boundaries",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "9c13947ec5654e209043448c19c971d9",
+      "space": "health",
+      "spaceId": "52c7ae149838b6d47ce0f3b2a5974546",
+      "text": "Healthcare systems should delay deploying AI screening tools until demographic performance gaps are resolved",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "d2c5710560a54012a3875afea0b96d80",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The SEC should regulate prediction contracts tied to corporate performance",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "ff2273b30eb4456093afc35fa99e6326",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "The corporate press portrays recessions as a negative event to justify government intervention and socialistic spending",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "6b672d0ed7d34300bc8b97c058d61d92",
+      "space": "crypto",
+      "spaceId": "c9f267dcb0d270718c2a3c45a64afd32",
+      "text": "Germany's proposed 50% crypto tax penalty unfairly burdens retail investors",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "1a7843ebaef94ee7aaa9d24ac6691016",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "Western military aid to Saudi Arabia should be strictly limited to defensive operations",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "75895eaf115244d5af80ff9675f5a1db",
+      "space": "world-affairs",
+      "spaceId": "89bd89bf28ff8a0963faf92a8c905e20",
+      "text": "A coalition between Romania's Social Democrats and the far-right AUR is justified",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "64c0d3e0631f4a7ea18c930e6527afd2",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Legalizing insider trading would provide the public with real-time information on the actions of government officials.",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "355d46a5d0c74aceb274b072883371b2",
+      "space": "podcasts",
+      "spaceId": "b5a31f8182b042437ede0f84ee02f104",
+      "text": "Unforced errors contributing to US overstretch include large-scale fiscal expansion since the mid-2000s.",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "42b34fb8ef924a40802431db62fbaf15",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Women are often viewed as objects or service providers in relationships, particularly in marriage",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "f3a0c2bbf7b5b16d3cef0ad2c21bab05",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The pressure to appear self-reliant makes men less resilient",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "a5eea5133e545eed92583994a7051f28",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The movement to make children and parents co-dialogue partners was a mistake and is having negative consequences",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "4b0e98409b7f3c65a7bcf70a13a70542",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "The traditional nuclear family is still the best environment for raising children",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    },
+    {
+      "claimId": "4ac8c30c8c235488a7516c71a181c271",
+      "space": "relationships",
+      "spaceId": "224406e0de3c48d78ef12774111b8b2f",
+      "text": "Men who do not believe women should be on an equal playing field are undesirable partners for women who support feminism",
+      "inSample": false,
+      "source": "qa/v2-seed2"
+    }
+  ]
+}

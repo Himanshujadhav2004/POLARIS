@@ -1,4 +1,4 @@
-# Political leaning and ideology scoring framework (framework-v3.4)
+# Political leaning and ideology scoring framework (framework-v3.4.1)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 
@@ -132,7 +132,7 @@ Two kinds, both of Geo type Ideology: **issue leanings** (one side of an issue, 
 - **I1.** Issue leanings: assign one when the claim itself takes that side of its issue, directly or through an effect that side argues (rule E2), quoting the claim's words. The claim must meet the side's own description (rule I7). Taking another side, only mentioning the issue, reporting someone else's side or a hedged concession never counts, and two opposite sides of one issue are never both assigned.
 - **I2.** Traditions (Armando's convention): assign one only when the position the claim takes is distinctive of the tradition: its adherents typically hold it, and it is not simply the mainstream left or right position, which the political leaning already records. A mainstream Left or Right policy position alone never makes a claim Liberal, Progressive or Conservative (in Armando's table Left is also called "Liberal (US usage)" and Right "Conservative (US usage)"). The topic alone never counts, and the card's exclusions apply. A position argued through its effects counts (rule E2).
 - **I3.** An ideological leaning is published only when all of these hold: its evidence is quoted word for word; the independent probability that the claim takes a position is at least 0.8; the verifier agrees in all 2 of its checks; and all 3 runs find it. For an issue leaning, its independent probability is at least 0.9 and every other side of the issue is at most 0.1; a side the independent check refused to score cannot be ruled out, so it blocks. For a tradition: its independent probability is at least 0.8 when an issue leaning or the political leaning is also published, otherwise at least 0.9; the claim is not hedged; no issue side on the claim is in doubt (another side of its issue scoring above 0.1 or refused, or the verifier rejecting the side); and the tradition is usually found at the claim's leaning, or when it has none at the independent check's most likely leaning if that is at least 0.7. Otherwise it is not published, and the reason is recorded.
-- **I4.** A claim has at most one political leaning but can have several ideological leanings, up to 5. Libertarian and Libertarianism are near-duplicates: only the higher-scoring one is published.
+- **I4.** A claim has at most one political leaning but can have several ideological leanings, up to 5.
 - **I5.** When the independent check gives an issue leaning a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule. Traditions are never added by a second look.
 - **I6.** Specific before general: when an issue that names the claim's topic covers its position (for example Guns, AI, Crypto, Climate, Energy, Minimum wage, Healthcare, Student debt, Foreign aid, Ukraine, Israel–Palestine, Taiwan, China, Iran or Housing), the general side of Regulation, Spending & deficit, Welfare or Use of force is not also assigned. Regulation covers rules on businesses and markets, not on individuals, candidates or officials.
 - **I7.** Alternative names are names people use for a side. They never widen its description: a claim belongs to a side only if it meets the description itself, and sharing words with a name is not enough.
@@ -479,7 +479,7 @@ A political outlook emphasizing individual rights, civil liberties, the rule of 
 - **T2** Limited, constitutional government under the rule of law.
 - **T3** Free markets defended as a matter of individual liberty.
 - Not this tradition: A principle shared across the mainstream, such as the rule of law in general (see G4).
-- Related: Libertarian, Libertarianism, Liberal, Neoliberal, Conservative
+- Related: Libertarian, Liberal, Neoliberal, Conservative
 - Usually found at: Center left, Center, Center right, Right
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
 
@@ -674,7 +674,7 @@ A political and economic outlook favoring market competition and private enterpr
 - **T2** Deregulation, privatization, free trade and fiscal restraint as a program.
 - Not this tradition: Cutting the rules of one sector or project only.
 - Not this tradition: Deregulation argued as individual liberty (see Libertarian).
-- Related: Classical liberal, Libertarian, Libertarianism, Conservative, Globalist
+- Related: Classical liberal, Libertarian, Conservative, Globalist
 - Usually found at: Center left, Center, Center right, Right
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
 
@@ -696,7 +696,7 @@ An outlook prioritizing individual liberty and sharply limited government, usual
 - **T2** Free markets and opposition to economic mandates such as minimum wages.
 - **T3** Broad personal freedoms, for example on drugs, guns and speech.
 - Not this tradition: Deregulation argued for growth rather than liberty (see Neoliberal).
-- Related: Libertarianism, Classical liberal, Anarchist, Neoliberal
+- Related: Classical liberal, Anarchist, Neoliberal
 - Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
 
@@ -735,17 +735,6 @@ A U.S. political outlook supporting reforms or structural changes to expand soci
 - Usually found at: Far left, Left, Center left
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
 
-### Libertarianism (Draft)
-
-A political philosophy that prioritizes individual liberty and limits state power in economic and personal affairs. Libertarian traditions differ on the proper scope of government.
-
-- **T1** Individual liberty first, with state power limited in economic and personal affairs.
-- **T2** Rights such as gun ownership or free expression defended as individual liberty.
-- Not this tradition: Deregulation argued for growth rather than liberty (see Neoliberal).
-- Related: Libertarian, Classical liberal, Anarchist, Neoliberal
-- Usually found at: Far left, Left, Center left, Center, Center right, Right, Far right
-- Source: Armando's Notion doc "Leanings" (2026-10-23)
-
 ### Christian conservative (Draft)
 
 A political outlook that draws on Christian beliefs to shape public policy, particularly on abortion, marriage, religious liberty, and education.
@@ -777,7 +766,7 @@ A political outlook opposing the state and other coercive hierarchies and favori
 - **T1** Abolish the state or replace it with voluntary association and self-governance.
 - **T2** Reject coercive hierarchies such as police, prisons or bosses.
 - Not this tradition: Calls to shrink or reform government while keeping it.
-- Related: Communist, Marxist, Libertarian, Libertarianism
+- Related: Communist, Marxist, Libertarian
 - Usually found at: Far left, Left, Right
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
 

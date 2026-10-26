@@ -3,7 +3,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { z } from "zod";
 import type { ScoredClaim, ScoringAgent } from "../agent/v3/agent.js";
 import { spaceBySlug } from "../config.js";
-import { CARD_BY_NAME } from "../framework/ideologies.js";
+import { canonicalName, CARD_BY_NAME } from "../framework/ideologies.js";
 import { FRAMEWORK_VERSION, LEANINGS_LEFT_TO_RIGHT } from "../framework/rubric.js";
 import type { Claim } from "../geo/claims.js";
 import { mapPool } from "../util/pool.js";
@@ -40,6 +40,9 @@ export type ChallengeItem = z.infer<typeof Challenge>["items"][number];
 export function loadChallenge(path: string): { version: string; items: ChallengeItem[] } {
   const set = Challenge.parse(JSON.parse(readFileSync(path, "utf8")));
   for (const item of set.items) {
+    // A name Geo merged into another (Libertarianism) counts as the value kept.
+    item.expectIdeologies = [...new Set(item.expectIdeologies.map(canonicalName))];
+    item.acceptIdeologies = [...new Set(item.acceptIdeologies.map(canonicalName))];
     spaceBySlug(item.space);
     for (const name of [...item.expectIdeologies, ...item.acceptIdeologies]) if (!CARD_BY_NAME.has(name)) throw new Error(`${item.id}: unknown leaning "${name}"`);
   }
