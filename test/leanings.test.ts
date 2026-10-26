@@ -89,13 +89,16 @@ describe("checkTaxonomySync", () => {
     expect(sync(leanings(["Nonpartisan"]), traditions, issues)).not.toThrow();
   });
 
-  it("refuses a value without a card, a card missing from Geo, the wrong type, a changed description and an unknown leaning", () => {
+  it("refuses a value without a card, a card missing from Geo, the wrong type and an unknown leaning", () => {
     expect(sync(leanings(), [...traditions, { id: "x", name: "Accelerationist", description: null }], issues)).toThrow(/no card/);
     expect(sync(leanings(), traditions.filter((t) => t.name !== "Populist"), issues)).toThrow(/"Populist" is not a Ideological leaning on Geo/);
     const social = traditions.find((t) => t.name === "Social conservative")!;
     expect(sync(leanings(), traditions.filter((t) => t !== social), [...issues, social])).toThrow(/is of type Issue position on Geo but its card is a tradition/);
-    expect(sync(leanings(), traditions, issues.map((i) => (i.name === "Pro-life" ? { ...i, description: "Changed." } : i)))).toThrow(/changed the description of "Pro-life"/);
     expect(sync(leanings(["Moderate"]), traditions, issues)).toThrow(/unknown political leaning "Moderate"/);
+  });
+
+  it("takes definitions from Armando's Notion doc, not from Geo's text", () => {
+    expect(sync(leanings(), traditions.map((t) => ({ ...t, description: "Identifies with something." })), issues)).not.toThrow();
   });
 });
 

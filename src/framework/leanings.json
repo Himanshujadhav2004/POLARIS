@@ -1032,7 +1032,7 @@
     {
       "name": "Social conservative",
       "kind": "tradition",
-      "description": "Identifies with social conservatism, seeking to preserve traditional norms on family, marriage, sexuality, religion and gender.",
+      "description": "Political outlook favoring traditional social institutions and moral norms, especially concerning family, religion, sexuality, and gender.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [
@@ -1830,7 +1830,7 @@
     {
       "name": "Classical liberal",
       "kind": "tradition",
-      "description": "Identifies with classical liberalism, favoring individual rights, the rule of law, constitutionally limited government and free markets.",
+      "description": "Political philosophy emphasizing individual liberty, civil liberties, private property, the rule of law, and limits on government power; views on the state's economic role vary.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -1842,7 +1842,7 @@
     {
       "name": "Nationalist",
       "kind": "tradition",
-      "description": "Identifies with nationalism, placing the interests, identity and sovereignty of the nation at the center of politics.",
+      "description": "Political outlook that gives special importance to national identity and self-government and prioritizes the nation's interests. Nationalist traditions differ on citizenship, ethnicity, and international cooperation.",
       "issue": null,
       "group": "Foreign policy",
       "alternativeNames": [],
@@ -1854,7 +1854,7 @@
     {
       "name": "Globalist",
       "kind": "tradition",
-      "description": "Identifies with globalism, favoring international economic integration, open trade and strong multilateral institutions.",
+      "description": "Political outlook favoring international integration and cooperation in economic and foreign affairs. The label has several meanings and is also used pejoratively.",
       "issue": null,
       "group": "Foreign policy",
       "alternativeNames": [],
@@ -1866,7 +1866,7 @@
     {
       "name": "Secularist",
       "kind": "tradition",
-      "description": "Identifies with secularism, wanting government and public institutions kept separate from religious authority and neutral toward belief.",
+      "description": "Political outlook favoring state neutrality toward religion and belief and limits on religious authority over government. Secularism does not require individuals to be nonreligious.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -1878,7 +1878,7 @@
     {
       "name": "Conservative",
       "kind": "tradition",
-      "description": "Identifies with conservatism, valuing inherited institutions, customs and social continuity and preferring gradual change over rupture.",
+      "description": "Political tradition valuing inherited institutions, customs, and social continuity and generally favoring cautious change. Its policies and understanding of tradition vary across countries and periods.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -1890,7 +1890,7 @@
     {
       "name": "Paleoconservative",
       "kind": "tradition",
-      "description": "Identifies with paleoconservatism, emphasizing tradition, national sovereignty, restricted immigration and non-interventionism.",
+      "description": "A U.S. conservative current emphasizing national sovereignty, cultural tradition, restrictive immigration, and restraint in foreign intervention.",
       "issue": null,
       "group": "Foreign policy",
       "alternativeNames": [],
@@ -1902,7 +1902,7 @@
     {
       "name": "MAGA",
       "kind": "tradition",
-      "description": "Identifies with the MAGA movement around Donald Trump, supporting America First trade and foreign policy, restrictive immigration and opposition to political elites.",
+      "description": "Political movement and associated nationalist-populist outlook centered on Donald Trump's Make America Great Again slogan, emphasizing America First policies, immigration restrictions, and opposition to political elites.",
       "issue": null,
       "group": "Foreign policy",
       "alternativeNames": [],
@@ -1914,7 +1914,7 @@
     {
       "name": "Democratic socialist",
       "kind": "tradition",
-      "description": "Identifies with democratic socialism, seeking social ownership or democratic control of the economy through elections rather than revolution.",
+      "description": "Socialist outlook combining political democracy with social ownership and democratic control of economic life. It is distinct from policies that solely regulate capitalism or expand welfare.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -1926,7 +1926,7 @@
     {
       "name": "Liberal",
       "kind": "tradition",
-      "description": "Identifies with liberalism; in US usage, supports civil liberties, equal rights and an active state that reduces inequality.",
+      "description": "In contemporary U.S. politics, an outlook supporting civil liberties, equal rights, and government action to address social and economic inequalities. Liberalism has broader and differing meanings internationally.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -1938,7 +1938,7 @@
     {
       "name": "Socialist",
       "kind": "tradition",
-      "description": "Identifies with socialism, favoring social ownership or democratic control of the means of production over private ownership.",
+      "description": "Family of political and economic views favoring social ownership or democratic control of productive resources rather than their predominantly private ownership. Socialist traditions differ on markets, planning, and political strategy.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -1950,7 +1950,7 @@
     {
       "name": "Feminist",
       "kind": "tradition",
-      "description": "Identifies with feminism, seeking political, economic and social equality between the sexes and challenging gender-based discrimination.",
+      "description": "Family of social and political perspectives seeking equality for women and challenging sex- and gender-based subordination. Feminist traditions differ in their explanations of inequality and proposed remedies.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -1962,7 +1962,7 @@
     {
       "name": "Marxist",
       "kind": "tradition",
-      "description": "Identifies with Marxism, analyzing history and politics through class struggle and the critique of capitalism.",
+      "description": "Social and political outlook drawing on Karl Marx's analysis of class relations, historical change, and capitalism, including its critique of exploitation and class domination.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -1974,7 +1974,7 @@
     {
       "name": "Neoconservative",
       "kind": "tradition",
-      "description": "Identifies with neoconservatism, pairing conservative domestic positions with an assertive foreign policy that promotes democracy and American power abroad.",
+      "description": "A conservative outlook associated with an assertive U.S. foreign policy, military strength, and support for promoting democracy abroad.",
       "issue": null,
       "group": "Foreign policy",
       "alternativeNames": [],
@@ -1986,7 +1986,7 @@
     {
       "name": "Communist",
       "kind": "tradition",
-      "description": "Identifies with communism, seeking a classless society based on common ownership of the means of production.",
+      "description": "Political ideology seeking a classless society based on common ownership of productive resources. Communist traditions differ over how to achieve that goal and the role of the state.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -1998,7 +1998,7 @@
     {
       "name": "Social democrat",
       "kind": "tradition",
-      "description": "Identifies with social democracy, supporting a market economy with a large welfare state, strong labor protections and progressive taxation.",
+      "description": "In its contemporary sense, a political tradition supporting a predominantly market economy alongside democratic government, economic regulation, labor protections, and extensive public services and social welfare.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -2010,7 +2010,7 @@
     {
       "name": "Humanist",
       "kind": "tradition",
-      "description": "Identifies with humanism, taking human dignity, reason and well-being as the basis of morality and public life.",
+      "description": "Ethical and philosophical worldview emphasizing human dignity, reason, and human welfare. Broader than a specifically political ideology, humanism includes both religious and nonreligious traditions.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -2022,7 +2022,7 @@
     {
       "name": "Traditionalist",
       "kind": "tradition",
-      "description": "Identifies with traditionalism, treating inherited customs, religion and long-standing institutions as the foundation of society.",
+      "description": "An outlook that values inherited customs and institutions and favors preserving social continuity over rapid change.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -2034,7 +2034,7 @@
     {
       "name": "Neoliberal",
       "kind": "tradition",
-      "description": "Identifies with neoliberalism, favoring free markets, deregulation, privatization, free trade and fiscal restraint.",
+      "description": "Contested label for political and economic ideas emphasizing markets, private enterprise, and competition, often associated with privatization, deregulation, and trade liberalization; views on welfare and state institutions vary.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -2046,7 +2046,7 @@
     {
       "name": "Populist",
       "kind": "tradition",
-      "description": "Identifies with populism, framing politics as a struggle between ordinary people and a corrupt elite.",
+      "description": "Political outlook presenting society as divided between the people and a corrupt elite and demanding that politics express the people's will. It can combine with left-wing or right-wing ideologies.",
       "issue": null,
       "group": "Justice & democracy",
       "alternativeNames": [],
@@ -2058,7 +2058,7 @@
     {
       "name": "Libertarian",
       "kind": "tradition",
-      "description": "Identifies with libertarianism, giving priority to individual liberty and seeking to minimize state coercion in economic and personal life.",
+      "description": "Political outlook giving individual liberty priority and opposing coercive interference. In contemporary U.S. usage, it commonly combines strong private-property rights and market freedom with civil liberties.",
       "issue": null,
       "group": "Economy",
       "alternativeNames": [],
@@ -2070,7 +2070,7 @@
     {
       "name": "Islamist",
       "kind": "tradition",
-      "description": "Identifies with Islamism, holding that Islamic law and principles should shape government and public life.",
+      "description": "Family of political outlooks seeking to organize government and public life according to interpretations of Islamic principles. Islamist movements differ substantially and should not be equated with Islam or Muslim identity.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -2082,7 +2082,7 @@
     {
       "name": "Environmentalist",
       "kind": "tradition",
-      "description": "Identifies with environmentalism, putting protection of the natural environment and the climate at the center of public policy.",
+      "description": "Broad social and political outlook placing protection of the natural environment at the center of public concerns, including conservation, pollution prevention, and ecological sustainability.",
       "issue": null,
       "group": "Climate energy & tech",
       "alternativeNames": [],
@@ -2094,7 +2094,7 @@
     {
       "name": "Progressive",
       "kind": "tradition",
-      "description": "Identifies with progressivism, supporting social reform to advance equality, civil rights and the public good through government action.",
+      "description": "A U.S. political outlook supporting reforms or structural changes to expand social and economic equality, civil rights, and environmental protection.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -2118,7 +2118,7 @@
     {
       "name": "Christian conservative",
       "kind": "tradition",
-      "description": "Identifies with Christian conservatism, bringing Christian moral teaching into politics on family, marriage, abortion and religious liberty.",
+      "description": "Conservative political outlook informed by Christian beliefs and moral traditions, often emphasizing religion's public role and traditional views on family, marriage, and abortion.",
       "issue": null,
       "group": "Society",
       "alternativeNames": [],
@@ -2142,7 +2142,7 @@
     {
       "name": "Anarchist",
       "kind": "tradition",
-      "description": "Identifies with anarchism, opposing the state and other coercive hierarchies and favoring voluntary association and self-governance.",
+      "description": "A political outlook opposing the state and other coercive hierarchies and favoring voluntary association and self-governance. Anarchist traditions differ widely on property, markets, and social organization.",
       "issue": null,
       "group": "Justice & democracy",
       "alternativeNames": [],

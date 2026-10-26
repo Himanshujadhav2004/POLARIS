@@ -1,6 +1,7 @@
 // Brings src/framework/leanings.json in line with Geo's three Leanings types (split on 2026-10-26):
 // Political position (formerly Political leaning), Ideological leaning (formerly Ideology) and Issue position.
-// For every card: the Geo ID, the Geo name, which of the two types it is, and Geo's live description.
+// For every card: the Geo ID, the Geo name and which of the two types it is, from Geo; the description
+// from Armando's Notion doc (the reference for definitions, chosen by the user on 2026-10-26).
 // A card Geo renamed loses its old alternative names, since several renames changed the meaning
 // (Pro-Russia is now "Ukraine aid skeptic"). Usage: npx tsx scripts/sync-geo-leanings.mts
 import { readFileSync, writeFileSync } from "node:fs";
@@ -29,6 +30,33 @@ interface Live {
   name: string;
   description: string | null;
 }
+
+/** Armando's Notion doc "Leanings" (export of 2026-10-26): the reference for every definition. */
+const DOC = "docs/armando/leanings-2026-10-26/ideological-leanings.csv";
+function parseCsv(text: string): string[][] {
+  const rows: string[][] = [];
+  let row: string[] = [];
+  let field = "";
+  let quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i]!;
+    if (quoted) {
+      if (c === '"' && text[i + 1] === '"') (field += '"'), i++;
+      else if (c === '"') quoted = false;
+      else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ",") row.push(field), (field = "");
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field), rows.push(row), (row = []), (field = "");
+    } else field += c;
+  }
+  if (field || row.length) row.push(field), rows.push(row);
+  return rows.filter((r) => r.length > 1);
+}
+const [header, ...docRows] = parseCsv(readFileSync(DOC, "utf8").replace(/^﻿/, ""));
+const col = (name: string) => header!.indexOf(name);
+const DOC_DESCRIPTIONS = new Map(docRows.map((r) => [r[col("Geo ID")]!.split("/").pop()!, r[col("Description")]!.trim()]));
 
 const geo = new GeoClient();
 const live = await geo.query<{ ideologies: Live[]; issues: Live[] }>(
@@ -66,8 +94,13 @@ for (const row of data.ideologies) {
     if (kind === "issue") row.group = NEW_ISSUES[name]!.group;
     row.otherSides = [];
   }
-  const description = value.description?.trim() ?? "";
-  if (description && description !== row.description) row.description = description;
+  // Definitions come from Armando's Notion doc, matched by Geo ID; Geo's own text is not used.
+  const description = DOC_DESCRIPTIONS.get(value.id);
+  if (!description) throw new Error(`"${name}" (${value.id}) is not in ${DOC}`);
+  if (description !== row.description) {
+    changes.push(`${name}: description from the Notion doc`);
+    row.description = description;
+  }
   row.geoId = value.id;
 }
 const issueNames = new Set(data.ideologies.filter((r) => r.kind === "issue").map((r) => r.name));

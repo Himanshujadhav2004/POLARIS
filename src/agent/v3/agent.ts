@@ -122,11 +122,13 @@ const SECOND_LOOK_SCHEMA = {
 };
 
 /**
- * The agent refuses to run when Geo and the framework disagree:
+ * The agent refuses to run when Geo and the framework disagree on what exists:
  * - every Ideological leaning value on Geo needs a tradition card, and every Issue position value an
- *   issue card, with the same Geo ID and Geo's live description (scripts/sync-geo-leanings.mts);
+ *   issue card, with the same Geo ID (scripts/sync-geo-leanings.mts);
  * - every card must be one of those values on Geo;
  * - the Political position values must be the 7 spectrum values, plus Nonpartisan if present.
+ * Definitions are not compared: they come from Armando's Notion doc "Leanings" (docs/armando/), the
+ * reference the user chose on 2026-10-26, while Geo's descriptions were still being rewritten.
  */
 export function checkTaxonomySync(taxonomy: Taxonomy): void {
   const problems: string[] = [];
@@ -140,7 +142,6 @@ export function checkTaxonomySync(taxonomy: Taxonomy): void {
       if (!card) problems.push(`Geo has the ${type} "${v.name}" but there is no card for it`);
       else if (card.kind !== kind) problems.push(`"${v.name}" is of type ${type} on Geo but its card is a ${card.kind}`);
       else if (card.geoId !== v.id) problems.push(`the card "${v.name}" has Geo ID ${card.geoId}, but Geo's value is ${v.id}`);
-      else if (v.description && card.definition !== v.description) problems.push(`Geo changed the description of "${v.name}"`);
     }
     for (const card of IDEOLOGY_CARDS.filter((c) => c.kind === kind)) {
       if (!values.some((v) => v.id === card.geoId)) problems.push(`the card "${card.name}" is not a ${type} on Geo`);
@@ -170,15 +171,6 @@ export class ScoringAgent {
     options: ScoringAgentOptions = {},
   ) {
     checkTaxonomySync(taxonomy);
-    const defs = taxonomy.definitions;
-    if (defs) {
-      const stale = [
-        defs.politicalLeaning !== null && defs.politicalLeaning !== POLITICAL_LEANING_DEFINITION ? `Political position (Geo now says: "${defs.politicalLeaning}")` : null,
-        defs.ideology !== null && defs.ideology !== IDEOLOGY_DEFINITION ? `Ideological leaning (Geo now says: "${defs.ideology}")` : null,
-        defs.issuePosition !== null && defs.issuePosition !== ISSUE_POSITION_DEFINITION ? `Issue position (Geo now says: "${defs.issuePosition}")` : null,
-      ].filter(Boolean);
-      if (stale.length) throw new Error(`Framework definitions are out of sync with Geo: ${stale.join("; ")}. Update src/framework/rubric.ts.`);
-    }
     this.model = options.model ?? OPENAI_MODEL;
     this.client = options.client ?? new OpenAI({ apiKey: requireEnv("OPENAI_API_KEY"), maxRetries: 5, timeout: 300_000 });
     this.questions = buildDecisionQuestions(taxonomy);

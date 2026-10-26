@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.5.1";
+export const FRAMEWORK_VERSION = "framework-v3.5.2";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -54,17 +54,18 @@ export function levelRulesText(): string {
 }
 
 /**
- * Geo's own type descriptions. The agent refuses to run if Geo's live text differs (see ScoringAgent).
- * Political position (named Political leaning until 2026-10-26), word for word.
+ * The type descriptions, word for word from Armando's Notion doc "Leanings"
+ * (docs/armando/leanings-2026-10-26/leanings.md, "Live description"), the reference for definitions.
+ * Political position (named Political leaning until 2026-10-26).
  */
 export const POLITICAL_LEANING_DEFINITION =
   "Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.";
-/** Geo's description of the Ideological leaning type (named Ideology until 2026-10-26; rewritten on Geo the same evening), word for word. */
+/** Ideological leaning (the doc's Political ideology; Geo renamed the type on 2026-10-26). */
 export const IDEOLOGY_DEFINITION =
-  "An identification with an ideological tradition, naming those who follow it rather than the doctrine, such as communist or libertarian. Its Ideology property points to the doctrine itself, recorded as a Ideological leaning.";
-/** Geo's description of the Issue position type (new on 2026-10-26), word for word. */
+  "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist.";
+/** Issue position (new on 2026-10-26). */
 export const ISSUE_POSITION_DEFINITION =
-  "A side taken on one specific policy question, such as pro-life on abortion or protectionist on trade. Unlike Political position or Ideological leaning, it places an entity on a single issue rather than on a spectrum or worldview.";
+  "A side taken on one specific policy question, such as pro-life on abortion or protectionist on trade. Unlike Political position or Political ideology, it places an entity on a single issue rather than on a spectrum or worldview.";
 /** The Leanings property, from Armando's doc. It holds one political leaning and any ideological leanings. */
 export const LEANINGS_PROPERTY_DEFINITION =
   "The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview.";
