@@ -1,0 +1,44 @@
+[
+ {
+  "id": "6bcb7138969c483faa46a922c046207e",
+  "claim": "Abortion should be illegal even in cases of rape",
+  "oldPos": "Right",
+  "old": "Pro-life",
+  "pos": "Right",
+  "ide": "Christian conservative",
+  "iss": "Pro-life",
+  "all3": true,
+  "published": false,
+  "excludeIdeology": [
+   "Christian conservative"
+  ]
+ },
+ {
+  "id": "97fdfead23a240f483555ff48b8ece5b",
+  "claim": "Ordering abortion pills should be illegal",
+  "oldPos": "Right",
+  "old": "Pro-life",
+  "pos": "Right",
+  "ide": "Christian conservative",
+  "iss": "Pro-life",
+  "all3": true,
+  "published": false,
+  "excludeIdeology": [
+   "Christian conservative"
+  ]
+ },
+ {
+  "id": "73aef60360f4465ba5238f45c806aaa5",
+  "claim": "Abortion should be banned nationwide",
+  "oldPos": "Right",
+  "old": "Pro-life",
+  "pos": "Right",
+  "ide": "Christian conservative",
+  "iss": "Pro-life",
+  "all3": true,
+  "published": false,
+  "excludeIdeology": [
+   "Christian conservative"
+  ]
+ }
+]

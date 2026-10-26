@@ -1,0 +1,874 @@
+{
+  "model": "gpt-5.5",
+  "generatedAt": "2026-10-26T16:51:21.682Z",
+  "rows": [
+    {
+      "id": "94c0669ef0a54476a4b6cb253c7984ee",
+      "claim": "Same-sex marriage should be legal nationwide",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "Same-sex marriage should be legal nationwide",
+        "confidence": "medium",
+        "reason": "The claim supports civil liberties and equal legal rights, which most closely fits contemporary U.S. liberalism, though it states only one issue position rather than a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-LGBTQ rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "1a167acc6a57ea552957258158b0cfbb",
+      "claim": "Minimum wages should rise automatically with the cost of living",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"Minimum wages should rise automatically with the cost of living\"",
+        "confidence": "medium",
+        "reason": "The claim aligns with a progressive outlook focused on economic fairness and improving workers' conditions, though it does not explicitly name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-living wage",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "4b69e8a281525f4faef63cff0190b83b",
+      "claim": "On the whole, the benefits of migration to the United States have been positive",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Globalist",
+        "source": "agent"
+      },
+      "issuePosition": {
+        "value": "Pro-immigration",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "4b142b070e944f7fb54ed77057bf79b6",
+      "claim": "Universal background checks should be required for every gun sale",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "\"Universal background checks should be required for every gun sale\"",
+        "confidence": "medium",
+        "reason": "The claim supports government regulation of firearm sales to promote public safety, a position commonly associated with contemporary U.S. liberalism, though no broad ideology is explicitly named.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-gun control",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "148b0cf1d60c4319b499d376ef6bf38f",
+      "claim": "Climate change is an existential threat that requires urgent government action",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Environmentalist",
+        "source": "agent"
+      },
+      "issuePosition": {
+        "value": "Pro-climate action",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "ec0a71df06f74225bf6811508b2ca4df",
+      "claim": "Voter ID laws disproportionately burden minority voters",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "\"disproportionately burden minority voters\"",
+        "confidence": "medium",
+        "reason": "Emphasis on equal rights and protection against disparate burdens on minority voters is closely associated with contemporary U.S. liberalism.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-voting rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "f7bdffdd5f06e4b760247767b6989a32",
+      "claim": "The death penalty should be abolished",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "The death penalty should be abolished",
+        "confidence": "low",
+        "reason": "Death-penalty abolition is commonly associated with contemporary U.S. liberal commitments to civil liberties and criminal-justice reform, but the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Death penalty abolitionist",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "claim": "Abortion should be legal",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "Abortion should be legal",
+        "confidence": "medium",
+        "reason": "Legal abortion access is commonly associated with contemporary U.S. liberalism, though the claim states only one issue position rather than a full ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-choice",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "9d5c11e66b50480babdef68c7a4c0d05",
+      "claim": "Student loan debt should be forgiven",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"Student loan debt should be forgiven\"",
+        "confidence": "medium",
+        "reason": "The claim aligns most closely with progressive politics, which often support government action to reduce economic burdens and expand opportunity.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-student debt relief",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "claim": "Cash bail should be abolished",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "Cash bail should be abolished",
+        "confidence": "medium",
+        "reason": "The claim supports a reform aimed at reducing inequities in the criminal justice system, which aligns most closely with progressive politics.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-criminal justice reform",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "2891bbcc75ef40ea8209a5f9b474a320",
+      "claim": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "raise taxes on high earners to fund middle-class tax cuts",
+        "confidence": "medium",
+        "reason": "The claim supports government tax policy to reduce economic inequality, which aligns with contemporary U.S. liberalism, though it does not explicitly name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Progressive taxation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "e210a6fc4e564336b9cf4dae18dadf93",
+      "claim": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"raise taxes on corporations and billionaires to fund targeted tax credits\"",
+        "confidence": "medium",
+        "reason": "The claim favors using taxation and credits to redistribute resources or support targeted groups, which aligns most closely with a progressive outlook, though no ideology is named explicitly.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Progressive taxation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "0533ecd48a16b382d15f725de99c6805",
+      "claim": "Inheritance should be heavily taxed",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"Inheritance should be heavily taxed\"",
+        "confidence": "medium",
+        "reason": "The claim supports using tax policy to reduce inherited wealth advantages, which is clearly associated with progressive economic equality goals, though it does not name a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Progressive taxation",
+        "evidence": "\"Inheritance should be heavily taxed\"",
+        "confidence": "high",
+        "reason": "A heavy inheritance tax is a tax structure aimed at imposing higher burdens on wealth transfers, fitting progressive taxation.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "07736de6dc19428f9b35004b9edbd92c",
+      "claim": "Assault weapons should be banned",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "Assault weapons should be banned",
+        "confidence": "medium",
+        "reason": "Gun-control measures such as banning assault weapons are commonly associated with contemporary U.S. liberal politics, though the claim states only a single policy stance rather than a full ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-gun control",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "5624df882f58407f94d76fd377743a45",
+      "claim": "People should be able to change their gender on their government documents",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "People should be able to change their gender on their government documents",
+        "confidence": "medium",
+        "reason": "Support for equal legal recognition and civil rights for transgender people aligns most closely with contemporary U.S. liberalism, though the claim is issue-specific rather than a broad ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-transgender rights, Pro-LGBTQ rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "87a5bfc3c1364781816b7d7d207634ff",
+      "claim": "A person whose name is on the voting roll should be allowed to vote without additional identification requirements",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "\"A person whose name is on the voting roll should be allowed to vote\"",
+        "confidence": "medium",
+        "reason": "The claim emphasizes voting access and civil participation, which fits contemporary U.S. liberal support for civil rights and equal access to the ballot.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-voting rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "bc2fff62681c67e64c70c040554cb593",
+      "claim": "High earners should pay Social Security tax on all their income",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "\"High earners should pay Social Security tax on all their income\"",
+        "confidence": "low",
+        "reason": "The claim aligns loosely with contemporary U.S. liberal support for government social insurance and higher taxes on the wealthy, but it does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-entitlement reform",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "0a675161bf794021ac07b6c21a56e8a4",
+      "claim": "The wealthy should pay significantly higher taxes",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "The wealthy should pay significantly higher taxes",
+        "confidence": "medium",
+        "reason": "The claim supports redistributive tax policy associated with progressive efforts to reduce economic inequality, though it does not state a full ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Progressive taxation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "51f7eb32e5985ba8c4a53e2b4ea93871",
+      "claim": "The US should abolish work requirements for welfare benefits",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "abolish work requirements for welfare benefits",
+        "confidence": "medium",
+        "reason": "The claim favors making welfare more accessible, which is clearly associated with progressive efforts to reduce economic hardship and expand social support, though it does not state a full ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-welfare expansion",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "9df6a915a66d4e5381f68b5306013287",
+      "claim": "Conversion therapy should be banned",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "\"Conversion therapy should be banned\"",
+        "confidence": "medium",
+        "reason": "The claim aligns with contemporary U.S. liberal support for equal rights and legal protections for LGBTQ people, though it states only one policy.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-LGBTQ rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "dacf8b0c651be6b2e51ff9dab7faa278",
+      "claim": "Public companies should be banned from buying back their shares",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "“Public companies should be banned from buying back their shares”",
+        "confidence": "medium",
+        "reason": "The claim aligns with progressive critiques of corporate power and support for reforms limiting shareholder-focused corporate behavior.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-regulation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "b1a1520b2cb83bde5791a330d13219f2",
+      "claim": "Fashion brands should be banned from destroying unsold clothing",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Environmentalist",
+        "evidence": "\"destroying unsold clothing\"",
+        "confidence": "medium",
+        "reason": "Opposing destruction of unsold clothing is most clearly associated with reducing waste and environmental harm, though the claim does not explicitly mention the environment.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-regulation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "be0f530d211f3f552d9b5524da5b9a91",
+      "claim": "Private prisons should be banned",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"Private prisons should be banned\"",
+        "confidence": "low",
+        "reason": "The position aligns loosely with progressive criminal-justice reform priorities, but the claim does not explicitly state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-criminal justice reform",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "538b3931c2619c67cc94840a5745b097",
+      "claim": "Fashion brands should be legally responsible for labor conditions across their supply chains",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Progressive",
+        "evidence": "\"legally responsible for labor conditions across their supply chains\"",
+        "confidence": "medium",
+        "reason": "Emphasizing worker protections and corporate accountability aligns most closely with progressive politics, though the claim does not name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-regulation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "9fcd2847cc63e055901dc7ca215910aa",
+      "claim": "Companies should be required to put women on their boards",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Feminist",
+        "evidence": "put women on their boards",
+        "confidence": "high",
+        "reason": "The claim directly seeks increased representation of women in corporate leadership, a core feminist concern.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-equity",
+        "evidence": "Companies should be required to put women on their boards",
+        "confidence": "high",
+        "reason": "The claim supports an equity-oriented requirement to address underrepresentation of women in board positions.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "646b21ea4af241f09381fd86dcb4d25d",
+      "claim": "California should restrict law enforcement activities near polling places",
+      "politicalPosition": {
+        "value": "Left",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Liberal",
+        "evidence": "restrict law enforcement activities near polling places",
+        "confidence": "medium",
+        "reason": "The claim emphasizes voting access and civil-liberties protections against potential state intimidation, which fits contemporary U.S. liberalism.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-voting rights",
+        "evidence": "restrict law enforcement activities near polling places",
+        "confidence": "medium",
+        "reason": "The specific policy would limit law-enforcement activity around polling sites, best fitting a stance aimed at protecting access to voting and participation in elections.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "claim": "Families already paying private-school tuition deserve federal school-choice support",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "\"Families already paying private-school tuition deserve federal school-choice support\"",
+        "confidence": "medium",
+        "reason": "Support for school choice and private-school tuition assistance is commonly associated with contemporary U.S. conservative education policy, though the claim does not explicitly name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-school choice",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "187ce0019d6146cba0d08ad9bbcef17b",
+      "claim": "Raising the minimum wage kills jobs",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "Raising the minimum wage kills jobs",
+        "confidence": "low",
+        "reason": "The claim implies skepticism toward government wage regulation, which is commonly associated with conservative economic views, though no broader ideology is stated.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-market wages",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "024eda17a14c9ffa7643edf89df0892a",
+      "claim": "The right to own a gun is a fundamental human right",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Libertarian",
+        "evidence": "\"right to own a gun is a fundamental human right\"",
+        "confidence": "medium",
+        "reason": "The claim frames gun ownership as an individual right, which aligns with libertarian emphasis on individual liberty and limits on government interference, though it does not state a full libertarian worldview.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-gun rights",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "c381476542ef4d8087cf2d209abdb8f8",
+      "claim": "Trump's immigration crackdown makes the United States safer",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "MAGA",
+        "source": "agent"
+      },
+      "issuePosition": {
+        "value": "Pro-border security",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "130164625b3d493ca208d6e82f000443",
+      "claim": "Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Christian conservative",
+        "evidence": "\"religious healthcare providers\"; \"religious liberty\"",
+        "confidence": "low",
+        "reason": "The emphasis on protecting religious providers from participating in aid-in-dying programs aligns most closely with Christian conservative concerns about religious conscience and traditional moral objections in healthcare. (evidence not found word for word in the claim)",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-religious freedom",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "982d12a85b4de99c59c3befc6c4c51c3",
+      "claim": "Property taxes on people's homes should be abolished",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Libertarian",
+        "evidence": "Property taxes on people's homes should be abolished",
+        "confidence": "medium",
+        "reason": "The anti-tax, property-rights emphasis is most closely associated with libertarian views, though the claim does not explicitly name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-tax cuts",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "16148774ed6c490b9f8f58514d74df5e",
+      "claim": "All illegal aliens should be deported",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Nationalist",
+        "evidence": "All illegal aliens should be deported",
+        "confidence": "medium",
+        "reason": "The claim prioritizes national immigration control and exclusion of unauthorized noncitizens, which is most closely associated with nationalist politics, though no broader ideology is stated.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-border security",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "121d357639a54bc9a7526462c2f697d5",
+      "claim": "Gender-affirming care for minors should be banned",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "\"Gender-affirming care for minors should be banned\"",
+        "confidence": "medium",
+        "reason": "The claim supports a restrictive policy on gender identity-related medical care for minors, aligning most closely with social-conservative concerns about sexuality, gender, family, and minors.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Gender-critical",
+        "evidence": "\"Gender-affirming care for minors should be banned\"",
+        "confidence": "medium",
+        "reason": "The claim takes a restrictive stance on gender-affirming care, making the gender-identity issue label 'Gender-critical' the closest available fit, though it does not explicitly state the broader gender-critical rationale.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "1b4c590a4e58590c26006707a5972460",
+      "claim": "Drag shows for children should be banned",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Drag shows for children should be banned",
+        "confidence": "medium",
+        "reason": "The claim favors restricting a form of gender-nonconforming or LGBTQ-associated performance for children, reflecting socially conservative concerns about traditional moral and family norms.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Gender-critical",
+        "evidence": "Drag shows for children should be banned",
+        "confidence": "low",
+        "reason": "The closest listed issue area is gender identity/expression, but the claim is specifically about drag performances for children rather than an explicit gender-critical policy stance.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "6bcb7138969c483faa46a922c046207e",
+      "claim": "Abortion should be illegal even in cases of rape",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Abortion should be illegal even in cases of rape",
+        "confidence": "medium",
+        "reason": "A strict anti-abortion stance is closely associated with social conservatism, though the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "claim": "Late-term abortion should be illegal",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Late-term abortion should be illegal",
+        "confidence": "medium",
+        "reason": "Opposition to abortion is closely associated with social conservatism, though the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "97fdfead23a240f483555ff48b8ece5b",
+      "claim": "Ordering abortion pills should be illegal",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "\"Ordering abortion pills should be illegal\"",
+        "confidence": "medium",
+        "reason": "Opposition to abortion access is strongly associated with social conservatism, though the claim does not explicitly state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "claim": "Race-based affirmative action in college admissions should be illegal",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "\"Race-based affirmative action in college admissions should be illegal\"",
+        "confidence": "medium",
+        "reason": "The claim aligns most closely with conservative opposition to affirmative action and race-conscious admissions policies.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-meritocracy",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "7030e8e5ec5646bd9fe18a18541bde7c",
+      "claim": "Ranchers should be allowed to sell meat without USDA inspections",
+      "politicalPosition": {
+        "value": "Right",
+        "evidence": "Ranchers should be allowed to sell meat without USDA inspections",
+        "confidence": "medium",
+        "reason": "The claim favors reducing federal regulatory oversight, a mainstream conservative/right-leaning position.",
+        "source": "best fit"
+      },
+      "ideologicalLeaning": {
+        "value": "Libertarian",
+        "evidence": "should be allowed to sell meat without USDA inspections",
+        "confidence": "medium",
+        "reason": "Opposition to mandatory USDA inspections reflects a preference for market freedom and less government interference, which is most closely associated with libertarianism.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-deregulation",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "4e3a8e5937394929b925e67ba7c1af89",
+      "claim": "The federal government should eliminate funding for race-conscious and DEI programs",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "\"eliminate funding for race-conscious and DEI programs\"",
+        "confidence": "medium",
+        "reason": "The claim favors removing government support for DEI initiatives, which is clearly associated with contemporary conservative opposition to race-conscious policy.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-meritocracy",
+        "evidence": "\"eliminate funding for race-conscious and DEI programs\"",
+        "confidence": "medium",
+        "reason": "Among the listed issue positions, opposition to race-conscious and DEI programs most closely aligns with a pro-meritocracy framing that rejects allocating opportunities or resources by identity-conscious criteria.",
+        "source": "best fit"
+      }
+    },
+    {
+      "id": "8e7f33581f2a41638231c0e67615b398",
+      "claim": "The Trump administration should eliminate collective bargaining for federal employees",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "\"The Trump administration should eliminate collective bargaining\"",
+        "confidence": "medium",
+        "reason": "The claim supports a right-leaning labor policy associated with conservative opposition to public-sector union power, though it does not explicitly name an ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Anti-union",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "553deda6b6244998b1bbc39792df7d5c",
+      "claim": "Voters should be required to show photo ID",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Conservative",
+        "evidence": "\"Voters should be required to show photo ID\"",
+        "confidence": "medium",
+        "reason": "Photo ID voting requirements are commonly associated with conservative concerns about election security and lawful voting.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-election integrity",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "73aef60360f4465ba5238f45c806aaa5",
+      "claim": "Abortion should be banned nationwide",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Abortion should be banned nationwide",
+        "confidence": "medium",
+        "reason": "Opposition to abortion is strongly associated with social conservatism, though the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "286fa3286f6143cd9a30f8d7ef9a17df",
+      "claim": "Abortion is murder",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Abortion is murder",
+        "confidence": "medium",
+        "reason": "The claim frames abortion as a moral wrong, fitting a social-conservative outlook on traditional moral issues, though no broader ideology is stated.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    }
+  ],
+  "note": "Christian conservative replaced by best fit on 3 abortion claims the user rejected it for"
+}

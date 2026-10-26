@@ -1,0 +1,63 @@
+{
+  "model": "gpt-5.5",
+  "generatedAt": "2026-10-26T16:52:11.858Z",
+  "rows": [
+    {
+      "id": "6bcb7138969c483faa46a922c046207e",
+      "claim": "Abortion should be illegal even in cases of rape",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Abortion should be illegal even in cases of rape",
+        "confidence": "medium",
+        "reason": "A strict anti-abortion stance is closely associated with social conservatism, though the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "97fdfead23a240f483555ff48b8ece5b",
+      "claim": "Ordering abortion pills should be illegal",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "\"Ordering abortion pills should be illegal\"",
+        "confidence": "medium",
+        "reason": "Opposition to abortion access is strongly associated with social conservatism, though the claim does not explicitly state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    },
+    {
+      "id": "73aef60360f4465ba5238f45c806aaa5",
+      "claim": "Abortion should be banned nationwide",
+      "politicalPosition": {
+        "value": "Right",
+        "source": "agent"
+      },
+      "ideologicalLeaning": {
+        "value": "Social conservative",
+        "evidence": "Abortion should be banned nationwide",
+        "confidence": "medium",
+        "reason": "Opposition to abortion is strongly associated with social conservatism, though the claim does not state a broader ideology.",
+        "source": "best fit"
+      },
+      "issuePosition": {
+        "value": "Pro-life",
+        "source": "agent"
+      }
+    }
+  ]
+}
