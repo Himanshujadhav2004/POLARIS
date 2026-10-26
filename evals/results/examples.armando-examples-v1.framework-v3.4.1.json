@@ -1,0 +1,1353 @@
+{
+  "summary": {
+    "set": "armando-examples-v1",
+    "framework": "framework-v3.4.1",
+    "claims": 45,
+    "errors": 0,
+    "all": {
+      "expected": 59,
+      "published": 32,
+      "matched": 31,
+      "extra": 1
+    },
+    "issue": {
+      "expected": 42,
+      "published": 25,
+      "matched": 25,
+      "extra": 0
+    },
+    "tradition": {
+      "expected": 17,
+      "published": 7,
+      "matched": 6,
+      "extra": 1
+    },
+    "noPosition": 3,
+    "leaningsPublished": 16
+  },
+  "rows": [
+    {
+      "id": "002f8e4ba6274856b55d4226b01bc9c8",
+      "text": "Hate speech should be illegal",
+      "armando": [
+        "Pro-online safety"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-online safety"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "0e273e29e59f5d7496889b9a2d8d54a0",
+      "text": "Market economies require government regulation to address issues like monopolies",
+      "armando": [
+        "Pro-regulation"
+      ],
+      "error": null,
+      "display": "No label (P4 Same level, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "published": [
+        "Pro-regulation"
+      ],
+      "matched": [
+        "Pro-regulation"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.95",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check gives Left 0.68, below 0.7",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 2 of 3 runs gave Left; the others gave Center left"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “Market economies require government regulation to address issues like monopolies”. That points to Left, but rule P4 (Same level) failed: the independent check gives Left 0.68, below 0.7; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 2 of 3 runs gave Left; the others gave Center left. Ideology: Pro-regulation (belief T1: “government regulation to address issues like monopolies”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted claim supports some government regulation of market economies to address monopolies, but that is a generic/market-correcting regulation claim and does not clearly reach ECO-2L \"Left\" as opposed to a more moderate or nonpartisan antitrust position. / The quoted words support some government regulation of monopolies, but they do not clearly match ECO-2L’s mainstream left economic program; basic anti-monopoly regulation within market economies can be a broad mixed-economy or consensus position rather than clearly Left."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "bb559328e94e779316b53684a9bc9ad9",
+      "text": "Supreme Court reform should resume after the midterms",
+      "armando": [
+        "Pro-court reform"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-court reform"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Not published: Pro-court reform (independent probability 0.89 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-court reform: independent probability 0.89 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-court reform: independent probability 0.89 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "id": "7e10e46dcaee57c684e09d5acf37741b",
+      "text": "Allowing convicted prisoners to vote can be a tool for criminal justice reform",
+      "armando": [
+        "Pro-criminal justice reform"
+      ],
+      "error": null,
+      "display": "No label (P2 Full match, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-criminal justice reform"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.90",
+        "P2 FAIL: the claim is hedged",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.96); Center left gets 0.04",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "explanation": "No label. LAW-2L matched (close): “Allowing convicted prisoners to vote can be a tool for criminal justice reform” (capped by H1 from -2 to -1). That points to Center left, but rule P2 (Full match) failed: the claim is hedged; rule P4 (Same level) failed: the independent check prefers Left (0.96); Center left gets 0.04; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-voting rights (the verifier disagreed). Not published: Pro-criminal justice reform (the other side of Policing also scores: Pro-law enforcement 0.36; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-voting rights: the verifier disagreed",
+        "Pro-criminal justice reform: the other side of Policing also scores: Pro-law enforcement 0.36; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim is hedged with \"can be\" and does not clearly assert that convicted prisoners should be allowed to vote. Also, LAW-2L is a Left criterion, while the proposed leaning is Center left, so the exact level is not clearly supported. / The claim is hedged with “can be,” so it does not clearly support a published exact leaning under P2/H1. Also, the only proposed criterion is LAW-2L, which is a Left criterion, not Center left.",
+        "Verifier on Pro-voting rights: \"Allowing convicted prisoners to vote\" names expanded voting access, but the claim only says it \"can be a tool\" rather than clearly supporting it; hedged effect claims do not establish the issue side. / “Allowing convicted prisoners to vote” points toward expanded voting access, but the claim only says it “can be a tool,” which is hedged rather than a clear position supporting the side.",
+        "Verifier on Pro-criminal justice reform: The evidence \"criminal justice reform\" mostly names the issue, and the claim's \"can be a tool\" wording is hedged rather than a clear endorsement of a reform position. / The evidence “criminal justice reform” names the issue but does not by itself show a clear, unhedged position; the claim’s operative wording is only that voting rights for prisoners “can be a tool.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "text": "Families already paying private-school tuition deserve federal school-choice support",
+      "armando": [
+        "Pro-school choice"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [
+        "Pro-school choice"
+      ],
+      "matched": [
+        "Pro-school choice"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “deserve federal school-choice support”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-school choice (belief T1: “federal school-choice support”, independent probability 0.98).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "079d07a77a4249b58c498db29c68994d",
+      "text": "The United States should stop policing the world",
+      "armando": [
+        "Dove",
+        "Paleoconservative",
+        "Isolationist"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Dove",
+        "Isolationist"
+      ],
+      "matched": [
+        "Dove",
+        "Isolationist"
+      ],
+      "extra": [],
+      "missed": [
+        "Paleoconservative"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Dove (belief T1: “should stop policing the world”, independent probability 0.96). Ideology: Isolationist (belief T1: “The United States should stop policing the world”, independent probability 0.97).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [
+        "Second look at NATO skeptic: The claim argues for U.S. non-interventionism generally, but it does not mention NATO, alliances, expansion, costs, or member obligations, so it does not itself take the NATO skeptic side on Alliances."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "187ce0019d6146cba0d08ad9bbcef17b",
+      "text": "Raising the minimum wage kills jobs",
+      "armando": [
+        "Pro-wage flexibility",
+        "Libertarian"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [
+        "Pro-wage flexibility"
+      ],
+      "matched": [
+        "Pro-wage flexibility"
+      ],
+      "extra": [],
+      "missed": [
+        "Libertarian"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.91",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (close): “Raising the minimum wage kills jobs”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.91; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-wage flexibility (belief T1: “Raising the minimum wage kills jobs”, independent probability 0.91).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "94c0669ef0a54476a4b6cb253c7984ee",
+      "text": "Same-sex marriage should be legal nationwide",
+      "armando": [
+        "Pro-LGBTQ rights"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-LGBTQ rights"
+      ],
+      "matched": [
+        "Pro-LGBTQ rights"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (direct): “Same-sex marriage should be legal nationwide”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-LGBTQ rights (belief T1: “Same-sex marriage should be legal nationwide”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "69ef1fd9e06244e9920514cbab8ada72",
+      "text": "A bipartisan delegation of United States senators, led by Senator Jeanne Shaheen, is traveling to the Ankara summit to show support for NATO allies",
+      "armando": [
+        "Transatlanticist"
+      ],
+      "error": null,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Transatlanticist"
+      ],
+      "checks": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual description of what a delegation is doing, not an argument in the claim's own voice; the support is attributed to the delegation's purpose in traveling, not asserted as a policy position by the claim itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "410054a2d5cc4c748fcb2b532312912d",
+      "text": "Free trade agreements are the primary cause of industrial decline in the Dayton region",
+      "armando": [
+        "Protectionist"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Protectionist"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TRADE). Not published: Protectionist (independent probability that the claim takes a position is 0.76, below 0.8; independent probability 0.89 is below 0.9).",
+      "droppedIdeologies": [
+        "Protectionist: independent probability that the claim takes a position is 0.76, below 0.8; independent probability 0.89 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Protectionist: takes a position 0.76 (needs 0.8); independent probability 0.89 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "id": "1a167acc6a57ea552957258158b0cfbb",
+      "text": "Minimum wages should rise automatically with the cost of living",
+      "armando": [
+        "Pro-living wage",
+        "Social democrat"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-living wage"
+      ],
+      "matched": [
+        "Pro-living wage"
+      ],
+      "extra": [],
+      "missed": [
+        "Social democrat"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “Minimum wages should rise automatically with the cost of living”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-living wage (belief T1: “Minimum wages should rise automatically with the cost of living”, independent probability 1.00). Not published: Pro-regulation (independent probability 0.83 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.83 is below 0.9; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about the minimum wage, and the more specific Pro-living wage issue leaning covers it. Under I6, the general Regulation leaning should not also be assigned. / The claim is specifically about the minimum wage, and the specific Pro-living wage issue leaning covers it. Under I6, the general Regulation side should not also be assigned when a specific issue names the claim's topic."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "491268d605734fe4ba8a6bfcd0d03b8d",
+      "text": "USAID should be restored as an independent agency",
+      "armando": [
+        "Pro-USAID"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-USAID"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-INST). Not published: Pro-USAID (independent probability 0.85 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-USAID: independent probability 0.85 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-USAID: independent probability 0.85 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "id": "ef2cc805196176add2ec3b2c4cf78f72",
+      "text": "The welfare state discourages work",
+      "armando": [
+        "Pro-welfare reform"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-welfare reform"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. ECO-2R matched (close): “The welfare state discourages work”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.98; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-welfare reform (independent probability 0.65 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-welfare reform: independent probability 0.65 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "4b69e8a281525f4faef63cff0190b83b",
+      "text": "On the whole, the benefits of migration to the United States have been positive",
+      "armando": [
+        "Pro-immigration",
+        "Globalist"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-immigration"
+      ],
+      "matched": [
+        "Pro-immigration"
+      ],
+      "extra": [],
+      "missed": [
+        "Globalist"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.96",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.95",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. NAT-2L matched (direct): “the benefits of migration to the United States have been positive”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.95; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-immigration (belief T1: “the benefits of migration to the United States have been positive”, independent probability 0.94). Not published: Globalist (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Globalist: the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Globalist: The claim says only that migration to the United States has had positive benefits; that supports immigration, but it does not clearly take the broader Globalist tradition's position on international cooperation, global institutions, or open cross-border trade."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "bb10fcf1dfb545c5951124b7ea0ac543",
+      "text": "The United States should keep arming Ukraine",
+      "armando": [
+        "Pro-Ukraine"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-Ukraine"
+      ],
+      "matched": [
+        "Pro-Ukraine"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Pro-Ukraine (belief T1: “keep arming Ukraine”, independent probability 1.00). Not published: Hawk (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Hawk: the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Hawk: The Ukraine-specific issue leaning covers this position, so rule I6 blocks the general Use of force side. “The United States should keep arming Ukraine” supports military aid to Ukraine but does not by itself show a broader hawkish foreign-policy worldview. / The claim supports military aid to Ukraine, but that is covered by the specific Ukraine issue leaning; rule I6 says the general Use of force side should not also be assigned. “The United States should keep arming Ukraine” also does not clearly favor U.S. use of military force itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "579005b9fdf01d969d8c1ec081d6d2c3",
+      "text": "The retirement age should be raised to save Social Security",
+      "armando": [
+        "Pro-entitlement reform"
+      ],
+      "error": null,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "published": [
+        "Pro-entitlement reform"
+      ],
+      "matched": [
+        "Pro-entitlement reform"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (0.82); Center right gets 0.16",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Center right"
+      ],
+      "explanation": "No label. ECO-1R matched (close): “The retirement age should be raised to save Social Security”. That points to Center right, but rule P4 (Same level) failed: the independent check prefers Right (0.82); Center right gets 0.16. Ideology: Pro-entitlement reform (belief T1: “The retirement age should be raised to save Social Security”, independent probability 1.00). Not published: Pro-fiscal responsibility (independent probability 0.81 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: independent probability 0.81 is below 0.9; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-fiscal responsibility: The claim is specifically about changing Social Security, so the more specific Pro-entitlement reform issue covers it; under I6 the general Spending & deficit side should not also be assigned. It also does not explicitly mention limiting deficits or public debt. / The claim is specifically about changing Social Security, so the more specific Social Security issue leaning covers it. It does not expressly favor limiting deficits or public debt, and rule I6 blocks adding the general Spending & deficit side when the specific issue applies."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "7fea6e932b774cc0976a6ba5160a5882",
+      "text": "Congress should raise tax revenue rather than cut spending to reduce the deficit",
+      "armando": [
+        "Pro-public spending"
+      ],
+      "error": null,
+      "display": "No label (P6 Stable)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-public spending"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Left, but only a partial match"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “Congress should raise tax revenue rather than cut spending to reduce the deficit”. That points to Left, but rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave Left, but only a partial match, Left, but only a partial match. Not published: Pro-fiscal responsibility (the other side of Spending & deficit also scores: Pro-public spending 0.24).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: the other side of Spending & deficit also scores: Pro-public spending 0.24"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "2f6dce22184547e486bcec5e8c68b206",
+      "text": "The US should provide military aid to Israel",
+      "armando": [
+        "Pro-Israel"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-Israel"
+      ],
+      "matched": [
+        "Pro-Israel"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Pro-Israel (belief T1: “provide military aid to Israel”, independent probability 0.98). Not published: Hawk (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Hawk: the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Hawk: The claim supports \"military aid to Israel,\" which is specifically covered by the Israel–Palestine/Pro-Israel issue rather than the general Use of force side. It also does not clearly state support for the U.S. using military power itself. / The claim supports military aid to Israel, which is covered by the specific Israel–Palestine/foreign aid issue rather than the general Use of force side. It does not clearly endorse the U.S. using military force or a generally more forceful foreign policy."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "4b142b070e944f7fb54ed77057bf79b6",
+      "text": "Universal background checks should be required for every gun sale",
+      "armando": [
+        "Pro-gun control"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-gun control"
+      ],
+      "matched": [
+        "Pro-gun control"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Universal background checks should be required for every gun sale”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-gun control (belief T1: “Universal background checks should be required for every gun sale”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is specifically about firearm access, which is covered by the Guns issue side. Under the specific-before-general rule, the general Regulation leaning should not also be assigned. / The claim is specifically about gun policy, and the Guns issue card covers this position. Under I6, the general Regulation leaning should not be assigned; additionally, the Regulation card concerns rules on businesses and markets, not firearm access rules as such."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "024eda17a14c9ffa7643edf89df0892a",
+      "text": "The right to own a gun is a fundamental human right",
+      "armando": [
+        "Pro-gun rights",
+        "Libertarian"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [
+        "Pro-gun rights"
+      ],
+      "matched": [
+        "Pro-gun rights"
+      ],
+      "extra": [],
+      "missed": [
+        "Libertarian"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. LAW-2R matched (direct): “The right to own a gun is a fundamental human right”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.98; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-gun rights (belief T1: “The right to own a gun is a fundamental human right”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "f98079d925d3b56806ba6d84ab42c17f",
+      "text": "Hate speech should be protected as free speech",
+      "armando": [
+        "Pro-internet freedom",
+        "Classical liberal",
+        "Liberal"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-internet freedom",
+        "Classical liberal",
+        "Liberal"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH). Not published: Pro-internet freedom (the verifier disagreed). Not published: Classical liberal (independent probability 0.85 is below 0.9 (no issue leaning or political leaning is published with it); the issue side it rests on is in doubt: Pro-internet freedom (the verifier rejected it)).",
+      "droppedIdeologies": [
+        "Pro-internet freedom: the verifier disagreed",
+        "Classical liberal: independent probability 0.85 is below 0.9 (no issue leaning or political leaning is published with it); the issue side it rests on is in doubt: Pro-internet freedom (the verifier rejected it)"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-internet freedom: The issue card is specifically about online expression and access, with limited government or platform restrictions. The claim says only that “Hate speech should be protected as free speech” and does not mention online speech, platforms, or internet access. / The claim supports protecting hate speech as free speech, but it is not specifically about online expression, internet access, platform rules, or content moderation. Under I7, sharing the phrase “free speech” is not enough to meet the Speech online side’s description."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "148b0cf1d60c4319b499d376ef6bf38f",
+      "text": "Climate change is an existential threat that requires urgent government action",
+      "armando": [
+        "Pro-climate action",
+        "Environmentalist"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-climate action",
+        "Environmentalist"
+      ],
+      "matched": [
+        "Pro-climate action",
+        "Environmentalist"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.90",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. ENV-2L matched (close): “Climate change is an existential threat that requires urgent government action”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.90; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-climate action (belief T1: “Climate change is an existential threat that requires urgent government action”, independent probability 1.00). Ideology: Environmentalist (belief T3: “requires urgent government action”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "4de298d58d96434085a8a83c8cc5bf82",
+      "text": "Marriage is the best foundation for raising children",
+      "armando": [
+        "Social conservative",
+        "Conservative",
+        "Christian conservative"
+      ],
+      "error": null,
+      "display": "No label (P1 Takes a position)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Social conservative",
+        "Conservative",
+        "Christian conservative"
+      ],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.76, below 0.8",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "explanation": "No label. SOC-2R matched (close): “Marriage is the best foundation for raising children”. That points to Right, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.76, below 0.8. Not published: Social conservative (independent probability that the claim takes a position is 0.76, below 0.8; independent probability 0.80 is below 0.9). Not published: Conservative (independent probability that the claim takes a position is 0.76, below 0.8).",
+      "droppedIdeologies": [
+        "Social conservative: independent probability that the claim takes a position is 0.76, below 0.8; independent probability 0.80 is below 0.9",
+        "Conservative: independent probability that the claim takes a position is 0.76, below 0.8"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Right: takes a position 0.76 (needs 0.8) (extra runs not made)",
+        "Social conservative: takes a position 0.76 (needs 0.8); independent probability 0.80 (needs 0.9) (extra runs not made)",
+        "Conservative: takes a position 0.76 (needs 0.8) (extra runs not made)"
+      ]
+    },
+    {
+      "id": "5023ce9fba3945128221f4c28d74b5b6",
+      "text": "The United States should extend its trade truce with China",
+      "armando": [
+        "Pro-China engagement"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-China engagement"
+      ],
+      "matched": [
+        "Pro-China engagement"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TRADE, X-FOR). Ideology: Pro-China engagement (belief T1: “should extend its trade truce with China”, independent probability 0.98). Not published: Pro-trade (independent probability 0.82 is below 0.9; the other side of Trade also scores: Protectionist 0.18).",
+      "droppedIdeologies": [
+        "Pro-trade: independent probability 0.82 is below 0.9; the other side of Trade also scores: Protectionist 0.18"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-trade: independent probability 0.82 (needs 0.9); other side Protectionist 0.18 (limit 0.1)"
+      ]
+    },
+    {
+      "id": "ec0a71df06f74225bf6811508b2ca4df",
+      "text": "Voter ID laws disproportionately burden minority voters",
+      "armando": [
+        "Pro-voting rights"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-voting rights"
+      ],
+      "matched": [
+        "Pro-voting rights"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.81",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “Voter ID laws disproportionately burden minority voters”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.81; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-voting rights (belief T1: “Voter ID laws disproportionately burden minority voters”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "5872ac2be0d3495296b3e811e395f16f",
+      "text": "Federal elections are a federal issue that should be regulated by federal legislation for consistency across states",
+      "armando": [
+        "Pro-federal authority"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-federal authority"
+      ],
+      "matched": [
+        "Pro-federal authority"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Ideology: Pro-federal authority (belief T1: “Federal elections are a federal issue that should be regulated by federal legislation for consistency across states”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "c381476542ef4d8087cf2d209abdb8f8",
+      "text": "Trump's immigration crackdown makes the United States safer",
+      "armando": [
+        "Pro-border security",
+        "MAGA"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [
+        "Pro-border security",
+        "MAGA"
+      ],
+      "matched": [
+        "Pro-border security",
+        "MAGA"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.95",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. NAT-2R matched (close): “Trump's immigration crackdown makes the United States safer”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.95; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-border security (belief T1: “Trump's immigration crackdown makes the United States safer”, independent probability 0.94). Ideology: MAGA (belief T2: “Trump's immigration crackdown”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "b5a25ff21e89400cabfd6fd1484514af",
+      "text": "California Energy Commission Chair David Hochschild said states retain the ability to drive a transition away from fossil fuels.",
+      "armando": [
+        "Pro-clean energy"
+      ],
+      "error": null,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-clean energy"
+      ],
+      "checks": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed statement rather than taking its own position: \"David Hochschild said\" states have this ability. It concerns U.S. state energy policy and the contested transition away from fossil fuels, but the position is not in the claim's own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "05ec6bbd12e457adb86c97cd5d60f9d8",
+      "text": "Diversity, Equity, and Inclusion (DEI) initiatives were, to some extent, addressing the effects of historical racial discrimination",
+      "armando": [
+        "Pro-equity",
+        "Progressive"
+      ],
+      "error": null,
+      "display": "No label (P1 Takes a position, P2 Full match, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-equity",
+        "Progressive"
+      ],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.64, below 0.8",
+        "P2 FAIL: the claim is hedged",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.62); Center left gets 0.38",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "explanation": "No label. SOC-2L matched (close): “Diversity, Equity, and Inclusion (DEI) initiatives were, to some extent, addressing the effects of historical racial discrimination” (capped by H1 from -2 to -1). That points to Center left, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.64, below 0.8; rule P2 (Full match) failed: the claim is hedged; rule P4 (Same level) failed: the independent check prefers Left (0.62); Center left gets 0.38; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-equity (independent probability that the claim takes a position is 0.64, below 0.8). Not published: Progressive (independent probability that the claim takes a position is 0.64, below 0.8; the claim is hedged; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-equity: independent probability that the claim takes a position is 0.64, below 0.8",
+        "Progressive: independent probability that the claim takes a position is 0.64, below 0.8; the claim is hedged; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted wording is hedged by “to some extent,” and SOC-2L would ordinarily support a Left score, not the proposed Center left label. The claim also does not clearly state a Center-left, explicitly limited DEI policy position. / The cited criterion is SOC-2L, which corresponds to Left, not Center left. The phrase “to some extent” hedges the effect claim; it does not supply an explicit centrist limit that would make this clearly Center left, and hedging would block publication rather than establish that level.",
+        "Verifier on Progressive: The claim only makes a hedged DEI-effect claim (“to some extent”) and does not clearly show the broader Progressive tradition as distinct from a single mainstream left/pro-equity position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "130164625b3d493ca208d6e82f000443",
+      "text": "Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty",
+      "armando": [
+        "Pro-religious freedom"
+      ],
+      "error": null,
+      "display": "Right",
+      "leaning": "Right",
+      "published": [
+        "Pro-religious freedom"
+      ],
+      "matched": [
+        "Pro-religious freedom"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.97",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.93",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.97; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.93; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Pro-religious freedom (belief T1: “infringes on religious liberty”, independent probability 0.97).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "344a407e3958a818b69a6184f266fef0",
+      "text": "Cities should abolish single-family-only zoning",
+      "armando": [
+        "Pro-housing development"
+      ],
+      "error": null,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "published": [
+        "Pro-housing development"
+      ],
+      "matched": [
+        "Pro-housing development"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-housing development (belief T1: “abolish single-family-only zoning”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "8271598b04824a4088775686c1e4cea1",
+      "text": "The United States should reduce foreign aid spending",
+      "armando": [
+        "Pro-foreign aid reform"
+      ],
+      "error": null,
+      "display": "No label (P6 Stable)",
+      "leaning": null,
+      "published": [
+        "Pro-foreign aid reform"
+      ],
+      "matched": [
+        "Pro-foreign aid reform"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 2 of 3 runs gave Right; the others gave no leaning"
+      ],
+      "explanation": "No label. ECO-2R matched (direct): “should reduce foreign aid spending”. That points to Right, but rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave no leaning. Ideology: Pro-foreign aid reform (belief T1: “should reduce foreign aid spending”, independent probability 0.99). Not published: Pro-fiscal responsibility (independent probability 0.82 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-fiscal responsibility: independent probability 0.82 is below 0.9; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-fiscal responsibility: A specific Foreign aid issue leaning covers this claim, so the general Spending & deficit side should not also be assigned under I6. The claim also only says to reduce foreign aid spending, not that this is to limit deficits or public debt. / The claim supports reducing foreign aid spending, but it does not mention deficits, public debt, or fiscal discipline. Also, the specific Foreign aid issue covers this position, so the general Spending & deficit side should not also be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "3006371ab3d8e965a31c943fa9bcbda5",
+      "text": "Nidal Hasan’s terrorism conviction justifies the death penalty",
+      "armando": [
+        "Pro-death penalty"
+      ],
+      "error": null,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-death penalty"
+      ],
+      "checks": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Pro-death penalty (independent probability 0.84 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-death penalty: independent probability 0.84 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-death penalty: independent probability 0.84 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "id": "24541de6d13f88ac4b7cbd6752e06b4b",
+      "text": "Gender identity should take precedence over biological sex",
+      "armando": [
+        "Pro-transgender rights"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-transgender rights"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Gender identity should take precedence over biological sex”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.98; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Not published: Pro-transgender rights (independent probability 0.79 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-transgender rights: independent probability 0.79 is below 0.9"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "f7bdffdd5f06e4b760247767b6989a32",
+      "text": "The death penalty should be abolished",
+      "armando": [
+        "Death penalty abolitionist"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Death penalty abolitionist"
+      ],
+      "matched": [
+        "Death penalty abolitionist"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “The death penalty should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Death penalty abolitionist (belief T1: “The death penalty should be abolished”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "text": "Abortion should be legal",
+      "armando": [
+        "Pro-choice"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-choice"
+      ],
+      "matched": [
+        "Pro-choice"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (direct): “Abortion should be legal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-choice (belief T1: “Abortion should be legal”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "4203a7a7f808485fb9ad85db9655da30",
+      "text": "Unions are important for protecting workers",
+      "armando": [
+        "Pro-union"
+      ],
+      "error": null,
+      "display": "No label (P1 Takes a position)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-union"
+      ],
+      "checks": [
+        "P1 FAIL: independent probability that the claim takes a position: 0.59, below 0.8",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “Unions are important for protecting workers”. That points to Left, but rule P1 (Takes a position) failed: independent probability that the claim takes a position: 0.59, below 0.8. Not published: Pro-union (independent probability that the claim takes a position is 0.59, below 0.8).",
+      "droppedIdeologies": [
+        "Pro-union: independent probability that the claim takes a position is 0.59, below 0.8"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "157d1128ad4277bef5ee4926b49c4690",
+      "text": "Military pressure is more likely than diplomatic restraint to produce an Iran settlement",
+      "armando": [
+        "Hawk",
+        "Neoconservative"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Hawk",
+        "Neoconservative"
+      ],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Pro-Iran containment (independent probability that the claim takes a position is 0.30, below 0.8; independent probability 0.82 is below 0.9). Not published: Hawk (independent probability that the claim takes a position is 0.30, below 0.8).",
+      "droppedIdeologies": [
+        "Pro-Iran containment: independent probability that the claim takes a position is 0.30, below 0.8; independent probability 0.82 is below 0.9",
+        "Hawk: independent probability that the claim takes a position is 0.30, below 0.8"
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "d7800b2a01904345aab1f4fdb12055e3",
+      "text": "The United States should treat China as an enemy",
+      "armando": [
+        "Pro-China containment"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-China containment"
+      ],
+      "matched": [
+        "Pro-China containment"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Ideology: Pro-China containment (belief T1: “The United States should treat China as an enemy”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "1fdcbe35bfde4d0bbe5eb78632dc02c4",
+      "text": "Civil liberties groups including the ACLU, EFF, and Institute for Justice are litigating whether blanket ALPR camera surveillance requires a Fourth Amendment warrant.",
+      "armando": [
+        "Pro-privacy"
+      ],
+      "error": null,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "published": [],
+      "matched": [],
+      "extra": [],
+      "missed": [
+        "Pro-privacy"
+      ],
+      "checks": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of litigation and frames the issue as attributed to groups and a legal case, not as the claim's own position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "67adf984b5b04dcfbdd8cb6aefd4e31b",
+      "text": "States should enact independent AI safety regulations",
+      "armando": [
+        "Pro-AI regulation"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Pro-AI regulation"
+      ],
+      "matched": [
+        "Pro-AI regulation"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH, X-INST). Ideology: Pro-AI regulation (belief T1: “States should enact independent AI safety regulations”, independent probability 1.00). Not published: Pro-states' rights (independent probability 0.83 is below 0.9; the other side of Federalism also scores: Pro-federal authority 0.13; the verifier disagreed). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-states' rights: independent probability 0.83 is below 0.9; the other side of Federalism also scores: Pro-federal authority 0.13; the verifier disagreed",
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-states' rights: The claim supports state-level action, but it does not clearly take a position on state authority relative to the federal government or oppose federal preemption. “States should enact independent AI safety regulations” is too ambiguous for the federalism side.",
+        "Verifier on Pro-regulation: The claim is specifically about AI safety rules, so the specific issue leaning Pro-AI regulation covers it. Under the specific-before-general rule, the general Pro-regulation leaning should not also be assigned. / The claim is already covered by the more specific AI issue: \"States should enact independent AI safety regulations\" supports AI regulation. Under I6, the general Regulation side should not also be assigned when a topic-specific AI side applies."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "9d5c11e66b50480babdef68c7a4c0d05",
+      "text": "Student loan debt should be forgiven",
+      "armando": [
+        "Pro-student debt relief"
+      ],
+      "error": null,
+      "display": "Left",
+      "leaning": "Left",
+      "published": [
+        "Pro-student debt relief"
+      ],
+      "matched": [
+        "Pro-student debt relief"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “Student loan debt should be forgiven”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-student debt relief (belief T1: “Student loan debt should be forgiven”, independent probability 1.00). Not published: Pro-public spending (independent probability 0.82 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-public spending: independent probability 0.82 is below 0.9; the verifier disagreed"
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-public spending: The claim is specifically about student loan forgiveness, so the specific Student debt issue leaning covers it. Under I6, the general Spending & deficit side should not also be assigned. / The claim is specifically about cancelling student loan debt, so the specific Student debt issue leaning covers it. Under rule I6, the general Spending & deficit side should not also be assigned."
+      ],
+      "nearMisses": []
+    },
+    {
+      "id": "78d0d62134114b809b54167e11d4db4f",
+      "text": "US sanctions against the International Criminal Court are a justified defense of national sovereignty",
+      "armando": [
+        "Nationalist"
+      ],
+      "error": null,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "published": [
+        "Nationalist"
+      ],
+      "matched": [
+        "Nationalist"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-INST). Ideology: Nationalist (belief T1: “justified defense of national sovereignty”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "103be43ad08aed03d3e55c3f6f530b9d",
+      "text": "Capitalism has done more harm than good",
+      "armando": [
+        "Marxist"
+      ],
+      "error": null,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "published": [
+        "Marxist"
+      ],
+      "matched": [
+        "Marxist"
+      ],
+      "extra": [],
+      "missed": [],
+      "checks": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Marxist (belief T1: “Capitalism has done more harm than good”, independent probability 0.91).",
+      "droppedIdeologies": [],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "id": "0707ac7581416e7280f479d0ea55570e",
+      "text": "Traditional values are essential for a healthy society",
+      "armando": [
+        "Traditionalist"
+      ],
+      "error": null,
+      "display": "No label (P2 Full match, P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "published": [
+        "Traditionalist",
+        "Conservative"
+      ],
+      "matched": [
+        "Traditionalist"
+      ],
+      "extra": [
+        "Conservative"
+      ],
+      "missed": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.96",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Right; the others gave Right, but only a partial match, no leaning"
+      ],
+      "explanation": "No label. SOC-2R matched (partial): “Traditional values are essential for a healthy society”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part; rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Right; the others gave Right, but only a partial match, no leaning. Ideology: Traditionalist (belief T1: “Traditional values are essential for a healthy society”, independent probability 0.96). Ideology: Conservative (belief T1: “Traditional values are essential for a healthy society”, independent probability 0.96). Not published: Social conservative (independent probability 0.67 is below 0.9; found in 1 of 3 runs).",
+      "droppedIdeologies": [
+        "Social conservative: independent probability 0.67 is below 0.9; found in 1 of 3 runs"
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted claim supports a broad traditionalist worldview, but it does not directly match SOC-2R’s specific mainstream conservative social-policy positions such as “traditional marriage and family,” abortion restrictions, parental-rights policy, religious-liberty exemptions, or opposition to DEI. The proposed Right leaning is therefore too specific for this vague statement."
+      ],
+      "nearMisses": []
+    }
+  ]
+}

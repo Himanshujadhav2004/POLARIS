@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
 import { EXCLUDED_ALIASES, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
+import { LEANINGS_LEFT_TO_RIGHT } from "../src/framework/rubric.js";
 
 const [mode, file, ...rest] = process.argv.slice(2);
 const usage =
@@ -206,17 +207,25 @@ function showcaseRows() {
   const run = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
   const outcome = (r: Record<string, any>) =>
     r.error ? "Error" : r.published ? "Labelled" : String(r.display).startsWith("No political position") ? "No political position" : "No label";
-  // Labelled claims first, then blanks; within each, Geo spaces in the usual order.
+  // Labelled claims first, then blanks; within each, Geo spaces in the usual order. Rows collected by
+  // scripts/showcase.mts are all labelled: they go from left to right, Armando's examples first.
+  const curated = run.rows.some((r) => r.source);
   const rank = ["Labelled", "No label", "No political position", "Error"];
   const space = (r: Record<string, any>) => SPACES.findIndex((s) => s.slug === r.space);
-  const sorted = [...run.rows].sort((a, b) => rank.indexOf(outcome(a)) - rank.indexOf(outcome(b)) || space(a) - space(b));
+  const level = (r: Record<string, any>) => LEANINGS_LEFT_TO_RIGHT.indexOf(r.leaning);
+  const armandoFirst = (r: Record<string, any>) => (String(r.source).startsWith("Armando") ? 0 : 1);
+  const sorted = [...run.rows].sort((a, b) =>
+    curated
+      ? level(a) - level(b) || armandoFirst(a) - armandoFirst(b)
+      : rank.indexOf(outcome(a)) - rank.indexOf(outcome(b)) || space(a) - space(b),
+  );
   return sorted.map((r) => ({
     properties: {
       Claim: fit(r.text, 300),
       Space: SPACES.find((s) => s.slug === r.space)?.name ?? r.space,
       "Political leaning": r.leaning ?? "—",
       "Ideological leanings": (r.ideologies as string[]).length ? (r.ideologies as string[]).join(", ") : "—",
-      Outcome: outcome(r),
+      ...(curated ? {} : { Outcome: outcome(r) }),
       Explanation: fit(r.explanation ?? `Error: ${r.error}`),
       "Claim ID": r.claimId,
       "Geo link": geoEntityUrl(r.spaceId, r.claimId),
