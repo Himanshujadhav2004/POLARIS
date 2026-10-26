@@ -2,7 +2,7 @@
   "space": "us-politics",
   "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
   "leaningsPropertyId": "ff40a84705194415b30473badda2e534",
-  "generatedAt": "2026-10-26T14:35:05.149Z",
+  "generatedAt": "2026-10-26T15:16:28.914Z",
   "model": "gpt-5.5",
   "framework": "framework-v3.5",
   "taxonomyFingerprint": "96a8cb2cefb0",
@@ -25,22 +25,22 @@
       ],
       "relations": [
         {
-          "relationId": "d90e2c2bb03b486d8b1a94ec8315ec5b",
-          "entityId": "1b14cd31dca04b6783d6505afc2857ec",
+          "relationId": "fcaeea34441b47cbb6a8fa50c7420932",
+          "entityId": "265fbe9eb94f4af58cb74373f2a39de5",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "e580c99c029d433ba1e93254003551c4",
-          "entityId": "acf11949132e471daf80e1a83af51d9a",
+          "relationId": "4cc6f6f4cb284828a243c68bcbad41a5",
+          "entityId": "42c3fb869ade464ab65eff3ba287fa7c",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "267abe51327a4aacaee9efb17cbabacd",
           "valueName": "Pro-climate action"
         },
         {
-          "relationId": "17d9130d584f48d2bdb2adc4c5b32e13",
-          "entityId": "4bf311032e884a0c90c63990ef4ec481",
+          "relationId": "beca4b6609204471aba77e86be2eb2dd",
+          "entityId": "e21eb608e6ba47359670ff603c98e5cd",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "fc34ee62e0a843779741a251140c546b",
           "valueName": "Environmentalist"
@@ -72,22 +72,22 @@
       ],
       "relations": [
         {
-          "relationId": "c5c29f72cb8545e8a4a0a40732b6e304",
-          "entityId": "1d25e2ec031042f989cd98ebf9ba437f",
+          "relationId": "4f766bb4949e49ff841af3f6a06f1dff",
+          "entityId": "498de2e8cd4249e682563ebe6a49d36e",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "c968a7879e3e41859837d19767051759",
-          "entityId": "75943469daec42909284b68628a0f56f",
+          "relationId": "749ee8be68d34060a2de16e123e0f30a",
+          "entityId": "4ed910a9c7d8492785c2abcd92b3fc79",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "1a2decfbb1654e399809f5000b7a0272",
           "valueName": "Pro-border security"
         },
         {
-          "relationId": "1e82c02c63c945108ec2b2e745997429",
-          "entityId": "900838f3086348d7b558ef84b382cc45",
+          "relationId": "83c57179faf247f7ba988b7a29ff4859",
+          "entityId": "d12f37a062694bf489b416e21d060e7a",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "f62bcc598efb4ce89fabd3c34dd77c92",
           "valueName": "MAGA"
@@ -119,22 +119,22 @@
       ],
       "relations": [
         {
-          "relationId": "65f8d7d8f43b438fb9dd072e540261c0",
-          "entityId": "d6f3a0c50b9d4b37bf30795eb4701e6f",
+          "relationId": "1f9ecb76fbe44653b564c98cc412dc20",
+          "entityId": "92b39985ce964647bda3b9f737c76108",
           "claimId": "4b69e8a281525f4faef63cff0190b83b",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "1d4ac68ec4bb4eb592ae5bbe22402721",
-          "entityId": "c20501a218e540a4871662652faad668",
+          "relationId": "32a1c616bc424b749afd4d21b79758b2",
+          "entityId": "ddf4cb126ad54835b4fbfbbd1d3f91e3",
           "claimId": "4b69e8a281525f4faef63cff0190b83b",
           "valueId": "1f08bda6ed0344f7902f00705a4f5325",
           "valueName": "Pro-immigration"
         },
         {
-          "relationId": "3bcffefaeb664391b208d8f5550ee9ff",
-          "entityId": "7a8bef69e75247de8a4757e87000d9ad",
+          "relationId": "87f29c54bf1a44648c174df2715ff3ce",
+          "entityId": "9efb72901fb0426bb3545584750ecd50",
           "claimId": "4b69e8a281525f4faef63cff0190b83b",
           "valueId": "bae9b302e5eb4ac3a67951f1131abd1e",
           "valueName": "Globalist"
@@ -156,193 +156,233 @@
       ]
     },
     {
-      "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
-      "text": "Abortion is murder",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/286fa3286f6143cd9a30f8d7ef9a17df",
-      "politicalPosition": "Right",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-life"
-      ],
-      "relations": [
-        {
-          "relationId": "92a3b8087cae403c9e530a0f0b4ca076",
-          "entityId": "62ce0f3722b6468ca58e0c6389c412b5",
-          "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
-          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
-          "valueName": "Right"
-        },
-        {
-          "relationId": "0ba7a60c84f7432daf38dfd519192f90",
-          "entityId": "41bf0df5c514486b82700749f5f70c63",
-          "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
-          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
-          "valueName": "Pro-life"
-        }
-      ],
-      "evidence": [
-        "Abortion is murder",
-        "Abortion is murder"
-      ],
-      "explanation": "Published: Right. SOC-2R matched (close): “Abortion is murder”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion is murder”, independent probability 0.99).",
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 1.00",
-        "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Right 1.00",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Right"
-      ]
-    },
-    {
-      "claimId": "9df6a915a66d4e5381f68b5306013287",
-      "text": "Conversion therapy should be banned",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/9df6a915a66d4e5381f68b5306013287",
+      "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
+      "text": "Employers should be barred from requiring women to wear high heels",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/0db0016ea3c4177d7273d92a3abb4d6b",
       "politicalPosition": "Left",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-LGBTQ rights"
-      ],
-      "relations": [
-        {
-          "relationId": "48ecf9c604d04ab1adda0f1b7ff25c27",
-          "entityId": "0720a7d4e31c4ea4a8a1911f2bacc9a0",
-          "claimId": "9df6a915a66d4e5381f68b5306013287",
-          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
-          "valueName": "Left"
-        },
-        {
-          "relationId": "724de801f1104b82b2d4e13fbfe9f006",
-          "entityId": "18a91566f4c84078829ed0bb7a38df33",
-          "claimId": "9df6a915a66d4e5381f68b5306013287",
-          "valueId": "33c95528b96741c2a50adafb4a1a76a5",
-          "valueName": "Pro-LGBTQ rights"
-        }
-      ],
-      "evidence": [
-        "Conversion therapy should be banned",
-        "Conversion therapy should be banned"
-      ],
-      "explanation": "Published: Left. SOC-2L matched (close): “Conversion therapy should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-LGBTQ rights (belief T1: “Conversion therapy should be banned”, independent probability 0.98). Not published: Pro-regulation (the verifier disagreed).",
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 0.99",
-        "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Left 1.00",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Left"
-      ]
-    },
-    {
-      "claimId": "553deda6b6244998b1bbc39792df7d5c",
-      "text": "Voters should be required to show photo ID",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/553deda6b6244998b1bbc39792df7d5c",
-      "politicalPosition": "Right",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-election integrity"
-      ],
-      "relations": [
-        {
-          "relationId": "d06fb469c9014d6f848fe613ecd1772b",
-          "entityId": "fa840f5750974ecc8883535fc85f7e1d",
-          "claimId": "553deda6b6244998b1bbc39792df7d5c",
-          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
-          "valueName": "Right"
-        },
-        {
-          "relationId": "f5dbc5c3ad69470cacc2af3f3794d6b2",
-          "entityId": "c52799631d294a2eb88b8a429c366d56",
-          "claimId": "553deda6b6244998b1bbc39792df7d5c",
-          "valueId": "ac06190ee93f4e83853ca54d036179f5",
-          "valueName": "Pro-election integrity"
-        }
-      ],
-      "evidence": [
-        "Voters should be required to show photo ID",
-        "Voters should be required to show photo ID"
-      ],
-      "explanation": "Published: Right. LAW-2R matched (direct): “Voters should be required to show photo ID”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-election integrity (belief T1: “Voters should be required to show photo ID”, independent probability 0.96).",
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 1.00",
-        "P2 pass: the criteria match directly",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Right 1.00",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Right"
-      ]
-    },
-    {
-      "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
-      "text": "Public companies should be banned from buying back their shares",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/dacf8b0c651be6b2e51ff9dab7faa278",
-      "politicalPosition": "Left",
-      "politicalIdeology": null,
+      "politicalIdeology": "Feminist",
       "issuePositions": [
         "Pro-regulation"
       ],
       "relations": [
         {
-          "relationId": "aa010a2a27f04228bf899a3525ab39c2",
-          "entityId": "bd969af4bebf474786f104f7fa1e403b",
-          "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+          "relationId": "540d93ff1507449fb0cf87baaae9e46f",
+          "entityId": "a59fa153cb2e416cbdbeddab98d3a465",
+          "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "43bd2bec4a7747e0a71189992228c250",
-          "entityId": "7b21892e73c64d8cb4bcf805397e4172",
-          "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+          "relationId": "e3af922342ad40aea6044edb93b285fc",
+          "entityId": "d4c5cbcd3fef4b2bbb220aa6cf5f1370",
+          "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
           "valueId": "9f3b55993e254ca8ae643302c0039253",
           "valueName": "Pro-regulation"
+        },
+        {
+          "relationId": "090ab672f1404c308d993b0645745cbc",
+          "entityId": "826a94ef4f604157b52e8c10d5648b28",
+          "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
+          "valueId": "5f90b6eaac214ef0911195d9c56983e9",
+          "valueName": "Feminist"
         }
       ],
       "evidence": [
-        "Public companies should be banned from buying back their shares",
-        "Public companies should be banned from buying back their shares"
+        "Employers should be barred from requiring women to wear high heels",
+        "Employers should be barred from requiring women to wear high heels",
+        "requiring women to wear high heels"
       ],
-      "explanation": "Published: Left. ECO-2L matched (close): “Public companies should be banned from buying back their shares”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “Public companies should be banned from buying back their shares”, independent probability 0.97).",
+      "explanation": "Published: Left. SOC-2L matched (close): “Employers should be barred from requiring women to wear high heels”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.88; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “Employers should be barred from requiring women to wear high heels”, independent probability 0.97). Political ideology: Feminist (belief T2: “requiring women to wear high heels”, independent probability 0.94).",
       "rules": [
-        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P1 pass: independent probability that the claim takes a position: 0.99",
         "P2 pass: the criteria match closely",
         "P3 pass: country: United States",
-        "P4 pass: the independent check gives Left 0.98",
+        "P4 pass: the independent check gives Left 0.88",
         "P5 pass: the verifier agreed in all 2 checks",
         "P6 pass: all 3 runs gave Left"
       ]
     },
     {
-      "claimId": "8e7f33581f2a41638231c0e67615b398",
-      "text": "The Trump administration should eliminate collective bargaining for federal employees",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/8e7f33581f2a41638231c0e67615b398",
+      "claimId": "87530d21a13042eba1709f902d0f3422",
+      "text": "Public schools should allow explicitly Christian teaching and prayer",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/87530d21a13042eba1709f902d0f3422",
       "politicalPosition": "Right",
-      "politicalIdeology": null,
+      "politicalIdeology": "Christian conservative",
       "issuePositions": [
-        "Anti-union"
+        "Pro-religious freedom"
       ],
       "relations": [
         {
-          "relationId": "3b0f864e9cf640f18a86ad7eafba808b",
-          "entityId": "62872d6bfa4e4725ae6b8c47135f38c2",
-          "claimId": "8e7f33581f2a41638231c0e67615b398",
+          "relationId": "afc12c990b4e491596dfbdc6454449ae",
+          "entityId": "e294525234fd4b798d90697a48579e40",
+          "claimId": "87530d21a13042eba1709f902d0f3422",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "6c6037e558d34c4abc033f4e0e5e538c",
-          "entityId": "d9b8b2de989d46e0910fad0ddba3c27d",
-          "claimId": "8e7f33581f2a41638231c0e67615b398",
-          "valueId": "aea3dae11784406ca10d3218d7d74e17",
-          "valueName": "Anti-union"
+          "relationId": "23aec6993634400fbe99e4c8692bbc8c",
+          "entityId": "4643dfb9a1084250a294caa4dbce0271",
+          "claimId": "87530d21a13042eba1709f902d0f3422",
+          "valueId": "14b7be05f503428992d23afb4430e443",
+          "valueName": "Pro-religious freedom"
+        },
+        {
+          "relationId": "bef42437e48a48548d19d5e5c65ce60a",
+          "entityId": "56a1b556953f402684e7edf17c7e5d86",
+          "claimId": "87530d21a13042eba1709f902d0f3422",
+          "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
+          "valueName": "Christian conservative"
         }
       ],
       "evidence": [
-        "should eliminate collective bargaining for federal employees",
-        "should eliminate collective bargaining for federal employees"
+        "Public schools should allow explicitly Christian teaching and prayer",
+        "should allow explicitly Christian teaching and prayer",
+        "Public schools should allow explicitly Christian teaching and prayer"
       ],
-      "explanation": "Published: Right. ECO-2R matched (direct): “should eliminate collective bargaining for federal employees”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Anti-union (belief T1: “should eliminate collective bargaining for federal employees”, independent probability 0.99).",
+      "explanation": "Published: Right. SOC-2R matched (close): “Public schools should allow explicitly Christian teaching and prayer”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-religious freedom (belief T1: “should allow explicitly Christian teaching and prayer”, independent probability 0.93). Political ideology: Christian conservative (belief T3: “Public schools should allow explicitly Christian teaching and prayer”, independent probability 0.95).",
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ]
+    },
+    {
+      "claimId": "3a86111db36a2b369f22aa997691a652",
+      "text": "Religious beliefs should have no influence on legislation",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/3a86111db36a2b369f22aa997691a652",
+      "politicalPosition": "Left",
+      "politicalIdeology": "Secularist",
+      "issuePositions": [
+        "Church-state separationist"
+      ],
+      "relations": [
+        {
+          "relationId": "e68bf427abbb40c389558b42b7c42d9f",
+          "entityId": "197adbf04b9c4c2983530e0d58fe6660",
+          "claimId": "3a86111db36a2b369f22aa997691a652",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "92e358ce1f4a431db0b632fc5d52ec2e",
+          "entityId": "bfd73432ddcb4ca2a74c3e15a49fbe46",
+          "claimId": "3a86111db36a2b369f22aa997691a652",
+          "valueId": "5bca40f30ec144fa9012fd1426a85218",
+          "valueName": "Church-state separationist"
+        },
+        {
+          "relationId": "100c912434e34e869ea28d3ee8c62708",
+          "entityId": "c5cb6f44b8c743c5b245cd5fd1b4a34b",
+          "claimId": "3a86111db36a2b369f22aa997691a652",
+          "valueId": "b2727c4b6d2243cbb3b5161f33535568",
+          "valueName": "Secularist"
+        }
+      ],
+      "evidence": [
+        "Religious beliefs should have no influence on legislation",
+        "Religious beliefs should have no influence on legislation",
+        "Religious beliefs should have no influence on legislation"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Religious beliefs should have no influence on legislation”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.92; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.99). Political ideology: Secularist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.93).",
+      "rules": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.92",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ]
+    },
+    {
+      "claimId": "f03d920d02a6ebb809899c3952a94d09",
+      "text": "State-funded schools should not provide religious instruction",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/f03d920d02a6ebb809899c3952a94d09",
+      "politicalPosition": "Left",
+      "politicalIdeology": "Secularist",
+      "issuePositions": [
+        "Church-state separationist"
+      ],
+      "relations": [
+        {
+          "relationId": "02e173957c644a7ab7c2d46a282351a5",
+          "entityId": "f9f7acc781524d10bd38238b456ecdc2",
+          "claimId": "f03d920d02a6ebb809899c3952a94d09",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "42de6ab2f6df4e3b9862928c6ea5a345",
+          "entityId": "77cdf79567b649b693c741cc7ffb5c04",
+          "claimId": "f03d920d02a6ebb809899c3952a94d09",
+          "valueId": "5bca40f30ec144fa9012fd1426a85218",
+          "valueName": "Church-state separationist"
+        },
+        {
+          "relationId": "2ed69dd7ec9b46269cda32158989e49b",
+          "entityId": "e01463d42f844f509af360ffde297f2c",
+          "claimId": "f03d920d02a6ebb809899c3952a94d09",
+          "valueId": "b2727c4b6d2243cbb3b5161f33535568",
+          "valueName": "Secularist"
+        }
+      ],
+      "evidence": [
+        "State-funded schools should not provide religious instruction",
+        "State-funded schools should not provide religious instruction",
+        "State-funded schools should not provide religious instruction"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “State-funded schools should not provide religious instruction”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.94; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.99). Political ideology: Secularist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.90).",
+      "rules": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.94",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ]
+    },
+    {
+      "claimId": "824760f73a7c491a968d66e71c6f2f39",
+      "text": "The Supreme Court should revive the Trump administration's third-country deportation program",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/824760f73a7c491a968d66e71c6f2f39",
+      "politicalPosition": "Right",
+      "politicalIdeology": "MAGA",
+      "issuePositions": [
+        "Pro-border security"
+      ],
+      "relations": [
+        {
+          "relationId": "75147613b701494ba466bdd88ee1ed26",
+          "entityId": "a9fee0f3452e45cebf0484a97e6720d9",
+          "claimId": "824760f73a7c491a968d66e71c6f2f39",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "8fee0de769074478828487a82b715c9c",
+          "entityId": "ad0c19ac51684d81a5ec44dc26da3338",
+          "claimId": "824760f73a7c491a968d66e71c6f2f39",
+          "valueId": "1a2decfbb1654e399809f5000b7a0272",
+          "valueName": "Pro-border security"
+        },
+        {
+          "relationId": "b340c2b726d74476a5ce6771ad2d7f88",
+          "entityId": "006b66ea713a45cfa263964c35a5ad62",
+          "claimId": "824760f73a7c491a968d66e71c6f2f39",
+          "valueId": "f62bcc598efb4ce89fabd3c34dd77c92",
+          "valueName": "MAGA"
+        }
+      ],
+      "evidence": [
+        "should revive the Trump administration's third-country deportation program",
+        "should revive the Trump administration's third-country deportation program",
+        "Trump administration's third-country deportation program"
+      ],
+      "explanation": "Published: Right. NAT-2R matched (direct): “should revive the Trump administration's third-country deportation program”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “should revive the Trump administration's third-country deportation program”, independent probability 0.96). Political ideology: MAGA (belief T2: “Trump administration's third-country deportation program”, independent probability 0.90).",
+      "rules": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
         "P2 pass: the criteria match directly",
         "P3 pass: country: United States",
         "P4 pass: the independent check gives Right 1.00",
@@ -351,74 +391,90 @@
       ]
     },
     {
-      "claimId": "be0f530d211f3f552d9b5524da5b9a91",
-      "text": "Private prisons should be banned",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/be0f530d211f3f552d9b5524da5b9a91",
-      "politicalPosition": "Left",
-      "politicalIdeology": null,
-      "issuePositions": [
-        "Pro-criminal justice reform"
-      ],
-      "relations": [
-        {
-          "relationId": "41ec5ed8f4ad4349b6c75e511ead6aa9",
-          "entityId": "0a1bfeb6eec44e40ad00453adf6b1404",
-          "claimId": "be0f530d211f3f552d9b5524da5b9a91",
-          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
-          "valueName": "Left"
-        },
-        {
-          "relationId": "858ed155c64840e69deb364c9823bd47",
-          "entityId": "f6e6ef360ecf44e4bea214f029a8162c",
-          "claimId": "be0f530d211f3f552d9b5524da5b9a91",
-          "valueId": "9e1ee559ae704dfe9bfd870f9f1b0393",
-          "valueName": "Pro-criminal justice reform"
-        }
-      ],
-      "evidence": [
-        "Private prisons should be banned",
-        "Private prisons should be banned"
-      ],
-      "explanation": "Published: Left. LAW-2L matched (close): “Private prisons should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-criminal justice reform (belief T1: “Private prisons should be banned”, independent probability 0.97). Not published: Pro-regulation (independent probability 0.86 is below 0.9; the verifier disagreed).",
-      "rules": [
-        "P1 pass: independent probability that the claim takes a position: 1.00",
-        "P2 pass: the criteria match closely",
-        "P3 pass: country: United States",
-        "P4 pass: the independent check gives Left 0.98",
-        "P5 pass: the verifier agreed in all 2 checks",
-        "P6 pass: all 3 runs gave Left"
-      ]
-    },
-    {
-      "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
-      "text": "Property taxes on people's homes should be abolished",
-      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/982d12a85b4de99c59c3befc6c4c51c3",
+      "claimId": "556d34906b86480da6c989576a04c6ed",
+      "text": "Christians should oppose abortion even in cases of rape",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/556d34906b86480da6c989576a04c6ed",
       "politicalPosition": "Right",
-      "politicalIdeology": null,
+      "politicalIdeology": "Christian conservative",
       "issuePositions": [
-        "Pro-tax cuts"
+        "Pro-life"
       ],
       "relations": [
         {
-          "relationId": "8487ba0198b54414bf41100fc3eade33",
-          "entityId": "39fa3f4b01b34934b159c4fe9678e873",
-          "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+          "relationId": "dc520d9a4f4a4104aee9d014da695db6",
+          "entityId": "b684d35d5a2344b09b21e2322d3963a5",
+          "claimId": "556d34906b86480da6c989576a04c6ed",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "b2f2b247a32c4b48ab6d259f54d6c6b1",
-          "entityId": "269542ad1d044c86b4bba62964f77f1a",
-          "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
-          "valueId": "69fa99ed89f444ba8b3396b0d80dff49",
-          "valueName": "Pro-tax cuts"
+          "relationId": "2a403ba8ab684b95bbe94f91f9d90554",
+          "entityId": "7bd7a4233be447a4baf7bfc30010a177",
+          "claimId": "556d34906b86480da6c989576a04c6ed",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        },
+        {
+          "relationId": "cf6e76e248c547f193de7d386f6276cc",
+          "entityId": "228fcc2f3e724fabb37c4963bee8887c",
+          "claimId": "556d34906b86480da6c989576a04c6ed",
+          "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
+          "valueName": "Christian conservative"
         }
       ],
       "evidence": [
-        "Property taxes on people's homes should be abolished",
-        "Property taxes on people's homes should be abolished"
+        "should oppose abortion even in cases of rape",
+        "should oppose abortion even in cases of rape",
+        "Christians should oppose abortion even in cases of rape"
       ],
-      "explanation": "Published: Right. ECO-2R matched (direct): “Property taxes on people's homes should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-tax cuts (belief T1: “Property taxes on people's homes should be abolished”, independent probability 1.00).",
+      "explanation": "Published: Right. SOC-2R matched (close): “should oppose abortion even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “should oppose abortion even in cases of rape”, independent probability 0.98). Political ideology: Christian conservative (belief T1: “Christians should oppose abortion even in cases of rape”, independent probability 0.91).",
+      "rules": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ]
+    },
+    {
+      "claimId": "6bcb7138969c483faa46a922c046207e",
+      "text": "Abortion should be illegal even in cases of rape",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/6bcb7138969c483faa46a922c046207e",
+      "politicalPosition": "Right",
+      "politicalIdeology": "Christian conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "f2cbe249aec04df895153891cb4d80d0",
+          "entityId": "1a01490c6fed453e9924ea76a6e87de5",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "84602eb275134042824438fad7f7e495",
+          "entityId": "3913483257334bdc9395dd0f266642cc",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        },
+        {
+          "relationId": "c894ad98fca44d98bb7310be0cf68031",
+          "entityId": "2c9f936622ca4a96af6e088a171c1a95",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
+          "valueName": "Christian conservative"
+        }
+      ],
+      "evidence": [
+        "Abortion should be illegal even in cases of rape",
+        "Abortion should be illegal even in cases of rape",
+        "Abortion should be illegal even in cases of rape"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Political ideology: Christian conservative (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 0.90).",
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
         "P2 pass: the criteria match directly",

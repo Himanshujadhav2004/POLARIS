@@ -1,6 +1,5 @@
 # Left out after hand review (one reason each)
 73aef60360f4465ba5238f45c806aaa5 # Abortion should be banned nationwide — Christian conservative with no Christian or religious element in the claim
-6bcb7138969c483faa46a922c046207e # Abortion should be illegal even in cases of rape — Christian conservative with no Christian or religious element in the claim
 97fdfead23a240f483555ff48b8ece5b # Ordering abortion pills should be illegal — Christian conservative with no Christian or religious element in the claim
 a29794bbc69a4bd0b75b7c8590f867bd # The Trump administration should cut the FEMA workforce by 50% — Fiscal hawk, but the claim says nothing about deficits or debt
 10bfc211a3e14de6b48a97a6f30a8762 # Participating in elections should be mandatory — Pro-voting rights is doubtful for compulsory voting
