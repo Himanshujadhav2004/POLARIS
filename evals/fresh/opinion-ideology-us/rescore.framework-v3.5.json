@@ -1,0 +1,1942 @@
+{
+  "name": "opinion-ideology-us",
+  "seed": 15,
+  "framework": "framework-v3.5",
+  "generatedAt": "2026-10-26T15:08:40.791Z",
+  "rows": [
+    {
+      "claimId": "28a01f19ce318a2dfb81d52c7dea9a99",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Boulder’s lawsuit should require company-specific proof of climate damages",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6e1df19f9135046d8ffcffc8f79542df",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan Democrats should tie Trump’s record to Mike Rogers’s Senate candidacy",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.99, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim recommends a campaign messaging strategy, not a substantive position on public policy, law, rights, government powers, the economy, or social organization; it also does not state a contested policy or ideological position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7f8060ade0c14def993ca4b6368c9056",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Trump should pardon former Representative David Rivera",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3840a77c24198061957f048f6fccdecd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious organizations should receive no tax exemptions denied to secular organizations",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.90",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Religious organizations should receive no tax exemptions denied to secular organizations”"
+      ],
+      "explanation": "No label. SOC-2L matched (close): “Religious organizations should receive no tax exemptions denied to secular organizations”. That points to Left, but rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Church-state separationist (independent probability 0.88 is below 0.9). Not published: Secularist (independent probability 0.78 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "Church-state separationist: independent probability 0.88 is below 0.9",
+        "Secularist: independent probability 0.78 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The evidence supports an equal-treatment church-state rule, but it is narrower than the SOC-2L criterion for broadly secular public institutions. Because the claim expressly allows religious organizations to receive exemptions available to secular organizations, Left is not clearly the exact level."
+      ],
+      "nearMisses": [
+        "Church-state separationist: independent probability 0.88 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "63ab3fc4d77f44169092e4a7da9beb87",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should reverse its plan to import Russian diesel",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6997f65a63904983a4694ad3896607a5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should pass legislation blocking Trump's Russian diesel deal",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-Ukraine: The claim advocates blocking a Russian diesel deal, but it does not itself mention Ukraine, Ukraine’s sovereignty, defense against Russia’s invasion, or otherwise explicitly frame the policy as support for Ukraine.",
+        "Verifier on Pro-regulation: The claim supports Congress “blocking Trump's Russian diesel deal,” which is a specific foreign-policy/sanctions or trade restriction, not a general stance favoring government rules and oversight of businesses or markets under the Regulation card. The evidence does not show concern with market failures, public protection, or constraining harmful market conduct. / The claim supports specific legislation “blocking Trump's Russian diesel deal,” which is a Russia sanctions/foreign-policy or trade restriction position, not a general stance favoring government rules and oversight of businesses or markets to address market failures or protect the public."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e2599b42b412f25dcc8214e6ccea6531",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender women should be kept out of women's prisons",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Gender-critical"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.98",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Transgender women should be kept out of women's prisons”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Transgender women should be kept out of women's prisons”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Gender-critical (belief T1: “Transgender women should be kept out of women's prisons”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Gender-critical"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Gender-critical"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2de415ed7dc76b1a3bba1961fcd36d2a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court should let Donald Trump’s mail-ballot rules take effect before the 2026 midterms",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "LAW-2R (close): “should let Donald Trump’s mail-ballot rules take effect before the 2026 midterms”"
+      ],
+      "explanation": "No label. LAW-2R matched (close): “should let Donald Trump’s mail-ballot rules take effect before the 2026 midterms”. That points to Right, but rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-election integrity (independent probability 0.85 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-election integrity: independent probability 0.85 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim supports letting “Donald Trump’s mail-ballot rules take effect,” but it does not state what those rules do. The quoted words do not clearly show LAW-2R’s “limits on mail-in voting” or “election-security rules,” so the exact Right classification is doubtful. / The claim supports letting unspecified “mail-ballot rules” take effect, but the quoted words do not show that those rules are limits on mail-in voting or election-security rules. Support for a Supreme Court action involving Donald Trump is not enough by itself to match LAW-2R.",
+        "Verifier on Pro-election integrity: The claim mentions “mail-ballot rules” but does not say they are intended to make elections accurate, secure, lawful, or fairly administered. Supporting unspecified rules associated with Trump is not enough to meet the Pro-election integrity side’s description. / The claim does not say the rules are intended to make elections accurate, secure, lawful, or fairly administered. “mail-ballot rules” alone is too vague to meet the Pro-election integrity side’s description."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "bc26402c8f5e40f9a0a769f3784ca003",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican candidates should distance themselves from Donald Trump's policies",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6c15916277ff4f1597503da44610d233",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Justice argued in a court filing on October 2, 2026, that a Supreme Court ruling authorizing the overhaul of the Systematic Alien Verification for Entitlements database should nullify the group EPIC's lawsuit against Trump's voter eligibility lists",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.10.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral report of a legal argument, not a position in its own voice; the position is attributed to the Department of Justice: \"The Department of Justice argued\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9d4d714affa0e70de3b40886b7df79bc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "National law should set climate liability to avoid conflicting local standards",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Not published: Pro-federal authority (the other side of Federalism also scores: Pro-states' rights 0.24).",
+      "droppedIdeologies": [
+        "Pro-federal authority: the other side of Federalism also scores: Pro-states' rights 0.24"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2b1a4e8e20d150838fffec827a25c0e6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign governments should analyze Donald Trump's social media posts by looking at U.S. government structures and the history of his posts",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 0.60, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives advice about interpretation—foreign governments should analyze posts using \"U.S. government structures\" and \"the history of his posts\"—but it does not take a position on a mainstream contested policy question between political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d475e23a8ee640208c33213e4a3f4c1a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The appeals court ruled that executive privilege must be formally invoked by a president, which President Trump had not done",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an appeals court ruling rather than taking its own position; the position is attributed to the court in “The appeals court ruled.”"
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ea70de5c6b0fbf6f3105a13d46f0343a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Darline Graham should oppose Trump’s Iran policy when it threatens South Carolina energy prices",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Dove: The claim says Graham should oppose “Trump’s Iran policy” when it affects energy prices, but it does not itself advocate military restraint, diplomacy, or limited commitments on the use of force."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "fe687ebec6034c06bceb24634c31b440",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Women should be treated more gently than men",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match, P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.86",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check gives Right 0.44, below 0.7",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (partial): “Women should be treated more gently than men”"
+      ],
+      "explanation": "No label. SOC-2R matched (partial): “Women should be treated more gently than men”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check gives Right 0.44, below 0.7; rule P5 (Verifier agrees) failed: the verifier disagreed.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The quoted claim expresses a vague gender-norm judgment, but it does not directly support any SOC-2R criterion such as abortion restrictions, traditional marriage and family policy, parental rights, limits on gender-transition care, religious-liberty exemptions, or opposition to DEI. It is therefore too indirect to classify as Right under SOC-2R. / The quoted claim supports a gendered social norm, but it does not directly or closely match SOC-2R’s listed mainstream conservative policy positions such as abortion restrictions, parental rights, limits on gender-transition care, religious-liberty exemptions, opposition to DEI, or traditional marriage/family policy. It is also not clearly a public-policy or legal claim rather than a broad interpersonal norm."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "56217514043e4ea582e5b5af3af0cdac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Transportation Department should not tie transit funding to marriage and birth rates",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7898da0b6a91433599c211f3911c2587",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To secure a sizable House majority in the 2026 midterms, Democrats must win seats that Donald Trump carried in 2024, including districts he won by double digits",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.46.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim states an electoral condition or strategy for Democrats, not a normative position for or against a public policy or ideological value; it also does not present a contested policy position between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "62b54cb6caa642d3a5dad0d164f49e47",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "At the Bullhead City, Arizona rally on October 14, 2026, Donald Trump described leakers of military information as 'the scum of the earth' and stated they should be in jail for the rest of their lives",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.06.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral report of Donald Trump's statement, not a position taken in the claim's own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b081d820e70dc137c9aeebb1fc53ce77",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Churches should return to traditional worship to win back young people",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (not political)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G3 (Political subject) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives advice to churches about worship style, but it does not concern public policy, law, rights, government, the economy, or how society should be organized politically; it is also not a contested public-policy issue between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "ab8a632c09cf25491d73acb58e930c6a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign sovereignty should not shield Maduro and Flores from U.S. torture trials",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "abb9ebfcc79e4bde987c048a20c0627a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump declined to intervene or issue a pardon for Lindsay Clancy, stating on September 13, 2026, that the case is a state situation that must be worked out locally",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive report of what Trump did and said, not the claim's own argument; the key position is attributed in “stating on September 13, 2026.” It concerns a pardon/legal matter, but a named state case and federal-state handling are not clearly a mainstream partisan contested position in the claim itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "8fea942a2ebfdac4350b1d8ba947f88e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should not use Russia sanctions for unrelated tariff fights",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-TRADE).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "56a5814ee6d831aca1447962fb1c2011",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Parents should be barred from refusing life-saving care for children on religious grounds",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.85); Center left gets 0.12",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-1L (direct): “Parents should be barred from refusing life-saving care for children on religious grounds”"
+      ],
+      "explanation": "No label. SOC-1L matched (direct): “Parents should be barred from refusing life-saving care for children on religious grounds”. That points to Center left, but rule P4 (Same level) failed: the independent check prefers Left (0.85); Center left gets 0.12. Not published: Secularist (independent probability 0.62 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Secularist: independent probability 0.62 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Secularist: The claim limits religious objections in the narrow context of parents refusing life-saving care for children, but it does not argue for separating religious institutions from state authority or for secular government and law. That makes the Secularist tradition doubtful rather than clearly matched. / The claim limits a religious-grounded refusal of life-saving medical care for children, but it does not clearly advocate separating religious institutions from state authority or a general secular government and law. This is too narrow to be distinctive of the Secularist tradition under the card."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9ca95a30fae9b7ceeacfa8edafb63206",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should keep his tariff agenda despite weak economic approval",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Protectionist"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TRADE). Issue position: Protectionist (belief T1: “Trump should keep his tariff agenda”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Protectionist"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Protectionist"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Employers should be barred from requiring women to wear high heels",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-regulation",
+        "Feminist"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.88",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Employers should be barred from requiring women to wear high heels”"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Employers should be barred from requiring women to wear high heels”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.88; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “Employers should be barred from requiring women to wear high heels”, independent probability 0.97). Political ideology: Feminist (belief T2: “requiring women to wear high heels”, independent probability 0.94).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-regulation",
+            "Feminist"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Feminist",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "87530d21a13042eba1709f902d0f3422",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should allow explicitly Christian teaching and prayer",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-religious freedom",
+        "Christian conservative"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Public schools should allow explicitly Christian teaching and prayer”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Public schools should allow explicitly Christian teaching and prayer”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-religious freedom (belief T1: “should allow explicitly Christian teaching and prayer”, independent probability 0.93). Political ideology: Christian conservative (belief T3: “Public schools should allow explicitly Christian teaching and prayer”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom",
+            "Christian conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom",
+            "Christian conservative"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f05a678c49584c4885b51c39486c82f1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Parents must claim their child's Trump Account through the Trump Account mobile app to manage the account, allow external contributions, and receive federal deposits",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.13.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim describes an administrative requirement for a federal account program rather than arguing for or against a policy. The requirement to use the app to manage the account is not itself a contested left-right political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "148090e1b745ca8b0aef60c901440f59",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious communities should be allowed to exclude members who publicly leave the faith",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.82",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Religious communities should be allowed to exclude members who publicly leave the faith”"
+      ],
+      "explanation": "No label. SOC-2R matched (close): “Religious communities should be allowed to exclude members who publicly leave the faith”. That points to Right, but rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-religious freedom (independent probability 0.68 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-religious freedom: independent probability 0.68 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim supports internal religious-community membership rules, not clearly a contested SOC-2R “religious-liberty exemption.” Allowing a faith community to exclude people who publicly leave the faith is likely a broadly accepted religious-autonomy point, so it does not clearly sit at Right. / The quoted claim supports religious communities controlling their own membership, but it is not clearly a SOC-2R “religious-liberty exemption” from a contested law or a distinctly mainstream conservative position. This may be a broadly accepted religious-association/free-exercise principle rather than a clear Right leaning."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4291624726732bfe33da8d1052e2bbad",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court should not expedite the removal of transgender troops before lower courts have issued a final judgment on the legality of President Trump’s military ban",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [
+        "Pro-transgender rights",
+        "Pro-LGBTQ rights"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.76); Center left gets 0.24",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 2 of 3 runs gave Center left; the others gave Left"
+      ],
+      "criteria": [
+        "SOC-1L (close): “should not expedite the removal of transgender troops before lower courts have issued a final judgment”"
+      ],
+      "explanation": "No label. SOC-1L matched (close): “should not expedite the removal of transgender troops before lower courts have issued a final judgment”. That points to Center left, but rule P4 (Same level) failed: the independent check prefers Left (0.76); Center left gets 0.24; rule P6 (Stable) failed: 2 of 3 runs gave Center left; the others gave Left. Issue position: Pro-transgender rights (belief T1: “should not expedite the removal of transgender troops”, independent probability 0.93). Issue position: Pro-LGBTQ rights (belief T1: “The Supreme Court should not expedite the removal of transgender troops before lower courts have issued a final judgment on the legality of President Trump’s military ban”, independent probability 0.93).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Center left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Pro-judicial independence",
+            "Pro-LGBTQ rights"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-transgender rights",
+            "Pro-judicial independence",
+            "Pro-LGBTQ rights"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Second look at Pro-judicial independence: The claim argues a specific procedural position—that the Supreme Court should not expedite action before lower courts issue a final judgment. It does not itself argue that courts or judges should decide cases free from improper interference or pressure, so it does not clearly match Pro-judicial independence."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "cfa0cbcc6a9548cc96ffa26e8b807148",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Vulnerable Republican senators should vote independently of Donald Trump",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e3c28f62526e4880b9edb5c16817b27b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Melania Trump should not host her initiative's G20 event at President Trump's golf resort",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "196af3f439834e859a14779dd5c42ec2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal Communications Commission Chair Brendan Carr stated on July 15, 2026, that broadcast networks should air President Donald Trump's remarks",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral report of what Brendan Carr stated, not the claim's own policy position; the position is attributed in the words \"Brendan Carr stated ... that\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c258bcf3052d3939844d90de337320ee",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Katie Zacharia should answer directly for Trump’s public claims at White House briefings",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "3a86111db36a2b369f22aa997691a652",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious beliefs should have no influence on legislation",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Church-state separationist",
+        "Secularist"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.92",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Religious beliefs should have no influence on legislation”"
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Religious beliefs should have no influence on legislation”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.92; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.99). Political ideology: Secularist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.93).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Church-state separationist",
+            "Secularist"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Church-state separationist",
+            "Secularist"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "27055bb1e0e04ae2a840b10fb6a98753",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump rejected calls for an artificial intelligence development slowdown on September 13, 2026, stating that the United States leads China and must maintain its lead because \"whoever wins AI wins.\"",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed position rather than taking it in its own voice: \"President Donald Trump rejected calls\" and was \"stating\" the quoted rationale."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "577d8770a280bdfdeb265b7e31ef0869",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should allow students to wear religious clothing despite uniform rules",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center right",
+      "ideologies": [
+        "Pro-religious freedom"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.87); Center right gets 0.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Center right"
+      ],
+      "criteria": [
+        "SOC-1R (close): “Public schools should allow students to wear religious clothing despite uniform rules”"
+      ],
+      "explanation": "No label. SOC-1R matched (close): “Public schools should allow students to wear religious clothing despite uniform rules”. That points to Center right, but rule P4 (Same level) failed: the independent check prefers Left (0.87); Center right gets 0.00. Issue position: Pro-religious freedom (belief T1: “allow students to wear religious clothing despite uniform rules”, independent probability 0.99). Not published: Classical liberal (the verifier disagreed; found in 1 of 3 runs).",
+      "droppedIdeologies": [
+        "Classical liberal: the verifier disagreed; found in 1 of 3 runs"
+      ],
+      "repeats": [
+        {
+          "leaning": "Center right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom"
+          ]
+        },
+        {
+          "leaning": "Center right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Classical liberal: The claim supports a specific religious-clothing accommodation, but it does not express a broader classical-liberal worldview of limited government or civil liberties. This is better captured by the specific Pro-religious freedom issue leaning."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4a2a4fb546f9b89f41bebdadf38a1b7d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should hold daily prayer time",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Public schools should hold daily prayer time”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Public schools should hold daily prayer time”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-religious freedom (independent probability 0.84 is below 0.9; the verifier disagreed). Not published: Christian conservative (the issue side it rests on is in doubt: Pro-religious freedom (the verifier rejected it)).",
+      "droppedIdeologies": [
+        "Pro-religious freedom: independent probability 0.84 is below 0.9; the verifier disagreed",
+        "Christian conservative: the issue side it rests on is in doubt: Pro-religious freedom (the verifier rejected it)"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom",
+            "Christian conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Christian conservative",
+            "Pro-religious freedom"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-religious freedom: The claim supports public schools holding prayer time, but it does not state or clearly imply a right to practice religion or legal protections for religious exercise. State-organized prayer in schools is not the same as religious freedom under the card’s description. / The claim supports public schools holding prayer time, but it does not itself state a right to practice religion or protections for religious belief and exercise. Government-organized prayer is not the same as a religious-freedom accommodation."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f41ece3a32434ac5913dfc63b8fe04d7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The majority of the Iranian delegation walked out of President Trump's U.N. General Assembly speech after Trump asked if he should annihilate the Islamic Republic or drive them into hell.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an event and attributes the provocative language to Trump rather than taking that position in its own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6d95a682563a42ceb8b1518a52ee3f9a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Kennedy Center should add Donald Trump's name to its exterior",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "86dc2795371b61979cbd593524569d13",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Employers should be required to accommodate religious observance absent substantial hardship",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center right",
+      "ideologies": [
+        "Pro-religious freedom"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.98",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Center left (0.75); Center right gets 0.02",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Center right"
+      ],
+      "criteria": [
+        "SOC-1R (close): “Employers should be required to accommodate religious observance absent substantial hardship”"
+      ],
+      "explanation": "No label. SOC-1R matched (close): “Employers should be required to accommodate religious observance absent substantial hardship”. That points to Center right, but rule P4 (Same level) failed: the independent check prefers Center left (0.75); Center right gets 0.02. Issue position: Pro-religious freedom (belief T1: “accommodate religious observance absent substantial hardship”, independent probability 0.98).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Center right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom"
+          ]
+        },
+        {
+          "leaning": "Center right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-religious freedom"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6042a52d32c14581830de811fd474697",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "J.D. Vance stated that Republicans must maintain and expand their congressional majorities in the 2026 midterm elections to enact Donald Trump's legislative vision",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.06.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed statement rather than taking the position in its own voice: \"J.D. Vance stated that\" Republicans \"must\" act."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a42a7e78f15240d3a4824252d2d900dd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Zohran Mamdani stated that a mayor should not police language to justify not condemning the phrase \"globalize the Intifada\"",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The position is attributed to Zohran Mamdani rather than stated in the claim's own voice: \"Zohran Mamdani stated that\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "aff113ec2b9e424a9af5cb5cbf848b4e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican Senator John Kennedy of Louisiana stated that no public official, including President Donald Trump, should spend public money on private advertisements for themselves",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.05.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The statement is attributed to another person, not made in the claim's own voice: \"Republican Senator John Kennedy of Louisiana stated that\". It also expresses a broadly shared government-ethics principle rather than a clearly contested partisan position: \"no public official... should spend public money on private advertisements for themselves\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "25b610cbcdd3f0efaeddcd82ae1fd44d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Criticizing religious beliefs should never be considered hate speech",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-SPEECH). Not published: Classical liberal (independent probability 0.77 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Classical liberal: independent probability 0.77 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Pro-internet freedom: The claim supports a general free-speech position about criticism of religion and hate speech, but it does not address online speech, internet access, online participation, or internet censorship specifically.",
+        "Verifier on Classical liberal: The claim supports a free-speech norm about criticism of religion, but the quoted words do not clearly frame it as protecting rights or civil liberties against state power, as Classical liberal T1 requires. This is at least doubtful as a distinctive Classical liberal tradition rather than a general free-expression position. / The claim supports free expression around criticism of religion, but it does not clearly frame this as protecting civil liberties against state power or limited government. The quoted words say it should not be “considered hate speech,” which is too ambiguous for the Classical liberal tradition card."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0c88869ad5454a428cbf23166a47fc99",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign governments should treat Donald Trump's social media posts as official policy",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR, X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7fffa02671cc4ae5819289d7a46961a7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Prior to becoming Prime Minister, Andy Burnham was fiercely critical of Donald Trump, stating in 2021 that any UK politician who gave Trump the time of day should be ashamed.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The normative position is attributed to Andy Burnham rather than stated in the claim's own voice: \"Andy Burnham was fiercely critical of Donald Trump, stating in 2021 that any UK politician who gave Trump the time of day should be ashamed.\""
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f6197feb6ca144e9b408ea363437fcc4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Republican Party should prioritize candidate loyalty to Donald Trump over traditional electability",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Not published: MAGA (independent probability 0.88 is below 0.9 (no issue leaning or political leaning is published with it)).",
+      "droppedIdeologies": [
+        "MAGA: independent probability 0.88 is below 0.9 (no issue leaning or political leaning is published with it)"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "MAGA"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "MAGA"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": [
+        "MAGA: independent probability 0.88 (needs 0.9)"
+      ]
+    },
+    {
+      "claimId": "ee1b859c95b04bc4b3a0cfd51ac064ef",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump administration should bar illegal immigrants from Head Start preschools",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "NAT-2R (partial): “should bar illegal immigrants from Head Start preschools”"
+      ],
+      "explanation": "No label. NAT-2R matched (partial): “should bar illegal immigrants from Head Start preschools”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part. Not published: Pro-border security (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-border security: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-border security: The quoted words support barring undocumented immigrants from a public preschool program, not stronger enforcement or security measures at national borders. Under I7, related immigration-restriction language does not widen the Pro-border security side’s description. / The quoted words support excluding undocumented immigrants from a preschool/public-benefit program, not stronger enforcement or security measures at national borders. Under I7, a general immigration-restriction implication is not enough to meet the Pro-border security description."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "0af30a95f81e4632a452ecd6aefdfc65",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Billionaires should not exist",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Far left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check gives Far left 0.55, below 0.7",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-3L (close): “Billionaires should not exist”"
+      ],
+      "explanation": "No label. ECO-3L matched (close): “Billionaires should not exist”. That points to Far left, but rule P4 (Same level) failed: the independent check gives Far left 0.55, below 0.7; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Socialist (independent probability 0.78 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Socialist: independent probability 0.78 is below 0.9 (no issue leaning or political leaning is published with it); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: The claim says only that “Billionaires should not exist”; it does not state a legal cap on wealth, expropriation, nationalization, or replacing/abolishing capitalism. That makes Far left under ECO-3L too strong and not clearly shown by the quoted words.",
+        "Verifier on Socialist: The evidence does not say wealth should be capped “by law” or advocate social/public/worker ownership of productive resources. “Billionaires should not exist” is not enough by itself to meet the Socialist card. / The claim says “Billionaires should not exist,” which supports a far-left wealth-cap position, but it does not itself specify “set by law to reach economic equality” or social/public/worker ownership. That is not enough to establish the Socialist tradition under the whole card."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "51d5e95170b59b831166e73d96c017b6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should restore restrictions preventing departing White House officials from immediately monetizing their government relationships through lobbying",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The quoted restriction applies to departing White House officials and lobbying ethics, not rules on businesses or markets. Under the framework, Regulation covers business/market rules, not restrictions on individuals or officials. / The evidence concerns restrictions on departing White House officials and lobbying, not rules on businesses or markets. Under the framework, the Regulation issue leaning covers businesses and markets, not rules on individuals or officials."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "744cbb01ad4249fea440ea5573e6e139",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Senator Darline Graham stated that a Republican-majority Senate is needed to confirm a Supreme Court nominee from President Donald Trump should Justice Samuel Alito choose to retire in 2027.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim reports an attributed position: “Senator Darline Graham stated that,” so the position is not in the claim’s own voice."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "15a43c9490f697b3847a1f4f74e93ec0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Kennedy Center should accept Trump-led fundraising to avoid collapse",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.99, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative stance with “should accept,” but it is about the Kennedy Center’s fundraising choice rather than a public policy, law, rights, government power, or society-wide economic question. It also does not clearly map to a mainstream contested ideological position in the framework."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f68d343bd88a41f1ace406653a38f49b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Trump told CNN's Kaitlan Collins on September 22, 2026 at the U.N. building that she should not be covering him.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual report of what Trump said, not a position in the claim's own voice; the words \"that she should not be covering him\" are attributed to him rather than asserted by the claim. It also does not state a public-policy, law, rights, economic, or government-organization position for classification."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e11eb4ad8086d6861bde048ee86cc777",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal judges should not impose nationwide bans on Trump administration advertisements",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST, X-SPEECH).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4507c8cee2e044a3b59fc3a76ae1301d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should implement Trump's proposed $5,000 dividend",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (0.75); Left gets 0.05",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ECO-2L (close): “The US should implement Trump's proposed $5,000 dividend”"
+      ],
+      "explanation": "No label. ECO-2L matched (close): “The US should implement Trump's proposed $5,000 dividend”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Right (0.75); Left gets 0.05; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Pro-welfare expansion (independent probability 0.09 is below 0.9; the other side of Welfare also scores: Pro-welfare reform 0.32). Not published: MAGA (independent probability 0.09 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Left; the issue side it rests on is in doubt: Pro-welfare expansion (the other side, Pro-welfare reform, also scores or was not scored); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-welfare expansion: independent probability 0.09 is below 0.9; the other side of Welfare also scores: Pro-welfare reform 0.32",
+        "MAGA: independent probability 0.09 is below 0.9 (no issue leaning or political leaning is published with it); it is not usually found at Left; the issue side it rests on is in doubt: Pro-welfare expansion (the other side, Pro-welfare reform, also scores or was not scored); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: ECO-2L is not clearly shown: “Trump's proposed $5,000 dividend” supports a cash payout, but the claim does not specify a mainstream liberal/progressive safety-net or public-program expansion. It therefore does not clearly sit at the exact Left level. / The claim supports “Trump's proposed $5,000 dividend,” but that is not clearly ECO-2L’s mainstream liberal/progressive position of expanding public programs or the safety net. A one-time named dividend/rebate proposal, especially framed as Trump’s proposal, is too doubtful for the exact Left level.",
+        "Verifier on MAGA: The evidence merely identifies the payout as “Trump's proposed” dividend; it does not itself show MAGA/America First nationalism or the broader Trump movement outlook. Supporting one named Trump proposal is not enough to meet the MAGA tradition card. / “Trump's proposed $5,000 dividend” invokes Trump but does not show the broader MAGA tradition: America First nationalism, restrictive immigration, or opposition to established political institutions. Supporting one Trump-labeled payout proposal is not enough for the MAGA tradition."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6213a87fafa6f11e9153e78f5e076251",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican candidates should distance their midterm campaigns from Trump’s Iran war strategy",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-FOR). Not published: Dove (independent probability 0.81 is below 0.9; the other side of Use of force also scores: Hawk 0.12; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Dove: independent probability 0.81 is below 0.9; the other side of Use of force also scores: Hawk 0.12; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Dove: The claim says Republican candidates should distance their campaigns from “Trump’s Iran war strategy,” but it does not itself clearly favor military restraint, diplomacy, or limited commitments. It could be electoral messaging advice rather than a substantive anti-war or restraint position. / The quoted words advise Republican candidates to distance their campaigns from “Trump’s Iran war strategy,” but they do not themselves favor military restraint, diplomacy, or limited commitments. This could be campaign/electoral advice rather than a substantive dove position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9a818d3567f05ef39206aad4b03e10c8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universities should not stay neutral on the issue of whether humans cause climate change",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5a19d895a3324c308454b136b6df7508",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump lacks the constitutional authority to legally rename U.S. states, as the legal process to change a state's name must occur within the state itself",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.16.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim states a legal/constitutional description of presidential authority and state renaming procedure, not a policy argument; it also does not present a disagreement between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "557ea7f0cbb147649c6cbe3a2b7860fd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should halt the Triumphal Arch project until a full environmental review is completed",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.69); Center left gets 0.31",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "ENV-1L (close): “should halt the Triumphal Arch project until a full environmental review is completed”"
+      ],
+      "explanation": "No label. ENV-1L matched (close): “should halt the Triumphal Arch project until a full environmental review is completed”. That points to Center left, but rule P4 (Same level) failed: the independent check prefers Left (0.69); Center left gets 0.31. Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim seeks an environmental review for a government project, not government rules or oversight on businesses and markets. Under I6, the general Regulation issue should not be used for this kind of environmental/government-project claim. / The claim supports an environmental review for a specific government project, not government rules on businesses or markets. Under I6, the general Regulation issue is not a good fit here."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e111d31166d14208ae02c9dd70b14d0b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should suspend its tariffs on Canadian imports",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Free trader"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TRADE). Issue position: Free trader (belief T1: “should suspend its tariffs on Canadian imports”, independent probability 1.00).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Free trader"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Free trader"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b26a3de23ef54d4ab72ddd5ebd62d11c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democrats should prioritize investing in traditionally red Senate races over established battlegrounds",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 1.00, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives strategic advice to Democrats about campaign investment, but it does not take a contested ideological or policy position between mainstream political camps."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "abfed30d907b4532b459dde7fe9eba95",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Xi Jinping told Kim Jong Un that China and North Korea should strengthen strategic ties and firmly protect their sovereignty, security, and development interests",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G2, In its own voice, failed), but the independent probability that the claim takes one is 0.62, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed rather than stated in the claim's own voice: \"Xi Jinping told Kim Jong Un\" that China and North Korea \"should strengthen strategic ties\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "182cbb1d7da8497f8e1726b143a79008",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Byron Donalds should distance himself from Donald Trump to win the Florida governorship",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.99, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives campaign-strategy advice about a candidate distancing himself from Donald Trump to win office, not a position on public policy, law, rights, resources, or social organization; it also does not state a mainstream contested policy position that maps to the criteria."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "12d318f5b9f944fd9b6432681e185323",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican Senator Lisa Murkowski stated that President Donald Trump should use statutory sanction authorities against Russia rather than allowing it to export diesel and rake in revenues.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to another person rather than stated in the claim's own voice: \"Republican Senator Lisa Murkowski stated\"."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c6c23ec298594a5aac0f145b58d8642e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Donald Trump Jr. should not accept expensive gifts from foreign oligarchs",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.92, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim gives an own-voice 'should not' judgment about Donald Trump Jr., but it is framed as personal conduct rather than a public policy, law, rights, government, economy, or social-organization position. It also states a broadly shared ethics norm rather than a contested left/right policy position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "85fad68b8aea4a4f8ecfa39f1ce0bfb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump administration attorneys argued that the federal court lacked jurisdiction and that the plaintiffs should have instead filed complaints with the Merit Systems Protection Board",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim neutrally reports an attributed legal argument by Trump administration attorneys rather than taking the position in its own voice; the jurisdiction/procedure point is not a contested left-right policy stance by itself."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "07e52dba8b364ed19cf036a04486c167",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should establish an external board to approve NIH grants",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2ca4190b74884415a62db8bfbf989058",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Senate Majority Leader John Thune criticized the Trump administration's promotional television campaign, stating that advertisements featuring Donald Trump should not be paid for with taxpayer dollars",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The normative view is attributed to John Thune rather than stated in the claim's own voice: \"John Thune criticized\" and \"stating that\" the ads \"should not be paid for with taxpayer dollars.\" The claim is also about a specific taxpayer-funded promotional campaign rather than a standard left-right policy dispute captured by the criteria."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f917c6f1e6ad47969fd47eca57625cf2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should pressure drugmakers to split childhood vaccines",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Not published: Pro-regulation (independent probability 0.89 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: independent probability 0.89 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim supports the administration pressuring drugmakers to change how childhood vaccines are split, but it does not clearly call for government rules or oversight of businesses. The more specific vaccination/public-health topic also makes the general Regulation label doubtful. / The claim supports the administration “pressure[ing] drugmakers,” but it does not clearly call for government rules or oversight of businesses as described by Pro-regulation. The evidence is therefore at best regulation-adjacent, not a clear match to the issue leaning."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d6b438342450466eba9b6b7032e2c6a3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should fire LaCivita and Blair over their foreign consulting",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G3, Political subject, failed), but the independent probability that the claim takes one is 0.99, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim says Trump \"should fire\" specific advisers, but it is a personnel judgment about named individuals rather than a position on public policy, law, rights, government structure, the economy, or social organization. It also does not express a contested mainstream ideological position covered by the framework."
+      ],
+      "nearMisses": []
+    }
+  ]
+}
