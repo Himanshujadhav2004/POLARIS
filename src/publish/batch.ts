@@ -11,6 +11,37 @@ export interface BatchItem {
   result: ScoredClaim;
   /** Geo value IDs of the published leaning and ideologies. */
   valueIds: string[];
+  /** Labels the agent published but a reviewer took out before the proposal, with the reason. */
+  removed?: { name: string; reason: string }[];
+}
+
+/**
+ * Takes labels out of a batch after review: one "claimId | value name | reason" per line. A label can
+ * only be removed, never added, and a claim left with nothing is dropped from the batch.
+ */
+export function applyRemovals(items: BatchItem[], lines: string[], taxonomy: Taxonomy): BatchItem[] {
+  const removals = lines
+    .map((l) => l.split("#")[0]!.trim())
+    .filter(Boolean)
+    .map((l) => {
+      const [claimId, name, reason] = l.split("|").map((s) => s.trim());
+      if (!claimId || !name || !reason) throw new Error(`Removal lines are "claimId | value name | reason": ${l}`);
+      return { claimId, name, reason };
+    });
+  for (const r of removals) {
+    const item = items.find((i) => i.claim.id === r.claimId);
+    if (!item) throw new Error(`Removal for ${r.claimId}, which is not in the batch`);
+    if (item.result.leaning !== r.name && !item.result.ideologies.some((i) => i.name === r.name)) throw new Error(`${r.claimId} has no label "${r.name}"`);
+  }
+  return items
+    .map((item) => {
+      const mine = removals.filter((r) => r.claimId === item.claim.id);
+      if (!mine.length) return item;
+      const drop = new Set(mine.map((r) => r.name));
+      const result = { ...item.result, leaning: item.result.leaning && drop.has(item.result.leaning) ? null : item.result.leaning, ideologies: item.result.ideologies.filter((i) => !drop.has(i.name)) };
+      return { ...item, result, valueIds: valueIdsFor(result, taxonomy), removed: mine.map(({ name, reason }) => ({ name, reason })) };
+    })
+    .filter((item) => item.valueIds.length > 0);
 }
 
 export interface Rejection {

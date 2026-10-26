@@ -20,7 +20,7 @@ import { loadExamples, runExamples, summarizeExamples, writeExamples } from "./e
 import { buildFreshSet, rescoreFreshSet, usedClaimIds, writeFreshSet } from "./pipeline/fresh-set.js";
 import { buildQaSample, previouslyUsedIds } from "./pipeline/qa-sample.js";
 import { RunState } from "./pipeline/state.js";
-import { buildBatch } from "./publish/batch.js";
+import { applyRemovals, buildBatch } from "./publish/batch.js";
 import { checkProposal } from "./publish/check.js";
 import { idsInProposals, nextBatchDir, writeDryRun } from "./publish/dry-run.js";
 import { planSubmission, submit } from "./publish/submit.js";
@@ -75,9 +75,10 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
                                Score reviewer verdicts against the agent's output
 
 Proposals (local dry run only; nothing is sent to Geo)
-  dry-run --space <slug> (--only id,id | --file ids.txt) [--concurrency N]
+  dry-run --space <slug> (--only id,id | --file ids.txt) [--remove removals.txt] [--concurrency N]
                                Write proposals/<space>/batch-NN/ for the claims chosen after review
-                               (one ID per line in --file); a claim the agent no longer publishes is left out
+                               (one ID per line in --file); a claim the agent no longer publishes is left out.
+                               --remove takes labels out after review: "claimId | value name | reason" per line
   check-proposal --dir proposals/<space>/batch-NN
                                After you submit and it executes: confirm the Leanings now on Geo
 
@@ -111,6 +112,7 @@ async function main(argv: string[]): Promise<void> {
       space: { type: "string" },
       exclude: { type: "string" },
       only: { type: "string" },
+      remove: { type: "string" },
       yes: { type: "boolean" },
       json: { type: "boolean" },
       help: { type: "boolean", short: "h" },
@@ -393,7 +395,9 @@ async function main(argv: string[]): Promise<void> {
       const state = new RunState();
       try {
         const agent = new ScoringAgent(taxonomy, state, { model: values.model });
-        const batch = await buildBatch({ geo, agent, taxonomy, space, approved, concurrency: Number(values.concurrency ?? 4), log: (line) => console.log(line) });
+        const built = await buildBatch({ geo, agent, taxonomy, space, approved, concurrency: Number(values.concurrency ?? 4), log: (line) => console.log(line) });
+        const batch = values.remove ? { ...built, items: applyRemovals(built.items, readFileSync(values.remove, "utf8").split(/\r?\n/), taxonomy) } : built;
+        for (const item of batch.items) for (const r of item.removed ?? []) console.log(`  removed after review: ${r.name} from ${item.claim.id} (${r.reason})`);
         for (const r of batch.rejected) console.log(`  left out ${r.claim.id}: ${r.reason}`);
         if (!batch.items.length) throw new Error("None of the approved claims still passes every publish rule.");
         const dir = nextBatchDir(space.slug);

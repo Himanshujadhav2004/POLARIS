@@ -2,9 +2,9 @@
   "space": "us-politics",
   "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
   "leaningsPropertyId": "ff40a84705194415b30473badda2e534",
-  "generatedAt": "2026-10-26T15:16:28.914Z",
+  "generatedAt": "2026-10-26T15:49:38.397Z",
   "model": "gpt-5.5",
-  "framework": "framework-v3.5",
+  "framework": "framework-v3.5.1",
   "taxonomyFingerprint": "96a8cb2cefb0",
   "checks": [
     "claim chosen for this proposal after review",
@@ -25,22 +25,22 @@
       ],
       "relations": [
         {
-          "relationId": "fcaeea34441b47cbb6a8fa50c7420932",
-          "entityId": "265fbe9eb94f4af58cb74373f2a39de5",
+          "relationId": "dc4d45a94f7c4b3cbbc428bef623edfe",
+          "entityId": "8dc234d9c32b433c8a3fa94d71f4f38e",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "4cc6f6f4cb284828a243c68bcbad41a5",
-          "entityId": "42c3fb869ade464ab65eff3ba287fa7c",
+          "relationId": "dfb56a5b859e4cc8835d07f23ca8524b",
+          "entityId": "b50e845a39014f759a408971d7c59ce0",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "267abe51327a4aacaee9efb17cbabacd",
           "valueName": "Pro-climate action"
         },
         {
-          "relationId": "beca4b6609204471aba77e86be2eb2dd",
-          "entityId": "e21eb608e6ba47359670ff603c98e5cd",
+          "relationId": "11c1ddcfb7664c1da1c47483a361825a",
+          "entityId": "f31a1a8884d646b7a9b0af477054dddd",
           "claimId": "148b0cf1d60c4319b499d376ef6bf38f",
           "valueId": "fc34ee62e0a843779741a251140c546b",
           "valueName": "Environmentalist"
@@ -51,7 +51,8 @@
         "Climate change is an existential threat that requires urgent government action",
         "Climate change is an existential threat that requires urgent government action"
       ],
-      "explanation": "Published: Left. ENV-2L matched (close): “Climate change is an existential threat that requires urgent government action”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.90; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-climate action (belief T1: “Climate change is an existential threat that requires urgent government action”, independent probability 0.99). Political ideology: Environmentalist (belief T3: “Climate change is an existential threat that requires urgent government action”, independent probability 0.91).",
+      "explanation": "Published: Left. ENV-2L matched (close): “Climate change is an existential threat that requires urgent government action”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.90; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-climate action (belief T1: “Climate change is an existential threat that requires urgent government action”, independent probability 0.99). Political ideology: Environmentalist (belief T3: “Climate change is an existential threat that requires urgent government action”, independent probability 0.99).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.90",
         "P2 pass: the criteria match closely",
@@ -72,22 +73,22 @@
       ],
       "relations": [
         {
-          "relationId": "4f766bb4949e49ff841af3f6a06f1dff",
-          "entityId": "498de2e8cd4249e682563ebe6a49d36e",
+          "relationId": "9b1c8345deb34a3385fb04311ad225b7",
+          "entityId": "da62468bbb4b4e9d81c8b35cde9e65fb",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "749ee8be68d34060a2de16e123e0f30a",
-          "entityId": "4ed910a9c7d8492785c2abcd92b3fc79",
+          "relationId": "949491e978d842839b5e011ee2cba0e6",
+          "entityId": "3ea12a5ae0e449278d70c3d825fb5033",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "1a2decfbb1654e399809f5000b7a0272",
           "valueName": "Pro-border security"
         },
         {
-          "relationId": "83c57179faf247f7ba988b7a29ff4859",
-          "entityId": "d12f37a062694bf489b416e21d060e7a",
+          "relationId": "1c8649a3421841d38be94ea8c6eb242e",
+          "entityId": "1423891bda3542c4bf47d30d45f07b42",
           "claimId": "c381476542ef4d8087cf2d209abdb8f8",
           "valueId": "f62bcc598efb4ce89fabd3c34dd77c92",
           "valueName": "MAGA"
@@ -95,10 +96,11 @@
       ],
       "evidence": [
         "Trump's immigration crackdown makes the United States safer",
-        "Trump's immigration crackdown makes the United States safer",
+        "immigration crackdown makes the United States safer",
         "Trump's immigration crackdown"
       ],
-      "explanation": "Published: Right. NAT-2R matched (close): “Trump's immigration crackdown makes the United States safer”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.95; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “Trump's immigration crackdown makes the United States safer”, independent probability 0.94). Political ideology: MAGA (belief T2: “Trump's immigration crackdown”, independent probability 0.97).",
+      "explanation": "Published: Right. NAT-2R matched (close): “Trump's immigration crackdown makes the United States safer”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.95; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “immigration crackdown makes the United States safer”, independent probability 0.94). Political ideology: MAGA (belief T2: “Trump's immigration crackdown”, independent probability 0.95).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.95",
         "P2 pass: the criteria match closely",
@@ -113,42 +115,35 @@
       "text": "On the whole, the benefits of migration to the United States have been positive",
       "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/4b69e8a281525f4faef63cff0190b83b",
       "politicalPosition": "Left",
-      "politicalIdeology": "Globalist",
+      "politicalIdeology": null,
       "issuePositions": [
         "Pro-immigration"
       ],
       "relations": [
         {
-          "relationId": "1f9ecb76fbe44653b564c98cc412dc20",
-          "entityId": "92b39985ce964647bda3b9f737c76108",
+          "relationId": "1a12041cb49f428a9ef0c2e1293286a0",
+          "entityId": "e2be40adf9864d2583b22a4b99f37fb8",
           "claimId": "4b69e8a281525f4faef63cff0190b83b",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "32a1c616bc424b749afd4d21b79758b2",
-          "entityId": "ddf4cb126ad54835b4fbfbbd1d3f91e3",
+          "relationId": "68974268a0294072aa8bd3e75331401a",
+          "entityId": "397eb424d3f14b398bfe1d74c3bb500c",
           "claimId": "4b69e8a281525f4faef63cff0190b83b",
           "valueId": "1f08bda6ed0344f7902f00705a4f5325",
           "valueName": "Pro-immigration"
-        },
-        {
-          "relationId": "87f29c54bf1a44648c174df2715ff3ce",
-          "entityId": "9efb72901fb0426bb3545584750ecd50",
-          "claimId": "4b69e8a281525f4faef63cff0190b83b",
-          "valueId": "bae9b302e5eb4ac3a67951f1131abd1e",
-          "valueName": "Globalist"
         }
       ],
       "evidence": [
         "the benefits of migration to the United States have been positive",
-        "the benefits of migration to the United States have been positive",
         "the benefits of migration to the United States have been positive"
       ],
-      "explanation": "Published: Left. NAT-2L matched (direct): “the benefits of migration to the United States have been positive”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.95; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-immigration (belief T1: “the benefits of migration to the United States have been positive”, independent probability 0.94). Political ideology: Globalist (belief T3: “the benefits of migration to the United States have been positive”, independent probability 0.82).",
+      "explanation": "Published: Left. NAT-2L matched (close): “the benefits of migration to the United States have been positive”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.95; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-immigration (belief T1: “the benefits of migration to the United States have been positive”, independent probability 0.94).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.96",
-        "P2 pass: the criteria match directly",
+        "P2 pass: the criteria match closely",
         "P3 pass: country: United States",
         "P4 pass: the independent check gives Left 0.95",
         "P5 pass: the verifier agreed in all 2 checks",
@@ -166,33 +161,34 @@
       ],
       "relations": [
         {
-          "relationId": "540d93ff1507449fb0cf87baaae9e46f",
-          "entityId": "a59fa153cb2e416cbdbeddab98d3a465",
+          "relationId": "46aa250dfb384f92ba0b527f52920721",
+          "entityId": "db9fd7a73817413ebaeec86cc430522d",
           "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "e3af922342ad40aea6044edb93b285fc",
-          "entityId": "d4c5cbcd3fef4b2bbb220aa6cf5f1370",
-          "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
-          "valueId": "9f3b55993e254ca8ae643302c0039253",
-          "valueName": "Pro-regulation"
-        },
-        {
-          "relationId": "090ab672f1404c308d993b0645745cbc",
-          "entityId": "826a94ef4f604157b52e8c10d5648b28",
+          "relationId": "120f5b467df74d81a03a72e274172575",
+          "entityId": "a5cbcd0c1ecc4083a010d5d8fcf6f16a",
           "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
           "valueId": "5f90b6eaac214ef0911195d9c56983e9",
           "valueName": "Feminist"
+        },
+        {
+          "relationId": "715078f72bdf4c939d183367dbd02b60",
+          "entityId": "16ece7f00aaa4138bf30331d7f459be8",
+          "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
+          "valueId": "9f3b55993e254ca8ae643302c0039253",
+          "valueName": "Pro-regulation"
         }
       ],
       "evidence": [
         "Employers should be barred from requiring women to wear high heels",
-        "Employers should be barred from requiring women to wear high heels",
-        "requiring women to wear high heels"
+        "barred from requiring women to wear high heels",
+        "Employers should be barred from requiring women to wear high heels"
       ],
-      "explanation": "Published: Left. SOC-2L matched (close): “Employers should be barred from requiring women to wear high heels”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.88; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “Employers should be barred from requiring women to wear high heels”, independent probability 0.97). Political ideology: Feminist (belief T2: “requiring women to wear high heels”, independent probability 0.94).",
+      "explanation": "Published: Left. SOC-2L matched (close): “Employers should be barred from requiring women to wear high heels”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.88; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Political ideology: Feminist (belief T2: “barred from requiring women to wear high heels”, independent probability 0.91). Issue position: Pro-regulation (belief T1: “Employers should be barred from requiring women to wear high heels”, independent probability 0.97).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.99",
         "P2 pass: the criteria match closely",
@@ -213,22 +209,22 @@
       ],
       "relations": [
         {
-          "relationId": "afc12c990b4e491596dfbdc6454449ae",
-          "entityId": "e294525234fd4b798d90697a48579e40",
+          "relationId": "866c97d7463e49489f37e229f91ea021",
+          "entityId": "344d4249481648bda00cb147b9f34516",
           "claimId": "87530d21a13042eba1709f902d0f3422",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "23aec6993634400fbe99e4c8692bbc8c",
-          "entityId": "4643dfb9a1084250a294caa4dbce0271",
+          "relationId": "5459b3ddb34f4ca0b66b8ff575f4c997",
+          "entityId": "680914dc2f3542778b7c4385f88cbd2e",
           "claimId": "87530d21a13042eba1709f902d0f3422",
           "valueId": "14b7be05f503428992d23afb4430e443",
           "valueName": "Pro-religious freedom"
         },
         {
-          "relationId": "bef42437e48a48548d19d5e5c65ce60a",
-          "entityId": "56a1b556953f402684e7edf17c7e5d86",
+          "relationId": "1a8cc71052254336b8b6107ce3a0b1fb",
+          "entityId": "0910da58e4aa425ebc5558868ef18404",
           "claimId": "87530d21a13042eba1709f902d0f3422",
           "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
           "valueName": "Christian conservative"
@@ -236,10 +232,11 @@
       ],
       "evidence": [
         "Public schools should allow explicitly Christian teaching and prayer",
-        "should allow explicitly Christian teaching and prayer",
+        "Public schools should allow explicitly Christian teaching and prayer",
         "Public schools should allow explicitly Christian teaching and prayer"
       ],
-      "explanation": "Published: Right. SOC-2R matched (close): “Public schools should allow explicitly Christian teaching and prayer”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-religious freedom (belief T1: “should allow explicitly Christian teaching and prayer”, independent probability 0.93). Political ideology: Christian conservative (belief T3: “Public schools should allow explicitly Christian teaching and prayer”, independent probability 0.95).",
+      "explanation": "Published: Right. SOC-2R matched (close): “Public schools should allow explicitly Christian teaching and prayer”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-religious freedom (belief T1: “Public schools should allow explicitly Christian teaching and prayer”, independent probability 0.93). Political ideology: Christian conservative (belief T3: “Public schools should allow explicitly Christian teaching and prayer”, independent probability 0.95).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
         "P2 pass: the criteria match closely",
@@ -260,22 +257,22 @@
       ],
       "relations": [
         {
-          "relationId": "e68bf427abbb40c389558b42b7c42d9f",
-          "entityId": "197adbf04b9c4c2983530e0d58fe6660",
+          "relationId": "10e455440eac42478855a17426f2c9e6",
+          "entityId": "3e9f4aee7513427498bc2ba9909148aa",
           "claimId": "3a86111db36a2b369f22aa997691a652",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "92e358ce1f4a431db0b632fc5d52ec2e",
-          "entityId": "bfd73432ddcb4ca2a74c3e15a49fbe46",
+          "relationId": "58e4ac471d444ccf87735720b5612dad",
+          "entityId": "6761738bff1149f8a87fe78c1f94e59a",
           "claimId": "3a86111db36a2b369f22aa997691a652",
           "valueId": "5bca40f30ec144fa9012fd1426a85218",
           "valueName": "Church-state separationist"
         },
         {
-          "relationId": "100c912434e34e869ea28d3ee8c62708",
-          "entityId": "c5cb6f44b8c743c5b245cd5fd1b4a34b",
+          "relationId": "210d9d8508e24f42abd36535e2a44595",
+          "entityId": "731bce8ef50f4b48b8dea99f3870f8ce",
           "claimId": "3a86111db36a2b369f22aa997691a652",
           "valueId": "b2727c4b6d2243cbb3b5161f33535568",
           "valueName": "Secularist"
@@ -286,7 +283,8 @@
         "Religious beliefs should have no influence on legislation",
         "Religious beliefs should have no influence on legislation"
       ],
-      "explanation": "Published: Left. SOC-2L matched (close): “Religious beliefs should have no influence on legislation”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.92; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.99). Political ideology: Secularist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.93).",
+      "explanation": "Published: Left. SOC-2L matched (close): “Religious beliefs should have no influence on legislation”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.92; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.99). Political ideology: Secularist (belief T1: “Religious beliefs should have no influence on legislation”, independent probability 0.95).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
         "P2 pass: the criteria match closely",
@@ -307,22 +305,22 @@
       ],
       "relations": [
         {
-          "relationId": "02e173957c644a7ab7c2d46a282351a5",
-          "entityId": "f9f7acc781524d10bd38238b456ecdc2",
+          "relationId": "3b2d2d275b5c4491a3f0899b67d23ba5",
+          "entityId": "bd06ed6b62a54717bb52f994d82a1652",
           "claimId": "f03d920d02a6ebb809899c3952a94d09",
           "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
           "valueName": "Left"
         },
         {
-          "relationId": "42de6ab2f6df4e3b9862928c6ea5a345",
-          "entityId": "77cdf79567b649b693c741cc7ffb5c04",
+          "relationId": "646b9bc5191744478a131338888b96c6",
+          "entityId": "80e805e47c434c4785ca0f9decd5461b",
           "claimId": "f03d920d02a6ebb809899c3952a94d09",
           "valueId": "5bca40f30ec144fa9012fd1426a85218",
           "valueName": "Church-state separationist"
         },
         {
-          "relationId": "2ed69dd7ec9b46269cda32158989e49b",
-          "entityId": "e01463d42f844f509af360ffde297f2c",
+          "relationId": "c460bbd853eb4b68be3127d0a372f1f5",
+          "entityId": "8a34d17772d54ba7bbdaaafa9cd52456",
           "claimId": "f03d920d02a6ebb809899c3952a94d09",
           "valueId": "b2727c4b6d2243cbb3b5161f33535568",
           "valueName": "Secularist"
@@ -333,10 +331,11 @@
         "State-funded schools should not provide religious instruction",
         "State-funded schools should not provide religious instruction"
       ],
-      "explanation": "Published: Left. SOC-2L matched (close): “State-funded schools should not provide religious instruction”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.94; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.99). Political ideology: Secularist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.90).",
+      "explanation": "Published: Left. SOC-2L matched (direct): “State-funded schools should not provide religious instruction”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.94; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Church-state separationist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.99). Political ideology: Secularist (belief T1: “State-funded schools should not provide religious instruction”, independent probability 0.94).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
-        "P2 pass: the criteria match closely",
+        "P2 pass: the criteria match directly",
         "P3 pass: country: United States",
         "P4 pass: the independent check gives Left 0.94",
         "P5 pass: the verifier agreed in all 2 checks",
@@ -348,42 +347,35 @@
       "text": "The Supreme Court should revive the Trump administration's third-country deportation program",
       "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/824760f73a7c491a968d66e71c6f2f39",
       "politicalPosition": "Right",
-      "politicalIdeology": "MAGA",
+      "politicalIdeology": null,
       "issuePositions": [
         "Pro-border security"
       ],
       "relations": [
         {
-          "relationId": "75147613b701494ba466bdd88ee1ed26",
-          "entityId": "a9fee0f3452e45cebf0484a97e6720d9",
+          "relationId": "a0a903d64b6a4a5ea927c88fea2846db",
+          "entityId": "be12112dea004b0a8db80815e83cda52",
           "claimId": "824760f73a7c491a968d66e71c6f2f39",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "8fee0de769074478828487a82b715c9c",
-          "entityId": "ad0c19ac51684d81a5ec44dc26da3338",
+          "relationId": "74d122b590f447f3808143e99e6c0a66",
+          "entityId": "3d441c83b1a3434982e93bb30f0860ff",
           "claimId": "824760f73a7c491a968d66e71c6f2f39",
           "valueId": "1a2decfbb1654e399809f5000b7a0272",
           "valueName": "Pro-border security"
-        },
-        {
-          "relationId": "b340c2b726d74476a5ce6771ad2d7f88",
-          "entityId": "006b66ea713a45cfa263964c35a5ad62",
-          "claimId": "824760f73a7c491a968d66e71c6f2f39",
-          "valueId": "f62bcc598efb4ce89fabd3c34dd77c92",
-          "valueName": "MAGA"
         }
       ],
       "evidence": [
         "should revive the Trump administration's third-country deportation program",
-        "should revive the Trump administration's third-country deportation program",
-        "Trump administration's third-country deportation program"
+        "should revive the Trump administration's third-country deportation program"
       ],
-      "explanation": "Published: Right. NAT-2R matched (direct): “should revive the Trump administration's third-country deportation program”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “should revive the Trump administration's third-country deportation program”, independent probability 0.96). Political ideology: MAGA (belief T2: “Trump administration's third-country deportation program”, independent probability 0.90).",
+      "explanation": "Published: Right. NAT-2R matched (close): “should revive the Trump administration's third-country deportation program”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “should revive the Trump administration's third-country deportation program”, independent probability 0.96). Not published: MAGA (the verifier disagreed).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.99",
-        "P2 pass: the criteria match directly",
+        "P2 pass: the criteria match closely",
         "P3 pass: country: United States",
         "P4 pass: the independent check gives Right 1.00",
         "P5 pass: the verifier agreed in all 2 checks",
@@ -401,22 +393,22 @@
       ],
       "relations": [
         {
-          "relationId": "dc520d9a4f4a4104aee9d014da695db6",
-          "entityId": "b684d35d5a2344b09b21e2322d3963a5",
+          "relationId": "bc4dc7e53edd4e7d9e557b3ec70f2c51",
+          "entityId": "a1263cc775a74cef9a38d4624f2fb85d",
           "claimId": "556d34906b86480da6c989576a04c6ed",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "2a403ba8ab684b95bbe94f91f9d90554",
-          "entityId": "7bd7a4233be447a4baf7bfc30010a177",
+          "relationId": "f8732d2f1f9643b8839920fd8a23b17c",
+          "entityId": "5269430808b44ecfb7b3254d3709ca13",
           "claimId": "556d34906b86480da6c989576a04c6ed",
           "valueId": "053a4341639d43a5b0d534b40f7efe4f",
           "valueName": "Pro-life"
         },
         {
-          "relationId": "cf6e76e248c547f193de7d386f6276cc",
-          "entityId": "228fcc2f3e724fabb37c4963bee8887c",
+          "relationId": "d5e91fe36c3745f2ba90874b695236bf",
+          "entityId": "6bf1628aed55477fb405b637ef5787da",
           "claimId": "556d34906b86480da6c989576a04c6ed",
           "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
           "valueName": "Christian conservative"
@@ -427,7 +419,8 @@
         "should oppose abortion even in cases of rape",
         "Christians should oppose abortion even in cases of rape"
       ],
-      "explanation": "Published: Right. SOC-2R matched (close): “should oppose abortion even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “should oppose abortion even in cases of rape”, independent probability 0.98). Political ideology: Christian conservative (belief T1: “Christians should oppose abortion even in cases of rape”, independent probability 0.91).",
+      "explanation": "Published: Right. SOC-2R matched (close): “should oppose abortion even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “should oppose abortion even in cases of rape”, independent probability 0.98). Political ideology: Christian conservative (belief T1: “Christians should oppose abortion even in cases of rape”, independent probability 0.93).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 0.99",
         "P2 pass: the criteria match closely",
@@ -442,39 +435,32 @@
       "text": "Abortion should be illegal even in cases of rape",
       "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/6bcb7138969c483faa46a922c046207e",
       "politicalPosition": "Right",
-      "politicalIdeology": "Christian conservative",
+      "politicalIdeology": null,
       "issuePositions": [
         "Pro-life"
       ],
       "relations": [
         {
-          "relationId": "f2cbe249aec04df895153891cb4d80d0",
-          "entityId": "1a01490c6fed453e9924ea76a6e87de5",
+          "relationId": "7d7587c3e9d748888f1bd70571fa463c",
+          "entityId": "47b8936228c24f0686b8c4253ab94f59",
           "claimId": "6bcb7138969c483faa46a922c046207e",
           "valueId": "7a74f432548c417eb4abf9c45f3a7100",
           "valueName": "Right"
         },
         {
-          "relationId": "84602eb275134042824438fad7f7e495",
-          "entityId": "3913483257334bdc9395dd0f266642cc",
+          "relationId": "bec2476179c74137bc72b988c3c79bdb",
+          "entityId": "ca1438e9d8784881802905b0d1ed08ae",
           "claimId": "6bcb7138969c483faa46a922c046207e",
           "valueId": "053a4341639d43a5b0d534b40f7efe4f",
           "valueName": "Pro-life"
-        },
-        {
-          "relationId": "c894ad98fca44d98bb7310be0cf68031",
-          "entityId": "2c9f936622ca4a96af6e088a171c1a95",
-          "claimId": "6bcb7138969c483faa46a922c046207e",
-          "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
-          "valueName": "Christian conservative"
         }
       ],
       "evidence": [
         "Abortion should be illegal even in cases of rape",
-        "Abortion should be illegal even in cases of rape",
         "Abortion should be illegal even in cases of rape"
       ],
-      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Political ideology: Christian conservative (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 0.90).",
+      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Not published: Christian conservative (the verifier disagreed).",
+      "removedAfterReview": [],
       "rules": [
         "P1 pass: independent probability that the claim takes a position: 1.00",
         "P2 pass: the criteria match directly",

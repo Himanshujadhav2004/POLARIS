@@ -84,7 +84,7 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
   const model = batch.items[0]?.result.versions.scorer ?? "";
   const space = batch.space;
 
-  const claims = batch.items.map(({ claim, result }) => ({
+  const claims = batch.items.map(({ claim, result, removed }) => ({
     claimId: claim.id,
     text: claim.text,
     link: geoEntityUrl(space.id, claim.id),
@@ -93,7 +93,8 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     issuePositions: result.ideologies.filter((i) => i.kind === "issue").map((i) => i.name),
     relations: relations.filter((r) => r.claimId === claim.id),
     evidence: [...result.criteria.map((c) => c.evidence), ...result.ideologies.map((i) => i.evidence)],
-    explanation: result.explanation,
+    explanation: result.explanation + (removed?.length ? ` Removed after review: ${removed.map((r) => `${r.name} (${r.reason})`).join("; ")}.` : ""),
+    removedAfterReview: removed ?? [],
     rules: result.checks.map((c) => `${c.id} ${c.pass ? "pass" : "FAIL"}: ${c.detail}`),
   }));
 
