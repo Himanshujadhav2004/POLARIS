@@ -4,13 +4,15 @@
 //   npx tsx scripts/notion-rows.mts fresh evals/fresh/<name>/fresh.json <out.json>
 //   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json evals/fresh/<name>/rescore.<framework>.json <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts cards <out.json>   (the Ideology definitions database)
+//   npx tsx scripts/notion-rows.mts challenge evals/results/challenge.<set>.<framework>.json <run-name> <out.json>
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
-import { IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
+import { EXCLUDED_ALIASES, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 
 const [mode, file, ...rest] = process.argv.slice(2);
-const usage = "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json> | cards <out.json>";
-if (!file || !["bench", "fresh", "v3", "cards"].includes(mode ?? "")) throw new Error(usage);
+const usage =
+  "usage: notion-rows.mts bench <bench.json> <run-name> <out.json> | fresh <fresh.json> <out.json> | v3 <examples.json> <rescore.json> <run-name> <out.json> | cards <out.json> | challenge <challenge.json> <run-name> <out.json>";
+if (!file || !["bench", "fresh", "v3", "cards", "challenge"].includes(mode ?? "")) throw new Error(usage);
 
 /** Notion text properties hold 2000 characters; cut at the last full sentence, never mid-sentence. */
 function fit(s: string, max = 1900): string {
@@ -124,8 +126,8 @@ function v3Rows(freshFile: string, run: string) {
 function cardRows() {
   const US = SPACES.find((s) => s.slug === "us-politics")!;
   const NOTES: Record<string, string> = {
-    Libertarian: "Near-duplicate of Libertarianism. Both are used, so a claim can get both: should one be preferred?",
-    Libertarianism: "Near-duplicate of Libertarian. Both are used, so a claim can get both: should one be preferred?",
+    Libertarian: "Near-duplicate of Libertarianism. Both are used, but a claim gets only the higher-scoring one (I4, v3.4).",
+    Libertarianism: "Near-duplicate of Libertarian. Both are used, but a claim gets only the higher-scoring one (I4, v3.4).",
     Deaccelerationist: "Name kept as written in the doc.",
     "Pro-Taiwan independance": "Name kept as written in the doc.",
   };
@@ -152,14 +154,55 @@ function cardRows() {
           : "Framework v3.0: the definition is Armando's; the characteristic positions, exclusions, related traditions and leanings are drafts for rule I2.",
         ...(c.geoId ? [] : ["Not on Geo yet: labelled in results, never put in a Geo proposal."]),
         ...(NOTES[c.name] ? [NOTES[c.name]!] : []),
+        ...(EXCLUDED_ALIASES[c.name]
+          ? [`Left out of the prompts (v3.4), because they contradict this side or name another leaning: ${EXCLUDED_ALIASES[c.name]!.join("; ")}.`]
+          : []),
       ].join(" "),
     },
   }));
 }
 
-const rows = mode === "bench" ? benchRows(rest[0] ?? "") : mode === "v3" ? v3Rows(rest[0] ?? "", rest[1] ?? "") : mode === "cards" ? cardRows() : freshRows();
-const out = mode === "bench" ? rest[1] : mode === "v3" ? rest[2] : mode === "cards" ? file : rest[0];
-if (!out || (mode === "bench" && !rest[0])) throw new Error(usage);
+/** Challenge set rows: the expected result next to the agent's, with wrong and missed labels. */
+function challengeRows(run: string) {
+  const result = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
+  return result.rows.map((r) => {
+    const wrong = [...(r.wrongLeaning ? [r.wrongLeaning] : []), ...(r.wrongIdeologies ?? [])];
+    const missed = [...(r.missedLeaning ? [r.expectLeaning] : []), ...(r.missedIdeologies ?? [])];
+    return {
+      properties: {
+        Claim: fit(r.text, 300),
+        ID: r.id,
+        Space: r.space,
+        "Expected leaning": r.expectLeaning ?? "No leaning",
+        "Expected ideologies": (r.expectIdeologies as string[]).join(", "),
+        "Agent result": r.display ?? `Error: ${r.error}`,
+        "Agent ideologies": (r.ideologies as string[]).join(", "),
+        Result: r.error ? "Error" : wrong.length ? "Wrong label" : missed.length ? "Missed" : "Right",
+        Wrong: wrong.join(", "),
+        Missed: missed.join(", "),
+        Debatable: (r.debatable as string[]).join(", "),
+        Explanation: fit(r.explanation ?? ""),
+        "Reviewer notes": lines([...(r.droppedIdeologies ?? []).map((d: string) => `Not published: ${d}`), ...(r.reviewerNotes ?? [])]),
+        "Near misses": lines(r.nearMisses ?? []),
+        "Expectation note": r.note ?? "",
+        Run: run,
+      },
+    };
+  });
+}
+
+const rows =
+  mode === "bench"
+    ? benchRows(rest[0] ?? "")
+    : mode === "v3"
+      ? v3Rows(rest[0] ?? "", rest[1] ?? "")
+      : mode === "cards"
+        ? cardRows()
+        : mode === "challenge"
+          ? challengeRows(rest[0] ?? "")
+          : freshRows();
+const out = mode === "bench" || mode === "challenge" ? rest[1] : mode === "v3" ? rest[2] : mode === "cards" ? file : rest[0];
+if (!out || ((mode === "bench" || mode === "challenge") && !rest[0])) throw new Error(usage);
 const batches: (typeof rows)[] = [];
 for (let i = 0; i < rows.length; i += 27) batches.push(rows.slice(i, i + 27));
 batches.forEach((b, i) => writeFileSync(out.replace(/\.json$/, `.${i + 1}.json`), JSON.stringify(b)));

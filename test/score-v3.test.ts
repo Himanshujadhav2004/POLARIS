@@ -468,6 +468,8 @@ describe("buildDecisionQuestions", () => {
   it("counts a side argued through its effects (rule E2) in the position, issue and tradition questions", () => {
     expect("instructions" in questions[0]! && questions[0].instructions).toContain(EFFECT_RULE);
     expect(instructionsFor("Pro-wage flexibility")).toContain("directly or by asserting an effect that this side uses as its argument");
+    // The full E2 text lowered the probability of clear sides when appended to every issue question (v3.4 A/B).
+    expect(instructionsFor("Pro-wage flexibility")).not.toContain(EFFECT_RULE);
     expect(instructionsFor("Libertarian")).toContain(EFFECT_RULE);
   });
   it("still describes the other side of the issue", () => {

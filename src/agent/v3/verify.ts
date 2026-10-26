@@ -83,13 +83,14 @@ export function combineVerdicts(verdicts: VerifierVerdict[]): VerifierVerdict {
 
 /** Independent check of a finished result against the full framework. It never sees the scorer's reasoning. */
 export class FrameworkVerifier {
-  private readonly system: string;
+  /** The verifier's fixed instructions (also hashed into its cache key). */
+  readonly instructions: string;
 
   constructor(
     private readonly client: OpenAI,
     readonly model: string,
   ) {
-    this.system = `You check political classifications of claims from the Geo knowledge graph before anyone relies on them. A wrong classification is worse than none, so approving a mistake is far worse than rejecting a correct result.
+    this.instructions = `You check political classifications of claims from the Geo knowledge graph before anyone relies on them. A wrong classification is worse than none, so approving a mistake is far worse than rejecting a correct result.
 
 The classification must follow this framework:
 
@@ -108,7 +109,7 @@ If a part is wrong or merely doubtful, answer "disagree" for that part and say w
       model: this.model,
       reasoning_effort: "high",
       messages: [
-        { role: "system", content: this.system },
+        { role: "system", content: this.instructions },
         { role: "user", content: JSON.stringify({ claim: claim.text, geo_spaces: spaceNames(claim), context: claim.context, proposed_result: proposed }) },
       ],
       response_format: { type: "json_schema", json_schema: { name: "verdict", strict: true, schema: SCHEMA } },

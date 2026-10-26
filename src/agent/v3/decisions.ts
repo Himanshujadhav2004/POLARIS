@@ -63,8 +63,9 @@ export function buildDecisionQuestions(taxonomy: Taxonomy): Question[] {
               // on "Gender identity should take precedence over biological sex").
               (card.aliases.length ? `Also called: ${card.aliases.join("; ")}. ${ALIAS_RULE} ` : "") +
               `The other side: ${card.neighbours.map((n) => `${n}: ${CARD_BY_NAME.get(n)?.definition ?? ""}`).join(" ")} ` +
-              "It counts only if the claim argues for this side, directly or by asserting an effect that this side uses as its argument; mentioning the issue or reporting someone else's view does not count. " +
-              EFFECT_RULE
+              // Not the full EFFECT_RULE: appended to every issue question it lowered the probability of clear
+              // sides too (v3.4 A/B: Armando's issue labels clearing the bar fell from 30 to 21 of 42).
+              "It counts only if the claim argues for this side, directly or by asserting an effect that this side uses as its argument; mentioning the issue or reporting someone else's view does not count."
             : `Is the position this claim itself takes characteristic of the ideology "${card.name}" (${card.definition}), meaning its adherents typically hold that position, even if the claim does not name it? ` +
               `Characteristic positions: ${card.tenets.map((t) => t.text).join(" / ")}` +
               (card.exclusions.length ? ` It does not count when: ${card.exclusions.join(" ")}` : "") +
