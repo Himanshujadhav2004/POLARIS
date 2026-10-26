@@ -114,8 +114,8 @@ function v3Rows(freshFiles: string, run: string) {
         "Claim ID": r.id,
       },
     })),
-    // Fresh claims with no political position are already in "Fresh QA sample"; only labelled, blocked or near-miss ones are added.
-    ...fresh.rows.filter((r) => r.published || String(r.display ?? "").startsWith("No label") || r.nearMisses?.length).map((r) => ({
+    // Held-out claims: only those with a published label or a near miss, the ones a reviewer has to judge.
+    ...fresh.rows.filter((r) => r.published || r.nearMisses?.length).map((r) => ({
       properties: {
         ...common(r, r.ideologies),
         Set: "Fresh sample",
@@ -180,7 +180,7 @@ function challengeRows(run: string) {
     return {
       properties: {
         Claim: fit(r.text, 300),
-        ID: r.id,
+        "userDefined:ID": r.id,
         Space: r.space,
         "Expected leaning": r.expectLeaning ?? "No leaning",
         "Expected ideologies": (r.expectIdeologies as string[]).join(", "),
