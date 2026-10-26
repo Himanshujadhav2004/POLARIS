@@ -1,7 +1,12 @@
 import { describe, expect, it } from "vitest";
+import { buildDecisionQuestions } from "../src/agent/v3/decisions.js";
+import { buildScorerPrompt } from "../src/agent/v3/prompt.js";
+import { loadChallenge } from "../src/eval/challenge.js";
+import { loadExamples } from "../src/eval/examples.js";
 import { CARD_BY_NAME, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
 import { renderFramework } from "../src/framework/render.js";
 import {
+  ALIAS_RULE,
   ALL_CRITERIA,
   DIMENSIONS,
   EFFECT_RULE,
@@ -100,5 +105,38 @@ describe("renderFramework", () => {
     for (const r of PUBLISH_RULES) expect(md).toContain(`**${r.id}**`);
     for (const text of Object.values(LEVEL_RULES)) expect(md).toContain(text);
     for (const card of IDEOLOGY_CARDS) expect(md).toContain(card.kind === "issue" ? `**${card.name}**` : `### ${card.name}`);
+  });
+});
+
+describe("framework text shared by every prompt (v3.4)", () => {
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, " ").trim();
+  const examples = ALL_CRITERIA.flatMap((c) => c.examples.map(norm));
+
+  it("uses none of Armando's example claims, or challenge-set claims, as a criterion example, so both stay fair tests", () => {
+    const armando = loadExamples("evals/armando-examples.json").items.map((i) => norm(i.text));
+    const challenge = loadChallenge("evals/challenge-set-v1.json").items.map((i) => norm(i.text));
+    for (const text of [...armando, ...challenge]) expect(examples, text).not.toContain(text);
+  });
+
+  it("states the alias rule (I7) and the limited effect rule (E2) in the scorer prompt and the verifier's framework", () => {
+    for (const prompt of [buildScorerPrompt(), renderFramework()]) {
+      expect(prompt).toContain(ALIAS_RULE);
+      expect(prompt).toContain(EFFECT_RULE);
+    }
+    expect(EFFECT_RULE).toMatch(/technology, product, substance, medicine/);
+  });
+
+  it("leaves names that contradict their side out of every prompt", () => {
+    const decisions = buildDecisionQuestions({ politicalLeanings: [], ideologies: [], fingerprint: "test", byName: new Map() })
+      .map((q) => ("instructions" in q ? q.instructions : ""))
+      .join("\n");
+    for (const name of ["Pro-negotiated settlement", "Ambiguity advocate", "Pro-conditioning aid to Israel", "Keep Nine", "Pro-strategic clarity", "Pro-peace deal"]) {
+      for (const prompt of [buildScorerPrompt(), renderFramework(), decisions]) expect(prompt, name).not.toContain(name);
+    }
+  });
+
+  it("gives a political leaning only for US claims (C1, P3)", () => {
+    expect(RULES.find((r) => r.id === "C1")?.text).toMatch(/only for claims about the United States/);
+    expect(PUBLISH_RULES.find((r) => r.id === "P3")?.name).toBe("United States");
   });
 });

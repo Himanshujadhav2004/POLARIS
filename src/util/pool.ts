@@ -4,6 +4,7 @@ export async function mapPool<T, R>(
   limit: number,
   fn: (item: T, index: number) => Promise<R>,
 ): Promise<R[]> {
+  if (!Number.isInteger(limit) || limit < 1) throw new Error(`Concurrency must be a whole number of at least 1, not ${limit}`);
   const results = new Array<R>(items.length);
   let next = 0;
   const worker = async () => {

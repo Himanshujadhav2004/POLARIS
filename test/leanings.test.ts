@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { checkTaxonomySync } from "../src/agent/v3/agent.js";
 import { judgeExample, loadExamples } from "../src/eval/examples.js";
-import { CARD_BY_NAME, IDEOLOGY_CARDS, ISSUES, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
+import { CARD_BY_NAME, EXCLUDED_ALIASES, IDEOLOGY_CARDS, ISSUES, POLITICAL_LEANING_VALUES } from "../src/framework/ideologies.js";
 import data from "../src/framework/leanings.json" with { type: "json" };
 import { buildTaxonomy, type RawValue } from "../src/geo/taxonomy.js";
 
@@ -12,8 +12,33 @@ describe("Armando's leanings data", () => {
     for (const { issue, sides } of ISSUES) {
       expect(sides.length, issue).toBeGreaterThanOrEqual(2);
       expect(sides.length, issue).toBeLessThanOrEqual(3);
-      for (const side of sides) expect(side.neighbours.sort()).toEqual(sides.filter((s) => s !== side).map((s) => s.name).sort());
+      for (const side of sides) {
+        expect(side.neighbours.length, side.name).toBeGreaterThan(0);
+        // Other sides are reciprocal and always on the same issue.
+        for (const n of side.neighbours) {
+          expect(CARD_BY_NAME.get(n)?.issue, `${side.name} → ${n}`).toBe(issue);
+          expect(CARD_BY_NAME.get(n)?.neighbours, `${n} ← ${side.name}`).toContain(side.name);
+        }
+      }
     }
+  });
+
+  it("treats Pro-innovation and Techno-optimist, and Pro-Palestinian and Anti-Zionist, as one side", () => {
+    expect(CARD_BY_NAME.get("Pro-innovation")?.neighbours).toEqual(["Deaccelerationist"]);
+    expect(CARD_BY_NAME.get("Techno-optimist")?.neighbours).toEqual(["Deaccelerationist"]);
+    expect(CARD_BY_NAME.get("Deaccelerationist")?.neighbours.sort()).toEqual(["Pro-innovation", "Techno-optimist"]);
+    expect(CARD_BY_NAME.get("Anti-Zionist")?.neighbours).toEqual(["Pro-Israel"]);
+    expect(CARD_BY_NAME.get("Pro-Israel")?.neighbours.sort()).toEqual(["Anti-Zionist", "Pro-Palestinian"]);
+  });
+
+  it("leaves out of the prompts only alternative names that are really in his doc", () => {
+    for (const [name, excluded] of Object.entries(EXCLUDED_ALIASES)) {
+      const card = CARD_BY_NAME.get(name);
+      expect(card, name).toBeDefined();
+      expect(card!.excludedAliases.sort(), name).toEqual([...excluded].sort());
+      for (const a of excluded) expect(card!.aliases, name).not.toContain(a);
+    }
+    expect(CARD_BY_NAME.get("Pro-Russia")?.aliases).toContain("Ukraine skeptic");
   });
 
   it("applies the approved spelling fixes and keeps Pro-Taiwan independance as written", () => {

@@ -153,12 +153,16 @@ export function writeFreshSet(name: string, seed: number, rows: FreshRow[], stat
  * sample, and writes evals/fresh/<name>/rescore.<framework>.json next to the original.
  */
 export async function rescoreFreshSet(geo: GeoClient, agent: ScoringAgent, name: string, concurrency: number): Promise<{ file: string; rows: FreshRow[] }> {
-  const original = JSON.parse(readFileSync(join(FRESH_ROOT, name, "fresh.json"), "utf8")) as { seed: number; rows: { claimId: string; space: string; inSample: boolean }[] };
+  const original = JSON.parse(readFileSync(join(FRESH_ROOT, name, "fresh.json"), "utf8")) as { seed: number; rows: { claimId: string; space: string; text: string; inSample: boolean }[] };
   const claims = new Map((await fetchClaims(geo, original.rows.map((r) => r.claimId))).map((c) => [c.id, c]));
   const rows = await mapPool(original.rows, concurrency, async (r): Promise<FreshRow> => {
     const space = SPACES.find((s) => s.slug === r.space)!;
     const claim = claims.get(r.claimId);
-    if (!claim) throw new Error(`${r.claimId} is no longer on Geo`);
+    // A claim removed from Geo since the set was drawn is an error row, not the end of the run.
+    if (!claim) {
+      const gone: Claim = { id: r.claimId, text: r.text, spaceIds: [space.id], isFactual: null, context: {}, leaningIds: [] };
+      return { space, claim: gone, result: null, error: `${r.claimId} is no longer on Geo`, inSample: r.inSample };
+    }
     try {
       return { space, claim, result: await agent.score(claim), error: null, inSample: r.inSample };
     } catch (err) {

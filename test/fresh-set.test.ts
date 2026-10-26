@@ -1,8 +1,9 @@
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { drawIds, usedClaimIds } from "../src/pipeline/fresh-set.js";
+import { drawIds, FRESH_ROOT, rescoreFreshSet, usedClaimIds } from "../src/pipeline/fresh-set.js";
+import { mapPool } from "../src/util/pool.js";
 import { seededRng } from "../src/util/random.js";
 
 const write = (file: string, value: unknown) => {
@@ -57,5 +58,39 @@ describe("drawIds", () => {
   });
   it("draws any claim without texts", async () => {
     expect((await drawIds(geo, "space", 3, seededRng(1))).length).toBeGreaterThan(0);
+  });
+});
+
+describe("rescoreFreshSet", () => {
+  it("records a claim that is no longer on Geo as an error row and scores the rest", async () => {
+    const name = `_test-rescore-${process.pid}`;
+    const gone = "a".repeat(32);
+    const kept = "b".repeat(32);
+    write(join(FRESH_ROOT, name, "fresh.json"), {
+      seed: 1,
+      rows: [
+        { claimId: gone, space: "us-politics", text: "Removed claim", inSample: true },
+        { claimId: kept, space: "us-politics", text: "Congress should cut taxes", inSample: false },
+      ],
+    });
+    const geo = { query: async () => ({ entities: [{ id: kept, name: "Congress should cut taxes", spaceIds: [], valuesList: [], relationsList: [] }] }) } as never;
+    const agent = { score: async () => { throw new Error("scorer down"); } } as never;
+    try {
+      const { rows } = await rescoreFreshSet(geo, agent, name, 2);
+      expect(rows.map((r) => [r.claim.id, r.error])).toEqual([
+        [gone, `${gone} is no longer on Geo`],
+        [kept, "scorer down"],
+      ]);
+    } finally {
+      rmSync(join(FRESH_ROOT, name), { recursive: true, force: true });
+    }
+  });
+});
+
+describe("mapPool", () => {
+  it("keeps input order and refuses a concurrency of 0 or NaN", async () => {
+    expect(await mapPool([3, 1, 2], 2, async (n) => n * 10)).toEqual([30, 10, 20]);
+    await expect(mapPool([1], 0, async (n) => n)).rejects.toThrow(/at least 1/);
+    await expect(mapPool([1], Number.NaN, async (n) => n)).rejects.toThrow(/at least 1/);
   });
 });
