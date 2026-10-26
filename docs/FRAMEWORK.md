@@ -5,7 +5,7 @@ Every classification cites the numbered criteria below. The model finds evidence
 ## Definitions
 
 - **Political leaning**: Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.
-- **Ideology**: A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.
+- **Ideology**: A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist.
 - **Leanings** (the property the agent fills): The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview. A claim has at most one political leaning but can have several ideological leanings.
 
 Possible results: a **published** leaning (one of Geo's seven) and published ideologies; **No label**, naming the rule that blocked it; or **No political position**, naming the check that failed. There are no partial labels: anything not published is left blank.

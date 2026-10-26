@@ -56,8 +56,9 @@ export function levelRulesText(): string {
 /** Geo's own type descriptions. The agent refuses to run if Geo's live text differs (see ScoringAgent). */
 export const POLITICAL_LEANING_DEFINITION =
   "Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.";
+/** Geo's description of the Ideology type, word for word (shortened on Geo on 2026-10-26). */
 export const IDEOLOGY_DEFINITION =
-  "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist. Unlike Political leaning, it names a tradition of ideas rather than a place on the left-right spectrum.";
+  "A worldview about how society, the economy and government should be organized, named after its followers, such as libertarian or socialist.";
 /** The Leanings property, from Armando's doc. It holds one political leaning and any ideological leanings. */
 export const LEANINGS_PROPERTY_DEFINITION =
   "The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview.";
