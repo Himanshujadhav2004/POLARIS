@@ -1,0 +1,1449 @@
+{
+  "space": "us-politics",
+  "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+  "leaningsPropertyId": "ff40a84705194415b30473badda2e534",
+  "generatedAt": "2026-10-26T16:58:44.289Z",
+  "framework": "framework-v3.5 + best fit (gpt-5.5)",
+  "taxonomyFingerprint": "96a8cb2cefb0",
+  "source": [
+    "evals/notion45/proposal-input.json"
+  ],
+  "claims": [
+    {
+      "claimId": "94c0669ef0a54476a4b6cb253c7984ee",
+      "text": "Same-sex marriage should be legal nationwide",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/94c0669ef0a54476a4b6cb253c7984ee",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-LGBTQ rights"
+      ],
+      "relations": [
+        {
+          "relationId": "2a0ace591cf840f296130b2f38680b7a",
+          "entityId": "87663d690bde4e2995a68a044ee04e73",
+          "claimId": "94c0669ef0a54476a4b6cb253c7984ee",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "0c00cd9bc6654de886665bcae741f693",
+          "entityId": "5adfacdd854644c9925956d72cea4fde",
+          "claimId": "94c0669ef0a54476a4b6cb253c7984ee",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "a01e9e2df8674688a753ccdf178daf68",
+          "entityId": "e5c41ab44f2a46248ce25b24c9ad8ba2",
+          "claimId": "94c0669ef0a54476a4b6cb253c7984ee",
+          "valueId": "33c95528b96741c2a50adafb4a1a76a5",
+          "valueName": "Pro-LGBTQ rights"
+        }
+      ],
+      "explanation": "Published: Left. SOC-2L matched (direct): “Same-sex marriage should be legal nationwide”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-LGBTQ rights (belief T1: “Same-sex marriage should be legal nationwide”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “Same-sex marriage should be legal nationwide”; The claim supports civil liberties and equal legal rights, which most closely fits contemporary U.S. liberalism, though it states only one issue position rather than a broader ideology.)."
+    },
+    {
+      "claimId": "1a167acc6a57ea552957258158b0cfbb",
+      "text": "Minimum wages should rise automatically with the cost of living",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/1a167acc6a57ea552957258158b0cfbb",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-living wage"
+      ],
+      "relations": [
+        {
+          "relationId": "c3d97cf1ef784257a05e7d99ae8faa3d",
+          "entityId": "d541abf5e8c840509238307672cf5398",
+          "claimId": "1a167acc6a57ea552957258158b0cfbb",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "8a8f3d5cf800480cb73e7ae4595a7123",
+          "entityId": "e85b9fe0b4554a7890b304eccc133a2c",
+          "claimId": "1a167acc6a57ea552957258158b0cfbb",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "2c5c17f0b25c4cedacae241a56e0092b",
+          "entityId": "8419ba109a4a434bbd68da906b8fbe32",
+          "claimId": "1a167acc6a57ea552957258158b0cfbb",
+          "valueId": "a9d2c1cdcae34eb9aa32381fcfc6f26d",
+          "valueName": "Pro-living wage"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “Minimum wages should rise automatically with the cost of living”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-living wage (belief T1: “Minimum wages should rise automatically with the cost of living”, independent probability 0.99). Not published: Pro-regulation (independent probability 0.83 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “\"Minimum wages should rise automatically with the cost of living\"”; The claim aligns with a progressive outlook focused on economic fairness and improving workers' conditions, though it does not explicitly name an ideology.)."
+    },
+    {
+      "claimId": "4b142b070e944f7fb54ed77057bf79b6",
+      "text": "Universal background checks should be required for every gun sale",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/4b142b070e944f7fb54ed77057bf79b6",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-gun control"
+      ],
+      "relations": [
+        {
+          "relationId": "a6a1afac71944d12a67c95057ad41a4c",
+          "entityId": "0a363562285844269cafc1d786582c63",
+          "claimId": "4b142b070e944f7fb54ed77057bf79b6",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "f8d706c9cd3e41f3b570547af9b63b38",
+          "entityId": "920dc80ac03a44dea3e43ef625cf9712",
+          "claimId": "4b142b070e944f7fb54ed77057bf79b6",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "b6496e0cb5254d87b21ef54c0da666ab",
+          "entityId": "5c428e29404e4df0a003d22494cd2e13",
+          "claimId": "4b142b070e944f7fb54ed77057bf79b6",
+          "valueId": "f446bcf6072247ecbbdf473fb4475a77",
+          "valueName": "Pro-gun control"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Universal background checks should be required for every gun sale”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-gun control (belief T1: “Universal background checks should be required for every gun sale”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “\"Universal background checks should be required for every gun sale\"”; The claim supports government regulation of firearm sales to promote public safety, a position commonly associated with contemporary U.S. liberalism, though no broad ideology is explicitly named.)."
+    },
+    {
+      "claimId": "ec0a71df06f74225bf6811508b2ca4df",
+      "text": "Voter ID laws disproportionately burden minority voters",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/ec0a71df06f74225bf6811508b2ca4df",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-voting rights"
+      ],
+      "relations": [
+        {
+          "relationId": "08327b2aa5194605aeb0d06eb896bcf8",
+          "entityId": "1943920758ee42f9b10b5fdd86d30e40",
+          "claimId": "ec0a71df06f74225bf6811508b2ca4df",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "af015569b695430186467eff5fb484a5",
+          "entityId": "c1c075895bca4fe98ba412e2242a0b1a",
+          "claimId": "ec0a71df06f74225bf6811508b2ca4df",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "f4ffee74885f475fa27feba2e9506add",
+          "entityId": "afd2e3d674064f1193556ddfe44d8270",
+          "claimId": "ec0a71df06f74225bf6811508b2ca4df",
+          "valueId": "6fec26817a2145dbabb72f4d7857c951",
+          "valueName": "Pro-voting rights"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “Voter ID laws disproportionately burden minority voters”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.81; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-voting rights (belief T1: “Voter ID laws disproportionately burden minority voters”, independent probability 0.97). Not published: Pro-equity (independent probability 0.89 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “\"disproportionately burden minority voters\"”; Emphasis on equal rights and protection against disparate burdens on minority voters is closely associated with contemporary U.S. liberalism.)."
+    },
+    {
+      "claimId": "f7bdffdd5f06e4b760247767b6989a32",
+      "text": "The death penalty should be abolished",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/f7bdffdd5f06e4b760247767b6989a32",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Death penalty abolitionist"
+      ],
+      "relations": [
+        {
+          "relationId": "ac654d0755ce4e31bb2d06e635567d57",
+          "entityId": "65252fbced0a4534bc125a2f28ce6d1d",
+          "claimId": "f7bdffdd5f06e4b760247767b6989a32",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "36d292b2a1b7431a9346193b3d4413c5",
+          "entityId": "ba660c5047274434a80ec8e6a79f91d9",
+          "claimId": "f7bdffdd5f06e4b760247767b6989a32",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "53116e30d8b04615a3afe2c1297b5d75",
+          "entityId": "4f62c9de582f485cbdc0e9ed0707f927",
+          "claimId": "f7bdffdd5f06e4b760247767b6989a32",
+          "valueId": "bb329d29a85c48d8b0b1c79575af199f",
+          "valueName": "Death penalty abolitionist"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “The death penalty should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Death penalty abolitionist (belief T1: “The death penalty should be abolished”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, low confidence; evidence “The death penalty should be abolished”; Death-penalty abolition is commonly associated with contemporary U.S. liberal commitments to civil liberties and criminal-justice reform, but the claim does not state a broader ideology.)."
+    },
+    {
+      "claimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+      "text": "Abortion should be legal",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/c4fe7ef0d57f4e948411a9523c1789a6",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-choice"
+      ],
+      "relations": [
+        {
+          "relationId": "7acab04efb8244a9b351c30e796b707c",
+          "entityId": "daa8e8f06db84bfdaa3f974128583831",
+          "claimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "5dc91a7da53d470f91dc9725b9e172a8",
+          "entityId": "9e5f89fdbe9b489294784ca816ed5dc1",
+          "claimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "6fb6458004eb4070b409b1cac1853e74",
+          "entityId": "c59d2374fcd04d8d824bde1eaedee0df",
+          "claimId": "c4fe7ef0d57f4e948411a9523c1789a6",
+          "valueId": "b28230de823f476c877f23f0799b6a63",
+          "valueName": "Pro-choice"
+        }
+      ],
+      "explanation": "Published: Left. SOC-2L matched (direct): “Abortion should be legal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-choice (belief T1: “Abortion should be legal”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “Abortion should be legal”; Legal abortion access is commonly associated with contemporary U.S. liberalism, though the claim states only one issue position rather than a full ideology.)."
+    },
+    {
+      "claimId": "9d5c11e66b50480babdef68c7a4c0d05",
+      "text": "Student loan debt should be forgiven",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/9d5c11e66b50480babdef68c7a4c0d05",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-student debt relief"
+      ],
+      "relations": [
+        {
+          "relationId": "28672bba22054854bf454500d5ee318e",
+          "entityId": "ca998d756a784d2192083fde3b1fea4c",
+          "claimId": "9d5c11e66b50480babdef68c7a4c0d05",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "c7290309f233409097442c382f7e889f",
+          "entityId": "dbc4eec9f5e5494183b8e737a1f293fd",
+          "claimId": "9d5c11e66b50480babdef68c7a4c0d05",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "020f4b6094444b5d90786948d8c35cb8",
+          "entityId": "9f71abf12ad144b5afd99068fdf74d19",
+          "claimId": "9d5c11e66b50480babdef68c7a4c0d05",
+          "valueId": "3c837838430c4e689b4a42ba9ecf531e",
+          "valueName": "Pro-student debt relief"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “Student loan debt should be forgiven”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-student debt relief (belief T1: “Student loan debt should be forgiven”, independent probability 1.00). Not published: Pro-public spending (independent probability 0.82 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “\"Student loan debt should be forgiven\"”; The claim aligns most closely with progressive politics, which often support government action to reduce economic burdens and expand opportunity.)."
+    },
+    {
+      "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+      "text": "Cash bail should be abolished",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/ec4b759d25a9ae221d76b3776db1a5fc",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-criminal justice reform"
+      ],
+      "relations": [
+        {
+          "relationId": "dcba5eab67834409889d25bc8e532e63",
+          "entityId": "8c2ece81b76f4700bc4fdb942210cf0c",
+          "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "38e090e1b1604d5f9703dedb7c44df34",
+          "entityId": "eec7fbd424004a73b487a7117364fb26",
+          "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "530ebd4631f0487a8101f860b346c901",
+          "entityId": "1fe61b89805e46e9a582f8a49949e901",
+          "claimId": "ec4b759d25a9ae221d76b3776db1a5fc",
+          "valueId": "9e1ee559ae704dfe9bfd870f9f1b0393",
+          "valueName": "Pro-criminal justice reform"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Cash bail should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-criminal justice reform (belief T1: “Cash bail should be abolished”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “Cash bail should be abolished”; The claim supports a reform aimed at reducing inequities in the criminal justice system, which aligns most closely with progressive politics.)."
+    },
+    {
+      "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+      "text": "Congress should raise taxes on high earners to fund middle-class tax cuts",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/2891bbcc75ef40ea8209a5f9b474a320",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Progressive taxation"
+      ],
+      "relations": [
+        {
+          "relationId": "374667e98bbe4e97949263ea0d5293af",
+          "entityId": "89413c0c4da94251981a13804823c5aa",
+          "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "c6ccac179b9543099bc99c516d752d61",
+          "entityId": "7aa4be17fb3840979f0a40395b73f241",
+          "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "d5868f2abb2646abab70153859c4160d",
+          "entityId": "ef1f31fdefb840479be3689af2adacf7",
+          "claimId": "2891bbcc75ef40ea8209a5f9b474a320",
+          "valueId": "8a78b7a318914171b9e57ccc777eecac",
+          "valueName": "Progressive taxation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “raise taxes on high earners”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Progressive taxation (belief T1: “raise taxes on high earners to fund middle-class tax cuts”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “raise taxes on high earners to fund middle-class tax cuts”; The claim supports government tax policy to reduce economic inequality, which aligns with contemporary U.S. liberalism, though it does not explicitly name an ideology.)."
+    },
+    {
+      "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+      "text": "Texas should raise taxes on corporations and billionaires to fund targeted tax credits",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/e210a6fc4e564336b9cf4dae18dadf93",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Progressive taxation"
+      ],
+      "relations": [
+        {
+          "relationId": "71cfdffd024644eab0604a3e5b687e98",
+          "entityId": "c91875a12b97455388d4323df7da4bd2",
+          "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "733acb30389c48f2ba4dcc43b469538a",
+          "entityId": "6d73d1c8ca004cd5bfdd19583bec798a",
+          "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "4cafbb53d40f44bb8a21590f05f8995e",
+          "entityId": "8156482b3e454d3cab3d4c1449e10fd5",
+          "claimId": "e210a6fc4e564336b9cf4dae18dadf93",
+          "valueId": "8a78b7a318914171b9e57ccc777eecac",
+          "valueName": "Progressive taxation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “should raise taxes on corporations and billionaires”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.86; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Progressive taxation (belief T1: “raise taxes on corporations and billionaires”, independent probability 1.00). Not published: Pro-public spending (independent probability 0.86 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “\"raise taxes on corporations and billionaires to fund targeted tax credits\"”; The claim favors using taxation and credits to redistribute resources or support targeted groups, which aligns most closely with a progressive outlook, though no ideology is named explicitly.)."
+    },
+    {
+      "claimId": "0533ecd48a16b382d15f725de99c6805",
+      "text": "Inheritance should be heavily taxed",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/0533ecd48a16b382d15f725de99c6805",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Progressive taxation"
+      ],
+      "relations": [
+        {
+          "relationId": "8be0329c02fa4d738d0586f2c5cd5f9b",
+          "entityId": "9f2504d5f1a944d0a229c93e81c32e45",
+          "claimId": "0533ecd48a16b382d15f725de99c6805",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "4b6f33ae257740f2912a6590e2193b09",
+          "entityId": "c40903cb326c4e978d769ddccd265fb3",
+          "claimId": "0533ecd48a16b382d15f725de99c6805",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "dc501f964e3045e1b52688d8a85177f6",
+          "entityId": "55318b1b09844d299e6d9c2ca8412a45",
+          "claimId": "0533ecd48a16b382d15f725de99c6805",
+          "valueId": "8a78b7a318914171b9e57ccc777eecac",
+          "valueName": "Progressive taxation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “Inheritance should be heavily taxed”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Not published: Progressive taxation (independent probability 0.87 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “\"Inheritance should be heavily taxed\"”; The claim supports using tax policy to reduce inherited wealth advantages, which is clearly associated with progressive economic equality goals, though it does not name a broader ideology.) Issue position: Progressive taxation (best fit, high confidence; evidence “\"Inheritance should be heavily taxed\"”; A heavy inheritance tax is a tax structure aimed at imposing higher burdens on wealth transfers, fitting progressive taxation.)."
+    },
+    {
+      "claimId": "07736de6dc19428f9b35004b9edbd92c",
+      "text": "Assault weapons should be banned",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/07736de6dc19428f9b35004b9edbd92c",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-gun control"
+      ],
+      "relations": [
+        {
+          "relationId": "24a2945e63c743b1bbf9ca20bc46c1e9",
+          "entityId": "ec17e8ceee32420288cf800a83a68cc6",
+          "claimId": "07736de6dc19428f9b35004b9edbd92c",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "4f57a2b8e53646d38ecaeebe5d006a97",
+          "entityId": "46295fe2d6f54157a3cf112977b6f6c0",
+          "claimId": "07736de6dc19428f9b35004b9edbd92c",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "6325e8502c874b06918451a4c7b048b4",
+          "entityId": "cae651824dda43e98ea63359b3d15764",
+          "claimId": "07736de6dc19428f9b35004b9edbd92c",
+          "valueId": "f446bcf6072247ecbbdf473fb4475a77",
+          "valueName": "Pro-gun control"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (direct): “Assault weapons should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-gun control (belief T1: “Assault weapons should be banned”, independent probability 1.00). Not published: Pro-regulation (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “Assault weapons should be banned”; Gun-control measures such as banning assault weapons are commonly associated with contemporary U.S. liberal politics, though the claim states only a single policy stance rather than a full ideology.)."
+    },
+    {
+      "claimId": "5624df882f58407f94d76fd377743a45",
+      "text": "People should be able to change their gender on their government documents",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/5624df882f58407f94d76fd377743a45",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-transgender rights",
+        "Pro-LGBTQ rights"
+      ],
+      "relations": [
+        {
+          "relationId": "d4499df23d944aab9200a788ace94b59",
+          "entityId": "2561f74b1a044da5b54df60f3418a0c7",
+          "claimId": "5624df882f58407f94d76fd377743a45",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "8f6f3a87dc0f47aaabaa625a1cf4ee86",
+          "entityId": "60ee0f15a28c4456ac64aac5b55f6079",
+          "claimId": "5624df882f58407f94d76fd377743a45",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "e0e470989ea24ffebeaafe65a2d8002f",
+          "entityId": "7fea8dcd955845f7921b38397d97ae3e",
+          "claimId": "5624df882f58407f94d76fd377743a45",
+          "valueId": "fb5362add36d4ba4b375351fe6210dd1",
+          "valueName": "Pro-transgender rights"
+        },
+        {
+          "relationId": "9f2ab874a9164a558640ff898dbb1714",
+          "entityId": "14d6d872fa3e40e38df55439e27d9899",
+          "claimId": "5624df882f58407f94d76fd377743a45",
+          "valueId": "33c95528b96741c2a50adafb4a1a76a5",
+          "valueName": "Pro-LGBTQ rights"
+        }
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “People should be able to change their gender on their government documents”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-transgender rights (belief T1: “People should be able to change their gender on their government documents”, independent probability 0.97). Issue position: Pro-LGBTQ rights (belief T1: “People should be able to change their gender on their government documents”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “People should be able to change their gender on their government documents”; Support for equal legal recognition and civil rights for transgender people aligns most closely with contemporary U.S. liberalism, though the claim is issue-specific rather than a broad ideology.)."
+    },
+    {
+      "claimId": "87a5bfc3c1364781816b7d7d207634ff",
+      "text": "A person whose name is on the voting roll should be allowed to vote without additional identification requirements",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/87a5bfc3c1364781816b7d7d207634ff",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-voting rights"
+      ],
+      "relations": [
+        {
+          "relationId": "49fdec85b5d8492b828394a77e8f3e74",
+          "entityId": "4235d984a54440ff962235125761bce3",
+          "claimId": "87a5bfc3c1364781816b7d7d207634ff",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "289e03ebd4114ddbaf616f701e7f2667",
+          "entityId": "e3fbe27239124a4cae6a0e76cdfbb215",
+          "claimId": "87a5bfc3c1364781816b7d7d207634ff",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "cc02b226d9de47cc9c9efa55dc6c3096",
+          "entityId": "a9c24b2f7265480ba69496e149e3e9ad",
+          "claimId": "87a5bfc3c1364781816b7d7d207634ff",
+          "valueId": "6fec26817a2145dbabb72f4d7857c951",
+          "valueName": "Pro-voting rights"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “should be allowed to vote without additional identification requirements”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.96; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-voting rights (belief T1: “should be allowed to vote without additional identification requirements”, independent probability 0.97). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “\"A person whose name is on the voting roll should be allowed to vote\"”; The claim emphasizes voting access and civil participation, which fits contemporary U.S. liberal support for civil rights and equal access to the ballot.)."
+    },
+    {
+      "claimId": "bc2fff62681c67e64c70c040554cb593",
+      "text": "High earners should pay Social Security tax on all their income",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/bc2fff62681c67e64c70c040554cb593",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-entitlement reform"
+      ],
+      "relations": [
+        {
+          "relationId": "4e2812312003457aad9145b0ae15f577",
+          "entityId": "bdfe2d41ad944bbb8eb588cc183dcc7b",
+          "claimId": "bc2fff62681c67e64c70c040554cb593",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "eefe2f4d59ad40d8b0ad97487f337db9",
+          "entityId": "ba64733927cc48dca93b4497400b1f1f",
+          "claimId": "bc2fff62681c67e64c70c040554cb593",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "0648033bbf5b408ba1137ea7e97760be",
+          "entityId": "c5194265c3db4151abd597b8ec7f7b1a",
+          "claimId": "bc2fff62681c67e64c70c040554cb593",
+          "valueId": "97c0350ce121494581ba0de17eca2c6c",
+          "valueName": "Pro-entitlement reform"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “High earners should pay Social Security tax on all their income”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-entitlement reform (belief T1: “Social Security tax on all their income”, independent probability 0.95). Not published: Progressive taxation (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, low confidence; evidence “\"High earners should pay Social Security tax on all their income\"”; The claim aligns loosely with contemporary U.S. liberal support for government social insurance and higher taxes on the wealthy, but it does not state a broader ideology.)."
+    },
+    {
+      "claimId": "0a675161bf794021ac07b6c21a56e8a4",
+      "text": "The wealthy should pay significantly higher taxes",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/0a675161bf794021ac07b6c21a56e8a4",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Progressive taxation"
+      ],
+      "relations": [
+        {
+          "relationId": "8fd5d8cd01ff4154a003947a7afc0d0e",
+          "entityId": "37971f0183e14580b15a9452edd807eb",
+          "claimId": "0a675161bf794021ac07b6c21a56e8a4",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "5e63968435d64e85b9372e4c19ab3a31",
+          "entityId": "e00669c7d34b457f87700e33885d3ace",
+          "claimId": "0a675161bf794021ac07b6c21a56e8a4",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "581a16ba0dd54ac187b14039e39f1b5d",
+          "entityId": "8de50d1b1f8a466f93c6ab53539b8c76",
+          "claimId": "0a675161bf794021ac07b6c21a56e8a4",
+          "valueId": "8a78b7a318914171b9e57ccc777eecac",
+          "valueName": "Progressive taxation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “The wealthy should pay significantly higher taxes”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Progressive taxation (belief T1: “The wealthy should pay significantly higher taxes”, independent probability 0.98). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “The wealthy should pay significantly higher taxes”; The claim supports redistributive tax policy associated with progressive efforts to reduce economic inequality, though it does not state a full ideology.)."
+    },
+    {
+      "claimId": "51f7eb32e5985ba8c4a53e2b4ea93871",
+      "text": "The US should abolish work requirements for welfare benefits",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/51f7eb32e5985ba8c4a53e2b4ea93871",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-welfare expansion"
+      ],
+      "relations": [
+        {
+          "relationId": "4631d8acb9e542ddbe80528045433a97",
+          "entityId": "ddd067627e594c769715f039dd79e983",
+          "claimId": "51f7eb32e5985ba8c4a53e2b4ea93871",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "6085e1aca66f48c38dfdcd1c0e972b1c",
+          "entityId": "cd6eb0f4f7f04050b03368e3aba40535",
+          "claimId": "51f7eb32e5985ba8c4a53e2b4ea93871",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "f55c29f38a2c46d4a679d2f3d2825213",
+          "entityId": "eb7e6ab5e5e34827908f9427050e8664",
+          "claimId": "51f7eb32e5985ba8c4a53e2b4ea93871",
+          "valueId": "e11e6ddff1b14aa3a4732119f1bdee78",
+          "valueName": "Pro-welfare expansion"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “should abolish work requirements for welfare benefits”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-welfare expansion (belief T1: “should abolish work requirements for welfare benefits”, independent probability 0.97). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “abolish work requirements for welfare benefits”; The claim favors making welfare more accessible, which is clearly associated with progressive efforts to reduce economic hardship and expand social support, though it does not state a full ideology.)."
+    },
+    {
+      "claimId": "9df6a915a66d4e5381f68b5306013287",
+      "text": "Conversion therapy should be banned",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/9df6a915a66d4e5381f68b5306013287",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-LGBTQ rights"
+      ],
+      "relations": [
+        {
+          "relationId": "a0155be7d1944840ac90b84bebd7c6b7",
+          "entityId": "77f9497342da467689080a8796f8db2d",
+          "claimId": "9df6a915a66d4e5381f68b5306013287",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "484f8f9c5c23473ea6febdbff9fc5c3f",
+          "entityId": "2a1fd63c59d24a2484b716982c596cf6",
+          "claimId": "9df6a915a66d4e5381f68b5306013287",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "35f7d8dac992447488b95279f2a147fc",
+          "entityId": "1ef8abd5fbe84a7fa0c50181f381af40",
+          "claimId": "9df6a915a66d4e5381f68b5306013287",
+          "valueId": "33c95528b96741c2a50adafb4a1a76a5",
+          "valueName": "Pro-LGBTQ rights"
+        }
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Conversion therapy should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-LGBTQ rights (belief T1: “Conversion therapy should be banned”, independent probability 0.98). Not published: Pro-regulation (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “\"Conversion therapy should be banned\"”; The claim aligns with contemporary U.S. liberal support for equal rights and legal protections for LGBTQ people, though it states only one policy.)."
+    },
+    {
+      "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+      "text": "Public companies should be banned from buying back their shares",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/dacf8b0c651be6b2e51ff9dab7faa278",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-regulation"
+      ],
+      "relations": [
+        {
+          "relationId": "b8d03009087c412bb01bc581e7eb64a1",
+          "entityId": "ccbdbb0487ab44ab9afe52e4651f6b08",
+          "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "5c55e003a9cd4ecfbf60c19b1b665142",
+          "entityId": "5686569a551e446e82eb5895a4010934",
+          "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "ce078414246b402494491bbe46ce5f87",
+          "entityId": "e01ec549947c43e38f921082ae74321e",
+          "claimId": "dacf8b0c651be6b2e51ff9dab7faa278",
+          "valueId": "9f3b55993e254ca8ae643302c0039253",
+          "valueName": "Pro-regulation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “Public companies should be banned from buying back their shares”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “Public companies should be banned from buying back their shares”, independent probability 0.97). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence ““Public companies should be banned from buying back their shares””; The claim aligns with progressive critiques of corporate power and support for reforms limiting shareholder-focused corporate behavior.)."
+    },
+    {
+      "claimId": "b1a1520b2cb83bde5791a330d13219f2",
+      "text": "Fashion brands should be banned from destroying unsold clothing",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/b1a1520b2cb83bde5791a330d13219f2",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Environmentalist",
+      "issuePositions": [
+        "Pro-regulation"
+      ],
+      "relations": [
+        {
+          "relationId": "b88ca410980c496eb54e62c7229c128c",
+          "entityId": "bc87500912864db7a93d841bdb354f09",
+          "claimId": "b1a1520b2cb83bde5791a330d13219f2",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "d3c1e66fdb4143a2a60db2cad3943f41",
+          "entityId": "2078d72e12964333b43dc0dfde5df322",
+          "claimId": "b1a1520b2cb83bde5791a330d13219f2",
+          "valueId": "fc34ee62e0a843779741a251140c546b",
+          "valueName": "Environmentalist"
+        },
+        {
+          "relationId": "1f3cd28effa749dd9aa1d606e026d4ab",
+          "entityId": "f71ae2c772d240b0be34f2de48d8c2b7",
+          "claimId": "b1a1520b2cb83bde5791a330d13219f2",
+          "valueId": "9f3b55993e254ca8ae643302c0039253",
+          "valueName": "Pro-regulation"
+        }
+      ],
+      "explanation": "Published: Left. ENV-2L matched (close): “Fashion brands should be banned from destroying unsold clothing”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “should be banned from destroying unsold clothing”, independent probability 0.99). Filled by best fit, not by the strict rules: Ideological leaning: Environmentalist (best fit, medium confidence; evidence “\"destroying unsold clothing\"”; Opposing destruction of unsold clothing is most clearly associated with reducing waste and environmental harm, though the claim does not explicitly mention the environment.)."
+    },
+    {
+      "claimId": "be0f530d211f3f552d9b5524da5b9a91",
+      "text": "Private prisons should be banned",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/be0f530d211f3f552d9b5524da5b9a91",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-criminal justice reform"
+      ],
+      "relations": [
+        {
+          "relationId": "66d69e20e1bf4a3f9b5162ee4a2444af",
+          "entityId": "a155954937004a8a8aa9de1ccedab2c0",
+          "claimId": "be0f530d211f3f552d9b5524da5b9a91",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "b55cc2bd89684daf803a11a47b3c4c04",
+          "entityId": "9e1506d6bea7411ab2d4b1f40ec727c7",
+          "claimId": "be0f530d211f3f552d9b5524da5b9a91",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "b6fa589751314c9f9f6b47ff6aaf8187",
+          "entityId": "9f1a59892dc34b0597633d5e58b31d4c",
+          "claimId": "be0f530d211f3f552d9b5524da5b9a91",
+          "valueId": "9e1ee559ae704dfe9bfd870f9f1b0393",
+          "valueName": "Pro-criminal justice reform"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “Private prisons should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-criminal justice reform (belief T1: “Private prisons should be banned”, independent probability 0.97). Not published: Pro-regulation (independent probability 0.86 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, low confidence; evidence “\"Private prisons should be banned\"”; The position aligns loosely with progressive criminal-justice reform priorities, but the claim does not explicitly state a broader ideology.)."
+    },
+    {
+      "claimId": "538b3931c2619c67cc94840a5745b097",
+      "text": "Fashion brands should be legally responsible for labor conditions across their supply chains",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/538b3931c2619c67cc94840a5745b097",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Progressive",
+      "issuePositions": [
+        "Pro-regulation"
+      ],
+      "relations": [
+        {
+          "relationId": "40e5957e04a3498e9924f4abb3b890f9",
+          "entityId": "c155ba090f1c4203ad24321ac3e039d1",
+          "claimId": "538b3931c2619c67cc94840a5745b097",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "516701e1319541c3b0e844225c5d786f",
+          "entityId": "8158565d85a14e0e9ca48cdbd035ea8c",
+          "claimId": "538b3931c2619c67cc94840a5745b097",
+          "valueId": "8cf9e9560faf46ff8c127036168c3163",
+          "valueName": "Progressive"
+        },
+        {
+          "relationId": "d32dfc893db84350889c310b99ae0df5",
+          "entityId": "ad9542c1724a49fca862667c7e0c4d15",
+          "claimId": "538b3931c2619c67cc94840a5745b097",
+          "valueId": "9f3b55993e254ca8ae643302c0039253",
+          "valueName": "Pro-regulation"
+        }
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “Fashion brands should be legally responsible for labor conditions across their supply chains”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-regulation (belief T1: “should be legally responsible for labor conditions across their supply chains”, independent probability 0.99). Filled by best fit, not by the strict rules: Ideological leaning: Progressive (best fit, medium confidence; evidence “\"legally responsible for labor conditions across their supply chains\"”; Emphasizing worker protections and corporate accountability aligns most closely with progressive politics, though the claim does not name an ideology.)."
+    },
+    {
+      "claimId": "9fcd2847cc63e055901dc7ca215910aa",
+      "text": "Companies should be required to put women on their boards",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/9fcd2847cc63e055901dc7ca215910aa",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Feminist",
+      "issuePositions": [
+        "Pro-equity"
+      ],
+      "relations": [
+        {
+          "relationId": "54124f87307846fcabdc5f5349f8c5f5",
+          "entityId": "fd242f6c076641c2907e03225767118a",
+          "claimId": "9fcd2847cc63e055901dc7ca215910aa",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "b15bc072cb5947f0a0efa2348e5cfefb",
+          "entityId": "1305605d3c73404b88fee86858d278b4",
+          "claimId": "9fcd2847cc63e055901dc7ca215910aa",
+          "valueId": "5f90b6eaac214ef0911195d9c56983e9",
+          "valueName": "Feminist"
+        },
+        {
+          "relationId": "888a774ac9434ebaa8a1c28ce8935a51",
+          "entityId": "4a4f2c7cc51a46569dfc8402b3848f2a",
+          "claimId": "9fcd2847cc63e055901dc7ca215910aa",
+          "valueId": "56ae663d410a45a6b6fd8e79728729f2",
+          "valueName": "Pro-equity"
+        }
+      ],
+      "explanation": "Published: Left. SOC-2L matched (close): “Companies should be required to put women on their boards”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Not published: Pro-equity (independent probability 0.81 is below 0.9). Not published: Pro-regulation (the verifier disagreed). Not published: Feminist (the issue side it rests on is in doubt: Pro-regulation (the verifier rejected it)). Filled by best fit, not by the strict rules: Ideological leaning: Feminist (best fit, high confidence; evidence “put women on their boards”; The claim directly seeks increased representation of women in corporate leadership, a core feminist concern.) Issue position: Pro-equity (best fit, high confidence; evidence “Companies should be required to put women on their boards”; The claim supports an equity-oriented requirement to address underrepresentation of women in board positions.)."
+    },
+    {
+      "claimId": "646b21ea4af241f09381fd86dcb4d25d",
+      "text": "California should restrict law enforcement activities near polling places",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/646b21ea4af241f09381fd86dcb4d25d",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Liberal",
+      "issuePositions": [
+        "Pro-voting rights"
+      ],
+      "relations": [
+        {
+          "relationId": "1bf3ddc2492f4f928384ce61f2589a8c",
+          "entityId": "baa68065757047cca983c008ff50f120",
+          "claimId": "646b21ea4af241f09381fd86dcb4d25d",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "ba70b33f9d2f4901a7b25df048238bab",
+          "entityId": "b3cd8820d61d4f6b80849476af639ddf",
+          "claimId": "646b21ea4af241f09381fd86dcb4d25d",
+          "valueId": "1c3fd766f3ec4617b40fcd1d08a4feec",
+          "valueName": "Liberal"
+        },
+        {
+          "relationId": "b8a695ecc1fc41b68fe780b73c8645d1",
+          "entityId": "576fc281a46146c1868aa3005d90a4fb",
+          "claimId": "646b21ea4af241f09381fd86dcb4d25d",
+          "valueId": "6fec26817a2145dbabb72f4d7857c951",
+          "valueName": "Pro-voting rights"
+        }
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “California should restrict law enforcement activities near polling places”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.73; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Not published: Pro-voting rights (independent probability 0.88 is below 0.9). Not published: Pro-criminal justice reform (independent probability 0.84 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Liberal (best fit, medium confidence; evidence “restrict law enforcement activities near polling places”; The claim emphasizes voting access and civil-liberties protections against potential state intimidation, which fits contemporary U.S. liberalism.) Issue position: Pro-voting rights (best fit, medium confidence; evidence “restrict law enforcement activities near polling places”; The specific policy would limit law-enforcement activity around polling sites, best fitting a stance aimed at protecting access to voting and participation in elections.)."
+    },
+    {
+      "claimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+      "text": "Families already paying private-school tuition deserve federal school-choice support",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/201c7a6acb9d2a7511fd72671d7b05f0",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Pro-school choice"
+      ],
+      "relations": [
+        {
+          "relationId": "83efb61d89e84db4b9e9d753f4fba1be",
+          "entityId": "814070d6ee9649f4be02e4d6510a8876",
+          "claimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "7d0d76bb6a294d138aa6aeb4e7e61c83",
+          "entityId": "54d57e3573b245a5879b659346934570",
+          "claimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "3ac000d67fd046bb9bf4fdfec2dae65b",
+          "entityId": "36617b409096434ba8f981cf5fa5cb0e",
+          "claimId": "201c7a6acb9d2a7511fd72671d7b05f0",
+          "valueId": "85d22c05162040bdbd4ef072a4090c60",
+          "valueName": "Pro-school choice"
+        }
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “deserve federal school-choice support”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-school choice (belief T1: “private-school tuition deserve federal school-choice support”, independent probability 0.98). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, medium confidence; evidence “\"Families already paying private-school tuition deserve federal school-choice support\"”; Support for school choice and private-school tuition assistance is commonly associated with contemporary U.S. conservative education policy, though the claim does not explicitly name an ideology.)."
+    },
+    {
+      "claimId": "187ce0019d6146cba0d08ad9bbcef17b",
+      "text": "Raising the minimum wage kills jobs",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/187ce0019d6146cba0d08ad9bbcef17b",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Pro-market wages"
+      ],
+      "relations": [
+        {
+          "relationId": "41e5da5778fa4a9bbe7957fae23ebadf",
+          "entityId": "2fa32d3cf77b45c0be88aa6ae094ab09",
+          "claimId": "187ce0019d6146cba0d08ad9bbcef17b",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "198881203cd048c0b53fdf2f3bcd5fdd",
+          "entityId": "de50ff4745914a63a9d0a752a79e98a0",
+          "claimId": "187ce0019d6146cba0d08ad9bbcef17b",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "c775c6bb66f743c5ab85385f206ea5ca",
+          "entityId": "7cbf681708564d6f98e5017ab23acf5d",
+          "claimId": "187ce0019d6146cba0d08ad9bbcef17b",
+          "valueId": "4e7facbcd3bc41e794737cfcb466ac88",
+          "valueName": "Pro-market wages"
+        }
+      ],
+      "explanation": "Published: Right. ECO-2R matched (close): “Raising the minimum wage kills jobs”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.91; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-market wages (belief T1: “Raising the minimum wage kills jobs”, independent probability 0.96). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, low confidence; evidence “Raising the minimum wage kills jobs”; The claim implies skepticism toward government wage regulation, which is commonly associated with conservative economic views, though no broader ideology is stated.)."
+    },
+    {
+      "claimId": "024eda17a14c9ffa7643edf89df0892a",
+      "text": "The right to own a gun is a fundamental human right",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/024eda17a14c9ffa7643edf89df0892a",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Libertarian",
+      "issuePositions": [
+        "Pro-gun rights"
+      ],
+      "relations": [
+        {
+          "relationId": "9819dd368a8947cebc32726432de4c64",
+          "entityId": "af6b122999234f84b4b9e03427f19abf",
+          "claimId": "024eda17a14c9ffa7643edf89df0892a",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "dc76ad72e2ff44fdaf56a6e433f493ec",
+          "entityId": "5b737834bc0c44738b70fe1117ee3d22",
+          "claimId": "024eda17a14c9ffa7643edf89df0892a",
+          "valueId": "f69a3a6e8ac14423aad8a9361dd7258a",
+          "valueName": "Libertarian"
+        },
+        {
+          "relationId": "92ca9abd89d04225ba4fa2267afb1781",
+          "entityId": "7f47feae9a784dcab3e5036fc8f08b46",
+          "claimId": "024eda17a14c9ffa7643edf89df0892a",
+          "valueId": "8d97d87c239d47979b51db05fdeed6df",
+          "valueName": "Pro-gun rights"
+        }
+      ],
+      "explanation": "Published: Right. LAW-2R matched (direct): “The right to own a gun is a fundamental human right”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.98; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-gun rights (belief T1: “The right to own a gun is a fundamental human right”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Libertarian (best fit, medium confidence; evidence “\"right to own a gun is a fundamental human right\"”; The claim frames gun ownership as an individual right, which aligns with libertarian emphasis on individual liberty and limits on government interference, though it does not state a full libertarian worldview.)."
+    },
+    {
+      "claimId": "130164625b3d493ca208d6e82f000443",
+      "text": "Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/130164625b3d493ca208d6e82f000443",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Christian conservative",
+      "issuePositions": [
+        "Pro-religious freedom"
+      ],
+      "relations": [
+        {
+          "relationId": "9641295e224c4fc880519cdcf6e19c99",
+          "entityId": "bf60e6e09aac4d60ae336a0dfb1b36fc",
+          "claimId": "130164625b3d493ca208d6e82f000443",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "931568097b734e068414c74fcbed57be",
+          "entityId": "85233dd8a9a34d9f8707ec05be0cdf08",
+          "claimId": "130164625b3d493ca208d6e82f000443",
+          "valueId": "c11e061c625b442c9f1a1ebea357f2e3",
+          "valueName": "Christian conservative"
+        },
+        {
+          "relationId": "f1c241ea1434488a868318b498b4a414",
+          "entityId": "c2d02fc9ee9e496fbef26d4e610ffa17",
+          "claimId": "130164625b3d493ca208d6e82f000443",
+          "valueId": "14b7be05f503428992d23afb4430e443",
+          "valueName": "Pro-religious freedom"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Forcing religious healthcare providers to participate in medical aid-in-dying programs infringes on religious liberty”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.97; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.93; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-religious freedom (belief T1: “infringes on religious liberty”, independent probability 0.97). Filled by best fit, not by the strict rules: Ideological leaning: Christian conservative (best fit, low confidence; evidence “\"religious healthcare providers\"; \"religious liberty\"”; The emphasis on protecting religious providers from participating in aid-in-dying programs aligns most closely with Christian conservative concerns about religious conscience and traditional moral objections in healthcare. (evidence not found word for word in the claim))."
+    },
+    {
+      "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+      "text": "Property taxes on people's homes should be abolished",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/982d12a85b4de99c59c3befc6c4c51c3",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Libertarian",
+      "issuePositions": [
+        "Pro-tax cuts"
+      ],
+      "relations": [
+        {
+          "relationId": "b6c8c47d3de54b62bfe291ce0a3395d3",
+          "entityId": "00350242389b4273b62cae49bf6d19b0",
+          "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "317ce38cccef44aebd66f5b1367dd904",
+          "entityId": "924b1f21ad1f42778a5263db242174c9",
+          "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+          "valueId": "f69a3a6e8ac14423aad8a9361dd7258a",
+          "valueName": "Libertarian"
+        },
+        {
+          "relationId": "3e4441ba886f468b81b71e75edb83fc6",
+          "entityId": "996bfe7084aa403684ca03c34499ab0b",
+          "claimId": "982d12a85b4de99c59c3befc6c4c51c3",
+          "valueId": "69fa99ed89f444ba8b3396b0d80dff49",
+          "valueName": "Pro-tax cuts"
+        }
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “Property taxes on people's homes should be abolished”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-tax cuts (belief T1: “Property taxes on people's homes should be abolished”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Libertarian (best fit, medium confidence; evidence “Property taxes on people's homes should be abolished”; The anti-tax, property-rights emphasis is most closely associated with libertarian views, though the claim does not explicitly name an ideology.)."
+    },
+    {
+      "claimId": "16148774ed6c490b9f8f58514d74df5e",
+      "text": "All illegal aliens should be deported",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/16148774ed6c490b9f8f58514d74df5e",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Nationalist",
+      "issuePositions": [
+        "Pro-border security"
+      ],
+      "relations": [
+        {
+          "relationId": "db70ebf9616a4f4daf56ef2d94cb4575",
+          "entityId": "d28ec931a81140cdad2c9556a8f3078c",
+          "claimId": "16148774ed6c490b9f8f58514d74df5e",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "ba6e0f90c8214e208c415ff67cbe24f0",
+          "entityId": "35b032522c574f268b3782369c21267d",
+          "claimId": "16148774ed6c490b9f8f58514d74df5e",
+          "valueId": "949d526009a5476b809b0ab9795907aa",
+          "valueName": "Nationalist"
+        },
+        {
+          "relationId": "f3a5389ddc7f4bcbaebd08a2c5cb5272",
+          "entityId": "3c53c633dcda4061bf1a1c9ef9cf3eee",
+          "claimId": "16148774ed6c490b9f8f58514d74df5e",
+          "valueId": "1a2decfbb1654e399809f5000b7a0272",
+          "valueName": "Pro-border security"
+        }
+      ],
+      "explanation": "Published: Right. NAT-2R matched (direct): “All illegal aliens should be deported”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-border security (belief T1: “All illegal aliens should be deported”, independent probability 1.00). Filled by best fit, not by the strict rules: Ideological leaning: Nationalist (best fit, medium confidence; evidence “All illegal aliens should be deported”; The claim prioritizes national immigration control and exclusion of unauthorized noncitizens, which is most closely associated with nationalist politics, though no broader ideology is stated.)."
+    },
+    {
+      "claimId": "121d357639a54bc9a7526462c2f697d5",
+      "text": "Gender-affirming care for minors should be banned",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/121d357639a54bc9a7526462c2f697d5",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Gender-critical"
+      ],
+      "relations": [
+        {
+          "relationId": "2868672b6a1b463cb22f7470a5704de2",
+          "entityId": "0bd60ee33eea4956829d4cb5af0e9bad",
+          "claimId": "121d357639a54bc9a7526462c2f697d5",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "b0cc4b517dbe4a5bafa0808e31d93a93",
+          "entityId": "dace9a72541f48a5adf8bcb4209d6ad8",
+          "claimId": "121d357639a54bc9a7526462c2f697d5",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "c550c41365604dcf99795f2772b3a44f",
+          "entityId": "184794f4197241e6939af0a9c256205a",
+          "claimId": "121d357639a54bc9a7526462c2f697d5",
+          "valueId": "f0518019b6c64cc49d99a716d6875b78",
+          "valueName": "Gender-critical"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Gender-affirming care for minors should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-regulation (independent probability 0.89 is below 0.9; the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “\"Gender-affirming care for minors should be banned\"”; The claim supports a restrictive policy on gender identity-related medical care for minors, aligning most closely with social-conservative concerns about sexuality, gender, family, and minors.) Issue position: Gender-critical (best fit, medium confidence; evidence “\"Gender-affirming care for minors should be banned\"”; The claim takes a restrictive stance on gender-affirming care, making the gender-identity issue label 'Gender-critical' the closest available fit, though it does not explicitly state the broader gender-critical rationale.)."
+    },
+    {
+      "claimId": "1b4c590a4e58590c26006707a5972460",
+      "text": "Drag shows for children should be banned",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/1b4c590a4e58590c26006707a5972460",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Gender-critical"
+      ],
+      "relations": [
+        {
+          "relationId": "db3c62a5b5674ae29db0020249fab98e",
+          "entityId": "1050d283d81742f6b62b78022612e014",
+          "claimId": "1b4c590a4e58590c26006707a5972460",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "0680acfd933240cfbeddc487f2291d0f",
+          "entityId": "0269044ed2d741bb8a2e7a43b055d2ee",
+          "claimId": "1b4c590a4e58590c26006707a5972460",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "b3ac8160f0394913b2a651771d74976f",
+          "entityId": "fe1cdbdff1024951aa99abdef03f8b8d",
+          "claimId": "1b4c590a4e58590c26006707a5972460",
+          "valueId": "f0518019b6c64cc49d99a716d6875b78",
+          "valueName": "Gender-critical"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Drag shows for children should be banned”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-regulation (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “Drag shows for children should be banned”; The claim favors restricting a form of gender-nonconforming or LGBTQ-associated performance for children, reflecting socially conservative concerns about traditional moral and family norms.) Issue position: Gender-critical (best fit, low confidence; evidence “Drag shows for children should be banned”; The closest listed issue area is gender identity/expression, but the claim is specifically about drag performances for children rather than an explicit gender-critical policy stance.)."
+    },
+    {
+      "claimId": "6bcb7138969c483faa46a922c046207e",
+      "text": "Abortion should be illegal even in cases of rape",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/6bcb7138969c483faa46a922c046207e",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "fbb1018f451f40f18aee257358c802b3",
+          "entityId": "d2d46529910243f7a5b8f6f7cebfd80a",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "7da5ab1557774560a43bb2fd90ada1fa",
+          "entityId": "7da909aa91164c189837da8f3488f18d",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "ac196b80af924613ae3e9e251ae1db61",
+          "entityId": "265622fff2ea40558679d96817d235a8",
+          "claimId": "6bcb7138969c483faa46a922c046207e",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be illegal even in cases of rape”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 1.00). Political ideology: Christian conservative (belief T1: “Abortion should be illegal even in cases of rape”, independent probability 0.90). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “Abortion should be illegal even in cases of rape”; A strict anti-abortion stance is closely associated with social conservatism, though the claim does not state a broader ideology.)."
+    },
+    {
+      "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+      "text": "Late-term abortion should be illegal",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/62af92ec0a7d4c9296c37f3dabd5437b",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "6d3bcadda2e048b49124ae07ccd25b2c",
+          "entityId": "4054869941fc4a26bbf2e607e3722703",
+          "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "b61cba3e3f5f4c7ab50860c696c0b605",
+          "entityId": "30ecea583ff2473e90e6fb90948af057",
+          "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "971c1516c66c4acb9564b61cbf33cbb1",
+          "entityId": "abee04190964428aa54368ae6ecbb07a",
+          "claimId": "62af92ec0a7d4c9296c37f3dabd5437b",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Late-term abortion should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Late-term abortion should be illegal”, independent probability 1.00). Not published: Christian conservative (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “Late-term abortion should be illegal”; Opposition to abortion is closely associated with social conservatism, though the claim does not state a broader ideology.)."
+    },
+    {
+      "claimId": "97fdfead23a240f483555ff48b8ece5b",
+      "text": "Ordering abortion pills should be illegal",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/97fdfead23a240f483555ff48b8ece5b",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "ef581665ec0a492e95b193468db7b77c",
+          "entityId": "8467355cda06409790e1869b63b062d4",
+          "claimId": "97fdfead23a240f483555ff48b8ece5b",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "a30729a4c3844dd59fe24b05d238a7d8",
+          "entityId": "2097950f944d428e857dde186ce74fbd",
+          "claimId": "97fdfead23a240f483555ff48b8ece5b",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "7be7f6ae30ab4d1d81de67a1d1bc9e31",
+          "entityId": "93ae07870d1144d48a0cbd7e5948552d",
+          "claimId": "97fdfead23a240f483555ff48b8ece5b",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Ordering abortion pills should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Ordering abortion pills should be illegal”, independent probability 0.98). Political ideology: Christian conservative (belief T1: “Ordering abortion pills should be illegal”, independent probability 0.94). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “\"Ordering abortion pills should be illegal\"”; Opposition to abortion access is strongly associated with social conservatism, though the claim does not explicitly state a broader ideology.)."
+    },
+    {
+      "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+      "text": "Race-based affirmative action in college admissions should be illegal",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/dbf2c8daae4a4607bbadf09f5f3527de",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Pro-meritocracy"
+      ],
+      "relations": [
+        {
+          "relationId": "b3526ac168964896b21e4a8249823306",
+          "entityId": "f7b79569dd17458ea0ab670f4f0b9aec",
+          "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "7306d4c9cee74ca3a5c00142ae5735bb",
+          "entityId": "23d5e8873eee48ceb799b2f2c75a2bb5",
+          "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "f9e57843465b47868754dc58d6dc107a",
+          "entityId": "d58399ee5fa94bf7b20b44789aed6f70",
+          "claimId": "dbf2c8daae4a4607bbadf09f5f3527de",
+          "valueId": "c5cdb1c750094285b82ec800a7c1183f",
+          "valueName": "Pro-meritocracy"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Race-based affirmative action in college admissions should be illegal”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-meritocracy (belief T1: “Race-based affirmative action in college admissions should be illegal”, independent probability 0.92). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, medium confidence; evidence “\"Race-based affirmative action in college admissions should be illegal\"”; The claim aligns most closely with conservative opposition to affirmative action and race-conscious admissions policies.)."
+    },
+    {
+      "claimId": "7030e8e5ec5646bd9fe18a18541bde7c",
+      "text": "Ranchers should be allowed to sell meat without USDA inspections",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/7030e8e5ec5646bd9fe18a18541bde7c",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Libertarian",
+      "issuePositions": [
+        "Pro-deregulation"
+      ],
+      "relations": [
+        {
+          "relationId": "a5cb8a37c1f54531855219bbf764a323",
+          "entityId": "a75b32b724df4101aa8441befd0bb0f6",
+          "claimId": "7030e8e5ec5646bd9fe18a18541bde7c",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "5576f4e988654abba5827c086bdb1f5e",
+          "entityId": "0d2339266dc3461587074a472bbe08b1",
+          "claimId": "7030e8e5ec5646bd9fe18a18541bde7c",
+          "valueId": "f69a3a6e8ac14423aad8a9361dd7258a",
+          "valueName": "Libertarian"
+        },
+        {
+          "relationId": "b39e761ec4c64a7da087398bb9512b27",
+          "entityId": "2976da783af64e16b9af94ece0575ab7",
+          "claimId": "7030e8e5ec5646bd9fe18a18541bde7c",
+          "valueId": "d3d853118e184fe0bf825aad33a1caf1",
+          "valueName": "Pro-deregulation"
+        }
+      ],
+      "explanation": "No label. ECO-2R matched (close): “Ranchers should be allowed to sell meat without USDA inspections”. That points to Right, but rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave Center right. Issue position: Pro-deregulation (belief T1: “sell meat without USDA inspections”, independent probability 0.99). Filled by best fit, not by the strict rules: Political position: Right (best fit, medium confidence; evidence “Ranchers should be allowed to sell meat without USDA inspections”; The claim favors reducing federal regulatory oversight, a mainstream conservative/right-leaning position.) Ideological leaning: Libertarian (best fit, medium confidence; evidence “should be allowed to sell meat without USDA inspections”; Opposition to mandatory USDA inspections reflects a preference for market freedom and less government interference, which is most closely associated with libertarianism.)."
+    },
+    {
+      "claimId": "4e3a8e5937394929b925e67ba7c1af89",
+      "text": "The federal government should eliminate funding for race-conscious and DEI programs",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/4e3a8e5937394929b925e67ba7c1af89",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Pro-meritocracy"
+      ],
+      "relations": [
+        {
+          "relationId": "818e229906844121839ad130b05412b8",
+          "entityId": "2b3d98c9a61e479eb8fc6995ee1f48b4",
+          "claimId": "4e3a8e5937394929b925e67ba7c1af89",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "467120afa991463c98911193943a6adc",
+          "entityId": "8d86cf345e21418a8495b56c72bb0c3c",
+          "claimId": "4e3a8e5937394929b925e67ba7c1af89",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "eab43498d4ac4056b07a45172978f112",
+          "entityId": "5c586e3bfa8d4673ba7d19b63a3d603d",
+          "claimId": "4e3a8e5937394929b925e67ba7c1af89",
+          "valueId": "c5cdb1c750094285b82ec800a7c1183f",
+          "valueName": "Pro-meritocracy"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “should eliminate funding for race-conscious and DEI programs”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-meritocracy (the verifier disagreed). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, medium confidence; evidence “\"eliminate funding for race-conscious and DEI programs\"”; The claim favors removing government support for DEI initiatives, which is clearly associated with contemporary conservative opposition to race-conscious policy.) Issue position: Pro-meritocracy (best fit, medium confidence; evidence “\"eliminate funding for race-conscious and DEI programs\"”; Among the listed issue positions, opposition to race-conscious and DEI programs most closely aligns with a pro-meritocracy framing that rejects allocating opportunities or resources by identity-conscious criteria.)."
+    },
+    {
+      "claimId": "8e7f33581f2a41638231c0e67615b398",
+      "text": "The Trump administration should eliminate collective bargaining for federal employees",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/8e7f33581f2a41638231c0e67615b398",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Anti-union"
+      ],
+      "relations": [
+        {
+          "relationId": "4b8d784636184a0c9e19bd233968e16b",
+          "entityId": "9c81cdcd6a1f4aa49b9b89a284cd9bbe",
+          "claimId": "8e7f33581f2a41638231c0e67615b398",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "67f025d3f87b4696bccc4530712445e8",
+          "entityId": "de5711b81e004051a12def71b0d6ba71",
+          "claimId": "8e7f33581f2a41638231c0e67615b398",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "834323ff5e7b4541a71f28b4f6776d0e",
+          "entityId": "274cbbc791874c2099e4ab5e7ff08594",
+          "claimId": "8e7f33581f2a41638231c0e67615b398",
+          "valueId": "aea3dae11784406ca10d3218d7d74e17",
+          "valueName": "Anti-union"
+        }
+      ],
+      "explanation": "Published: Right. ECO-2R matched (direct): “should eliminate collective bargaining for federal employees”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Anti-union (belief T1: “should eliminate collective bargaining for federal employees”, independent probability 0.99). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, medium confidence; evidence “\"The Trump administration should eliminate collective bargaining\"”; The claim supports a right-leaning labor policy associated with conservative opposition to public-sector union power, though it does not explicitly name an ideology.)."
+    },
+    {
+      "claimId": "553deda6b6244998b1bbc39792df7d5c",
+      "text": "Voters should be required to show photo ID",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/553deda6b6244998b1bbc39792df7d5c",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Conservative",
+      "issuePositions": [
+        "Pro-election integrity"
+      ],
+      "relations": [
+        {
+          "relationId": "2ef10261959b4ab8ad6991e24bc3ceb7",
+          "entityId": "f3da971eeb5e4528a754c4954261c0be",
+          "claimId": "553deda6b6244998b1bbc39792df7d5c",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "95e4c81dd1a9430087580e38ab04ef60",
+          "entityId": "10d509bdeac049149ef22321debdcab3",
+          "claimId": "553deda6b6244998b1bbc39792df7d5c",
+          "valueId": "4e93d425a84e40d1a2403263de57a847",
+          "valueName": "Conservative"
+        },
+        {
+          "relationId": "4873fde677fc4393b94f03ce84cdae20",
+          "entityId": "b901840387e3405e8abff646122a124b",
+          "claimId": "553deda6b6244998b1bbc39792df7d5c",
+          "valueId": "ac06190ee93f4e83853ca54d036179f5",
+          "valueName": "Pro-election integrity"
+        }
+      ],
+      "explanation": "Published: Right. LAW-2R matched (direct): “Voters should be required to show photo ID”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-election integrity (belief T1: “Voters should be required to show photo ID”, independent probability 0.96). Filled by best fit, not by the strict rules: Ideological leaning: Conservative (best fit, medium confidence; evidence “\"Voters should be required to show photo ID\"”; Photo ID voting requirements are commonly associated with conservative concerns about election security and lawful voting.)."
+    },
+    {
+      "claimId": "73aef60360f4465ba5238f45c806aaa5",
+      "text": "Abortion should be banned nationwide",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/73aef60360f4465ba5238f45c806aaa5",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "7a503695cfda4f05a997adbf17d5b2ed",
+          "entityId": "d0de6ee408124634ab9e38fe3e1eeeee",
+          "claimId": "73aef60360f4465ba5238f45c806aaa5",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "f11f3745d2ad4178a3cf2bf7ac6d0b17",
+          "entityId": "aed1b006708545d59c03b1cc8c270f58",
+          "claimId": "73aef60360f4465ba5238f45c806aaa5",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "d3564ba8ef0e436b804f3b941633bff7",
+          "entityId": "ebe6e2f2e7bc43c6b749611335f2d3f2",
+          "claimId": "73aef60360f4465ba5238f45c806aaa5",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (direct): “Abortion should be banned nationwide”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion should be banned nationwide”, independent probability 1.00). Political ideology: Christian conservative (belief T1: “Abortion should be banned nationwide”, independent probability 0.98). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “Abortion should be banned nationwide”; Opposition to abortion is strongly associated with social conservatism, though the claim does not state a broader ideology.)."
+    },
+    {
+      "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
+      "text": "Abortion is murder",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/286fa3286f6143cd9a30f8d7ef9a17df",
+      "politicalPosition": "Right",
+      "ideologicalLeaning": "Social conservative",
+      "issuePositions": [
+        "Pro-life"
+      ],
+      "relations": [
+        {
+          "relationId": "dec2679495584bac8e349a4e4d7393a8",
+          "entityId": "6f269e3e24bb429fb03fc74ecbdc630b",
+          "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
+          "valueId": "7a74f432548c417eb4abf9c45f3a7100",
+          "valueName": "Right"
+        },
+        {
+          "relationId": "f7554315bf6842ddadf58e28fd8060d7",
+          "entityId": "3b4ba64dbf9d42b89d46f3432409c9e9",
+          "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
+          "valueId": "460e2607a3cb4eda887324780b89e2eb",
+          "valueName": "Social conservative"
+        },
+        {
+          "relationId": "a48840f784874ce3b4d4cb2c6fb23312",
+          "entityId": "4642768d84294e89a1152789968d5b24",
+          "claimId": "286fa3286f6143cd9a30f8d7ef9a17df",
+          "valueId": "053a4341639d43a5b0d534b40f7efe4f",
+          "valueName": "Pro-life"
+        }
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Abortion is murder”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Issue position: Pro-life (belief T1: “Abortion is murder”, independent probability 0.99). Filled by best fit, not by the strict rules: Ideological leaning: Social conservative (best fit, medium confidence; evidence “Abortion is murder”; The claim frames abortion as a moral wrong, fitting a social-conservative outlook on traditional moral issues, though no broader ideology is stated.)."
+    }
+  ]
+}
