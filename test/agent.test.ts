@@ -248,6 +248,26 @@ describe("ScoringAgent.score", () => {
     expect(calls.secondLookCards).toContain("Pro-life");
   });
 
+  it("publishes at most one Political ideology, the most probable, next to any number of Issue positions (I4)", async () => {
+    const { agent: a } = agent({
+      scorer: [
+        scorer({
+          ideologies: [
+            { name: "Pro-life", tenet: "T1", evidence: ABORTION },
+            { name: "Social conservative", tenet: "T1", evidence: ABORTION },
+            { name: "Christian conservative", tenet: "T1", evidence: ABORTION },
+          ],
+        }),
+      ],
+      ...clearRight,
+      ideologies: { ...clearRight.ideologies, "Christian conservative": 0.95, "Social conservative": 0.9 },
+    });
+    const r = await a.score(claim(ABORTION));
+    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Christian conservative"]);
+    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Political ideology per claim (I4): Christian conservative scored higher" });
+    expect(r.explanation).toMatch(/Issue position: Pro-life .*Political ideology: Christian conservative/);
+  });
+
   it("refuses an empty claim without calling any model", async () => {
     const { agent: a, calls } = agent({ scorer: [scorer()] });
     await expect(a.score(claim("  "))).rejects.toThrow(/no text/);
