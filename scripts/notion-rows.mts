@@ -2,9 +2,9 @@
 // Usage:
 //   npx tsx scripts/notion-rows.mts bench evals/results/bench.<set>.<framework>.json <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts fresh evals/fresh/<name>/fresh.json <out.json>
-//   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json evals/fresh/<name>/rescore.<framework>.json <run-name> <out.json>
+//   npx tsx scripts/notion-rows.mts v3 evals/results/examples.<set>.<framework>.json <fresh-or-rescore.json>[,<more.json>] <run-name> <out.json>
 //   npx tsx scripts/notion-rows.mts cards <out.json>   (the Ideology definitions database)
-//   npx tsx scripts/notion-rows.mts challenge evals/results/challenge.<set>.<framework>.json <run-name> <out.json>
+//   npx tsx scripts/notion-rows.mts challenge evals/results/challenge.<set>.<framework>.json[,<baseline.json>] <run-name> <out.json>
 import { readFileSync, writeFileSync } from "node:fs";
 import { geoEntityUrl, SPACES } from "../src/config.js";
 import { EXCLUDED_ALIASES, IDEOLOGY_CARDS } from "../src/framework/ideologies.js";
@@ -80,11 +80,16 @@ function freshRows() {
     }));
 }
 
-/** Framework v3 review rows: Armando's example claims (with his labels) and a re-scored fresh set. */
-function v3Rows(freshFile: string, run: string) {
+/** Framework v3 review rows: Armando's example claims (with his labels) and one or more fresh or re-scored sets. */
+function v3Rows(freshFiles: string, run: string) {
   const US = SPACES.find((s) => s.slug === "us-politics")!;
   const examples = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
-  const fresh = JSON.parse(readFileSync(freshFile, "utf8")) as { rows: Record<string, any>[] };
+  const fresh = {
+    rows: freshFiles.split(",").flatMap((f) => {
+      const set = JSON.parse(readFileSync(f, "utf8")) as { name: string; rows: Record<string, any>[] };
+      return set.rows.map((r) => ({ ...r, setName: set.name }));
+    }),
+  };
   const common = (r: Record<string, any>, ideologies: string[]) => ({
     Claim: fit(r.text, 300),
     "Political leaning": r.leaning ?? r.display ?? `Error: ${r.error}`,
@@ -114,6 +119,7 @@ function v3Rows(freshFile: string, run: string) {
       properties: {
         ...common(r, r.ideologies),
         Set: "Fresh sample",
+        Run: `${run} · ${r.setName}`,
         Space: r.space,
         "Geo link": geoEntityUrl(r.spaceId, r.claimId),
         "Claim ID": r.claimId,
@@ -164,8 +170,11 @@ function cardRows() {
 
 /** Challenge set rows: the expected result next to the agent's, with wrong and missed labels. */
 function challengeRows(run: string) {
-  const result = JSON.parse(readFileSync(file!, "utf8")) as { rows: Record<string, any>[] };
+  const [resultFile, baselineFile] = file!.split(",");
+  const result = JSON.parse(readFileSync(resultFile!, "utf8")) as { rows: Record<string, any>[] };
+  const baseline = baselineFile ? new Map((JSON.parse(readFileSync(baselineFile, "utf8")) as { rows: Record<string, any>[] }).rows.map((r) => [r.id, r])) : null;
   return result.rows.map((r) => {
+    const before = baseline?.get(r.id);
     const wrong = [...(r.wrongLeaning ? [r.wrongLeaning] : []), ...(r.wrongIdeologies ?? [])];
     const missed = [...(r.missedLeaning ? [r.expectLeaning] : []), ...(r.missedIdeologies ?? [])];
     return {
@@ -185,6 +194,7 @@ function challengeRows(run: string) {
         "Reviewer notes": lines([...(r.droppedIdeologies ?? []).map((d: string) => `Not published: ${d}`), ...(r.reviewerNotes ?? [])]),
         "Near misses": lines(r.nearMisses ?? []),
         "Expectation note": r.note ?? "",
+        ...(before ? { "Baseline result": `${before.display}${before.ideologies.length ? ` · ${before.ideologies.join(", ")}` : ""}` } : {}),
         Run: run,
       },
     };
