@@ -15,7 +15,7 @@ interface ManifestClaim {
   text: string;
   link: string;
   politicalPosition: string | null;
-  politicalIdeology: string | null;
+  ideologicalLeaning: string | null;
   issuePositions: string[];
   relations: PlannedRelation[];
   explanation: string;
@@ -35,8 +35,8 @@ writeFileSync(
   join(dir, "proposal.csv"),
   "﻿" +
     [
-      ["Claim", "Political position", "Political ideology", "Issue positions", "Value IDs", "Geo link", "Claim ID"],
-      ...manifest.claims.map((c) => [c.text, c.politicalPosition ?? "", c.politicalIdeology ?? "", c.issuePositions.join(", "), c.relations.map((r) => r.valueId).join(" "), c.link, c.claimId]),
+      ["Claim", "Political position", "Ideological leaning", "Issue positions", "Value IDs", "Geo link", "Claim ID"],
+      ...manifest.claims.map((c) => [c.text, c.politicalPosition ?? "", c.ideologicalLeaning ?? "", c.issuePositions.join(", "), c.relations.map((r) => r.valueId).join(" "), c.link, c.claimId]),
     ]
       .map((row) => row.map(escape).join(","))
       .join("\r\n") +
@@ -49,10 +49,10 @@ writeFileSync(
     "",
     `**Dry run, trimmed after review to ${manifest.claims.length} claims.** Nothing has been sent to Geo. ${ops.length} Leanings links.`,
     "",
-    "| # | Claim | Political position | Political ideology | Issue positions | Geo |",
+    "| # | Claim | Political position | Ideological leaning | Issue positions | Geo |",
     "|---|---|---|---|---|---|",
     ...manifest.claims.map(
-      (c, i) => `| ${i + 1} | ${c.text.replaceAll("|", "\\|")} | ${c.politicalPosition ?? ""} | ${c.politicalIdeology ?? ""} | ${c.issuePositions.join(", ")} | [open](${c.link}) |`,
+      (c, i) => `| ${i + 1} | ${c.text.replaceAll("|", "\\|")} | ${c.politicalPosition ?? ""} | ${c.ideologicalLeaning ?? ""} | ${c.issuePositions.join(", ")} | [open](${c.link}) |`,
     ),
     "",
     "## Why each label",

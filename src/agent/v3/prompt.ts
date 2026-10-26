@@ -46,7 +46,7 @@ export function buildScorerPrompt(): string {
 ## Definitions
 
 Political leaning (Geo type Political position): ${POLITICAL_LEANING_DEFINITION}
-Tradition (Geo type Political ideology): ${IDEOLOGY_DEFINITION}
+Tradition (Geo type Ideological leaning): ${IDEOLOGY_DEFINITION}
 Issue leaning (Geo type Issue position): ${ISSUE_POSITION_DEFINITION}
 Leanings (the property being filled): ${LEANINGS_PROPERTY_DEFINITION}
 A claim has at most one political leaning and at most one tradition, but can have several issue leanings.

@@ -6,12 +6,12 @@ import data from "../src/framework/leanings.json" with { type: "json" };
 import { buildTaxonomy, type RawValue } from "../src/geo/taxonomy.js";
 
 describe("Armando's leanings data", () => {
-  it("has 26 traditions (Political ideology) and 86 issue leanings (Issue position) across 43 issues", () => {
+  it("has 26 traditions (Ideological leaning) and 86 issue leanings (Issue position) across 43 issues", () => {
     expect(IDEOLOGY_CARDS.filter((c) => c.kind === "tradition")).toHaveLength(26);
     expect(IDEOLOGY_CARDS.filter((c) => c.kind === "issue")).toHaveLength(86);
     expect(IDEOLOGY_CARDS.every((c) => c.geoId)).toBe(true);
     expect(ISSUES).toHaveLength(43);
-    // Geo moved Social conservative to Political ideology and Isolationist to Issue position, leaving one side each.
+    // Geo moved Social conservative to Ideological leaning and Isolationist to Issue position, leaving one side each.
     expect(ISSUES.filter((i) => i.sides.length === 1).map((i) => i.issue).sort()).toEqual(["Isolationism", "LGBTQ"]);
     for (const { issue, sides } of ISSUES) {
       expect(sides.length, issue).toBeLessThanOrEqual(3);
@@ -91,7 +91,7 @@ describe("checkTaxonomySync", () => {
 
   it("refuses a value without a card, a card missing from Geo, the wrong type, a changed description and an unknown leaning", () => {
     expect(sync(leanings(), [...traditions, { id: "x", name: "Accelerationist", description: null }], issues)).toThrow(/no card/);
-    expect(sync(leanings(), traditions.filter((t) => t.name !== "Populist"), issues)).toThrow(/"Populist" is not a Political ideology on Geo/);
+    expect(sync(leanings(), traditions.filter((t) => t.name !== "Populist"), issues)).toThrow(/"Populist" is not a Ideological leaning on Geo/);
     const social = traditions.find((t) => t.name === "Social conservative")!;
     expect(sync(leanings(), traditions.filter((t) => t !== social), [...issues, social])).toThrow(/is of type Issue position on Geo but its card is a tradition/);
     expect(sync(leanings(), traditions, issues.map((i) => (i.name === "Pro-life" ? { ...i, description: "Changed." } : i)))).toThrow(/changed the description of "Pro-life"/);

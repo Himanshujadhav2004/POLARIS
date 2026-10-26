@@ -19,8 +19,8 @@ import {
 } from "../src/framework/rubric.js";
 
 /**
- * Political ideology values on Geo after 2026-10-26 (Fascist and Zionist deleted on 10-22, the duplicate
- * Libertarianism on 10-26; on the split, Isolationist became an Issue position and Social conservative a Political ideology).
+ * Ideological leaning values on Geo after 2026-10-26 (Fascist and Zionist deleted on 10-22, the duplicate
+ * Libertarianism on 10-26; on the split, Isolationist became an Issue position and Social conservative a Ideological leaning).
  */
 const GEO_IDEOLOGIES = [
   "Anarchist", "Christian conservative", "Classical liberal", "Communist", "Conservative", "Democratic socialist",

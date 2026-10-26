@@ -89,7 +89,7 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     text: claim.text,
     link: geoEntityUrl(space.id, claim.id),
     politicalPosition: result.leaning,
-    politicalIdeology: result.ideologies.find((i) => i.kind === "tradition")?.name ?? null,
+    ideologicalLeaning: result.ideologies.find((i) => i.kind === "tradition")?.name ?? null,
     issuePositions: result.ideologies.filter((i) => i.kind === "issue").map((i) => i.name),
     relations: relations.filter((r) => r.claimId === claim.id),
     evidence: [...result.criteria.map((c) => c.evidence), ...result.ideologies.map((i) => i.evidence)],
@@ -119,8 +119,8 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
         "claim chosen for this proposal after review",
         "claim is in the space",
         "claim has no Leanings yet",
-        "every publish rule passed (P1–P6 for a Political position, I3/I4/I6 for a Political ideology or Issue position)",
-        "at most one Political position and one Political ideology per claim",
+        "every publish rule passed (P1–P6 for a Political position, I3/I4/I6 for a Ideological leaning or Issue position)",
+        "at most one Political position and one Ideological leaning per claim",
       ],
       claims,
     }),
@@ -132,11 +132,11 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     files.csv,
     "﻿" +
       [
-        ["Claim", "Political position", "Political ideology", "Issue positions", "Value IDs", "Geo link", "Claim ID"],
+        ["Claim", "Political position", "Ideological leaning", "Issue positions", "Value IDs", "Geo link", "Claim ID"],
         ...claims.map((c) => [
           c.text,
           c.politicalPosition ?? "",
-          c.politicalIdeology ?? "",
+          c.ideologicalLeaning ?? "",
           c.issuePositions.join(", "),
           c.relations.map((r) => r.valueId).join(" "),
           c.link,
@@ -148,7 +148,7 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
       "\r\n",
   );
 
-  const leaningsText = (c: (typeof claims)[number]) => [c.politicalPosition, c.politicalIdeology, ...c.issuePositions].filter(Boolean).join(", ");
+  const leaningsText = (c: (typeof claims)[number]) => [c.politicalPosition, c.ideologicalLeaning, ...c.issuePositions].filter(Boolean).join(", ");
   const md = [
     `# Leanings proposal: ${space.name}, ${dir.split(/[\\/]/).pop()}`,
     "",
@@ -158,7 +158,7 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     `- Claims: ${claims.length}; Leanings links to add: ${relations.length}`,
     `- Generated ${generatedAt} with ${model}, ${FRAMEWORK_VERSION}, taxonomy ${taxonomy.fingerprint}`,
     "",
-    "Every claim below passed: it was chosen for this proposal after review, it is in the space, it has no Leanings yet, and the agent published each label because every publish rule passed. Each claim has at most one Political position and one Political ideology, and any number of Issue positions.",
+    "Every claim below passed: it was chosen for this proposal after review, it is in the space, it has no Leanings yet, and the agent published each label because every publish rule passed. Each claim has at most one Political position and one Ideological leaning, and any number of Issue positions.",
     "",
     "## Before you submit",
     "",
@@ -167,11 +167,11 @@ export function writeDryRun(batch: Batch, taxonomy: Taxonomy, dir: string): stri
     "",
     "## Claims",
     "",
-    "| # | Claim | Political position | Political ideology | Issue positions | Geo |",
+    "| # | Claim | Political position | Ideological leaning | Issue positions | Geo |",
     "|---|---|---|---|---|---|",
     ...claims.map(
       (c, i) =>
-        `| ${i + 1} | ${c.text.replaceAll("|", "\\|")} | ${c.politicalPosition ?? ""} | ${c.politicalIdeology ?? ""} | ${c.issuePositions.join(", ")} | [open](${c.link}) |`,
+        `| ${i + 1} | ${c.text.replaceAll("|", "\\|")} | ${c.politicalPosition ?? ""} | ${c.ideologicalLeaning ?? ""} | ${c.issuePositions.join(", ")} | [open](${c.link}) |`,
     ),
     "",
     "## Why each label",

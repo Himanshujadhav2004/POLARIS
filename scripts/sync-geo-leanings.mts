@@ -1,5 +1,5 @@
 // Brings src/framework/leanings.json in line with Geo's three Leanings types (split on 2026-10-26):
-// Political position (formerly Political leaning), Political ideology (formerly Ideology) and Issue position.
+// Political position (formerly Political leaning), Ideological leaning (formerly Ideology) and Issue position.
 // For every card: the Geo ID, the Geo name, which of the two types it is, and Geo's live description.
 // A card Geo renamed loses its old alternative names, since several renames changed the meaning
 // (Pro-Russia is now "Ukraine aid skeptic"). Usage: npx tsx scripts/sync-geo-leanings.mts
@@ -9,7 +9,7 @@ import { RENAMED_ON_GEO } from "../src/framework/renames.js";
 import { GeoClient } from "../src/geo/client.js";
 
 const FILE = "src/framework/leanings.json";
-/** A side Geo moved from Political ideology to Issue position needs an issue of its own. */
+/** A side Geo moved from Ideological leaning to Issue position needs an issue of its own. */
 const NEW_ISSUES: Record<string, { issue: string; group: string }> = { Isolationist: { issue: "Isolationism", group: "Foreign policy" } };
 
 interface Row {
@@ -52,7 +52,7 @@ for (const row of data.ideologies) {
   const name = RENAMED_ON_GEO[row.name] ?? row.name;
   const value = byName.get(name);
   const kind = kindOf.get(name);
-  if (!value || !kind) throw new Error(`"${row.name}" has no Political ideology or Issue position named "${name}" on Geo`);
+  if (!value || !kind) throw new Error(`"${row.name}" has no Ideological leaning or Issue position named "${name}" on Geo`);
   if (name !== row.name) {
     changes.push(`renamed ${row.name} → ${name}`);
     row.name = name;
@@ -80,4 +80,4 @@ if (missing.length) throw new Error(`Geo values with no card: ${missing.join(", 
 
 writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
 console.log(`${changes.length} changes:\n${changes.map((c) => `  ${c}`).join("\n")}`);
-console.log(`${live.ideologies.length} Political ideology and ${live.issues.length} Issue position values matched.`);
+console.log(`${live.ideologies.length} Ideological leaning and ${live.issues.length} Issue position values matched.`);

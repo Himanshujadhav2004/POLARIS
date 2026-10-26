@@ -248,7 +248,7 @@ describe("ScoringAgent.score", () => {
     expect(calls.secondLookCards).toContain("Pro-life");
   });
 
-  it("publishes at most one Political ideology, the most probable, next to any number of Issue positions (I4)", async () => {
+  it("publishes at most one Ideological leaning, the most probable, next to any number of Issue positions (I4)", async () => {
     const { agent: a } = agent({
       scorer: [
         scorer({
@@ -264,8 +264,8 @@ describe("ScoringAgent.score", () => {
     });
     const r = await a.score(claim(ABORTION));
     expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Christian conservative"]);
-    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Political ideology per claim (I4): Christian conservative scored higher" });
-    expect(r.explanation).toMatch(/Issue position: Pro-life .*Political ideology: Christian conservative/);
+    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Ideological leaning per claim (I4): Christian conservative scored higher" });
+    expect(r.explanation).toMatch(/Issue position: Pro-life .*Ideological leaning: Christian conservative/);
   });
 
   it("refuses an empty claim without calling any model", async () => {

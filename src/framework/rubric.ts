@@ -59,12 +59,12 @@ export function levelRulesText(): string {
  */
 export const POLITICAL_LEANING_DEFINITION =
   "Describes the preferred ideas, values, and tendencies regarding how power, authority, and resources should be managed in society.";
-/** Geo's description of the Political ideology type (named Ideology until 2026-10-26; rewritten on Geo the same evening), word for word. */
+/** Geo's description of the Ideological leaning type (named Ideology until 2026-10-26; rewritten on Geo the same evening), word for word. */
 export const IDEOLOGY_DEFINITION =
-  "An identification with an ideological tradition, naming those who follow it rather than the doctrine, such as communist or libertarian. Its Ideology property points to the doctrine itself, recorded as a Political ideology.";
+  "An identification with an ideological tradition, naming those who follow it rather than the doctrine, such as communist or libertarian. Its Ideology property points to the doctrine itself, recorded as a Ideological leaning.";
 /** Geo's description of the Issue position type (new on 2026-10-26), word for word. */
 export const ISSUE_POSITION_DEFINITION =
-  "A side taken on one specific policy question, such as pro-life on abortion or protectionist on trade. Unlike Political position or Political ideology, it places an entity on a single issue rather than on a spectrum or worldview.";
+  "A side taken on one specific policy question, such as pro-life on abortion or protectionist on trade. Unlike Political position or Ideological leaning, it places an entity on a single issue rather than on a spectrum or worldview.";
 /** The Leanings property, from Armando's doc. It holds one political leaning and any ideological leanings. */
 export const LEANINGS_PROPERTY_DEFINITION =
   "The political positions and ideological traditions an entity identifies with or is associated with, such as center left or libertarian. Unlike Declared bias, it can hold both a place on the spectrum and a worldview.";
@@ -277,7 +277,7 @@ export const PUBLISH = {
   signalsDisagree: 0.5,
   /** Ideological leanings per claim (a claim has at most one political leaning). */
   maxIdeologies: 5,
-  /** Traditions (Geo's Political ideology values) per claim; the rest are Issue positions. */
+  /** Traditions (Geo's Ideological leaning values) per claim; the rest are Issue positions. */
   maxTraditions: 1,
   /** Scorer runs that must give the same answer. */
   runs: 3,
@@ -317,7 +317,7 @@ export const IDEOLOGY_RULES = [
   },
   {
     id: "I4",
-    text: `A claim has at most one political leaning (Geo's Political position) and at most ${PUBLISH.maxTraditions === 1 ? "one tradition" : `${PUBLISH.maxTraditions} traditions`} (Geo's Political ideology), and can have several issue leanings (Geo's Issue positions), up to ${PUBLISH.maxIdeologies} ideological leanings in all. When more than one tradition passes every rule, only the one with the highest independent probability is published.`,
+    text: `A claim has at most one political leaning (Geo's Political position) and at most ${PUBLISH.maxTraditions === 1 ? "one tradition" : `${PUBLISH.maxTraditions} traditions`} (Geo's Ideological leaning), and can have several issue leanings (Geo's Issue positions), up to ${PUBLISH.maxIdeologies} ideological leanings in all. When more than one tradition passes every rule, only the one with the highest independent probability is published.`,
   },
   {
     id: "I5",

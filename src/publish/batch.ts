@@ -65,14 +65,14 @@ export function publishGate(space: Space, claim: Claim, r: ScoredClaim): string 
 
 /**
  * Geo value IDs for everything the agent published, each checked against its Geo type: at most one
- * Political position, at most one Political ideology, and any number of Issue positions.
+ * Political position, at most one Ideological leaning, and any number of Issue positions.
  */
 export function valueIdsFor(r: ScoredClaim, taxonomy: Taxonomy): string[] {
   const wanted: { name: string; kind: TaxonomyKind }[] = [
     ...(r.leaning ? [{ name: r.leaning, kind: "political_leaning" as const }] : []),
     ...r.ideologies.map((i) => ({ name: i.name, kind: i.kind === "tradition" ? ("ideology" as const) : ("issue_position" as const) })),
   ];
-  if (wanted.filter((w) => w.kind === "ideology").length > 1) throw new Error(`${r.claimId} has more than one Political ideology`);
+  if (wanted.filter((w) => w.kind === "ideology").length > 1) throw new Error(`${r.claimId} has more than one Ideological leaning`);
   return wanted.map(({ name, kind }) => {
     const value = taxonomy.byName.get(name);
     if (!value) throw new Error(`"${name}" is not on Geo yet, so it cannot go into a proposal until it is published there`);

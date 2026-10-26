@@ -139,7 +139,7 @@ async function main(argv: string[]): Promise<void> {
       console.log(`Fingerprint ${taxonomy.fingerprint}\n`);
       console.log(`Political position (${taxonomy.politicalLeanings.length})`);
       for (const v of taxonomy.politicalLeanings) console.log(`  ${v.id}  ${v.name}`);
-      console.log(`\nPolitical ideology (${taxonomy.ideologies.length})`);
+      console.log(`\nIdeological leaning (${taxonomy.ideologies.length})`);
       for (const v of taxonomy.ideologies) console.log(`  ${v.id}  ${v.name}`);
       console.log(`\nIssue position (${taxonomy.issuePositions.length})`);
       for (const v of taxonomy.issuePositions) console.log(`  ${v.id}  ${v.name}`);
