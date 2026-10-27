@@ -1,0 +1,47 @@
+{
+  "space": "us-politics",
+  "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+  "leaningsPropertyId": "ff40a84705194415b30473badda2e534",
+  "generatedAt": "2026-10-26T16:43:20.251Z",
+  "framework": "framework-v3.5",
+  "taxonomyFingerprint": "96a8cb2cefb0",
+  "source": [
+    "evals/fresh/publish-pool-us/rescore.framework-v3.5.json"
+  ],
+  "claims": [
+    {
+      "claimId": "4b69e8a281525f4faef63cff0190b83b",
+      "text": "On the whole, the benefits of migration to the United States have been positive",
+      "link": "https://www.geobrowser.io/space/4582fbbee28a16589154f7e36f1ee3c5/4b69e8a281525f4faef63cff0190b83b",
+      "politicalPosition": "Left",
+      "ideologicalLeaning": "Globalist",
+      "issuePositions": [
+        "Pro-immigration"
+      ],
+      "relations": [
+        {
+          "relationId": "f57bc57a3b2b4b0b86f8901a7bfa2583",
+          "entityId": "2615a217105844b7ab1a6494def2b687",
+          "claimId": "4b69e8a281525f4faef63cff0190b83b",
+          "valueId": "3628835899e04b4cbd2bdfc1027c53d3",
+          "valueName": "Left"
+        },
+        {
+          "relationId": "f72967074bf84e9186cd2599bb8a341b",
+          "entityId": "37d7ee46601345f89ebb494171d040d5",
+          "claimId": "4b69e8a281525f4faef63cff0190b83b",
+          "valueId": "1f08bda6ed0344f7902f00705a4f5325",
+          "valueName": "Pro-immigration"
+        },
+        {
+          "relationId": "772e88a3981b426995da7dedf6eaa34d",
+          "entityId": "c32f809f134f41728d7d04eb08669612",
+          "claimId": "4b69e8a281525f4faef63cff0190b83b",
+          "valueId": "bae9b302e5eb4ac3a67951f1131abd1e",
+          "valueName": "Globalist"
+        }
+      ],
+      "explanation": "Published: Left. NAT-2L matched (direct): “the benefits of migration to the United States have been positive”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.96; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.95; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Issue position: Pro-immigration (belief T1: “the benefits of migration to the United States have been positive”, independent probability 0.94). Political ideology: Globalist (belief T3: “the benefits of migration to the United States have been positive”, independent probability 0.82)."
+    }
+  ]
+}

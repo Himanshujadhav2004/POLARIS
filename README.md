@@ -2,14 +2,14 @@
 
 POLARIS reads claims from the [Geo](https://www.geobrowser.io) knowledge graph and fills their **Leanings** property (`ff40a84705194415b30473badda2e534`) with values of Geo's three types. It gives each claim:
 - **at most one Political position**, from Far left to Far right;
-- **at most one Political ideology**, a tradition such as Conservative or Socialist;
+- **at most one Ideological leaning**, a tradition such as Conservative or Socialist;
 - **any number of Issue positions**: a side of one issue, such as Pro-life or Pro-gun control.
 
 The taxonomy and its definitions come from Armando's Notion doc "Leanings" ([docs/armando/leanings-2026-10-26/](docs/armando/leanings-2026-10-26/)) and are checked against Geo before every run.
 
 The project is built for one rule above all: **a wrong label is worse than no label.** A label is published only when several independent checks agree on it; otherwise the claim is left blank and the reason is recorded. Every result can be traced to numbered criteria and to the claim's exact words.
 
-> **Status (26 Oct 2026):** framework v3.5 follows Geo's split of Leanings into **Political position**, **Political ideology** and **Issue position** (all 86 issue positions are now live on Geo), with at most one Political position and one Political ideology per claim. Publishing to US Politics has started: about 100 claims, the first 10 for Armando's review (see [Publishing to Geo](#publishing-to-geo)). v3.4 results: on claims it was never tuned on, **0 wrong labels** in 67 held-out opinion claims and **1 debatable wrong label** in a 60-claim challenge set (v3.3: 21). See [Results so far](#results-so-far).
+> **Status (26 Oct 2026):** framework v3.5 follows Geo's split of Leanings into **Political position**, **Ideological leaning** and **Issue position** (all 86 issue positions are now live on Geo), with at most one Political position and one Ideological leaning per claim. Publishing to US Politics has started: about 100 claims, the first 10 for Armando's review (see [Publishing to Geo](#publishing-to-geo)). v3.4 results: on claims it was never tuned on, **0 wrong labels** in 67 held-out opinion claims and **1 debatable wrong label** in a 60-claim challenge set (v3.3: 21). See [Results so far](#results-so-far).
 
 ---
 
@@ -48,7 +48,7 @@ There are **no partial labels** such as "Potentially center left". Anything the 
 | Kind | Geo type | Values |
 |---|---|---|
 | **Political leaning** (at most 1) | Political position `efa158a20ac34e63a31de1b103b1e7b0` | Far left, Left, Center left, Center, Center right, Right, Far right. Nonpartisan is proposed for news services and courts; it is never given to a claim. |
-| **Traditions** (at most 1) | Political ideology `bdb20cbb75a644c2bc2aa4d14aeef883` | 26 values (Anarchist … Traditionalist, including Social conservative). |
+| **Traditions** (at most 1) | Ideological leaning `bdb20cbb75a644c2bc2aa4d14aeef883` | 26 values (Anarchist … Traditionalist, including Social conservative). |
 | **Issue leanings** (several) | Issue position `7391b5e238444157a49307884f6b93b4` | 86 values, one to three sides per issue, across 43 issues (Abortion: Pro-life / Pro-choice; Guns: Pro-gun control / Pro-gun rights; …), including Isolationist. |
 
 `scripts/sync-geo-leanings.mts` keeps the cards in line with Geo (names, IDs, types, descriptions); the agent refuses to run if they differ. Geo renamed 13 sides on 2026-10-26 (for example Pro-Russia → Ukraine aid skeptic, Tax fairness → Progressive taxation); see `src/framework/renames.ts`.
@@ -380,7 +380,7 @@ Rows are produced with `npx tsx scripts/notion-rows.mts bench|fresh|v3|cards …
 The agent never writes to Geo by itself. Claim labels go out as proposals to the space:
 
 1. `npx tsx scripts/publish-pool.mts us-politics publish-pool-us`, then `fresh-rescore --dir publish-pool-us`: the claims earlier runs labelled, still in the space with no Leanings, scored with the current framework.
-2. `dry-run --space us-politics --file ids.txt` → `proposals/<space>/batch-NN/` (proposal.md, proposal.csv, proposal.json, ops.json): one Leanings relation per value. Each value is checked against its Geo type, and a claim never gets two Political positions or two Political ideologies.
+2. `dry-run --space us-politics --file ids.txt` → `proposals/<space>/batch-NN/` (proposal.md, proposal.csv, proposal.json, ops.json): one Leanings relation per value. Each value is checked against its Geo type, and a claim never gets two Political positions or two Ideological leanings.
 3. `submit --dir … ` (read-only checks), then `submit --dir … --yes` once the dry run is reviewed.
 4. `check-proposal --dir …` after the proposal is voted through.
 

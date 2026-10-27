@@ -1,0 +1,499 @@
+{
+  "name": "opinion-ideology-us",
+  "seed": 15,
+  "framework": "framework-v3.5",
+  "generatedAt": "2026-10-26T15:00:29.747Z",
+  "note": "Never-used US Politics claims containing  should  or  must  or  ought to  and matching /\\b(Trump|MAGA|America First|climate|Green New Deal|fossil fuel|Medicare for All|single-payer|socialis|nationaliz|Christian|God|Bible|prayer|religious|traditional|family values|elites?|billionaires|sovereignty|feminis|women|systemic|free market|liberty|globali|marriage)/i",
+  "rows": [
+    {
+      "claimId": "28a01f19ce318a2dfb81d52c7dea9a99",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Boulder’s lawsuit should require company-specific proof of climate damages",
+      "inSample": true
+    },
+    {
+      "claimId": "6e1df19f9135046d8ffcffc8f79542df",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Michigan Democrats should tie Trump’s record to Mike Rogers’s Senate candidacy",
+      "inSample": true
+    },
+    {
+      "claimId": "7f8060ade0c14def993ca4b6368c9056",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Trump should pardon former Representative David Rivera",
+      "inSample": true
+    },
+    {
+      "claimId": "3840a77c24198061957f048f6fccdecd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious organizations should receive no tax exemptions denied to secular organizations",
+      "inSample": true
+    },
+    {
+      "claimId": "63ab3fc4d77f44169092e4a7da9beb87",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should reverse its plan to import Russian diesel",
+      "inSample": true
+    },
+    {
+      "claimId": "6997f65a63904983a4694ad3896607a5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should pass legislation blocking Trump's Russian diesel deal",
+      "inSample": true
+    },
+    {
+      "claimId": "e2599b42b412f25dcc8214e6ccea6531",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender women should be kept out of women's prisons",
+      "inSample": true
+    },
+    {
+      "claimId": "2de415ed7dc76b1a3bba1961fcd36d2a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court should let Donald Trump’s mail-ballot rules take effect before the 2026 midterms",
+      "inSample": true
+    },
+    {
+      "claimId": "bc26402c8f5e40f9a0a769f3784ca003",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican candidates should distance themselves from Donald Trump's policies",
+      "inSample": true
+    },
+    {
+      "claimId": "6c15916277ff4f1597503da44610d233",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Justice argued in a court filing on October 2, 2026, that a Supreme Court ruling authorizing the overhaul of the Systematic Alien Verification for Entitlements database should nullify the group EPIC's lawsuit against Trump's voter eligibility lists",
+      "inSample": true
+    },
+    {
+      "claimId": "9d4d714affa0e70de3b40886b7df79bc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "National law should set climate liability to avoid conflicting local standards",
+      "inSample": true
+    },
+    {
+      "claimId": "2b1a4e8e20d150838fffec827a25c0e6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign governments should analyze Donald Trump's social media posts by looking at U.S. government structures and the history of his posts",
+      "inSample": true
+    },
+    {
+      "claimId": "d475e23a8ee640208c33213e4a3f4c1a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The appeals court ruled that executive privilege must be formally invoked by a president, which President Trump had not done",
+      "inSample": true
+    },
+    {
+      "claimId": "ea70de5c6b0fbf6f3105a13d46f0343a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Darline Graham should oppose Trump’s Iran policy when it threatens South Carolina energy prices",
+      "inSample": true
+    },
+    {
+      "claimId": "fe687ebec6034c06bceb24634c31b440",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Women should be treated more gently than men",
+      "inSample": true
+    },
+    {
+      "claimId": "56217514043e4ea582e5b5af3af0cdac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Transportation Department should not tie transit funding to marriage and birth rates",
+      "inSample": true
+    },
+    {
+      "claimId": "7898da0b6a91433599c211f3911c2587",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To secure a sizable House majority in the 2026 midterms, Democrats must win seats that Donald Trump carried in 2024, including districts he won by double digits",
+      "inSample": true
+    },
+    {
+      "claimId": "62b54cb6caa642d3a5dad0d164f49e47",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "At the Bullhead City, Arizona rally on October 14, 2026, Donald Trump described leakers of military information as 'the scum of the earth' and stated they should be in jail for the rest of their lives",
+      "inSample": true
+    },
+    {
+      "claimId": "b081d820e70dc137c9aeebb1fc53ce77",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Churches should return to traditional worship to win back young people",
+      "inSample": true
+    },
+    {
+      "claimId": "ab8a632c09cf25491d73acb58e930c6a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign sovereignty should not shield Maduro and Flores from U.S. torture trials",
+      "inSample": true
+    },
+    {
+      "claimId": "abb9ebfcc79e4bde987c048a20c0627a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump declined to intervene or issue a pardon for Lindsay Clancy, stating on September 13, 2026, that the case is a state situation that must be worked out locally",
+      "inSample": true
+    },
+    {
+      "claimId": "8fea942a2ebfdac4350b1d8ba947f88e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should not use Russia sanctions for unrelated tariff fights",
+      "inSample": true
+    },
+    {
+      "claimId": "56a5814ee6d831aca1447962fb1c2011",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Parents should be barred from refusing life-saving care for children on religious grounds",
+      "inSample": true
+    },
+    {
+      "claimId": "9ca95a30fae9b7ceeacfa8edafb63206",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should keep his tariff agenda despite weak economic approval",
+      "inSample": true
+    },
+    {
+      "claimId": "0db0016ea3c4177d7273d92a3abb4d6b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Employers should be barred from requiring women to wear high heels",
+      "inSample": true
+    },
+    {
+      "claimId": "87530d21a13042eba1709f902d0f3422",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should allow explicitly Christian teaching and prayer",
+      "inSample": true
+    },
+    {
+      "claimId": "f05a678c49584c4885b51c39486c82f1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Parents must claim their child's Trump Account through the Trump Account mobile app to manage the account, allow external contributions, and receive federal deposits",
+      "inSample": true
+    },
+    {
+      "claimId": "148090e1b745ca8b0aef60c901440f59",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious communities should be allowed to exclude members who publicly leave the faith",
+      "inSample": true
+    },
+    {
+      "claimId": "4291624726732bfe33da8d1052e2bbad",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court should not expedite the removal of transgender troops before lower courts have issued a final judgment on the legality of President Trump’s military ban",
+      "inSample": true
+    },
+    {
+      "claimId": "cfa0cbcc6a9548cc96ffa26e8b807148",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Vulnerable Republican senators should vote independently of Donald Trump",
+      "inSample": true
+    },
+    {
+      "claimId": "e3c28f62526e4880b9edb5c16817b27b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Melania Trump should not host her initiative's G20 event at President Trump's golf resort",
+      "inSample": true
+    },
+    {
+      "claimId": "196af3f439834e859a14779dd5c42ec2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal Communications Commission Chair Brendan Carr stated on July 15, 2026, that broadcast networks should air President Donald Trump's remarks",
+      "inSample": true
+    },
+    {
+      "claimId": "c258bcf3052d3939844d90de337320ee",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Katie Zacharia should answer directly for Trump’s public claims at White House briefings",
+      "inSample": true
+    },
+    {
+      "claimId": "3a86111db36a2b369f22aa997691a652",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Religious beliefs should have no influence on legislation",
+      "inSample": true
+    },
+    {
+      "claimId": "27055bb1e0e04ae2a840b10fb6a98753",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump rejected calls for an artificial intelligence development slowdown on September 13, 2026, stating that the United States leads China and must maintain its lead because \"whoever wins AI wins.\"",
+      "inSample": true
+    },
+    {
+      "claimId": "577d8770a280bdfdeb265b7e31ef0869",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should allow students to wear religious clothing despite uniform rules",
+      "inSample": true
+    },
+    {
+      "claimId": "4a2a4fb546f9b89f41bebdadf38a1b7d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should hold daily prayer time",
+      "inSample": true
+    },
+    {
+      "claimId": "f41ece3a32434ac5913dfc63b8fe04d7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The majority of the Iranian delegation walked out of President Trump's U.N. General Assembly speech after Trump asked if he should annihilate the Islamic Republic or drive them into hell.",
+      "inSample": true
+    },
+    {
+      "claimId": "6d95a682563a42ceb8b1518a52ee3f9a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Kennedy Center should add Donald Trump's name to its exterior",
+      "inSample": true
+    },
+    {
+      "claimId": "86dc2795371b61979cbd593524569d13",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Employers should be required to accommodate religious observance absent substantial hardship",
+      "inSample": true
+    },
+    {
+      "claimId": "6042a52d32c14581830de811fd474697",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "J.D. Vance stated that Republicans must maintain and expand their congressional majorities in the 2026 midterm elections to enact Donald Trump's legislative vision",
+      "inSample": true
+    },
+    {
+      "claimId": "a42a7e78f15240d3a4824252d2d900dd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Zohran Mamdani stated that a mayor should not police language to justify not condemning the phrase \"globalize the Intifada\"",
+      "inSample": true
+    },
+    {
+      "claimId": "aff113ec2b9e424a9af5cb5cbf848b4e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican Senator John Kennedy of Louisiana stated that no public official, including President Donald Trump, should spend public money on private advertisements for themselves",
+      "inSample": true
+    },
+    {
+      "claimId": "25b610cbcdd3f0efaeddcd82ae1fd44d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Criticizing religious beliefs should never be considered hate speech",
+      "inSample": true
+    },
+    {
+      "claimId": "0c88869ad5454a428cbf23166a47fc99",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign governments should treat Donald Trump's social media posts as official policy",
+      "inSample": true
+    },
+    {
+      "claimId": "7fffa02671cc4ae5819289d7a46961a7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Prior to becoming Prime Minister, Andy Burnham was fiercely critical of Donald Trump, stating in 2021 that any UK politician who gave Trump the time of day should be ashamed.",
+      "inSample": true
+    },
+    {
+      "claimId": "f6197feb6ca144e9b408ea363437fcc4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Republican Party should prioritize candidate loyalty to Donald Trump over traditional electability",
+      "inSample": true
+    },
+    {
+      "claimId": "ee1b859c95b04bc4b3a0cfd51ac064ef",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump administration should bar illegal immigrants from Head Start preschools",
+      "inSample": true
+    },
+    {
+      "claimId": "0af30a95f81e4632a452ecd6aefdfc65",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Billionaires should not exist",
+      "inSample": true
+    },
+    {
+      "claimId": "51d5e95170b59b831166e73d96c017b6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should restore restrictions preventing departing White House officials from immediately monetizing their government relationships through lobbying",
+      "inSample": true
+    },
+    {
+      "claimId": "744cbb01ad4249fea440ea5573e6e139",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Senator Darline Graham stated that a Republican-majority Senate is needed to confirm a Supreme Court nominee from President Donald Trump should Justice Samuel Alito choose to retire in 2027.",
+      "inSample": true
+    },
+    {
+      "claimId": "15a43c9490f697b3847a1f4f74e93ec0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Kennedy Center should accept Trump-led fundraising to avoid collapse",
+      "inSample": true
+    },
+    {
+      "claimId": "f68d343bd88a41f1ace406653a38f49b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Trump told CNN's Kaitlan Collins on September 22, 2026 at the U.N. building that she should not be covering him.",
+      "inSample": true
+    },
+    {
+      "claimId": "e11eb4ad8086d6861bde048ee86cc777",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal judges should not impose nationwide bans on Trump administration advertisements",
+      "inSample": true
+    },
+    {
+      "claimId": "4507c8cee2e044a3b59fc3a76ae1301d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should implement Trump's proposed $5,000 dividend",
+      "inSample": true
+    },
+    {
+      "claimId": "6213a87fafa6f11e9153e78f5e076251",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican candidates should distance their midterm campaigns from Trump’s Iran war strategy",
+      "inSample": true
+    },
+    {
+      "claimId": "9a818d3567f05ef39206aad4b03e10c8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universities should not stay neutral on the issue of whether humans cause climate change",
+      "inSample": true
+    },
+    {
+      "claimId": "5a19d895a3324c308454b136b6df7508",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "President Donald Trump lacks the constitutional authority to legally rename U.S. states, as the legal process to change a state's name must occur within the state itself",
+      "inSample": true
+    },
+    {
+      "claimId": "557ea7f0cbb147649c6cbe3a2b7860fd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should halt the Triumphal Arch project until a full environmental review is completed",
+      "inSample": true
+    },
+    {
+      "claimId": "e111d31166d14208ae02c9dd70b14d0b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should suspend its tariffs on Canadian imports",
+      "inSample": true
+    },
+    {
+      "claimId": "b26a3de23ef54d4ab72ddd5ebd62d11c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democrats should prioritize investing in traditionally red Senate races over established battlegrounds",
+      "inSample": true
+    },
+    {
+      "claimId": "abfed30d907b4532b459dde7fe9eba95",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Xi Jinping told Kim Jong Un that China and North Korea should strengthen strategic ties and firmly protect their sovereignty, security, and development interests",
+      "inSample": true
+    },
+    {
+      "claimId": "182cbb1d7da8497f8e1726b143a79008",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Byron Donalds should distance himself from Donald Trump to win the Florida governorship",
+      "inSample": true
+    },
+    {
+      "claimId": "12d318f5b9f944fd9b6432681e185323",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican Senator Lisa Murkowski stated that President Donald Trump should use statutory sanction authorities against Russia rather than allowing it to export diesel and rake in revenues.",
+      "inSample": true
+    },
+    {
+      "claimId": "c6c23ec298594a5aac0f145b58d8642e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Donald Trump Jr. should not accept expensive gifts from foreign oligarchs",
+      "inSample": true
+    },
+    {
+      "claimId": "85fad68b8aea4a4f8ecfa39f1ce0bfb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump administration attorneys argued that the federal court lacked jurisdiction and that the plaintiffs should have instead filed complaints with the Merit Systems Protection Board",
+      "inSample": true
+    },
+    {
+      "claimId": "07e52dba8b364ed19cf036a04486c167",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should establish an external board to approve NIH grants",
+      "inSample": true
+    },
+    {
+      "claimId": "2ca4190b74884415a62db8bfbf989058",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Senate Majority Leader John Thune criticized the Trump administration's promotional television campaign, stating that advertisements featuring Donald Trump should not be paid for with taxpayer dollars",
+      "inSample": true
+    },
+    {
+      "claimId": "f917c6f1e6ad47969fd47eca57625cf2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Trump administration should pressure drugmakers to split childhood vaccines",
+      "inSample": true
+    },
+    {
+      "claimId": "d6b438342450466eba9b6b7032e2c6a3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump should fire LaCivita and Blair over their foreign consulting",
+      "inSample": true
+    }
+  ]
+}

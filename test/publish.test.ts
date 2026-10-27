@@ -65,9 +65,9 @@ describe("valueIdsFor", () => {
   it("refuses a name Geo does not have", () => {
     expect(() => valueIdsFor(scored("Left"), taxonomy)).toThrow(/not on Geo yet/);
   });
-  it("allows one Political position, one Political ideology and several Issue positions, each of its own Geo type", () => {
+  it("allows one Political position, one Ideological leaning and several Issue positions, each of its own Geo type", () => {
     expect(valueIdsFor(scored("Right", ["Pro-life", "Pro-border security", "MAGA"]), taxonomy)).toHaveLength(4);
-    expect(() => valueIdsFor(scored("Right", ["Nationalist", "MAGA"]), taxonomy)).toThrow(/more than one Political ideology/);
+    expect(() => valueIdsFor(scored("Right", ["Nationalist", "MAGA"]), taxonomy)).toThrow(/more than one Ideological leaning/);
     const wrongType = { ...scored(null), ideologies: [{ name: "Nationalist", kind: "issue" }] } as unknown as ScoredClaim;
     expect(() => valueIdsFor(wrongType, taxonomy)).toThrow(/is a ideology on Geo, not a issue_position/);
   });

@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { EXCLUDED_VALUE_IDS, IDS } from "../config.js";
 import type { GeoClient } from "./client.js";
 
-/** Geo's three Leanings types: Political position, Political ideology and Issue position. */
+/** Geo's three Leanings types: Political position, Ideological leaning and Issue position. */
 export type TaxonomyKind = "political_leaning" | "ideology" | "issue_position";
 
 export interface TaxonomyValue {
@@ -15,7 +15,7 @@ export interface TaxonomyValue {
 export interface Taxonomy {
   /** Political position values (Far left … Far right). */
   politicalLeanings: TaxonomyValue[];
-  /** Political ideology values (traditions). */
+  /** Ideological leaning values (traditions). */
   ideologies: TaxonomyValue[];
   /** Issue position values (one side of one issue). */
   issuePositions: TaxonomyValue[];
@@ -87,7 +87,7 @@ const TAXONOMY_QUERY = /* GraphQL */ `
   }
 `;
 
-/** Loads the current Political position, Political ideology and Issue position values from Geo. */
+/** Loads the current Political position, Ideological leaning and Issue position values from Geo. */
 export async function fetchTaxonomy(client: GeoClient): Promise<Taxonomy> {
   type Described = { description: string | null } | null;
   const data = await client.query<{
@@ -103,7 +103,7 @@ export async function fetchTaxonomy(client: GeoClient): Promise<Taxonomy> {
     issueType: IDS.issuePositionType,
   });
   if (!data.leanings.length || !data.ideologies.length || !data.issues.length) {
-    throw new Error("Geo returned an empty Political position, Political ideology or Issue position list; refusing to classify against it.");
+    throw new Error("Geo returned an empty Political position, Ideological leaning or Issue position list; refusing to classify against it.");
   }
   return {
     ...buildTaxonomy(data.leanings, data.ideologies, data.issues),

@@ -1,7 +1,7 @@
 // Picks the claims to publish from scored result files (fresh.json / rescore.*.json): every claim the
 // current framework published a label on, once. The first batch (for review) is the clearest mix: each
 // claim with a Political position and an Issue position, Left and Right alternating, no Issue position
-// twice, and a Political ideology where there is one. Writes <out>/batch-1.txt, batch-2.txt and selection.md.
+// twice, and a Ideological leaning where there is one. Writes <out>/batch-1.txt, batch-2.txt and selection.md.
 // Usage: npx tsx scripts/publish-select.mts <out-dir> <first-n> <total> <results.json> [<results.json> ...]
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -39,7 +39,7 @@ const split = (r: Row) => ({
 });
 
 // First batch: Political position + Issue position, alternating Left/Right, each Issue position once,
-// claims with a Political ideology first.
+// claims with a Ideological leaning first.
 const full = [...rows.values()].filter((r) => r.leaning && split(r).issues.length).sort((a, b) => Number(!!split(b).ideology) - Number(!!split(a).ideology));
 const firstBatch: Row[] = [];
 const usedIssues = new Set<string>();
@@ -56,7 +56,7 @@ mkdirSync(out, { recursive: true });
 writeFileSync(join(out, "batch-1.txt"), firstBatch.map((r) => r.claimId).join("\n") + "\n");
 writeFileSync(join(out, "batch-2.txt"), rest.map((r) => r.claimId).join("\n") + "\n");
 const table = (list: Row[]) => [
-  "| # | Claim | Political position | Political ideology | Issue positions |",
+  "| # | Claim | Political position | Ideological leaning | Issue positions |",
   "|---|---|---|---|---|",
   ...list.map((r, i) => `| ${i + 1} | ${r.text.replaceAll("|", "\\|")} | ${r.leaning ?? ""} | ${split(r).ideology ?? ""} | ${split(r).issues.join(", ")} |`),
 ];
@@ -81,5 +81,5 @@ const count = (list: Row[], f: (r: Row) => boolean) => list.filter(f).length;
 const all = [...firstBatch, ...rest];
 console.log(`${rows.size} labelled claims. Batch 1: ${firstBatch.length}, batch 2: ${rest.length}.`);
 console.log(
-  `Of ${all.length}: ${count(all, (r) => !!r.leaning)} with a Political position, ${count(all, (r) => !!split(r).ideology)} with a Political ideology, ${count(all, (r) => split(r).issues.length > 0)} with an Issue position.`,
+  `Of ${all.length}: ${count(all, (r) => !!r.leaning)} with a Political position, ${count(all, (r) => !!split(r).ideology)} with a Ideological leaning, ${count(all, (r) => split(r).issues.length > 0)} with an Issue position.`,
 );

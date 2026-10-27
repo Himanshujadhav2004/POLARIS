@@ -47,7 +47,11 @@ export const IDS = {
   leaningsProperty: "ff40a84705194415b30473badda2e534",
   /** Geo type "Political position" (named Political leaning until 2026-10-26). */
   politicalLeaningType: "efa158a20ac34e63a31de1b103b1e7b0",
-  /** Geo type "Political ideology" (named Ideology until 2026-10-26). */
+  /**
+   * Geo type "Ideological leaning" (named Ideology, then Political ideology, on 2026-10-26): followers of a
+   * tradition, such as Environmentalist. Geo's newer type "Political ideology" (6855ece4…) is the doctrine
+   * itself, such as Environmentalism; it is not a target of Leanings, so the agent never links to it.
+   */
   ideologyType: "bdb20cbb75a644c2bc2aa4d14aeef883",
   /** Geo type "Issue position" (new on 2026-10-26): one side of one issue, such as Pro-life. */
   issuePositionType: "7391b5e238444157a49307884f6b93b4",

@@ -7,6 +7,7 @@ import { LEANINGS_LEFT_TO_RIGHT, type LeaningName } from "../src/framework/rubri
 import type { Claim } from "../src/geo/claims.js";
 import { buildTaxonomy } from "../src/geo/taxonomy.js";
 import { RunState } from "../src/pipeline/state.js";
+import { withVerifier } from "./verifier-on.js";
 
 // A stub OpenAI client: the scorer answers from a queue (run 1, then runs 2 and 3), the independent
 // check from fixed probabilities, the verifier and second looks from callbacks. It counts every call.
@@ -113,6 +114,7 @@ const agent = (o: StubOptions, state = new RunState(":memory:")) => {
 };
 
 describe("ScoringAgent.score", () => {
+  withVerifier();
   it("publishes a clear US claim after 3 scorer runs, 1 independent check and 2 verifier checks", async () => {
     const { agent: a, calls } = agent({ scorer: [scorer()], ...clearRight });
     const r = await a.score(claim(ABORTION));
@@ -248,7 +250,7 @@ describe("ScoringAgent.score", () => {
     expect(calls.secondLookCards).toContain("Pro-life");
   });
 
-  it("publishes at most one Political ideology, the most probable, next to any number of Issue positions (I4)", async () => {
+  it("publishes at most one Ideological leaning, the most probable, next to any number of Issue positions (I4)", async () => {
     const { agent: a } = agent({
       scorer: [
         scorer({
@@ -264,13 +266,33 @@ describe("ScoringAgent.score", () => {
     });
     const r = await a.score(claim(ABORTION));
     expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Christian conservative"]);
-    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Political ideology per claim (I4): Christian conservative scored higher" });
-    expect(r.explanation).toMatch(/Issue position: Pro-life .*Political ideology: Christian conservative/);
+    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Ideological leaning per claim (I4): Christian conservative scored higher" });
+    expect(r.explanation).toMatch(/Issue position: Pro-life .*Ideological leaning: Christian conservative/);
   });
 
   it("refuses an empty claim without calling any model", async () => {
     const { agent: a, calls } = agent({ scorer: [scorer()] });
     await expect(a.score(claim("  "))).rejects.toThrow(/no text/);
     expect(calls).toMatchObject({ scorer: 0, decisions: 0, verifier: 0 });
+  });
+});
+
+// The default since 2026-10-27: PUBLISH.verifierChecks = 0, so no verifier call is made at all.
+describe("ScoringAgent.score with the verifier turned off", () => {
+  withVerifier(0);
+  it("publishes without asking the verifier and records P5 as skipped", async () => {
+    const { agent: a, calls } = agent({ scorer: [scorer()], ...clearRight });
+    const r = await a.score(claim(ABORTION));
+    expect(calls.verifier).toBe(0);
+    expect(r.leaning).toBe("Right");
+    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life"]);
+    expect(r.checks.find((c) => c.id === "P5")).toMatchObject({ pass: true, skipped: true, detail: "the verifier is turned off" });
+    expect(r.signals.verifier).toBeNull();
+  });
+
+  it("no longer drops an ideology the verifier would have rejected", async () => {
+    const { agent: a } = agent({ scorer: [scorer()], ...clearRight, verdicts: { "Pro-life": "disagree" } });
+    const r = await a.score(claim(ABORTION));
+    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life"]);
   });
 });
