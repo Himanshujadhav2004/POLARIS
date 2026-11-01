@@ -3,12 +3,14 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { parseArgs } from "node:util";
 import { Classifier } from "./agent/classify.js";
+import { serve } from "./api/server.js";
 import { PROMPT_VERSION } from "./agent/prompt.js";
 import { ScoringAgent } from "./agent/v3/agent.js";
 import { loadTestSet, runBench, writeBench } from "./eval/bench.js";
 import { runEval3 } from "./eval/run3.js";
-import { OPENAI_MODEL, SPACES, spaceBySlug, SUBMISSIONS_PAUSED } from "./config.js";
+import { API_TOKEN, OPENAI_MODEL, SPACES, spaceBySlug, SUBMISSIONS_PAUSED } from "./config.js";
 import { renderFramework } from "./framework/render.js";
+import { FRAMEWORK_VERSION } from "./framework/rubric.js";
 import { renderSummary, runEval } from "./eval/run.js";
 import { countClaims, fetchClaims, sampleClaimIds } from "./geo/claims.js";
 import { GeoClient } from "./geo/client.js";
@@ -74,6 +76,12 @@ Classification (needs OPENAI_API_KEY; results are cached in data/state.sqlite)
   qa-report --dir qa/<round> [--file <dir>/qa_sample.xlsx] [--out PATH] [--label-bar 0.9] [--blank-bar 0.85]
                                Score reviewer verdicts against the agent's output
 
+HTTP API (read-only scoring; nothing is sent to Geo)
+  serve [--port 8787] [--host 127.0.0.1] [--concurrency N]
+                               Expose the agent over HTTP: POST /score with {"claimId":"<id>"} or
+                               {"text":"<sentence>"} (or {"claims":[...]}), GET /score?claimId=<id>,
+                               GET /health, GET /taxonomy. Set API_TOKEN to require a bearer token.
+
 Proposals (local dry run only; nothing is sent to Geo)
   dry-run --space <slug> (--only id,id | --file ids.txt) [--remove removals.txt] [--concurrency N]
                                Write proposals/<space>/batch-NN/ for the claims chosen after review
@@ -110,6 +118,8 @@ async function main(argv: string[]): Promise<void> {
       "label-bar": { type: "string" },
       "blank-bar": { type: "string" },
       space: { type: "string" },
+      port: { type: "string" },
+      host: { type: "string" },
       exclude: { type: "string" },
       only: { type: "string" },
       remove: { type: "string" },
@@ -236,6 +246,21 @@ async function main(argv: string[]): Promise<void> {
       } finally {
         state.close();
       }
+      return;
+    }
+    case "serve": {
+      const { port } = await serve({
+        port: Number(values.port ?? 8787),
+        host: values.host,
+        concurrency: values.concurrency ? Number(values.concurrency) : undefined,
+      });
+      const host = values.host ?? "127.0.0.1";
+      console.log(`POLARIS API on http://${host}:${port}  (${FRAMEWORK_VERSION}, model ${values.model ?? OPENAI_MODEL})`);
+      console.log(`  GET  http://${host}:${port}/health`);
+      console.log(`  GET  http://${host}:${port}/score?text=Congress%20should%20raise%20the%20minimum%20wage`);
+      console.log(`  POST http://${host}:${port}/score  {"claimId":"<id>"}`);
+      console.log(API_TOKEN ? "  Authorization: Bearer <API_TOKEN> required." : "  Open: set API_TOKEN in .env to require a bearer token.");
+      console.log("Press Ctrl+C to stop.");
       return;
     }
     case "eval3": {

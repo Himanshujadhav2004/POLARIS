@@ -1,0 +1,2515 @@
+{
+  "name": "opinion-all-us-3",
+  "seed": 15,
+  "framework": "framework-v3.5.2",
+  "generatedAt": "2026-10-26T16:20:17.169Z",
+  "note": "Never-used US Politics claims containing  should  or  must  or  ought to  or Should  and matching /^(?!.*\\b(said|says|stated|states that|argued|argues|told|according to|claimed|wrote|announced)\\b)/i (part 3 of 3)",
+  "rows": [
+    {
+      "claimId": "eaad129c899042cf904d4ceaa5cec7ba",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should temporarily pause the development of advanced artificial intelligence",
+      "inSample": true
+    },
+    {
+      "claimId": "9e9f1c80017fceaeb1993cb62ea1d48e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "US courts, not the president, should have the final say on immigration policy",
+      "inSample": true
+    },
+    {
+      "claimId": "096d70a1871d40f1b587589cdc038384",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should tighten asylum eligibility rules",
+      "inSample": true
+    },
+    {
+      "claimId": "562b7ceb5fb058a423276e4960680014",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The AI czar should face Senate confirmation",
+      "inSample": true
+    },
+    {
+      "claimId": "73dbb6db47854e69a294629d2fa0452e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should deport noncitizens who vote illegally",
+      "inSample": true
+    },
+    {
+      "claimId": "d21e9c51476df6d9d410e9e939950797",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. public high schools should start no earlier than 8:30 a.m.",
+      "inSample": true
+    },
+    {
+      "claimId": "9b23e91106204494b4a34c0a3c871d35",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court previously ruled in September 2026 that aggrieved parties must await a final agency decision from the Federal Communications Commission before seeking judicial review in federal court.",
+      "inSample": true
+    },
+    {
+      "claimId": "f87f197da1855f3c6a345c250d27b1cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Elected leaders, not agencies, should decide how fast AI advances",
+      "inSample": true
+    },
+    {
+      "claimId": "0ce5b9ce4e7b0e7c23a4895e1949d132",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Florida should lose federal detention funding over the conditions documented at Alligator Alcatraz",
+      "inSample": true
+    },
+    {
+      "claimId": "7fd557edd0154e3492a3eb21256e3a3e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The B-52 has not been in production since 1962, and any replacements must be sourced from dismantled airframes",
+      "inSample": true
+    },
+    {
+      "claimId": "acc46788506a4c3691a5aeb44c3e8a48",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal prosecutors should file criminal charges against bank executives for repeated compliance failures",
+      "inSample": true
+    },
+    {
+      "claimId": "0772fb6fbf005cb1ae8a9e51449434b1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Whether political parties should build consensus depends on the specific topic being addressed",
+      "inSample": true
+    },
+    {
+      "claimId": "567079a2c50419c28483c4a832f95350",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Animals should have legal rights comparable to humans",
+      "inSample": true
+    },
+    {
+      "claimId": "2140b6221b7ae3ada3f0bd704b4e6c98",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gaza reconstruction should proceed before every question about final political status is resolved",
+      "inSample": true
+    },
+    {
+      "claimId": "a6bf0d383a5d0c7d113242a2ef06770f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Constitution should not permanently cap the Supreme Court at nine",
+      "inSample": true
+    },
+    {
+      "claimId": "904d4889926e436794421eea78a548e9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Missouri Supreme Court scheduled a contempt hearing for September 10, 2026, ordering Secretary of State Denny Hoskins to explain why he should not be held in contempt for directing officials to use the rejected map",
+      "inSample": true
+    },
+    {
+      "claimId": "fdb6a015880a4a7ba888f0d535a86b7e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should delay military strikes against Iran until after the midterm elections",
+      "inSample": true
+    },
+    {
+      "claimId": "af83494c141c4fd0aac566d1c6852e7a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mail-in ballots must be postmarked by 7 p.m. on Election Day, May 26, and received by the county by 5 p.m. the next day",
+      "inSample": true
+    },
+    {
+      "claimId": "884a587c975540b1bf0831abaace11e9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Canada should pivot its economic strategy away from the United States",
+      "inSample": true
+    },
+    {
+      "claimId": "34ffab3452f7463ead8c843979ee87ef",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Defense Secretary Pete Hegseth should be impeached over the Iran war",
+      "inSample": true
+    },
+    {
+      "claimId": "e36091ff4ad74376b3a2c0236e2b55c3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should halt its immigration enforcement surge in Austin",
+      "inSample": true
+    },
+    {
+      "claimId": "625d93bb38d248d19d95dceb247a2a15",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gender identity should not be taught in elementary schools",
+      "inSample": true
+    },
+    {
+      "claimId": "e8987fb32e08d760e814217851ae5716",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US Postal Service should not reject valid mail-in ballots because a state failed to submit voter lists or use federally standardized envelopes",
+      "inSample": true
+    },
+    {
+      "claimId": "4d6caed263269d25e572425c21a7fc17",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The White House should not blame the Federal Reserve for mortgage rates",
+      "inSample": true
+    },
+    {
+      "claimId": "32607a92c55df7717274f5bded9cc48e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. military should be able to strike cartel boats without finding drugs on board",
+      "inSample": true
+    },
+    {
+      "claimId": "dc1025517ed54a938754cf874adf9ac6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Surrogacy contracts should not contain legally enforceable abortion clauses",
+      "inSample": true
+    },
+    {
+      "claimId": "2900a4bfda3149a4aff717f65396905c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Justice's denaturalization actions are civil complaints, meaning the allegations of fraud or concealment must be established in court before any individual's citizenship is officially revoked.",
+      "inSample": true
+    },
+    {
+      "claimId": "6edc63a2fa59d56bea4ebd54fb58ffb9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Knowingly false election polls should create consumer-fraud liability for pollsters",
+      "inSample": true
+    },
+    {
+      "claimId": "683ebe579a0f4a088fb33f8bd9e4ab48",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "German regional governments should block the AfD from receiving intelligence briefings",
+      "inSample": true
+    },
+    {
+      "claimId": "70717f2cf136c135d61686cc81663d22",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Drug dealers should be held responsible for overdose deaths",
+      "inSample": true
+    },
+    {
+      "claimId": "31039b61eb265bb094171a4032e7ec24",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A presidential candidate must be tested to determine their stamina, energy, ability to articulate positions, and capacity to withstand criticism",
+      "inSample": true
+    },
+    {
+      "claimId": "a0ff4503462e3c6358b64c409017bfd7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Online pornography should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "93b807e5e4e830e0cbf8fc79b27cf188",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Buying sex from consenting adults should be legal",
+      "inSample": true
+    },
+    {
+      "claimId": "20b95b84a67852a48f34d3d52e8c6c9e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "It is not a universal rule that universities should stay officially neutral on political and social controversies",
+      "inSample": true
+    },
+    {
+      "claimId": "d0a1c5caa41243419701c917b36af8b7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Attorneys state that the federal government must compensate military reservists who were owed differential pay dating back to 2009 following the Supreme Court's rejection of the government's interpretation",
+      "inSample": true
+    },
+    {
+      "claimId": "b27325989ed0fd7d8c13abef100a4be7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The National Park Service should resume East Potomac tree removal",
+      "inSample": true
+    },
+    {
+      "claimId": "9e015f679d70e95f048fbf4626aaabcb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Social media users should have to verify their identities to reduce gender-based harassment",
+      "inSample": true
+    },
+    {
+      "claimId": "02cde6c954b14ac18c1b87bb1f0651e1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should subsidize healthcare consumers directly instead of insurance companies",
+      "inSample": true
+    },
+    {
+      "claimId": "f1cef611dc15466ca877a047d75c3d20",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The final rule is scheduled to take effect on September 18, 2026, after which applicants must use a revised Form I-485",
+      "inSample": true
+    },
+    {
+      "claimId": "4343d175c04d437e81dc6fe796d85756",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The House of Representatives should block Darializa Avila Chevalier from taking her seat",
+      "inSample": true
+    },
+    {
+      "claimId": "854018323dcafea8816102b07eb4825e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Wealthy retirees should get smaller government pensions",
+      "inSample": true
+    },
+    {
+      "claimId": "35715431144345c6abb692834e60a169",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should pass the Transit-Oriented Housing Development Act",
+      "inSample": true
+    },
+    {
+      "claimId": "2e7734da91e2660dc9a1723b4eca17fb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The House should have expelled Chuck Edwards rather than censuring him",
+      "inSample": true
+    },
+    {
+      "claimId": "89346d7de26585f2d5df6decb4d60fce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Britain should continue hosting U.S. bombers during the Iran war",
+      "inSample": true
+    },
+    {
+      "claimId": "47ef8e00775052d981de986d3ca2fb45",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "It is not clear that human flourishing should be the highest good or a universally agreed-upon basis for a moral system",
+      "inSample": true
+    },
+    {
+      "claimId": "b55f838deecc0254070110448cf5e8a0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A mandatory four-day week should preserve weekly pay",
+      "inSample": true
+    },
+    {
+      "claimId": "22436fe2eaf44e29a2fd69454f45384f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voter ID should be required nationwide",
+      "inSample": true
+    },
+    {
+      "claimId": "8e2d62cf4f094257b9d07a07c67fdc62",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Wisconsin should enact a moratorium on new data center construction",
+      "inSample": true
+    },
+    {
+      "claimId": "00ad164f52d4146eb7d3a332489fd052",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sex work should be treated like any other profession",
+      "inSample": true
+    },
+    {
+      "claimId": "d3b50b057a5030f7fed8dc9ae5987dc6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. public schools should require students to repeat a grade when they fall behind",
+      "inSample": true
+    },
+    {
+      "claimId": "5abc4706fb8a70cf0aa4a881c0862db9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The needs of society should come before individual freedom",
+      "inSample": true
+    },
+    {
+      "claimId": "0d09d0b99438808aa592a810934df0eb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Tourists should avoid destinations whose governments criminalize same-sex relationships",
+      "inSample": true
+    },
+    {
+      "claimId": "4ee966da12985511c27c253a2524551a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Eligibility for US military service should be determined by individual fitness and performance rather than transgender identity",
+      "inSample": true
+    },
+    {
+      "claimId": "29b02d20bea14359b05bfb08ffdb1401",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "America should prioritize energy abundance over emissions targets",
+      "inSample": true
+    },
+    {
+      "claimId": "599222cf16c5087ac6eb9b7060ab57e7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Kennedy Center reconstruction should preserve its original Kennedy memorial identity",
+      "inSample": true
+    },
+    {
+      "claimId": "13b30fbc0a286139b06467372525c5ce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "FBI directors should not use ongoing investigations to avoid basic questions from Congress",
+      "inSample": true
+    },
+    {
+      "claimId": "32b66ecbdc8a8fc0f649ec5b4b331f61",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Big investment firms should be banned from buying family homes",
+      "inSample": true
+    },
+    {
+      "claimId": "485090060f1b45f2a62ec89f08f00790",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US Constitution should guarantee a right to clean drinking water",
+      "inSample": true
+    },
+    {
+      "claimId": "1fc86bd4f9b0440f973a143ed22377da",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ukraine should withdraw from its entrenched Donbas towns to secure peace",
+      "inSample": true
+    },
+    {
+      "claimId": "14b6ef4e8c0633d26dac58a84a6d6b68",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Pentagon should prioritize Iran-war repairs over new weapons programs",
+      "inSample": true
+    },
+    {
+      "claimId": "7754129685380b450c9d134cb70219ab",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Pete Hegseth should release strike rules to Congress",
+      "inSample": true
+    },
+    {
+      "claimId": "702ab7fdaed8448ca35f03f51c7fb919",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Big tech companies should be broken up",
+      "inSample": true
+    },
+    {
+      "claimId": "b684a2846238dfce906a342ab12be5d0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should ban public universities from funding DEI offices",
+      "inSample": true
+    },
+    {
+      "claimId": "98c55d7d43a823ed71548f745d025e62",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ukraine should have a decisive voice over Putin’s participation in the Miami G-20",
+      "inSample": true
+    },
+    {
+      "claimId": "f0d47afe9dcd4776a427bce4416835a7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The FBI should reinstate automatic hiring disqualifications for applicants who have engaged in prostitution or bestiality",
+      "inSample": true
+    },
+    {
+      "claimId": "974961606bb44bc590edf12e37cda0db",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court's 2022 ruling in New York State Rifle & Pistol Association v. Bruen established that modern gun regulations must be \"relevantly similar\" to laws from the founding era to be constitutional",
+      "inSample": true
+    },
+    {
+      "claimId": "b081973dc7065fa692cbc0a248a3bac1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Existing legal remedies for harms such as revenge porn, libel, and defamation should be strengthened by making it easier for people to sue",
+      "inSample": true
+    },
+    {
+      "claimId": "8b1690e062b5405da86a8afdb823cf17",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The EPA must regulate greenhouse gas emissions from gas-fired power plants",
+      "inSample": true
+    },
+    {
+      "claimId": "d6f6f5fc31614f6282c7fa0567a2cc02",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Supreme Court justices should time their retirements to align with a favorable political landscape",
+      "inSample": true
+    },
+    {
+      "claimId": "b263317b0da55841a179b88481d22412",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Inequality should not be justified on the basis that only people who try the hardest and have the best values succeed",
+      "inSample": true
+    },
+    {
+      "claimId": "735b0506f556c2abef1f5963e9f31870",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Marco Rubio should recommend Kimberly Guilfoyle’s removal as ambassador to Greece",
+      "inSample": true
+    },
+    {
+      "claimId": "03c07608110f4b4aba8052956e384a18",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Pro-Palestinian demonstrators state that their criticism of Israeli military actions in Gaza and Israel's occupation of Palestinian territories is not antisemitism and should not be equated with extremism",
+      "inSample": true
+    },
+    {
+      "claimId": "1b94120716bf4220bcda19ba2e8c973e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Lieutenant Governor Dale Caldwell should resign",
+      "inSample": true
+    },
+    {
+      "claimId": "03f97a6235754a9582cf5a20c35a1212",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Justice Department should criminally prosecute the ICE agents who falsified records",
+      "inSample": true
+    },
+    {
+      "claimId": "c36463e46ad54cb5a7c595232df57447",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal agencies should intervene to prevent local energy utility closures",
+      "inSample": true
+    },
+    {
+      "claimId": "b4136a65ea674266bf0ad4bc6cfcfe7d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "It should be possible to legally change one's gender",
+      "inSample": true
+    },
+    {
+      "claimId": "06069530c57040d414e431e5b6dfc7a3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Courts should exclude evidence obtained through warrantless Flock searches",
+      "inSample": true
+    },
+    {
+      "claimId": "93b2c0f8df5441d8b760df8bbd0d6c40",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Childcare should be publicly funded",
+      "inSample": true
+    },
+    {
+      "claimId": "a65f5c34e444447a988b75db653e2dcc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public schools should notify parents when students change their gender identity",
+      "inSample": true
+    },
+    {
+      "claimId": "b149b5fcdb744a28b4d8b65158434fe4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should cooperate with federal efforts to cross-check voter rolls",
+      "inSample": true
+    },
+    {
+      "claimId": "c769e034192958e19c51a8247ccd251c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Speech should only be treated as a crime if it is a pointed plan of violence toward a specific group",
+      "inSample": true
+    },
+    {
+      "claimId": "a6f0d8d703744ac3a154c7b6810d14b6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Children should be taught that gender is determined by biological sex",
+      "inSample": true
+    },
+    {
+      "claimId": "aa62ba654d964b5a9e29785fc3095030",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "California should prioritize rehabilitation over harsher prison sentences for repeat DUI offenders",
+      "inSample": true
+    },
+    {
+      "claimId": "3a53b35ea99c4fbebbc13bd2e4ebad60",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Graham Platner must submit a signed withdrawal request to the Maine Secretary of State's Office by July 13, 2026, to be formally removed from the ballot",
+      "inSample": true
+    },
+    {
+      "claimId": "d03aec2949c783ba848b3bb093239f58",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Elections should use hand-counted paper ballots instead of voting machines",
+      "inSample": true
+    },
+    {
+      "claimId": "99b1ed3838e2460f85725f78f87a421d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mail-in voting should be strictly limited",
+      "inSample": true
+    },
+    {
+      "claimId": "ba5b9fc92d0f4b9f97b0a5dddc8a6a66",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Appellate courts should defer to jury verdicts in public-figure defamation cases",
+      "inSample": true
+    },
+    {
+      "claimId": "59463dde6af24bb3898ee24d909fbfeb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Justice should prioritize prosecuting individual voter fraud cases",
+      "inSample": true
+    },
+    {
+      "claimId": "8b539eee0e034de1bc35bd16198eb40c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal immigration officers should be barred from making warrantless civil arrests",
+      "inSample": true
+    },
+    {
+      "claimId": "fef8555da1101ecdb05e8c4d59a5914f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fathers should have a say in abortion decisions",
+      "inSample": true
+    },
+    {
+      "claimId": "4cfa50ab1104e5b017d8837b242c3274",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Saudi Arabia should have a formal role in U.S. decisions about Yemen",
+      "inSample": true
+    },
+    {
+      "claimId": "4cd331d9dc1b02361f3cbfcfd8f98fb9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Housing should be treated as a place to live before it is treated as an investment",
+      "inSample": true
+    },
+    {
+      "claimId": "7b62d2e39f5f6cdc2863ae2728881639",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should conduct military operations inside Latin American countries",
+      "inSample": true
+    },
+    {
+      "claimId": "3d926ad6c835cd70978728dae492288d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Pride flags should not be flown on government buildings",
+      "inSample": true
+    },
+    {
+      "claimId": "3a6e5b75db855be37f61cd4a8f54e26f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Starbase construction should pause while courts review the refuge land exchange",
+      "inSample": true
+    },
+    {
+      "claimId": "f021431dfac449b98a4015613e991e3c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Unconfirmed political advisers should not influence federal contracting decisions",
+      "inSample": true
+    },
+    {
+      "claimId": "879d423d34da45e2aa046c0cdfd374fb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "As the mayor of New York, Zohran Mamdani should attend the September 11 commemoration",
+      "inSample": true
+    },
+    {
+      "claimId": "59bdb79adf584c6493c8145e716f5e41",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US census should ban questions regarding sexual orientation",
+      "inSample": true
+    },
+    {
+      "claimId": "8ba36d48091b46a480b1946a60a1e3fc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Severely mentally ill homeless people should be involuntarily committed",
+      "inSample": true
+    },
+    {
+      "claimId": "e347add0df1b4a4ea978e35e66edede0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Several Democratic senators suggested Chuck Schumer should announce that his next term as leader will be his last and commit to helping transition to a successor.",
+      "inSample": true
+    },
+    {
+      "claimId": "cf4f435c6f0545eda33f9444896ca01f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ohio should implement a moratorium on new fracking injection wells",
+      "inSample": true
+    },
+    {
+      "claimId": "8c273700eba64fc4b4653c586d94a67e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public school districts must establish and staff their own scholarship organizations to solicit donations and vet applicants to benefit from the Federal Scholarship Tax Credit program.",
+      "inSample": true
+    },
+    {
+      "claimId": "e93472e4b8286648585ff9bb6f2199b8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Removal proceedings should pause when the detainee is a key witness in an active federal shooting investigation",
+      "inSample": true
+    },
+    {
+      "claimId": "6c2e9b253091551180195c6e8fa09829",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "It is questionable whether prisoners' potential demands for lower sentences should be considered in a democratic process",
+      "inSample": true
+    },
+    {
+      "claimId": "4747e3802ce84bcd89ebe331b6771e2b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To qualify for the $1,000 government contribution, a child must be a U.S. citizen with a Social Security number",
+      "inSample": true
+    },
+    {
+      "claimId": "9c880854ee65463dab79027bc9d76541",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Prediction markets should ban wagers on confidential government personnel decisions",
+      "inSample": true
+    },
+    {
+      "claimId": "ae70b6f02f2d70e43e656dc038750dd7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democratic governors should bypass the DGA to contest winnable Texas races",
+      "inSample": true
+    },
+    {
+      "claimId": "1d3ede7ddaf94bbfa2978eb7b0cb6fa5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Title IX protections should extend to sexual orientation and gender identity",
+      "inSample": true
+    },
+    {
+      "claimId": "293ed623c38158a6b77caf6fbfd28c8e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A framework for managing pandemics should be established before a pandemic occurs",
+      "inSample": true
+    },
+    {
+      "claimId": "db7ce8dac393e02a3cbdff96c4443bc5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Routine COVID-19 vaccination should focus on older adults and people at high risk",
+      "inSample": true
+    },
+    {
+      "claimId": "db924d70d63c448087b4451a887a90b9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Gavin Newsom should challenge Kamala Harris in the 2028 primary",
+      "inSample": true
+    },
+    {
+      "claimId": "b5a9021c1f23580210f43a18e250cefe",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The FBI should prioritize immigration enforcement even if it diverts agents from other investigations",
+      "inSample": true
+    },
+    {
+      "claimId": "63616de246943f3e7dcfa17cec4fd16f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should set tokenized-stock rules instead of temporary SEC exemptions",
+      "inSample": true
+    },
+    {
+      "claimId": "0026a195c475712adaaf73fdd77a964a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Medicaid should cover puberty blockers for gender dysphoria whenever it covers them for other conditions",
+      "inSample": true
+    },
+    {
+      "claimId": "c8e6d5ce1966d8b09575fce3da57f4f3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Election calendars should not determine federal funding deadlines",
+      "inSample": true
+    },
+    {
+      "claimId": "897a7a7f9f0eeab85d8c1ae4687d6d40",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Translators should preserve offensive language in classics rather than adapt it to current norms",
+      "inSample": true
+    },
+    {
+      "claimId": "4aa87f426fb234137f8ce60ac7c23955",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US-led campaign against Iran should be considered unsuccessful unless it produces verifiable limits on Iran’s nuclear and ballistic-missile programs",
+      "inSample": true
+    },
+    {
+      "claimId": "8c63c1dd3f884938b2945bab45d71b67",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US and China should establish an AI safety notification mechanism",
+      "inSample": true
+    },
+    {
+      "claimId": "68d640a604046a57fb2682c67fc8389f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should define disputed Iran-war casualty categories instead of leaving them to Pentagon officials",
+      "inSample": true
+    },
+    {
+      "claimId": "3c9952710a3f46a284c7feab07f2091c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A different federal judge ruled that some states must have access to the same government database for voter verification",
+      "inSample": true
+    },
+    {
+      "claimId": "a6b5c5a594560d11db787a5534ca8322",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should have stayed in Iraq until Iran-backed militias disarmed",
+      "inSample": true
+    },
+    {
+      "claimId": "907483c0febceee121e005de729a1361",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Platforms should proactively block reuploads of reported non-consensual intimate images",
+      "inSample": true
+    },
+    {
+      "claimId": "21853d5bfb56d584d93ca9ef54f83119",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should compensate border states for losses caused by tariffs on Canadian goods",
+      "inSample": true
+    },
+    {
+      "claimId": "caaefba6842b5d8ca1d42648b4d86e04",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The majority of courses should center on propositional knowledge rather than student identities",
+      "inSample": true
+    },
+    {
+      "claimId": "3ac71411367d4ecf9a60a7f8fb45c4ea",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Presidents should not be able to override clear constitutional protections, even when pursuing major policy goals",
+      "inSample": true
+    },
+    {
+      "claimId": "65e9e80593de49a0b0e4f2e695febad4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "FBI Director Kash Patel and U.S. Attorney Jeanine Pirro defended the criminal charges against Nikki Floris and Bradley Benavides, asserting that senior FBI officials who lie to Congress must be held accountable under the law",
+      "inSample": true
+    },
+    {
+      "claimId": "935c92c3dccc4b8590e13bb1ce077a03",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Federal Reserve should provide forward guidance on interest rates",
+      "inSample": true
+    },
+    {
+      "claimId": "fe1dc64d6e2e56a78a7e27c53b52f461",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Advocacy for the NAJI system should be censored on social media as it is inappropriate for children and unhealthy for democracy",
+      "inSample": true
+    },
+    {
+      "claimId": "9fa86db9d1a3440b8a1c2d6a8b977aed",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Under 2023 Army regulations, all lawful and feasible execution methods must be presented to the Army secretary for consideration",
+      "inSample": true
+    },
+    {
+      "claimId": "64112e0c35f993faa9e337b36e07edb1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should approve any deployment of weapons in orbit before it happens",
+      "inSample": true
+    },
+    {
+      "claimId": "67d369198f1143e693b15b7b4a0c4779",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court's February ruling that struck down the tariffs did not specify how the administration should refund the money it had collected",
+      "inSample": true
+    },
+    {
+      "claimId": "427a36ca583734fb135e3040702f904b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "An FDA commissioner should not restrict mifepristone based on personal safety objections",
+      "inSample": true
+    },
+    {
+      "claimId": "a4ca98f5bd804d78b247718166c82d5c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To win the Iowa GOP gubernatorial nomination outright, a candidate must secure at least 35% of the vote, otherwise a convention will decide",
+      "inSample": true
+    },
+    {
+      "claimId": "33d4b6381bfd2dc4010ab2006d907235",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "AI data centers should bring new generation before connecting to the grid",
+      "inSample": true
+    },
+    {
+      "claimId": "f3b622bed4e5410e829a7db2c2c23c69",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States must use the same congressional map for both primary and general elections",
+      "inSample": true
+    },
+    {
+      "claimId": "3d63c4fb7d0740819f329c89a461b4eb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal Judge Richard Eaton ordered in March 2026 that tariffs collected under the International Emergency Economic Powers Act must be refunded to importers",
+      "inSample": true
+    },
+    {
+      "claimId": "806ac882a65e70dda6b3e3b8f38ba69d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal courts should define meaningful White House access when credential restoration leaves reporters practically excluded",
+      "inSample": true
+    },
+    {
+      "claimId": "8ee282247fe349f7b87c5b8f40e07c72",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Providence should refuse to cooperate with federal immigration enforcement",
+      "inSample": true
+    },
+    {
+      "claimId": "152a20ad584918745c574cec08467fa4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should reclaim control over tariffs imposed on major US allies",
+      "inSample": true
+    },
+    {
+      "claimId": "b72b81599dc648c095fabf5a17719ebe",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Wisconsin guidance specifies that if law enforcement officers attend polling places to observe, they must check in like other observers and comply with standard observer regulations.",
+      "inSample": true
+    },
+    {
+      "claimId": "c94e406cb8354aa6a228e32d2cc789c6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Immigration laws should be enforced and identities verified",
+      "inSample": true
+    },
+    {
+      "claimId": "aff02a5f7ca9e9cce331d3dfcaa7e4d8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Telecom companies should retain everyone’s connection records for six months so police can investigate crimes later",
+      "inSample": true
+    },
+    {
+      "claimId": "33a660d3c6d5082f6990f0537518c4dc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "USPS should follow court injunctions over White House election directives",
+      "inSample": true
+    },
+    {
+      "claimId": "6c738904750f418080434d99068531d4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender people should be allowed to serve openly in the military",
+      "inSample": true
+    },
+    {
+      "claimId": "2bd413248a6a1c5201b2c8ec5f1a60a8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should tie weapons sales to China’s military restraint toward Taiwan",
+      "inSample": true
+    },
+    {
+      "claimId": "26e7b41a2fb7cd6571afd02aef368410",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public employers should fire workers for racist statements outside work",
+      "inSample": true
+    },
+    {
+      "claimId": "65decffc926548d184dbce19273ee204",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should delay lobster regulations to protect the fishing industry",
+      "inSample": true
+    },
+    {
+      "claimId": "260edff5485e455fae6f04ec06b07ac6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should exempt humanitarian visa holders from Medicaid coverage waiting periods",
+      "inSample": true
+    },
+    {
+      "claimId": "dd91a4b44cf74ca2ac636dfc21287d81",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should subsidize solar installations for low-income families",
+      "inSample": true
+    },
+    {
+      "claimId": "a0795eee8f6649ef9b71914c7927c6c5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Texas should implement full online voter registration",
+      "inSample": true
+    },
+    {
+      "claimId": "6e63448c85fd9d3c36c0547b577e4562",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The White House should make Putin’s summit access conditional on meaningful Russian concessions",
+      "inSample": true
+    },
+    {
+      "claimId": "621963132a6f19d9c8238d801173a959",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Smartphones should be banned in schools",
+      "inSample": true
+    },
+    {
+      "claimId": "50e15560d1af49fc8eaee3520e5a79a0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democratic candidates who oppose dark money should refuse Super PAC support",
+      "inSample": true
+    },
+    {
+      "claimId": "37e9d9e734f84b5aa70a831f4147893b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Birthright citizenship should not automatically extend to children born to undocumented immigrants",
+      "inSample": true
+    },
+    {
+      "claimId": "29eb509adc4de055cc0ba41db629d4d3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal grants should exclude agencies that share Flock data without local privacy restrictions",
+      "inSample": true
+    },
+    {
+      "claimId": "0e3c5ee02e6252cdc09b3339db5d992e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "There should be clear laws establishing that workers don't have to check their work communication after work hours",
+      "inSample": true
+    },
+    {
+      "claimId": "317328c9ece749a28383fb6db1589c8b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should not build border security infrastructure inside national parks",
+      "inSample": true
+    },
+    {
+      "claimId": "7ce99a90235fe7f2807b072e4d952f2e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal election safeguards should not depend on every state’s cooperation",
+      "inSample": true
+    },
+    {
+      "claimId": "ede25fa74c62f1fe42a703c389fa2480",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should limit strikes on Iran to targets directly tied to nuclear weapons",
+      "inSample": true
+    },
+    {
+      "claimId": "ef9ce661387749fd982fa15feaf6b723",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal Reserve Chair Kevin Warsh defended the central bank's independence on September 16, 2026, stating that the Fed must 'stay in our lane' and let others handle trade and fiscal policy",
+      "inSample": true
+    },
+    {
+      "claimId": "40d42f6e39bc4c4c9edf6940db6d3254",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should conduct workplace immigration-enforcement raids",
+      "inSample": true
+    },
+    {
+      "claimId": "6a0b677c90d637bd8d8c2640fbb776d6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Employers should not dismiss workers for lawful political speech outside work",
+      "inSample": true
+    },
+    {
+      "claimId": "92f57020ce349b27b5e56f54068cbc05",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The AI Force should enforce binding safety standards",
+      "inSample": true
+    },
+    {
+      "claimId": "bb790dd95a4443009f86cc41df61c004",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should impose tariffs on countries purchasing Russian energy",
+      "inSample": true
+    },
+    {
+      "claimId": "7693953e2eb74314ab0da3d3224bd33f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should strip gray wolves of endangered-species protections",
+      "inSample": true
+    },
+    {
+      "claimId": "04b739ceb6a94025938552e628f93b69",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Public Utility Commission of Texas lawsuit challenges two rulings by Texas Attorney General Ken Paxton's office stating that the requested geographic records must be released under public-records law.",
+      "inSample": true
+    },
+    {
+      "claimId": "2208eb0e6a514e86811f10f198e8e606",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Homeland Security Investigations should investigate domestic voter registration organizations",
+      "inSample": true
+    },
+    {
+      "claimId": "101d454e68e14870b14c6ba4ea54b0b6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The White House should have the authority to select press pool participants",
+      "inSample": true
+    },
+    {
+      "claimId": "b37d42ebc30e9f333852d2b678fb02e1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Prisons should focus on rehabilitation, not punishment",
+      "inSample": true
+    },
+    {
+      "claimId": "c806a7f5d7b2489bbf588c6d1d606f3e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "From October 24 through the November 3, 2026 election, United States Postal Service carriers must check every delivery point for outgoing mail, and workers can use Priority Mail Express to expedite completed ballots.",
+      "inSample": true
+    },
+    {
+      "claimId": "97ea22fe87a04a789d7f6cdf7497b154",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Iran-war spending should take priority over domestic programs",
+      "inSample": true
+    },
+    {
+      "claimId": "803dfb91ad1a0b4240d5da1463df6086",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal courts should order access restored to barred reporters",
+      "inSample": true
+    },
+    {
+      "claimId": "3c3a9e12c8f048d9ab1f3adc785b5b96",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Treasury Department opposed the use of tax records as controlling evidence of residence, arguing they should only serve as corroborating evidence.",
+      "inSample": true
+    },
+    {
+      "claimId": "dc11385760bd4e96a16cb1cf737e37ad",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. military should establish a dedicated combatant command for autonomous and robotic warfare",
+      "inSample": true
+    },
+    {
+      "claimId": "6f58f6aecf7d1e0a6c23018b2a0021be",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. universities should allow speakers whose views most students find offensive",
+      "inSample": true
+    },
+    {
+      "claimId": "5176f1d5ab914eb3bc369876a60b8de0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Justice Department should prosecute Jack Smith for allegedly misleading Congress",
+      "inSample": true
+    },
+    {
+      "claimId": "36d6146a47d54e579e7a47e8deefaa21",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Coal plants should be kept running to power the AI data-center boom",
+      "inSample": true
+    },
+    {
+      "claimId": "43623d62dae94fac84379ae27753e772",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Utah should restore collective bargaining rights for public school teachers and emergency responders",
+      "inSample": true
+    },
+    {
+      "claimId": "143dfaf16f1d496caef17a0911d4f9bb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should not automatically enroll children in financial accounts without parental consent",
+      "inSample": true
+    },
+    {
+      "claimId": "eee9be326f505326b54bc2ea6bc51e58",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "While caution is warranted regarding governments seizing power, society should also be wary of individuals who make others ill",
+      "inSample": true
+    },
+    {
+      "claimId": "ed6166efdec64fbc9f160ef70e651030",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Postal Service should require unique barcodes on all mail-in ballot envelopes",
+      "inSample": true
+    },
+    {
+      "claimId": "cb0e9abe46df57a3a5a182430ee08377",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Harmful internet usage like trafficking and child pornography should be distinguished from the broader category of misinformation",
+      "inSample": true
+    },
+    {
+      "claimId": "15b63bde741559a681ed8383c107df04",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Casting a blank vote should be counted as a show of defiance against the political system",
+      "inSample": true
+    },
+    {
+      "claimId": "b2c4d7bc8f63428eb708b696fc5ad4af",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The EPA should permanently repeal carbon capture requirements for power plants",
+      "inSample": true
+    },
+    {
+      "claimId": "4e819d63454f409481c34a524cbb2f0b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. should restore Endangered Species Act protections against habitat degradation",
+      "inSample": true
+    },
+    {
+      "claimId": "550c2b7fbfe349ff868524e5a3c49fd1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The FDA should immediately reinstate the in-person dispensing requirement for mifepristone",
+      "inSample": true
+    },
+    {
+      "claimId": "c4f70e8eb0f043aaa304a77309727d51",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "UT Austin should reinstate its ethnic and gender studies majors",
+      "inSample": true
+    },
+    {
+      "claimId": "d58426dd07d84a99b102e1a1df893d03",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Three veterans and a group of historians filed a lawsuit challenging the arch project, arguing it should be decided by Congress rather than executive decree",
+      "inSample": true
+    },
+    {
+      "claimId": "bc6bbf61b3a2e7e1a5f48ee9016ad4df",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A single national standard should replace state-by-state rifle bans",
+      "inSample": true
+    },
+    {
+      "claimId": "3b71601ff8c34408ac49b597616f5fea",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should pass the Dignity Act",
+      "inSample": true
+    },
+    {
+      "claimId": "fd089f7dc67e408bbdbdaa1689c3c4d5",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "In the 2026 midterm elections, Democrats must win four Republican-held seats to flip the Senate.",
+      "inSample": true
+    },
+    {
+      "claimId": "e3abd54bf35648be98e040860c41f35d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Mitch Jones of the advocacy group Food & Water Watch opposed the Ratepayer Protection Act, calling it pointless legislation that merely suggests states should act.",
+      "inSample": true
+    },
+    {
+      "claimId": "c4b778dce52841e9b89057ff873b8566",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "OpenAI Safety Systems researcher Juan Felipe Cerón Uribe endorsed the Ban Artificial Superintelligence Act, stating that superintelligence could go extremely right or extremely wrong and society should not play such games",
+      "inSample": true
+    },
+    {
+      "claimId": "7a0db03463071d06b0905f4f279c4a69",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Food stamps should not pay for soda and candy",
+      "inSample": true
+    },
+    {
+      "claimId": "485de6c54f6045ecb1b964cfa592428f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Auschwitz Memorial should return Dinah Gottliebova Babbitt's watercolors to her heirs",
+      "inSample": true
+    },
+    {
+      "claimId": "96fcbf5cf7614e2fa624a4d1638fa1be",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. president should not rename international bodies of water",
+      "inSample": true
+    },
+    {
+      "claimId": "54d47c0a1821f87802e58acd3f76cfe8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should establish a federal procedure for handling state criminal cases against sitting presidents to prevent recurring disputes over jurisdiction and removal",
+      "inSample": true
+    },
+    {
+      "claimId": "96c77a9464b7dc44022f4a55e7a4d42c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Repeat shoplifters should go to jail",
+      "inSample": true
+    },
+    {
+      "claimId": "64d066cc1ca84a618124e895d70ad8ed",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Pennsylvania Democrats should publicly condemn John Fetterman",
+      "inSample": true
+    },
+    {
+      "claimId": "d5cdfc841a9643babbc63cdcde908234",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Lindsay Clancy should be held criminally responsible for the deaths of her children",
+      "inSample": true
+    },
+    {
+      "claimId": "c46f15c73621e94f3efeec634896fbe1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Greenland should control approvals for new U.S. military installations",
+      "inSample": true
+    },
+    {
+      "claimId": "a94ed7e0d5bb4c3ab6943218d9dfb272",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voters who participated in a party's primary in March must vote in the same party's runoff, while those who didn't vote can choose either party",
+      "inSample": true
+    },
+    {
+      "claimId": "194476b2af9a16d6be8b833381484fa9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Robert F. Kennedy Jr. should plainly urge measles vaccination",
+      "inSample": true
+    },
+    {
+      "claimId": "c1290e53a1e34ff3a37d325f92542130",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The president should not pressure private companies to adopt government-preferred terminology",
+      "inSample": true
+    },
+    {
+      "claimId": "65f7072a2c1656d23bbb534be346e8c6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Foreign investors should be barred from buying firms essential to national infrastructure",
+      "inSample": true
+    },
+    {
+      "claimId": "6fc40cc0de6d02d12986158915617c1e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Offensive jokes should never be censored",
+      "inSample": true
+    },
+    {
+      "claimId": "327dad3034314196a8d143ed569c29cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Medicaid exemptions should require proof that a medical condition prevents work",
+      "inSample": true
+    },
+    {
+      "claimId": "e2de5f52458f5e9f390733d1d018ba82",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Universities should stay officially neutral on political and social controversies",
+      "inSample": true
+    },
+    {
+      "claimId": "73c38dd5b3d4499ba11ee74f071ea466",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Physicians should not be responsible for assessing Medicaid patients' ability to work",
+      "inSample": true
+    },
+    {
+      "claimId": "820e9e481ac7d1e8eaedebe0c4cd5907",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Russia sanctions law should not punish countries reducing Russian energy purchases",
+      "inSample": true
+    },
+    {
+      "claimId": "179dbcce407702fed1fcc2c4f74a6ce7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fox News should give Democrats less airtime",
+      "inSample": true
+    },
+    {
+      "claimId": "b0f6465187a2eeaf5c3deaf7754cfe9c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should finance the Board of Peace’s initial Gaza recovery plan",
+      "inSample": true
+    },
+    {
+      "claimId": "38a8f9ccbff7e53e62e6602e32f1c7c3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Central banks should be independent of elected governments",
+      "inSample": true
+    },
+    {
+      "claimId": "49547f09cc746829de8a57b7f99c3100",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sports teams should drop Native American names and mascots",
+      "inSample": true
+    },
+    {
+      "claimId": "04fc98752965a9c0745d6b83ea2a8470",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A federal judge should not be able to restore a prison union contract after the president ends collective bargaining rights",
+      "inSample": true
+    },
+    {
+      "claimId": "72ec684df1284260bd24dad61f65d116",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "To qualify for Temporary Protected Status under the proposed bill, Afghan nationals must have been continuously physically present in the United States since the law's enactment, submit biometric and biographic information, and complete background checks",
+      "inSample": true
+    },
+    {
+      "claimId": "003c4d58eb3f2ec692f68a8411bbdaa0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. college athletes should be paid salaries by their universities",
+      "inSample": true
+    },
+    {
+      "claimId": "4adba00a51a8527da4cc27479d2d36ac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Underlying criminal behavior, such as trafficking conducted via social media, should be prosecuted",
+      "inSample": true
+    },
+    {
+      "claimId": "1bc4e046a858d41cf28bc81f3e5b4add",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal investigators should pursue citizenship fraud allegations against elected officials",
+      "inSample": true
+    },
+    {
+      "claimId": "1b0c7ada1ccb42819c7ee4a76fdcb6cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Judge Ramón E. Reyes Jr. held that any policy authority to allow local law enforcement officers to execute civil immigration arrests must come from Congress or state and local legislatures.",
+      "inSample": true
+    },
+    {
+      "claimId": "bd62aa583d9be1e98dba911a0cb34663",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Judicial reform should prioritize term limits rather than permanently fixing the Court’s size",
+      "inSample": true
+    },
+    {
+      "claimId": "50b1a83c336f4613a12097700e78beab",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should lift its blockade of Iranian ports",
+      "inSample": true
+    },
+    {
+      "claimId": "a532e305d3fd4b35ad369aab7c07b8dc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. District Judge Richard Leon previously ruled in April 2026 that above-ground construction must stop, but allowed underground work on the presidential bunker to continue.",
+      "inSample": true
+    },
+    {
+      "claimId": "456dc5ebbebd477287d336b50bffd5c8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Under the proposed rule, pharmacy benefit managers in Medicare Part D cannot base fees on drug prices, generated rebates, or formulary placement, and must pass drug rebates through to plan sponsors.",
+      "inSample": true
+    },
+    {
+      "claimId": "d9134c497ff74a829548010a41a35cf1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should launch airstrikes against Houthi forces in Yemen",
+      "inSample": true
+    },
+    {
+      "claimId": "cc1ff7bdc97543f8bde8752afe317717",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Candidates who advance from open primaries should not withdraw to consolidate party support",
+      "inSample": true
+    },
+    {
+      "claimId": "f6e64da890ba6c889fcc965a536ab1b1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Alligator Alcatraz detainees subjected to cage confinement should receive financial compensation",
+      "inSample": true
+    },
+    {
+      "claimId": "b89bfe9875cc5063870417f9ff83c6f3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fox News should be categorized as mainstream media",
+      "inSample": true
+    },
+    {
+      "claimId": "48525401630c4f789635371a3d1a385a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal immigration law should include a duress exception to the material-support bar",
+      "inSample": true
+    },
+    {
+      "claimId": "340152801f0ef70f2c05f27ccde7aba3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Voting rules should be frozen once states begin distributing ballots",
+      "inSample": true
+    },
+    {
+      "claimId": "753daf8e2b74f2bf18c92617ff394b53",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Vladimir Putin should attend the Miami G-20 summit despite the diplomatic risks of hosting Russia",
+      "inSample": true
+    },
+    {
+      "claimId": "5186d38697515758a60121bfad9697cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "One should not intervene in the creation or consumption of pornography unless it creates a social ill",
+      "inSample": true
+    },
+    {
+      "claimId": "0210c3b93cba4d1ba2873f1a173e01d3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. military should permanently end the death penalty",
+      "inSample": true
+    },
+    {
+      "claimId": "62969761fc4ecec8903dcc5296385970",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should investigate whether Singham’s nonprofit network advances Chinese Communist Party interests",
+      "inSample": true
+    },
+    {
+      "claimId": "218a087dadad43e7a52c80782b78f248",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should continuously monitor employees at sensitive nuclear sites",
+      "inSample": true
+    },
+    {
+      "claimId": "7b9377a33a985da25009563378225c3f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Destroying another country’s satellite should be treated as an act of war",
+      "inSample": true
+    },
+    {
+      "claimId": "9a9b93aa64e643c7b10e90fb26962ffb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The GLOVE manufacturer guidelines state the device should not be used as punishment or against individuals who are exhibiting only verbal defiance or belligerence",
+      "inSample": true
+    },
+    {
+      "claimId": "aa46b2396b8e3b1b053d4f5a75f651ad",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Families should be detained together rather than separated during immigration proceedings",
+      "inSample": true
+    },
+    {
+      "claimId": "3b84b6a64e8a593da908911604f01a62",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "How a person feels about their gender should not determine how society is governed",
+      "inSample": true
+    },
+    {
+      "claimId": "c7e160a15db82390cb48cf404f572259",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal judges should stay out of public political fights",
+      "inSample": true
+    },
+    {
+      "claimId": "ddc03c97af964eae87fc699f73bbdc27",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should ban defense contractors from engaging in stock buybacks",
+      "inSample": true
+    },
+    {
+      "claimId": "d682606a04c94e618cde7d88f4bad394",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should levy tariffs on Canadian imports",
+      "inSample": true
+    },
+    {
+      "claimId": "8f9c833b41e54eee9ca78e9c2f4ffb58",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Georgia's gubernatorial debate should be moderated by professional journalists rather than a town hall audience",
+      "inSample": true
+    },
+    {
+      "claimId": "47a1cbb1088f87fcb59e594e62d8ef48",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sex workers should be allowed to advertise publicly",
+      "inSample": true
+    },
+    {
+      "claimId": "c3b45e9562639e3dc1fc93f28adc6906",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "AI companies should refuse to build models with reduced safeguards for military use",
+      "inSample": true
+    },
+    {
+      "claimId": "639385f21d8fb9923ad51e64cf9f66d1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Canada should not accept EU rules without EU representation",
+      "inSample": true
+    },
+    {
+      "claimId": "b9ed61e233a614ac1949c37453539c0d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "FBI agents should not be deployed to polling places without a specific criminal threat",
+      "inSample": true
+    },
+    {
+      "claimId": "436c11ff15434518b7a746ad5b7c5d45",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal officers should be shielded from personal liability when violating state laws during official duties",
+      "inSample": true
+    },
+    {
+      "claimId": "fa7d002c93d432ef4e2779585b5f6fc8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Greenland should reject bases that displace local communities",
+      "inSample": true
+    },
+    {
+      "claimId": "832c3402a6f24820a93929a46a874851",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should temporarily ease tariffs on imported beef",
+      "inSample": true
+    },
+    {
+      "claimId": "456e01ede1a548ceb946c8bde8a1295d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Courts should not alter congressional district maps once voting has begun",
+      "inSample": true
+    },
+    {
+      "claimId": "3ae6895496f0f787558bdcfee6425726",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Tokenized stocks should never substitute for actual share ownership",
+      "inSample": true
+    },
+    {
+      "claimId": "7808329b59c12db4046e5795089ad004",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Russian diesel should be treated as sanctions relief rather than ordinary energy trade",
+      "inSample": true
+    },
+    {
+      "claimId": "f71da7bd3d574b72a9a52d76edccd671",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should make daylight saving time permanent",
+      "inSample": true
+    },
+    {
+      "claimId": "11b70e0d5f2ac1295209b19974ced7b8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "People should be judged by their intentions, not their actions",
+      "inSample": true
+    },
+    {
+      "claimId": "a5f6c952a40c29b281d90995237e1156",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "State criminal convictions involving a sitting US president should receive expedited Supreme Court review to reduce prolonged institutional uncertainty",
+      "inSample": true
+    },
+    {
+      "claimId": "12b8650fc6414a75a6e55b516c211c30",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "IVF should allow parents to select embryos based on genetic traits",
+      "inSample": true
+    },
+    {
+      "claimId": "55907d7fb7e6413b874fe1c7f6280a70",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US military should disclose the specific capabilities of its orbital weapons",
+      "inSample": true
+    },
+    {
+      "claimId": "5dd19a10b2194060a0d378da20336e62",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Transgender athletes should compete based on biological sex",
+      "inSample": true
+    },
+    {
+      "claimId": "f36ad2d6acf2436baf76cdee58200175",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should withhold funding from schools with transgender-inclusive policies",
+      "inSample": true
+    },
+    {
+      "claimId": "62d704d221b9a75ac62a66480237ea0c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Senators should not receive full pay during extended medical absences",
+      "inSample": true
+    },
+    {
+      "claimId": "0cee47a7ce1a435780b3b6e3f06f212a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should assume primary responsibility for disaster preparedness and response",
+      "inSample": true
+    },
+    {
+      "claimId": "e98901bf85e6594680e18b87c03eacd1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Some far-left and far-right content, including Nazism, must be censored",
+      "inSample": true
+    },
+    {
+      "claimId": "1710cc332e5cc02f7fc4c27ab8d671ae",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Childhood vaccine schedules should be reduced to address parental concerns",
+      "inSample": true
+    },
+    {
+      "claimId": "3d1a592195daa1f73362a047247882d3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. universities should require standardized-test scores for admission",
+      "inSample": true
+    },
+    {
+      "claimId": "0ad387e3a832a48ae3bccf1d0aa4d9a8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "US public schools should start later in the morning so students are better rested",
+      "inSample": true
+    },
+    {
+      "claimId": "3953a8bd9e8641c2bf6df8637a1d67b8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republican candidates in competitive midterm races should avoid litigating the 2020 election",
+      "inSample": true
+    },
+    {
+      "claimId": "ca8a718e764b48e5a5e3c5e9367b6857",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democratic candidates should maintain uncompromising support for transgender rights in competitive midterm races",
+      "inSample": true
+    },
+    {
+      "claimId": "7f74dc59ef77077773202acd9c8a461e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. public schools should group students by academic ability",
+      "inSample": true
+    },
+    {
+      "claimId": "5e0a767fcbc68989550b2d39eaaef05f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Fathers should have a say in whether a pregnancy is continued",
+      "inSample": true
+    },
+    {
+      "claimId": "1d567286b1515c528006742d839faf0d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The principle that individual freedom should be secondary to public safety can be weaponized, and its negative externalities outweigh the positive benefits",
+      "inSample": true
+    },
+    {
+      "claimId": "fe2211404d00488cacec67d8a54506e1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Rubio should not simultaneously serve as secretary of state and national security adviser",
+      "inSample": true
+    },
+    {
+      "claimId": "99a22cac82ac4d4683401ba973ee3dac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Democrats must gain at least four seats in the November 2026 midterm elections to overturn the 53-47 Republican majority in the U.S. Senate.",
+      "inSample": true
+    },
+    {
+      "claimId": "15a65936281949b793fc25febccdc99e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The core of the political conflict in Utah centers on a struggle over whether power should be wielded by the courts, the people, or elected representatives",
+      "inSample": true
+    },
+    {
+      "claimId": "b691e13274cf428dabe4bfe63b67bddb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Municipalities should be permitted to intervene in federal litigation to defend abandoned regulations",
+      "inSample": true
+    },
+    {
+      "claimId": "3bf1b93f3a537ed2c868a49badbf7285",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Schools should teach patriotic American history",
+      "inSample": true
+    },
+    {
+      "claimId": "71fd5b0fb9d3681d7cd481450fa32a70",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should let Chinese carmakers sell cars in America",
+      "inSample": true
+    },
+    {
+      "claimId": "fa67087e3b4437961d0c56a6f7c3cec6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Undocumented immigrants should have a path to citizenship",
+      "inSample": true
+    },
+    {
+      "claimId": "cf6caa0c4cf41f2b9910a3285fcf2194",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Countries should impose tariffs on imports produced with weaker labor protections",
+      "inSample": true
+    },
+    {
+      "claimId": "6d6b23ca70704121a1bbb0cff2b7825e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ukraine should halt its attacks on Russian oil refineries",
+      "inSample": true
+    },
+    {
+      "claimId": "a9d679e7590091b47f995844d52eea72",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Snow days should be replaced with online school days",
+      "inSample": true
+    },
+    {
+      "claimId": "c8c44dfef1ba6acce88cfb2303864f0d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Parents should be fined when their children skip school",
+      "inSample": true
+    },
+    {
+      "claimId": "8054e557a178490dba1e1d5fcbc1e497",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Medical schools should admit students based solely on academic qualifications",
+      "inSample": true
+    },
+    {
+      "claimId": "beca09b54cd343e4a6ed1a0807dfb436",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A federal judge and the Missouri Supreme Court issued conflicting rulings regarding whether Missouri must use its 2022 congressional map or a new Republican-backed map for the November 2026 midterm elections",
+      "inSample": true
+    },
+    {
+      "claimId": "fb19a542c55a47309c3074d2c87817d0",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Inspectors general should investigate officials who have already resigned",
+      "inSample": true
+    },
+    {
+      "claimId": "5c0e21d812917e6e20a7c5f5283857fe",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Female athletes should be paid the same as male athletes",
+      "inSample": true
+    },
+    {
+      "claimId": "906ec56e30d44e0f8286ffa3614d7108",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should not grant the US President unilateral power to levy sanctions-related tariffs",
+      "inSample": true
+    },
+    {
+      "claimId": "b438e9a554ab51f5a299d5dec9a325d6",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Speech backed by facts should be considered the right information",
+      "inSample": true
+    },
+    {
+      "claimId": "d4a6f01a452b4698b940114ee58f5646",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "There should be stricter regulations on guns to reduce mass shootings",
+      "inSample": true
+    },
+    {
+      "claimId": "eb3cf3bcf798a280d8e26525fb00009c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. military should have left Iraq years ago",
+      "inSample": true
+    },
+    {
+      "claimId": "43c9e07bcf75ef9097bfb519805d97dc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The House should refer Leon Black for criminal contempt",
+      "inSample": true
+    },
+    {
+      "claimId": "b62868f226708f3444b4fd635ebeaa53",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Justice Department officials who direct FBI protest investigations should face personal civil liability",
+      "inSample": true
+    },
+    {
+      "claimId": "3443b40d935f34bb8df25a1bc7d6eccf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should decide which misconduct warrants denaturalization, not Justice Department officials",
+      "inSample": true
+    },
+    {
+      "claimId": "8cbea4ac9df540749f594db74a7e0604",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "State election officials should refuse federal requests to turn over state voter records",
+      "inSample": true
+    },
+    {
+      "claimId": "635fc6505946420eb2274d349724cfe2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Under the One Big Beautiful Bill Act, Medicaid expansion beneficiaries must work or volunteer at least 80 hours per month, attend school part-time, or participate in job training starting in January",
+      "inSample": true
+    },
+    {
+      "claimId": "51bd87c53238478a9c8a644e415228ea",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Under Paramount Skydance's settlement with 12 state attorneys general, at least 20 of its annual theatrical films in the first two years, and 21 in the following three years, must be wide-release movies distributed to at least 2,000 screens",
+      "inSample": true
+    },
+    {
+      "claimId": "42a7d9d3fc5f439b821ae60586525266",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The H-1B visa program displaces American workers and should be curtailed",
+      "inSample": true
+    },
+    {
+      "claimId": "2634199a2ef32b5d9f7afb7252dce343",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Technology executives should not shape U.S. weapons priorities",
+      "inSample": true
+    },
+    {
+      "claimId": "7c012625826a4393ab4579345ef7dc8a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Illegal immigrants who entered as children should be given a path to citizenship",
+      "inSample": true
+    },
+    {
+      "claimId": "f6c102c905ac4410a3da4adbfd5ba639",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should pass the Mom Economy Resolution to support working mothers",
+      "inSample": true
+    },
+    {
+      "claimId": "bf8500df8c504d73b935f3381cbc692a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "On September 21, 2026, a three-judge panel of the 8th U.S. Circuit Court of Appeals ruled that Missouri must use a new Republican-drawn congressional map in the November 2026 election.",
+      "inSample": true
+    },
+    {
+      "claimId": "51586dae0a9347e7b42e2cf2b979b738",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US should temporarily allow tariff-free beef imports",
+      "inSample": true
+    },
+    {
+      "claimId": "efa0f4fe29a7af2d1d045b3034927cdd",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Columbus Day should be replaced by Indigenous Peoples' Day",
+      "inSample": true
+    },
+    {
+      "claimId": "98f5c0a06d283cdf5db2600f0a46b313",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Jurors should be allowed to reject psychiatric expert testimony based on common sense",
+      "inSample": true
+    },
+    {
+      "claimId": "45acad32b6fa43a3b015efb02252d4ac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Germany's CDU should abandon its political firewall against the AfD",
+      "inSample": true
+    },
+    {
+      "claimId": "5a4c7dbcb4231b8263d2a6f6dd6bd07f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should make presidents personally liable for campaign-style advertisements funded with public money",
+      "inSample": true
+    },
+    {
+      "claimId": "cb9ea23dd4d34d1e9eacfb4bf9c4ed1f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should grant the NCAA targeted antitrust protections",
+      "inSample": true
+    },
+    {
+      "claimId": "d4f57b8e297c7e9ae7e0af588eff3891",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Judicial deference to the commander in chief should not permit the dismissal of experienced transgender service members without evidence that they impair military readiness",
+      "inSample": true
+    },
+    {
+      "claimId": "3ab891b988318b3068eea2c37278049e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Ads aimed directly at children should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "ba15d6a0ec444d4dbfeb9d50802d5d9a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Official White House social media accounts should only share formal policy communications",
+      "inSample": true
+    },
+    {
+      "claimId": "c07e1b717570e3e4077ee445d073a11c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Supreme Court should leave political advertising rates to the FCC",
+      "inSample": true
+    },
+    {
+      "claimId": "1382b2a479e24ad5b8c8d72080f89b5f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "State election officials should advise voters against using third-party tools like VoteSafe.org",
+      "inSample": true
+    },
+    {
+      "claimId": "3aa59beae5b9419da454ea8554998e02",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The European Union should create an associate-membership status for Canada",
+      "inSample": true
+    },
+    {
+      "claimId": "d604b80298c32ac3cb5ae8f5e6df22ab",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Year-round school should replace the long summer break",
+      "inSample": true
+    },
+    {
+      "claimId": "038cffb04f8957f593ed6834b6a36c4f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Political opinions are opinions, not factual evidence, and therefore should not be censored",
+      "inSample": true
+    },
+    {
+      "claimId": "edaf092f4fcc6a2bc9f5636d9bffb3fb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal regulators should require detailed negotiated-rate disclosures despite hospitals’ administrative costs",
+      "inSample": true
+    },
+    {
+      "claimId": "b2198f8625ec53ddb315bb04ac040447",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The principle of whether a person is legally supposed to be in a country should override economic considerations",
+      "inSample": true
+    },
+    {
+      "claimId": "a47988b7cabd49e6b0d161810ec41908",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Former FBI agent James Davidson, head of the FBI Integrity Project, warned that bestiality is a potential indicator of serious emotional issues and that the candidate pool should be broad enough to maintain the disqualification",
+      "inSample": true
+    },
+    {
+      "claimId": "c3c7ef7f77d943a41750959193ea44b3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should remain in session until it passes a full-year budget",
+      "inSample": true
+    },
+    {
+      "claimId": "f5a474a09c40445081f16c8e2af54489",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should reinstate the enhanced Affordable Care Act premium subsidies",
+      "inSample": true
+    },
+    {
+      "claimId": "18320799ca515f0ea5f88527f39123cf",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "A university is not a political entity and therefore should not take official stances on issues like fascism or communism",
+      "inSample": true
+    },
+    {
+      "claimId": "26344be47a3de45b8072d8738dd0973a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should know how quickly Iran-war munitions are being depleted",
+      "inSample": true
+    },
+    {
+      "claimId": "2772057e8317451a8a8c95637f156946",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Graduates receiving federally funded education from the United States Space Academy should be required to complete a period of military or civilian public service",
+      "inSample": true
+    },
+    {
+      "claimId": "b478a4a257c83c6d33d3ba82c172dda1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should halt offensive operations against Iran until the Pentagon confirms adequate munitions reserves",
+      "inSample": true
+    },
+    {
+      "claimId": "b8bac77c5fd8a6f649f757c48f254014",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Taxpayers should not bear ICE’s unrecoverable losses from detention projects launched without adequate planning",
+      "inSample": true
+    },
+    {
+      "claimId": "116f217a3ce14551a1b94bb85f9b5d12",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The United States should have left air defense systems in the Iraqi Kurdish region",
+      "inSample": true
+    },
+    {
+      "claimId": "9957f9d9236446d789b3d7af2ce30ae4",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The federal government should permanently eliminate highway taxes on red-dyed diesel",
+      "inSample": true
+    },
+    {
+      "claimId": "acb217e2f247cc3736ee4a6a6cb00b51",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "One scanning error should not delay an entire ballot batch",
+      "inSample": true
+    },
+    {
+      "claimId": "5ed6c089f295494aaa792c2be6451662",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should reinstate limits on coordinated spending between political parties and candidates",
+      "inSample": true
+    },
+    {
+      "claimId": "a19e7869bc121ed0d40aa5020bc330c8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "US welfare policy incentivizes having more children and should instead incentivize fewer",
+      "inSample": true
+    },
+    {
+      "claimId": "1cfe37987fb1418d9610467ff1494589",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "An NBC News/Telemundo poll released on October 4, 2026, found Democrats led Republicans by 24 percentage points among Latino voters on which party should control Congress",
+      "inSample": true
+    },
+    {
+      "claimId": "cd152c75b9d9e37912e2dc0a4561341d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "U.S. public schools should teach reading primarily through systematic phonics",
+      "inSample": true
+    },
+    {
+      "claimId": "27d1781aeac249b49a47ec9e992b58cb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "IVF should be covered by health insurance",
+      "inSample": true
+    },
+    {
+      "claimId": "68b7cd9e92cf5e5cb6df65ae34859744",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Advocacy for the Nazi system and its return is an example of political opinion that should be censored on social media platforms",
+      "inSample": true
+    },
+    {
+      "claimId": "04d2a56b86d604d01019f3a25ad46467",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Pastors who cheat on their spouses should never lead a church again",
+      "inSample": true
+    },
+    {
+      "claimId": "7e15ebf5153343db9d2f1068a4f61a51",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Pentagon should exclude service members killed after a declared ceasefire from official war casualty counts",
+      "inSample": true
+    },
+    {
+      "claimId": "0c8ad716bbb74832b276662668b9ffc1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal officials should not choose their own security agents",
+      "inSample": true
+    },
+    {
+      "claimId": "5e083db54253400bae3566989debe118",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The EPA should rescind Biden-era methane regulations on oil and gas producers",
+      "inSample": true
+    },
+    {
+      "claimId": "ee171d5e86f64cc78950b76ad793d5da",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Smithsonian should prioritize celebrating American achievements over highlighting historical injustices",
+      "inSample": true
+    },
+    {
+      "claimId": "7b514577c0d1480692c5a896e3e85489",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Texas school districts must pay $50 per test if they request a STAAR rescore and the student's score does not change, while the rescore is free if the score changes.",
+      "inSample": true
+    },
+    {
+      "claimId": "728d7bc101cd4a76b54cc48c75e965da",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "As part of the October 20, 2026 agreement, Instacart must post PERM job openings on its public career website and accept electronic applications from all candidates.",
+      "inSample": true
+    },
+    {
+      "claimId": "18f471a8bda23102422464bacadd45dc",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Dangerous immigration detainees should be isolated even when confinement conditions are harsh",
+      "inSample": true
+    },
+    {
+      "claimId": "4b325c327b9849ce9f64a8e26cf4823c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The 2nd U.S. Circuit Court of Appeals found that the issues about which evidence should have been admitted at trial weren't a determining factor in upholding the verdict",
+      "inSample": true
+    },
+    {
+      "claimId": "418689113276488fb670c947783add52",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Republicans should prioritize base turnout over appealing to independent voters",
+      "inSample": true
+    },
+    {
+      "claimId": "c81300bf2cffde5d66d5ef94c80e7742",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Immigration detainees should get a lawyer paid by taxpayers",
+      "inSample": true
+    },
+    {
+      "claimId": "04e9b929be44489298379949eec879a9",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "California should allow the distribution of commingled seized cryptocurrency to fraud victims",
+      "inSample": true
+    },
+    {
+      "claimId": "5505067956815d37b601a676c93e56a7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should control Medicaid and CHIP coverage for gender-affirming care",
+      "inSample": true
+    },
+    {
+      "claimId": "611f559415f24c218ae21cec32ca8cb2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal courts should require regulatory agencies to resolve campaign ad complaints before elections",
+      "inSample": true
+    },
+    {
+      "claimId": "63d139f309e44f13b6f7c8b33c830c72",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Department of Justice should rescind its memorandum limiting federal enforcement of Olmstead",
+      "inSample": true
+    },
+    {
+      "claimId": "109cb26a72dd49f5a8e4a93987e25ba1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Dennis Hastert popularized the \"Hastert Rule,\" an informal guideline stating that the speaker should only bring legislation to the House floor if it is supported by a majority of the majority party",
+      "inSample": true
+    },
+    {
+      "claimId": "543e516836c29651be6759e7fe7f3478",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The government should guarantee a job to everyone who wants one",
+      "inSample": true
+    },
+    {
+      "claimId": "6f827a6307b344c48e1c8390930e3de7",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Under the September 21, 2026, resolution over the June 2024 Stanford protest, five Stanford defendants must each complete 100 hours of community service at a nonprofit of their choosing",
+      "inSample": true
+    },
+    {
+      "claimId": "b998cd4f07c54ff5bf1a9a10af70866f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "California should tighten its voter registration and petition laws",
+      "inSample": true
+    },
+    {
+      "claimId": "3f63d5b7d324468e8d111bd8752ca5c8",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should subject independent youth sports organizations to federal safety oversight",
+      "inSample": true
+    },
+    {
+      "claimId": "76cfc4bb4d4f8d7fa7dc2473e828ab3b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Executions should be streamed publicly",
+      "inSample": true
+    },
+    {
+      "claimId": "6aa300ac4f752ea0481fe14893c9065f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress should set Taiwan arms priorities when executive officials cite competing military needs",
+      "inSample": true
+    },
+    {
+      "claimId": "6b366b5017104f4586e7a99d2925507b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Surrogacy should be banned",
+      "inSample": true
+    },
+    {
+      "claimId": "43951c832de34993a6a5700ef86639ac",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Congress and states should amend the Constitution to regulate campaign finance",
+      "inSample": true
+    }
+  ]
+}

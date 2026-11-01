@@ -23,12 +23,13 @@ The project is built for one rule above all: **a wrong label is worse than no la
 6. [Testing and evaluation](#testing-and-evaluation)
 7. [Results so far](#results-so-far)
 8. [Review in Notion](#review-in-notion)
-9. [Publishing to Geo](#publishing-to-geo)
-10. [Setup](#setup)
-11. [Commands](#commands)
-12. [Repository layout](#repository-layout)
-13. [Versions and history](#versions-and-history)
-14. [Open decisions and known limits](#open-decisions-and-known-limits)
+9. [HTTP API](#http-api)
+10. [Publishing to Geo](#publishing-to-geo)
+11. [Setup](#setup)
+12. [Commands](#commands)
+13. [Repository layout](#repository-layout)
+14. [Versions and history](#versions-and-history)
+15. [Open decisions and known limits](#open-decisions-and-known-limits)
 
 ---
 
@@ -375,6 +376,67 @@ Rows are produced with `npx tsx scripts/notion-rows.mts bench|fresh|v3|cards …
 
 ---
 
+## HTTP API
+
+`npm run serve` puts the same agent behind HTTP, so anything that can send a request can get a label.
+Scoring is read-only: the API never writes to Geo.
+
+```sh
+npm run serve                      # http://127.0.0.1:8787
+npm run cli -- serve --port 9000 --host 0.0.0.0 --concurrency 6
+```
+
+| Endpoint | What it does |
+|---|---|
+| `GET /` | Lists the endpoints |
+| `GET /health` | Framework version, model, taxonomy fingerprint; `503` with the reason when the agent cannot start |
+| `GET /taxonomy` | The Political position, Political ideology and Issue position values the agent may use |
+| `GET /score?claimId=<id>` | Score one Geo claim; repeat the parameter for several |
+| `GET /score?text=<sentence>` | Score any sentence |
+| `POST /score` | `{"claimId":"<id>"}`, `{"text":"<sentence>"}`, `{"claims":[…]}` or `{"claimIds":[…]}` |
+
+**Score a Geo claim, or any sentence:**
+
+```sh
+curl -s "http://127.0.0.1:8787/score?text=Congress%20should%20raise%20the%20minimum%20wage."
+curl -s -X POST http://127.0.0.1:8787/score   -H 'content-type: application/json'   -d '{"claimId":"0c1a…"}'
+```
+
+```json
+{
+  "claimId": "0c1a…",
+  "text": "Congress should raise the minimum wage.",
+  "outcome": "leaning",
+  "leaning": "Left",
+  "ideologies": [{ "name": "Social democrat", "kind": "tradition", "issue": null, "tenet": "T1", "evidence": "raise the minimum wage" }],
+  "display": "Left",
+  "explanation": "…how the criteria and publish rules reached it…",
+  "noLabelReason": null,
+  "noPosition": null,
+  "hedged": false,
+  "country": "United States",
+  "framework": "framework-v3.5",
+  "model": "gpt-5.5"
+}
+```
+
+- `outcome` is `leaning`, `no_label` or `no_position`; `leaning` and `ideologies` are only what the publish
+  rules allow, the same values a proposal would carry.
+- The default view leaves out what a model wrote. Add `"detail":"full"` (or `?detail=full`) for the whole
+  result: criteria, rules P1–P6, dropped ideologies, near misses, signals and reviewer notes.
+- **Batches:** a `claims` or `claimIds` list answers `{"count":N,"results":[…]}` in the order asked, up to 25
+  per request, scored 4 at a time (`--concurrency`). One claim that fails returns its own `error` inside the
+  list; the rest still come back.
+- **Repeats are free:** every answer is cached in `data/state.sqlite` by claim, framework version and model.
+  A sentence gets the ID `text-<hash>`, so asking twice costs one scoring run.
+- **Errors:** `400` bad request, `401` missing bearer token, `404` unknown path or claim ID, `413` body over
+  1 MB, `503` the agent cannot start (no OpenAI credits, or Geo and the framework out of sync — `/health`
+  gives the reason).
+- **Auth:** open by default. Set `API_TOKEN` to require `Authorization: Bearer <token>`. CORS is open, so a
+  browser page can call it.
+
+---
+
 ## Publishing to Geo
 
 The agent never writes to Geo by itself. Claim labels go out as proposals to the space:
@@ -405,6 +467,7 @@ npm test
 | `OPENAI_MODEL` | Scorer and verifier model | `gpt-5.5` |
 | `GEO_API_URL` | Geo GraphQL endpoint | `https://api-testnet.geobrowser.io/graphql` |
 | `GEO_PRIVATE_KEY` | Only `submit --yes` | – |
+| `API_TOKEN` | Optional bearer token for the HTTP API | – (open) |
 
 - **Geo:** reading from Geo needs no key.
 - **OpenAI:** the account behind the key needs credits; without them every call fails with `429 You have no credits remaining`.
@@ -428,6 +491,7 @@ All commands run as `npm run cli -- <command>`.
 | `challenge [--file evals/challenge-set-v1.json]` | Score the challenge set and count wrong and missed labels against its expected answers |
 | `fresh-rescore [--dir fresh-seed3]` | Score an existing fresh set again with the current framework |
 | `bench [--file …]` | Run a test set (test set v1 uses the old level convention) |
+| `serve [--port 8787] [--host 127.0.0.1]` | Expose the agent over HTTP (see [HTTP API](#http-api)) |
 | `dry-run`, `submit`, `check-proposal` | Proposals (see [Publishing](#publishing-to-geo)) |
 
 To re-import Armando's doc after he changes it, export it again and run `npx tsx scripts/import-leanings.mts docs/armando/<folder>`.
@@ -453,6 +517,7 @@ src/
     ideologies.ts        Ideological leaning cards: issue leanings and traditions
     render.ts            Framework → Markdown
   agent/v3/              Scoring agent: agent, prompt, decisions, verify, score
+  api/server.ts          HTTP API: POST /score, GET /score, /health, /taxonomy
   agent/*.ts             v1/v2 classifier (history)
   geo/                   Read-only Geo client, claims, taxonomy, schema
   pipeline/              SQLite cache, fresh sets, sampling

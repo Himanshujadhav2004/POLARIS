@@ -17,6 +17,9 @@ export const OPENAI_REASONING_EFFORT = process.env.OPENAI_REASONING_EFFORT || un
  */
 export const SUBMISSIONS_PAUSED = false;
 
+/** When set, the HTTP API (`serve`) requires `Authorization: Bearer <token>` on every request. */
+export const API_TOKEN = process.env.API_TOKEN?.trim() || undefined;
+
 export function requireEnv(name: string): string {
   const value = process.env[name]?.trim();
   if (!value) throw new Error(`${name} is not set. Add it to .env (see .env.example).`);

@@ -1,0 +1,973 @@
+{
+  "name": "opinion-seed13",
+  "seed": 13,
+  "framework": "framework-v3.4.1",
+  "generatedAt": "2026-10-26T13:34:38.068Z",
+  "stats": [
+    {
+      "space": "US Politics",
+      "scored": 24,
+      "published": 14,
+      "errors": 0,
+      "sample": 10
+    }
+  ],
+  "rows": [
+    {
+      "claimId": "dce5ba92d8d8bc4506a37099b0fd5fc1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Land value should be taxed more heavily than buildings and improvements",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1ca6e82e7b7ebf15613189806a630c3e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Tips should be taxed like any other income",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1d4264e853ecc24552667a0c0867759b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Large inheritances should be taxed more heavily than earned income",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Tax fairness"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.98",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (direct): “Large inheritances should be taxed more heavily than earned income”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “Large inheritances should be taxed more heavily than earned income”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 0.98; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Tax fairness (belief T1: “Large inheritances should be taxed more heavily than earned income”, independent probability 0.97).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Tax fairness"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "d89c30fee1eaff3c5cc2acb0de92ee4b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Stand-your-ground laws should be repealed",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "LAW-2L (close): “Stand-your-ground laws should be repealed”"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “Stand-your-ground laws should be repealed”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left.",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Second look at Pro-gun control: The claim opposes stand-your-ground self-defense laws, but it does not support a law restricting or regulating access to firearms.",
+        "Second look at Pro-criminal justice reform: The claim advocates repealing stand-your-ground laws, but it does not itself support changes to policing, courts, sentencing, incarceration, or police accountability/fairness as described for Pro-criminal justice reform."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "b2d43328d77d4f72a9e332a134b36bc1",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The US voting age should be lowered to 16",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-voting rights"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.90",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "LAW-2L (close): “The US voting age should be lowered to 16”"
+      ],
+      "explanation": "Published: Left. LAW-2L matched (close): “The US voting age should be lowered to 16”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 0.90; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-voting rights (belief T1: “voting age should be lowered to 16”, independent probability 0.99).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-voting rights"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-voting rights"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c1abb195a84a46529b05cb6663895ca2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Sanctuary city policies undermine public safety and should be eliminated",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "NAT-2R (direct): “Sanctuary city policies undermine public safety and should be eliminated”"
+      ],
+      "explanation": "Published: Right. NAT-2R matched (direct): “Sanctuary city policies undermine public safety and should be eliminated”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Right 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Not published: Pro-border security (the verifier disagreed). Not published: Pro-law enforcement (independent probability 0.82 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-border security: the verifier disagreed",
+        "Pro-law enforcement: independent probability 0.82 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security",
+            "Pro-law enforcement"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security",
+            "Pro-law enforcement"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-border security: The claim supports eliminating sanctuary city policies, but it does not itself support stronger enforcement or security measures at national borders. The immigration-enforcement connection is related, but the quoted words do not meet this card's description as stated. / The claim supports eliminating sanctuary city policies, but the quoted words do not specifically support stronger enforcement or security measures at national borders. The immigration-enforcement implication is plausible, but the evidence is broader/interior enforcement rather than the card’s stated description.",
+        "Verifier on Pro-law enforcement: The claim says sanctuary city policies undermine public safety, but it does not directly support police or law-enforcement agencies, their capacity, or their role. The position is specifically about immigration/sanctuary policy, not a policing or law-enforcement-side claim."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "2f57fa8d5fa053f1b923449baa7408ce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Disinformation and false online news that could harm users should be restricted",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-online safety"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-TECH, X-SPEECH). Ideology: Pro-online safety (belief T1: “Disinformation and false online news that could harm users should be restricted”, independent probability 0.99). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": true,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-regulation"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": true,
+          "country": "United States",
+          "ideologies": [
+            "Pro-online safety",
+            "Pro-regulation"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is about restricting online disinformation/content, which is covered by the more specific Speech online issue side. It also does not clearly call for government rules on businesses or markets, so the general Regulation leaning should not be added. / The claim is specifically about online speech/content moderation, so the more specific Speech online issue applies rather than the general Regulation side. It also does not explicitly call for government rules or oversight of businesses and markets."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "80644fb83dd94389bee22dc9958577aa",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Corporate executives with major federal contracts should be restricted from making political donations",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P2 Full match, P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.56); Center left gets 0.44",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "LAW-1L (partial): “Corporate executives with major federal contracts should be restricted from making political donations”"
+      ],
+      "explanation": "No label. LAW-1L matched (partial): “Corporate executives with major federal contracts should be restricted from making political donations”. That points to Center left, but rule P2 (Full match) failed: a criterion matches only in part; rule P4 (Same level) failed: the independent check prefers Left (0.56); Center left gets 0.44. Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on Pro-regulation: The claim is about restricting political donations in elections by certain individuals, not government rules on businesses or markets. Under the framework, Regulation covers businesses and markets, not individuals, candidates, or officials. / The claim is about restricting political donations by corporate executives, which is a campaign-finance/elections rule, not a rule on businesses and markets. Under I6, the general Regulation issue leaning does not cover rules on individuals, candidates or officials."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e3d13b9af3264ea480f3c5ea45adc504",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public-sector employees should be prohibited from wearing visible religious symbols at work",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level, P5 Verifier agrees)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (0.93); Left gets 0.02",
+        "P5 FAIL: the verifier disagreed",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "SOC-2L (close): “Public-sector employees should be prohibited from wearing visible religious symbols at work”"
+      ],
+      "explanation": "No label. SOC-2L matched (close): “Public-sector employees should be prohibited from wearing visible religious symbols at work”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Right (0.93); Left gets 0.02; rule P5 (Verifier agrees) failed: the verifier disagreed. Not published: Church-state separationist (independent probability 0.75 is below 0.9; the verifier disagreed). Not published: Secularist (independent probability 0.32 is below 0.9 (no issue leaning or political leaning is published with it); the issue side it rests on is in doubt: Church-state separationist (the verifier rejected it); the verifier disagreed).",
+      "droppedIdeologies": [
+        "Church-state separationist: independent probability 0.75 is below 0.9; the verifier disagreed",
+        "Secularist: independent probability 0.32 is below 0.9 (no issue leaning or political leaning is published with it); the issue side it rests on is in doubt: Church-state separationist (the verifier rejected it); the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Verifier on the leaning: SOC-2L's \"secular public institutions\" does not closely cover banning public employees from wearing personal religious symbols. In U.S. politics that is not a clear mainstream Left position and is at least doubtful under the exact level required. / The claim supports a blanket ban on public employees wearing visible religious symbols, but that is not clearly the U.S. mainstream liberal/progressive position described by SOC-2L. The evidence is about restricting individual religious expression at work, not merely maintaining secular public institutions.",
+        "Verifier on Church-state separationist: The claim targets employees' visible religious symbols, not legal separation between government institutions and religious institutions. That goes beyond the Church-state separationist issue description. / The claim concerns individual public-sector employees' visible religious symbols, not legal separation between government institutions and religious institutions. It therefore does not clearly meet the side's description.",
+        "Verifier on Secularist: Although the claim is secularizing, the Secularist card is about separating religious institutions from state authority while protecting freedom of belief. A ban on public employees' personal religious symbols is not clearly the whole secularist tradition and is doubtful. / The claim supports a secularizing restriction, but the Secularist card also centers separation of religious institutions from state authority while protecting freedom of belief. A ban on employees' visible religious symbols does not clearly show that whole tradition and may conflict with religious exercise."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f5d4f36c8bba490292806fbfa0314a5d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Taxpayer-funded public service announcements should be prohibited from featuring the sitting president",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "50224d8a004143bf92d7fb2fef5e72b3",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal immigration agents should be prohibited from firing at moving vehicles",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Center left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Left (0.76); Center left gets 0.24",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "LAW-1L (close): “Federal immigration agents should be prohibited from firing at moving vehicles”"
+      ],
+      "explanation": "No label. LAW-1L matched (close): “Federal immigration agents should be prohibited from firing at moving vehicles”. That points to Center left, but rule P4 (Same level) failed: the independent check prefers Left (0.76); Center left gets 0.24. Not published: Pro-criminal justice reform (the other side of Policing also scores: Pro-law enforcement 0.17). Not published: Pro-regulation (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-criminal justice reform: the other side of Policing also scores: Pro-law enforcement 0.17",
+        "Pro-regulation: the verifier disagreed"
+      ],
+      "repeats": null,
+      "reviewerNotes": [
+        "Second look at Dove: The claim advocates restricting federal immigration agents from firing at moving vehicles, which concerns domestic law-enforcement use of force rather than military force, diplomacy, or military commitments under the Dove side of the Use of force issue.",
+        "Verifier on Pro-regulation: This is a rule limiting law-enforcement use of force, not government regulation of businesses or markets. The more specific policing/criminal-justice issue covers the claim, so the general Regulation side should not be assigned. / The Regulation issue leaning covers government rules on businesses and markets, not rules governing federal law-enforcement officers. This claim is about limiting immigration agents' use of force, so it fits criminal-justice/policing reform rather than economic regulation."
+      ],
+      "nearMisses": [
+        "Pro-criminal justice reform: other side Pro-law enforcement 0.17 (limit 0.1) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "1503c85ab14e48c1bdb9db806e53b1eb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "ICE should be prohibited from arresting asylum seekers at immigration courthouses",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P5 Verifier agrees, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-immigration"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.86",
+        "P5 FAIL: the verifier disagreed",
+        "P6 FAIL: 1 of 3 runs gave Left; the others gave Center left, Center left"
+      ],
+      "criteria": [
+        "NAT-2L (direct): “ICE should be prohibited from arresting asylum seekers at immigration courthouses”"
+      ],
+      "explanation": "No label. NAT-2L matched (direct): “ICE should be prohibited from arresting asylum seekers at immigration courthouses”. That points to Left, but rule P5 (Verifier agrees) failed: the verifier disagreed; rule P6 (Stable) failed: 1 of 3 runs gave Left; the others gave Center left, Center left. Ideology: Pro-immigration (belief T1: “ICE should be prohibited from arresting asylum seekers at immigration courthouses”, independent probability 0.97). Not published: Pro-criminal justice reform (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-criminal justice reform: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Center left",
+          "weakestStrength": "direct",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-immigration",
+            "Pro-criminal justice reform"
+          ]
+        },
+        {
+          "leaning": "Center left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-immigration",
+            "Pro-criminal justice reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on the leaning: The evidence does support a left-leaning immigration-enforcement limit, but the claim is narrowly targeted to ICE arrests of asylum seekers at immigration courthouses. That sits more clearly as a limited/targeted lean-left step than the broader NAT-2L Left level.",
+        "Verifier on Pro-criminal justice reform: The claim is about civil immigration enforcement and asylum seekers in immigration courthouses, not criminal policing, sentencing, incarceration, or criminal-justice reform as such. / The claim is about immigration enforcement by ICE against asylum seekers, so the specific Immigration issue covers it. It does not itself advocate changes to criminal policing, courts, sentencing, or incarceration as criminal justice reform."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "1ec17e9c5e18447ba86d9a424c72361b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Law enforcement officers should be prohibited from wearing masks while on duty",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-criminal justice reform"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 0.92",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 2 of 3 runs gave Left; the others gave Left, but only a partial match"
+      ],
+      "criteria": [
+        "LAW-2L (close): “Law enforcement officers should be prohibited from wearing masks while on duty”"
+      ],
+      "explanation": "No label. LAW-2L matched (close): “Law enforcement officers should be prohibited from wearing masks while on duty”. That points to Left, but rule P6 (Stable) failed: 2 of 3 runs gave Left; the others gave Left, but only a partial match. Ideology: Pro-criminal justice reform (belief T1: “Law enforcement officers should be prohibited from wearing masks while on duty”, independent probability 0.96).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "f8913ca2a06d4ef190332f22d9709f0d",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Trump opined that it should be mandatory that all Middle Eastern countries he discussed, at a minimum, sign the Abraham Accords simultaneously",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed rather than stated in the claim's own voice: the claim says \"Trump opined that\" it should be mandatory."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "10bfc211a3e14de6b48a97a6f30a8762",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Participating in elections should be mandatory",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-voting rights"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-voting rights (belief T1: “Participating in elections should be mandatory”, independent probability 0.96).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-voting rights"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-voting rights"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "93cbf9dd4c736fea9a8017cc9d2d4b87",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "School meals should be free for all children",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-welfare expansion"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match directly",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (direct): “School meals should be free for all children”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (direct): “School meals should be free for all children”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match directly; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-welfare expansion (belief T1: “School meals should be free for all children”, independent probability 0.93). Not published: Pro-public spending (the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-public spending: the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-welfare expansion",
+            "Pro-public spending"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-welfare expansion",
+            "Pro-public spending"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-public spending: The claim is specifically about expanding a public benefit/social program through free school meals, so the more specific Pro-welfare expansion label covers it. Under I6, the broader Spending & deficit side should not also be assigned when a more specific issue label covers the position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9a9b21fde05f4ef6944b339182969029",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Business owners should be free to decline to serve same-sex weddings",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Right",
+      "leaning": "Right",
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Social conservative"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.99",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Right"
+      ],
+      "criteria": [
+        "SOC-2R (close): “Business owners should be free to decline to serve same-sex weddings”"
+      ],
+      "explanation": "Published: Right. SOC-2R matched (close): “Business owners should be free to decline to serve same-sex weddings”. Every publish rule passed: P1, independent probability that the claim takes a position: 1.00; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Right 0.99; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Right. Ideology: Social conservative (belief T1: “decline to serve same-sex weddings”, independent probability 0.96).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Social conservative",
+            "Pro-religious freedom"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Second look at Pro-religious freedom: The claim supports business owners being allowed to refuse service for same-sex weddings, but it does not itself mention religion, religious belief, free exercise, or religious exemptions. Context cannot supply the religious-freedom side."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "4e7263d83e0dcc22f18d4ee48134c74c",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "FBI directors should be free to remove agents they believe helped politicize the bureau",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST).",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "5551dc4b6b2c54faa0f27d3101530721",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Public transport should be free",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "Left",
+      "leaning": "Left",
+      "candidateLeaning": "Left",
+      "ideologies": [
+        "Pro-public spending"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 0.99",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Left 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 pass: all 3 runs gave Left"
+      ],
+      "criteria": [
+        "ECO-2L (close): “Public transport should be free”"
+      ],
+      "explanation": "Published: Left. ECO-2L matched (close): “Public transport should be free”. Every publish rule passed: P1, independent probability that the claim takes a position: 0.99; P2, the criteria match closely; P3, country: United States; P4, the independent check gives Left 1.00; P5, the verifier agreed in all 2 checks; P6, all 3 runs gave Left. Ideology: Pro-public spending (belief T1: “Public transport should be free”, independent probability 0.93).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-public spending"
+          ]
+        },
+        {
+          "leaning": "Left",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-public spending"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "a2e089470a45e640416ee5ba39c14311",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Artists should be free to use other cultures’ sacred symbols",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G4, Contested, failed), but the independent probability that the claim takes one is 0.76, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim takes its own normative position on artists' freedom, but it states a broad free-expression/cultural norm rather than a clearly contested partisan U.S. public-policy position under the framework."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c08a629149f94e6d2bbf1ce616b757ce",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "States should be free to run immigration detention their own way",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (cross-cutting)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-states' rights"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The claim's position is on a topic that does not line up with left and right (rule A3: X-INST). Ideology: Pro-states' rights (belief T1: “States should be free to run immigration detention their own way”, independent probability 0.95).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-states' rights"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-states' rights"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "db2934a109af3aeeb904e77275a9b5d2",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Counties should be free to ban rifles their state allows",
+      "inSample": false,
+      "error": null,
+      "published": false,
+      "display": "No label (P4 Same level)",
+      "leaning": null,
+      "candidateLeaning": "Left",
+      "ideologies": [],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 FAIL: the independent check prefers Right (0.75); Left gets 0.20",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 skipped: extra runs not made, because an earlier rule failed"
+      ],
+      "criteria": [
+        "LAW-2L (close): “Counties should be free to ban rifles their state allows”"
+      ],
+      "explanation": "No label. LAW-2L matched (close): “Counties should be free to ban rifles their state allows”. That points to Left, but rule P4 (Same level) failed: the independent check prefers Right (0.75); Left gets 0.20. Not published: Pro-gun control (independent probability 0.83 is below 0.9).",
+      "droppedIdeologies": [
+        "Pro-gun control: independent probability 0.83 is below 0.9"
+      ],
+      "repeats": null,
+      "reviewerNotes": [],
+      "nearMisses": [
+        "Pro-gun control: independent probability 0.83 (needs 0.9) (extra runs not made)"
+      ]
+    },
+    {
+      "claimId": "33a13c92ece24c9b99bf359a4a757444",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Planned Parenthood should be defunded",
+      "inSample": false,
+      "error": null,
+      "published": true,
+      "display": "No label (P2 Full match, P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-life"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 FAIL: a criterion matches only in part",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 1.00",
+        "P5 pass: the verifier agreed in all 2 checks",
+        "P6 FAIL: 2 of 3 runs gave Right; the others gave Right, but only a partial match"
+      ],
+      "criteria": [
+        "SOC-2R (partial): “Planned Parenthood should be defunded”"
+      ],
+      "explanation": "No label. SOC-2R matched (partial): “Planned Parenthood should be defunded”. That points to Right, but rule P2 (Full match) failed: a criterion matches only in part; rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave Right, but only a partial match. Ideology: Pro-life (belief T1: “Planned Parenthood should be defunded”, independent probability 0.90).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": "Right",
+          "weakestStrength": "partial",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-life"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    },
+    {
+      "claimId": "6a6ae4451ac940cdac2864fd25bbe861",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The police should be defunded",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (no criterion matched)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [
+        "Pro-criminal justice reform"
+      ],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. No criterion matches the claim's position. Ideology: Pro-criminal justice reform (belief T1: “The police should be defunded”, independent probability 0.97).",
+      "droppedIdeologies": [],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        },
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-criminal justice reform"
+          ]
+        }
+      ],
+      "reviewerNotes": [],
+      "nearMisses": []
+    }
+  ]
+}
