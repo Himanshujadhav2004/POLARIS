@@ -1,0 +1,271 @@
+{
+  "name": "fresh-seed77",
+  "seed": 77,
+  "framework": "framework-v3.7",
+  "generatedAt": "2026-11-02T18:18:35.351Z",
+  "stats": [
+    {
+      "space": "US Politics",
+      "scored": 10,
+      "published": 1,
+      "errors": 0,
+      "sample": 10
+    }
+  ],
+  "rows": [
+    {
+      "claimId": "e552353b44554e7196653fed3326816e",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Federal Election Commission officials and experts confirmed the agency does not administer elections or voting equipment, so the outage does not impact ballot casting.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.09.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a descriptive, attributed factual statement: it says officials and experts \"confirmed\" facts about what the FEC does and the outage's effects, not what policy should be. The administrative fact that the FEC \"does not administer elections or voting equipment\" is not a contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "e552fd0acede44099f70bfeda0e1f231",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. Department of Justice filed an unsigned and unsworn superseding criminal complaint, seeking to add felony obstruction charges against two former FBI officials",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a factual description of a Justice Department filing, not an argument or judgment about what should happen."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "39f28454e8d84858a5c953474c56e260",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Jay Clayton is the current U.S. Attorney for the Southern District of New York, a position described as one of the most powerful for prosecutors",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.03.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral description of Jay Clayton's office and how the position is described; it does not argue for or against a policy or contested political position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "39f2dcb091ce4825a83926d25b23315f",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Vances accompanied Erika Kirk on Air Force Two in September 2025 to escort Charlie Kirk's body to Arizona for burial",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.00.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of travel and burial arrangements, not an argument or judgment about public policy or a contested political issue."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9f630207571240c894d1522c56231122",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "TikTok's new age-moderation systems sufficiently protect children's privacy",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.04.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim evaluates what TikTok's age-moderation systems do, but it does not state what government, law, or public policy should do. Under E2, effects or adequacy claims about a technology/product do not count unless tied to government action, so it is not a political-policy position and no contested policy side is taken."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "9f64566f6f36423d8511535fef11cd8a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "In the 2024 election, Republican incumbent Scott Perry defeated Democratic challenger Janelle Stelson in Pennsylvania's 10th Congressional District by slightly more than 1 percentage point, or roughly 5,000 votes.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of an election result, not an argument or judgment about what should happen; it says Scott Perry “defeated” Janelle Stelson by a stated margin."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c4c8c777418345d0bc3b62c06fb75a82",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The U.S. military redeployed Terminal High-Altitude Area Defense (THAAD) missiles from South Korea to the Middle East and repositioned the aircraft carrier USS George Washington from Japan to the Persian Gulf",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.02.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of U.S. military movements, not an argument or judgment about what should happen; it also does not take a contested political side."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "c4c921139e2844099615f0ac08555cbb",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Deporting suspected gang members without public evidence is justified",
+      "inSample": true,
+      "error": null,
+      "published": true,
+      "display": "No label (P6 Stable)",
+      "leaning": null,
+      "candidateLeaning": "Right",
+      "ideologies": [
+        "Pro-border security"
+      ],
+      "checks": [
+        "P1 pass: independent probability that the claim takes a position: 1.00",
+        "P2 pass: the criteria match closely",
+        "P3 pass: country: United States",
+        "P4 pass: the independent check gives Right 0.98",
+        "P5 pass: the verifier agreed",
+        "P6 FAIL: 2 of 3 runs gave Right; the others gave no leaning"
+      ],
+      "criteria": [
+        "NAT-2R (close): “Deporting suspected gang members without public evidence is justified”"
+      ],
+      "explanation": "No label. NAT-2R matched (close): “Deporting suspected gang members without public evidence is justified”. That points to Right, but rule P6 (Stable) failed: 2 of 3 runs gave Right; the others gave no leaning. Issue position: Pro-border security (belief T1: “Deporting suspected gang members without public evidence is justified”, independent probability 0.99). Not published: Pro-law enforcement (independent probability 0.80 is below 0.9; the verifier disagreed).",
+      "droppedIdeologies": [
+        "Pro-law enforcement: independent probability 0.80 is below 0.9; the verifier disagreed"
+      ],
+      "repeats": [
+        {
+          "leaning": null,
+          "weakestStrength": null,
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security",
+            "Pro-law enforcement"
+          ]
+        },
+        {
+          "leaning": "Right",
+          "weakestStrength": "close",
+          "hedged": false,
+          "country": "United States",
+          "ideologies": [
+            "Pro-border security",
+            "Pro-law enforcement"
+          ]
+        }
+      ],
+      "reviewerNotes": [
+        "Verifier on Pro-law enforcement: The claim is specifically about deportation/immigration enforcement, which is covered by the Immigration issue side. It does not separately support police or other law-enforcement agencies’ capacity or role beyond the deportation position."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7dbcc09f6c7d46d99682540e1b54bc7b",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The Immigration and Customs Enforcement officers involved in the shooting of Lorenzo Salgado Araujo were not wearing body cameras",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No label (signals disagree)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No label. The scorer found no political position (check G1, Takes a position, failed), but the independent probability that the claim takes one is 0.50, so the two disagree.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: G1 failed because the claim is a neutral factual description that ICE officers “were not wearing body cameras,” not an argument that anything should happen or a judgment about a policy."
+      ],
+      "nearMisses": []
+    },
+    {
+      "claimId": "7dc08b3366574f84b93426c1b9d5ad58",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "The bill passed with a 52-47 vote, with no Democratic support",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (descriptive)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G1 (Takes a position) failed. The independent probability that the claim takes a position is 0.01.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The claim is a neutral factual description of a bill's vote total and party support, not an argument for or against a policy. It says \"The bill passed with a 52-47 vote, with no Democratic support\" but does not itself take a contested position."
+      ],
+      "nearMisses": []
+    }
+  ]
+}
