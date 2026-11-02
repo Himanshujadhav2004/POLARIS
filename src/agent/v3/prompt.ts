@@ -67,7 +67,9 @@ For each topic area the claim itself takes a position on, give the single criter
 - strength "direct": the claim states the criterion's position in so many words.
 - strength "close": the claim clearly commits to the position without naming it.
 - strength "partial": the claim fits only part of the criterion.
-- evidence: the claim's exact words that carry the position.
+- evidence: the claim's exact words that carry the position. Quote the whole operative clause, including any words that limit it ("to fund…", "late-term", "targeted", "with exceptions", "only…"). Never quote a fragment that drops such a limit (rule E1).
+
+A claim that limits its own position is usually a moderate (±1) position, not a mainstream (±2) one: read the limit as part of the position and pick the criterion that fits the whole clause (rule A6). "Taxes on high earners should rise" is the mainstream left position, but "taxes on high earners should rise to fund middle-class tax cuts" is a targeted swap, and "late-term abortion should be illegal" is a narrowed restriction, not a general ban.
 
 ${criteria}
 

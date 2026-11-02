@@ -128,6 +128,43 @@ describe("decideLeaning", () => {
     expect(two.decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
   });
 
+  it("gives no leaning when the average falls on a level no criterion carries (A2)", () => {
+    const text = "Financial rules should be balanced rather than scrapped, and abortion access should be protected";
+    const { decision, flags } = decideLeaning(
+      out({
+        matches: [
+          { criterion: "ECO-0", strength: "direct", evidence: "Financial rules should be balanced rather than scrapped" },
+          { criterion: "SOC-2L", strength: "direct", evidence: "abortion access should be protected" },
+        ],
+      }),
+      text,
+    );
+    // 0 and -2 average to -1, which neither criterion carries. Before v3.7 this published Center left.
+    expect(decision).toEqual({ kind: "uncertain", reason: "between the matched levels" });
+    expect(flags.join()).toMatch(/none of them carries \(A2\)/);
+  });
+
+  it("gives no leaning when a mainstream criterion quotes around the claim's own limit (A6)", () => {
+    // The default claim limits itself with "to fund public healthcare"; ECO-2L quotes only the first half.
+    const { decision, flags } = decideLeaning(
+      out({ matches: [{ criterion: "ECO-2L", strength: "direct", evidence: "increase taxes on the wealthiest citizens" }] }),
+      claim,
+    );
+    expect(decision).toEqual({ kind: "uncertain", reason: "narrowing qualifier not weighed" });
+    expect(flags.join()).toMatch(/to fund/);
+
+    // Quoting the whole operative clause, limit included, establishes the level.
+    const whole = decideLeaning(
+      out({ matches: [{ criterion: "ECO-2L", strength: "direct", evidence: claim }] }),
+      claim,
+    );
+    expect(whole.decision).toEqual({ kind: "leaning", score: -2, leaning: "Left" });
+
+    // A6 only guards the mainstream levels: a ±1 criterion already describes a limited position.
+    const moderate = decideLeaning(out(), claim);
+    expect(moderate.decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
+  });
+
   it("keeps the strongest of two matches at the same level of one topic area", () => {
     const text = "Raise the minimum wage and tax the wealthiest more";
     const { decision, applied } = decideLeaning(
@@ -296,11 +333,14 @@ describe("checkIdeology (I3)", () => {
     hedged: false,
     anchored: true,
     sideInDoubt: null,
+    claimText: "Abortion is murder",
   };
   const tradition: IdeologyGateInput = {
     ...issue,
     candidate: { name: "Christian conservative", kind: "tradition", issue: null, tenet: "T2", tenetText: "", evidence: "Marriage is the best foundation", probability: 0.84 },
     otherSides: {},
+    // I9: a religious tradition needs its religion in the claim's own words.
+    claimText: "Christian marriage is the best foundation for society",
   };
   const fails = (base: IdeologyGateInput, over: Partial<IdeologyGateInput>, candidate: Partial<IdeologyGateInput["candidate"]> = {}) =>
     checkIdeology({ ...base, ...over, candidate: { ...base.candidate, ...candidate } });
@@ -309,6 +349,14 @@ describe("checkIdeology (I3)", () => {
     expect(fails(issue, {})).toEqual([]);
     expect(fails(issue, {}, { probability: 0.85 })).toEqual([expect.stringMatching(/below 0.9/)]);
     expect(fails(issue, { otherSides: { "Pro-choice": 0.3 } })).toEqual(["the other side of Abortion also scores: Pro-choice 0.30"]);
+  });
+
+  it("never publishes an Issue position taken at the other end of the scale (I8)", () => {
+    // Pro-life is recorded as a side of the centre-right and right; a Left claim cannot carry it.
+    expect(fails(issue, { leaning: "Left" })).toEqual(["Pro-life is not a side taken at Left, where this claim sits (I8)"]);
+    expect(fails(issue, { leaning: "Center right" })).toEqual([]);
+    // A side whose place on the scale is not recorded keeps every leaning, so I8 never fires for it.
+    expect(fails(issue, { leaning: "Left" }, { name: "Pro-regulation", issue: "Regulation" })).toEqual([]);
   });
 
   it("never treats an other side the independent check refused to score as ruled out", () => {

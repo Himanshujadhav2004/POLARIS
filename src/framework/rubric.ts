@@ -3,7 +3,7 @@
  * The prompt and docs/FRAMEWORK.md are generated from this file, so a rule change here
  * changes the agent. Bump FRAMEWORK_VERSION with every change.
  */
-export const FRAMEWORK_VERSION = "framework-v3.6.1";
+export const FRAMEWORK_VERSION = "framework-v3.7";
 
 /** Geo's Political leaning values by score, left to right. */
 export const LEANING_BY_SCORE = {
@@ -96,6 +96,44 @@ export const EFFECT_RULE =
  */
 export const ALIAS_RULE =
   "Alternative names are names people use for a side. They never widen its description: a claim belongs to a side only if it meets the description itself, and sharing words with a name is not enough.";
+
+/**
+ * Rule A6. Words with which a claim limits its own position. When one is present, a mainstream (±2)
+ * criterion must quote it, or the topic area is not scored: "raise taxes on high earners" is ECO-2L,
+ * but "raise taxes on high earners to fund middle-class tax cuts" is a targeted swap (ECO-1L or ECO-0).
+ * Matched on word boundaries over the lowercased claim, so "only" does not fire inside "commonly".
+ */
+export const NARROWING_QUALIFIERS: readonly string[] = [
+  "late-term",
+  "late term",
+  "targeted",
+  "means-tested",
+  "means tested",
+  "to fund",
+  "with exceptions",
+  "only",
+  "up to",
+  "narrowly",
+  "partially",
+  "rather than",
+  "instead of",
+  "while keeping",
+];
+
+/**
+ * Rule I9. Traditions named after a religion assert a denomination, so the claim must say so itself.
+ * A claim about "religious liberty" in general is not Christian: the reviewer blocked exactly that by
+ * hand (evals/publish/us-politics/exclude.txt, "Christian conservative with no Christian or religious
+ * element in the claim"), and this makes it a rule instead.
+ *
+ * These are word *stems*, matched against the start of each word in the claim, so "christ" covers
+ * "Christian", "Christians" and "Christianity". Whole-word matching would reject "Christians should
+ * oppose abortion", which carries the tradition correctly and matches Armando's own label.
+ */
+export const RELIGIOUS_REQUIREMENTS: Readonly<Record<string, readonly string[]>> = {
+  "Christian conservative": ["christ", "church", "bibl", "gospel", "jesus", "evangelic", "catholic", "protestant"],
+  Islamist: ["islam", "muslim", "sharia", "quran", "koran"],
+};
 
 export const STANCE_GATE: GateCheck[] = [
   {
@@ -243,13 +281,30 @@ export const ALL_CRITERIA: Criterion[] = DIMENSIONS.flatMap((d) => d.criteria);
 
 export const RULES = [
   { id: "C1", name: "Country context", text: "The criteria list positions in United States politics, so a political leaning is given only for claims about the United States (rule P3). A claim about another country, a region or the whole world gets no political leaning, though its ideological leanings are still checked. If the claim does not make its country clear, no leaning is given." },
-  { id: "E1", name: "Evidence", text: "Every criterion and ideology must quote the exact words from the claim that match it. Context (topics, tags, sources, related claims) can help read the claim but is never evidence." },
+  {
+    id: "E1",
+    name: "Evidence",
+    text: "Every criterion and ideology must quote the exact words from the claim that match it. The quote must span the claim's whole operative clause — what it says should happen, together with any words that limit it (\"to fund…\", \"late-term\", \"targeted\", \"with exceptions\", \"only…\") — and never a fragment that drops such a limit, because the limit is what separates a mainstream position (±2) from a moderate one (±1). Context (topics, tags, sources, related claims) can help read the claim but is never evidence.",
+  },
   { id: "E2", name: "Arguing through effects", text: EFFECT_RULE },
   { id: "H1", name: "Hedged wording", text: 'If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).' },
   { id: "A1", name: "Mixed signals", text: "If one topic area scores left (−1 or lower) and another scores right (+1 or higher), no leaning is given (mixed signals), never Center." },
-  { id: "A2", name: "Combining topic areas", text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center." },
+  {
+    id: "A2",
+    name: "Combining topic areas",
+    text: "When all scored topic areas point the same way, the leaning is their average, rounded toward the center. The average must land on a level that one of the matched criteria actually carries: if it falls between the matched levels (a Center criterion averaged with a mainstream one, for example), no leaning is given. A level no criterion matched is never published.",
+  },
   { id: "A3", name: "Center", text: "Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area gets no leaning (cross-cutting)." },
-  { id: "A4", name: "Far left and far right", text: "Far left or Far right is given only when a −3 or +3 criterion matches." },
+  {
+    id: "A4",
+    name: "Far left and far right",
+    text: "Far left or Far right is given only when a −3 or +3 criterion matches. Note the scale is deliberately asymmetric: Far right is defined by hostility to rights and pluralist institutions, not by economic policy, so the Economy and Environment topic areas have no +3 criterion and cannot by themselves reach Far right. No amount of free-market or anti-climate policy is Far right under this definition.",
+  },
+  {
+    id: "A6",
+    name: "Narrowing qualifiers",
+    text: "When the claim limits its own position — \"late-term\", \"targeted\", \"means-tested\", \"to fund…\", \"with exceptions\", \"only…\", \"up to…\", a single state — the limit must be weighed, not dropped. A claim that narrows itself normally matches a ±1 criterion rather than a ±2 one. A mainstream (±2) criterion whose quoted evidence leaves the limit out does not establish the level, and no leaning is given for that topic area.",
+  },
   { id: "A5", name: "Between two levels", text: "If the claim's position sits between two levels, match no criterion for that topic area; matching one topic area at two levels gives no leaning. These positions sit on a boundary and match no criterion: reversing same-sex marriage, ending birthright citizenship, ending all deportations, defunding the police, using the military for domestic policing, and the sentence of one named person or case. A missing label is always acceptable; a wrong one is not." },
 ] as const;
 
@@ -334,7 +389,7 @@ export const IDEOLOGY_RULES = [
   },
   {
     id: "I4",
-    text: `A claim has at most one political leaning (Geo's Political position) and at most ${PUBLISH.maxTraditions === 1 ? "one tradition" : `${PUBLISH.maxTraditions} traditions`} (Geo's Ideological leaning), and can have several issue leanings (Geo's Issue positions), up to ${PUBLISH.maxIdeologies} ideological leanings in all. When more than one tradition passes every rule, only the one with the highest independent probability is published.`,
+    text: `A claim carries at most three kinds of label: one Political position (Geo's seven-level scale), at most ${PUBLISH.maxTraditions === 1 ? "one tradition" : `${PUBLISH.maxTraditions} traditions`} (Geo's Ideological leaning type), and several issue leanings (Geo's Issue position type) — at most ${PUBLISH.maxIdeologies} Ideological leaning and Issue position labels between them. When more than one tradition passes every rule, only the one with the highest independent probability is published.`,
   },
   {
     id: "I5",
@@ -345,4 +400,12 @@ export const IDEOLOGY_RULES = [
     text: "Specific before general: when an issue that names the claim's topic covers its position (for example Guns, AI, Crypto, Climate, Energy, Minimum wage, Healthcare, Student debt, Foreign aid, Ukraine, Israel–Palestine, Taiwan, China, Iran or Housing), the general side of Regulation, Spending & deficit, Welfare or Use of force is not also assigned. Regulation covers rules on businesses and markets, not on individuals, candidates or officials.",
   },
   { id: "I7", text: ALIAS_RULE },
+  {
+    id: "I8",
+    text: "Coherence across the three types: an Issue position whose side is held at the opposite end of the scale from the claim's published Political position is not published. A claim published as Left does not also carry an Issue position that only the right takes, and the reverse. Where the side's usual place on the scale is not recorded, this rule does not apply.",
+  },
+  {
+    id: "I9",
+    text: "A tradition named after a religion (Christian conservative, Islamist) asserts a denomination, so the claim must name that religion in its own words. A claim about religion or religious liberty in general does not establish a Christian or Islamic tradition; without the religion's own words the tradition is not published.",
+  },
 ] as const;

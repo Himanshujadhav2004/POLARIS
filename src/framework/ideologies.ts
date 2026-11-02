@@ -296,6 +296,40 @@ const SAME_SIDE: string[][] = [
   ["Pro-Palestinian", "Anti-Zionist"],
 ];
 
+const LEFT_OF_CENTER: LeaningName[] = ["Far left", "Left", "Center left"];
+const RIGHT_OF_CENTER: LeaningName[] = ["Center right", "Right", "Far right"];
+
+/**
+ * Rule I8. Where an issue side is actually taken on the left-right scale, for the sides whose direction
+ * in US politics is not in dispute — so a claim published as Left cannot also carry a side only the
+ * right takes ("High earners should pay Social Security tax on all their income" was published as Left
+ * with Pro-entitlement reform, which in US usage means restraining benefits).
+ *
+ * Every other issue side keeps ALL, which makes the check a no-op for it: a side is blocked only on
+ * evidence recorded here, never by omission. Armando has not ruled on these, so the table is
+ * deliberately short and holds only sides whose own name states the direction. Extend it from his
+ * verdicts, not by inference.
+ */
+const ISSUE_SIDE_TYPICAL: Record<string, LeaningName[]> = {
+  "Pro-entitlement reform": RIGHT_OF_CENTER,
+  "Pro-tax cuts": RIGHT_OF_CENTER,
+  "Pro-deregulation": RIGHT_OF_CENTER,
+  "Pro-market wages": RIGHT_OF_CENTER,
+  "Pro-school choice": RIGHT_OF_CENTER,
+  "Anti-union": RIGHT_OF_CENTER,
+  "Pro-life": RIGHT_OF_CENTER,
+  "Pro-gun rights": RIGHT_OF_CENTER,
+  "Pro-border security": RIGHT_OF_CENTER,
+  "Progressive taxation": LEFT_OF_CENTER,
+  "Pro-choice": LEFT_OF_CENTER,
+  "Pro-gun control": LEFT_OF_CENTER,
+  "Pro-immigration": LEFT_OF_CENTER,
+  "Pro-living wage": LEFT_OF_CENTER,
+  "Pro-welfare expansion": LEFT_OF_CENTER,
+  "Pro-student debt relief": LEFT_OF_CENTER,
+  "Pro-climate action": LEFT_OF_CENTER,
+};
+
 function toCard(row: LeaningRow): IdeologyCard {
   const excluded = EXCLUDED_ALIASES[row.name] ?? [];
   const base = {
@@ -326,7 +360,7 @@ function toCard(row: LeaningRow): IdeologyCard {
         `The claim only mentions ${row.issue} without taking a side, or reports someone else's side.`,
       ],
       neighbours: otherSides,
-      typicalLeanings: ALL,
+      typicalLeanings: ISSUE_SIDE_TYPICAL[row.name] ?? ALL,
     };
   }
   const detail = TRADITIONS[row.name];

@@ -404,6 +404,7 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
       hedged: out.hedged,
       anchored,
       sideInDoubt: c.kind === "tradition" ? sideInDoubt : null,
+      claimText: claim.text,
     });
     // Before the extra runs a tradition is judged as if anchored (the lower bar), so it is not ruled out too early.
     const ideologyReady = candidates.some((c) => checkIdeology(ideologyInput(c, null, true), false).length === 0);
