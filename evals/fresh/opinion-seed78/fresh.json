@@ -1,0 +1,39 @@
+{
+  "name": "opinion-seed78",
+  "seed": 78,
+  "framework": "framework-v3.7.1",
+  "generatedAt": "2026-11-03T09:35:51.413Z",
+  "stats": [
+    {
+      "space": "US Politics",
+      "scored": 1,
+      "published": 0,
+      "errors": 0,
+      "sample": 1
+    }
+  ],
+  "rows": [
+    {
+      "claimId": "dfcb316ac80c4154823c4d036fe3545a",
+      "space": "us-politics",
+      "spaceId": "4582fbbee28a16589154f7e36f1ee3c5",
+      "text": "Morocco's royal palace stated that the non-renewal of the MINURSO mandate means UN personnel and equipment should depart Western Sahara within days.",
+      "inSample": true,
+      "error": null,
+      "published": false,
+      "display": "No political position (attributed)",
+      "leaning": null,
+      "candidateLeaning": null,
+      "ideologies": [],
+      "checks": [],
+      "criteria": [],
+      "explanation": "No political position: check G2 (In its own voice) failed. The independent probability that the claim takes a position is 0.07.",
+      "droppedIdeologies": [],
+      "repeats": null,
+      "reviewerNotes": [
+        "Scorer on the position checks: The policy position is attributed to another actor rather than stated in the claim's own voice: \"Morocco's royal palace stated that\" UN personnel and equipment should depart."
+      ],
+      "nearMisses": []
+    }
+  ]
+}
