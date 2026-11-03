@@ -101,9 +101,11 @@ export function renderFramework(): string {
     "",
   );
   for (const { issue, group, sides } of ISSUES) {
-    out.push(`### ${issue} (${group})`, "", "| Leaning | Description | Also called |", "|---|---|---|");
+    out.push(`### ${issue} (${group})`, "", "| Leaning | Description | Also called | Taken at (rule I8) |", "|---|---|---|---|");
     for (const c of sides) {
-      out.push(`| **${c.name}**${c.geoId ? "" : " *(not on Geo yet)*"} | ${cell(c.definition)} | ${cell(c.aliases.join("; "))} |`);
+      // "Taken at" is the I8 direction. Blank means not recorded, which makes I8 a no-op for the side.
+      const taken = c.scaleDirection === 0 ? "—" : `${c.scaleDirection > 0 ? "the right" : "the left"} *(inferred, not ratified)*`;
+      out.push(`| **${c.name}**${c.geoId ? "" : " *(not on Geo yet)*"} | ${cell(c.definition)} | ${cell(c.aliases.join("; "))} | ${taken} |`);
     }
     out.push("");
   }

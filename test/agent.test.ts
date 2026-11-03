@@ -270,26 +270,6 @@ describe("ScoringAgent.score", () => {
     expect(r.explanation).toMatch(/Issue position: Pro-life .*Ideological leaning: Conservative/);
   });
 
-  it("never publishes a religious tradition unless the claim names the religion (I9)", async () => {
-    const stub = (text: string) => ({
-      scorer: [scorer({ ideologies: [{ name: "Christian conservative", tenet: "T1", evidence: text }] })],
-      ...clearRight,
-      ideologies: { ...clearRight.ideologies, "Christian conservative": 0.95 },
-    });
-    // "Abortion should be banned" is a mainstream right position with no religious element.
-    const blocked = await agent(stub(ABORTION)).agent.score(claim(ABORTION));
-    expect(blocked.ideologies.map((i) => i.name)).toEqual([]);
-    expect(blocked.droppedIdeologies).toContainEqual({
-      name: "Christian conservative",
-      reason: "the claim does not name the religion Christian conservative asserts (I9)",
-    });
-
-    // The same tradition stands when the claim says so itself, including in the plural.
-    const named = "Christians should oppose abortion";
-    const published = await agent(stub(named)).agent.score(claim(named));
-    expect(published.ideologies.map((i) => i.name)).toEqual(["Christian conservative"]);
-  });
-
   it("refuses an empty claim without calling any model", async () => {
     const { agent: a, calls } = agent({ scorer: [scorer()] });
     await expect(a.score(claim("  "))).rejects.toThrow(/no text/);

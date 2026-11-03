@@ -1,4 +1,4 @@
-# Political position, Ideological leaning and Issue position scoring framework (framework-v3.7)
+# Political position, Ideological leaning and Issue position scoring framework (framework-v3.7.1)
 
 Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.
 
@@ -117,14 +117,13 @@ Covers: Climate policy, pollution, conservation, fossil fuels and renewable ener
 ## Step 3: combining rules
 
 - **C1 Country context.** The criteria list positions in United States politics, so a political leaning is given only for claims about the United States (rule P3). A claim about another country, a region or the whole world gets no political leaning, though its ideological leanings are still checked. If the claim does not make its country clear, no leaning is given.
-- **E1 Evidence.** Every criterion and ideology must quote the exact words from the claim that match it. The quote must span the claim's whole operative clause — what it says should happen, together with any words that limit it ("to fund…", "late-term", "targeted", "with exceptions", "only…") — and never a fragment that drops such a limit, because the limit is what separates a mainstream position (±2) from a moderate one (±1). Context (topics, tags, sources, related claims) can help read the claim but is never evidence.
+- **E1 Evidence.** Every criterion and ideology must quote the exact words from the claim that match it. The quote must span the claim's whole operative clause — what it says should happen, together with any words that limit it ("late-term", "targeted", "means-tested", "with exceptions") — and never a fragment that drops such a limit, because the limit is what separates a mainstream position (±2) from a moderate one (±1). A claim that limits its own position normally matches a ±1 criterion rather than a ±2 one. Code checks that the quote is in the claim; whether it is the whole clause is a judgement the model makes, so this part of E1 is guidance and not a gate. Context (topics, tags, sources, related claims) can help read the claim but is never evidence.
 - **E2 Arguing through effects.** A claim takes a side when, in its own voice, it states a general effect of a public policy, law or government program, and that effect is the argument one side makes for or against it ("Raising the minimum wage kills jobs" argues against raising it). This does not apply to effects of a technology, product, substance, medicine, asset or behaviour (vaccines, social media, Bitcoin, AI) unless the claim also says what government or law should do; to dated or measured results, study findings and forecasts, which stay descriptive; to a hedged concession that an effect may happen ("Raising the minimum wage may cost some jobs"); or to a claim that only denies the other side's effect.
 - **H1 Hedged wording.** If the claim is hedged or descriptive ("can", "may", "might", "tends to", "often", "in some cases"), every topic-area score is capped at Center left or Center right (±1).
 - **A1 Mixed signals.** If one topic area scores left (−1 or lower) and another scores right (+1 or higher), no leaning is given (mixed signals), never Center.
-- **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center. The average must land on a level that one of the matched criteria actually carries: if it falls between the matched levels (a Center criterion averaged with a mainstream one, for example), no leaning is given. A level no criterion matched is never published.
-- **A3 Center.** Center is given only when a Center criterion (…-0) matches. A claim with no scored topic area gets no leaning (cross-cutting).
+- **A2 Combining topic areas.** When all scored topic areas point the same way, the leaning is their average, rounded toward the center, with two exceptions. A matched −3 or +3 criterion is never averaged away: a claim that reaches Far left or Far right in any topic area is published at that level, because an extreme position is not made mainstream by a mainstream position beside it. And the average must land on a level that one of the matched criteria actually carries: if it falls between the matched levels, no leaning is given. A level no criterion matched is never published.
+- **A3 Center.** Center is given only when every scored topic area matched a Center criterion (…-0). A claim that balances one topic area but tilts in another both compromises and takes a side, so it gets no leaning rather than Center. A claim with no scored topic area gets no leaning (cross-cutting).
 - **A4 Far left and far right.** Far left or Far right is given only when a −3 or +3 criterion matches. Note the scale is deliberately asymmetric: Far right is defined by hostility to rights and pluralist institutions, not by economic policy, so the Economy and Environment topic areas have no +3 criterion and cannot by themselves reach Far right. No amount of free-market or anti-climate policy is Far right under this definition.
-- **A6 Narrowing qualifiers.** When the claim limits its own position — "late-term", "targeted", "means-tested", "to fund…", "with exceptions", "only…", "up to…", a single state — the limit must be weighed, not dropped. A claim that narrows itself normally matches a ±1 criterion rather than a ±2 one. A mainstream (±2) criterion whose quoted evidence leaves the limit out does not establish the level, and no leaning is given for that topic area.
 - **A5 Between two levels.** If the claim's position sits between two levels, match no criterion for that topic area; matching one topic area at two levels gives no leaning. These positions sit on a boundary and match no criterion: reversing same-sex marriage, ending birthright citizenship, ending all deportations, defunding the police, using the military for domestic policing, and the sentence of one named person or case. A missing label is always acceptable; a wrong one is not.
 
 ## Step 4: ideological leanings
@@ -138,8 +137,7 @@ Two kinds, each its own Geo type: **issue leanings** (one side of an issue, such
 - **I5.** When the independent check gives an issue leaning a probability of at least 0.8 that the scorer did not propose, the scorer takes a second look at that card. The leaning is added only if it then quotes the claim's words, and it still passes every other rule. Traditions are never added by a second look.
 - **I6.** Specific before general: when an issue that names the claim's topic covers its position (for example Guns, AI, Crypto, Climate, Energy, Minimum wage, Healthcare, Student debt, Foreign aid, Ukraine, Israel–Palestine, Taiwan, China, Iran or Housing), the general side of Regulation, Spending & deficit, Welfare or Use of force is not also assigned. Regulation covers rules on businesses and markets, not on individuals, candidates or officials.
 - **I7.** Alternative names are names people use for a side. They never widen its description: a claim belongs to a side only if it meets the description itself, and sharing words with a name is not enough.
-- **I8.** Coherence across the three types: an Issue position whose side is held at the opposite end of the scale from the claim's published Political position is not published. A claim published as Left does not also carry an Issue position that only the right takes, and the reverse. Where the side's usual place on the scale is not recorded, this rule does not apply.
-- **I9.** A tradition named after a religion (Christian conservative, Islamist) asserts a denomination, so the claim must name that religion in its own words. A claim about religion or religious liberty in general does not establish a Christian or Islamic tradition; without the religion's own words the tradition is not published.
+- **I8.** Coherence across the three types: an Issue position taken at the opposite end of the scale from the claim's Political position is not published. A claim published as Left does not also carry a side only the right takes, and the reverse. Only a published Political position counts — a level the publish rules rejected cannot block anything — and only the two ends count, so a claim at Center blocks no side. Where a side's direction on the scale is not recorded, this rule does not apply.
 
 ## Step 5: publish or leave blank
 
@@ -177,304 +175,304 @@ One side of a political issue (Armando's "Ideological leanings" table). Values m
 
 ### Big Tech (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Decelerationist** | Informal label for a stance favoring slower technological development or deployment, especially of AI, to address perceived risks. The label has no single standardized policy program. |  |
-| **Pro-innovation** | Supports policies or practices that encourage the development and adoption of new ideas, technologies, products, or processes. | Antitrust skeptic; Pro-Silicon Valley; Pro-tech; Pro-consumer welfare standard; Light-touch regulation |
-| **Techno-optimist** | Broad outlook expecting technological development to produce substantial benefits for human well-being. It does not by itself imply support for every technology or for removing all regulation. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Decelerationist** | Informal label for a stance favoring slower technological development or deployment, especially of AI, to address perceived risks. The label has no single standardized policy program. |  | — |
+| **Pro-innovation** | Supports policies or practices that encourage the development and adoption of new ideas, technologies, products, or processes. | Antitrust skeptic; Pro-Silicon Valley; Pro-tech; Pro-consumer welfare standard; Light-touch regulation | — |
+| **Techno-optimist** | Broad outlook expecting technological development to produce substantial benefits for human well-being. It does not by itself imply support for every technology or for removing all regulation. |  | — |
 
 ### Speech online (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-online safety** | Supports measures to reduce harms associated with online services, such as abuse, exploitation, or harmful platform design. Specific approaches to moderation, privacy, and age verification vary. | Pro-platform accountability; Pro-misinformation controls; Pro-trust and safety; Pro-Kids Online Safety Act; Pro-platform regulation |
-| **Pro-internet freedom** | Supports freedom of expression, access to information, and participation online, with limits on censorship and unjustified restrictions. | Pro-free speech; Free speech advocate; Pro-First Amendment; Pro-free expression; Free speech maximalist; Censorship critic |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-online safety** | Supports measures to reduce harms associated with online services, such as abuse, exploitation, or harmful platform design. Specific approaches to moderation, privacy, and age verification vary. | Pro-platform accountability; Pro-misinformation controls; Pro-trust and safety; Pro-Kids Online Safety Act; Pro-platform regulation | — |
+| **Pro-internet freedom** | Supports freedom of expression, access to information, and participation online, with limits on censorship and unjustified restrictions. | Pro-free speech; Free speech advocate; Pro-First Amendment; Pro-free expression; Free speech maximalist; Censorship critic | — |
 
 ### Regulation (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-deregulation** | Favors reducing or simplifying government rules on businesses and markets. | Deregulationist; Pro-business; Small-government; Deregulator; Pro-regulatory reform; Red-tape cutter |
-| **Pro-regulation** | Favors government rules and oversight to address market failures, protect the public, or constrain harmful conduct. | Pro-consumer protection; Pro-oversight; Pro-public protections; Pro-safeguards; Pro-watchdog |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-deregulation** | Favors reducing or simplifying government rules on businesses and markets. | Deregulationist; Pro-business; Small-government; Deregulator; Pro-regulatory reform; Red-tape cutter | the right *(inferred, not ratified)* |
+| **Pro-regulation** | Favors government rules and oversight to address market failures, protect the public, or constrain harmful conduct. | Pro-consumer protection; Pro-oversight; Pro-public protections; Pro-safeguards; Pro-watchdog | — |
 
 ### Supreme Court (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-court reform** | Supports changes to courts' structure, procedures, appointments, or ethics rules. Support for reform does not by itself specify a particular proposal or constitutional interpretation. | Pro-court expansion; Pro-Supreme Court term limits; Court packing (pejorative); Pro-Supreme Court reform; Pro-term limits; Pro-Supreme Court ethics code; Court reformer |
-| **Pro-judicial independence** | Supports courts and judges deciding cases impartially, free from improper interference or pressure. Judicial independence can coexist with court reform and accountability. | Pro-judicial restraint; Pro-nine justices; Constitutionalist |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-court reform** | Supports changes to courts' structure, procedures, appointments, or ethics rules. Support for reform does not by itself specify a particular proposal or constitutional interpretation. | Pro-court expansion; Pro-Supreme Court term limits; Court packing (pejorative); Pro-Supreme Court reform; Pro-term limits; Pro-Supreme Court ethics code; Court reformer | — |
+| **Pro-judicial independence** | Supports courts and judges deciding cases impartially, free from improper interference or pressure. Judicial independence can coexist with court reform and accountability. | Pro-judicial restraint; Pro-nine justices; Constitutionalist | — |
 
 ### Policing (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-criminal justice reform** | Supports changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes. | Pro-police reform; Pro-decarceration; Pro-bail reform; Pro-police accountability; Smart on crime; Pro-sentencing reform; Pro-reform prosecutor |
-| **Pro-law enforcement** | Supports police and other law-enforcement agencies, their capacity, or their role in public safety. | Back the Blue; Tough on crime; Pro-police funding; Law and order; Pro-law and order; Pro-public safety; Pro-qualified immunity; "Back the Blue" |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-criminal justice reform** | Supports changes to policing, courts, sentencing, or incarceration intended to improve fairness or outcomes. | Pro-police reform; Pro-decarceration; Pro-bail reform; Pro-police accountability; Smart on crime; Pro-sentencing reform; Pro-reform prosecutor | — |
+| **Pro-law enforcement** | Supports police and other law-enforcement agencies, their capacity, or their role in public safety. | Back the Blue; Tough on crime; Pro-police funding; Law and order; Pro-law and order; Pro-public safety; Pro-qualified immunity; "Back the Blue" | — |
 
 ### Education (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-school choice** | Supports families having options beyond their assigned public school, including other public schools, charter schools, private schools, or homeschooling; funding preferences vary. | Pro-vouchers; Pro-charter schools; Pro-education freedom; Pro-parental choice; Pro-ESA; Pro-universal school choice; Parent empowerment |
-| **Pro-public education** | Supports public schools and public investment in education. | Voucher skeptic; Public school advocate; Pro-public school funding; Pro-neighborhood schools; Voucher opponent |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-school choice** | Supports families having options beyond their assigned public school, including other public schools, charter schools, private schools, or homeschooling; funding preferences vary. | Pro-vouchers; Pro-charter schools; Pro-education freedom; Pro-parental choice; Pro-ESA; Pro-universal school choice; Parent empowerment | the right *(inferred, not ratified)* |
+| **Pro-public education** | Supports public schools and public investment in education. | Voucher skeptic; Public school advocate; Pro-public school funding; Pro-neighborhood schools; Voucher opponent | — |
 
 ### Use of force (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Dove** | Favors restraint in using military force and prefers diplomacy or limited commitments. | Restrainer; Non-interventionist; Anti-war; Realist; Pro-diplomacy; Pro-military restraint |
-| **Hawk** | Favors a more forceful foreign policy and is comparatively willing to use military power. | Interventionist; Internationalist; Primacist; Liberal internationalist; Pro-deterrence |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Dove** | Favors restraint in using military force and prefers diplomacy or limited commitments. | Restrainer; Non-interventionist; Anti-war; Realist; Pro-diplomacy; Pro-military restraint | — |
+| **Hawk** | Favors a more forceful foreign policy and is comparatively willing to use military power. | Interventionist; Internationalist; Primacist; Liberal internationalist; Pro-deterrence | — |
 
 ### Iran (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-Iran containment** | Favors limiting Iran’s regional influence through deterrence, sanctions, or other pressure. | Pro-maximum pressure; Pro-strikes on Iran; Pro-pressure on Iran; Iran deal critic; Pro-sanctions on Iran; Pro-snapback |
-| **Pro-Iran diplomacy** | Supports negotiating with Iran and using diplomacy to manage disputes or reduce conflict. | Pro-Iran deal; Iran dove; Pro-JCPOA; Pro-engagement with Iran; Pro-nuclear deal; Pro-diplomacy with Iran; Iran engager |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-Iran containment** | Favors limiting Iran’s regional influence through deterrence, sanctions, or other pressure. | Pro-maximum pressure; Pro-strikes on Iran; Pro-pressure on Iran; Iran deal critic; Pro-sanctions on Iran; Pro-snapback | — |
+| **Pro-Iran diplomacy** | Supports negotiating with Iran and using diplomacy to manage disputes or reduce conflict. | Pro-Iran deal; Iran dove; Pro-JCPOA; Pro-engagement with Iran; Pro-nuclear deal; Pro-diplomacy with Iran; Iran engager | — |
 
 ### Trade (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Free trader** | Favors reducing barriers to international trade and maintaining open trade relationships. |  |
-| **Protectionist** | Supports trade barriers or domestic preferences intended to protect local industries and workers from foreign competition. | Pro-tariffs; Economic nationalist; Pro-fair trade; Trade hawk; Tariff hawk; America First trade; Pro-reshoring |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Free trader** | Favors reducing barriers to international trade and maintaining open trade relationships. |  | — |
+| **Protectionist** | Supports trade barriers or domestic preferences intended to protect local industries and workers from foreign competition. | Pro-tariffs; Economic nationalist; Pro-fair trade; Trade hawk; Tariff hawk; America First trade; Pro-reshoring | — |
 
 ### Welfare (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-welfare expansion** | Supports expanding public benefits or social programs that provide income, health, or other assistance. | Pro-welfare state; Pro-social programs; Pro-safety net; Pro-social insurance; Pro-Medicaid expansion; Pro-SNAP |
-| **Pro-welfare reform** | Supports changes to public assistance programs' design, eligibility, administration, or incentives. The label alone does not establish whether benefits would expand or contract. | Pro-work requirements; Welfare skeptic; Workfare; Welfare-to-work; Pro-self-sufficiency; Pro-work |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-welfare expansion** | Supports expanding public benefits or social programs that provide income, health, or other assistance. | Pro-welfare state; Pro-social programs; Pro-safety net; Pro-social insurance; Pro-Medicaid expansion; Pro-SNAP | the left *(inferred, not ratified)* |
+| **Pro-welfare reform** | Supports changes to public assistance programs' design, eligibility, administration, or incentives. The label alone does not establish whether benefits would expand or contract. | Pro-work requirements; Welfare skeptic; Workfare; Welfare-to-work; Pro-self-sufficiency; Pro-work | — |
 
 ### Crypto (Climate energy & tech)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Crypto skeptic** | Questions the benefits or safety of cryptocurrencies and favors caution or stronger safeguards. | Crypto critic; Bitcoin skeptic; Pro-investor protection; Crypto regulation advocate; Pro-bank-style crypto rules |
-| **Pro-crypto** | Supports cryptocurrencies and policies that enable their use or growth. | Crypto advocate; Pro-digital assets; Pro-Bitcoin; Crypto supporter; Crypto-friendly; Crypto booster; Pro-crypto innovation |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Crypto skeptic** | Questions the benefits or safety of cryptocurrencies and favors caution or stronger safeguards. | Crypto critic; Bitcoin skeptic; Pro-investor protection; Crypto regulation advocate; Pro-bank-style crypto rules | — |
+| **Pro-crypto** | Supports cryptocurrencies and policies that enable their use or growth. | Crypto advocate; Pro-digital assets; Pro-Bitcoin; Crypto supporter; Crypto-friendly; Crypto booster; Pro-crypto innovation | — |
 
 ### Minimum wage (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-market wages** | Favors wages being determined primarily through labor-market bargaining rather than statutory wage floors or government-mandated increases. |  |
-| **Pro-living wage** | Supports pay sufficient to afford a decent standard of living for workers and their families. This can be pursued through wage-setting policies, collective bargaining, or employer practices. | Pro-$15 minimum wage; Raise the Wage; Fight for $15; Pro-higher minimum wage; Pro-wage floor; "Fight for $15" |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-market wages** | Favors wages being determined primarily through labor-market bargaining rather than statutory wage floors or government-mandated increases. |  | the right *(inferred, not ratified)* |
+| **Pro-living wage** | Supports pay sufficient to afford a decent standard of living for workers and their families. This can be pursued through wage-setting policies, collective bargaining, or employer practices. | Pro-$15 minimum wage; Raise the Wage; Fight for $15; Pro-higher minimum wage; Pro-wage floor; "Fight for $15" | the left *(inferred, not ratified)* |
 
 ### Taiwan (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-Taiwan defense** | Supports military assistance, deterrence, or defensive commitments intended to protect Taiwan against attack or coercion. This does not by itself imply support for a formal declaration of independence. |  |
-| **Pro-Taiwan restraint** | Favors limiting U.S. military commitments or escalation risks concerning Taiwan and prioritizing diplomacy or other nonmilitary approaches. This does not by itself imply support for unification with China. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-Taiwan defense** | Supports military assistance, deterrence, or defensive commitments intended to protect Taiwan against attack or coercion. This does not by itself imply support for a formal declaration of independence. |  | — |
+| **Pro-Taiwan restraint** | Favors limiting U.S. military commitments or escalation risks concerning Taiwan and prioritizing diplomacy or other nonmilitary approaches. This does not by itself imply support for unification with China. |  | — |
 
 ### Gender identity (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Gender-critical** | Holds that biological sex is distinct from gender identity and should remain a basis for relevant legal and social distinctions. Specific policy positions vary. | Pro-sex-based rights; Pro-sex-based policies; Pro-women's sports; Pro-biological sex; Gender ideology critic; Pro-single-sex spaces; Pro-Protect Women's Sports Act |
-| **Pro-transgender rights** | Supports equal legal rights and protections for transgender people. | Pro-trans rights; Pro-gender-affirming care; Pro-trans inclusion; Trans-inclusive; Trans ally; Pro-gender identity protections |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Gender-critical** | Holds that biological sex is distinct from gender identity and should remain a basis for relevant legal and social distinctions. Specific policy positions vary. | Pro-sex-based rights; Pro-sex-based policies; Pro-women's sports; Pro-biological sex; Gender ideology critic; Pro-single-sex spaces; Pro-Protect Women's Sports Act | — |
+| **Pro-transgender rights** | Supports equal legal rights and protections for transgender people. | Pro-trans rights; Pro-gender-affirming care; Pro-trans inclusion; Trans-inclusive; Trans ally; Pro-gender identity protections | — |
 
 ### Alliances (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **NATO skeptic** | Questions NATO’s purpose, costs, expansion, or members’ obligations. | Pro-burden shifting; America First; Alliance skeptic; Burden-shifter; Pro-dormant NATO; Pro-European defense autonomy |
-| **Pro-NATO** | Supports the North Atlantic Treaty Organization and its role in collective defense and security cooperation among its members. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **NATO skeptic** | Questions NATO’s purpose, costs, expansion, or members’ obligations. | Pro-burden shifting; America First; Alliance skeptic; Burden-shifter; Pro-dormant NATO; Pro-European defense autonomy | — |
+| **Pro-NATO** | Supports the North Atlantic Treaty Organization and its role in collective defense and security cooperation among its members. |  | — |
 
 ### Climate (Climate energy & tech)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Climate skeptic** | Umbrella label for views questioning aspects of climate-change science, projected impacts, or proposed responses. Skepticism about a particular policy does not necessarily imply rejection of human-caused warming. | Climate realist; Climate action skeptic; Climate denier (pejorative); Climate doubter; Lukewarmer; Climate contrarian |
-| **Pro-climate action** | Supports public or private measures to reduce climate change or adapt to its effects. | Pro-climate; Climate hawk; Climate advocate; Pro-decarbonization; Pro-net zero; Climate activist |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Climate skeptic** | Umbrella label for views questioning aspects of climate-change science, projected impacts, or proposed responses. Skepticism about a particular policy does not necessarily imply rejection of human-caused warming. | Climate realist; Climate action skeptic; Climate denier (pejorative); Climate doubter; Lukewarmer; Climate contrarian | — |
+| **Pro-climate action** | Supports public or private measures to reduce climate change or adapt to its effects. | Pro-climate; Climate hawk; Climate advocate; Pro-decarbonization; Pro-net zero; Climate activist | the left *(inferred, not ratified)* |
 
 ### LGBTQ (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-LGBTQ rights** | Supports equal legal rights and protections for LGBTQ people. | Pro-same-sex marriage; Pro-gay rights; Pro-marriage equality; Pro-LGBTQ equality; LGBTQ ally; Pro-Equality Act |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-LGBTQ rights** | Supports equal legal rights and protections for LGBTQ people. | Pro-same-sex marriage; Pro-gay rights; Pro-marriage equality; Pro-LGBTQ equality; LGBTQ ally; Pro-Equality Act | — |
 
 ### Public health (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-vaccination** | Supports vaccination as a means of preventing disease and protecting health. Support for vaccination does not by itself imply support for vaccine mandates. | Pro-public health measures; Pro-vaccine; Pro-immunization requirements; Pro-school vaccine requirements |
-| **Pro-vaccine choice** | Supports individual choice about vaccination and opposes vaccine mandates. | Pro-vaccine exemptions; Pro-health freedom; Mandate skeptic; Pro-medical liberty |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-vaccination** | Supports vaccination as a means of preventing disease and protecting health. Support for vaccination does not by itself imply support for vaccine mandates. | Pro-public health measures; Pro-vaccine; Pro-immunization requirements; Pro-school vaccine requirements | — |
+| **Pro-vaccine choice** | Supports individual choice about vaccination and opposes vaccine mandates. | Pro-vaccine exemptions; Pro-health freedom; Mandate skeptic; Pro-medical liberty | — |
 
 ### Drugs (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-legalization** | Supports making specified currently prohibited drugs or related activities lawful under a legal framework. Legalization is distinct from only removing criminal penalties for possession or use. | Pro-decriminalization; Pro-cannabis legalization; Pro-harm reduction; Drug policy reformer; Pro-drug policy reform; Pro-cannabis reform |
-| **Prohibitionist** | In this dataset's drug-policy context, supports legal prohibitions on specified drugs or drug-related activities and opposes their legalization. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-legalization** | Supports making specified currently prohibited drugs or related activities lawful under a legal framework. Legalization is distinct from only removing criminal penalties for possession or use. | Pro-decriminalization; Pro-cannabis legalization; Pro-harm reduction; Drug policy reformer; Pro-drug policy reform; Pro-cannabis reform | — |
+| **Prohibitionist** | In this dataset's drug-policy context, supports legal prohibitions on specified drugs or drug-related activities and opposes their legalization. |  | — |
 
 ### Religion (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Church-state separationist** | Supports keeping government institutions and religious institutions legally separate. | Pro-separation of church and state; Separationist; Pro-secular government; Pro-Establishment Clause |
-| **Pro-religious freedom** | Supports the right to practice religion and protections for religious belief and exercise. | Pro-faith in public life; Pro-conscience rights; Accommodationist; Pro-religious exemptions; Pro-free exercise |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Church-state separationist** | Supports keeping government institutions and religious institutions legally separate. | Pro-separation of church and state; Separationist; Pro-secular government; Pro-Establishment Clause | — |
+| **Pro-religious freedom** | Supports the right to practice religion and protections for religious belief and exercise. | Pro-faith in public life; Pro-conscience rights; Accommodationist; Pro-religious exemptions; Pro-free exercise | — |
 
 ### Foreign aid (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-foreign aid** | Supports providing assistance to other countries for purposes such as humanitarian relief, development, or security. Support is not limited to one agency or aid program. |  |
-| **Pro-foreign aid reform** | Supports changes to foreign assistance programs' objectives, allocation, delivery, or oversight. Reform may involve expansion, reduction, or redirection of particular programs. | Pro-foreign aid cuts; Foreign aid critic; Aid skeptic; Pro-aid reform; Pro-America First aid; Pro-USAID overhaul |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-foreign aid** | Supports providing assistance to other countries for purposes such as humanitarian relief, development, or security. Support is not limited to one agency or aid program. |  | — |
+| **Pro-foreign aid reform** | Supports changes to foreign assistance programs' objectives, allocation, delivery, or oversight. Reform may involve expansion, reduction, or redirection of particular programs. | Pro-foreign aid cuts; Foreign aid critic; Aid skeptic; Pro-aid reform; Pro-America First aid; Pro-USAID overhaul | — |
 
 ### AI (Climate energy & tech)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-AI acceleration** | Supports faster development and deployment of artificial intelligence. Views on appropriate safety measures and regulation vary. | Accelerationist; e/acc; Pro-AI innovation; AI booster; Pro-light-touch AI; Pro-AI preemption; AI optimist |
-| **Pro-AI regulation** | Supports rules or oversight governing the development or use of artificial intelligence. | Pro-AI safety; AI safety advocate; AI doomer (pejorative); Pro-AI guardrails; Pro-AI oversight; AI safetyist; Pro-state AI laws |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-AI acceleration** | Supports faster development and deployment of artificial intelligence. Views on appropriate safety measures and regulation vary. | Accelerationist; e/acc; Pro-AI innovation; AI booster; Pro-light-touch AI; Pro-AI preemption; AI optimist | — |
+| **Pro-AI regulation** | Supports rules or oversight governing the development or use of artificial intelligence. | Pro-AI safety; AI safety advocate; AI doomer (pejorative); Pro-AI guardrails; Pro-AI oversight; AI safetyist; Pro-state AI laws | — |
 
 ### Israel–Palestine (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-Palestinian** | Supports Palestinian rights, interests, or political self-determination. | Pro-Palestine; Palestinian rights advocate; Israel critic; Palestine solidarity; Israel aid skeptic |
-| **Pro-Israel** | Supports Israel's security, national interests, or continued existence as a Jewish state. The label does not necessarily imply support for every Israeli government policy. | Israel supporter; Zionist; Israel hawk; Pro-Israel aid; Israel ally; Pro-US-Israel alliance |
-| **Anti-Zionist** | Opposes Zionism as a political ideology or movement supporting Jewish national self-determination in Israel. Anti-Zionist positions vary and extend beyond criticism of particular Israeli government policies. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-Palestinian** | Supports Palestinian rights, interests, or political self-determination. | Pro-Palestine; Palestinian rights advocate; Israel critic; Palestine solidarity; Israel aid skeptic | — |
+| **Pro-Israel** | Supports Israel's security, national interests, or continued existence as a Jewish state. The label does not necessarily imply support for every Israeli government policy. | Israel supporter; Zionist; Israel hawk; Pro-Israel aid; Israel ally; Pro-US-Israel alliance | — |
+| **Anti-Zionist** | Opposes Zionism as a political ideology or movement supporting Jewish national self-determination in Israel. Anti-Zionist positions vary and extend beyond criticism of particular Israeli government policies. |  | — |
 
 ### Housing (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Neighborhood preservation** | Favors protecting the character or stability of existing residential neighborhoods, often through local land-use controls. | Pro-neighborhood character; NIMBY (pejorative); Slow-growth; Neighborhood preservationist; Pro-single-family zoning; Pro-home rule |
-| **Pro-housing development** | Supports building more housing or reducing barriers to new residential construction. | YIMBY; Pro-zoning reform; Pro-abundance; Pro-housing; Pro-supply; Pro-density; Pro-building |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Neighborhood preservation** | Favors protecting the character or stability of existing residential neighborhoods, often through local land-use controls. | Pro-neighborhood character; NIMBY (pejorative); Slow-growth; Neighborhood preservationist; Pro-single-family zoning; Pro-home rule | — |
+| **Pro-housing development** | Supports building more housing or reducing barriers to new residential construction. | YIMBY; Pro-zoning reform; Pro-abundance; Pro-housing; Pro-supply; Pro-density; Pro-building | — |
 
 ### Nuclear (Climate energy & tech)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-nuclear power** | Supports using or expanding nuclear energy to generate electricity. | Pro-nuclear; Nuclear advocate; Nuclear supporter; Pro-nuclear energy; Pro-nuclear expansion; Pro-advanced reactors |
-| **Anti-nuclear** | Opposes nuclear power or its expansion. | Nuclear critic; Nuclear opponent; Nuclear power opponent; Nuclear safety advocate; No-nukes |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-nuclear power** | Supports using or expanding nuclear energy to generate electricity. | Pro-nuclear; Nuclear advocate; Nuclear supporter; Pro-nuclear energy; Pro-nuclear expansion; Pro-advanced reactors | — |
+| **Anti-nuclear** | Opposes nuclear power or its expansion. | Nuclear critic; Nuclear opponent; Nuclear power opponent; Nuclear safety advocate; No-nukes | — |
 
 ### Taxes (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Progressive taxation** | Supports tax structures in which higher-income taxpayers pay a larger proportion of their income in tax than lower-income taxpayers. |  |
-| **Pro-tax cuts** | Supports reducing tax rates or the amount of tax people or businesses pay. | Tax cutter; Low-tax; Anti-tax; Supply-sider; Taxpayer advocate; Pro-flat tax; "Read my lips: no new taxes" |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Progressive taxation** | Supports tax structures in which higher-income taxpayers pay a larger proportion of their income in tax than lower-income taxpayers. |  | the left *(inferred, not ratified)* |
+| **Pro-tax cuts** | Supports reducing tax rates or the amount of tax people or businesses pay. | Tax cutter; Low-tax; Anti-tax; Supply-sider; Taxpayer advocate; Pro-flat tax; "Read my lips: no new taxes" | the right *(inferred, not ratified)* |
 
 ### Immigration (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-immigration** | Supports immigration or policies that make immigration and immigrant integration easier. | Pro-immigrant; Pro-amnesty; Open borders (pejorative); Immigrant rights advocate; Immigration advocate; Pro-pathway to citizenship |
-| **Pro-border security** | Supports stronger enforcement and security measures at national borders. | Pro-deportation; Immigration restrictionist; Immigration hawk; Border hawk; Low-immigration |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-immigration** | Supports immigration or policies that make immigration and immigrant integration easier. | Pro-immigrant; Pro-amnesty; Open borders (pejorative); Immigrant rights advocate; Immigration advocate; Pro-pathway to citizenship | the left *(inferred, not ratified)* |
+| **Pro-border security** | Supports stronger enforcement and security measures at national borders. | Pro-deportation; Immigration restrictionist; Immigration hawk; Border hawk; Low-immigration | the right *(inferred, not ratified)* |
 
 ### Ukraine (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-Ukraine** | Supports Ukraine’s sovereignty and its defense against Russia’s invasion. | Pro-Ukraine aid; Ukraine supporter; Ukraine hawk; Russia hawk; Pro-Kyiv; Pro-sanctions on Russia |
-| **Ukraine aid skeptic** | Questions the scale, duration, effectiveness, or conditions of assistance to Ukraine and may favor limiting or conditioning it. This stance does not by itself establish support for Russia. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-Ukraine** | Supports Ukraine’s sovereignty and its defense against Russia’s invasion. | Pro-Ukraine aid; Ukraine supporter; Ukraine hawk; Russia hawk; Pro-Kyiv; Pro-sanctions on Russia | — |
+| **Ukraine aid skeptic** | Questions the scale, duration, effectiveness, or conditions of assistance to Ukraine and may favor limiting or conditioning it. This stance does not by itself establish support for Russia. |  | — |
 
 ### Social Security (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-entitlement reform** | Supports changes to statutory benefit programs, such as Social Security or Medicare, to alter their financing, eligibility, or benefits. Proposals may expand or reduce particular benefits. | Pro-Social Security reform; Pro-Social Security privatization; Entitlement reformer; Pro-solvency; Pro-personal accounts; Pro-retirement age increase |
-| **Benefit preservation** | Supports maintaining existing public benefits or protecting recipients against benefit reductions, including in programs such as Social Security. | Pro-Social Security; Pro-entitlements; Expand Social Security; Pro-Social Security 2100; Pro-benefit increase |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-entitlement reform** | Supports changes to statutory benefit programs, such as Social Security or Medicare, to alter their financing, eligibility, or benefits. Proposals may expand or reduce particular benefits. | Pro-Social Security reform; Pro-Social Security privatization; Entitlement reformer; Pro-solvency; Pro-personal accounts; Pro-retirement age increase | the right *(inferred, not ratified)* |
+| **Benefit preservation** | Supports maintaining existing public benefits or protecting recipients against benefit reductions, including in programs such as Social Security. | Pro-Social Security; Pro-entitlements; Expand Social Security; Pro-Social Security 2100; Pro-benefit increase | — |
 
 ### Student debt (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-repayment** | Favors borrowers repaying student loans and opposes or limits loan cancellation. | Loan forgiveness skeptic; Pro-borrower responsibility; Pro-taxpayer fairness; Debt cancellation critic |
-| **Pro-student debt relief** | Supports reducing or cancelling student loan debt for borrowers. | Pro-loan forgiveness; Pro-free college; Pro-debt cancellation; Cancel student debt; Pro-debt relief; Debt abolitionist |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-repayment** | Favors borrowers repaying student loans and opposes or limits loan cancellation. | Loan forgiveness skeptic; Pro-borrower responsibility; Pro-taxpayer fairness; Debt cancellation critic | — |
+| **Pro-student debt relief** | Supports reducing or cancelling student loan debt for borrowers. | Pro-loan forgiveness; Pro-free college; Pro-debt cancellation; Cancel student debt; Pro-debt relief; Debt abolitionist | the left *(inferred, not ratified)* |
 
 ### Spending & deficit (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-public spending** | Supports government spending on public programs, services, or investment. | Pro-government investment; Deficit dove; Keynesian; Pro-public investment; Fiscal dove; Deficit owl; Pro-stimulus |
-| **Fiscal hawk** | Favors limiting deficits and public debt through spending discipline, revenue, or both. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-public spending** | Supports government spending on public programs, services, or investment. | Pro-government investment; Deficit dove; Keynesian; Pro-public investment; Fiscal dove; Deficit owl; Pro-stimulus | — |
+| **Fiscal hawk** | Favors limiting deficits and public debt through spending discipline, revenue, or both. |  | — |
 
 ### Elections (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-election integrity** | Supports measures intended to ensure elections are accurate, secure, lawful, and fairly administered. Specific measures and their effects on voting access are matters of debate. | Pro-voter ID; Pro-election security; Pro-proof of citizenship; Pro-SAVE Act; Pro-secure elections; Pro-voter roll integrity |
-| **Pro-voting rights** | Supports protecting or expanding access to voting and participation in elections. | Pro-ballot access; Pro-mail voting; Pro-voter participation; Pro-automatic voter registration; Pro-John Lewis Act |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-election integrity** | Supports measures intended to ensure elections are accurate, secure, lawful, and fairly administered. Specific measures and their effects on voting access are matters of debate. | Pro-voter ID; Pro-election security; Pro-proof of citizenship; Pro-SAVE Act; Pro-secure elections; Pro-voter roll integrity | — |
+| **Pro-voting rights** | Supports protecting or expanding access to voting and participation in elections. | Pro-ballot access; Pro-mail voting; Pro-voter participation; Pro-automatic voter registration; Pro-John Lewis Act | — |
 
 ### Guns (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-gun control** | Supports laws that restrict or regulate access to firearms. | Pro-gun safety; Pro-gun reform; Gun-control advocate; Gun violence prevention; Pro-gun violence prevention; Pro-gun regulation; Pro-firearm regulation |
-| **Pro-gun rights** | Supports legal protections for firearm ownership and use. Views on which restrictions are acceptable vary. | Pro-Second Amendment; Pro-2A; Gun-rights advocate; Pro-gun; Second Amendment supporter; Pro-gun owner; Pro-constitutional carry |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-gun control** | Supports laws that restrict or regulate access to firearms. | Pro-gun safety; Pro-gun reform; Gun-control advocate; Gun violence prevention; Pro-gun violence prevention; Pro-gun regulation; Pro-firearm regulation | the left *(inferred, not ratified)* |
+| **Pro-gun rights** | Supports legal protections for firearm ownership and use. Views on which restrictions are acceptable vary. | Pro-Second Amendment; Pro-2A; Gun-rights advocate; Pro-gun; Second Amendment supporter; Pro-gun owner; Pro-constitutional carry | the right *(inferred, not ratified)* |
 
 ### Federalism (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-states' rights** | Supports state governments’ authority relative to the federal government. | Federalist; Pro-decentralization; Pro-federalism; Pro-Tenth Amendment; Pro-state sovereignty; Tenth Amendment advocate |
-| **Pro-federal authority** | Supports federal government authority over states in areas assigned to or best handled by the national government. | Pro-national standards; Pro-federal preemption; Pro-national uniformity; Pro-federal supremacy; Pro-federal oversight |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-states' rights** | Supports state governments’ authority relative to the federal government. | Federalist; Pro-decentralization; Pro-federalism; Pro-Tenth Amendment; Pro-state sovereignty; Tenth Amendment advocate | — |
+| **Pro-federal authority** | Supports federal government authority over states in areas assigned to or best handled by the national government. | Pro-national standards; Pro-federal preemption; Pro-national uniformity; Pro-federal supremacy; Pro-federal oversight | — |
 
 ### Energy (Climate energy & tech)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-fossil fuels** | Supports continued or expanded production and use of fossil fuels, including coal, oil, and natural gas. |  |
-| **Pro-clean energy** | Supports energy sources with lower greenhouse-gas emissions, such as renewables or nuclear power. | Pro-green energy; Clean energy advocate; Pro-energy transition; Pro-solar and wind; Pro-clean energy abundance |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-fossil fuels** | Supports continued or expanded production and use of fossil fuels, including coal, oil, and natural gas. |  | — |
+| **Pro-clean energy** | Supports energy sources with lower greenhouse-gas emissions, such as renewables or nuclear power. | Pro-green energy; Clean energy advocate; Pro-energy transition; Pro-solar and wind; Pro-clean energy abundance | — |
 
 ### Healthcare (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-universal healthcare** | Supports ensuring that everyone can obtain needed health services without financial hardship. Universal coverage can involve public, private, or mixed systems. | Pro-Medicare for All; Pro-single-payer; Pro-public option; Pro-universal coverage; Medicare for All; Health care as a right; Pro-government health care |
-| **Free-market healthcare** | Supports a greater role for market competition, private provision, and consumer choice in healthcare. Specific views on public financing, regulation, and assistance vary. | Pro-private healthcare; Pro-health savings accounts; Obamacare critic; Consumer-driven healthcare; Pro-patient choice; Pro-market competition |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-universal healthcare** | Supports ensuring that everyone can obtain needed health services without financial hardship. Universal coverage can involve public, private, or mixed systems. | Pro-Medicare for All; Pro-single-payer; Pro-public option; Pro-universal coverage; Medicare for All; Health care as a right; Pro-government health care | — |
+| **Free-market healthcare** | Supports a greater role for market competition, private provision, and consumer choice in healthcare. Specific views on public financing, regulation, and assistance vary. | Pro-private healthcare; Pro-health savings accounts; Obamacare critic; Consumer-driven healthcare; Pro-patient choice; Pro-market competition | — |
 
 ### China (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-China engagement** | Supports diplomacy, trade, or cooperation with China rather than isolating or confronting it. | China dove; Pro-détente; Pro-trade with China; Engager; Pro-engagement; Competitive coexister; Pro-coexistence |
-| **Pro-China containment** | Favors limiting China’s power or influence through deterrence, alliances, or other pressure. | Pro-decoupling; China skeptic; New Cold Warrior; Pro-strategic competition; Pro-containment; China critic |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-China engagement** | Supports diplomacy, trade, or cooperation with China rather than isolating or confronting it. | China dove; Pro-détente; Pro-trade with China; Engager; Pro-engagement; Competitive coexister; Pro-coexistence | — |
+| **Pro-China containment** | Favors limiting China’s power or influence through deterrence, alliances, or other pressure. | Pro-decoupling; China skeptic; New Cold Warrior; Pro-strategic competition; Pro-containment; China critic | — |
 
 ### DEI (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-meritocracy** | Supports allocating opportunities, responsibilities, or rewards according to relevant ability, effort, and achievement. Views on how merit should be measured and unequal starting conditions addressed vary. | Anti-DEI; Pro-merit; Pro-colorblind policy; Pro-MEI; Pro-race-neutral policy; Pro-equal treatment |
-| **Pro-equity** | Supports addressing unjust disadvantages and barriers to fair treatment or opportunities. The term's application to resources, procedures, and outcomes varies by context. | Pro-diversity; Pro-affirmative action; Pro-inclusion; DEI supporter; Pro-race-conscious policy; Pro-DEIA |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-meritocracy** | Supports allocating opportunities, responsibilities, or rewards according to relevant ability, effort, and achievement. Views on how merit should be measured and unequal starting conditions addressed vary. | Anti-DEI; Pro-merit; Pro-colorblind policy; Pro-MEI; Pro-race-neutral policy; Pro-equal treatment | — |
+| **Pro-equity** | Supports addressing unjust disadvantages and barriers to fair treatment or opportunities. The term's application to resources, procedures, and outcomes varies by context. | Pro-diversity; Pro-affirmative action; Pro-inclusion; DEI supporter; Pro-race-conscious policy; Pro-DEIA | — |
 
 ### Death penalty (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-death penalty** | Supports retaining or applying capital punishment for certain serious crimes. | Pro-capital punishment; Death penalty supporter; Retentionist; Death penalty retentionist; Pro-retention |
-| **Death penalty abolitionist** | Supports ending capital punishment. | Anti-death penalty; Pro-abolition of capital punishment; Abolitionist; Pro-abolition; Pro-repeal; Death penalty opponent |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-death penalty** | Supports retaining or applying capital punishment for certain serious crimes. | Pro-capital punishment; Death penalty supporter; Retentionist; Death penalty retentionist; Pro-retention | — |
+| **Death penalty abolitionist** | Supports ending capital punishment. | Anti-death penalty; Pro-abolition of capital punishment; Abolitionist; Pro-abolition; Pro-repeal; Death penalty opponent | — |
 
 ### Privacy (Justice & democracy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-surveillance** | Supports using or expanding surveillance powers for purposes such as intelligence gathering, law enforcement, or security. Views on authorization, oversight, and privacy safeguards vary. |  |
-| **Pro-privacy** | Supports protecting personal information and limiting unwarranted data collection or surveillance. | Pro-civil liberties; Pro-data protection; Surveillance critic; Privacy hawk; Pro-warrant requirement; Pro-Fourth Amendment; Civil libertarian |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-surveillance** | Supports using or expanding surveillance powers for purposes such as intelligence gathering, law enforcement, or security. Views on authorization, oversight, and privacy safeguards vary. |  | — |
+| **Pro-privacy** | Supports protecting personal information and limiting unwarranted data collection or surveillance. | Pro-civil liberties; Pro-data protection; Surveillance critic; Privacy hawk; Pro-warrant requirement; Pro-Fourth Amendment; Civil libertarian | — |
 
 ### Abortion (Society)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-life** | Opposes abortion, especially on the grounds that fetal life should receive legal protection. | Anti-abortion (AP style); Pro-abortion restrictions; Pro-personhood; Abortion abolitionist; Pro-unborn |
-| **Pro-choice** | Supports legal access to abortion and the right to decide whether to continue a pregnancy. | Abortion-rights (AP style); Pro-abortion rights; Pro-reproductive rights; Pro-reproductive freedom; Pro-bodily autonomy; Reproductive justice; Pro-Roe; "My body, my choice" |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-life** | Opposes abortion, especially on the grounds that fetal life should receive legal protection. | Anti-abortion (AP style); Pro-abortion restrictions; Pro-personhood; Abortion abolitionist; Pro-unborn | the right *(inferred, not ratified)* |
+| **Pro-choice** | Supports legal access to abortion and the right to decide whether to continue a pregnancy. | Abortion-rights (AP style); Pro-abortion rights; Pro-reproductive rights; Pro-reproductive freedom; Pro-bodily autonomy; Reproductive justice; Pro-Roe; "My body, my choice" | the left *(inferred, not ratified)* |
 
 ### Labor (Economy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Pro-union** | Supports labor unions and collective bargaining rights for workers. | Pro-labor; Pro-collective bargaining; Pro-worker; Pro-organized labor; Union ally; Pro-PRO Act; Labor-backed |
-| **Anti-union** | Opposes labor unions or supports restricting their power, membership, or collective bargaining. | Pro-open shop; Union skeptic; Right-to-work; Pro-voluntary unionism; Pro-worker freedom; Pro-paycheck protection |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Pro-union** | Supports labor unions and collective bargaining rights for workers. | Pro-labor; Pro-collective bargaining; Pro-worker; Pro-organized labor; Union ally; Pro-PRO Act; Labor-backed | — |
+| **Anti-union** | Opposes labor unions or supports restricting their power, membership, or collective bargaining. | Pro-open shop; Union skeptic; Right-to-work; Pro-voluntary unionism; Pro-worker freedom; Pro-paycheck protection | the right *(inferred, not ratified)* |
 
 ### Isolationism (Foreign policy)
 
-| Leaning | Description | Also called |
-|---|---|---|
-| **Isolationist** | Foreign-policy outlook favoring avoidance of foreign wars and binding political or military commitments. It is distinct from simply opposing one intervention and need not mean ending all international trade. |  |
+| Leaning | Description | Also called | Taken at (rule I8) |
+|---|---|---|---|
+| **Isolationist** | Foreign-policy outlook favoring avoidance of foreign wars and binding political or military commitments. It is distinct from simply opposing one intervention and need not mean ending all international trade. |  | — |
 
 ## Traditions
 
@@ -760,11 +758,13 @@ A U.S. political outlook supporting reforms or structural changes to expand soci
 
 Conservative political outlook informed by Christian beliefs and moral traditions, often emphasizing religion's public role and traditional views on family, marriage, and abortion.
 
-- **T1** Restrict or ban abortion.
+- **T1** Restrict or ban abortion on a Christian or religious ground the claim itself gives.
 - **T2** Defend traditional marriage and the family as the basis of society.
 - **T3** Christian or traditional religious practice in public life and schools, and religious liberty for it.
 - Not this tradition: Positions that touch none of abortion, marriage and family, religion or education.
 - Not this tradition: Other faiths, or education and parental-rights positions with no religious element.
+- Not this tradition: An abortion restriction with no Christian or religious ground in the claim: that is the Pro-life issue position, and the Right leaning.
+- Not this tradition: Religion or religious liberty in general, with nothing Christian in the claim: a denomination the claim does not name is never assumed.
 - Related: Traditionalist, Conservative, Paleoconservative
 - Usually found at: Center right, Right, Far right
 - Source: Armando's Notion doc "Leanings" (2026-10-23)
