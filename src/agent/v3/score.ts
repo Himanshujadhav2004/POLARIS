@@ -27,7 +27,15 @@ export interface ScorerOutput {
 }
 
 export type Strength = "direct" | "close" | "partial";
-export type UncertainReason = "mixed signals" | "cross-cutting" | "no criterion matched" | "between two levels";
+export type UncertainReason =
+  | "mixed signals"
+  | "cross-cutting"
+  | "no criterion matched"
+  | "between two levels"
+  /** A2: the average of the matched topic areas falls on a level none of them carries. */
+  | "between the matched levels"
+  /** A3: one topic area balances while another tilts, so the claim is not Center. */
+  | "tilts and balances";
 
 export interface AppliedCriterion {
   id: string;
@@ -41,7 +49,13 @@ export interface AppliedCriterion {
 }
 
 export type LeaningDecision =
-  | { kind: "no_position"; failedCheck: GateCheck["id"]; reason: GateCheck["reason"] }
+  /**
+   * `failedCheck` and `reason` are the first failing check, which is what the display line names.
+   * `allFailedChecks` keeps every one, because G1 and G3 can both claim a claim (a product-adequacy
+   * judgement is both "not a position on policy" and "not a political subject") and the first-wins
+   * reason alone made such a claim read as merely descriptive.
+   */
+  | { kind: "no_position"; failedCheck: GateCheck["id"]; reason: GateCheck["reason"]; allFailedChecks: GateCheck["id"][] }
   | { kind: "uncertain"; reason: UncertainReason }
   | { kind: "leaning"; score: Score; leaning: LeaningName };
 
@@ -88,8 +102,15 @@ export const leaningOf = (score: Score): LeaningName => LEANING_BY_SCORE[String(
 /** Steps 1–3 of the framework: position checks, criterion matches, combining rules. */
 export function decideLeaning(out: ScorerOutput, claimText: string): { decision: LeaningDecision; applied: AppliedCriterion[]; flags: string[] } {
   const flags: string[] = [];
-  const failed = STANCE_GATE.find((g) => !out.gate[g.id]);
-  if (failed) return { decision: { kind: "no_position", failedCheck: failed.id, reason: failed.reason }, applied: [], flags };
+  const allFailed = STANCE_GATE.filter((g) => !out.gate[g.id]);
+  const failed = allFailed[0];
+  if (failed) {
+    return {
+      decision: { kind: "no_position", failedCheck: failed.id, reason: failed.reason, allFailedChecks: allFailed.map((g) => g.id) },
+      applied: [],
+      flags: allFailed.length > 1 ? [`position checks failed: ${allFailed.map((g) => `${g.id} ${g.name}`).join(", ")}`] : flags,
+    };
+  }
 
   // Keep valid matches with real evidence; one per topic area, unless they disagree or sit at two levels.
   const byDimension = new Map<string, AppliedCriterion[]>();
@@ -136,11 +157,24 @@ export function decideLeaning(out: ScorerOutput, claimText: string): { decision:
   if (applied.some((a) => a.appliedScore < 0) && applied.some((a) => a.appliedScore > 0)) {
     return { decision: { kind: "uncertain", reason: "mixed signals" }, applied, flags };
   }
-  // A2: average, rounded toward the center. A3/A4 follow because Center and Far need their own criteria.
+  // A2/A4: a matched ±3 is never averaged away. "Muslims should be barred from entering the country
+  // and taxes should be cut" is Far right, not the mean of Far right and Right.
+  const extreme = applied.find((a) => Math.abs(a.appliedScore) === 3);
+  if (extreme) {
+    if (applied.length > 1) flags.push(`${extreme.id} reaches ${leaningOf(extreme.appliedScore)}, which the other topic areas do not average away (A2)`);
+    return { decision: { kind: "leaning", score: extreme.appliedScore, leaning: leaningOf(extreme.appliedScore) }, applied, flags };
+  }
+  // A2: average, rounded toward the center, and only onto a level one of the matched criteria carries.
   const mean = applied.reduce((s, a) => s + a.appliedScore, 0) / applied.length;
   const score = (Math.trunc(mean) || 0) as Score;
-  if (score === 0 && !applied.some((a) => a.appliedScore === 0)) {
-    return { decision: { kind: "uncertain", reason: "no criterion matched" }, applied, flags };
+  if (!applied.some((a) => a.appliedScore === score)) {
+    flags.push(`the matched topic areas average to ${leaningOf(score)}, which none of them carries (A2)`);
+    return { decision: { kind: "uncertain", reason: "between the matched levels" }, applied, flags };
+  }
+  // A3: Center means every topic area balanced. One balanced area beside a tilted one is both at once.
+  if (score === 0 && !applied.every((a) => a.appliedScore === 0)) {
+    flags.push(`${applied.filter((a) => a.appliedScore !== 0).map((a) => a.id).join(", ")} tilts while another topic area balances, so this is not Center (A3)`);
+    return { decision: { kind: "uncertain", reason: "tilts and balances" }, applied, flags };
   }
   return { decision: { kind: "leaning", score, leaning: leaningOf(score) }, applied, flags };
 }
@@ -348,6 +382,11 @@ export interface IdeologyGateInput {
   anchored: boolean;
   /** Traditions: why an issue side on this claim is in doubt (another side of its issue also scores), or null. */
   sideInDoubt: string | null;
+  /**
+   * I8: the Political position actually published on this claim, or null when none was. Distinct from
+   * `leaning`, which is where the claim *sits* for I3 even when the publish rules rejected that level.
+   */
+  publishedLeaning: LeaningName | null;
 }
 
 /** Traditions: the bar, 0.8 next to a published issue or political leaning, otherwise 0.9 (I3). */
@@ -364,6 +403,12 @@ export function checkIdeology(i: IdeologyGateInput, withRepeats = true): string[
     const rival = Object.entries(i.otherSides).filter(([, p]) => p > PUBLISH.maxOtherSide);
     if (rival.length) failed.push(`the other side of ${c.issue} also scores: ${rival.map(([n, p]) => `${n} ${p2(p)}`).join(", ")}`);
     if (i.refusedSides.length) failed.push(`the independent check refused to score the other side: ${i.refusedSides.join(", ")}`);
+    // I8: only a *published* Political position counts, and only the two ends of the scale. A side with
+    // no recorded direction (scaleDirection 0) and a claim at Center (score 0) both block nothing.
+    const sideOf = (l: LeaningName) => Math.sign(LEANINGS_LEFT_TO_RIGHT.indexOf(l) - 3);
+    if (i.publishedLeaning && card.scaleDirection !== 0 && sideOf(i.publishedLeaning) * card.scaleDirection < 0) {
+      failed.push(`${c.name} is taken on the ${card.scaleDirection > 0 ? "right" : "left"}, but this claim is published as ${i.publishedLeaning} (I8)`);
+    }
   } else {
     const bar = traditionBar(i.anchored);
     if (c.probability < bar) {

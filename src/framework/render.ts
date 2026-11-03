@@ -6,6 +6,7 @@ import {
   IDEOLOGY_DEFINITION,
   LEANINGS_PROPERTY_DEFINITION,
   IDEOLOGY_RULES,
+  ISSUE_POSITION_DEFINITION,
   LEANING_BY_SCORE,
   levelRulesText,
   POLITICAL_LEANING_DEFINITION,
@@ -20,15 +21,16 @@ const cell = (s: string) => s.replaceAll("|", "\\|");
 /** The scoring framework as Markdown: docs/FRAMEWORK.md and the Notion framework page. */
 export function renderFramework(): string {
   const out: string[] = [
-    `# Political leaning and ideology scoring framework (${FRAMEWORK_VERSION})`,
+    `# Political position, Ideological leaning and Issue position scoring framework (${FRAMEWORK_VERSION})`,
     "",
     "Every classification cites the numbered criteria below. The model finds evidence and matches criteria; code turns the matches into the result and decides whether it is published, so the same matches always give the same result.",
     "",
     "## Definitions",
     "",
-    `- **Political leaning**: ${POLITICAL_LEANING_DEFINITION}`,
-    `- **Ideology**: ${IDEOLOGY_DEFINITION}`,
-    `- **Leanings** (the property the agent fills): ${LEANINGS_PROPERTY_DEFINITION} A claim has at most one political leaning but can have several ideological leanings.`,
+    `- **Political position** (Geo's seven-level scale): ${POLITICAL_LEANING_DEFINITION}`,
+    `- **Ideological leaning** (a tradition): ${IDEOLOGY_DEFINITION}`,
+    `- **Issue position** (one side of one issue): ${ISSUE_POSITION_DEFINITION}`,
+    `- **Leanings** (the property the agent fills): ${LEANINGS_PROPERTY_DEFINITION} A claim has at most one Political position and at most one Ideological leaning, and can have several Issue positions.`,
     "",
     "Possible results: a **published** leaning (one of Geo's seven) and published ideologies; **No label**, naming the rule that blocked it; or **No political position**, naming the check that failed. There are no partial labels: anything not published is left blank.",
     "",
@@ -69,7 +71,7 @@ export function renderFramework(): string {
     "",
     "## Step 4: ideological leanings",
     "",
-    "Two kinds, both of Geo type Ideology: **issue leanings** (one side of an issue, such as Pro-life) and **traditions** (classic ideologies, such as Conservative). A claim can have several.",
+    "Two kinds, each its own Geo type: **issue leanings** (one side of an issue, such as Pro-life) are Geo's **Issue position**, and **traditions** (classic ideologies, such as Conservative) are Geo's **Ideological leaning**. A claim can have several issue leanings but at most one tradition.",
     "",
     ...IDEOLOGY_RULES.map((r) => `- **${r.id}.** ${r.text}`),
     "",
@@ -99,9 +101,11 @@ export function renderFramework(): string {
     "",
   );
   for (const { issue, group, sides } of ISSUES) {
-    out.push(`### ${issue} (${group})`, "", "| Leaning | Description | Also called |", "|---|---|---|");
+    out.push(`### ${issue} (${group})`, "", "| Leaning | Description | Also called | Taken at (rule I8) |", "|---|---|---|---|");
     for (const c of sides) {
-      out.push(`| **${c.name}**${c.geoId ? "" : " *(not on Geo yet)*"} | ${cell(c.definition)} | ${cell(c.aliases.join("; "))} |`);
+      // "Taken at" is the I8 direction. Blank means not recorded, which makes I8 a no-op for the side.
+      const taken = c.scaleDirection === 0 ? "—" : `${c.scaleDirection > 0 ? "the right" : "the left"} *(inferred, not ratified)*`;
+      out.push(`| **${c.name}**${c.geoId ? "" : " *(not on Geo yet)*"} | ${cell(c.definition)} | ${cell(c.aliases.join("; "))} | ${taken} |`);
     }
     out.push("");
   }

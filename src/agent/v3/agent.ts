@@ -68,7 +68,8 @@ export interface ScoredClaim {
   /** e.g. "Right", "No label (P4 Same level)", "No political position (attributed)". */
   display: string;
   noLabelReason: NoLabelReason | null;
-  noPosition: { check: string; reason: string } | null;
+  /** `allChecks` keeps every failing position check, not only the one the display line names. */
+  noPosition: { check: string; reason: string; allChecks: string[] } | null;
   /** Publish rules P1–P6 for the candidate leaning; empty when there was none. */
   checks: RuleCheck[];
   criteria: AppliedCriterion[];
@@ -330,8 +331,8 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
         );
       }
       return this.finish(
-        { ...base, ...empty, outcome: "no_position", noLabelReason: null, noPosition: { check: check.id, reason: decision.reason } },
-        `No political position: check ${check.id} (${check.name}) failed. The independent probability that the claim takes a position is ${p}.`,
+        { ...base, ...empty, outcome: "no_position", noLabelReason: null, noPosition: { check: check.id, reason: decision.reason, allChecks: decision.allFailedChecks } },
+        `No political position: ${decision.allFailedChecks.length > 1 ? `checks ${decision.allFailedChecks.join(", ")} failed, the first being ${check.id} (${check.name})` : `check ${check.id} (${check.name}) failed`}. The independent probability that the claim takes a position is ${p}.`,
       );
     }
 
@@ -393,7 +394,9 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
           return null;
         })
         .find((d) => d !== null) ?? null;
-    const ideologyInput = (c: IdeologyCandidate, repeats: RepeatRun[] | null, anchored: boolean): IdeologyGateInput => ({
+    // `publishedLeaning` is null until the publish rules have run, so the pre-check below cannot rule a
+    // side out on a position that is not published yet (I8).
+    const ideologyInput = (c: IdeologyCandidate, repeats: RepeatRun[] | null, anchored: boolean, publishedLeaning: LeaningName | null = null): IdeologyGateInput => ({
       candidate: c,
       pStance: decisions.pStance,
       leaning: contextLeaning,
@@ -404,6 +407,7 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
       hedged: out.hedged,
       anchored,
       sideInDoubt: c.kind === "tradition" ? sideInDoubt : null,
+      publishedLeaning,
     });
     // Before the extra runs a tradition is judged as if anchored (the lower bar), so it is not ruled out too early.
     const ideologyReady = candidates.some((c) => checkIdeology(ideologyInput(c, null, true), false).length === 0);
@@ -418,7 +422,7 @@ If it matches, give the position ID T1 and the claim's exact words as evidence. 
     // Issue leanings first: a published one, or the political leaning, anchors the traditions.
     const passed: IdeologyCandidate[] = [];
     const judge = (c: IdeologyCandidate, anchored: boolean) => {
-      const failed = checkIdeology(ideologyInput(c, repeats, anchored));
+      const failed = checkIdeology(ideologyInput(c, repeats, anchored, leaning));
       if (failed.length) dropped.push({ name: c.name, reason: failed.join("; ") });
       else passed.push(c);
     };
@@ -512,6 +516,10 @@ function uncertainText(reason: UncertainReason, applied: AppliedCriterion[], cro
       return `No label. ${criteriaText(applied)} These place one topic area at two levels, so the claim sits between them (rule A5).`;
     case "cross-cutting":
       return `No label. The claim's position is on a topic that does not line up with left and right (rule A3: ${crossCutting.join(", ")}).`;
+    case "between the matched levels":
+      return `No label. ${criteriaText(applied)} Their average falls on a level none of them carries, so the claim sits between the matched levels (rule A2).`;
+    case "tilts and balances":
+      return `No label. ${criteriaText(applied)} One topic area balances while another takes a side, so the claim is not Center (rule A3).`;
     default:
       return "No label. No criterion matches the claim's position.";
   }

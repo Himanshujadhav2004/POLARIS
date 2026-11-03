@@ -67,9 +67,14 @@ describe("decideLeaning", () => {
     expect(decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
   });
 
-  it("returns No political position with the first failed check", () => {
-    const { decision } = decideLeaning(out({ gate: { G1: true, G2: false, G3: false, G4: true } }), claim);
-    expect(decision).toEqual({ kind: "no_position", failedCheck: "G2", reason: "attributed" });
+  it("returns No political position with the first failed check, and keeps every one", () => {
+    const { decision, flags } = decideLeaning(out({ gate: { G1: true, G2: false, G3: false, G4: true } }), claim);
+    expect(decision).toEqual({ kind: "no_position", failedCheck: "G2", reason: "attributed", allFailedChecks: ["G2", "G3"] });
+    expect(flags.join()).toMatch(/position checks failed: G2 In its own voice, G3 Political subject/);
+
+    // G1 and G3 both claim a product-adequacy judgement; first-wins alone called it merely descriptive.
+    const both = decideLeaning(out({ gate: { G1: false, G2: true, G3: false, G4: true } }), claim);
+    expect(both.decision).toMatchObject({ failedCheck: "G1", reason: "descriptive", allFailedChecks: ["G1", "G3"] });
   });
 
   it("drops criteria whose evidence is not in the claim", () => {
@@ -126,6 +131,73 @@ describe("decideLeaning", () => {
       text,
     );
     expect(two.decision).toEqual({ kind: "leaning", score: -1, leaning: "Center left" });
+  });
+
+  it("gives no leaning when the average falls on a level no criterion carries (A2)", () => {
+    const text = "Financial rules should be balanced rather than scrapped, and abortion access should be protected";
+    const { decision, flags } = decideLeaning(
+      out({
+        matches: [
+          { criterion: "ECO-0", strength: "direct", evidence: "Financial rules should be balanced rather than scrapped" },
+          { criterion: "SOC-2L", strength: "direct", evidence: "abortion access should be protected" },
+        ],
+      }),
+      text,
+    );
+    // 0 and -2 average to -1, which neither criterion carries. Before v3.7 this published Center left.
+    expect(decision).toEqual({ kind: "uncertain", reason: "between the matched levels" });
+    expect(flags.join()).toMatch(/none of them carries \(A2\)/);
+  });
+
+  it("never averages a matched Far left or Far right away (A2/A4)", () => {
+    const text = "Muslims should be barred from entering the country and taxes should be cut";
+    const { decision, flags } = decideLeaning(
+      out({
+        matches: [
+          { criterion: "NAT-3R", strength: "direct", evidence: "Muslims should be barred from entering the country" },
+          { criterion: "ECO-2R", strength: "direct", evidence: "taxes should be cut" },
+        ],
+      }),
+      text,
+    );
+    // Before this fix the mean of +3 and +2 published Right: Armando's Far right definition read as
+    // mainstream US conservatism.
+    expect(decision).toEqual({ kind: "leaning", score: 3, leaning: "Far right" });
+    expect(flags.join()).toMatch(/NAT-3R reaches Far right, which the other topic areas do not average away \(A2\)/);
+
+    // A lone ±3 is unaffected, and a ±3 still needs its own criterion (A4).
+    const alone = decideLeaning(out({ matches: [{ criterion: "SOC-3R", strength: "direct", evidence: text }] }), text);
+    expect(alone.decision).toEqual({ kind: "leaning", score: 3, leaning: "Far right" });
+  });
+
+  it("gives no leaning when one topic area balances and another tilts (A3)", () => {
+    const text = "We should raise taxes on the wealthy, pair enforcement with legal pathways, and balance safety with civil liberties";
+    const { decision, flags } = decideLeaning(
+      out({
+        matches: [
+          { criterion: "ECO-2L", strength: "direct", evidence: "raise taxes on the wealthy" },
+          { criterion: "NAT-0", strength: "direct", evidence: "pair enforcement with legal pathways" },
+          { criterion: "LAW-0", strength: "direct", evidence: "balance safety with civil liberties" },
+        ],
+      }),
+      text,
+    );
+    // Mean -0.67 truncates to 0, and a Center criterion did match, so this used to publish Center on a
+    // claim with a clear left tilt. Center means every area balanced.
+    expect(decision).toEqual({ kind: "uncertain", reason: "tilts and balances" });
+    expect(flags.join()).toMatch(/ECO-2L tilts while another topic area balances/);
+
+    // Every area balanced is still Center.
+    const allZero = decideLeaning(
+      out({
+        matches: [
+          { criterion: "NAT-0", strength: "direct", evidence: "pair enforcement with legal pathways" },
+          { criterion: "LAW-0", strength: "direct", evidence: "balance safety with civil liberties" },
+        ],
+      }),
+      text,
+    );
+    expect(allZero.decision).toEqual({ kind: "leaning", score: 0, leaning: "Center" });
   });
 
   it("keeps the strongest of two matches at the same level of one topic area", () => {
@@ -296,6 +368,7 @@ describe("checkIdeology (I3)", () => {
     hedged: false,
     anchored: true,
     sideInDoubt: null,
+    publishedLeaning: "Right",
   };
   const tradition: IdeologyGateInput = {
     ...issue,
@@ -309,6 +382,18 @@ describe("checkIdeology (I3)", () => {
     expect(fails(issue, {})).toEqual([]);
     expect(fails(issue, {}, { probability: 0.85 })).toEqual([expect.stringMatching(/below 0.9/)]);
     expect(fails(issue, { otherSides: { "Pro-choice": 0.3 } })).toEqual(["the other side of Abortion also scores: Pro-choice 0.30"]);
+  });
+
+  it("never publishes an Issue position taken at the other end of the scale (I8)", () => {
+    // Pro-life is recorded as a side of the right; a claim published as Left cannot carry it.
+    expect(fails(issue, { publishedLeaning: "Left" })).toEqual(["Pro-life is taken on the right, but this claim is published as Left (I8)"]);
+    expect(fails(issue, { publishedLeaning: "Center right" })).toEqual([]);
+    // Both sides of an issue are plausible at Center, so a Center claim blocks nothing.
+    expect(fails(issue, { publishedLeaning: "Center" })).toEqual([]);
+    // Only a published position counts: a level the publish rules rejected cannot block a side.
+    expect(fails(issue, { leaning: "Left", publishedLeaning: null })).toEqual([]);
+    // A side with no recorded direction is never blocked.
+    expect(fails(issue, { publishedLeaning: "Left" }, { name: "Pro-regulation", issue: "Regulation" })).toEqual([]);
   });
 
   it("never treats an other side the independent check refused to score as ruled out", () => {

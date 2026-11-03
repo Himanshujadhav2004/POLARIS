@@ -7,6 +7,7 @@ import { mkdirSync, readFileSync } from "node:fs";
 import type { ScoredClaim } from "../src/agent/v3/agent.js";
 import { geoEntityUrl, IDS, spaceBySlug } from "../src/config.js";
 import { CARD_BY_NAME } from "../src/framework/ideologies.js";
+import { FRAMEWORK_VERSION, PUBLISH } from "../src/framework/rubric.js";
 import { fetchClaims } from "../src/geo/claims.js";
 import { GeoClient } from "../src/geo/client.js";
 import { fetchTaxonomy } from "../src/geo/taxonomy.js";
@@ -26,11 +27,41 @@ interface Row {
   ideologies: string[];
   explanation: string | null;
   error: string | null;
+  /** Written by the agent: whether its own publish rules passed. Absent on anything else. */
+  published?: boolean;
+  /** Written by the agent: P1–P6 as "P4 pass: …" / "P6 FAIL: …" strings. */
+  checks?: string[];
 }
+
+/**
+ * The agent's rules are the only thing that may put a label in a proposal. Without this check the
+ * script took any object with the right six keys: that is how scripts/best-fit.mts, whose own header
+ * says its labels are "NOT published by the agent's rules", put 49 unchecked links on Geo in batch-05
+ * — including one the stability rule P6 had rejected and three the verifier had argued against.
+ */
+function requirePublishable(row: Row, framework: string, file: string): void {
+  const where = `${row.claimId} in ${file}`;
+  if (framework !== FRAMEWORK_VERSION) throw new Error(`${where}: results are "${framework}", not ${FRAMEWORK_VERSION}. Re-score before building a batch.`);
+  if (row.published !== true) throw new Error(`${where}: not published by the agent (published=${JSON.stringify(row.published)}). Only agent output may go into a proposal.`);
+  if (!Array.isArray(row.checks) || !row.checks.length) throw new Error(`${where}: no rule checks recorded, so the publish rules cannot be confirmed.`);
+  // Recorded as "P4 pass: …" / "P6 FAIL: …", so anchor on that shape rather than looking for "pass".
+  const failed = row.checks.filter((c) => !/^P\d+ pass\b/.test(c));
+  // A claim may publish an Issue position while its Political position failed, so a failed check only
+  // blocks the leaning. Guard that precisely rather than rejecting the whole row.
+  if (failed.length && row.leaning) throw new Error(`${where}: publishing ${row.leaning} although ${failed.join("; ")}.`);
+  if (row.ideologies.length > PUBLISH.maxIdeologies) throw new Error(`${where}: ${row.ideologies.length} ideological leanings, over the cap of ${PUBLISH.maxIdeologies} (I4).`);
+  const traditions = row.ideologies.filter((n) => CARD_BY_NAME.get(n)?.kind === "tradition");
+  if (traditions.length > PUBLISH.maxTraditions) throw new Error(`${where}: ${traditions.length} traditions (${traditions.join(", ")}), over the cap of ${PUBLISH.maxTraditions} (I4).`);
+}
+
 const rows = new Map<string, { row: Row; framework: string }>();
 for (const file of files) {
   const json = JSON.parse(readFileSync(file, "utf8")) as { framework: string; rows: Row[] };
-  for (const row of json.rows) if (!rows.has(row.claimId) && !row.error) rows.set(row.claimId, { row, framework: json.framework });
+  for (const row of json.rows) {
+    if (rows.has(row.claimId) || row.error) continue;
+    requirePublishable(row, json.framework, file);
+    rows.set(row.claimId, { row, framework: json.framework });
+  }
 }
 const taken = ids.filter((id) => idsInProposals().has(id));
 if (taken.length) throw new Error(`Already in a proposal batch: ${taken.join(", ")}`);

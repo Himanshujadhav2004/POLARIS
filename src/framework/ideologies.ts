@@ -41,6 +41,12 @@ export interface IdeologyCard {
   neighbours: string[];
   /** Leanings a tradition is usually found at; a tradition outside them is not published. */
   typicalLeanings: LeaningName[];
+  /**
+   * Rule I8, issue sides only: which end of the scale takes this side. −1 left, +1 right, 0 not
+   * recorded (the default, which makes I8 a no-op for the side). Traditions are always 0: they are
+   * placed by typicalLeanings instead.
+   */
+  scaleDirection: -1 | 0 | 1;
   /** The example claim Armando linked to this leaning, if any. */
   exampleClaimId: string | null;
 }
@@ -82,8 +88,18 @@ const TRADITIONS: Record<string, TraditionDetail> = {
     typical: ["Far left", "Left", "Right"],
   },
   "Christian conservative": {
-    positions: ["Restrict or ban abortion.", "Defend traditional marriage and the family as the basis of society.", "Christian or traditional religious practice in public life and schools, and religious liberty for it."],
-    exclusions: ["Positions that touch none of abortion, marriage and family, religion or education.", "Other faiths, or education and parental-rights positions with no religious element."],
+    positions: [
+      "Restrict or ban abortion on a Christian or religious ground the claim itself gives.",
+      "Defend traditional marriage and the family as the basis of society.",
+      "Christian or traditional religious practice in public life and schools, and religious liberty for it.",
+    ],
+    exclusions: [
+      "Positions that touch none of abortion, marriage and family, religion or education.",
+      "Other faiths, or education and parental-rights positions with no religious element.",
+      // The reviewer pulled three published abortion labels for exactly this (evals/publish/us-politics/exclude.txt).
+      "An abortion restriction with no Christian or religious ground in the claim: that is the Pro-life issue position, and the Right leaning.",
+      "Religion or religious liberty in general, with nothing Christian in the claim: a denomination the claim does not name is never assumed.",
+    ],
     neighbours: ["Traditionalist", "Conservative", "Paleoconservative"],
     typical: ["Center right", "Right", "Far right"],
   },
@@ -296,6 +312,39 @@ const SAME_SIDE: string[][] = [
   ["Pro-Palestinian", "Anti-Zionist"],
 ];
 
+/**
+ * Rule I8. Which end of the scale takes an issue side, for the sides whose direction in US politics is
+ * not in dispute — so a claim published as Left cannot also carry a side only the right takes ("High
+ * earners should pay Social Security tax on all their income" was published as Left with
+ * Pro-entitlement reform, which in US usage means restraining benefits).
+ *
+ * Only the two ends are recorded, so a claim at Center never blocks a side: both sides of an issue are
+ * plausible there. Every side left out keeps 0, which makes I8 a no-op for it — a side is blocked on
+ * evidence recorded here, never by omission.
+ *
+ * NOT RATIFIED: Armando has not ruled on these. The table is deliberately short and holds only sides
+ * whose own name states the direction. Extend it from his verdicts, not by inference.
+ */
+const ISSUE_SIDE_DIRECTION: Record<string, -1 | 1> = {
+  "Pro-entitlement reform": 1,
+  "Pro-tax cuts": 1,
+  "Pro-deregulation": 1,
+  "Pro-market wages": 1,
+  "Pro-school choice": 1,
+  "Anti-union": 1,
+  "Pro-life": 1,
+  "Pro-gun rights": 1,
+  "Pro-border security": 1,
+  "Progressive taxation": -1,
+  "Pro-choice": -1,
+  "Pro-gun control": -1,
+  "Pro-immigration": -1,
+  "Pro-living wage": -1,
+  "Pro-welfare expansion": -1,
+  "Pro-student debt relief": -1,
+  "Pro-climate action": -1,
+};
+
 function toCard(row: LeaningRow): IdeologyCard {
   const excluded = EXCLUDED_ALIASES[row.name] ?? [];
   const base = {
@@ -327,6 +376,7 @@ function toCard(row: LeaningRow): IdeologyCard {
       ],
       neighbours: otherSides,
       typicalLeanings: ALL,
+      scaleDirection: ISSUE_SIDE_DIRECTION[row.name] ?? 0,
     };
   }
   const detail = TRADITIONS[row.name];
@@ -339,6 +389,8 @@ function toCard(row: LeaningRow): IdeologyCard {
     exclusions: detail.exclusions,
     neighbours: detail.neighbours,
     typicalLeanings: detail.typical,
+    // Traditions are placed by typicalLeanings, not by I8.
+    scaleDirection: 0,
   };
 }
 

@@ -257,17 +257,17 @@ describe("ScoringAgent.score", () => {
           ideologies: [
             { name: "Pro-life", tenet: "T1", evidence: ABORTION },
             { name: "Social conservative", tenet: "T1", evidence: ABORTION },
-            { name: "Christian conservative", tenet: "T1", evidence: ABORTION },
+            { name: "Conservative", tenet: "T1", evidence: ABORTION },
           ],
         }),
       ],
       ...clearRight,
-      ideologies: { ...clearRight.ideologies, "Christian conservative": 0.95, "Social conservative": 0.9 },
+      ideologies: { ...clearRight.ideologies, Conservative: 0.95, "Social conservative": 0.9 },
     });
     const r = await a.score(claim(ABORTION));
-    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Christian conservative"]);
-    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Ideological leaning per claim (I4): Christian conservative scored higher" });
-    expect(r.explanation).toMatch(/Issue position: Pro-life .*Ideological leaning: Christian conservative/);
+    expect(r.ideologies.map((i) => i.name)).toEqual(["Pro-life", "Conservative"]);
+    expect(r.droppedIdeologies).toContainEqual({ name: "Social conservative", reason: "only one Ideological leaning per claim (I4): Conservative scored higher" });
+    expect(r.explanation).toMatch(/Issue position: Pro-life .*Ideological leaning: Conservative/);
   });
 
   it("refuses an empty claim without calling any model", async () => {
