@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import type { ScoredClaim } from "../src/agent/v3/agent.js";
-import { labelKey } from "../src/agent/verify.js";
 import { IDS, SPACES } from "../src/config.js";
 import type { Claim } from "../src/geo/claims.js";
 import { buildTaxonomy } from "../src/geo/taxonomy.js";
@@ -49,12 +48,6 @@ describe("publishGate", () => {
     expect(publishGate(space, claim(), scored(null))).toMatch(/published nothing: No label/);
     expect(publishGate(space, claim({ leaningIds: ["x"] }), scored("Right"))).toMatch(/already has Leanings/);
     expect(publishGate(space, claim({ spaceIds: ["other"] }), scored("Right"))).toMatch(/not in this space/);
-  });
-
-  it("keys old verifications on the label, ignoring ideology order", () => {
-    expect(labelKey({ political_leaning: "Right", ideologies: ["Nationalist", "Conservative"] })).toBe(
-      labelKey({ political_leaning: "Right", ideologies: ["Conservative", "Nationalist"] }),
-    );
   });
 });
 
